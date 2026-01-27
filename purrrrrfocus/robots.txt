@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://louischen737.github.io/purrrrrfocus-support/sitemap.xml
+

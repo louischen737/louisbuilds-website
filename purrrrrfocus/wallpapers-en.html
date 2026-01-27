@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpapers - PurrrrrFocus</title>
+    
+    <!-- 基础 SEO Meta 标签 -->
+    <meta name="description" content="PurrrrrFocus Wallpapers - Curated high-quality wallpapers to beautify your device. Free download for iPhone, iPad and more.">
+    <meta name="keywords" content="PurrrrrFocus,wallpapers,phone wallpapers,iPhone wallpapers,iPad wallpapers,beautiful wallpapers,free wallpapers,download wallpapers">
+    <meta name="author" content="PurrrrrFocus Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- 规范链接和多语言 -->
+    <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/wallpapers-en.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/wallpapers.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/wallpapers-en.html">
+    
+    <style>
+        :root {
+            /* Classical Courtyard Theme Colors */
+            --bg-primary: #F9F3E6;
+            --bg-card: #FFFFFF;
+            --text-primary: #3B241D;
+            --text-secondary: #835E1E;
+            --accent: #BD001D;
+            --border: #DEBA86;
+            --shadow: rgba(59, 36, 29, 0.1);
+            --shadow-hover: rgba(59, 36, 29, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            min-height: 100vh;
+            padding: 20px 0;
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            color: var(--text-primary);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .app-icon img {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .app-icon img:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 12px 28px var(--shadow-hover);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+        
+        .language-switcher {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .language-switcher a {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 0 5px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .language-switcher a.active,
+        .language-switcher a:hover {
+            background: var(--bg-card);
+            color: var(--accent);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .content {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 24px var(--shadow);
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .download-tip {
+            background: #F9F3E6;
+            border-left: 4px solid var(--accent);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+        
+        .download-tip strong {
+            color: var(--text-primary);
+        }
+        
+        .category-section {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            color: var(--accent);
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .wallpaper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .wallpaper-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+        }
+        
+        .wallpaper-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px var(--shadow-hover);
+            border-color: var(--accent);
+        }
+        
+        .wallpaper-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .wallpaper-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 15px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .wallpaper-item:hover .wallpaper-overlay {
+            opacity: 1;
+        }
+        
+        .wallpaper-name {
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .wallpaper-info {
+            font-size: 0.75em;
+            opacity: 0.9;
+        }
+        
+        .download-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        
+        .wallpaper-item:hover .download-btn {
+            opacity: 1;
+        }
+        
+        .download-btn:hover {
+            background: var(--text-primary);
+        }
+        
+        /* Image Preview Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.1);
+        }
+        
+        .modal-download {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 1em;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-download:hover {
+            background: var(--text-primary);
+            transform: translateX(-50%) scale(1.05);
+        }
+        
+        .modal-info {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--text-secondary);
+        }
+        
+        .footer p {
+            margin: 5px 0;
+        }
+        
+        /* Responsive Design */
+            @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .app-icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .app-icon img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .wallpaper-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 30px;
+            }
+            
+            .modal-download {
+                bottom: 20px;
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">
+                <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+            </div>
+            <h1>Wallpapers</h1>
+            <p>Curated high-quality wallpapers to beautify your device</p>
+        </div>
+        
+        <div class="language-switcher">
+            <a href="wallpapers.html">中文</a>
+            <a href="wallpapers-en.html" class="active">English</a>
+        </div>
+        
+        <div class="content">
+            <div class="download-tip">
+                <strong>💡 Download Tip:</strong> Tap a wallpaper to view full size, long press to save to Photos, or click the download button to download directly.
+            </div>
+            
+            <!-- Christmas Theme Category -->
+            <div class="category-section">
+                <h2 class="category-title"><span style="font-size: 1.2em; margin-right: 8px;">🎄</span>Christmas Theme</h2>
+                <div class="wallpaper-grid">
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_001.png">
+                        <img src="wallpapers/christmas/christmas_001.png" alt="Christmas Wallpaper 1" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_001.png', 'Christmas_Wallpaper_1')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 1</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_002.png">
+                        <img src="wallpapers/christmas/christmas_002.png" alt="Christmas Wallpaper 2" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_002.png', 'Christmas_Wallpaper_2')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 2</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_003.png">
+                        <img src="wallpapers/christmas/christmas_003.png" alt="Christmas Wallpaper 3" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_003.png', 'Christmas_Wallpaper_3')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 3</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_004.png">
+                        <img src="wallpapers/christmas/christmas_004.png" alt="Christmas Wallpaper 4" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_004.png', 'Christmas_Wallpaper_4')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 4</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_005.png">
+                        <img src="wallpapers/christmas/christmas_005.png" alt="Christmas Wallpaper 5" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_005.png', 'Christmas_Wallpaper_5')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 5</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_006.png">
+                        <img src="wallpapers/christmas/christmas_006.png" alt="Christmas Wallpaper 6" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_006.png', 'Christmas_Wallpaper_6')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 6</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_007.png">
+                        <img src="wallpapers/christmas/christmas_007.png" alt="Christmas Wallpaper 7" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_007.png', 'Christmas_Wallpaper_7')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 7</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/christmas/christmas_008.png">
+                        <img src="wallpapers/christmas/christmas_008.png" alt="Christmas Wallpaper 8" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/christmas/christmas_008.png', 'Christmas_Wallpaper_8')">Download</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">Christmas Wallpaper 8</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); color: var(--text-secondary); font-size: 0.9em; line-height: 1.6;">
+                <p style="margin: 10px 0;"><strong>©️ Copyright Notice</strong></p>
+                <p style="margin: 5px 0;">All wallpapers above are copyrighted by Chen Cong, designer of "PurrrrrFocus". Commercial use is prohibited without authorization.</p>
+            </div>
+            <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
+            <p>Make focus a habit 🐱</p>
+        </div>
+    </div>
+    
+    <!-- Image Preview Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Wallpaper Preview">
+            <div class="modal-info" id="modalInfo"></div>
+            <button class="modal-download" onclick="downloadFromModal()">Download Wallpaper</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentImageUrl = '';
+        let currentImageName = '';
+        
+        // Open image preview
+        function openModal(imageUrl, imageName, resolution) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalInfo = document.getElementById('modalInfo');
+            
+            currentImageUrl = imageUrl;
+            currentImageName = imageName;
+            
+            modalImage.src = imageUrl;
+            modalInfo.textContent = imageName + ' | ' + resolution;
+            modal.classList.add('active');
+            
+            // Prevent background scrolling
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close image preview
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Click modal background to close
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Click wallpaper item to open preview
+        document.querySelectorAll('.wallpaper-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // If clicking download button, don't open preview
+                if (e.target.classList.contains('download-btn')) {
+                    return;
+                }
+                
+                const fullImageUrl = this.getAttribute('data-full');
+                const name = this.querySelector('.wallpaper-name')?.textContent || 'Wallpaper';
+                const resolution = this.querySelector('.wallpaper-info')?.textContent || '';
+                
+                if (fullImageUrl) {
+                    openModal(fullImageUrl, name, resolution);
+                }
+            });
+        });
+        
+        // Extract file extension from URL
+        function getFileExtension(url) {
+            const match = url.match(/\.(jpg|jpeg|png|gif|webp)$/i);
+            return match ? match[1].toLowerCase() : 'jpg';
+        }
+        
+        // Download wallpaper
+        function downloadWallpaper(event, imageUrl, imageName) {
+            event.stopPropagation(); // Prevent event bubbling
+            
+            const extension = getFileExtension(imageUrl);
+            const link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = imageName + '.' + extension;
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Download from modal
+        function downloadFromModal() {
+            if (currentImageUrl) {
+                const extension = getFileExtension(currentImageUrl);
+                const link = document.createElement('a');
+                link.href = currentImageUrl;
+                link.download = currentImageName + '.' + extension;
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+        
+        // Long press save hint (mobile)
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.wallpaper-item img').forEach(img => {
+                img.addEventListener('contextmenu', function(e) {
+                    e.preventDefault();
+                    // On mobile, long press will trigger system save menu
+                });
+            });
+        }
+    </script>
+</body>
+</html>
+

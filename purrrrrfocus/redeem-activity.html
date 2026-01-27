@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兑换码活动 - 分享专注体验，获得Plus会员 | 喵时计</title>
+    
+    <!-- 基础 SEO Meta 标签 -->
+    <meta name="description" content="分享PurrrrrFocus（喵时计）专注体验，免费获得1个月Plus会员。在社交平台分享真实使用体验，达到兑换要求即可获得兑换码。">
+    <meta name="keywords" content="PurrrrrFocus,喵时计,兑换码,Plus会员,专注体验,活动">
+    <meta name="author" content="PurrrrrFocus Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- 规范链接和多语言 -->
+    <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/redeem-activity.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/redeem-activity.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/redeem-activity-en.html">
+    
+    <!-- Open Graph 标签 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="兑换码活动 - 分享专注体验，获得Plus会员 | 喵时计">
+    <meta property="og:description" content="分享PurrrrrFocus专注体验，免费获得1个月Plus会员兑换码">
+    <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/redeem-activity.html">
+    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    
+    <style>
+        :root {
+            /* 古典庭院主题配色 */
+            --bg-primary: #F9F3E6;
+            --bg-card: #FFFFFF;
+            --text-primary: #3B241D;
+            --text-secondary: #835E1E;
+            --accent: #BD001D;
+            --border: #DEBA86;
+            --shadow: rgba(59, 36, 29, 0.1);
+            --shadow-hover: rgba(59, 36, 29, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            min-height: 100vh;
+            padding: 20px 0;
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .app-icon img {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            box-shadow: 0 8px 20px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .app-icon img:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 12px 28px var(--shadow-hover);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            color: var(--text-primary);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+        }
+        
+        .content {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 24px var(--shadow);
+            transition: box-shadow 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content:hover {
+            box-shadow: 0 12px 32px var(--shadow-hover);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .step-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #F9F3E6;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .step-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .step-item h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .step-item ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+        }
+        
+        .step-item li {
+            margin-bottom: 8px;
+        }
+        
+        .requirement-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .requirement-list li {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #F9F3E6;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .requirement-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--shadow);
+            border-color: var(--accent);
+        }
+        
+        .requirement-list strong {
+            color: var(--accent);
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #F9F3E6;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .info-item strong {
+            color: var(--text-primary);
+        }
+        
+        .notes-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .notes-list li {
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            background: #F9F3E6;
+            border-radius: 12px;
+            border-left: 4px solid var(--border);
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .notes-list li:hover {
+            border-left-color: var(--accent);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .highlight-box {
+            padding: 20px;
+            background: linear-gradient(135deg, #F9F3E6 0%, #FFFFFF 100%);
+            border-radius: 12px;
+            border: 2px solid var(--accent);
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+        
+        .language-switcher {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .language-switcher a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border-radius: 25px;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        .language-switcher a:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .language-switcher a.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        
+        .copy-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-button:hover {
+            background: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        .cat-avatar {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+        
+        .cat-avatar-footer {
+            margin: 40px auto 30px;
+            max-width: 300px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-secondary);
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 25px;
+                border-radius: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+            }
+            
+            .cat-avatar-footer {
+                margin: 30px auto 20px;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">
+                <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+            </div>
+            <h1>喵时计 - 兑换码活动</h1>
+            <p>分享专注体验，获得Plus会员兑换码</p>
+        </div>
+        
+        <div class="language-switcher">
+            <a href="redeem-activity.html" class="active">中文</a>
+            <a href="redeem-activity-en.html">English</a>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📋 活动概述</h2>
+                <div class="highlight-box">
+                    <h3>【2025年第1期】</h3>
+                    <p>🐱 在社交平台分享PurrrrrFocus（喵时计）专注体验，免费获得1个月Plus会员</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>✨ Plus会员专属特权</strong><br>
+                    • 学霸模式：监控应用切换，培养深度专注习惯<br>
+                    • 数据导出：CSV/Excel格式导出统计数据<br>
+                    • 自定义任务类型：创建个性化任务分类<br>
+                    • 高级统计：详细的数据分析和洞察<br>
+                    • 个性化定制：切换应用图标、活力值图标动画<br>
+                    • 专属音频：Plus会员专属背景音乐
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📝 参与步骤</h2>
+                
+                <div class="step-item">
+                    <h3>1. 选择平台并发布内容</h3>
+                    <p>选择Twitter/X、Instagram、Facebook、抖音、小红书等任一平台发布你使用PurrrrrFocus（喵时计）应用过程中的专注体验：</p>
+                    <ul>
+                        <li>至少400字的真实使用体验 + 至少4页的应用截图</li>
+                        <li>或不低于30秒的视频时长</li>
+                    </ul>
+                </div>
+                
+                <div class="step-item">
+                    <h3>2. @官方账号</h3>
+                    <p>Twitter(X)/Instagram/Facebook/抖音/等@PurrrrrFocus，小红书@Old_Chen独立开发</p>
+                </div>
+                
+                <div class="step-item">
+                    <h3>3. 添加标签</h3>
+                    <p>发布时带上指定标签：</p>
+                    <div style="background: #F9F3E6; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid var(--accent);">
+                        <div id="hashtags-display" style="color: var(--text-primary); font-size: 1.05em; line-height: 1.8; word-break: break-word;">
+                            #PurrrrrFocus #喵时计app #宝藏app #番茄钟 #专注计时器 #学霸必备 #中式美学
+                        </div>
+                        <button class="copy-button" onclick="copyToClipboard('hashtags', this)" style="margin-top: 10px;">复制标签</button>
+                    </div>
+                    <strong id="hashtags" style="display: none;">#PurrrrrFocus#喵时计app#宝藏app#番茄钟#专注计时器#学霸必备#中式美学</strong>
+                </div>
+                
+                <div class="step-item">
+                    <h3>4. 提交申请</h3>
+                    <p>达到兑换条件后请将以下信息发送到我们的邮箱：<br>
+                    <strong id="email">purrrrrfocus@outlook.com</strong>
+                    <button class="copy-button" onclick="copyToClipboard('email', this)">复制邮箱</button>
+                    </p>
+                    <ul>
+                        <li>可公开访问的内容链接</li>
+                        <li>内容截图（需包含互动数据：点赞数、转发/分享/评论数，以及发布时间）</li>
+                        <li>你的账号名称</li>
+                    </ul>
+                    <p style="margin-top: 10px; color: var(--accent);"><strong>我们将在收到邮件后的7个工作日内确认并发放兑换码</strong></p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🎁 兑换要求</h2>
+                <ul class="requirement-list">
+                    <li><strong>Twitter/X</strong>：至少100个点赞 + 10个转发</li>
+                    <li><strong>Facebook</strong>：至少100个点赞 + 10个分享</li>
+                    <li><strong>Reddit</strong>：至少100个点赞（upvotes）+ 10个有效评论</li>
+                    <li><strong>小红书</strong>：至少100个点赞 + 50个收藏</li>
+                    <li><strong>Instagram</strong>：至少100个点赞 + 10个有效评论</li>
+                    <li><strong>YouTube</strong>：至少200次观看 + 10个点赞 + 5个有效评论</li>
+                    <li><strong>抖音</strong>：至少500次观看 + 50个点赞 + 5个有效评论</li>
+                </ul>
+                
+                <div class="info-item" style="margin-top: 20px;">
+                    <strong>通用要求：</strong><br>
+                    • 所有内容必须原创，真实反映使用体验<br>
+                    • 禁止抄袭、刷量、虚假数据<br>
+                    • 每个账号每种平台限参与一次
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📖 兑换码说明</h2>
+                
+                <div class="info-item">
+                    <strong>兑换码详情：</strong><br>
+                    • <strong>兑换产品</strong>：1个月月度订阅会员<br>
+                    • <strong>兑换码有效期</strong>：28天（自发放之日起，需在28天内使用）<br>
+                    • <strong>会员时长</strong>：自兑换之日起，有效期为1个月（30天）<br>
+                    • <strong>自动续费</strong>：否，兑换码兑换的订阅不会自动续费<br>
+                    • <strong>使用限制</strong>：每个兑换码仅限使用一次，不可转让、不可退款
+                </div>
+                
+                <div class="info-item">
+                    <strong>如何使用兑换码：</strong><br>
+                    1. 打开应用，进入「Plus」页面<br>
+                    2. 点击页面底部的「兑换码」按钮<br>
+                    3. 输入你的兑换码<br>
+                    4. 点击「兑换」按钮，即可激活Plus会员特权
+                </div>
+                
+            </div>
+            
+            <div class="section">
+                <h2>⏰ 活动时间</h2>
+                <div class="info-item">
+                    • <strong>内容发布时间</strong>：2025年12月10日 - 2026年1月10日<br>
+                    • <strong>领取奖励时间</strong>：2026年1月15日前<br>
+                    • 后续是否持续开放可以留意本页内容
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📋 注意事项</h2>
+                <ul class="notes-list">
+                    <li>兑换后<strong style="color: var(--accent);">不要删除内容</strong>，后期抽查发现会<strong style="color: var(--accent);">收回兑换的权益</strong></li>
+                    <li>每个账号每种平台<strong style="color: var(--accent);">限参与一次</strong></li>
+                    <li>所有内容必须<strong style="color: var(--accent);">真实原创</strong>，<strong style="color: var(--accent);">禁止抄袭、刷量、虚假数据</strong></li>
+                    <li><strong style="color: var(--accent);">禁止使用刷量服务、虚假账号、抄袭他人内容、使用他人素材</strong></li>
+                    <li>我们会对所有提交的内容进行<strong style="color: var(--accent);">严格审核和验证</strong></li>
+                    <li>如发现虚假数据或刷量行为，将<strong style="color: var(--accent);">取消资格并列入黑名单</strong></li>
+                    <li>本活动<strong style="color: var(--accent);">最终解释权</strong>归PurrrrrFocus所有</li>
+                    <li>如有疑问，请联系<strong style="color: var(--accent);">客服支持</strong>：<strong style="color: var(--accent);">purrrrrfocus@outlook.com</strong></li>
+                </ul>
+            </div>
+            
+            <img src="cat-avatar-header.png" alt="页面装饰" class="cat-avatar cat-avatar-footer">
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
+            <p>让专注成为一种习惯 🐱</p>
+        </div>
+    </div>
+    
+    <script>
+        function copyToClipboard(elementId, button) {
+            const element = document.getElementById(elementId);
+            if (!element) {
+                alert('元素不存在');
+                return;
+            }
+            
+            const text = element.textContent || element.innerText;
+            const originalText = button.textContent;
+            
+            // 优先使用现代 Clipboard API
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(function() {
+                    button.textContent = '已复制！';
+                    button.style.background = '#4CAF50';
+                    
+                    setTimeout(function() {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Clipboard API 失败:', err);
+                    // 降级到传统方法
+                    fallbackCopyTextToClipboard(text, button, originalText);
+                });
+            } else {
+                // 降级到传统方法
+                fallbackCopyTextToClipboard(text, button, originalText);
+            }
+        }
+        
+        function fallbackCopyTextToClipboard(text, button, originalText) {
+            // 创建临时文本区域
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            let textAreaRemoved = false;
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    button.textContent = '已复制！';
+                    button.style.background = '#4CAF50';
+                    
+                    setTimeout(function() {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                    }, 2000);
+                } else {
+                    throw new Error('execCommand 失败');
+                }
+            } catch (err) {
+                console.error('复制失败:', err);
+                // 最后的选择：显示文本让用户手动复制
+                alert('复制失败，请手动复制以下内容：\n\n' + text);
+            } finally {
+                // 安全移除 textArea
+                if (!textAreaRemoved && textArea.parentNode) {
+                    try {
+                        document.body.removeChild(textArea);
+                        textAreaRemoved = true;
+                    } catch (e) {
+                        console.error('移除 textArea 失败:', e);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
