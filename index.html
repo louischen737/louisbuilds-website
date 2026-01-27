@@ -63,8 +63,9 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 40px;
+            gap: 32px;
             flex-wrap: wrap;
+            margin-bottom: 60px; /* Add spacing between products */
         }
         .product:nth-child(even) { flex-direction: row-reverse; }
         .product-info { flex: 1; min-width: 280px; }
@@ -78,7 +79,7 @@
             color: var(--bg-color);
             border-radius: var(--btn-radius);
             font-weight: 500;
-            transition: opacity 0.2s;
+            transition: opacity 0.2s, transform 0.2s;
             display: inline-block;
         }
         .product-info .buttons a:hover { opacity: 0.9; }
@@ -174,7 +175,7 @@
         <div class="product">
             <div class="product-info">
                 <h2>Phonetic Formatter</h2>
-                <p>Paste English text and get line-by-line IPA phonetic notation for accurate pronunciation.</p>
+                <p>Automatically converts English text to line-by-line IPA phonetic notation for easier pronunciation learning.</p>
                 <div class="tags">iOS • Language • Pronunciation</div>
                 <div class="buttons">
                     <a href="phoneticformatter/">Learn More</a>
@@ -190,11 +191,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-use.html">Terms of Use</a>
-            <a href="support.html">Support</a>
-        </div>
-        <div class="footer-social">
+            <a href="mailto:support@louisbuilds.me">Contact</a>
             <a href="https://github.com/louisbuilds" target="_blank" aria-label="GitHub">GitHub</a>
         </div>
         <div class="footer-copyright">
