@@ -59,14 +59,14 @@ git push -u origin main
 - **记录类型**: CNAME
 - **主机记录**: @ (或留空)
 - **解析线路**: 默认
-- **记录值**: `YOUR_USERNAME.github.io` (替换为你的 GitHub 用户名)
+- **记录值**: `louischen737.github.io`
 - **TTL**: 600
 
 **记录 2 (www 子域名，可选)**
 - **记录类型**: CNAME
 - **主机记录**: www
 - **解析线路**: 默认
-- **记录值**: `YOUR_USERNAME.github.io`
+- **记录值**: `louischen737.github.io`
 - **TTL**: 600
 
 ### 5. 等待生效
