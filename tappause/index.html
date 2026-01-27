@@ -132,13 +132,22 @@
 
         .cta a {
             display: inline-block;
-            padding: 16px 32px;
-            background-color: var(--text-primary);
-            color: var(--bg-color);
             text-decoration: none;
-            font-size: 17px;
-            font-weight: 500;
-            border-radius: 12px;
+        }
+
+        .cta a.app-store-badge {
+            padding: 0;
+            background: none;
+        }
+
+        .cta a.app-store-badge img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .cta a.app-store-badge:hover {
+            opacity: 0.8;
         }
 
         /* Footer */
@@ -201,8 +210,8 @@
     </section>
 
     <section class="cta">
-        <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer">
-            Download on the App Store
+        <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+            <img src="../assets/app-store-badge.svg" alt="Download on the App Store">
         </a>
     </section>
 
