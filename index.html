@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Builds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #1C1C1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #E5E5EA;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 60px 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .products {
+            margin-top: 40px;
+        }
+
+        .products a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            margin: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .products a:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Louis Builds</h1>
+    <p>Building quiet, intentional apps.</p>
+    
+    <div class="products">
+        <a href="tappause/">TapPause</a>
+    </div>
+</body>
+</html>
