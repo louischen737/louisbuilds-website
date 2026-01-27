@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Phonetic Formatter - Convert English Text to Phonetic Transcription | IPA Converter</title>
+    <meta name="title" content="Phonetic Formatter - Convert English Text to Phonetic Transcription">
+    <meta name="description" content="Turn any English text into lesson-ready phonetic material in seconds. Free IPA converter for language learning, teaching, and reference. Export to TXT, DOCX, PDF.">
+    <meta name="keywords" content="phonetic transcription, IPA converter, phonetic formatter, English to IPA, phonetic alphabet, language learning, pronunciation guide, CMU dictionary">
+    <meta name="author" content="Phonetic Formatter">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/">
+    <meta property="og:title" content="Phonetic Formatter - Convert English Text to Phonetic Transcription">
+    <meta property="og:description" content="Turn any English text into lesson-ready phonetic material in seconds. Free IPA converter for language learning and teaching.">
+    <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
+    <meta property="og:site_name" content="Phonetic Formatter">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://louisbuilds.me/phoneticformatter/">
+    <meta property="twitter:title" content="Phonetic Formatter - Convert English Text to Phonetic Transcription">
+    <meta property="twitter:description" content="Turn any English text into lesson-ready phonetic material in seconds. Free IPA converter for language learning and teaching.">
+    <meta property="twitter:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Phonetic Formatter",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "ratingCount": "100"
+      },
+      "description": "Convert English text to phonetic transcription using IPA. Perfect for language learning, teaching, and reference.",
+      "screenshot": "https://louisbuilds.me/phoneticformatter/logo.png",
+      "featureList": [
+        "Convert English text to IPA phonetic transcription",
+        "Export to TXT, DOCX, PDF formats",
+        "Works offline",
+        "Privacy-first: all processing local",
+        "Free and Pro versions available"
+      ]
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: white;
+            color: #333;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+        
+        .header-content > a {
+            flex-shrink: 0;
+            margin-right: 2.5rem;
+        }
+        
+        nav {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .header-cta {
+            flex-shrink: 0;
+        }
+        
+        .header-cta {
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            .header-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.6rem 1.5rem;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.95rem;
+                border-radius: 50px;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            
+            .header-cta:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            }
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+            color: #333;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 2.5rem;
+            margin: 0;
+        }
+        
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #007AFF;
+        }
+        
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 5rem 0 4rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #007AFF 100%);
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .hero-image {
+            max-width: 100%;
+            margin-top: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: white;
+            padding: 2rem;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+        
+        .app-store-badge {
+            display: inline-block;
+            height: 60px;
+            width: auto;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        
+        .app-store-badge:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        
+        .app-store-badge img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            opacity: 0.7;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        .features {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .features .container {
+            max-width: 1400px;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .features .container > p {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+            width: 100%;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .feature-detail {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            background: #333;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            max-width: 280px;
+            width: max-content;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .feature-detail::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #333;
+        }
+        
+        @media (min-width: 769px) {
+            .feature-card:hover .feature-detail {
+                opacity: 1;
+                transform: translateX(-50%) translateY(calc(100% + 10px));
+            }
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+            text-align: center;
+            background: #f5f5f5;
+            padding: 1rem 1rem;
+            border-radius: 8px;
+            width: 100%;
+            margin-top: 0.5rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.3;
+            hyphens: auto;
+            word-break: break-word;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+            text-align: center;
+            font-size: 1rem;
+            min-height: 52px;
+            margin-bottom: 0;
+            padding: 0.5rem 0;
+        }
+        
+        .pricing {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .pricing-table-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .pricing-table-footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .pricing-table-footer > * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pricing-footer-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            justify-content: flex-start;
+        }
+        
+        .pricing-footer-price {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .pricing-footer-price-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .pricing-footer-price-note {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .pricing-footer-price.pro-price {
+            position: relative;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        
+        .pricing-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .pricing-table th {
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            vertical-align: top;
+        }
+        
+        .pricing-table th:first-child {
+            text-align: left;
+            background: rgba(255,255,255,0.1);
+            width: 200px;
+            min-width: 200px;
+        }
+        
+        .pricing-table th.free-col,
+        .pricing-table th.pro-col {
+            width: auto;
+        }
+        
+        .pricing-table th.free-col {
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .pricing-table th.pro-col {
+            background: rgba(255,255,255,0.1);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .crown-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.6));
+        }
+        
+        .crown-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .pricing-table tbody tr {
+            border-bottom: 1px solid #f5f5f5;
+            transition: background 0.2s;
+        }
+        
+        .pricing-table tbody tr:hover {
+            background: #fafafa;
+        }
+        
+        .pricing-table tbody tr:last-child {
+            font-weight: 600;
+        }
+        
+        .pricing-table tbody tr:last-child td {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+        
+        
+        .pricing-table td {
+            padding: 1.25rem 2rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .pricing-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .pricing-table td.free-col {
+            color: #666;
+            background: rgba(0,0,0,0.02);
+        }
+        
+        .pricing-table td.pro-col {
+            color: #667eea;
+            font-weight: 600;
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .feature-check {
+            color: #10b981;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .feature-cross {
+            color: #ef4444;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .pricing-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .btn-upgrade {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn-upgrade:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(102, 126, 234, 0.5);
+        }
+        
+        .btn-upgrade svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        footer {
+            background: #2a2a2a;
+            color: rgba(255,255,255,0.9);
+            padding: 4rem 0 3rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: background 0.3s, color 0.3s;
+            font-weight: 500;
+        }
+        
+        .footer-link:hover {
+            background: rgba(255,255,255,0.15);
+            color: white;
+        }
+        
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                height: 48px;
+                max-width: 160px;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .header-content {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            
+            .header-content > a {
+                order: 1;
+                margin-right: 0;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                flex: 1 1 100%;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .header-cta {
+                order: 2;
+                margin-left: auto;
+            }
+            
+            .hero {
+                padding: 3rem 0 3rem;
+            }
+            
+            .hero-buttons {
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-image {
+                margin-top: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+            
+            .hero h1 br {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .hero-image {
+                padding: 1rem;
+            }
+            
+            .app-store-badge {
+                height: 50px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .feature-card {
+                max-width: 500px;
+                margin: 0 auto;
+                height: auto;
+            }
+            
+            .feature-card h3 {
+                min-height: auto;
+                font-size: 1.2rem;
+                padding: 0.875rem 1rem;
+                line-height: 1.4;
+            }
+            
+            .feature-card p {
+                min-height: auto;
+                font-size: 0.95rem;
+            }
+            
+            .pricing-table-container {
+                margin: 2rem 1rem;
+                border-radius: 16px;
+                overflow-x: auto;
+            }
+            
+            .pricing-table {
+                min-width: 600px;
+            }
+            
+            .pricing-table th {
+                padding: 1rem 0.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .pricing-table th:first-child {
+                width: 140px;
+                min-width: 140px;
+                padding: 1rem 0.75rem;
+            }
+            
+            .pricing-table th.free-col,
+            .pricing-table th.pro-col {
+                width: auto;
+                min-width: 100px;
+            }
+            
+            .crown-icon {
+                width: 18px;
+                height: 18px;
+                margin-right: 0.3rem;
+            }
+            
+            .crown-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .pricing-table th.pro-col {
+                flex-direction: row;
+                font-size: 1.1rem;
+            }
+            
+            .pricing-table-footer {
+                display: grid;
+                grid-template-columns: 140px 1fr 1fr;
+                gap: 0.5rem;
+                padding: 1.25rem 1rem;
+                min-width: 600px;
+            }
+            
+            .pricing-footer-label {
+                text-align: left;
+                font-size: 0.95rem;
+                padding: 0.5rem 0;
+            }
+            
+            .pricing-footer-price {
+                padding: 0.5rem 0;
+            }
+            
+            .pricing-footer-price-value {
+                font-size: 1.4rem;
+            }
+            
+            .pricing-footer-price-note {
+                font-size: 0.75rem;
+            }
+            
+            .pricing-table td {
+                padding: 1rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .pricing-table td:first-child {
+                font-size: 0.85rem;
+                padding: 1rem 0.75rem;
+            }
+            
+            .pricing-table td.free-col,
+            .pricing-table td.pro-col {
+                white-space: nowrap;
+            }
+            
+            footer {
+                padding: 3rem 0 2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .footer-link {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .footer-copyright {
+                font-size: 0.85rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html"><img src="logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';"></a>
+                <h1 class="logo-text" style="display: none;"><a href="index.html">Phonetic Formatter</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="header-cta" target="_blank" rel="noopener noreferrer">
+                    Get App
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Instantly Convert English Text to<br>Phonetic Transcription</h1>
+            <h2>Perfect for teachers, students, and language enthusiasts.</h2>
+            <div class="hero-buttons">
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" />
+                </a>
+                <a href="#features" class="btn-secondary">
+                    Learn More
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 14l-5-5h10l-5 5z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="app-screenshot.png" alt="Phonetic Formatter App Interface" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <p>Everything you need to create professional phonetic transcriptions</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Instant Phonetic Transcription</h3>
+                    <p>Convert any English text into clear phonetic transcription in seconds.</p>
+                    <div class="feature-detail">Powered by CMU Pronouncing Dictionary. Supports up to 6,000 words per conversion for Pro users. All processing happens locally on your device for complete privacy.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" fill="none"/>
+                            <polyline points="7 10 12 15 17 10" fill="none"/>
+                            <line x1="12" y1="15" x2="12" y2="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Export Your Work</h3>
+                    <p>Save results as TXT, DOCX, or PDF (Pro users only).</p>
+                    <div class="feature-detail">Export your phonetic transcriptions in multiple formats. Perfect for creating lesson plans, study materials, and reference documents. Available exclusively for Pro users.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" fill="none"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" fill="none"/>
+                            <line x1="8" y1="7" x2="18" y2="7" fill="none"/>
+                            <line x1="8" y1="12" x2="18" y2="12" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Perfect for Teachers & Learners</h3>
+                    <p>Batch process text, copy results, and prepare teaching materials effortlessly.</p>
+                    <div class="feature-detail">Ideal for language teachers creating pronunciation guides, students studying phonetics, and language enthusiasts. Process multiple texts quickly and efficiently.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2>Upgrade to Pro for Full Access</h2>
+            <div class="pricing-table-container">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Plan Details</th>
+                            <th class="free-col">Free</th>
+                            <th class="pro-col">
+                                <div class="crown-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="crown-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                                                <stop offset="50%" style="stop-color:#ffed4e;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z" fill="url(#crown-gradient)"/>
+                                    </svg>
+                                </div>
+                                Pro
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Daily Generations</td>
+                            <td class="free-col">1/day</td>
+                            <td class="pro-col">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Text Length</td>
+                            <td class="free-col">Up to 400 words</td>
+                            <td class="pro-col">Up to 6,000 words per conversion</td>
+                        </tr>
+                        <tr>
+                            <td>Copy Results</td>
+                            <td class="free-col"><span class="feature-check">✓</span></td>
+                            <td class="pro-col"><span class="feature-check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Export TXT/DOCX/PDF</td>
+                            <td class="free-col"><span class="feature-cross">✗</span></td>
+                            <td class="pro-col"><span class="feature-check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Lifetime Access</td>
+                            <td class="free-col"><span class="feature-cross">✗</span></td>
+                            <td class="pro-col"><span class="feature-check">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pricing-table-footer">
+                    <div class="pricing-footer-label">Price</div>
+                    <div class="pricing-footer-price">
+                        <div class="pricing-footer-price-value">Free</div>
+                    </div>
+                    <div class="pricing-footer-price pro-price">
+                        <div class="pricing-footer-price-value">$19.99</div>
+                        <div class="pricing-footer-price-note">one-time purchase</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-cta">
+                <a href="https://apps.apple.com/app/phonetic-formatter/idYOUR_APP_ID" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <a href="support.html" class="footer-link">Technical Support</a>
+            </div>
+            <p class="footer-copyright">&copy; 2026 Phonetic Formatter. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
