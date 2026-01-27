@@ -1,0 +1,20 @@
+# robots.txt for TransMov Website
+# https://louischen737.github.io/transmov-website/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://louischen737.github.io/transmov-website/sitemap.xml
+
+# Disallow documentation files (markdown files)
+Disallow: /*.md
+Disallow: /*.sh
+
+# Allow all HTML pages
+Allow: /*.html
+Allow: /images/
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+

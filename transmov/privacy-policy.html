@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransMov Privacy Policy</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .page-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .page-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            flex-shrink: 0;
+        }
+        
+        .page-header-text {
+            flex: 1;
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        .last-updated {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #1a1a1a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .language-switcher {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        
+        .language-switcher a {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .language-switcher a.active {
+            background: #007AFF;
+            color: white;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .page-logo {
+                width: 56px;
+                height: 56px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+            }
+            
+            .container {
+                background: #2a2a2a;
+                color: #e0e0e0;
+            }
+            
+            h1, h2 {
+                color: #ffffff;
+            }
+            
+            p, li {
+                color: #d0d0d0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <a href="#en" onclick="showLanguage('en'); return false;" id="lang-en" class="active">English</a>
+            <a href="#zh" onclick="showLanguage('zh'); return false;" id="lang-zh">中文</a>
+        </div>
+        
+        <!-- English Version -->
+        <div id="content-en">
+            <div class="page-header">
+                <img src="images/app-icon.png" alt="TransMov" class="page-logo">
+                <div class="page-header-text">
+                    <h1>Privacy Policy</h1>
+                    <p class="last-updated">Last Updated: December 19, 2025</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>1. Introduction</h2>
+                <p>TransMov ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our application. By using TransMov, you agree to the collection and use of information in accordance with this policy.</p>
+            </div>
+            
+            <div class="section">
+                <h2>2. Information We Collect</h2>
+                <p>TransMov is designed with privacy in mind. We collect minimal information:</p>
+                <ul>
+                    <li><strong>Local File Processing:</strong> All video and image processing is performed locally on your device. We do not upload, transmit, or store your files on our servers.</li>
+                    <li><strong>AI Background Removal:</strong> Our AI-powered background removal feature uses Apple's native Vision framework, which runs entirely on your device using the Apple Neural Engine. No data is sent to external servers or third-party AI services. All processing happens locally and offline.</li>
+                    <li><strong>Purchase Information:</strong> If you make in-app purchases, Apple's App Store processes the transaction. We only receive confirmation of your purchase status, not your payment details.</li>
+                    <li><strong>Usage Preferences:</strong> We store your app preferences (such as language and appearance settings) locally on your device using UserDefaults.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>3. How We Use Your Information</h2>
+                <p>The limited information we collect is used solely to:</p>
+                <ul>
+                    <li>Provide and improve our services</li>
+                    <li>Remember your preferences and settings</li>
+                    <li>Process in-app purchases through Apple's secure payment system</li>
+                </ul>
+                <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+            </div>
+            
+            <div class="section">
+                <h2>4. Third-Party Services</h2>
+                <p>TransMov uses the following third-party services:</p>
+                <ul>
+                    <li><strong>Apple App Store:</strong> For processing in-app purchases and subscriptions. All payment transactions are handled by Apple. We only receive confirmation of your purchase status, not your payment details. Apple's privacy policy applies to these transactions. Please review Apple's Privacy Policy at <a href="https://www.apple.com/privacy/" target="_blank">https://www.apple.com/privacy/</a></li>
+                </ul>
+                <p>We do not use analytics services, advertising networks, or other third-party tracking tools.</p>
+            </div>
+            
+            <div class="section">
+                <h2>5. Data Security</h2>
+                <p>We take data security seriously:</p>
+                <ul>
+                    <li><strong>Local Processing:</strong> All file processing happens on your device. Your files never leave your device unless you explicitly export them.</li>
+                    <li><strong>AI Processing on Device:</strong> Our AI background removal uses Apple's Vision framework, which processes images entirely on your device using the Apple Neural Engine. No AI models are downloaded, and no data is sent to cloud services.</li>
+                    <li><strong>No Network Transmission:</strong> TransMov does not require internet connectivity for core functionality. Your data is never transmitted over the network.</li>
+                    <li><strong>System-Level Security:</strong> TransMov follows Apple's security best practices and operates with restricted system access to protect your data.</li>
+                    <li><strong>No Data Storage:</strong> We do not maintain servers or databases that store your personal information or files.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>6. Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Access your data:</strong> All data is stored locally on your device. You can view and manage your preferences in the app settings.</li>
+                    <li><strong>Delete your data:</strong> You can delete the app at any time, which will remove all locally stored preferences. Your files remain on your device and are not affected.</li>
+                    <li><strong>Control your information:</strong> You can change your app preferences (language, appearance) at any time through the settings.</li>
+                    <li><strong>Opt-out of purchases:</strong> You can choose not to make in-app purchases. The app's core functionality is available without purchases.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us through:</p>
+                <ul>
+                    <li><strong>App Store:</strong> Leave a review or contact us through the App Store</li>
+                    <li><strong>Email:</strong> transmovfeedback@outlook.com</li>
+                </ul>
+                <p>We will respond to your inquiries as soon as possible.</p>
+            </div>
+            
+            <div class="section">
+                <h2>8. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date at the top of this policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+            </div>
+        </div>
+        
+        <!-- Chinese Version -->
+        <div id="content-zh" style="display: none;">
+            <div class="page-header">
+                <img src="images/app-icon.png" alt="TransMov" class="page-logo">
+                <div class="page-header-text">
+                    <h1>隐私政策</h1>
+                    <p class="last-updated">最后更新：2025年12月19日</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>1. 简介</h2>
+                <p>TransMov（"我们"、"我们的"或"我方"）致力于保护您的隐私。本隐私政策说明了我们在您使用我们的应用程序时如何收集、使用和保护您的信息。使用 TransMov 即表示您同意按照本政策收集和使用信息。</p>
+            </div>
+            
+            <div class="section">
+                <h2>2. 我们收集的信息</h2>
+                <p>TransMov 以隐私保护为设计理念。我们收集的信息极少：</p>
+                <ul>
+                    <li><strong>本地文件处理：</strong>所有视频和图像处理都在您的设备本地完成。我们不会将您的文件上传、传输或存储到我们的服务器上。</li>
+                    <li><strong>AI 背景抠图：</strong>我们的 AI 智能背景抠图功能使用 Apple 原生的 Vision 框架，完全在您的设备上运行，使用 Apple Neural Engine 加速。不会向外部服务器或第三方 AI 服务发送任何数据。所有处理都在本地离线完成。</li>
+                    <li><strong>购买信息：</strong>如果您进行应用内购买，Apple 的 App Store 会处理交易。我们仅接收您的购买状态确认，不会获取您的支付详情。</li>
+                    <li><strong>使用偏好：</strong>我们使用 UserDefaults 在您的设备本地存储应用偏好设置（如语言和外观设置）。</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>3. 我们如何使用您的信息</h2>
+                <p>我们收集的有限信息仅用于：</p>
+                <ul>
+                    <li>提供和改进我们的服务</li>
+                    <li>记住您的偏好和设置</li>
+                    <li>通过 Apple 的安全支付系统处理应用内购买</li>
+                </ul>
+                <p>我们不会出于营销目的向第三方出售、出租或分享您的个人信息。</p>
+            </div>
+            
+            <div class="section">
+                <h2>4. 第三方服务</h2>
+                <p>TransMov 使用以下第三方服务：</p>
+                <ul>
+                    <li><strong>Apple App Store：</strong>用于处理应用内购买和订阅。所有支付交易均由 Apple 处理。我们仅接收您的购买状态确认，不会获取您的支付详情。Apple 的隐私政策适用于这些交易。请查看 Apple 的隐私政策：<a href="https://www.apple.com/privacy/" target="_blank">https://www.apple.com/privacy/</a></li>
+                </ul>
+                <p>我们不使用分析服务、广告网络或其他第三方跟踪工具。</p>
+            </div>
+            
+            <div class="section">
+                <h2>5. 数据安全</h2>
+                <p>我们非常重视数据安全：</p>
+                <ul>
+                    <li><strong>本地处理：</strong>所有文件处理都在您的设备上进行。除非您明确导出，否则您的文件永远不会离开您的设备。</li>
+                    <li><strong>AI 处理在设备本地：</strong>我们的 AI 背景抠图使用 Apple 的 Vision 框架，完全在您的设备上使用 Apple Neural Engine 处理图像。不会下载任何 AI 模型，也不会向云服务发送数据。</li>
+                    <li><strong>无网络传输：</strong>TransMov 的核心功能不需要互联网连接。您的数据永远不会通过网络传输。</li>
+                    <li><strong>系统级安全：</strong>TransMov 遵循 Apple 的安全最佳实践，以受限的系统访问权限运行，以保护您的数据。</li>
+                    <li><strong>无数据存储：</strong>我们不维护存储您的个人信息或文件的服务器或数据库。</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>6. 您的权利</h2>
+                <p>您有权：</p>
+                <ul>
+                    <li><strong>访问您的数据：</strong>所有数据都存储在您的设备本地。您可以在应用设置中查看和管理您的偏好。</li>
+                    <li><strong>删除您的数据：</strong>您可以随时删除应用，这将删除所有本地存储的偏好设置。您的文件仍保留在您的设备上，不会受到影响。</li>
+                    <li><strong>控制您的信息：</strong>您可以随时通过设置更改应用偏好（语言、外观）。</li>
+                    <li><strong>选择不购买：</strong>您可以选择不进行应用内购买。应用的核心功能无需购买即可使用。</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>7. 联系我们</h2>
+                <p>如果您对本隐私政策或我们的数据做法有任何问题或疑虑，请通过以下方式联系我们：</p>
+                <ul>
+                    <li><strong>App Store：</strong>在 App Store 中留下评论或通过 App Store 联系我们</li>
+                    <li><strong>电子邮件：</strong>transmovfeedback@outlook.com</li>
+                </ul>
+                <p>我们将尽快回复您的询问。</p>
+            </div>
+            
+            <div class="section">
+                <h2>8. 政策变更</h2>
+                <p>我们可能会不时更新本隐私政策。我们将通过更新本政策顶部的"最后更新"日期来通知您任何变更。建议您定期查看本隐私政策以了解任何变更。本隐私政策的变更在发布到本页面时生效。</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showLanguage(lang) {
+            // Hide all content
+            document.getElementById('content-en').style.display = 'none';
+            document.getElementById('content-zh').style.display = 'none';
+            
+            // Remove active class from all language links
+            document.getElementById('lang-en').classList.remove('active');
+            document.getElementById('lang-zh').classList.remove('active');
+            
+            // Show selected language content
+            if (lang === 'en') {
+                document.getElementById('content-en').style.display = 'block';
+                document.getElementById('lang-en').classList.add('active');
+            } else {
+                document.getElementById('content-zh').style.display = 'block';
+                document.getElementById('lang-zh').classList.add('active');
+            }
+        }
+        
+        // Detect browser language and set initial language
+        window.onload = function() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('zh')) {
+                showLanguage('zh');
+            } else {
+                showLanguage('en');
+            }
+        };
+    </script>
+</body>
+</html>
