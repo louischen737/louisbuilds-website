@@ -77,6 +77,16 @@ body {
 .product-info h2 {
     font-size: 36px;
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.product-info h2 .app-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    object-fit: cover;
 }
 .product-info p {
     color: var(--text-secondary);
@@ -207,7 +217,10 @@ footer p {
 <!-- TapPause -->
 <div class="product">
     <div class="product-info">
-        <h2>TapPause</h2>
+        <h2>
+            <img src="tappause/icon.png" alt="TapPause icon" class="app-icon">
+            TapPause
+        </h2>
         <p>A simple space to stop, pause, and breathe.</p>
         <div class="tags">iOS · Mindfulness · Focus</div>
         <div class="buttons">
@@ -228,7 +241,10 @@ footer p {
 <!-- PurrrrrFocus -->
 <div class="product">
     <div class="product-info">
-        <h2>PurrrrrFocus</h2>
+        <h2>
+            <img src="purrrrrfocus/icon.png" alt="PurrrrrFocus icon" class="app-icon">
+            PurrrrrFocus
+        </h2>
         <p>Deep focus timers with progress tracking and your cat companion.</p>
         <div class="tags">iOS · Pomodoro · Productivity · Cats</div>
         <div class="buttons">
@@ -249,7 +265,10 @@ footer p {
 <!-- TransMov -->
 <div class="product">
     <div class="product-info">
-        <h2>TransMov</h2>
+        <h2>
+            <img src="transmov/icon.png" alt="TransMov icon" class="app-icon">
+            TransMov
+        </h2>
         <p>Transform videos into animations with AI-powered background removal — all local.</p>
         <div class="tags">macOS · Video · Animation · AI · Privacy</div>
         <div class="buttons">
@@ -270,7 +289,10 @@ footer p {
 <!-- Phonetic Formatter -->
 <div class="product">
     <div class="product-info">
-        <h2>Phonetic Formatter</h2>
+        <h2>
+            <img src="phoneticformatter/icon.png" alt="Phonetic Formatter icon" class="app-icon">
+            Phonetic Formatter
+        </h2>
         <p>Clean, line-by-line IPA transcription — fast and offline.</p>
         <div class="tags">iOS · IPA · English · Offline</div>
         <div class="buttons">
