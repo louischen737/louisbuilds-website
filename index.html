@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Builds</title>
+    <title>Apps by Louis</title>
     <style>
         * {
             margin: 0;
@@ -15,10 +15,11 @@
             --bg-color: #1C1C1E;
             --text-primary: #FFFFFF;
             --text-secondary: #E5E5EA;
+            --accent-color: #FFFFFF;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Rounded', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
@@ -26,50 +27,192 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: clamp(36px, 6vw, 48px);
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
 
-        p {
-            font-size: 18px;
+        p.subtitle {
+            font-size: clamp(16px, 3vw, 20px);
             color: var(--text-secondary);
-            margin-bottom: 32px;
+            margin-bottom: 48px;
         }
 
         .products {
-            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            width: 100%;
+            max-width: 1000px;
         }
 
-        .products a {
+        .product-card {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product-info {
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .product-info h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .product-info a {
             display: inline-block;
             padding: 12px 24px;
-            background-color: var(--text-primary);
+            background-color: var(--accent-color);
             color: var(--bg-color);
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 500;
-            margin: 8px;
-            transition: opacity 0.2s;
+            font-size: 16px;
+            transition: opacity 0.2s, transform 0.2s;
         }
 
-        .products a:hover {
+        .product-info a:hover {
             opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .product-screenshot img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 40px 20px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 80px;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .footer a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 16px;
+            }
+
+            h1 {
+                font-size: clamp(28px, 8vw, 36px);
+            }
+
+            p.subtitle {
+                font-size: clamp(14px, 4vw, 18px);
+                margin-bottom: 32px;
+            }
+
+            .product-card {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .product-screenshot img {
+                max-width: 90%;
+            }
+
+            .product-info h2 {
+                font-size: 20px;
+            }
+
+            .product-info p {
+                font-size: 15px;
+            }
+
+            .product-info a {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Louis Builds</h1>
-    <p>Building quiet, intentional apps.</p>
-    
+    <h1>Apps by Louis</h1>
+    <p class="subtitle">Independent apps, thoughtfully built.</p>
+
     <div class="products">
-        <a href="tappause/">TapPause</a>
+        <!-- TapPause -->
+        <div class="product-card">
+            <div class="product-info">
+                <h2>TapPause</h2>
+                <p>A quiet, distraction-free timer to step away from momentum and take intentional pauses.</p>
+                <a href="tappause/">Learn More / Download</a>
+            </div>
+            <div class="product-screenshot">
+                <img src="tappause/screenshot.png" alt="TapPause screenshot">
+            </div>
+        </div>
+
+        <!-- PurrrrrFocus -->
+        <div class="product-card">
+            <div class="product-info">
+                <h2>PurrrrrFocus</h2>
+                <p>A cat-themed Pomodoro timer for focused work with relaxing visuals and sounds.</p>
+                <a href="purrrrrfocus/">Learn More / Download</a>
+            </div>
+            <div class="product-screenshot">
+                <img src="purrrrrfocus/screenshot.png" alt="PurrrrrFocus screenshot">
+            </div>
+        </div>
+
+        <!-- TransMov -->
+        <div class="product-card">
+            <div class="product-info">
+                <h2>TransMov</h2>
+                <p>Convert videos to animated formats like APNG, GIF, or WebP, and extract moving backgrounds effortlessly.</p>
+                <a href="transmov/">Learn More / Download</a>
+            </div>
+            <div class="product-screenshot">
+                <img src="transmov/screenshot.png" alt="TransMov screenshot">
+            </div>
+        </div>
+
+        <!-- Phonetic Formatter -->
+        <div class="product-card">
+            <div class="product-info">
+                <h2>Phonetic Formatter</h2>
+                <p>Automatically converts English text to line-by-line IPA phonetic notation for easier pronunciation learning.</p>
+                <a href="phonetic-formatter/">Learn More / Download</a>
+            </div>
+            <div class="product-screenshot">
+                <img src="phonetic-formatter/screenshot.png" alt="Phonetic Formatter screenshot">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 Louis<br>
+        <a href="mailto:support@louisbuilds.me">Support</a>
     </div>
 </body>
 </html>
