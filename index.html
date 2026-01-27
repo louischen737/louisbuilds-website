@@ -72,7 +72,7 @@
         .product-info h2 { font-size: clamp(28px, 5vw, 36px); margin-bottom: 12px; }
         .product-info p { font-size: clamp(16px, 2.5vw, 18px); color: var(--text-secondary); margin-bottom: 16px; }
         .product-info .tags { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
-        .product-info .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .product-info .buttons { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
         .product-info .buttons a {
             padding: 12px 24px;
             background-color: var(--accent-color);
@@ -83,6 +83,17 @@
             display: inline-block;
         }
         .product-info .buttons a:hover { opacity: 0.9; }
+        .product-info .buttons a.app-store-badge {
+            padding: 0;
+            background: none;
+            display: inline-block;
+        }
+        .product-info .buttons a.app-store-badge img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+        .product-info .buttons a.app-store-badge:hover { opacity: 0.8; }
         .product-screenshot { flex: 1; min-width: 280px; }
         .product-screenshot img {
             width: 100%;
@@ -131,7 +142,9 @@
                 <div class="tags">iOS • Mindfulness • Focus</div>
                 <div class="buttons">
                     <a href="tappause/">Learn More</a>
-                    <a href="https://apps.apple.com/app/tappause" target="_blank">App Store</a>
+                    <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                        <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+                    </a>
                 </div>
             </div>
             <div class="product-screenshot">
@@ -147,7 +160,9 @@
                 <div class="tags">iOS • Productivity • Cat Theme</div>
                 <div class="buttons">
                     <a href="purrrrrfocus/">Learn More</a>
-                    <a href="https://apps.apple.com/app/purrrrrfocus" target="_blank">App Store</a>
+                    <a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                        <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+                    </a>
                 </div>
             </div>
             <div class="product-screenshot">
@@ -163,7 +178,9 @@
                 <div class="tags">MacOS • Video • Media Conversion</div>
                 <div class="buttons">
                     <a href="transmov/">Learn More</a>
-                    <a href="https://apps.apple.com/app/transmov" target="_blank">Mac App Store</a>
+                    <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                        <img src="assets/mac-app-store-badge.svg" alt="Download on the Mac App Store">
+                    </a>
                 </div>
             </div>
             <div class="product-screenshot">
@@ -179,7 +196,9 @@
                 <div class="tags">iOS • Language • Pronunciation</div>
                 <div class="buttons">
                     <a href="phoneticformatter/">Learn More</a>
-                    <a href="https://apps.apple.com/app/phoneticformatter" target="_blank">App Store</a>
+                    <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                        <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+                    </a>
                 </div>
             </div>
             <div class="product-screenshot">
