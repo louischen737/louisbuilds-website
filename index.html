@@ -39,12 +39,12 @@
         .hero h1 {
             font-size: clamp(48px, 8vw, 64px);
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
         }
         .hero p {
             font-size: clamp(18px, 3vw, 22px);
             color: var(--text-secondary);
-            margin-bottom: 32px;
+            margin-bottom: 48px;
         }
         .hero .hero-btn {
             padding: 16px 36px;
@@ -74,19 +74,24 @@
         .product-info .tags { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
         .product-info .buttons { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
         .product-info .buttons a {
-            padding: 12px 24px;
+            padding: 10px 24px;
             background-color: var(--accent-color);
             color: var(--bg-color);
             border-radius: var(--btn-radius);
             font-weight: 500;
+            font-size: 16px;
             transition: opacity 0.2s, transform 0.2s;
             display: inline-block;
+            height: 40px;
+            line-height: 20px;
+            box-sizing: border-box;
         }
         .product-info .buttons a:hover { opacity: 0.9; }
         .product-info .buttons a.app-store-badge {
             padding: 0;
             background: none;
             display: inline-block;
+            height: 40px;
         }
         .product-info .buttons a.app-store-badge img {
             height: 40px;
@@ -179,7 +184,7 @@
                 <div class="buttons">
                     <a href="transmov/">Learn More</a>
                     <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge">
-                        <img src="assets/mac-app-store-badge.svg" alt="Download on the Mac App Store">
+                        <img src="assets/app-store-badge.svg" alt="Download on the Mac App Store">
                     </a>
                 </div>
             </div>
