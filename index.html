@@ -91,6 +91,7 @@ body {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    align-items: center;
 }
 .product-info .buttons a {
     padding: 10px 24px;
@@ -98,9 +99,29 @@ body {
     color: #000;
     border-radius: var(--btn-radius);
     font-weight: 500;
-}
-.product-info .buttons img {
+    font-size: 16px;
     height: 40px;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.product-info .buttons a:hover {
+    opacity: 0.9;
+}
+.product-info .buttons a.app-store-badge {
+    padding: 0;
+    background: none;
+    height: 40px;
+}
+.product-info .buttons a.app-store-badge img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+.product-info .buttons a.app-store-badge:hover {
+    opacity: 0.8;
 }
 
 /* Screenshots - shared */
@@ -189,6 +210,12 @@ footer p {
         <h2>TapPause</h2>
         <p>A simple space to stop, pause, and breathe.</p>
         <div class="tags">iOS · Mindfulness · Focus</div>
+        <div class="buttons">
+            <a href="tappause/">Learn More</a>
+            <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+        </div>
     </div>
     <div class="product-screenshot ios">
         <img src="tappause/screenshot1.png">
@@ -204,6 +231,12 @@ footer p {
         <h2>PurrrrrFocus</h2>
         <p>Deep focus timers with progress tracking and your cat companion.</p>
         <div class="tags">iOS · Pomodoro · Productivity · Cats</div>
+        <div class="buttons">
+            <a href="purrrrrfocus/">Learn More</a>
+            <a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+        </div>
     </div>
     <div class="product-screenshot ios">
         <img src="purrrrrfocus/screenshot1.png">
@@ -219,6 +252,12 @@ footer p {
         <h2>TransMov</h2>
         <p>Transform videos into animations with AI-powered background removal — all local.</p>
         <div class="tags">macOS · Video · Animation · AI · Privacy</div>
+        <div class="buttons">
+            <a href="transmov/">Learn More</a>
+            <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the Mac App Store">
+            </a>
+        </div>
     </div>
     <div class="product-screenshot macos">
         <img src="transmov/screenshot1.png">
@@ -234,6 +273,12 @@ footer p {
         <h2>Phonetic Formatter</h2>
         <p>Clean, line-by-line IPA transcription — fast and offline.</p>
         <div class="tags">iOS · IPA · English · Offline</div>
+        <div class="buttons">
+            <a href="phoneticformatter/">Learn More</a>
+            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+        </div>
     </div>
     <div class="product-screenshot ios">
         <img src="phoneticformatter/screenshot1.png">
