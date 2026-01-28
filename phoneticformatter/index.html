@@ -285,26 +285,28 @@
         .hero-image {
             max-width: 100%;
             margin-top: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            background: white;
-            padding: 2rem;
+            background: transparent;
         }
         
         .hero-image img {
             width: 100%;
             height: auto;
-            border-radius: 12px;
             display: block;
+            background: transparent;
         }
         
         .hero-screenshot {
             width: 100%;
-            max-width: 420px;
+            max-width: 280px;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             display: block;
             margin: 2rem auto 0 auto;
+            transition: transform 0.3s ease;
+            background: transparent;
+        }
+        
+        .hero-screenshot:hover {
+            transform: scale(1.08);
         }
         
         .feature-detail-link {
@@ -318,10 +320,16 @@
         
         .feature-screenshot {
             width: 100%;
+            max-width: 200px;
             height: auto;
             border-radius: 16px;
-            margin-top: 1.5rem;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            margin: 1.5rem auto 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-screenshot:hover {
+            transform: scale(1.1);
         }
         
         .app-store-badge {
@@ -854,16 +862,13 @@
                 justify-content: center;
             }
             
-            .hero-image {
-                padding: 1rem;
-            }
             
             .app-store-badge {
                 height: 50px;
             }
             
             .hero-screenshot {
-                max-width: 320px;
+                max-width: 240px;
             }
             
             .feature-grid {
