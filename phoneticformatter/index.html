@@ -214,6 +214,23 @@
             z-index: 1;
         }
         
+        .hero-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .hero-left {
+            order: 1;
+        }
+        
+        .hero-right {
+            order: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
@@ -307,6 +324,64 @@
         
         .hero-screenshot:hover {
             transform: scale(1.08);
+        }
+        
+        @media (min-width: 769px) {
+            .hero-inner {
+                flex-direction: row;
+                align-items: center;
+                gap: 3rem;
+                text-align: left;
+            }
+            
+            .hero-left {
+                flex: 1;
+                min-width: 0;
+            }
+            
+            .hero-right {
+                flex: 0 0 auto;
+                align-items: center;
+            }
+            
+            .hero-right .hero-image {
+                margin-top: 0;
+            }
+            
+            .hero h1 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .hero h2 {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .hero-buttons {
+                justify-content: flex-start;
+            }
+            
+            .hero-screenshot {
+                margin-top: 0;
+            }
+        }
+        
+        .cmu-credit {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            text-align: center;
+        }
+        
+        .cmu-credit a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        
+        .cmu-credit a:hover {
+            color: #ffd700;
         }
         
         .feature-detail-link {
@@ -609,6 +684,10 @@
             font-size: 1.5rem;
             font-weight: 600;
             vertical-align: top;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
         }
         
         .pricing-table th:first-child {
@@ -674,6 +753,10 @@
             padding: 1.25rem 2rem;
             text-align: center;
             font-size: 1rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
         }
         
         .pricing-table td:first-child {
@@ -979,7 +1062,8 @@
             
             .pricing-table td.free-col,
             .pricing-table td.pro-col {
-                white-space: nowrap;
+                white-space: normal;
+                min-width: 90px;
             }
             
             footer {
@@ -1031,21 +1115,31 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Instantly Convert English Text to<br>Phonetic Transcription</h1>
-            <h2>Perfect for teachers, students, and language enthusiasts.</h2>
-            <div class="hero-buttons">
-                <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="app-store-badge" target="_blank" rel="noopener noreferrer">
-                    <img src="app-store-badge.svg" alt="Download on the App Store" />
-                </a>
-                <a href="#features" class="btn-secondary">
-                    Learn More
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 14l-5-5h10l-5 5z"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="hero-image">
-                <img src="hero-feature.png" alt="App Interface Screenshot" class="hero-screenshot" onerror="this.style.display='none';">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <h1>Instantly Convert English Text to<br>Phonetic Transcription</h1>
+                    <h2>Perfect for teachers, students, and language enthusiasts.</h2>
+                    <div class="hero-buttons">
+                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                            <img src="app-store-badge.svg" alt="Download on the App Store" />
+                        </a>
+                        <a href="#features" class="btn-secondary">
+                            Learn More
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10 14l-5-5h10l-5 5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-image">
+                        <img src="hero-feature.png" alt="App Interface Screenshot" class="hero-screenshot" onerror="this.style.display='none';">
+                    </div>
+                    <div class="cmu-credit">
+                        Powered by
+                        <a href="https://www.speech.cs.cmu.edu/cgi-bin/cmudict" target="_blank" rel="noopener noreferrer">CMU Pronouncing Dictionary</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
