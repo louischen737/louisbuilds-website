@@ -1,75 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Builds</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Louis Builds — Independent Apps for Focus & Mindfulness</title>
 
-        :root {
-            --bg-color: #1C1C1E;
-            --text-primary: #FFFFFF;
-            --text-secondary: #E5E5EA;
-        }
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 60px 24px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+:root {
+    --bg-color: #1C1C1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E5E5EA;
+    --text-muted: #8E8E93;
+    --btn-radius: 12px;
+}
 
-        h1 {
-            font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
 
-        p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+}
+.hero h1 {
+    font-size: clamp(48px, 8vw, 64px);
+    margin-bottom: 24px;
+}
+.hero p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+}
+.hero a {
+    padding: 16px 36px;
+    background: #fff;
+    color: #000;
+    border-radius: var(--btn-radius);
+    font-weight: 500;
+}
 
-        .products {
-            margin-top: 40px;
-        }
+/* Products */
+.products {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
 
-        .products a {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--text-primary);
-            color: var(--bg-color);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            margin: 8px;
-            transition: opacity 0.2s;
-        }
+.product {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.product:nth-child(even) {
+    flex-direction: row-reverse;
+}
 
-        .products a:hover {
-            opacity: 0.9;
-        }
-    </style>
+.product-info {
+    flex: 1;
+    min-width: 280px;
+}
+.product-info h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.product-info h2 .app-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.product-info p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+.product-info .tags {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+.product-info .buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.product-info .buttons a {
+    padding: 10px 24px;
+    background: #fff;
+    color: #000;
+    border-radius: var(--btn-radius);
+    font-weight: 500;
+    font-size: 16px;
+    height: 40px;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.product-info .buttons a:hover {
+    opacity: 0.9;
+}
+.product-info .buttons a.app-store-badge {
+    padding: 0;
+    background: none;
+    height: 40px;
+}
+.product-info .buttons a.app-store-badge img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+.product-info .buttons a.app-store-badge:hover {
+    opacity: 0.8;
+}
+
+/* Screenshots - shared */
+.product-screenshot {
+    flex: 1;
+    display: grid;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* iOS screenshots */
+.product-screenshot.ios {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 520px;
+}
+.product-screenshot.ios img {
+    width: 100%;
+    aspect-ratio: 9 / 19.5;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+
+/* macOS screenshots */
+.product-screenshot.macos {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
+}
+.product-screenshot.macos img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+        text-align: center;
+    }
+    .product:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .product-screenshot.ios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-screenshot.macos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 48px 24px;
+    text-align: center;
+}
+footer a {
+    color: var(--text-secondary);
+    margin: 0 12px;
+}
+footer p {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+</style>
 </head>
+
 <body>
+
+<section class="hero">
     <h1>Louis Builds</h1>
-    <p>Building quiet, intentional apps.</p>
-    
-    <div class="products">
-        <a href="tappause/">TapPause</a>
+    <p>Quiet, focused, and mindful apps — built with care.</p>
+    <a href="#products">Explore Apps</a>
+</section>
+
+<section class="products" id="products">
+
+<!-- TapPause -->
+<div class="product">
+    <div class="product-info">
+        <h2>
+            <img src="tappause/icon.png" alt="TapPause icon" class="app-icon">
+            TapPause
+        </h2>
+        <p>A simple space to stop, pause, and breathe.</p>
+        <div class="tags">iOS · Mindfulness · Focus</div>
+        <div class="buttons">
+            <a href="tappause/">Learn More</a>
+            <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+        </div>
     </div>
+    <div class="product-screenshot ios">
+        <img src="tappause/screenshot1.png">
+        <img src="tappause/screenshot2.png">
+        <img src="tappause/screenshot3.png">
+        <img src="tappause/screenshot4.png">
+    </div>
+</div>
+
+<!-- PurrrrrFocus -->
+<div class="product">
+    <div class="product-info">
+        <h2>
+            <img src="purrrrrfocus/icon.png" alt="PurrrrrFocus icon" class="app-icon">
+            PurrrrrFocus
+        </h2>
+        <p>Deep focus timers with progress tracking and your cat companion.</p>
+        <div class="tags">iOS · Pomodoro · Productivity · Cats</div>
+        <div class="buttons">
+            <a href="purrrrrfocus/">Learn More</a>
+            <a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+        </div>
+    </div>
+    <div class="product-screenshot ios">
+        <img src="purrrrrfocus/screenshot1.png">
+        <img src="purrrrrfocus/screenshot2.png">
+        <img src="purrrrrfocus/screenshot3.png">
+        <img src="purrrrrfocus/screenshot4.png">
+    </div>
+</div>
+
+<!-- TransMov -->
+<div class="product">
+    <div class="product-info">
+        <h2>
+            <img src="transmov/icon.png" alt="TransMov icon" class="app-icon">
+            TransMov
+        </h2>
+        <p>Transform videos into animations with AI-powered background removal — all local.</p>
+        <div class="tags">macOS · Video · Animation · AI · Privacy</div>
+        <div class="buttons">
+            <a href="transmov/">Learn More</a>
+            <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the Mac App Store">
+            </a>
+        </div>
+    </div>
+    <div class="product-screenshot macos">
+        <img src="transmov/screenshot1.png">
+        <img src="transmov/screenshot2.png">
+        <img src="transmov/screenshot3.png">
+        <img src="transmov/screenshot4.png">
+    </div>
+</div>
+
+<!-- Phonetic Formatter -->
+<div class="product">
+    <div class="product-info">
+        <h2>
+            <img src="phoneticformatter/icon.png" alt="Phonetic Formatter icon" class="app-icon">
+            Phonetic Formatter
+        </h2>
+        <p>Clean, line-by-line IPA transcription — fast and offline.</p>
+        <div class="tags">iOS · IPA · English · Offline</div>
+        <div class="buttons">
+            <a href="phoneticformatter/">Learn More</a>
+            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+            </a>
+        </div>
+    </div>
+    <div class="product-screenshot ios">
+        <img src="phoneticformatter/screenshot1.png">
+        <img src="phoneticformatter/screenshot2.png">
+        <img src="phoneticformatter/screenshot3.png">
+        <img src="phoneticformatter/screenshot4.png">
+    </div>
+</div>
+
+</section>
+
+<footer>
+    <div>
+        <a href="mailto:support@louisbuilds.me">Contact</a>
+        <a href="https://github.com/louischen737" target="_blank">GitHub</a>
+    </div>
+    <p>Independent apps, thoughtfully built.</p>
+</footer>
+
 </body>
 </html>

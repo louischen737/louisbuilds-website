@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TapPause — A quiet space to stop for a moment</title>
     <meta name="description" content="No tasks. No tracking. No goals. Just a pause.">
+
     <style>
         * {
             margin: 0;
@@ -17,10 +18,11 @@
             --text-primary: #FFFFFF;
             --text-secondary: #E5E5EA;
             --text-muted: #8E8E93;
+            --divider-light: rgba(255, 255, 255, 0.06);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Rounded', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
@@ -28,7 +30,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -36,105 +38,83 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 24px;
+            padding: 80px 24px 120px;
         }
 
         .hero h1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Rounded', sans-serif;
             font-size: clamp(36px, 8vw, 64px);
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: 16px;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Rounded', sans-serif;
         }
 
         .hero .subtitle {
             font-size: clamp(17px, 3vw, 21px);
-            font-weight: 400;
             color: var(--text-secondary);
-            margin-top: 8px;
         }
 
         /* Core Message */
         .core-message {
-            padding: 80px 24px;
+            padding: 100px 24px;
             text-align: center;
-            max-width: 600px;
+            max-width: 640px;
             margin: 0 auto;
         }
 
         .core-message p {
             font-size: clamp(24px, 4vw, 32px);
-            font-weight: 400;
-            line-height: 1.8;
-            color: var(--text-primary);
-        }
-
-        .core-message p br {
-            display: block;
-            margin: 8px 0;
+            line-height: 2;
         }
 
         /* Visual Focus */
         .visual-focus {
-            padding: 80px 24px;
+            padding: 120px 24px;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .visual-focus img {
-            max-width: 400px;
+            max-width: 420px;
             width: 100%;
-            height: auto;
-            display: block;
         }
 
         /* How It Works */
         .how-it-works {
-            padding: 80px 24px;
+            padding: 100px 24px;
             text-align: center;
-            max-width: 500px;
+            max-width: 520px;
             margin: 0 auto;
         }
 
         .how-it-works p {
             font-size: clamp(18px, 3vw, 21px);
-            font-weight: 400;
-            line-height: 2;
+            line-height: 2.2;
             color: var(--text-secondary);
-        }
-
-        .how-it-works p br {
-            display: block;
-            margin: 4px 0;
         }
 
         /* Features */
         .features {
-            padding: 80px 24px;
-            max-width: 500px;
+            padding: 100px 24px;
+            max-width: 520px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .features h2 {
             font-size: clamp(20px, 3vw, 24px);
             font-weight: 500;
             margin-bottom: 32px;
-            text-align: center;
-            color: var(--text-primary);
         }
 
         .features ul {
             list-style: none;
-            padding: 0;
         }
 
         .features li {
             font-size: clamp(16px, 2.5vw, 18px);
             line-height: 2;
             color: var(--text-secondary);
-            padding: 8px 0;
-            text-align: center;
         }
 
         .features li::before {
@@ -145,36 +125,36 @@
 
         /* CTA */
         .cta {
-            padding: 80px 24px;
+            padding: 100px 24px;
             text-align: center;
+            border-top: 1px solid var(--divider-light);
         }
 
         .cta a {
             display: inline-block;
-            padding: 16px 32px;
-            background-color: var(--text-primary);
-            color: var(--bg-color);
             text-decoration: none;
-            font-size: 17px;
-            font-weight: 500;
-            border-radius: 12px;
-            transition: opacity 0.2s;
         }
 
-        .cta a:hover {
-            opacity: 0.9;
+        .cta a.app-store-badge {
+            padding: 0;
+            background: none;
+        }
+
+        .cta a.app-store-badge img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .cta a.app-store-badge:hover {
+            opacity: 0.8;
         }
 
         /* Footer */
         .footer {
             padding: 60px 24px 40px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 80px;
-        }
-
-        .footer-links {
-            margin-bottom: 24px;
+            border-top: 1px solid var(--divider-light);
         }
 
         .footer-links a {
@@ -182,11 +162,6 @@
             text-decoration: none;
             font-size: 15px;
             margin: 0 16px;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--text-primary);
         }
 
         .footer-copyright {
@@ -194,62 +169,37 @@
             color: var(--text-muted);
             margin-top: 16px;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 40px 20px;
-            }
-
-            .core-message,
-            .visual-focus,
-            .how-it-works,
-            .features {
-                padding: 60px 20px;
-            }
-
-            .footer-links a {
-                display: block;
-                margin: 12px 0;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
     <section class="hero">
         <h1>TapPause</h1>
         <p class="subtitle">A quiet space to stop for a moment.</p>
     </section>
 
-    <!-- Core Message -->
     <section class="core-message">
         <p>
             No tasks.<br>
             No tracking.<br>
-            No goals.<br>
-            <br>
+            No goals.<br><br>
             Just a pause.
         </p>
     </section>
 
-    <!-- Visual Focus -->
     <section class="visual-focus">
-        <img src="pause-symbol.png" alt="TapPause pause symbol" />
+        <img src="pause-symbol.png" alt="TapPause pause symbol">
     </section>
 
-    <!-- How It Works -->
     <section class="how-it-works">
         <p>
             Tap the button.<br>
             Let the time pass.<br>
-            You don't have to do anything.
+            You don’t have to do anything.
         </p>
     </section>
 
-    <!-- Features -->
     <section class="features">
-        <h2>What's included</h2>
+        <h2>What’s included</h2>
         <ul>
             <li>A single pause button</li>
             <li>Custom pause duration</li>
@@ -259,14 +209,12 @@
         </ul>
     </section>
 
-    <!-- CTA -->
     <section class="cta">
-        <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer">
-            Download on the App Store
+        <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+            <img src="../assets/app-store-badge.svg" alt="Download on the App Store">
         </a>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
             <a href="privacy-policy.html">Privacy Policy</a>
@@ -274,7 +222,8 @@
             <a href="support.html">Support</a>
         </div>
         <div class="footer-copyright">
-            © TapPause
+            <p>© 2026 TapPause</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" style="color: var(--text-muted); text-decoration: none;">louisbuilds.me</a></p>
         </div>
     </footer>
 </body>

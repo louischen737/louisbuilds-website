@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Support & FAQ - Phonetic Formatter | Help Center</title>
+    <meta name="title" content="Support & FAQ - Phonetic Formatter">
+    <meta name="description" content="Get help with Phonetic Formatter. Find answers to frequently asked questions, troubleshooting guides, and contact information.">
+    <meta name="keywords" content="phonetic formatter support, IPA converter help, phonetic transcription FAQ, app support">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/support.html">
+    <meta property="og:title" content="Support & FAQ - Phonetic Formatter">
+    <meta property="og:description" content="Get help with Phonetic Formatter. Find answers to frequently asked questions and troubleshooting guides.">
+    <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://louisbuilds.me/phoneticformatter/support.html">
+    <meta property="twitter:title" content="Support & FAQ - Phonetic Formatter">
+    <meta property="twitter:description" content="Get help with Phonetic Formatter. Find answers to frequently asked questions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/support.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: white;
+            color: #333;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            max-width: 1200px;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+        
+        .header-content > a {
+            flex-shrink: 0;
+            margin-right: 2.5rem;
+        }
+        
+        nav {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-cta {
+            flex-shrink: 0;
+            display: none;
+        }
+        
+        @media (min-width: 769px) {
+            .header-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.6rem 1.5rem;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.95rem;
+                border-radius: 50px;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            
+            .header-cta:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            }
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 2.5rem;
+            margin: 0;
+        }
+        
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-section h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .hero-section .subtitle {
+            font-size: 1.2rem;
+            color: white;
+            opacity: 0.95;
+            margin: 0;
+        }
+        
+        .anchor-nav {
+            background: white;
+            padding: 1rem 0;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .anchor-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 0;
+            padding: 0 1rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        
+        .anchor-nav ul::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .anchor-nav a {
+            white-space: nowrap;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.75rem;
+        }
+        
+        .anchor-nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .anchor-nav a:hover {
+            background: #f0f0f0;
+            color: #764ba2;
+        }
+        
+        .content {
+            background: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            scroll-margin-top: 100px;
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h3 {
+            color: #444;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        h3:hover {
+            background: #f0f0f0;
+        }
+        
+        h3 .toggle-icon {
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        h3.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 0 1rem 1rem;
+            color: #444;
+            line-height: 1.8;
+        }
+        
+        .faq-answer.expanded {
+            display: block;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #444;
+            line-height: 1.8;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: #444;
+            line-height: 1.8;
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .pro-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        .pro-feature {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .contact-box {
+            background: #f0f7ff;
+            border-left: 4px solid #667eea;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .contact-box a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-button:link,
+        .contact-button:visited,
+        .contact-button:hover,
+        .contact-button:active {
+            color: white !important;
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .format-note {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        
+        footer {
+            background: #2a2a2a;
+            color: rgba(255,255,255,0.9);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        footer p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            
+            .header-content > a {
+                order: 1;
+                margin-right: 0;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                flex: 1 1 100%;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .header-cta {
+                order: 2;
+                margin-left: auto;
+            }
+            
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-section .subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .anchor-nav {
+                position: relative;
+            }
+            
+            .anchor-nav {
+                margin: 1.5rem 0;
+            }
+            
+            .anchor-nav ul {
+                justify-content: flex-start;
+                gap: 0.5rem;
+                padding: 0.75rem 1rem;
+            }
+            
+            .anchor-nav a {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.75rem;
+            }
+            
+            .content {
+                padding: 2rem 1.5rem;
+                margin: 1.5rem 0;
+            }
+            
+            h2 {
+                margin-top: 2rem;
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.1rem;
+                padding: 0.75rem;
+            }
+            
+            ul, ol {
+                margin-left: 1.5rem;
+                padding-right: 0.5rem;
+            }
+            
+            .contact-box {
+                padding: 1.5rem;
+            }
+            
+            .contact-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html"><img src="logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none';"></a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+                <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="header-cta" target="_blank" rel="noopener noreferrer">
+                    Get App
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1>Support</h1>
+            <p class="subtitle">Get help, troubleshoot issues, and contact us quickly</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <nav class="anchor-nav">
+            <ul>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#exporting">Exporting Results</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="getting-started" class="section">
+            <h2>Getting Started</h2>
+            <p>Phonetic Formatter is designed to be simple and intuitive. Here's how to get started:</p>
+            
+            <h3>Basic Usage</h3>
+            <ol>
+                <li>Open the app and you'll see a text input area</li>
+                <li>Paste or type your English text into the input field</li>
+                <li>Tap the "Generate" button to convert your text to phonetic transcription</li>
+                <li>The results will appear below, showing the original text and phonetic transcription line by line</li>
+                <li>Use the "Copy" button to copy the results to your clipboard</li>
+            </ol>
+            <p><strong>Note:</strong> Free users can convert up to 400 words per conversion and have 1 generation per day. Pro users have unlimited daily generations and can convert up to 6,000 words per conversion.</p>
+            
+            </section>
+            
+            <section id="exporting" class="section">
+            <h2>Exporting Results</h2>
+            <p>Pro users can export their results in multiple formats:</p>
+            <ul>
+                <li><strong>TXT:</strong> Plain text format, perfect for simple documents</li>
+                <li><strong>DOCX:</strong> Microsoft Word format, ideal for lesson plans and documents</li>
+                <li><strong>PDF:</strong> Portable document format, great for sharing and printing</li>
+            </ul>
+            <p>To export, tap the "Export" button and choose your preferred format from the share sheet.</p>
+            <div class="format-note">
+                <strong>Note:</strong> Available formats may vary depending on your device and installed apps.
+            </div>
+            </section>
+            
+            <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <h3 onclick="toggleFAQ(this)">What is the difference between Free and Pro?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">The Free version allows you to convert up to 400 words per conversion and provides 1 generation per day. The Pro version removes these limits and adds export functionality.</div>
+            
+            <h3 onclick="toggleFAQ(this)">How do I upgrade to Pro?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">You can upgrade to Pro from within the app. Go to Settings and tap "Upgrade to Pro" to purchase the one-time Pro license.</div>
+            
+            <h3 onclick="toggleFAQ(this)">Can I restore my Pro purchase on another device?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">Yes! Use the "Restore Purchase" option in Settings. Make sure you're signed in with the same Apple ID on both devices.</div>
+            
+            <h3 onclick="toggleFAQ(this)">Does the app work offline?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">Yes! All processing happens locally on your device using the bundled CMU Pronouncing Dictionary. No internet connection is required for text conversion.</div>
+            
+            <h3 onclick="toggleFAQ(this)">Is my data stored or sent anywhere?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">No. All processing is done locally on your device. Your text never leaves your device, and we don't collect any data. See our <a href="privacy.html">Privacy Policy</a> for more details.</div>
+            
+            <h3 onclick="toggleFAQ(this)">What dictionary does the app use?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">Phonetic Formatter uses the CMU Pronouncing Dictionary, which is bundled with the app. This ensures accurate phonetic transcriptions and offline functionality.</div>
+            
+            <h3 onclick="toggleFAQ(this)">Can I change between British and American pronunciation?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">Currently, the app uses the CMU Pronouncing Dictionary which primarily reflects American English pronunciation. The current version does not support switching between British and American pronunciation variants. This feature may be considered for future updates.</div>
+            
+            <h3 onclick="toggleFAQ(this)">Can I use this for commercial purposes?<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">Yes, you can use the app and its output for commercial purposes. However, please review our <a href="terms.html">Terms of Service</a> for complete details.</div>
+            </section>
+            
+            <section id="troubleshooting" class="section">
+            <h2>Troubleshooting</h2>
+            
+            <h3 onclick="toggleFAQ(this)">The app isn't generating phonetic transcriptions<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">
+                <ul>
+                    <li>Make sure you've entered text in the input field</li>
+                    <li>Check that you haven't exceeded the daily limit (Free users)</li>
+                    <li>Ensure your text is in English - the app uses the CMU Pronouncing Dictionary which is designed for English</li>
+                    <li>Try restarting the app</li>
+                </ul>
+            </div>
+            
+            <h3 onclick="toggleFAQ(this)">Export isn't working<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">
+                <ul>
+                    <li>Export is a Pro feature - make sure you have an active Pro license</li>
+                    <li>Check that you have generated phonetic results first</li>
+                    <li>Ensure you have sufficient storage space on your device</li>
+                </ul>
+            </div>
+            
+            <h3 onclick="toggleFAQ(this)">Purchase issues<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">
+                <ul>
+                    <li>If your purchase didn't complete, try using "Restore Purchase" in Settings</li>
+                    <li>Make sure you're signed in with your Apple ID</li>
+                    <li>Check your internet connection</li>
+                    <li>For refund requests, contact Apple through your Apple ID account settings or the App Store</li>
+                </ul>
+            </div>
+            
+            <h3 onclick="toggleFAQ(this)">App crashes or freezes<span class="toggle-icon">▼</span></h3>
+            <div class="faq-answer">
+                <ul>
+                    <li>Try restarting your device</li>
+                    <li>Ensure your iOS version is compatible with the app (check App Store requirements)</li>
+                    <li>Close other apps to free up memory</li>
+                    <li>If the problem persists, try uninstalling and reinstalling the app</li>
+                    <li>Contact us if the issue continues</li>
+                </ul>
+            </div>
+            </section>
+            
+            <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <div class="contact-box">
+                <p>If you have any questions, issues, or feedback, please don't hesitate to reach out:</p>
+                <p><strong>Email:</strong> <a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></p>
+                <p>We typically respond within 24-48 hours.</p>
+                <a href="mailto:support@louisbuilds.me" class="contact-button">Open Email Client</a>
+            </div>
+            </section>
+            
+            <section class="section">
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a> - Learn how we handle your data</li>
+                <li><a href="terms.html">Terms of Service</a> - Read our terms and conditions</li>
+            </ul>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Phonetic Formatter. All rights reserved.</p>
+            <p><a href="index.html">Home</a> | <a href="support.html">Support</a> | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isExpanded = element.classList.contains('expanded');
+            
+            if (isExpanded) {
+                element.classList.remove('expanded');
+                answer.classList.remove('expanded');
+            } else {
+                element.classList.add('expanded');
+                answer.classList.add('expanded');
+            }
+        }
+        
+        // Auto-expand FAQ when navigating via anchor
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
