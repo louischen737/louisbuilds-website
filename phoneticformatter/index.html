@@ -307,22 +307,6 @@
             margin: 2rem auto 0 auto;
         }
         
-        .hero-cmu-note {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            color: white;
-            opacity: 0.85;
-        }
-        
-        .hero-cmu-link {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .hero-cmu-link:hover {
-            opacity: 0.9;
-        }
-        
         .feature-detail-link {
             color: #007AFF;
             text-decoration: underline;
@@ -332,31 +316,12 @@
             color: #0056b3;
         }
         
-        .feature-screenshots {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .screenshot-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
-            text-align: center;
-        }
-        
-        .screenshot-card img {
+        .feature-screenshot {
             width: 100%;
             height: auto;
-            display: block;
-        }
-        
-        .screenshot-card p {
-            margin: 0.5rem 0 1rem 0;
-            font-size: 1rem;
-            color: #333;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
         
         .app-store-badge {
@@ -869,6 +834,10 @@
                 padding: 0 1rem;
             }
             
+            .hero h1 br {
+                display: block;
+            }
+            
             .hero h2 {
                 font-size: 1.25rem;
             }
@@ -893,13 +862,17 @@
                 height: 50px;
             }
             
+            .hero-screenshot {
+                max-width: 320px;
+            }
+            
             .feature-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
-            .feature-screenshots {
-                grid-template-columns: 1fr;
+            .feature-screenshot {
+                margin-top: 1rem;
             }
             
             .feature-card {
@@ -1053,8 +1026,8 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Batch Convert English Text to Phonetic Transcription</h1>
-            <h2>Fast, offline, and privacy-first. Ideal for teachers, students, and language enthusiasts.</h2>
+            <h1>Instantly Convert English Text to<br>Phonetic Transcription</h1>
+            <h2>Perfect for teachers, students, and language enthusiasts.</h2>
             <div class="hero-buttons">
                 <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="app-store-badge" target="_blank" rel="noopener noreferrer">
                     <img src="app-store-badge.svg" alt="Download on the App Store" />
@@ -1067,9 +1040,8 @@
                 </a>
             </div>
             <div class="hero-image">
-                <img src="screenshot1.png" alt="粘贴文本界面" class="hero-screenshot" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+                <img src="hero-feature.png" alt="App Interface Screenshot" class="hero-screenshot" onerror="this.style.display='none';">
             </div>
-            <p class="hero-cmu-note">Uses <a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict" target="_blank" rel="noopener noreferrer" class="hero-cmu-link">CMU Pronouncing Dictionary</a> for accurate, reliable English phonetic transcriptions.</p>
         </div>
     </section>
 
@@ -1084,9 +1056,10 @@
                             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none"/>
                         </svg>
                     </div>
-                    <h3>Fast, Batch Transcription</h3>
-                    <p>Convert hundreds of words in seconds — process multiple texts efficiently.</p>
-                    <div class="feature-detail">All processing happens locally on your device, keeping your data private. Powered by <a href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict" target="_blank" rel="noopener noreferrer" class="feature-detail-link">CMU Pronouncing Dictionary</a>.</div>
+                    <h3>Instant Phonetic Transcription</h3>
+                    <p>Convert any English text into clear phonetic transcription in seconds.</p>
+                    <div class="feature-detail">Powered by CMU Pronouncing Dictionary. Supports up to 6,000 words per conversion for Pro users.</div>
+                    <img src="feature-1.png" alt="Instant Phonetic Transcription Screenshot" class="feature-screenshot">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1096,9 +1069,10 @@
                             <line x1="12" y1="15" x2="12" y2="3" fill="none"/>
                         </svg>
                     </div>
-                    <h3>Export Multiple Formats</h3>
-                    <p>Save your transcriptions as TXT, DOCX, or PDF for lessons and reference materials.</p>
-                    <div class="feature-detail">Perfect for teachers preparing materials or students studying phonetics. Pro version required for full export functionality.</div>
+                    <h3>Export Your Work</h3>
+                    <p>Save results as TXT, DOCX, or PDF (Pro users only).</p>
+                    <div class="feature-detail">Export your phonetic transcriptions in multiple formats. Perfect for lesson plans and reference documents.</div>
+                    <img src="feature-2.png" alt="Export Screenshot" class="feature-screenshot">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1109,27 +1083,10 @@
                             <line x1="8" y1="12" x2="18" y2="12" fill="none"/>
                         </svg>
                     </div>
-                    <h3>Offline &amp; Privacy-First</h3>
-                    <p>Everything works without internet — your data never leaves your device.</p>
-                    <div class="feature-detail">No cloud processing. All conversions are done locally, keeping your text and transcriptions secure.</div>
-                </div>
-            </div>
-            <div class="feature-screenshots">
-                <div class="screenshot-card">
-                    <img src="screenshot1.png" alt="粘贴文本界面">
-                    <p>粘贴文本</p>
-                </div>
-                <div class="screenshot-card">
-                    <img src="screenshot2.png" alt="音标批量标注效果">
-                    <p>音标批量标注效果</p>
-                </div>
-                <div class="screenshot-card">
-                    <img src="screenshot3.png" alt="导出弹窗">
-                    <p>导出弹窗</p>
-                </div>
-                <div class="screenshot-card">
-                    <img src="screenshot4.png" alt="本地化示意图">
-                    <p>本地化示意图</p>
+                    <h3>Perfect for Teachers &amp; Learners</h3>
+                    <p>Batch process text, copy results, and prepare teaching materials effortlessly.</p>
+                    <div class="feature-detail">Ideal for language teachers and students studying phonetics. Process multiple texts quickly.</div>
+                    <img src="feature-3.png" alt="Batch Processing Screenshot" class="feature-screenshot">
                 </div>
             </div>
         </div>
