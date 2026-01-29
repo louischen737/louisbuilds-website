@@ -51,6 +51,11 @@
     <link rel="apple-touch-icon" href="AppIcon-Preview.png">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
     
+    <!-- 思源黑体 Noto Sans SC（OFL 许可，可商用） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <!-- JSON-LD 结构化数据 -->
     <script type="application/ld+json">
     {
@@ -126,7 +131,7 @@
         }
         
         body {
-            font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--bg-primary);
@@ -142,7 +147,7 @@
         
         .hero-section {
             background: linear-gradient(135deg, var(--bg-primary) 0%, #F5EDD8 100%);
-            padding: 80px 20px 60px;
+            padding: 140px 20px 120px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -183,7 +188,7 @@
             align-items: center;
             justify-content: center;
             gap: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 36px;
             opacity: 0.85;
             animation: slideUp 0.8s ease-out;
         }
@@ -245,14 +250,14 @@
             font-size: 2.8em;
             font-weight: 300;
             color: var(--text-primary);
-            margin-bottom: 16px;
+            margin-bottom: 32px;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
         
         .hero-subtitle {
             font-size: 1.35em;
             color: var(--text-secondary);
-            margin-bottom: 48px;
+            margin-bottom: 64px;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
@@ -272,7 +277,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
-            padding: 10px 0;
+            padding: 24px 0;
             margin-bottom: 0;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
@@ -684,7 +689,8 @@
             }
             
             .hero-section {
-                padding-top: 100px;
+                padding-top: 120px;
+                padding-bottom: 80px;
             }
             
             .hero-brand-row .app-icon-large,
@@ -704,7 +710,7 @@
             
             .hero-subtitle {
                 font-size: 1.1em;
-                margin-bottom: 36px;
+                margin-bottom: 52px;
             }
             
             .section-title {
