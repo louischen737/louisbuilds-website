@@ -123,7 +123,7 @@
         .hero {
             background: #0d0d0d;
             color: #f5f5f5;
-            padding: 2rem 1.5rem 4rem;
+            padding: 4rem 1.5rem 5rem;
             text-align: center;
             position: relative;
         }
@@ -132,27 +132,35 @@
             font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 600;
             line-height: 1.25;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.625rem;
             letter-spacing: -0.02em;
         }
         
         .hero-subheadline {
             font-size: clamp(0.95rem, 2vw, 1.1rem);
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         .hero-demo {
-            max-width: min(90vw, 720px);
-            margin: 0 auto 2rem;
+            max-width: min(90vw, 360px);
+            margin: 0 auto 2.5rem;
+            aspect-ratio: 9 / 16;
+            border-radius: 12px;
+            overflow: hidden;
         }
         
         .hero-demo img,
-        .hero-demo video {
+        .hero-demo video,
+        .hero-demo iframe {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
-            border-radius: 8px;
+            object-fit: cover;
+        }
+        
+        .hero-demo iframe {
+            border: none;
         }
         
         .hero-cta {
@@ -162,6 +170,7 @@
         .hero-note {
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.25rem;
         }
         
         .badges-container {
@@ -217,6 +226,7 @@
             max-width: 480px;
         }
         
+        .comparison-item picture,
         .comparison-item img {
             width: 100%;
             height: auto;
@@ -321,6 +331,7 @@
             order: 1;
         }
         
+        .use-case-visual picture,
         .use-case-visual img {
             width: 100%;
             height: auto;
@@ -432,7 +443,7 @@
             <h1 class="hero-headline">Turn videos into clean, app-ready animations.</h1>
             <p class="hero-subheadline">Local AI processing on macOS. No uploads. No cloud.</p>
             <div class="hero-demo">
-                <img src="images/after-comparison.gif" alt="TransMov demo: clean animation export" loading="eager">
+                <iframe src="https://www.youtube.com/embed/LPl8-gRHN34?autoplay=1&mute=1&loop=1&playlist=LPl8-gRHN34&rel=0" title="TransMov demo - clean animation export" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="hero-cta badges-container">
                 <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
@@ -449,7 +460,10 @@
                     <img src="images/before-comparison.gif" alt="Before: original video" loading="lazy">
                 </div>
                 <div class="comparison-item">
-                    <img src="images/after-comparison.gif" alt="After: clean animation" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="images/after-comparison.webp">
+                        <img src="images/after-comparison.gif" alt="After: clean animation" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -466,7 +480,10 @@
                 <div class="use-cases">
                     <div class="use-case">
                         <div class="use-case-visual">
-                            <img src="images/after-comparison.gif" alt="App & UI animation use case" loading="lazy">
+                            <picture>
+                                <source type="image/png" srcset="images/use-case-1.png">
+                                <img src="images/use-case-1.gif" alt="App & UI animation use case" loading="lazy">
+                            </picture>
                         </div>
                         <div class="use-case-text">
                             <h3>App & UI animation</h3>
@@ -475,7 +492,10 @@
                     </div>
                     <div class="use-case">
                         <div class="use-case-visual">
-                            <img src="images/after-comparison.gif" alt="AI video asset processing" loading="lazy">
+                            <picture>
+                                <source type="image/png" srcset="images/use-case-2.png">
+                                <img src="images/use-case-2.gif" alt="AI video asset processing" loading="lazy">
+                            </picture>
                         </div>
                         <div class="use-case-text">
                             <h3>AI video asset processing</h3>
@@ -484,7 +504,10 @@
                     </div>
                     <div class="use-case">
                         <div class="use-case-visual">
-                            <img src="images/after-comparison.gif" alt="Web and design export" loading="lazy">
+                            <picture>
+                                <source type="image/png" srcset="images/use-case-3.png">
+                                <img src="images/use-case-3.gif" alt="Web and design export" loading="lazy">
+                            </picture>
                         </div>
                         <div class="use-case-text">
                             <h3>Web / Design output</h3>
@@ -535,7 +558,7 @@
             <h1 class="hero-headline">把视频变成可直接使用的干净动画</h1>
             <p class="hero-subheadline">macOS 本地 AI 处理 · 无需上传 · 无云端</p>
             <div class="hero-demo">
-                <img src="images/after-comparison.gif" alt="TransMov 演示：干净动画导出" loading="eager">
+                <iframe src="https://www.youtube.com/embed/LPl8-gRHN34?autoplay=1&mute=1&loop=1&playlist=LPl8-gRHN34&rel=0" title="TransMov 演示 - 干净动画导出" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="hero-cta badges-container">
                 <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
@@ -552,7 +575,10 @@
                     <img src="images/before-comparison.gif" alt="处理前：原视频" loading="lazy">
                 </div>
                 <div class="comparison-item">
-                    <img src="images/after-comparison.gif" alt="处理后：干净动画" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="images/after-comparison.webp">
+                        <img src="images/after-comparison.gif" alt="处理后：干净动画" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -569,7 +595,10 @@
                 <div class="use-cases">
                     <div class="use-case">
                         <div class="use-case-visual">
-                            <img src="images/after-comparison.gif" alt="App 与 UI 动画场景" loading="lazy">
+                            <picture>
+                                <source type="image/png" srcset="images/use-case-1.png">
+                                <img src="images/use-case-1.gif" alt="App 与 UI 动画场景" loading="lazy">
+                            </picture>
                         </div>
                         <div class="use-case-text">
                             <h3>App 与 UI 动画</h3>
@@ -578,7 +607,10 @@
                     </div>
                     <div class="use-case">
                         <div class="use-case-visual">
-                            <img src="images/after-comparison.gif" alt="AI 视频素材处理" loading="lazy">
+                            <picture>
+                                <source type="image/png" srcset="images/use-case-2.png">
+                                <img src="images/use-case-2.gif" alt="AI 视频素材处理" loading="lazy">
+                            </picture>
                         </div>
                         <div class="use-case-text">
                             <h3>AI 视频素材处理</h3>
@@ -587,7 +619,10 @@
                     </div>
                     <div class="use-case">
                         <div class="use-case-visual">
-                            <img src="images/after-comparison.gif" alt="Web 与设计输出" loading="lazy">
+                            <picture>
+                                <source type="image/png" srcset="images/use-case-3.png">
+                                <img src="images/use-case-3.gif" alt="Web 与设计输出" loading="lazy">
+                            </picture>
                         </div>
                         <div class="use-case-text">
                             <h3>Web / 设计输出</h3>
