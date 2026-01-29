@@ -1,46 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    
-    <!-- Homepage -->
-    <url>
-        <loc>https://louischen737.github.io/transmov-website/</loc>
-        <lastmod>2025-01-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://louischen737.github.io/transmov-website/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://louischen737.github.io/transmov-website/"/>
-    </url>
-    
-    <!-- Privacy Policy -->
-    <url>
-        <loc>https://louischen737.github.io/transmov-website/privacy-policy.html</loc>
-        <lastmod>2025-01-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://louischen737.github.io/transmov-website/privacy-policy.html"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://louischen737.github.io/transmov-website/privacy-policy.html"/>
-    </url>
-    
-    <!-- Support -->
-    <url>
-        <loc>https://louischen737.github.io/transmov-website/support.html</loc>
-        <lastmod>2025-01-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://louischen737.github.io/transmov-website/support.html"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://louischen737.github.io/transmov-website/support.html"/>
-    </url>
-    
-    <!-- Terms of Service -->
-    <url>
-        <loc>https://louischen737.github.io/transmov-website/terms-of-service.html</loc>
-        <lastmod>2025-01-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://louischen737.github.io/transmov-website/terms-of-service.html"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://louischen737.github.io/transmov-website/terms-of-service.html"/>
-    </url>
-    
+  <url>
+    <loc>https://louisbuilds.me/transmov/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/"/>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/transmov/privacy-policy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/privacy-policy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/transmov/support.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/support.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/support.html"/>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/transmov/terms-of-service.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/terms-of-service.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/terms-of-service.html"/>
+  </url>
 </urlset>
-

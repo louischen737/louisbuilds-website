@@ -1,20 +1,11 @@
-# robots.txt for TransMov Website
-# https://louischen737.github.io/transmov-website/
+# robots.txt for TransMov — https://louisbuilds.me/transmov/
 
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://louischen737.github.io/transmov-website/sitemap.xml
+# Sitemap
+Sitemap: https://louisbuilds.me/transmov/sitemap.xml
 
-# Disallow documentation files (markdown files)
+# 仅禁止非页面资源（可选）
 Disallow: /*.md
 Disallow: /*.sh
-
-# Allow all HTML pages
-Allow: /*.html
-Allow: /images/
-
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 1
-
