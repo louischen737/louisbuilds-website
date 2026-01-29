@@ -59,6 +59,7 @@
       "screenshot": "https://louisbuilds.me/phoneticformatter/logo.png",
       "featureList": [
         "Convert English text to IPA phonetic transcription",
+        "Powered by CMU Pronouncing Dictionary",
         "Export to TXT, DOCX, PDF formats",
         "Works offline",
         "Privacy-first: all processing local",
@@ -213,6 +214,23 @@
             z-index: 1;
         }
         
+        .hero-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .hero-left {
+            order: 1;
+        }
+        
+        .hero-right {
+            order: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
@@ -226,7 +244,7 @@
         
         .hero h2 {
             font-size: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             font-weight: 400;
             opacity: 0.95;
             line-height: 1.6;
@@ -284,17 +302,113 @@
         .hero-image {
             max-width: 100%;
             margin-top: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            background: white;
-            padding: 2rem;
+            background: transparent;
         }
         
         .hero-image img {
             width: 100%;
             height: auto;
-            border-radius: 12px;
             display: block;
+            background: transparent;
+        }
+        
+        .hero-screenshot {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 20px;
+            display: block;
+            margin: 2rem auto 0 auto;
+            transition: transform 0.3s ease;
+            background: transparent;
+        }
+        
+        .hero-screenshot:hover {
+            transform: scale(1.08);
+        }
+        
+        @media (min-width: 769px) {
+            .hero-inner {
+                flex-direction: row;
+                align-items: center;
+                gap: 3rem;
+                text-align: left;
+            }
+            
+            .hero-left {
+                flex: 1;
+                min-width: 0;
+            }
+            
+            .hero-right {
+                flex: 0 0 auto;
+                align-items: center;
+            }
+            
+            .hero-right .hero-image {
+                margin-top: 0;
+            }
+            
+            .hero h1 {
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 600px;
+                margin-bottom: 1.25rem;
+            }
+            
+            .hero h2 {
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 5rem;
+            }
+            
+            .hero-buttons {
+                justify-content: flex-start;
+                margin-bottom: 2.5rem;
+            }
+            
+            .hero-screenshot {
+                margin-top: 0;
+            }
+        }
+        
+        .cmu-credit {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            text-align: center;
+        }
+        
+        .cmu-credit a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        
+        .cmu-credit a:hover {
+            color: #ffd700;
+        }
+        
+        .feature-detail-link {
+            color: #007AFF;
+            text-decoration: underline;
+        }
+        
+        .feature-detail-link:hover {
+            color: #0056b3;
+        }
+        
+        .feature-screenshot {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 16px;
+            margin: 1.5rem auto 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-screenshot:hover {
+            transform: scale(1.1);
         }
         
         .app-store-badge {
@@ -574,6 +688,10 @@
             font-size: 1.5rem;
             font-weight: 600;
             vertical-align: top;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
         }
         
         .pricing-table th:first-child {
@@ -639,6 +757,10 @@
             padding: 1.25rem 2rem;
             text-align: center;
             font-size: 1rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
         }
         
         .pricing-table td:first-child {
@@ -827,17 +949,22 @@
                 justify-content: center;
             }
             
-            .hero-image {
-                padding: 1rem;
-            }
             
             .app-store-badge {
                 height: 50px;
             }
             
+            .hero-screenshot {
+                max-width: 240px;
+            }
+            
             .feature-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+            
+            .feature-screenshot {
+                margin-top: 1rem;
             }
             
             .feature-card {
@@ -939,7 +1066,8 @@
             
             .pricing-table td.free-col,
             .pricing-table td.pro-col {
-                white-space: nowrap;
+                white-space: normal;
+                min-width: 90px;
             }
             
             footer {
@@ -991,21 +1119,31 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Instantly Convert English Text to<br>Phonetic Transcription</h1>
-            <h2>Perfect for teachers, students, and language enthusiasts.</h2>
-            <div class="hero-buttons">
-                <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="app-store-badge" target="_blank" rel="noopener noreferrer">
-                    <img src="app-store-badge.svg" alt="Download on the App Store" />
-                </a>
-                <a href="#features" class="btn-secondary">
-                    Learn More
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10 14l-5-5h10l-5 5z"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="hero-image">
-                <img src="app-screenshot.png" alt="Phonetic Formatter App Interface" onerror="this.style.display='none'; this.parentElement.style.display='none';">
+            <div class="hero-inner">
+                <div class="hero-left">
+                    <h1>Instantly Convert English Text to<br>Phonetic Transcription</h1>
+                    <h2>Perfect for teachers, students, and language enthusiasts.</h2>
+                    <div class="hero-buttons">
+                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="app-store-badge" target="_blank" rel="noopener noreferrer">
+                            <img src="app-store-badge.svg" alt="Download on the App Store" />
+                        </a>
+                        <a href="#features" class="btn-secondary">
+                            Learn More
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10 14l-5-5h10l-5 5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-image">
+                        <img src="hero-feature.png" alt="App Interface Screenshot" class="hero-screenshot" onerror="this.style.display='none';">
+                    </div>
+                    <div class="cmu-credit">
+                        Powered by
+                        <a href="https://www.speech.cs.cmu.edu/cgi-bin/cmudict" target="_blank" rel="noopener noreferrer">CMU Pronouncing Dictionary</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1023,7 +1161,8 @@
                     </div>
                     <h3>Instant Phonetic Transcription</h3>
                     <p>Convert any English text into clear phonetic transcription in seconds.</p>
-                    <div class="feature-detail">Powered by CMU Pronouncing Dictionary. Supports up to 6,000 words per conversion for Pro users. All processing happens locally on your device for complete privacy.</div>
+                    <div class="feature-detail">Powered by CMU Pronouncing Dictionary. Supports up to 6,000 words per conversion for Pro users.</div>
+                    <img src="feature-1.png" alt="Instant Phonetic Transcription Screenshot" class="feature-screenshot">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1035,7 +1174,8 @@
                     </div>
                     <h3>Export Your Work</h3>
                     <p>Save results as TXT, DOCX, or PDF (Pro users only).</p>
-                    <div class="feature-detail">Export your phonetic transcriptions in multiple formats. Perfect for creating lesson plans, study materials, and reference documents. Available exclusively for Pro users.</div>
+                    <div class="feature-detail">Export your phonetic transcriptions in multiple formats. Perfect for lesson plans and reference documents.</div>
+                    <img src="feature-2.png" alt="Export Screenshot" class="feature-screenshot">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1046,9 +1186,10 @@
                             <line x1="8" y1="12" x2="18" y2="12" fill="none"/>
                         </svg>
                     </div>
-                    <h3>Perfect for Teachers & Learners</h3>
+                    <h3>Perfect for Teachers &amp; Learners</h3>
                     <p>Batch process text, copy results, and prepare teaching materials effortlessly.</p>
-                    <div class="feature-detail">Ideal for language teachers creating pronunciation guides, students studying phonetics, and language enthusiasts. Process multiple texts quickly and efficiently.</div>
+                    <div class="feature-detail">Ideal for language teachers and students studying phonetics. Process multiple texts quickly.</div>
+                    <img src="feature-3.png" alt="Batch Processing Screenshot" class="feature-screenshot">
                 </div>
             </div>
         </div>

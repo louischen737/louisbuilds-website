@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>TransMov - Video & Animation Processing for macOS | Convert Videos to Animations</title>
+    <meta name="title" content="TransMov - Video & Animation Processing for macOS | Convert Videos to Animations">
+    <meta name="description" content="Turn MP4/MOV videos into app-ready animations (APNG, GIF, WebP) with local AI background removal. 100% privacy-focused, fast processing on macOS. Download TransMov from Mac App Store.">
+    <meta name="keywords" content="video to animation, MP4 to GIF, video converter, APNG converter, WebP converter, background removal, video processing, macOS app, animation tool, local AI, privacy-focused">
+    <meta name="author" content="TransMov">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/transmov/">
+    <meta property="og:title" content="TransMov - Video & Animation Processing for macOS">
+    <meta property="og:description" content="Turn MP4/MOV videos into app-ready animations (APNG, GIF, WebP) with local AI background removal. 100% privacy-focused, fast processing on macOS.">
+    <meta property="og:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:site_name" content="TransMov">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://louisbuilds.me/transmov/">
+    <meta property="twitter:title" content="TransMov - Video & Animation Processing for macOS">
+    <meta property="twitter:description" content="Turn MP4/MOV videos into app-ready animations (APNG, GIF, WebP) with local AI background removal. 100% privacy-focused, fast processing on macOS.">
+    <meta property="twitter:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://louisbuilds.me/transmov/">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/">
+    <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TransMov",
+        "applicationCategory": "GraphicsApplication",
+        "operatingSystem": "macOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "1"
+        },
+        "description": "Turn MP4/MOV videos into app-ready animations (APNG, GIF, WebP) with local AI background removal. 100% privacy-focused, fast processing on macOS.",
+        "screenshot": "https://louisbuilds.me/transmov/images/app-icon.png",
+        "softwareVersion": "1.0",
+        "releaseNotes": "Professional video and animation processing tool for macOS",
+        "downloadUrl": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12",
+        "author": {
+            "@type": "Organization",
+            "name": "TransMov"
+        },
+        "featureList": [
+            "Video to Animation Conversion",
+            "Local AI Background Removal",
+            "Frame-level Control",
+            "Animation Format Conversion"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TransMov",
+        "url": "https://louisbuilds.me/transmov/",
+        "description": "TransMov - Video & Animation Processing for macOS",
+        "inLanguage": ["en", "zh-CN"],
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://louisbuilds.me/transmov/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://api.producthunt.com">
+    <link rel="dns-prefetch" href="https://api.producthunt.com">
+    <link rel="dns-prefetch" href="https://apps.apple.com">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #0d0d0d;
+            position: relative;
+        }
+        
+        /* Hero — video-first, dark, centered */
+        .hero {
+            background: #0d0d0d;
+            color: #f5f5f5;
+            padding: 2rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-headline {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subheadline {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-demo {
+            max-width: min(90vw, 720px);
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-demo img,
+        .hero-demo video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .hero-cta {
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .badge-link {
+            display: inline-block;
+            transition: transform 0.2s;
+            text-decoration: none;
+        }
+        
+        .badge-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .badge-link img {
+            display: block;
+            height: 54px;
+            width: auto;
+        }
+        
+        /* Before/After — dark, no chrome */
+        .comparison-section {
+            background: #0d0d0d;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+        
+        .comparison-micro {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 2rem;
+        }
+        
+        .comparison-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .comparison-item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 480px;
+        }
+        
+        .comparison-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .comparison-item {
+                min-width: 100%;
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        .language-switcher {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 10;
+        }
+        
+        .language-switcher a {
+            margin-left: 8px;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 0.875em;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.2s;
+        }
+        
+        .language-switcher a:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .language-switcher a.active {
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+        }
+        
+        /* Editorial sections — no cards */
+        .section {
+            padding: 3rem 0;
+            margin-bottom: 0;
+        }
+        
+        .section + .section {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        h2 {
+            color: #f5f5f5;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border: none;
+            padding: 0;
+        }
+        
+        h3 {
+            color: #f5f5f5;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        
+        /* Use cases — one visual, minimal text */
+        .use-cases {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+        
+        .use-case {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .use-case:nth-child(even) .use-case-text {
+            order: 2;
+        }
+        
+        .use-case:nth-child(even) .use-case-visual {
+            order: 1;
+        }
+        
+        .use-case-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+        
+        .use-case-text h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .use-case-text p {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .use-case {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .use-case:nth-child(even) .use-case-text,
+            .use-case:nth-child(even) .use-case-visual {
+                order: unset;
+            }
+        }
+        
+        /* Why choose — 3 short points */
+        .why-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .why-list li {
+            color: rgba(255, 255, 255, 0.75);
+            padding: 0.35rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+        
+        .why-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* CTA — minimal */
+        .cta {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: #0d0d0d;
+            color: #f5f5f5;
+            margin-top: 0;
+        }
+        
+        .cta h2 {
+            color: #f5f5f5;
+            border: none;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .cta .cta-trust {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 1rem;
+        }
+        
+        .cta .badges-container {
+            margin-top: 1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            .hero-demo {
+                margin-bottom: 1.5rem;
+            }
+            .badge-link img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- English Version -->
+    <div id="content-en" style="display: none;">
+        <div class="hero">
+            <div class="language-switcher">
+                <a href="#en" onclick="showLanguage('en'); return false;" id="lang-en">English</a>
+                <a href="#zh" onclick="showLanguage('zh'); return false;" id="lang-zh">中文</a>
+            </div>
+            <h1 class="hero-headline">Turn videos into clean, app-ready animations.</h1>
+            <p class="hero-subheadline">Local AI processing on macOS. No uploads. No cloud.</p>
+            <div class="hero-demo">
+                <img src="images/after-comparison.gif" alt="TransMov demo: clean animation export" loading="eager">
+            </div>
+            <div class="hero-cta badges-container">
+                <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
+                    <img src="images/app-store-badge.svg" alt="Download on the Mac App Store" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
+                </a>
+            </div>
+            <p class="hero-note">Export APNG, GIF, and WebP in seconds.</p>
+        </div>
+        
+        <div class="comparison-section">
+            <p class="comparison-micro">From raw video to clean animation</p>
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <img src="images/before-comparison.gif" alt="Before: original video" loading="lazy">
+                </div>
+                <div class="comparison-item">
+                    <img src="images/after-comparison.gif" alt="After: clean animation" loading="lazy">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section">
+                <h2>About</h2>
+                <p>TransMov is a macOS-native tool for turning videos into production-ready animations.</p>
+                <p>Everything runs locally. Your files never leave your machine.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Use cases</h2>
+                <div class="use-cases">
+                    <div class="use-case">
+                        <div class="use-case-visual">
+                            <img src="images/after-comparison.gif" alt="App & UI animation use case" loading="lazy">
+                        </div>
+                        <div class="use-case-text">
+                            <h3>App & UI animation</h3>
+                            <p>Create polished app animations and micro-interactions. Turn short videos into lightweight animations for onboarding, empty states, and UI motion.</p>
+                        </div>
+                    </div>
+                    <div class="use-case">
+                        <div class="use-case-visual">
+                            <img src="images/after-comparison.gif" alt="AI video asset processing" loading="lazy">
+                        </div>
+                        <div class="use-case-text">
+                            <h3>AI video asset processing</h3>
+                            <p>Turn AI-generated videos into reusable assets. Remove backgrounds locally and export transparent animations you can actually use.</p>
+                        </div>
+                    </div>
+                    <div class="use-case">
+                        <div class="use-case-visual">
+                            <img src="images/after-comparison.gif" alt="Web and design export" loading="lazy">
+                        </div>
+                        <div class="use-case-text">
+                            <h3>Web / Design output</h3>
+                            <p>Export clean animations for web and design tools. APNG, GIF, or WebP — optimized, controllable, and ready to ship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Why TransMov</h2>
+                <ul class="why-list">
+                    <li>100% local processing</li>
+                    <li>Built with Apple Vision & Neural Engine</li>
+                    <li>Designed for developers and designers</li>
+                </ul>
+            </div>
+            
+            <div class="cta">
+                <h2>Make clean animations. Locally.</h2>
+                <div class="badges-container">
+                    <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
+                        <img src="images/app-store-badge.svg" alt="Download for macOS" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
+                    </a>
+                </div>
+                <p class="cta-trust">No account required · No uploads · macOS only</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                <a href="privacy-policy.html">Privacy Policy</a> |
+                <a href="support.html">Support</a> |
+                <a href="terms-of-service.html">Terms of Service</a>
+            </p>
+            <p style="margin-top: 10px;">© 2026 TransMov</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" style="color: #667eea; text-decoration: none;">louisbuilds.me</a></p>
+        </div>
+    </div>
+    
+    <!-- Chinese Version -->
+    <div id="content-zh" style="display: none;">
+        <div class="hero">
+            <div class="language-switcher">
+                <a href="#en" onclick="showLanguage('en'); return false;" id="lang-zh-en">English</a>
+                <a href="#zh" onclick="showLanguage('zh'); return false;" id="lang-zh-zh">中文</a>
+            </div>
+            <h1 class="hero-headline">把视频变成可直接使用的干净动画</h1>
+            <p class="hero-subheadline">macOS 本地 AI 处理 · 无需上传 · 无云端</p>
+            <div class="hero-demo">
+                <img src="images/after-comparison.gif" alt="TransMov 演示：干净动画导出" loading="eager">
+            </div>
+            <div class="hero-cta badges-container">
+                <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
+                    <img src="images/app-store-badge.svg" alt="在 Mac App Store 上下载" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
+                </a>
+            </div>
+            <p class="hero-note">快速导出 APNG / GIF / WebP</p>
+        </div>
+        
+        <div class="comparison-section">
+            <p class="comparison-micro">从原视频到干净动画</p>
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <img src="images/before-comparison.gif" alt="处理前：原视频" loading="lazy">
+                </div>
+                <div class="comparison-item">
+                    <img src="images/after-comparison.gif" alt="处理后：干净动画" loading="lazy">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section">
+                <h2>关于</h2>
+                <p>TransMov 是一款 macOS 原生的视频转动画工具。</p>
+                <p>所有处理都在本地完成，文件不会离开你的设备。</p>
+            </div>
+            
+            <div class="section">
+                <h2>使用场景</h2>
+                <div class="use-cases">
+                    <div class="use-case">
+                        <div class="use-case-visual">
+                            <img src="images/after-comparison.gif" alt="App 与 UI 动画场景" loading="lazy">
+                        </div>
+                        <div class="use-case-text">
+                            <h3>App 与 UI 动画</h3>
+                            <p>制作精致的 App 动画与微交互。将短视频转换为轻量动画，用于引导页、空状态和界面动效。</p>
+                        </div>
+                    </div>
+                    <div class="use-case">
+                        <div class="use-case-visual">
+                            <img src="images/after-comparison.gif" alt="AI 视频素材处理" loading="lazy">
+                        </div>
+                        <div class="use-case-text">
+                            <h3>AI 视频素材处理</h3>
+                            <p>把 AI 视频变成真正可用的素材。本地抠背景，导出透明动画，直接用于产品和设计。</p>
+                        </div>
+                    </div>
+                    <div class="use-case">
+                        <div class="use-case-visual">
+                            <img src="images/after-comparison.gif" alt="Web 与设计输出" loading="lazy">
+                        </div>
+                        <div class="use-case-text">
+                            <h3>Web / 设计输出</h3>
+                            <p>为 Web 和设计工具导出干净动画。APNG、GIF、WebP，自由控制质量与尺寸，随时可用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>为什么选 TransMov</h2>
+                <ul class="why-list">
+                    <li>100% 本地处理</li>
+                    <li>基于 Apple Vision 与神经引擎</li>
+                    <li>为开发者和设计师打造</li>
+                </ul>
+            </div>
+            
+            <div class="cta">
+                <h2>本地生成，干净动画</h2>
+                <div class="badges-container">
+                    <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
+                        <img src="images/app-store-badge.svg" alt="Download for macOS" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
+                    </a>
+                </div>
+                <p class="cta-trust">无需账号 · 无需上传 · 仅限 macOS</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                <a href="privacy-policy.html">隐私政策</a> |
+                <a href="support.html">技术支持</a> |
+                <a href="terms-of-service.html">用户使用协议</a>
+            </p>
+            <p style="margin-top: 10px;">© 2026 TransMov</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" style="color: #667eea; text-decoration: none;">louisbuilds.me</a></p>
+        </div>
+    </div>
+    
+    <script>
+        function showLanguage(lang) {
+            document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('content-zh').style.display = lang === 'zh' ? 'block' : 'none';
+            
+            // Update English version buttons
+            const langEn = document.getElementById('lang-en');
+            const langZh = document.getElementById('lang-zh');
+            if (langEn) {
+                langEn.classList.toggle('active', lang === 'en');
+            }
+            if (langZh) {
+                langZh.classList.toggle('active', lang === 'zh');
+            }
+            
+            // Update Chinese version buttons
+            const langZhEn = document.getElementById('lang-zh-en');
+            const langZhZh = document.getElementById('lang-zh-zh');
+            if (langZhEn) {
+                langZhEn.classList.toggle('active', lang === 'en');
+            }
+            if (langZhZh) {
+                langZhZh.classList.toggle('active', lang === 'zh');
+            }
+        }
+        
+        window.onload = function() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const initialLang = browserLang.startsWith('zh') ? 'zh' : 'en';
+            showLanguage(initialLang);
+        };
+    </script>
+</body>
+</html>
