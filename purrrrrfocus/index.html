@@ -47,6 +47,7 @@
     
     <!-- App Store 相关标签 -->
     <meta name="apple-itunes-app" content="app-id=6753966008">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="AppIcon-Preview.png">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
     
@@ -68,7 +69,7 @@
       "slogan": "专注力提升伙伴",
       "url": "https://apps.apple.com/app/purrrrrfocus/id6753966008",
       "downloadUrl": "https://apps.apple.com/app/purrrrrfocus/id6753966008",
-      "screenshot": "https://louisbuilds.me/purrrrrfocus/screenshots/iphone/zh/01-main.png",
+      "screenshot": "https://louisbuilds.me/purrrrrfocus/screenshots/zh/01.png",
       "applicationSubCategory": "Time Management",
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -141,7 +142,7 @@
         
         .hero-section {
             background: linear-gradient(135deg, var(--bg-primary) 0%, #F5EDD8 100%);
-            padding: 60px 20px;
+            padding: 80px 20px 60px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -175,6 +176,34 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+        }
+        
+        .hero-brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            opacity: 0.85;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .hero-brand-row .app-icon-large {
+            width: 64px;
+            height: 64px;
+            margin: 0;
+        }
+        
+        .hero-brand-row .app-icon-large img {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+        }
+        
+        .hero-brand-name {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: var(--text-primary);
         }
         
         .app-icon-large {
@@ -213,17 +242,17 @@
         }
         
         .hero-title {
-            font-size: 3.5em;
+            font-size: 2.8em;
             font-weight: 300;
             color: var(--text-primary);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
         
         .hero-subtitle {
-            font-size: 1.5em;
+            font-size: 1.35em;
             color: var(--text-secondary);
-            margin-bottom: 30px;
+            margin-bottom: 48px;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         
@@ -238,28 +267,20 @@
             }
         }
         
-        .hero-description {
-            font-size: 1.2em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-        
         .cta-buttons {
             display: flex;
-            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
+            gap: 20px;
+            padding: 10px 0;
+            margin-bottom: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
         
         .app-store-badge {
             display: inline-block;
+            min-width: 180px;
+            text-align: center;
             transition: all 0.3s ease;
         }
         
@@ -268,13 +289,19 @@
             width: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px var(--shadow);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: block;
+            margin: 0 auto;
         }
         
         .app-store-badge:hover img {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 8px 20px var(--shadow-hover);
+        }
+        
+        .app-store-badge:active img {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 2px 8px var(--shadow);
         }
         
         .product-hunt-badge {
@@ -296,37 +323,80 @@
             box-shadow: 0 8px 20px var(--shadow-hover);
         }
         
-        .language-switcher {
-            text-align: center;
-            margin-top: 20px;
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 16px 24px;
         }
         
-        .language-switcher a {
-            color: var(--text-primary);
+        .site-header .language-switcher {
+            margin: 0;
+        }
+        
+        .site-header .language-switcher a {
+            color: var(--text-secondary);
             text-decoration: none;
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border-radius: 20px;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--border);
-            display: inline-block;
+            padding: 6px 12px;
             font-size: 0.9em;
+            margin: 0 2px;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+        
+        .site-header .language-switcher a:hover {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.6);
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .site-header .language-switcher a.active {
+            color: var(--accent);
             font-weight: 500;
+            background: transparent;
         }
         
-        .language-switcher a:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--shadow);
+        .intro-section {
+            padding: 56px 20px 64px;
+            text-align: center;
+            background: var(--bg-card);
         }
         
-        .language-switcher a.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
+        .intro-block {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        
+        .intro-lead {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin: 0 0 1em;
+            text-align: center;
+        }
+        
+        .intro-tagline {
+            font-size: 1em;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin: 0 0 0.75em;
+            text-align: center;
+        }
+        
+        .intro-close {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0;
+            text-align: center;
         }
         
         .features-section {
@@ -416,6 +486,15 @@
             background: var(--bg-primary);
         }
         
+        .highlights-tagline {
+            text-align: center;
+            font-size: 1.25em;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        
         .highlight-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -446,25 +525,24 @@
         }
         
         .screenshots-container {
-            max-width: 1200px;
+            max-width: 780px;
             margin: 0 auto;
         }
         
         .screenshots-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 32px;
+            row-gap: 24px;
             margin-top: 40px;
         }
         
         .screenshot-item {
             position: relative;
-            border-radius: 20px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 24px var(--shadow);
             transition: all 0.3s ease;
-            background: var(--bg-primary);
-            padding: 10px;
         }
         
         .screenshot-item:hover {
@@ -477,6 +555,11 @@
             height: auto;
             display: block;
             border-radius: 12px;
+            transition: transform 0.4s ease;
+        }
+        
+        .screenshot-item:hover img {
+            transform: scale(1.08);
         }
         
         .testimonials-section {
@@ -563,22 +646,65 @@
             text-decoration: underline;
         }
         
+        .footer-link {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        
         .footer p {
             margin-top: 20px;
             font-size: 0.9em;
         }
         
+        .footer-product-hunt {
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .footer-product-hunt a {
+            display: inline-block;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+        }
+        
+        .footer-product-hunt a:hover {
+            opacity: 1;
+        }
+        
         @media (max-width: 768px) {
+            .site-header {
+                position: fixed;
+                background: rgba(249, 243, 230, 0.95);
+                padding: 12px 16px;
+                backdrop-filter: blur(8px);
+            }
+            
+            .hero-section {
+                padding-top: 100px;
+            }
+            
+            .hero-brand-row .app-icon-large,
+            .hero-brand-row .app-icon-large img {
+                width: 52px;
+                height: 52px;
+                border-radius: 12px;
+            }
+            
+            .hero-brand-name {
+                font-size: 1.25em;
+            }
+            
             .hero-title {
-                font-size: 2.5em;
+                font-size: 2em;
             }
             
             .hero-subtitle {
-                font-size: 1.2em;
-            }
-            
-            .hero-description {
-                font-size: 1em;
+                font-size: 1.1em;
+                margin-bottom: 36px;
             }
             
             .section-title {
@@ -599,50 +725,76 @@
                 font-size: 2em;
             }
             
-            .app-store-badge img,
+            .app-store-badge img {
+                height: 56px;
+            }
+            
             .product-hunt-badge img {
                 height: 50px;
             }
             
             .screenshots-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                column-gap: 20px;
+                row-gap: 20px;
             }
             
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
         }
+        
+        @media (max-width: 480px) {
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+                column-gap: 20px;
+                row-gap: 20px;
+            }
+            
+            .screenshot-item {
+                border-radius: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+    <header class="site-header">
+        <nav class="language-switcher">
+            <a href="index.html" class="active">中文</a>
+            <a href="index-en.html">English</a>
+            <a href="index-da.html">Dansk</a>
+            <a href="index-tr.html">Türkçe</a>
+            <a href="index-fr.html">Français</a>
+        </nav>
+    </header>
+    
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <div class="app-icon-large">
-                    <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+                <div class="hero-brand-row">
+                    <div class="app-icon-large">
+                        <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+                    </div>
+                    <span class="hero-brand-name">喵时计</span>
                 </div>
-                <h1 class="hero-title">喵时计</h1>
-                <p class="hero-subtitle">专注力提升伙伴</p>
-                <p class="hero-description">
-                    极简治愈的专注计时应用，融合中式美学与可爱猫咪元素。支持番茄工作法、正计时模式、学霸模式，萌系猫咪伙伴陪伴，培养专注学习、专注工作的好习惯，进入高效心流状态。
-                </p>
+                <h1 class="hero-title">专注更深，工作更聪明。</h1>
+                <p class="hero-subtitle">温和而强大的专注计时器，与猫咪伙伴相伴。</p>
                 <div class="cta-buttons">
                     <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge">
                         <img src="app-store-badge-zh.svg" alt="在 App Store 上下载">
                     </a>
-                    <a href="https://www.producthunt.com/products/purrrrrfocus-pomodoro?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-purrrrrfocus-pomodoro" target="_blank" rel="noopener noreferrer" class="product-hunt-badge">
-                        <img alt="PurrrrrFocus Pomodoro  - Turn focus into a delightful journey with cute cat companion | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1054013&amp;theme=light&amp;t=1766634809819">
-                    </a>
                 </div>
-                <div class="language-switcher">
-                    <a href="index.html" class="active">中文</a>
-                    <a href="index-en.html">English</a>
-                    <a href="index-da.html">Dansk</a>
-                    <a href="index-tr.html">Türkçe</a>
-                    <a href="index-fr.html">Français</a>
-                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-block">
+                <p class="intro-lead">PurrrrrFocus 通过简短、结构化的专注时段帮助你保持专注——温和的约束、清晰的进度追踪与治愈的猫咪伙伴。</p>
+                <p class="intro-tagline">没有压力，没有过度刺激。</p>
+                <p class="intro-close">只是一个简单的系统，一次一段专注，帮你建立真正的专注力。</p>
             </div>
         </div>
     </section>
@@ -651,8 +803,13 @@
     <section class="features-section">
         <div class="container">
             <h2 class="section-title">核心功能</h2>
-            <p class="section-subtitle">让专注成为一种习惯，让效率成为你的日常</p>
+            <p class="section-subtitle">为深度工作、学习与 ADHD 友好专注而设计。</p>
             <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>学霸模式</h3>
+                    <p>用真实的后果减少分心。专注期间切换应用会影响专注分，帮你更投入、更自然地建立专注习惯。</p>
+                </div>
                 <div class="feature-card">
                     <span class="feature-icon">🍅</span>
                     <h3>番茄工作法</h3>
@@ -664,19 +821,14 @@
                     <p>自由计时，记录你的专注时长，适合需要灵活时间安排的学习和工作场景</p>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon">🔒</span>
-                    <h3>学霸模式</h3>
-                    <p>监控应用切换，专注期间切换应用将扣除活力值，提升专注质量（Plus功能）</p>
+                    <span class="feature-icon">📊</span>
+                    <h3>数据统计</h3>
+                    <p>详细的专注数据分析和趋势图表，帮助你了解自己的专注习惯和进步轨迹</p>
                 </div>
                 <div class="feature-card">
                     <span class="feature-icon">🐱</span>
                     <h3>猫咪伙伴</h3>
-                    <p>可爱的猫咪伙伴陪伴你的专注时光，通过专注获得活力值，解锁更多猫咪角色</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">📊</span>
-                    <h3>数据统计</h3>
-                    <p>详细的专注数据分析和趋势图表，帮助你了解自己的专注习惯和进步轨迹</p>
+                    <p>温和、不打扰的伙伴，随你的专注习惯一起成长。没有压力、没有通知，只有安静的陪伴和轻轻的鼓励。</p>
                 </div>
                 <div class="feature-card">
                     <span class="feature-icon">🎨</span>
@@ -695,22 +847,28 @@
             <div class="screenshots-container">
                 <div class="screenshots-grid">
                     <div class="screenshot-item">
-                        <img src="screenshots/iphone/zh/01-main.png" alt="喵时计主界面">
+                        <img src="screenshots/zh/01.png" alt="PurrrrrFocus 截图 1">
                     </div>
                     <div class="screenshot-item">
-                        <img src="screenshots/iphone/zh/02-timer.png" alt="专注计时">
+                        <img src="screenshots/zh/02.png" alt="PurrrrrFocus 截图 2">
                     </div>
                     <div class="screenshot-item">
-                        <img src="screenshots/iphone/zh/03-statistics.png" alt="数据统计">
+                        <img src="screenshots/zh/03.png" alt="PurrrrrFocus 截图 3">
                     </div>
                     <div class="screenshot-item">
-                        <img src="screenshots/iphone/zh/04-achievements.png" alt="成就系统">
+                        <img src="screenshots/zh/04.png" alt="PurrrrrFocus 截图 4">
                     </div>
                     <div class="screenshot-item">
-                        <img src="screenshots/iphone/zh/05-themes.png" alt="主题选择">
+                        <img src="screenshots/zh/05.png" alt="PurrrrrFocus 截图 5">
                     </div>
                     <div class="screenshot-item">
-                        <img src="screenshots/iphone/zh/06-cat-companion.png" alt="猫咪伙伴">
+                        <img src="screenshots/zh/06.png" alt="PurrrrrFocus 截图 6">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/zh/07.png" alt="PurrrrrFocus 截图 7">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="screenshots/zh/08.png" alt="PurrrrrFocus 截图 8">
                     </div>
                 </div>
             </div>
@@ -721,24 +879,7 @@
     <section class="highlights-section">
         <div class="container">
             <h2 class="section-title">为什么选择喵时计</h2>
-            <div class="highlight-grid">
-                <div class="highlight-item">
-                    <div class="highlight-number">极简</div>
-                    <div class="highlight-label">简洁优雅的界面设计</div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-number">治愈</div>
-                    <div class="highlight-label">萌系猫咪陪伴专注</div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-number">高效</div>
-                    <div class="highlight-label">科学的时间管理方法</div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-number">专业</div>
-                    <div class="highlight-label">详细的数据统计分析</div>
-                </div>
-            </div>
+            <p class="highlights-tagline">为想要专注的人而设计——没有压力、愧疚与倦怠。</p>
         </div>
     </section>
     
@@ -763,9 +904,13 @@
                 <a href="privacy-policy-zh.html">隐私政策</a>
                 <a href="terms-of-service-zh.html">使用条款</a>
             </div>
+            <p class="footer-product-hunt">
+                <a href="https://www.producthunt.com/products/purrrrrfocus-pomodoro?utm_source=badge-follow&amp;utm_medium=badge&amp;utm_campaign=badge-purrrrrfocus-pomodoro" target="_blank" rel="noopener noreferrer">
+                    <img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1141180&amp;theme=light&amp;size=small" alt="PurrrrrFocus Pomodoro | Product Hunt" style="width: 86px; height: 32px;" width="86" height="32">
+                </a>
+            </p>
             <p>© 2026 PurrrrrFocus</p>
-            <p>A product by Louis · <a href="https://louisbuilds.me" style="color: var(--text-secondary); text-decoration: none;">louisbuilds.me</a></p>
-            <p>让专注成为一种习惯 🐱</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer" class="footer-link">louisbuilds.me</a></p>
         </div>
     </footer>
 </body>
