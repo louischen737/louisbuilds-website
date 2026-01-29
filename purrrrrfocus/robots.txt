@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://louischen737.github.io/purrrrrfocus-support/sitemap.xml
-
+# Sitemap（与主站统一使用 louisbuilds.me）
+Sitemap: https://louisbuilds.me/purrrrrfocus/sitemap.xml
