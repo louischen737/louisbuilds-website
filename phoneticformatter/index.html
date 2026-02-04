@@ -353,13 +353,14 @@
             .hero h1 {
                 margin-left: 0;
                 margin-right: 0;
-                max-width: 600px;
+                max-width: 720px;
                 margin-bottom: 1.25rem;
             }
             
             .hero h2 {
                 margin-left: 0;
                 margin-right: 0;
+                max-width: 720px;
                 margin-bottom: 5rem;
             }
             
@@ -414,9 +415,12 @@
         .feature-screenshot {
             width: 100%;
             max-width: 200px;
-            height: auto;
+            height: 220px;
+            object-fit: contain;
+            object-position: bottom center;
             border-radius: 16px;
             margin: 1.5rem auto 0 auto;
+            margin-top: auto;
             display: block;
             transition: transform 0.3s ease;
         }
