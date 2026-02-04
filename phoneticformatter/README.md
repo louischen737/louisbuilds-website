@@ -4,7 +4,7 @@ Official website for Phonetic Formatter - an iOS app that converts English text 
 
 ## Website
 
-Visit the live website: [https://louischen737.github.io/phonetic-formatter-website/](https://louischen737.github.io/phonetic-formatter-website/)
+Visit the live website: [https://louisbuilds.me/phoneticformatter/index.html](https://louisbuilds.me/phoneticformatter/index.html)
 
 ## Pages
 
@@ -19,4 +19,4 @@ Phonetic Formatter helps you convert English text into clear phonetic transcript
 
 ## Contact
 
-For questions or support, please email: phoneticformatter@outlook.com
+For questions or support, please email: support@louisbuilds.me
