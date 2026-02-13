@@ -13,18 +13,18 @@
     
     <!-- 规范链接和多语言 -->
     <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/support-da.html">
-    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/support.html"">
-    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/support-en.html"">
-    <link rel="alternate" hreflang="da" href="https://louisbuilds.me/purrrrrfocus/support-da.html"">
-    <link rel="alternate" hreflang="tr" href="https://louisbuilds.me/purrrrrfocus/support-tr.html"">
-    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/purrrrrfocus/support-fr.html"">
-    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/purrrrrfocus/support.html"">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/support.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/support-en.html">
+    <link rel="alternate" hreflang="da" href="https://louisbuilds.me/purrrrrfocus/support-da.html">
+    <link rel="alternate" hreflang="tr" href="https://louisbuilds.me/purrrrrfocus/support-tr.html">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/purrrrrfocus/support-fr.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/purrrrrfocus/support.html">
     
     <!-- Open Graph 标签（社交媒体分享） -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="PurrrrrFocus – Focus Enhancement Partner">
     <meta property="og:description" content="Focus better with PurrrrrFocus! Simple & user friendly focus timer app combining Chinese aesthetics with adorable cats. Features Pomodoro timer, count-up timer, deep focus mode, cat companion system, achievements, and 6 classical themes. Stay focused with your cute pet companion, build study and habit tracking, enter flow state. Perfect for ADHD support and productivity enhancement.">
-    <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/index-en.html">
+    <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/support-da.html">
     <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
@@ -98,7 +98,7 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             min-height: 100vh;
-            padding: 20px 0;
+            padding: 56px 0 20px;
             animation: fadeIn 0.6s ease-in;
         }
         
@@ -113,6 +113,26 @@
             padding: 20px;
         }
         
+        .page-brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .page-brand-row .page-app-icon { width: 48px; height: 48px; }
+        .page-brand-row .page-app-icon img {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: block;
+        }
+        .page-brand-name {
+            font-size: 1.25em;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+        
         .header {
             text-align: center;
             color: var(--text-primary);
@@ -123,12 +143,6 @@
         .cat-decoration {
             font-size: 2em;
             margin-bottom: 10px;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
         }
         
         .header h1 {
@@ -164,7 +178,7 @@
         }
         
         .content:hover {
-            box-shadow: 0 12px 32px var(--shadow-hover);
+            box-shadow: 0 8px 24px var(--shadow);
         }
         
         .section {
@@ -409,6 +423,41 @@
             color: var(--text-secondary);
             padding: 20px 0;
         }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 16px 24px;
+        }
+        .site-header .language-switcher { margin: 0; }
+        .site-header .language-switcher a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 12px;
+            font-size: 0.9em;
+            margin: 0 2px;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+        .site-header .language-switcher a:hover {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.6);
+        }
+        .site-header .language-switcher a.active {
+            color: var(--accent);
+            font-weight: 500;
+            background: transparent;
+        }
         
         .app-icon {
             width: 100px;
@@ -511,8 +560,6 @@
         
         .feature-item:hover {
             border-color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px var(--shadow);
         }
         
         .feature-item h4 {
@@ -540,9 +587,7 @@
         }
         
         .pricing-item:hover {
-            transform: translateX(5px);
             border-color: var(--accent);
-            box-shadow: 0 4px 12px var(--shadow);
         }
         
         .pricing-name {
@@ -578,7 +623,6 @@
         }
         
         .product-hunt-badge img {
-            border-radius: 8px;
             box-shadow: 0 4px 12px var(--shadow);
             transition: all 0.3s ease;
             max-width: 100%;
@@ -650,145 +694,31 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="app-icon">
-                <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
-            </div>
-            <h1>PurrrrrFocus</h1>
-            <p>Pomodoro timer｜Kat selskab｜Produktivitet app</p>
-            
-            <div class="app-store-badge">
-                <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" target="_blank" rel="noopener noreferrer">
-                    <img src="app-store-badge-da.svg" alt="Download på App Store">
-                </a>
-            </div>
-        </div>
-        
-        <div class="language-switcher">
+    <header class="site-header">
+        <nav class="language-switcher">
             <a href="support.html">中文</a>
             <a href="support-en.html">English</a>
             <a href="support-da.html" class="active">Dansk</a>
             <a href="support-tr.html">Türkçe</a>
             <a href="support-fr.html">Français</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">
+            <div class="page-brand-row">
+                <div class="page-app-icon"><img src="AppIcon-Preview.png" alt="PurrrrrFocus"></div>
+                <span class="page-brand-name">PurrrrrFocus</span>
+            </div>
+            <h1>Support</h1>
         </div>
         
         <div class="content">
-            <div class="section">
-                <h2>📞 Kontakt Os</h2>
-                
-                <div class="contact-item">
-                    <div class="contact-icon email">📧</div>
-                    <div class="contact-info">
-                        <h3>Officiel E-mail</h3>
-                        <p>support@louisbuilds.me</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon wechat-icon">
-                        <img src="icons/wechat.svg" alt="WeChat">
-                    </div>
-                    <div class="contact-info">
-                        <h3>WeChat Support</h3>
-                        <p>Lu1-2013 (Tilføj venligst note "PurrrrrFocus" når du tilføjer)</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon xiaohongshu-icon">
-                        <img src="icons/xiaohongshu.svg" alt="Xiaohongshu">
-                    </div>
-                    <div class="contact-info">
-                        <h3>Xiaohongshu</h3>
-                        <p>3432815257</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon douyin-icon">
-                        <img src="icons/douyin.svg" alt="Douyin">
-                    </div>
-                    <div class="contact-info">
-                        <h3>Douyin</h3>
-                        <p>PurrrrrFocus</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon instagram-icon">
-                        <img src="icons/instagram.svg" alt="Instagram">
-                    </div>
-                    <div class="contact-info">
-                        <h3>Instagram</h3>
-                        <p>purrrrrfocus</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section features-section">
-                <h2>✨ Plus Funktioner</h2>
-                <img src="cat-avatar-plus-features.png" alt="Plus Funktioner Dekoration" class="cat-avatar cat-avatar-features">
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h4>🔒 Elite Fokus Tilstand</h4>
-                        <p>Overvåg app skift adfærd. Skifte apps under fokus vil trække energi point for at forbedre fokus kvalitet</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>🔧 Brugerdefinerede Opgavetyper</h4>
-                        <p>Opret personlige opgavetyper, op til 20 brugerdefinerede typer</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>📊 Data Eksport</h4>
-                        <p>Eksporter fokus statistikker i CSV/Excel format</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>📈 Avancerede Statistikker</h4>
-                        <p>Detaljerede fokus data analyse og trend diagrammer</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>🎨 App Ikon Valg</h4>
-                        <p>Vælg dit foretrukne app ikon for at personliggøre din app udseende</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>✨ Energi Point Ikon Valg</h4>
-                        <p>Vælg din favorit energi point ikon animation for at gøre point visning mere levende</p>
-                    </div>
-                    <div class="feature-item">
-                        <h4>🎵 Eksklusive Lyde</h4>
-                        <p>Eksklusiv baggrundsmusik og hvid støj for medlemmer for at skabe en bedre fokus atmosfære</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>💰 Plus Priser</h2>
-                <div class="pricing-item">
-                    <div>
-                    <span class="pricing-name">Månedligt Abonnement</span>
-                        <div style="font-size: 0.85em; color: var(--text-secondary); margin-top: 4px;">Gratis i de første 3 dage, derefter ¥8/måned. Annuller når som helst under prøveperioden</div>
-                    </div>
-                    <span class="pricing-price">¥8/måned</span>
-                </div>
-                <div class="pricing-item">
-                    <div>
-                    <span class="pricing-name">Årligt Abonnement</span>
-                        <div style="font-size: 0.85em; color: var(--text-secondary); margin-top: 4px;">Gratis i de første 7 dage, derefter ¥48/år. Annuller når som helst under prøveperioden</div>
-                    </div>
-                    <span class="pricing-price">¥48/år</span>
-                </div>
-                <div class="pricing-item">
-                    <span class="pricing-name">Livstid Adgang</span>
-                    <span class="pricing-price">¥98 (engangsbetaling)</span>
-                </div>
-            </div>
-            
             <div class="section">
                 <h2>❓ Ofte Stillede Spørgsmål</h2>
                 
                 <div class="faq-item">
                     <div class="faq-question">S: Hvordan køber jeg Plus versionen?</div>
-                    <div class="faq-answer">S: Tryk på "Opgrader til Plus" i appen, vælg Månedligt Abonnement (¥8/måned), Årligt Abonnement (¥48/år) eller Livstid Adgang (¥98), og følg derefter vejledningerne for at fuldføre dit køb.</div>
+                    <div class="faq-answer">S: Tryk på "Opgrader til Plus" i appen, vælg din plan (Månedlig, Årlig eller Livstid). Priser kan variere efter region. Følg vejledningerne for at fuldføre dit køb.</div>
                 </div>
                 
                 <div class="faq-item">
@@ -828,10 +758,79 @@
             </div>
             
             <div class="section">
+                <h2>📞 Kontakt Os</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon email">📧</div>
+                    <div class="contact-info">
+                        <h3>Officiel E-mail</h3>
+                        <p>support@louisbuilds.me</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon instagram-icon">
+                        <img src="icons/instagram.svg" alt="Instagram">
+                    </div>
+                    <div class="contact-info">
+                        <h3>Instagram</h3>
+                        <p>purrrrrfocus</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section features-section">
+                <h2>✨ Plus Funktioner</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>🔒 Elite Fokus Tilstand</h4>
+                        <p>Overvåg app skift adfærd. Skifte apps under fokus vil trække energi point for at forbedre fokus kvalitet.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📈 Avancerede Statistikker</h4>
+                        <p>Detaljerede fokus data analyse og trend diagrammer.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>📊 Data Eksport</h4>
+                        <p>Eksporter fokus statistikker i CSV/Excel format.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🎵 Eksklusive Lyde</h4>
+                        <p>Eksklusiv baggrundsmusik og hvid støj for medlemmer for at skabe en bedre fokus atmosfære.</p>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 0.95em; margin-top: 16px;">Flere funktioner tilgængelige i appen.</p>
+            </div>
+            
+            <div class="section">
+                <h2>💰 Plus Priser</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Opgrader til PurrrrrFocus Plus — lås op for avancerede fokus værktøjer og tilpasningsmuligheder.</p>
+                <div class="pricing-item">
+                    <div>
+                        <span class="pricing-name">Månedligt Abonnement</span>
+                        <div style="font-size: 0.85em; color: var(--text-secondary); margin-top: 4px;">Gratis i de første 3 dage, derefter faktureret månedligt. Annuller når som helst under prøveperioden.</div>
+                    </div>
+                    <span class="pricing-price">$1.29/måned</span>
+                </div>
+                <div class="pricing-item">
+                    <div>
+                        <span class="pricing-name">Årligt Abonnement</span>
+                        <div style="font-size: 0.85em; color: var(--text-secondary); margin-top: 4px;">Gratis i de første 7 dage, derefter faktureret årligt. Annuller når som helst under prøveperioden.</div>
+                    </div>
+                    <span class="pricing-price">$7.99/år</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="pricing-name">Livstid Adgang</span>
+                    <span class="pricing-price">$14.99 (engangsbetaling)</span>
+                </div>
+                <p style="font-size: 0.9em; color: var(--text-secondary); margin-top: 12px;">Priser kan variere efter region.</p>
+            </div>
+            
+            <div class="section">
                 <h2>📋 App Information</h2>
                 <div class="info-item">
                     <strong>App Navn:</strong> PurrrrrFocus<br>
-                    <strong>Nuværende Version:</strong> 1.0.0<br>
+                    <strong>Nuværende Version:</strong> 2.1<br>
                     <strong>Minimum System Krav:</strong> iOS 15.0<br>
                     <strong>Understøttede Enheder:</strong> iPhone, iPad<br>
                     <strong>Sprog Support:</strong> Kinesisk, Engelsk, Dansk, Tyrkisk, Fransk
@@ -841,25 +840,12 @@
             <div class="section">
                 <h2>🔗 Related Links</h2>
                 <div class="info-item">
-                    <strong>English Version:</strong><br>
-                    <a href="privacy-policy-en.html" target="_blank">Privacy Policy</a> | 
-                    <a href="terms-of-service-en.html" target="_blank">Terms of Service</a><br><br>
-                    <strong>中文版本：</strong><br>
-                    <a href="privacy-policy-zh.html" target="_blank">隐私政策</a> | 
-                    <a href="terms-of-service-zh.html" target="_blank">使用条款</a><br><br>
-                    <strong>Dansk Version:</strong><br>
                     <a href="privacy-policy-da.html" target="_blank">Privatlivsforordning</a> | 
                     <a href="terms-of-service-da.html" target="_blank">Brugsvilkår</a><br><br>
-                    <strong>Türkçe Version:</strong><br>
-                    <a href="privacy-policy-tr.html" target="_blank">Gizlilik Politikası</a> | 
-                    <a href="terms-of-service-tr.html" target="_blank">Kullanım Şartları</a><br><br>
-                    <strong>Français Version:</strong><br>
-                    <a href="privacy-policy-fr.html" target="_blank">Politique de Confidentialité</a> | 
-                    <a href="terms-of-service-fr.html" target="_blank">Conditions d'Utilisation</a><br><br>
                     <strong>Product Hunt:</strong><br>
                     <div class="product-hunt-badge">
-                        <a href="https://www.producthunt.com/products/purrrrrfocus-pomodoro?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-purrrrrfocus-pomodoro" target="_blank" rel="noopener noreferrer">
-                            <img alt="PurrrrrFocus Pomodoro  - Turn focus into a delightful journey with cute cat companion | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1054013&amp;theme=light&amp;t=1766634809819">
+                        <a href="https://www.producthunt.com/products/purrrrrfocus-pomodoro?utm_source=badge-follow&amp;utm_medium=badge&amp;utm_campaign=badge-purrrrrfocus-pomodoro" target="_blank" rel="noopener noreferrer">
+                            <img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1141180&amp;theme=light&amp;size=small" alt="PurrrrrFocus Pomodoro on Product Hunt" style="width: 86px; height: 32px;" width="86" height="32">
                         </a>
                     </div>
                 </div>
@@ -869,16 +855,11 @@
         </div>
         
         <div class="footer">
-            <div class="app-store-badge">
-                <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" target="_blank" rel="noopener noreferrer">
-                    <img src="app-store-badge-da.svg" alt="Download på App Store">
-                </a>
-            </div>
             <div style="margin: 20px 0;">
                 <a href="index-da.html" style="color: var(--accent); text-decoration: none; padding: 10px 20px; background: var(--bg-primary); border-radius: 25px; border: 2px solid var(--border); display: inline-block; transition: all 0.3s ease;">← Tilbage til Hjemmesiden</a>
             </div>
-            <p>&copy; 2025 PurrrrrFocus. Alle rettigheder forbeholdes.</p>
-            <p>Gør fokus til en vane 🐱</p>
+            <p>&copy; 2026 PurrrrrFocus.</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
         </div>
     </div>
     
