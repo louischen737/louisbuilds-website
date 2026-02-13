@@ -5,66 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Support & FAQ - Phonetic Formatter | Help Center</title>
-    <meta name="title" content="Support & FAQ - Phonetic Formatter">
-    <meta name="description" content="Get help with Phonetic Formatter. Find answers to frequently asked questions, troubleshooting guides, and contact information.">
+    <title>Support &amp; Documentation - Phonetic Formatter</title>
+    <meta name="title" content="Support &amp; Documentation - Phonetic Formatter">
+    <meta name="description" content="Usage guidance, technical information, and frequently asked questions for Phonetic Formatter.">
     <meta name="keywords" content="phonetic formatter support, IPA converter help, phonetic transcription FAQ, app support">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/support.html">
-    <meta property="og:title" content="Support & FAQ - Phonetic Formatter">
-    <meta property="og:description" content="Get help with Phonetic Formatter. Find answers to frequently asked questions and troubleshooting guides.">
+    <meta property="og:title" content="Support &amp; Documentation - Phonetic Formatter">
+    <meta property="og:description" content="Usage guidance, technical information, and frequently asked questions.">
     <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary">
     <meta property="twitter:url" content="https://louisbuilds.me/phoneticformatter/support.html">
-    <meta property="twitter:title" content="Support & FAQ - Phonetic Formatter">
-    <meta property="twitter:description" content="Get help with Phonetic Formatter. Find answers to frequently asked questions.">
+    <meta property="twitter:title" content="Support &amp; Documentation - Phonetic Formatter">
+    <meta property="twitter:description" content="Usage guidance, technical information, and frequently asked questions.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/support.html">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 1rem;
             line-height: 1.7;
-            color: #333;
-            background: #f8f9fa;
+            color: #111827;
+            background: #fafaf9;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         header {
-            background: white;
-            color: #333;
+            background: #fff;
+            color: #111827;
             padding: 1.5rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 0 #e5e7eb;
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        
-        header .container {
-            max-width: 1200px;
-        }
-        
         .header-content {
             display: flex;
             align-items: center;
@@ -72,408 +54,181 @@
             gap: 1rem;
             flex-wrap: nowrap;
         }
-        
-        .header-content > a {
-            flex-shrink: 0;
-            margin-right: 2.5rem;
-        }
-        
-        nav {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .header-cta {
-            flex-shrink: 0;
-            display: none;
-        }
-        
+        .header-content > a { flex-shrink: 0; margin-right: 2.5rem; }
+        nav { flex: 1; min-width: 0; display: flex; align-items: center; }
+        nav ul { list-style: none; display: flex; flex-wrap: nowrap; gap: 2.5rem; margin: 0; }
+        nav a { color: #4b5563; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        nav a:hover { color: #2563eb; }
+        .header-cta { flex-shrink: 0; display: none; }
         @media (min-width: 769px) {
             .header-cta {
                 display: inline-flex;
                 align-items: center;
                 gap: 0.5rem;
-                padding: 0.6rem 1.5rem;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 0.6rem 1.25rem;
+                background: #2563eb;
                 color: white;
                 text-decoration: none;
                 font-weight: 600;
                 font-size: 0.95rem;
-                border-radius: 50px;
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-                transition: transform 0.3s, box-shadow 0.3s;
+                border-radius: 8px;
+                transition: background 0.2s;
             }
-            
-            .header-cta:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            }
+            .header-cta:hover { background: #1d4ed8; }
         }
-        
-        .logo {
-            height: 50px;
-            width: auto;
-            max-width: 200px;
-            object-fit: contain;
+        .logo { height: 50px; width: auto; max-width: 200px; object-fit: contain; }
+        .page-title {
+            background: #fafaf9;
+            padding: 3rem 0 2rem;
+            margin-bottom: 0;
         }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 2.5rem;
-            margin: 0;
-        }
-        
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #667eea;
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-section h1 {
-            color: white;
-            margin-bottom: 0.5rem;
-            font-size: 2.5rem;
-        }
-        
-        .hero-section .subtitle {
-            font-size: 1.2rem;
-            color: white;
-            opacity: 0.95;
-            margin: 0;
-        }
-        
+        .page-title h1 { font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; }
+        .page-title .subtitle { font-size: 1.125rem; color: #4b5563; margin: 0; }
         .anchor-nav {
-            background: white;
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
             padding: 1rem 0;
-            margin: 2rem 0;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 0 0 2rem 0;
             position: sticky;
             top: 0;
             z-index: 50;
         }
-        
         .anchor-nav ul {
             list-style: none;
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
             margin: 0;
             padding: 0 1rem;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
-        
-        .anchor-nav ul::-webkit-scrollbar {
-            display: none;
-        }
-        
+        .anchor-nav ul::-webkit-scrollbar { display: none; }
         .anchor-nav a {
             white-space: nowrap;
             font-size: 0.9rem;
-            padding: 0.5rem 0.75rem;
-        }
-        
-        .anchor-nav a {
-            color: #667eea;
+            padding: 0.5rem 1rem;
+            color: #2563eb;
             text-decoration: none;
             font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: background 0.3s, color 0.3s;
+            transition: color 0.2s;
         }
-        
-        .anchor-nav a:hover {
-            background: #f0f0f0;
-            color: #764ba2;
-        }
-        
-        .content {
-            background: white;
-            padding: 3rem;
-            margin: 2rem 0;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .section {
-            scroll-margin-top: 100px;
-        }
-        
-        h1 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            color: #333;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.75rem;
+        .anchor-nav a:hover { color: #1d4ed8; }
+        .content { max-width: 48rem; margin: 0 auto; padding: 0 0 4rem; }
+        .section { scroll-margin-top: 100px; }
+        .content h2 {
+            font-size: 1.5rem;
             font-weight: 600;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        h3 {
-            color: #444;
-            margin-top: 1.5rem;
+            color: #111827;
+            margin-top: 2.5rem;
             margin-bottom: 0.75rem;
-            font-size: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .content h3.subsection {
+            font-size: 1.125rem;
             font-weight: 600;
+            color: #111827;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0;
+            background: none;
+            border-radius: 0;
+            cursor: default;
+            display: block;
+        }
+        .content h3:not(.subsection) {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin-top: 1.25rem;
+            margin-bottom: 0;
+            padding: 0.75rem 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.75rem 1rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            transition: background 0.3s;
+            transition: background 0.2s;
         }
-        
-        h3:hover {
-            background: #f0f0f0;
-        }
-        
-        h3 .toggle-icon {
-            font-size: 1rem;
-            transition: transform 0.3s;
-        }
-        
-        h3.expanded .toggle-icon {
-            transform: rotate(180deg);
-        }
-        
+        .content h3:not(.subsection):hover { background: #f3f4f6; }
+        .content h3 .toggle-icon { font-size: 0.875rem; transition: transform 0.2s; }
+        .content h3.expanded .toggle-icon { transform: rotate(180deg); }
         .faq-answer {
             display: none;
-            padding: 0 1rem 1rem;
-            color: #444;
-            line-height: 1.8;
+            padding: 1rem 1rem 0.5rem;
+            color: #374151;
+            line-height: 1.7;
         }
-        
-        .faq-answer.expanded {
-            display: block;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            color: #444;
-            line-height: 1.8;
-        }
-        
-        ul, ol {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-            color: #444;
-            line-height: 1.8;
-        }
-        
-        li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .pro-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-        
-        .pro-feature {
-            color: #667eea;
-            font-weight: 600;
-        }
-        
+        .faq-answer.expanded { display: block; }
+        .faq-answer ul { margin: 0.5rem 0 1rem 1.5rem; }
+        .content p, .faq-answer p { color: #374151; margin-bottom: 1rem; }
+        .content ul, .content ol { margin: 0 0 1rem 1.5rem; color: #374151; }
+        .content li { margin-bottom: 0.5rem; }
+        .content a { color: #2563eb; text-decoration: none; transition: color 0.2s; }
+        .content a:hover { color: #1d4ed8; }
         .contact-box {
-            background: #f0f7ff;
-            border-left: 4px solid #667eea;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
+            background: #f0f9ff;
+            border-left: 3px solid #2563eb;
+            padding: 1.5rem 1.5rem 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
         }
-        
-        .contact-box a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .contact-box a:hover {
-            text-decoration: underline;
-        }
-        
+        .contact-box a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        .contact-box a:hover { color: #1d4ed8; }
         .contact-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white !important;
+            background: #2563eb;
+            color: #fff !important;
             text-decoration: none;
             font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
             margin-top: 1rem;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: background 0.2s;
         }
-        
-        .contact-button:link,
-        .contact-button:visited,
         .contact-button:hover,
-        .contact-button:active {
-            color: white !important;
-        }
-        
-        .contact-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-        
+        .contact-button:focus { background: #1d4ed8; color: #fff !important; }
         .format-note {
-            background: #fff9e6;
-            border-left: 4px solid #ffc107;
-            padding: 1rem 1.5rem;
+            background: #fffbeb;
+            border-left: 3px solid #e5e7eb;
+            padding: 1rem 1.25rem;
             margin: 1rem 0;
-            border-radius: 4px;
+            border-radius: 0 6px 6px 0;
             font-size: 0.95rem;
-            color: #444;
+            color: #374151;
         }
-        
         footer {
-            background: #2a2a2a;
-            color: rgba(255,255,255,0.9);
-            padding: 3rem 0;
+            background: #f3f4f6;
+            color: #374151;
+            padding: 4rem 0 3rem;
             text-align: center;
+            border-top: 1px solid #e5e7eb;
         }
-        
-        footer a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        footer p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
+        .footer-links { margin-bottom: 1rem; }
+        .footer-links a { color: #2563eb; text-decoration: none; margin: 0 0.5rem; font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #1d4ed8; }
+        .footer-copyright { font-size: 0.9rem; color: #6b7280; line-height: 1.8; margin: 0; }
+        footer a { color: #2563eb; text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: #1d4ed8; }
         @media (max-width: 768px) {
-            .header-content {
-                flex-wrap: wrap;
-                gap: 0.75rem;
-            }
-            
-            .header-content > a {
-                order: 1;
-                margin-right: 0;
-            }
-            
-            nav {
-                order: 3;
-                width: 100%;
-                flex: 1 1 100%;
-            }
-            
-            nav ul {
-                gap: 1rem;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .header-cta {
-                order: 2;
-                margin-left: auto;
-            }
-            
-            .hero-section {
-                padding: 2rem 0;
-            }
-            
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-section .subtitle {
-                font-size: 1rem;
-                padding: 0 1rem;
-            }
-            
-            .anchor-nav {
-                position: relative;
-            }
-            
-            .anchor-nav {
-                margin: 1.5rem 0;
-            }
-            
-            .anchor-nav ul {
-                justify-content: flex-start;
-                gap: 0.5rem;
-                padding: 0.75rem 1rem;
-            }
-            
-            .anchor-nav a {
-                font-size: 0.85rem;
-                padding: 0.5rem 0.75rem;
-            }
-            
-            .content {
-                padding: 2rem 1.5rem;
-                margin: 1.5rem 0;
-            }
-            
-            h2 {
-                margin-top: 2rem;
-                font-size: 1.5rem;
-            }
-            
-            h3 {
-                font-size: 1.1rem;
-                padding: 0.75rem;
-            }
-            
-            ul, ol {
-                margin-left: 1.5rem;
-                padding-right: 0.5rem;
-            }
-            
-            .contact-box {
-                padding: 1.5rem;
-            }
-            
-            .contact-button {
-                width: 100%;
-                text-align: center;
-            }
+            .header-content { flex-wrap: wrap; gap: 0.75rem; }
+            .header-content > a { order: 1; margin-right: 0; }
+            nav { order: 3; width: 100%; flex: 1 1 100%; }
+            nav ul { gap: 1rem; justify-content: center; flex-wrap: wrap; }
+            .header-cta { order: 2; margin-left: auto; }
+            .page-title { padding: 2rem 0 1.5rem; }
+            .page-title h1 { font-size: 1.875rem; }
+            .anchor-nav { margin-bottom: 1.5rem; }
+            .anchor-nav ul { justify-content: flex-start; padding: 0.5rem 1rem; }
+            .content { padding-bottom: 2.5rem; }
+            .content h2 { margin-top: 2rem; font-size: 1.25rem; }
+            .content h3 { font-size: 1rem; padding: 0.65rem 0.75rem; }
+            .contact-box { padding: 1.25rem; }
+            .contact-button { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -501,10 +256,10 @@
         </div>
     </header>
 
-    <div class="hero-section">
+    <div class="page-title">
         <div class="container">
-            <h1>Support</h1>
-            <p class="subtitle">Get help, troubleshoot issues, and contact us quickly</p>
+            <h1>Support &amp; Documentation</h1>
+            <p class="subtitle">Usage guidance, technical information, and frequently asked questions.</p>
         </div>
     </div>
 
@@ -512,146 +267,179 @@
         <nav class="anchor-nav">
             <ul>
                 <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#technical">Technical Overview</a></li>
                 <li><a href="#exporting">Exporting Results</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resources">Additional Resources</a></li>
             </ul>
         </nav>
 
         <div class="content">
             <section id="getting-started" class="section">
-            <h2>Getting Started</h2>
-            <p>Phonetic Formatter is designed to be simple and intuitive. Here's how to get started:</p>
-            
-            <h3>Basic Usage</h3>
-            <ol>
-                <li>Open the app and you'll see a text input area</li>
-                <li>Paste or type your English text into the input field</li>
-                <li>Optionally choose <strong>display format</strong> (By sentence or Word-by-word <span class="pro-badge">Pro</span>) and <strong>IPA wrap symbols</strong> (L/R fields) above the Generate button</li>
-                <li>Tap the "Generate" button to convert your text to phonetic transcription</li>
-                <li>The results appear below. Use "Copy" to copy, or "Export" (Pro) to save as TXT, DOCX, or PDF</li>
-            </ol>
-            <p><strong>Note:</strong> Free users can convert up to 400 words per conversion and have 1 generation per day, with <strong>transcription by sentence only</strong>. Pro users get <strong>word-by-word transcription</strong>, up to 6,000 words per conversion, unlimited daily generations, and export.</p>
-            
+                <h2>Getting Started</h2>
+                <p>Phonetic Formatter converts English text into rule-based IPA transcription. All processing is performed locally on your device.</p>
+                <h3 class="subsection">Basic Workflow</h3>
+                <ol>
+                    <li>Enter or paste English text into the input field.</li>
+                    <li>Select the display format:
+                        <ul>
+                            <li>Sentence-level transcription</li>
+                            <li>Word-aligned transcription (Pro)</li>
+                        </ul>
+                    </li>
+                    <li>(Optional) Configure left and right IPA wrapping symbols.</li>
+                    <li>Tap <strong>Generate</strong> to produce phonetic output.</li>
+                    <li>Copy results directly, or export (Pro) in supported formats.</li>
+                </ol>
+                <h3 class="subsection">Usage Limits</h3>
+                <p><strong>Free Version</strong></p>
+                <ul>
+                    <li>Sentence-level transcription only</li>
+                    <li>Up to 400 words per conversion</li>
+                    <li>One generation per day</li>
+                </ul>
+                <p><strong>Pro Version (One-Time Purchase)</strong></p>
+                <ul>
+                    <li>Sentence-level and word-aligned transcription</li>
+                    <li>Up to 6,000 words per conversion</li>
+                    <li>Unlimited generations</li>
+                    <li>Export support (TXT, DOCX, PDF)</li>
+                </ul>
             </section>
-            
+
+            <section id="technical" class="section">
+                <h2>Technical Overview</h2>
+                <p>Phonetic Formatter is a deterministic, rule-based IPA formatting engine designed for accurate processing of real-world English text.</p>
+                <p>Core characteristics:</p>
+                <ul>
+                    <li>Rule-based sentence boundary detection</li>
+                    <li>Context-aware tokenization (punctuation, quotation marks, hyphen variants, numeric formats)</li>
+                    <li>Support for signed numbers and percentage forms</li>
+                    <li>Unicode-aware text normalization</li>
+                    <li>Fully offline processing</li>
+                    <li>Powered by the CMU Pronouncing Dictionary (Carnegie Mellon University)</li>
+                    <li>Output rendered using the International Phonetic Alphabet (IPA)</li>
+                </ul>
+                <p>All transcription results are generated locally. No text is uploaded or transmitted.</p>
+            </section>
+
             <section id="exporting" class="section">
-            <h2>Exporting Results</h2>
-            <p>Pro users can export their results in multiple formats:</p>
-            <ul>
-                <li><strong>TXT:</strong> Plain text format, perfect for simple documents</li>
-                <li><strong>DOCX:</strong> Microsoft Word format, ideal for lesson plans and documents</li>
-                <li><strong>PDF:</strong> Portable document format, great for sharing and printing</li>
-            </ul>
-            <p>To export, tap the "Export" button and choose your preferred format from the share sheet.</p>
-            <div class="format-note">
-                <strong>Note:</strong> Available formats may vary depending on your device and installed apps.
-            </div>
+                <h2>Exporting Results</h2>
+                <p>Pro users may export generated transcription results in the following formats:</p>
+                <ul>
+                    <li><strong>TXT</strong> — Plain text format</li>
+                    <li><strong>DOCX</strong> — Microsoft Word document format</li>
+                    <li><strong>PDF</strong> — Portable Document Format</li>
+                </ul>
+                <p>To export:</p>
+                <ol>
+                    <li>Generate transcription output.</li>
+                    <li>Tap <strong>Export</strong>.</li>
+                    <li>Select the desired format from the system share sheet.</li>
+                </ol>
+                <div class="format-note">
+                    <strong>Note:</strong> Available export destinations depend on device configuration and installed applications.
+                </div>
             </section>
-            
+
             <section id="faq" class="section">
-            <h2>Frequently Asked Questions</h2>
-            
-            <h3 onclick="toggleFAQ(this)">What is the difference between Free and Pro?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Free: up to 400 words per conversion, 1 generation per day, transcription by sentence only. Pro: word-by-word transcription, up to 6,000 words per conversion, unlimited daily generations, export (TXT, DOCX, PDF), and lifetime access.</div>
-            
-            <h3 onclick="toggleFAQ(this)">How do I upgrade to Pro?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">You can upgrade to Pro from within the app. Go to Settings and tap "Upgrade to Pro" to purchase the one-time Pro license.</div>
-            
-            <h3 onclick="toggleFAQ(this)">Can I restore my Pro purchase on another device?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Yes! Use the "Restore Purchase" option in Settings. Make sure you're signed in with the same Apple ID on both devices.</div>
-            
-            <h3 onclick="toggleFAQ(this)">Does the app work offline?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Yes! All processing happens locally on your device using the bundled CMU Pronouncing Dictionary. No internet connection is required for text conversion.</div>
-            
-            <h3 onclick="toggleFAQ(this)">Is my data stored or sent anywhere?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">No. All processing is done locally on your device. Your text never leaves your device, and we don't collect any data. See our <a href="privacy.html">Privacy Policy</a> for more details.</div>
-            
-            <h3 onclick="toggleFAQ(this)">What dictionary does the app use?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Phonetic Formatter uses the CMU Pronouncing Dictionary, which is bundled with the app. This ensures accurate phonetic transcriptions and offline functionality.</div>
-            
-            <h3 onclick="toggleFAQ(this)">Can I change between British and American pronunciation?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Currently, the app uses the CMU Pronouncing Dictionary which primarily reflects American English pronunciation. The current version does not support switching between British and American pronunciation variants. This feature may be considered for future updates.</div>
-            
-            <h3 onclick="toggleFAQ(this)">Can I use this for commercial purposes?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Yes, you can use the app and its output for commercial purposes. However, please review our <a href="terms.html">Terms of Service</a> for complete details.</div>
-
-            <h3 onclick="toggleFAQ(this)">What is word-by-word format? <span class="pro-badge">Pro</span><span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">Word-by-word is a Pro display format. Each sentence is shown as a group: the original sentence as a title line, then each word with its IPA on a separate line (word and IPA separated by a tab). Ideal for detailed study or worksheets.</div>
-
-            <h3 onclick="toggleFAQ(this)">What are the L and R fields for?<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">They let you set optional left and right symbols to wrap IPA (e.g. <code>/</code> for <code>/həˈloʊ/</code>). Leave both empty for no wrapping. Available to all users; max 2 characters per field.</div>
+                <h2>Frequently Asked Questions</h2>
+                <h3 onclick="toggleFAQ(this)">What is the difference between Free and Pro?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">The Free version provides sentence-level transcription with usage limits. The Pro version removes daily limits, enables word-aligned transcription, and allows exporting results in multiple document formats.</div>
+                <h3 onclick="toggleFAQ(this)">How do I upgrade to Pro?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Upgrade is available within the app. Navigate to Settings and select <strong>Upgrade to Pro</strong> to complete the one-time purchase.</div>
+                <h3 onclick="toggleFAQ(this)">Can I restore my Pro purchase on another device?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Yes. Use the <strong>Restore Purchase</strong> option in Settings. Ensure you are signed in with the same Apple ID used for the original purchase.</div>
+                <h3 onclick="toggleFAQ(this)">Does the app require an internet connection?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">No. All transcription processing is performed locally on the device. No internet connection is required.</div>
+                <h3 onclick="toggleFAQ(this)">Is any user data collected?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">No. The application does not collect, store, or transmit user text. All processing remains entirely on-device. See the <a href="privacy.html">Privacy Policy</a> for details.</div>
+                <h3 onclick="toggleFAQ(this)">What dictionary does the app use?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">The app is powered by the <strong>CMU Pronouncing Dictionary</strong>, developed by Carnegie Mellon University. The dictionary is bundled locally to ensure offline availability and consistent transcription behavior.</div>
+                <h3 onclick="toggleFAQ(this)">Does the app support British pronunciation?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">The current version reflects the pronunciation conventions of the CMU Pronouncing Dictionary, which primarily represents American English phonology. Variant switching is not currently supported.</div>
+                <h3 onclick="toggleFAQ(this)">What is Word-Aligned Transcription (Pro)?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Word-aligned transcription presents each lexical item alongside its IPA representation within sentence groupings. This format is suitable for linguistic analysis, annotation, and instructional material preparation.</div>
+                <h3 onclick="toggleFAQ(this)">What are the L and R fields?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">The L (left) and R (right) fields allow optional wrapping of IPA output (e.g., <code>/həˈloʊ/</code>). Each field accepts up to two characters. Leave both empty to display IPA without wrapping symbols.</div>
             </section>
-            
+
             <section id="troubleshooting" class="section">
-            <h2>Troubleshooting</h2>
-            
-            <h3 onclick="toggleFAQ(this)">The app isn't generating phonetic transcriptions<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">
-                <ul>
-                    <li>Make sure you've entered text in the input field</li>
-                    <li>Check that you haven't exceeded the daily limit (Free users)</li>
-                    <li>Ensure your text is in English - the app uses the CMU Pronouncing Dictionary which is designed for English</li>
-                    <li>Try restarting the app</li>
-                </ul>
-            </div>
-            
-            <h3 onclick="toggleFAQ(this)">Export isn't working<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">
-                <ul>
-                    <li>Export is a Pro feature - make sure you have an active Pro license</li>
-                    <li>Check that you have generated phonetic results first</li>
-                    <li>Ensure you have sufficient storage space on your device</li>
-                </ul>
-            </div>
-            
-            <h3 onclick="toggleFAQ(this)">Purchase issues<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">
-                <ul>
-                    <li>If your purchase didn't complete, try using "Restore Purchase" in Settings</li>
-                    <li>Make sure you're signed in with your Apple ID</li>
-                    <li>Check your internet connection</li>
-                    <li>For refund requests, contact Apple through your Apple ID account settings or the App Store</li>
-                </ul>
-            </div>
-            
-            <h3 onclick="toggleFAQ(this)">App crashes or freezes<span class="toggle-icon">▼</span></h3>
-            <div class="faq-answer">
-                <ul>
-                    <li>Try restarting your device</li>
-                    <li>Ensure your iOS version is compatible with the app (check App Store requirements)</li>
-                    <li>Close other apps to free up memory</li>
-                    <li>If the problem persists, try uninstalling and reinstalling the app</li>
-                    <li>Contact us if the issue continues</li>
-                </ul>
-            </div>
+                <h2>Troubleshooting</h2>
+                <h3 onclick="toggleFAQ(this)">Transcription is not generated<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Confirm text is entered in the input field.</li>
+                        <li>Verify that usage limits have not been exceeded (Free version).</li>
+                        <li>Ensure the text is in English.</li>
+                        <li>Restart the application if necessary.</li>
+                    </ul>
+                </div>
+                <h3 onclick="toggleFAQ(this)">Export is unavailable<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Export functionality requires Pro.</li>
+                        <li>Confirm transcription output has been generated.</li>
+                        <li>Ensure sufficient device storage is available.</li>
+                    </ul>
+                </div>
+                <h3 onclick="toggleFAQ(this)">Purchase issues<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Use <strong>Restore Purchase</strong> if the upgrade is not recognized.</li>
+                        <li>Confirm you are signed in with the correct Apple ID.</li>
+                        <li>For billing or refund requests, contact Apple Support directly.</li>
+                    </ul>
+                </div>
+                <h3 onclick="toggleFAQ(this)">App crashes or performance issues<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Restart the device.</li>
+                        <li>Ensure your iOS version meets App Store requirements.</li>
+                        <li>Close background applications to free memory.</li>
+                        <li>Reinstall the app if necessary.</li>
+                        <li>Contact support if the issue persists.</li>
+                    </ul>
+                </div>
             </section>
-            
+
             <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <div class="contact-box">
-                <p>If you have any questions, issues, or feedback, please don't hesitate to reach out:</p>
-                <p><strong>Email:</strong> <a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></p>
-                <p>We typically respond within 24-48 hours.</p>
-                <a href="mailto:support@louisbuilds.me" class="contact-button">Open Email Client</a>
-            </div>
+                <h2>Contact</h2>
+                <div class="contact-box">
+                    <p>For technical questions, bug reports, or feedback:</p>
+                    <p><strong>Email:</strong> <a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></p>
+                    <p>Please include:</p>
+                    <ul>
+                        <li>iOS version</li>
+                        <li>App version</li>
+                        <li>A brief description of the issue</li>
+                        <li>(Optional) Example text if related to transcription behavior</li>
+                    </ul>
+                    <p>Typical response time: 24–48 hours.</p>
+                    <a href="mailto:support@louisbuilds.me" class="contact-button">Open Email Client</a>
+                </div>
             </section>
-            
-            <section class="section">
-            <h2>Additional Resources</h2>
-            <ul>
-                <li><a href="privacy.html">Privacy Policy</a> - Learn how we handle your data</li>
-                <li><a href="terms.html">Terms of Service</a> - Read our terms and conditions</li>
-            </ul>
+
+            <section id="resources" class="section">
+                <h2>Additional Resources</h2>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
             </section>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Phonetic Formatter. All rights reserved.</p>
-            <p><a href="index.html">Home</a> | <a href="support.html">Support</a> | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            <p class="footer-links">
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms of Service</a> |
+                <a href="support.html">Technical Support</a>
+            </p>
+            <p class="footer-copyright">© 2026 Phonetic Formatter<br>A product by Louis · <a href="https://louisbuilds.me">louisbuilds.me</a></p>
         </div>
     </footer>
     
