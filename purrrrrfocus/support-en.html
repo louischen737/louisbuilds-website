@@ -610,7 +610,8 @@
         .pricing-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            gap: 16px;
             padding: 18px;
             background: #F9F3E6;
             border-radius: 12px;
@@ -623,6 +624,10 @@
             border-color: var(--accent);
         }
         
+        .pricing-item > div {
+            min-width: 0;
+        }
+        
         .pricing-name {
             font-weight: 600;
             color: var(--text-primary);
@@ -632,6 +637,8 @@
             color: var(--accent);
             font-weight: bold;
             font-size: 1.1em;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
         
         .section a {
@@ -888,7 +895,9 @@
                     <span class="pricing-price">$7.99/year</span>
                 </div>
                 <div class="pricing-item">
-                    <span class="pricing-name">Lifetime Access</span>
+                    <div>
+                        <span class="pricing-name">Lifetime Access</span>
+                    </div>
                     <span class="pricing-price">$14.99 (one-time)</span>
                 </div>
                 <p style="font-size: 0.9em; color: var(--text-secondary); margin-top: 12px;">Prices may vary by region.</p>
