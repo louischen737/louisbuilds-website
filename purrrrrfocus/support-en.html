@@ -267,21 +267,24 @@
             justify-content: center;
         }
         
-        /* Social media icon colors - using Simple Icons standard colors */
-        .contact-icon.wechat-icon img {
-            filter: brightness(0) saturate(100%) invert(48%) sepia(95%) saturate(2000%) hue-rotate(120deg) brightness(0.95) contrast(1.1);
+        /* Social media icon colors - official brand hex (Facebook, X, YouTube, Instagram, 小红书, 抖音) */
+        .contact-icon.facebook-icon img {
+            filter: brightness(0) saturate(100%) invert(46%) sepia(79%) saturate(2476%) hue-rotate(206deg) brightness(1) contrast(1);
         }
-        
-        .contact-icon.xiaohongshu-icon img {
-            filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(5000%) hue-rotate(340deg) brightness(1) contrast(1);
-        }
-        
-        .contact-icon.douyin-icon img {
+        .contact-icon.x-icon img {
             filter: brightness(0);
         }
-        
+        .contact-icon.youtube-icon img {
+            filter: brightness(0) saturate(100%) invert(16%) sepia(99%) saturate(7404%) hue-rotate(0deg) brightness(1) contrast(1);
+        }
         .contact-icon.instagram-icon img {
-            filter: brightness(0) saturate(100%) invert(25%) sepia(95%) saturate(3000%) hue-rotate(320deg) brightness(0.95) contrast(1.1);
+            filter: brightness(0) saturate(100%) invert(35%) sepia(90%) saturate(2500%) hue-rotate(330deg) brightness(0.95) contrast(1);
+        }
+        .contact-icon.xiaohongshu-icon img {
+            filter: brightness(0) saturate(100%) invert(18%) sepia(98%) saturate(6000%) hue-rotate(350deg) brightness(1) contrast(1);
+        }
+        .contact-icon.douyin-icon img {
+            filter: brightness(0);
         }
         
         .contact-item:hover .contact-icon {
@@ -299,12 +302,42 @@
         .contact-info p {
             color: var(--text-secondary);
             font-size: 0.9em;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            margin: 0;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .contact-item .contact-copy-btn {
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+        .contact-info a[href^="mailto:"] {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .contact-info a[href^="mailto:"]:hover {
+            text-decoration: underline;
+        }
+        .contact-copy-btn {
+            padding: 4px 10px;
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            background: rgba(222, 186, 134, 0.25);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .contact-copy-btn:hover {
+            background: rgba(222, 186, 134, 0.45);
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+        }
+        .contact-copy-btn.copied {
+            border-color: var(--text-secondary);
+            color: var(--text-secondary);
+            background: rgba(222, 186, 134, 0.2);
         }
         
         .faq-item {
@@ -764,8 +797,9 @@
                     <div class="contact-icon email">📧</div>
                     <div class="contact-info">
                         <h3>Official Email</h3>
-                        <p>support@louisbuilds.me</p>
+                        <p><a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></p>
                     </div>
+                    <button type="button" class="contact-copy-btn" data-copy="support@louisbuilds.me" aria-label="Copy email">Copy</button>
                 </div>
                 
                 <div class="contact-item">
@@ -776,6 +810,40 @@
                         <h3>Instagram</h3>
                         <p>purrrrrfocus</p>
                     </div>
+                    <button type="button" class="contact-copy-btn" data-copy="purrrrrfocus" aria-label="Copy account">Copy</button>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon facebook-icon">
+                        <img src="icons/facebook.svg" alt="Facebook">
+                    </div>
+                    <div class="contact-info">
+                        <h3>Facebook</h3>
+                        <p>Louis Chen</p>
+                    </div>
+                    <button type="button" class="contact-copy-btn" data-copy="Louis Chen" aria-label="Copy account">Copy</button>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon x-icon">
+                        <img src="icons/Twitter(X).svg" alt="X (Twitter)">
+                    </div>
+                    <div class="contact-info">
+                        <h3>X (Twitter)</h3>
+                        <p>@LouisChen737</p>
+                    </div>
+                    <button type="button" class="contact-copy-btn" data-copy="@LouisChen737" aria-label="Copy account">Copy</button>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon youtube-icon">
+                        <img src="icons/youtube.svg" alt="YouTube">
+                    </div>
+                    <div class="contact-info">
+                        <h3>YouTube</h3>
+                        <p>@PurrrrrFocus</p>
+                    </div>
+                    <button type="button" class="contact-copy-btn" data-copy="@PurrrrrFocus" aria-label="Copy account">Copy</button>
                 </div>
             </div>
             
@@ -887,6 +955,22 @@
                         item.classList.remove('active');
                     } else {
                         item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Contact copy buttons
+            document.querySelectorAll('.contact-copy-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var text = this.getAttribute('data-copy');
+                    if (!text) return;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(text).then(function() {
+                            var orig = btn.textContent;
+                            btn.textContent = 'Copied!';
+                            btn.classList.add('copied');
+                            setTimeout(function() { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+                        });
                     }
                 });
             });
