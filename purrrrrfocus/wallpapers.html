@@ -15,6 +15,9 @@
     <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/wallpapers.html">
     <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/wallpapers.html">
     <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/wallpapers-en.html">
+    <link rel="alternate" hreflang="da" href="https://louisbuilds.me/purrrrrfocus/wallpapers-da.html">
+    <link rel="alternate" hreflang="tr" href="https://louisbuilds.me/purrrrrfocus/wallpapers-tr.html">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/purrrrrfocus/wallpapers-fr.html">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <style>
@@ -42,13 +45,7 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             min-height: 100vh;
-            padding: 20px 0;
-            animation: fadeIn 0.6s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            padding: 56px 0 20px;
         }
         
         .container {
@@ -57,82 +54,87 @@
             padding: 20px;
         }
         
+        .page-brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .page-brand-row .page-app-icon { width: 48px; height: 48px; }
+        .page-brand-row .page-app-icon img {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: block;
+        }
+        .page-brand-name { font-size: 1.25em; font-weight: 400; color: var(--text-primary); }
+        
         .header {
             text-align: center;
-            color: var(--text-primary);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
         
         .header h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 300;
             color: var(--text-primary);
         }
         
         .header p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: var(--text-secondary);
-            margin-bottom: 20px;
         }
         
-        .app-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 20px;
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
             display: flex;
+            justify-content: flex-end;
             align-items: center;
-            justify-content: center;
-            position: relative;
+            padding: 16px 24px;
         }
-        
-        .app-icon img {
-            width: 100px;
-            height: 100px;
-            border-radius: 22px;
-            box-shadow: 0 8px 20px var(--shadow);
-            transition: all 0.3s ease;
+        .site-header .language-switcher { margin: 0; }
+        .site-header .language-switcher a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 12px;
+            font-size: 0.9em;
+            margin: 0 2px;
+            border-radius: 6px;
+            transition: color 0.2s ease, background 0.2s ease;
         }
-        
-        .app-icon img:hover {
-            transform: scale(1.08) rotate(2deg);
-            box-shadow: 0 12px 28px var(--shadow-hover);
+        .site-header .language-switcher a:hover {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.6);
+        }
+        .site-header .language-switcher a.active {
+            color: var(--accent);
+            font-weight: 500;
         }
         
         .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .back-link a {
             color: var(--accent);
             text-decoration: none;
-            font-size: 1em;
-            transition: color 0.3s ease;
-        }
-        
-        .back-link:hover {
-            color: var(--text-primary);
-            text-decoration: underline;
-        }
-        
-        .language-switcher {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .language-switcher a {
+            padding: 10px 20px;
+            background: var(--bg-primary);
+            border-radius: 25px;
+            border: 2px solid var(--border);
             display: inline-block;
-            padding: 8px 16px;
-            margin: 0 5px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: 8px;
             transition: all 0.3s ease;
         }
-        
-        .language-switcher a.active,
-        .language-switcher a:hover {
-            background: var(--bg-card);
-            color: var(--accent);
-            box-shadow: 0 2px 8px var(--shadow);
+        .back-link a:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
         }
         
         .content {
@@ -360,38 +362,17 @@
         .footer {
             text-align: center;
             margin-top: 40px;
-            padding: 20px;
             color: var(--text-secondary);
+            font-size: 0.9em;
         }
+        .footer p { margin: 5px 0; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
         
-        .footer p {
-            margin: 5px 0;
-        }
-        
-        /* 响应式设计 */
-            @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .app-icon {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .app-icon img {
-                width: 80px;
-                height: 80px;
-            }
-            
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .content { padding: 20px; }
+            .header h1 { font-size: 2em; }
             .wallpaper-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 gap: 15px;
@@ -414,23 +395,83 @@
     </style>
 </head>
 <body>
+    <header class="site-header">
+        <nav class="language-switcher">
+            <a href="wallpapers.html" class="active">中文</a>
+            <a href="wallpapers-en.html">English</a>
+            <a href="wallpapers-da.html">Dansk</a>
+            <a href="wallpapers-tr.html">Türkçe</a>
+            <a href="wallpapers-fr.html">Français</a>
+        </nav>
+    </header>
     <div class="container">
         <div class="header">
-            <div class="app-icon">
-                <img src="AppIcon-Preview.png" alt="PurrrrrFocus">
+            <div class="page-brand-row">
+                <div class="page-app-icon"><img src="AppIcon-Preview.png" alt="PurrrrrFocus"></div>
+                <span class="page-brand-name">PurrrrrFocus</span>
             </div>
             <h1>精美壁纸</h1>
             <p>精选高质量壁纸，为您的设备增添美感</p>
         </div>
         
-        <div class="language-switcher">
-            <a href="wallpapers.html" class="active">中文</a>
-            <a href="wallpapers-en.html">English</a>
-        </div>
-        
         <div class="content">
             <div class="download-tip">
                 <strong>💡 下载提示：</strong>点击壁纸可查看大图，长按图片可保存到相册，或点击下载按钮直接下载。
+            </div>
+            
+            <!-- 春节主题分类 -->
+            <div class="category-section">
+                <h2 class="category-title"><span style="font-size: 1.2em; margin-right: 8px;">🧧</span>春节主题</h2>
+                <div class="wallpaper-grid">
+                    <div class="wallpaper-item" data-full="wallpapers/spring-festival/spring_festival_001.png">
+                        <img src="wallpapers/spring-festival/spring_festival_001.png" alt="春节壁纸 1" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/spring-festival/spring_festival_001.png', '春节壁纸_1')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">春节壁纸 1</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/spring-festival/spring_festival_002.png">
+                        <img src="wallpapers/spring-festival/spring_festival_002.png" alt="春节壁纸 2" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/spring-festival/spring_festival_002.png', '春节壁纸_2')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">春节壁纸 2</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/spring-festival/spring_festival_003.png">
+                        <img src="wallpapers/spring-festival/spring_festival_003.png" alt="春节壁纸 3" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/spring-festival/spring_festival_003.png', '春节壁纸_3')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">春节壁纸 3</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/spring-festival/spring_festival_004.png">
+                        <img src="wallpapers/spring-festival/spring_festival_004.png" alt="春节壁纸 4" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/spring-festival/spring_festival_004.png', '春节壁纸_4')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">春节壁纸 4</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/spring-festival/spring_festival_005.png">
+                        <img src="wallpapers/spring-festival/spring_festival_005.png" alt="春节壁纸 5" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/spring-festival/spring_festival_005.png', '春节壁纸_5')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">春节壁纸 5</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                    <div class="wallpaper-item" data-full="wallpapers/spring-festival/spring_festival_006.png">
+                        <img src="wallpapers/spring-festival/spring_festival_006.png" alt="春节壁纸 6" loading="lazy">
+                        <button class="download-btn" onclick="downloadWallpaper(event, 'wallpapers/spring-festival/spring_festival_006.png', '春节壁纸_6')">下载</button>
+                        <div class="wallpaper-overlay">
+                            <div class="wallpaper-name">春节壁纸 6</div>
+                            <div class="wallpaper-info">1080×1920</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- 圣诞节主题分类 -->
@@ -503,6 +544,10 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="back-link">
+                <a href="index.html">← 返回主页</a>
+            </div>
         </div>
         
         <div class="footer">
@@ -510,8 +555,8 @@
                 <p style="margin: 10px 0;"><strong>©️ 版权声明</strong></p>
                 <p style="margin: 5px 0;">以上壁纸版权归「喵时计」设计师陈聪所有，未经授权，禁止商用。</p>
             </div>
-            <p>&copy; 2025 PurrrrrFocus. All rights reserved.</p>
-            <p>让专注成为一种习惯 🐱</p>
+            <p>&copy; 2026 PurrrrrFocus.</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
         </div>
     </div>
     
