@@ -9,18 +9,34 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg-color: #1C1C1E;
-    --text-primary: #FFFFFF;
-    --text-secondary: #E5E5EA;
-    --text-muted: #8E8E93;
-    --btn-radius: 12px;
+    --bg-color: #000;
+    --text-primary: #fff;
+    --text-secondary: #a1a1a6;
+    --text-muted: #6e6e73;
+    --accent: #007aff;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+html { scroll-behavior: smooth; }
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     background: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Scroll progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--accent);
+    z-index: 9999;
 }
 
 /* Hero */
@@ -31,295 +47,357 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 80px 24px;
+    padding: 0 24px;
+    position: relative;
+    background:
+        radial-gradient(circle at center, #1c1c1e 0%, #000 70%);
 }
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.05), transparent 60%);
+    animation: breathe 18s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes breathe {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
 .hero h1 {
-    font-size: clamp(48px, 8vw, 64px);
-    margin-bottom: 24px;
+    font-size: clamp(56px, 10vw, 88px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    background: linear-gradient(180deg, #ffffff 0%, #bdbdc2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeUp 1s var(--ease);
 }
+
 .hero p {
-    font-size: 20px;
+    font-size: clamp(20px, 4vw, 26px);
     color: var(--text-secondary);
-    margin-bottom: 48px;
+    max-width: 720px;
+    margin-bottom: 60px;
+    animation: fadeUp 1.2s var(--ease);
 }
-.hero a {
-    padding: 16px 36px;
+
+.hero .explore-btn {
+    font-size: 16px;
+    padding: 14px 36px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--text-primary);
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.4s var(--ease);
+    animation: fadeUp 1.4s var(--ease);
+}
+
+.hero .explore-btn:hover {
     background: #fff;
     color: #000;
-    border-radius: var(--btn-radius);
-    font-weight: 500;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Products */
 .products {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
+    padding: 160px 24px;
 }
 
 .product {
     display: flex;
-    gap: 48px;
+    gap: 80px;
     align-items: center;
-    flex-wrap: wrap;
+    margin-bottom: 240px;
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(8px);
+    transition: all 1s var(--ease);
 }
+
+.product.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
 .product:nth-child(even) {
     flex-direction: row-reverse;
 }
 
 .product-info {
     flex: 1;
-    min-width: 280px;
 }
+
 .product-info h2 {
-    font-size: 36px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.product-info h2 .app-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    flex-shrink: 0;
-    object-fit: cover;
-}
-.product-info p {
-    color: var(--text-secondary);
-    margin-bottom: 16px;
-}
-.product-info .tags {
-    font-size: 14px;
-    color: var(--text-muted);
+    font-size: 48px;
+    font-weight: 600;
     margin-bottom: 20px;
-}
-.product-info .buttons {
+    letter-spacing: -0.02em;
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
     align-items: center;
-}
-.product-info .buttons a {
-    padding: 10px 24px;
-    background: #fff;
-    color: #000;
-    border-radius: var(--btn-radius);
-    font-weight: 500;
-    font-size: 16px;
-    height: 40px;
-    line-height: 20px;
-    display: inline-flex;
-    align-items: center;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-.product-info .buttons a:hover {
-    opacity: 0.9;
-}
-.product-info .buttons a.app-store-badge {
-    padding: 0;
-    background: none;
-    height: 40px;
-}
-.product-info .buttons a.app-store-badge img {
-    height: 40px;
-    width: auto;
-    display: block;
-}
-.product-info .buttons a.app-store-badge:hover {
-    opacity: 0.8;
-}
-
-/* Screenshots - shared */
-.product-screenshot {
-    flex: 1;
-    display: grid;
     gap: 16px;
-    justify-content: center;
+    white-space: nowrap;
 }
 
-/* iOS screenshots */
+@media (max-width: 1200px) {
+    .product-info h2 {
+        white-space: normal;
+    }
+}
+
+.app-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.product-info p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    max-width: 400px;
+}
+
+.tags {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.app-store-badge {
+    height: 40px;
+    transition: transform 0.4s var(--ease);
+}
+
+.app-store-badge:hover {
+    transform: scale(1.05);
+}
+
+.btn-learn {
+    font-size: 15px;
+    color: var(--text-primary);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s var(--ease);
+}
+
+.btn-learn:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+/* Screenshots */
+.product-screenshot {
+    flex: 1.4;
+    display: grid;
+    gap: 24px;
+}
+
+.product-screenshot img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    transition: all 0.5s var(--ease);
+    cursor: pointer;
+}
+
+.product-screenshot img:hover {
+    transform: scale(1.03) rotateX(2deg) rotateY(-2deg);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+}
+
 .product-screenshot.ios {
     grid-template-columns: repeat(4, 1fr);
-    max-width: 520px;
-}
-.product-screenshot.ios img {
-    width: 100%;
-    aspect-ratio: 9 / 19.5;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
 }
 
-/* macOS screenshots */
 .product-screenshot.macos {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 720px;
-}
-.product-screenshot.macos img {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
+/* Footer */
+footer {
+    padding: 120px 24px 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-muted);
+}
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+footer a:hover { color: #fff; }
+
+footer p {
+    margin-top: 24px;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
     .product {
-        flex-direction: column;
+        flex-direction: column !important;
         text-align: center;
-    }
-    .product:nth-child(even) {
-        flex-direction: column;
+        gap: 60px;
     }
 
     .product-screenshot.ios {
         grid-template-columns: repeat(2, 1fr);
     }
-    .product-screenshot.macos {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Footer */
-footer {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 48px 24px;
-    text-align: center;
-}
-footer a {
-    color: var(--text-secondary);
-    margin: 0 12px;
-}
-footer p {
-    margin-top: 16px;
-    font-size: 13px;
-    color: var(--text-muted);
 }
 </style>
 </head>
 
 <body>
 
+<div class="progress-bar" id="progressBar"></div>
+
 <section class="hero">
     <h1>Louis Builds</h1>
-    <p>Thoughtfully built apps for focus, learning, and creative work.</p>
-    <a href="#products">Explore Apps</a>
+    <p>Built with intention. Designed to feel effortless.</p>
+    <a href="#products" class="explore-btn">Explore Apps</a>
 </section>
 
 <section class="products" id="products">
 
 <!-- TapPause -->
 <div class="product">
-    <div class="product-info">
-        <h2>
-            <img src="tappause/icon.png" alt="TapPause icon" class="app-icon">
-            TapPause
-        </h2>
-        <p>A minimal pause timer to stop, pause, and rest.</p>
-        <div class="tags">pause · timer · minimal · break · rest</div>
-        <div class="buttons">
-            <a href="tappause/">Learn More</a>
-            <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge">
-                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
-            </a>
-        </div>
-    </div>
-    <div class="product-screenshot ios">
-        <img src="tappause/screenshot1.png">
-        <img src="tappause/screenshot2.png">
-        <img src="tappause/screenshot3.png">
-        <img src="tappause/screenshot4.png">
-    </div>
+<div class="product-info">
+<h2><img src="tappause/icon.png" class="app-icon"> TapPause</h2>
+<p>A minimal pause timer to stop, pause, and rest. Designed for intentional breaks.</p>
+<div class="tags">Timer · Minimal · Rest</div>
+<div class="buttons">
+<a href="https://apps.apple.com/app/tappause" target="_blank" class="app-store-badge">
+<img src="assets/app-store-badge.svg">
+</a>
+<a href="tappause/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="product-screenshot ios">
+<img src="tappause/screenshot1.png">
+<img src="tappause/screenshot2.png">
+<img src="tappause/screenshot3.png">
+<img src="tappause/screenshot4.png">
+</div>
 </div>
 
 <!-- PurrrrrFocus -->
 <div class="product">
-    <div class="product-info">
-        <h2>
-            <img src="purrrrrfocus/icon.png" alt="PurrrrrFocus icon" class="app-icon">
-            PurrrrrFocus
-        </h2>
-        <p>Deep focus timers with progress tracking and your cat companion.</p>
-        <div class="tags">iOS · Pomodoro · Productivity · Cats</div>
-        <div class="buttons">
-            <a href="purrrrrfocus/">Learn More</a>
-            <a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge">
-                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
-            </a>
-        </div>
-    </div>
-    <div class="product-screenshot ios">
-        <img src="purrrrrfocus/screenshot1.png">
-        <img src="purrrrrfocus/screenshot2.png">
-        <img src="purrrrrfocus/screenshot3.png">
-        <img src="purrrrrfocus/screenshot4.png">
-    </div>
+<div class="product-info">
+<h2><img src="purrrrrfocus/icon.png" class="app-icon"> PurrrrrFocus</h2>
+<p>Deep focus timers with progress tracking and your cat companion.</p>
+<div class="tags">Pomodoro · Productivity · Cats</div>
+<div class="buttons">
+<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" class="app-store-badge">
+<img src="assets/app-store-badge.svg">
+</a>
+<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="product-screenshot ios">
+<img src="purrrrrfocus/screenshot1.png">
+<img src="purrrrrfocus/screenshot2.png">
+<img src="purrrrrfocus/screenshot3.png">
+<img src="purrrrrfocus/screenshot4.png">
+</div>
 </div>
 
 <!-- TransMov -->
 <div class="product">
-    <div class="product-info">
-        <h2>
-            <img src="transmov/icon.png" alt="TransMov icon" class="app-icon">
-            TransMov
-        </h2>
-        <p>Transform videos into animations with AI-powered background removal — all local.</p>
-        <div class="tags">macOS · Video · Animation · AI · Privacy</div>
-        <div class="buttons">
-            <a href="transmov/">Learn More</a>
-            <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge">
-                <img src="assets/app-store-badge.svg" alt="Download on the Mac App Store">
-            </a>
-        </div>
-    </div>
-    <div class="product-screenshot macos">
-        <img src="transmov/screenshot1.png">
-        <img src="transmov/screenshot2.png">
-        <img src="transmov/screenshot3.png">
-        <img src="transmov/screenshot4.png">
-    </div>
+<div class="product-info">
+<h2><img src="transmov/icon.png" class="app-icon"> TransMov</h2>
+<p>Convert videos into transparent GIF, APNG, and WebP with AI-powered background removal — fully offline on your Mac.</p>
+<div class="tags">macOS · AI Video Cutout · Offline Processing</div>
+<div class="buttons">
+<a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" class="app-store-badge">
+<img src="assets/app-store-badge.svg">
+</a>
+<a href="transmov/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="product-screenshot macos">
+<img src="transmov/screenshot1.png">
+<img src="transmov/screenshot2.png">
+<img src="transmov/screenshot3.png">
+<img src="transmov/screenshot4.png">
+</div>
 </div>
 
 <!-- Phonetic Formatter -->
 <div class="product">
-    <div class="product-info">
-        <h2>
-            <img src="phoneticformatter/icon.png" alt="Phonetic Formatter icon" class="app-icon">
-            Phonetic Formatter
-        </h2>
-        <p>Convert English text into accurate, aligned IPA transcription. Supports sentence-level and word-aligned formatting with rule-based text handling.</p>
-        <div class="tags">iOS · English · IPA · Linguistics · Text Processing
-        </div>
-        <div class="buttons">
-            <a href="phoneticformatter/">Learn More</a>
-            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge">
-                <img src="assets/app-store-badge.svg" alt="Download on the App Store">
-            </a>
-        </div>
-    </div>
-    <div class="product-screenshot ios">
-        <img src="phoneticformatter/screenshot1.png">
-        <img src="phoneticformatter/screenshot2.png">
-        <img src="phoneticformatter/screenshot3.png">
-        <img src="phoneticformatter/screenshot4.png">
-    </div>
+<div class="product-info">
+<h2><img src="phoneticformatter/icon.png" class="app-icon"> Phonetic Formatter</h2>
+<p>Convert English text into accurate IPA transcription. Supports sentence-level and word-aligned formatting.</p>
+<div class="tags">iOS · English · IPA · Linguistics</div>
+<div class="buttons">
+<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" class="app-store-badge">
+<img src="assets/app-store-badge.svg">
+</a>
+<a href="phoneticformatter/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="product-screenshot ios">
+<img src="phoneticformatter/screenshot1.png">
+<img src="phoneticformatter/screenshot2.png">
+<img src="phoneticformatter/screenshot3.png">
+<img src="phoneticformatter/screenshot4.png">
+</div>
 </div>
 
 </section>
 
 <footer>
-    <div>
-        <a href="mailto:support@louisbuilds.me">Contact</a>
-        <a href="https://github.com/louischen737" target="_blank">GitHub</a>
-    </div>
-    <p>Independent apps, thoughtfully built.</p>
+<div>
+<a href="mailto:support@louisbuilds.me">Contact</a>
+<a href="https://github.com/louischen737" target="_blank">GitHub</a>
+</div>
+<p>Independent apps, thoughtfully built. © 2026 Louis Builds.</p>
 </footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.product').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+const scrollTop = window.scrollY;
+const docHeight = document.body.scrollHeight - window.innerHeight;
+const progress = (scrollTop / docHeight) * 100;
+document.getElementById('progressBar').style.width = progress + '%';
+});
+</script>
 
 </body>
 </html>
