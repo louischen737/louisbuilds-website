@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Phonetic Formatter - Professional IPA Formatting for Real-World English Text | IPA Converter</title>
-    <meta name="title" content="Phonetic Formatter - Professional IPA Formatting for Real-World English Text">
-    <meta name="description" content="Accurate sentence segmentation, intelligent punctuation handling, and flexible layout options for teachers and learners.">
+    <title>Phonetic Formatter - Structured IPA Transcription for Real English Text</title>
+    <meta name="title" content="Phonetic Formatter - Structured IPA Transcription for Real English Text">
+    <meta name="description" content="Convert full English passages into clear, properly formatted IPA transcription. Built for teachers, linguistics students, and serious learners.">
     <meta name="keywords" content="phonetic transcription, IPA converter, phonetic formatter, English to IPA, phonetic alphabet, language learning, pronunciation guide, CMU dictionary">
     <meta name="author" content="Phonetic Formatter">
     <meta name="robots" content="index, follow">
@@ -17,8 +17,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/">
-    <meta property="og:title" content="Phonetic Formatter - Professional IPA Formatting for Real-World English Text">
-    <meta property="og:description" content="Accurate sentence segmentation, intelligent punctuation handling, and flexible layout options for teachers and learners.">
+    <meta property="og:title" content="Phonetic Formatter - Structured IPA Transcription for Real English Text">
+    <meta property="og:description" content="Convert full English passages into clear, properly formatted IPA transcription. Built for teachers and learners.">
     <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
     <meta property="og:site_name" content="Phonetic Formatter">
     <meta property="og:locale" content="en_US">
@@ -26,18 +26,15 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://louisbuilds.me/phoneticformatter/">
-    <meta property="twitter:title" content="Phonetic Formatter - Professional IPA Formatting for Real-World English Text">
-    <meta property="twitter:description" content="Accurate sentence segmentation, intelligent punctuation handling, and flexible layout options for teachers and learners.">
+    <meta property="twitter:title" content="Phonetic Formatter - Structured IPA Transcription for Real English Text">
+    <meta property="twitter:description" content="Convert full English passages into clear, properly formatted IPA transcription.">
     <meta property="twitter:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="logo.png">
-    
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/">
     
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,25 +47,25 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.5",
-        "ratingCount": "100"
-      },
-      "description": "Professional IPA formatting for real-world English text. Accurate sentence segmentation, intelligent punctuation handling, and flexible layout options for teachers and learners.",
+      "description": "Convert full English passages into clear, properly formatted IPA transcription. Sentence-based and word-aligned layouts available. Works fully offline.",
       "screenshot": "https://louisbuilds.me/phoneticformatter/logo.png",
       "featureList": [
-        "Convert English text to IPA phonetic transcription",
-        "Word-by-word IPA transcription layout (Pro)",
+        "Convert full English text to IPA phonetic transcription",
+        "Sentence-based and word-by-word layout (Pro)",
         "Powered by CMU Pronouncing Dictionary",
         "Export to TXT, DOCX, PDF formats",
         "Works offline",
-        "Privacy-first: all processing local",
-        "Free and Pro versions available"
+        "All processing local and private"
       ]
     }
     </script>
     <style>
+        :root {
+            --border-color: #e5e7eb;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -123,9 +120,6 @@
         
         .header-cta {
             flex-shrink: 0;
-        }
-        
-        .header-cta {
             display: none;
         }
         
@@ -133,19 +127,32 @@
             .header-cta {
                 display: inline-flex;
                 align-items: center;
-                gap: 0.5rem;
-                padding: 0.6rem 1.25rem;
+                gap: 0.6rem;
+                padding: 0.65rem 1.4rem;
                 background: #2563eb;
-                color: white;
+                color: #fff;
                 text-decoration: none;
                 font-weight: 600;
                 font-size: 0.95rem;
-                border-radius: 8px;
-                transition: background 0.2s;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+                transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            }
+            
+            .header-cta svg {
+                width: 20px;
+                height: 20px;
             }
             
             .header-cta:hover {
                 background: #1d4ed8;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
+            }
+            
+            .header-cta:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
             }
         }
         
@@ -180,11 +187,12 @@
             color: #4b5563;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s, transform 0.15s;
         }
         
         nav a:hover {
             color: #2563eb;
+            transform: translateY(-1px);
         }
         
         .hero {
@@ -218,7 +226,7 @@
         }
         
         .hero h1 {
-            font-size: 2.75rem;
+            font-size: 3.25rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
             line-height: 1.25;
@@ -230,10 +238,10 @@
         }
         
         .hero h2 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 2.5rem;
             font-weight: 400;
-            color: #4b5563;
+            color: #9ca3af;
             line-height: 1.6;
         }
         
@@ -413,6 +421,7 @@
             font-weight: 700;
             color: #111827;
             margin-bottom: 0.75rem;
+            text-wrap: balance;
         }
         
         .features-header p {
@@ -420,6 +429,33 @@
             color: #4b5563;
             margin: 0;
             max-width: 48rem;
+        }
+        
+        .feature-video {
+            text-align: center;
+            margin: 2.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-video .phone-frame {
+            padding: 12px 10px 14px;
+            background: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 100%);
+            border-radius: 28px;
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            display: inline-block;
+        }
+
+        .feature-video video {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 14px;
+            display: block;
+            background: #000;
         }
         
         .feature-list {
@@ -445,8 +481,8 @@
         }
         
         .feature-icon {
-            width: 18px;
-            height: 18px;
+            width: 22px;
+            height: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -455,10 +491,13 @@
         }
         
         .feature-icon svg {
-            width: 18px;
-            height: 18px;
+            width: 22px;
+            height: 22px;
             stroke: currentColor;
-            stroke-width: 1.25;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         
         .feature-title-row h3 {
@@ -555,6 +594,13 @@
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
+            font-size: 15px;
+        }
+        
+        .pricing-table th,
+        .pricing-table td {
+            padding: 14px 12px;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .pricing-table thead {
@@ -562,11 +608,12 @@
             color: #111827;
         }
         
-        .pricing-table th {
-            padding: 1.5rem 2rem;
-            text-align: center;
-            font-size: 1.5rem;
+        .pricing-table thead th {
             font-weight: 600;
+            text-align: center;
+        }
+        
+        .pricing-table th {
             vertical-align: top;
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -574,8 +621,12 @@
             white-space: normal;
         }
         
-        .pricing-table th:first-child {
+        .pricing-table th:first-child,
+        .pricing-table .plan-label {
             text-align: left;
+        }
+        
+        .pricing-table th:first-child {
             width: 200px;
             min-width: 200px;
         }
@@ -593,7 +644,7 @@
         }
         
         .pricing-table tbody tr {
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .pricing-table tbody tr:last-child {
@@ -606,28 +657,54 @@
         }
         
         .pricing-table td {
-            padding: 1.25rem 2rem;
             text-align: center;
-            font-size: 1rem;
             word-wrap: break-word;
             overflow-wrap: break-word;
             word-break: break-word;
             white-space: normal;
         }
         
-        .pricing-table td:first-child {
+        .pricing-table td:first-child,
+        .feature-name {
             text-align: left;
+            color: var(--text-primary);
+        }
+        
+        .pricing-table td:first-child {
             font-weight: 500;
-            color: #111827;
+        }
+        
+        .value {
+            text-align: center;
+            color: var(--text-secondary);
         }
         
         .pricing-table td.free-col {
-            color: #4b5563;
+            color: var(--text-secondary);
         }
         
-        .pricing-table td.pro-col {
+        .pricing-table td.pro-col,
+        .pro-col {
             color: #111827;
             font-weight: 600;
+            background: rgba(0, 0, 0, 0.02);
+        }
+        
+        .price-row td {
+            border-top: 1.5px solid var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .price-value {
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+        
+        .price-note {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 4px;
         }
         
         .pricing-cta {
@@ -734,6 +811,14 @@
             .header-cta {
                 order: 2;
                 margin-left: auto;
+                padding: 0.55rem 1.2rem;
+                font-size: 0.9rem;
+                gap: 0.5rem;
+            }
+            
+            .header-cta svg {
+                width: 18px;
+                height: 18px;
             }
             
             .hero {
@@ -749,7 +834,7 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.75rem;
                 max-width: 100%;
                 padding: 0 1rem;
             }
@@ -759,7 +844,7 @@
             }
             
             .hero h2 {
-                font-size: 1.25rem;
+                font-size: 1.05rem;
             }
             
             .hero-buttons {
@@ -871,14 +956,61 @@
                 padding: 0 1rem;
             }
         }
+        
+        /* Section scroll reveal */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-reveal .feature-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .scroll-reveal.is-visible .feature-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-reveal .feature-item:nth-child(1) { transition-delay: 0.1s; }
+        .scroll-reveal .feature-item:nth-child(2) { transition-delay: 0.2s; }
+        .scroll-reveal .feature-item:nth-child(3) { transition-delay: 0.3s; }
+        .scroll-reveal .feature-item:nth-child(4) { transition-delay: 0.4s; }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-reveal,
+            .scroll-reveal .feature-item {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .scroll-reveal.is-visible .feature-item {
+                opacity: 1;
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html"><img src="logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';"></a>
-                <h1 class="logo-text" style="display: none;"><a href="index.html">Phonetic Formatter</a></h1>
+                <a href="index.html">
+                    <img src="logo.png" alt="Phonetic Formatter Logo" class="logo" 
+                         onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                </a>
+                <h1 class="logo-text" style="display: none;">
+                    <a href="index.html">Phonetic Formatter</a>
+                </h1>
+    
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -888,9 +1020,11 @@
                         <li><a href="terms.html">Terms</a></li>
                     </ul>
                 </nav>
+    
+                <!-- 优化按钮 -->
                 <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="header-cta" target="_blank" rel="noopener noreferrer">
                     Get App
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                         <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
                     </svg>
                 </a>
@@ -898,12 +1032,18 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero scroll-reveal">
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-left">
-                    <h1>Professional IPA Formatting for Real-World English Text</h1>
-                    <h2>Accurate sentence segmentation, intelligent punctuation handling, and flexible layout options for teachers and learners.</h2>
+                    <h1>
+                        Structured IPA Transcription<br>
+                        for Real English Text
+                    </h1>
+                    <h2>
+                        Convert full English passages into clear, properly formatted IPA — not just isolated words.<br>
+                        Perfect for teachers, linguistics students, and serious learners who need reliable pronunciation formatting.
+                    </h2>
                     <div class="hero-buttons">
                         <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="app-store-badge" target="_blank" rel="noopener noreferrer">
                             <img src="app-store-badge.svg" alt="Download on the App Store" />
@@ -929,121 +1069,159 @@
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section class="features scroll-reveal" id="features">
         <div class="container">
             <div class="features-header">
-                <h2>Formatting &amp; Transcription Capabilities</h2>
-                <p>Built for real-world English text, with precise sentence segmentation and symbol handling.</p>
+                <!-- 优化标题，使用 non-breaking spaces 避免孤词换行，同时视觉居中 -->
+                <h2 style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.3;">
+                    Designed for Real Sentences — Beyond Single Word Lookups
+                </h2>
+                <!-- 副标题加入 Export 功能亮点 -->
+                <p style="text-align: center; max-width: 700px; margin: 1rem auto 0 auto; color: #4b5563;">
+                    Convert full paragraphs into structured IPA with consistent formatting, and export your results to 
+                    <strong>TXT, DOCX, or PDF</strong> for teaching, study, or research purposes.
+                </p>
             </div>
+    
+            <!-- 视频展示区 -->
+            <div class="feature-video">
+                <div class="phone-frame">
+                    <video 
+                        src="feature-demo.mp4" 
+                        controls 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+    
             <div class="feature-list">
+                <!-- Sentence-Level -->
                 <div class="feature-item">
                     <div class="feature-title-row">
-                        <span class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none"/></svg>
-                        </span>
-                        <h3>Sentence Boundary Analysis</h3>
+                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 6h16M4 12h16M4 18h10"/>
+                        </svg>
+                        <h3>Sentence-Level Transcription</h3>
                     </div>
                     <p class="feature-description">
-                        Rule-based detection of sentence boundaries that accounts for abbreviations, numeric expressions, domain names, and parenthetical structures.
-                        Ensures alignment of transcription units with natural sentence flow.
+                        Converts full paragraphs into IPA while preserving natural sentence boundaries.
+                        Handles abbreviations, numbers, percentages, domain names, and punctuation with consistent formatting.
                     </p>
                 </div>
+    
+                <!-- Word-by-Word -->
                 <div class="feature-item">
                     <div class="feature-title-row">
-                        <span class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
-                        </span>
-                        <h3>Context-Sensitive Tokenization</h3>
+                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="7" height="16"/>
+                            <rect x="14" y="4" width="7" height="16"/>
+                        </svg>
+                        <h3>Word‑by‑Word Alignment (Pro)</h3>
                     </div>
                     <p class="feature-description">
-                        Preserves and segments complex tokens such as monetary amounts, percentages, abbreviations, hyphenated terms, and institutional names.
-                        Prevents erroneous splitting, maintaining fidelity for phonetic transcription.
+                        Align each word directly with its pronunciation.
+                        Useful for classroom projection, worksheet preparation, and detailed pronunciation analysis.
                     </p>
                 </div>
+    
+                <!-- Formatting -->
                 <div class="feature-item">
                     <div class="feature-title-row">
-                        <span class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="8" y1="7" x2="18" y2="7"/><line x1="8" y1="12" x2="18" y2="12"/></svg>
-                        </span>
-                        <h3>Word-Aligned IPA Transcription</h3>
+                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 6h18M6 12h12M9 18h6"/>
+                        </svg>
+                        <h3>Clean, Readable Formatting</h3>
                     </div>
                     <p class="feature-description">
-                        Generates word-by-word IPA alignments with clear indication of primary and secondary stress, weak forms, and alternative pronunciations.
-                        Configurable line wrapping allows precise layout for scholarly analysis. (Pro)
+                        Displays original text and IPA in structured blocks with proper stress marks and consistent spacing.
+                        Optimized for long passages, not just quick dictionary lookups.
                     </p>
                 </div>
+    
+                <!-- Offline -->
                 <div class="feature-item">
                     <div class="feature-title-row">
-                        <span class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        </span>
-                        <h3>Offline, Deterministic Export</h3>
+                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                        <h3>Fully Offline & Private</h3>
                     </div>
                     <p class="feature-description">
-                        All processing is executed locally using deterministic formatting logic.
-                        Supports export to TXT, DOCX, and PDF without network dependency, ensuring reproducibility and privacy for research or classroom applications.
+                        All processing happens locally on your device.
+                        No data upload, no tracking, no cloud processing.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing">
+    <section class="pricing scroll-reveal">
         <div class="container">
-            <h2>Upgrade to Pro for Full Access</h2>
+            <h2>Free and Pro Access</h2>
+    
             <div class="pricing-table-container">
                 <table class="pricing-table">
+                    <colgroup>
+                        <col style="width: 42%;">
+                        <col style="width: 29%;">
+                        <col style="width: 29%;">
+                    </colgroup>
                     <thead>
                         <tr>
-                            <th>Plan Details</th>
+                            <th class="plan-label">Plan Details</th>
                             <th class="free-col">Free</th>
                             <th class="pro-col">Pro</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Daily Generations</td>
-                            <td class="free-col">1/day</td>
-                            <td class="pro-col">Unlimited</td>
+                            <td class="feature-name">Daily Generations</td>
+                            <td class="value free-col">1 per day</td>
+                            <td class="value pro-col">Unlimited</td>
                         </tr>
                         <tr>
-                            <td>Text Length</td>
-                            <td class="free-col">Up to 400 words</td>
-                            <td class="pro-col">Up to 6,000 words per conversion</td>
+                            <td class="feature-name">Maximum Text Length</td>
+                            <td class="value free-col">Up to 400 words</td>
+                            <td class="value pro-col">Up to 6,000 words</td>
                         </tr>
                         <tr>
-                            <td>Display Formats</td>
-                            <td class="free-col">By sentence only</td>
-                            <td class="pro-col">By sentence + Word-by-word</td>
+                            <td class="feature-name">Display Formats</td>
+                            <td class="value free-col">Sentence-based</td>
+                            <td class="value pro-col">Sentence + Word-by-word</td>
                         </tr>
                         <tr>
-                            <td>Copy Results</td>
-                            <td class="free-col">Yes</td>
-                            <td class="pro-col">Yes</td>
+                            <td class="feature-name">Copy Results</td>
+                            <td class="value free-col">Included</td>
+                            <td class="value pro-col">Included</td>
                         </tr>
                         <tr>
-                            <td>Export TXT/DOCX/PDF</td>
-                            <td class="free-col">—</td>
-                            <td class="pro-col">Yes</td>
+                            <td class="feature-name">Export (TXT / DOCX / PDF)</td>
+                            <td class="value free-col">—</td>
+                            <td class="value pro-col">Included</td>
                         </tr>
                         <tr>
-                            <td>Lifetime Access</td>
-                            <td class="free-col">—</td>
-                            <td class="pro-col">Yes</td>
+                            <td class="feature-name">Lifetime Access</td>
+                            <td class="value free-col">—</td>
+                            <td class="value pro-col">Included</td>
+                        </tr>
+                        <tr class="price-row">
+                            <td class="feature-name price-label">Price</td>
+                            <td class="value free-col price-value">Free</td>
+                            <td class="value pro-col price-value">
+                                <div>$19.99</div>
+                                <div class="price-note">One-time purchase</div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="pricing-table-footer">
-                    <div class="pricing-footer-label">Price</div>
-                    <div class="pricing-footer-price">
-                        <div class="pricing-footer-price-value">Free</div>
-                    </div>
-                    <div class="pricing-footer-price pro-price">
-                        <div class="pricing-footer-price-value">$19.99</div>
-                        <div class="pricing-footer-price-note">one-time purchase</div>
-                    </div>
-                </div>
             </div>
+    
             <div class="pricing-cta">
                 <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="app-store-badge" target="_blank" rel="noopener noreferrer">
                     <img src="app-store-badge.svg" alt="Download on the App Store" />
@@ -1062,5 +1240,32 @@
             <p class="footer-copyright">© 2026 Phonetic Formatter<br>A product by Louis · <a href="https://louisbuilds.me">louisbuilds.me</a></p>
         </div>
     </footer>
+    <script>
+        (function() {
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) return;
+            
+            var sections = document.querySelectorAll('.scroll-reveal');
+            if (!sections.length) return;
+            
+            function reveal(entry) {
+                entry.target.classList.add('is-visible');
+            }
+            
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) reveal(entry);
+                });
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+            
+            sections.forEach(function(section) {
+                if (section.classList.contains('hero')) {
+                    section.classList.add('is-visible');
+                } else {
+                    observer.observe(section);
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
