@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TapPause — A minimal pause timer</title>
-    <meta name="description" content="A quiet, minimal pause timer. No tasks. No tracking. No goals. Just a pause.">
+
+    <title>TapPause — Minimal Pause & Mindfulness App for iPhone</title>
+    <meta name="description" content="TapPause is a minimal pause and mindfulness app for iPhone. Take a distraction-free break without tracking, goals, or pressure. Just a quiet moment to stop and breathe.">
 
     <style>
         * {
@@ -27,10 +28,8 @@
             color: var(--text-primary);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -42,10 +41,8 @@
         }
 
         .hero h1 {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Rounded', sans-serif;
             font-size: clamp(36px, 8vw, 64px);
             font-weight: 600;
-            letter-spacing: 0.5px;
             margin-bottom: 16px;
         }
 
@@ -54,7 +51,6 @@
             color: var(--text-secondary);
         }
 
-        /* Core Message */
         .core-message {
             padding: 100px 24px;
             text-align: center;
@@ -67,7 +63,6 @@
             line-height: 2;
         }
 
-        /* Visual Focus */
         .visual-focus {
             padding: 120px 24px;
             display: flex;
@@ -79,7 +74,6 @@
             width: 100%;
         }
 
-        /* How It Works */
         .how-it-works {
             padding: 100px 24px;
             text-align: center;
@@ -93,7 +87,6 @@
             color: var(--text-secondary);
         }
 
-        /* Features */
         .features {
             padding: 100px 24px;
             max-width: 520px;
@@ -103,7 +96,6 @@
 
         .features h2 {
             font-size: clamp(20px, 3vw, 24px);
-            font-weight: 500;
             margin-bottom: 32px;
         }
 
@@ -123,7 +115,6 @@
             color: var(--text-muted);
         }
 
-        /* Purchase note — info only, no marketing */
         .purchase-note {
             padding: 60px 24px;
             text-align: center;
@@ -132,37 +123,75 @@
         .purchase-note p {
             font-size: 15px;
             color: var(--text-muted);
-            line-height: 1.6;
         }
 
-        /* CTA */
+        .seo-section {
+            padding: 100px 24px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .seo-section h2 {
+            margin-bottom: 24px;
+        }
+
+        .seo-section p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .blog-preview {
+            padding: 100px 24px;
+            border-top: 1px solid var(--divider-light);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .blog-preview h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .blog-card {
+            margin-bottom: 40px;
+        }
+
+        .blog-card a {
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .blog-card-icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: var(--text-muted);
+        }
+
+        .blog-card-icon svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+
+        .blog-card p {
+            color: var(--text-muted);
+            margin-top: 8px;
+            margin-left: 32px;
+        }
+
         .cta {
             padding: 100px 24px;
             text-align: center;
             border-top: 1px solid var(--divider-light);
         }
 
-        .cta a {
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .cta a.app-store-badge {
-            padding: 0;
-            background: none;
-        }
-
-        .cta a.app-store-badge img {
+        .cta img {
             height: 50px;
-            width: auto;
-            display: block;
         }
 
-        .cta a.app-store-badge:hover {
-            opacity: 0.8;
-        }
-
-        /* Footer */
         .footer {
             padding: 60px 24px 40px;
             text-align: center;
@@ -183,10 +212,12 @@
         }
     </style>
 </head>
+
 <body>
+
     <section class="hero">
         <h1>TapPause</h1>
-        <p class="subtitle">A quiet space to stop for a moment.</p>
+        <p class="subtitle">A minimal pause app for iPhone.</p>
     </section>
 
     <section class="core-message">
@@ -199,7 +230,7 @@
     </section>
 
     <section class="visual-focus">
-        <img src="pause-symbol.png" alt="TapPause pause symbol">
+        <img src="pause-symbol.png" alt="TapPause minimal pause app interface with centered button">
     </section>
 
     <section class="how-it-works">
@@ -228,9 +259,59 @@
         </p>
     </section>
 
+    <section class="seo-section">
+        <h2>A simple way to take a break from your phone</h2>
+        <p>
+            TapPause is a minimal mindfulness app designed for people who want to pause without pressure.
+            It works as a distraction-free pause timer — no tracking, no streaks, no engagement loops.
+        </p>
+        <p>
+            Unlike many meditation apps, TapPause does not collect data or measure performance.
+            It simply creates a quiet digital space where you can slow down during a busy day.
+        </p>
+        <p>
+            Whether you need a short mindful break at work or a small digital detox moment at night,
+            TapPause helps you step out of constant motion — even briefly.
+        </p>
+    </section>
+
+    <section class="blog-preview">
+        <h2>Read about mindful pauses</h2>
+
+        <div class="blog-card">
+            <a href="how-to-take-a-break-from-your-phone.html">
+                <span class="blog-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                </span>
+                <h3>How to Take a Break From Your Phone Without Quitting Everything</h3>
+            </a>
+            <p>Simple ways to slow down your screen time without deleting apps or going offline completely.</p>
+        </div>
+
+        <div class="blog-card">
+            <a href="what-if-rest-didnt-need-to-be-productive.html">
+                <span class="blog-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                </span>
+                <h3>What If Rest Didn’t Need to Be Productive?</h3>
+            </a>
+            <p>Exploring the idea of unmeasured rest in a world obsessed with optimization.</p>
+        </div>
+
+        <div class="blog-card">
+            <a href="simple-ways-to-pause-during-a-busy-workday.html">
+                <span class="blog-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                </span>
+                <h3>Simple Ways to Pause During a Busy Workday</h3>
+            </a>
+            <p>Practical techniques to reset your focus and reduce mental overload.</p>
+        </div>
+    </section>
+
     <section class="cta">
-        <a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge">
-            <img src="../assets/app-store-badge.svg" alt="Download on the App Store">
+        <a href="https://apps.apple.com/app/tappause" target="_blank">
+            <img src="../assets/app-store-badge.svg" alt="Download TapPause on the App Store">
         </a>
     </section>
 
@@ -245,5 +326,6 @@
             <p>A product by Louis · <a href="https://louisbuilds.me" style="color: var(--text-muted); text-decoration: none;">louisbuilds.me</a></p>
         </div>
     </footer>
+
 </body>
 </html>
