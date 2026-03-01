@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>TransMov — AI-Powered Transparent Animation Export for macOS</title>
-    <meta name="title" content="TransMov — AI-Powered Transparent Animation Export for macOS">
-    <meta name="description" content="Convert videos into transparent APNG, GIF, and WebP animations with AI-powered background removal — fully local on macOS. Fast, privacy-focused, ready for apps or web.">
-    <meta name="keywords" content="AI video processing, transparent animations, APNG, GIF, WebP, video to animation, background removal, macOS app, local processing, privacy-focused">
+    <title>TransMov — AI-Powered Transparent Animated Image Export for macOS</title>
+    <meta name="title" content="TransMov — AI-Powered Transparent Animated Image Export for macOS">
+    <meta name="description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS. Fast, privacy-focused, ready for apps or web.">
+    <meta name="keywords" content="AI video processing, transparent animated images, APNG, GIF, WebP, video to animated image, background removal, macOS app, local processing, privacy-focused">
     <meta name="author" content="TransMov">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -17,8 +17,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louisbuilds.me/transmov/">
-    <meta property="og:title" content="TransMov — AI-Powered Transparent Animation Export for macOS">
-    <meta property="og:description" content="Convert videos into transparent APNG, GIF, and WebP animations with AI-powered background removal — fully local on macOS.">
+    <meta property="og:title" content="TransMov — AI-Powered Transparent Animated Image Export for macOS">
+    <meta property="og:description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.">
     <meta property="og:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -29,8 +29,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://louisbuilds.me/transmov/">
-    <meta property="twitter:title" content="TransMov — AI-Powered Transparent Animation Export for macOS">
-    <meta property="twitter:description" content="Convert videos into transparent APNG, GIF, and WebP animations with AI-powered background removal — fully local on macOS.">
+    <meta property="twitter:title" content="TransMov — AI-Powered Transparent Animated Image Export for macOS">
+    <meta property="twitter:description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.">
     <meta property="twitter:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
     
     <!-- Canonical URL -->
@@ -66,10 +66,10 @@
             "ratingValue": "4.5",
             "ratingCount": "1"
         },
-        "description": "Convert videos into transparent APNG, GIF, and WebP animations with AI-powered background removal — fully local on macOS.",
+        "description": "Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.",
         "screenshot": "https://louisbuilds.me/transmov/images/app-icon.png",
         "softwareVersion": "1.0",
-        "releaseNotes": "Professional AI-powered video to animation processing tool for macOS",
+        "releaseNotes": "Professional AI-powered video to animated image processing tool for macOS",
         "downloadUrl": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12",
         "author": {
             "@type": "Organization",
@@ -90,7 +90,7 @@
         "@type": "WebSite",
         "name": "TransMov",
         "url": "https://louisbuilds.me/transmov/",
-        "description": "TransMov — AI-Powered Transparent Animation Export for macOS",
+        "description": "TransMov — AI-Powered Transparent Animated Image Export for macOS",
         "inLanguage": ["en", "zh-CN"],
         "potentialAction": {
             "@type": "SearchAction",
@@ -291,7 +291,7 @@
         }
         
         .comparison-container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -302,8 +302,8 @@
         
         .comparison-item {
             flex: 1;
-            min-width: 280px;
-            max-width: 480px;
+            min-width: 240px;
+            max-width: 360px;
         }
         
         .comparison-item picture,
@@ -441,7 +441,7 @@
         .use-case {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
         }
         
@@ -453,22 +453,45 @@
             order: 1;
         }
         
+        .use-case-visual {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 300px;
+        }
+
         .use-case-visual picture,
         .use-case-visual img {
-            width: 100%;
+            max-width: 100%;
+            max-height: 400px;
+            width: auto;
             height: auto;
             display: block;
-            border-radius: 6px;
+            border-radius: 8px;
+            object-fit: contain;
         }
         
-        .use-case:nth-child(3) .use-case-visual picture,
-        .use-case:nth-child(3) .use-case-visual img {
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        /* Specific adjustments for different aspect ratios if needed */
+        .use-case:nth-child(1) .use-case-visual img { /* Square */
+            max-width: 280px;
+        }
+        
+        .use-case:nth-child(2) .use-case-visual img { /* Portrait */
+            max-height: 420px;
+            max-width: 240px;
+        }
+        
+        .use-case:nth-child(3) .use-case-visual img { /* Landscape */
+            max-width: 100%;
         }
         
         .use-case-text h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
         }
         
         .use-case-text p {
@@ -577,7 +600,7 @@
         <div class="hero">
             <div class="hero-inner">
                 <div class="hero-content">
-                    <h1 class="hero-headline">AI-Powered Video Background Removal<br>for Transparent Animations</h1>
+                    <h1 class="hero-headline">AI-Powered Video Background Removal<br>for Transparent Animated Images</h1>
                     <p class="hero-subheadline">Convert videos to APNG, GIF, or WebP — fully local on macOS, no uploads.</p>
                     <div class="hero-cta badges-container">
                         <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
@@ -590,7 +613,7 @@
         </div>
         
         <div class="comparison-section">
-            <p class="comparison-micro">From raw video to clean animation — see the AI in action!</p>
+            <p class="comparison-micro">From raw video to clean animated image — see the AI in action!</p>
             <div class="comparison-container">
                 <div class="comparison-item">
                     <video class="comparison-video-before" src="images/before-comparison.mp4" muted loop playsinline title="Before: original video"></video>
@@ -598,7 +621,7 @@
                 <div class="comparison-item">
                     <picture>
                         <source type="image/webp" srcset="images/after-comparison.webp">
-                        <img class="comparison-gif-after" src="images/after-comparison.gif" alt="After: clean animation" loading="lazy">
+                        <img class="comparison-gif-after" src="images/after-comparison.gif" alt="After: clean animated image" loading="lazy">
                     </picture>
                 </div>
             </div>
@@ -607,7 +630,7 @@
         <div class="container">
             <div class="section">
                 <h2>About</h2>
-                <p>TransMov is a macOS-native tool for turning videos into production-ready animations.</p>
+                <p>TransMov is a macOS-native tool for turning videos into production-ready animated images.</p>
                 <p>Everything runs locally. Your files never leave your machine.</p>
             </div>
             
@@ -619,12 +642,12 @@
                             <picture>
                                 <source type="image/webp" srcset="images/use-case-1.webp">
                                 <source type="image/png" srcset="images/use-case-1.png">
-                                <img src="images/use-case-1.gif" alt="App & UI animation use case" loading="lazy">
+                                <img src="images/use-case-1.gif" alt="App & UI animated image use case" loading="lazy">
                             </picture>
                         </div>
                         <div class="use-case-text">
-                            <h3>App & UI animation</h3>
-                            <p>Create polished, transparent animations from short videos. Lightweight and ready for app UI or onboarding.</p>
+                            <h3>App & UI animated image</h3>
+                            <p>Create polished, transparent animated images from short videos. Lightweight and ready for app UI or onboarding.</p>
                         </div>
                     </div>
                     <div class="use-case">
@@ -637,7 +660,7 @@
                         </div>
                         <div class="use-case-text">
                             <h3>AI video asset processing</h3>
-                            <p>Turn AI-generated videos into reusable assets. Remove backgrounds locally and export transparent animations you can actually use.</p>
+                            <p>Turn AI-generated videos into reusable assets. Remove backgrounds locally and export transparent animated images you can actually use.</p>
                         </div>
                     </div>
                     <div class="use-case">
@@ -650,7 +673,7 @@
                         </div>
                         <div class="use-case-text">
                             <h3>Web / Design output</h3>
-                            <p>Export clean animations for web and design tools. APNG, GIF, or WebP — optimized, controllable, and ready to ship.</p>
+                            <p>Export clean animated images for web and design tools. APNG, GIF, or WebP — optimized, controllable, and ready to ship.</p>
                         </div>
                     </div>
                 </div>
@@ -667,7 +690,7 @@
             </div>
             
             <div class="cta">
-                <h2>Export Transparent Animations in Seconds</h2>
+                <h2>Export Transparent Animated Images in Seconds</h2>
                 <div class="badges-container">
                     <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener" class="badge-link">
                         <img src="images/app-store-badge.svg" alt="Download for macOS" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
