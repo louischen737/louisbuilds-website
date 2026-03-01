@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TransMov — Transparent Animated Asset Generator for macOS</title>
+<meta name="description" content="Create transparent APNG, GIF, and WebP assets from videos locally on macOS. Perfect for app UI, onboarding, and web design.">
+<meta name="keywords" content="transparent animation, APNG export, WebP export, GIF export, macOS animation tool, UI assets, developer tool, design assets">
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/app-icon.png">
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Links */
+a { color: #667eea; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Hero */
+.header {
+    padding: 8rem 1.5rem 10rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(102,126,234,0.15) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+.header img.app-icon {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(102,126,234,0.4);
+}
+.header h1 {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    max-width: 900px;
+    line-height: 1.2;
+}
+.header p {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 3.5rem;
+    max-width: 700px;
+}
+.app-store-badge {
+    height: 54px;
+    transition: transform 0.2s;
+}
+.app-store-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Sections */
+.section {
+    padding: 4rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+    padding-left: 0.75rem;
+}
+.section p, .section ul li {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+}
+
+/* Why TransMov List */
+ul { list-style: none; padding: 0; }
+ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* Use Cases Grid */
+.use-cases {
+    display: grid;
+    gap: 3rem;
+}
+.use-case {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+.use-case:nth-child(even) { direction: rtl; }
+.use-case-visual {
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.use-case-visual img, .use-case-visual picture, .use-case-visual video {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+    object-fit: contain;
+}
+.use-case-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.use-case-text p {
+    font-size: 1rem;
+}
+
+/* Comparison Visual */
+.comparison-visual {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.comparison-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.comparison-box video, .comparison-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.2);
+}
+.comparison-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+}
+
+/* CTA Section */
+.get-started {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    max-width: 600px; /* Reduced width for better text wrapping */
+}
+.get-started p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+.get-started h2 { border: none; padding: 0; margin-bottom: 1rem; }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 0;
+}
+.footer p {
+    margin-bottom: 0;
+}
+.footer a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .use-case { grid-template-columns: 1fr; direction: ltr; }
+    .header { padding: 3rem 1rem 4rem; }
+    .cta-button { width: 80%; max-width: 280px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <img src="images/app-icon.png" alt="TransMov Icon" class="app-icon">
+    <h1>TransMov — Transparent Animated Asset Generator</h1>
+    <p>Turn short videos into APNG, GIF, or WebP assets locally on macOS. Perfect for app UI, onboarding, and web design.</p>
+    <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank">
+        <img src="images/app-store-badge.svg" alt="Download on the Mac App Store" class="app-store-badge">
+    </a>
+</div>
+
+<div class="section">
+    <h2>Why TransMov for Developers & Designers</h2>
+    <ul>
+        <li>Full alpha channel support — APNG, GIF, WebP</li>
+        <li>Local macOS processing — privacy-first</li>
+        <li>Optimized for app UI, onboarding, and micro-animations</li>
+        <li>Frame-level control & high-quality output</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Use Cases</h2>
+    <div class="use-cases">
+        <!-- Use Case 1: App & UI Animations -->
+        <div class="use-case">
+            <div class="use-case-text">
+                <h3>App & UI Animations</h3>
+                <p>Create lightweight, transparent micro-animations for buttons, icons, or onboarding screens. Perfect for Xcode, Sketch, or Figma integration.</p>
+            </div>
+            <div class="use-case-visual">
+                <picture>
+                    <source type="image/webp" srcset="images/use-case-ui.webp">
+                    <img src="images/use-case-ui.webp" alt="App UI animated asset">
+                </picture>
+            </div>
+        </div>
+
+        <!-- Use Case 2: Web & Marketing Assets -->
+        <div class="use-case">
+            <div class="use-case-text">
+                <h3>Web & Marketing Assets</h3>
+                <p>Create eye-catching animated banners or hero sections for websites and social media. Transparent output works seamlessly in HTML/CSS/JS contexts.</p>
+            </div>
+            <div class="use-case-visual">
+                <picture>
+                    <source type="image/webp" srcset="images/use-case-3.webp">
+                    <img src="images/use-case-3.webp" alt="Web marketing asset">
+                </picture>
+            </div>
+        </div>
+
+        <!-- Use Case 3: AI Video Asset Processing -->
+        <div class="use-case">
+            <div class="use-case-text">
+                <h3>AI Video Asset Processing</h3>
+                <p>Transform AI-generated or raw video footage into reusable animated components with background removed. Fully local processing ensures privacy and quality.</p>
+            </div>
+            <div class="use-case-visual comparison-visual">
+                <div class="comparison-box">
+                    <img src="images/after-comparison.gif" alt="Transparent animated asset">
+                    <span class="comparison-label">After</span>
+                </div>
+                <div class="comparison-box">
+                    <video src="images/before-comparison.mp4" muted loop playsinline autoplay></video>
+                    <span class="comparison-label">Before</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="get-started">
+    <h2>Get Started</h2>
+    <p>Download TransMov on macOS and start converting your videos into transparent APNG, GIF, or WebP assets in seconds.<br>Fully local processing ensures privacy and speed.</p>
+    <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank">
+        <img src="images/app-store-badge.svg" alt="Download on the Mac App Store" class="app-store-badge">
+    </a>
+</div>
+
+    <div class="footer">
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="support.html">Support</a> |
+            <a href="terms-of-service.html">Terms of Service</a>
+        </p>
+        <p style="margin-top: 10px;">© 2026 TransMov</p>
+        <p>A product by Louis · <a href="https://louisbuilds.me" style="color: #667eea; text-decoration: none;">louisbuilds.me</a></p>
+    </div>
+
+</body>
+</html>
