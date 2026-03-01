@@ -44,6 +44,16 @@
     <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/">
     <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/">
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2TMXET2TJN');
+    </script>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/app-icon.png">
@@ -603,7 +613,7 @@
                     <h1 class="hero-headline">AI-Powered Video Background Removal<br>for Transparent Animated Images</h1>
                     <p class="hero-subheadline">Convert videos to APNG, GIF, or WebP — fully local on macOS, no uploads.</p>
                     <div class="hero-cta badges-container">
-                        <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener" class="badge-link">
+                        <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener" class="badge-link" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'hero'});">
                             <img src="images/app-store-badge.svg" alt="Download on the Mac App Store" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
                         </a>
                     </div>
@@ -692,7 +702,7 @@
             <div class="cta">
                 <h2>Export Transparent Animated Images in Seconds</h2>
                 <div class="badges-container">
-                    <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener" class="badge-link">
+                    <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener" class="badge-link" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'footer'});">
                         <img src="images/app-store-badge.svg" alt="Download for macOS" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
                     </a>
                 </div>
