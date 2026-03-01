@@ -7,6 +7,16 @@
     <title>TapPause — Minimal Pause & Mindfulness App for iPhone</title>
     <meta name="description" content="TapPause is a minimal pause and mindfulness app for iPhone. Take a distraction-free break without tracking, goals, or pressure. Just a quiet moment to stop and breathe.">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2TMXET2TJN');
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -310,7 +320,7 @@
     </section>
 
     <section class="cta">
-        <a href="https://apps.apple.com/app/tappause" target="_blank">
+        <a href="https://apps.apple.com/app/tappause?pt=128214084&ct=web_tappause" target="_blank" onclick="gtag('event', 'download_click', {'app': 'tappause'});">
             <img src="../assets/app-store-badge.svg" alt="Download TapPause on the App Store">
         </a>
     </section>
