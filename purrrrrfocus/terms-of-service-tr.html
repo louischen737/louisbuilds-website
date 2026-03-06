@@ -24,8 +24,8 @@
             --bg-primary: #F9F3E6;
             --bg-card: #FFFFFF;
             --text-primary: #3B241D;
-            --text-secondary: #835E1E;
-            --accent: #BD001D;
+            --text-secondary: #5A361F;
+            --accent: #7A1E1E;
             --border: #DEBA86;
             --shadow: rgba(59, 36, 29, 0.1);
             --shadow-hover: rgba(59, 36, 29, 0.15);
@@ -43,33 +43,14 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             min-height: 100vh;
-            padding: 56px 0 20px;
+            padding-top: 70px;
+            padding-bottom: 20px;
         }
         
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-        }
-        
-        .page-brand-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-        .page-brand-row .page-app-icon { width: 48px; height: 48px; }
-        .page-brand-row .page-app-icon img {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
-            display: block;
-        }
-        .page-brand-name {
-            font-size: 1.25em;
-            font-weight: 400;
-            color: var(--text-primary);
         }
         
         .header {
@@ -130,93 +111,259 @@
             font-weight: 600;
         }
         
-        .back-link {
-            text-align: center;
-            margin-top: 40px;
+        .footer-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            align-items: center;
         }
         
-        .back-link a {
+        .footer-back-link {
+            display: inline-block;
+            padding: 10px 22px;
+            margin-bottom: 16px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            border-radius: 28px;
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.35s ease, color 0.35s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .footer-back-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        @media (hover: hover) and (pointer: fine) {
+            .footer-back-link:hover {
+                background: var(--accent);
+                color: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 14px rgba(122,30,30,0.25);
+            }
+        }
+        
+        .footer-info {
+            margin-top: 16px;
+        }
+        
+        .footer-info p {
+            margin: 6px 0;
+        }
+        
+        .footer-info a {
             color: var(--accent);
             text-decoration: none;
-            padding: 10px 20px;
-            background: var(--bg-primary);
-            border-radius: 25px;
-            border: 2px solid var(--border);
-            display: inline-block;
-            transition: all 0.3s ease;
+            transition: color 0.35s ease;
         }
         
-        .back-link a:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
+        .footer-info a:hover {
+            text-decoration: underline;
+            color: var(--text-primary);
         }
         
         .site-header {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 10;
+            z-index: 1000;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
+            padding: 14px 24px;
+            background: rgba(249,243,230,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: background 0.25s ease, backdrop-filter 0.25s ease, box-shadow 0.25s ease;
         }
-        .site-header .language-switcher { margin: 0; }
-        .site-header .language-switcher a {
-            color: var(--text-secondary);
+        
+        .site-header.scrolled {
+            background: rgba(249,243,230,0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            padding: 6px 12px;
-            font-size: 0.9em;
-            margin: 0 2px;
-            border: none;
-            background: transparent;
-            border-radius: 6px;
-            transition: color 0.2s ease, background 0.2s ease;
-        }
-        .site-header .language-switcher a:hover {
             color: var(--text-primary);
-            background: rgba(255,255,255,0.6);
+            font-weight: 500;
+            transition: transform 0.25s ease, opacity 0.25s ease;
         }
-        .site-header .language-switcher a.active {
+        
+        .header-brand:hover {
+            opacity: 0.92;
+            transform: scale(1.02);
+        }
+        
+        .header-app-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .header-app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .header-brand-name {
+            font-size: 1.25em;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .lang-dropdown {
+            position: relative;
+        }
+        
+        .lang-dropdown-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            font-size: 0.95em;
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            outline: none;
+        }
+        
+        .lang-dropdown-trigger:focus {
+            outline: none;
+        }
+        
+        .lang-dropdown.open .lang-dropdown-trigger {
+            background: rgba(255,255,255,0.95);
+        }
+        
+        .lang-chevron {
+            font-size: 0.65em;
+            opacity: 0.9;
+            transition: transform 0.2s ease;
+        }
+        
+        .lang-dropdown.open .lang-chevron {
+            transform: rotate(180deg);
+        }
+        
+        .lang-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 6px;
+            min-width: 140px;
+            padding: 6px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            z-index: 1001;
+        }
+        
+        .lang-dropdown.open .lang-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .lang-dropdown-menu a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 0.95em;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        
+        .lang-dropdown-menu a:hover {
+            background: rgba(59, 36, 29, 0.08);
+            color: var(--accent);
+        }
+        
+        .lang-dropdown-menu a.active {
             color: var(--accent);
             font-weight: 500;
-            background: transparent;
+        }
+        
+        @media (max-width: 768px) {
+            .site-header { padding: 12px 16px; }
+            .header-app-icon { width: 36px; height: 36px; border-radius: 8px; }
+            .header-app-icon img { border-radius: 8px; }
+            .header-brand-name { font-size: 1.1em; }
         }
         
         .footer {
             text-align: center;
             margin-top: 40px;
+            padding: 24px 20px;
             color: var(--text-secondary);
-            font-size: 0.9em;
+            font-size: 0.95rem;
         }
-        .footer a { color: var(--accent); text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
         
         @media (max-width: 600px) {
-            .container { padding: 10px; }
-            .content { padding: 25px; }
-            .header h1 { font-size: 2em; }
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <nav class="language-switcher">
-            <a href="terms-of-service-zh.html">中文</a>
-            <a href="terms-of-service-en.html">English</a>
-            <a href="terms-of-service-da.html">Dansk</a>
-            <a href="terms-of-service-tr.html" class="active">Türkçe</a>
-            <a href="terms-of-service-fr.html">Français</a>
-        </nav>
+        <a href="index-tr.html" class="header-brand" id="header-brand-link" aria-label="PurrrrrFocus home">
+            <div class="header-app-icon">
+                <img src="AppIcon-Preview.png" alt="PurrrrrFocus app icon">
+            </div>
+            <span class="header-brand-name">PurrrrrFocus</span>
+        </a>
+        <div class="lang-dropdown">
+            <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+                <span class="lang-current">Türkçe</span>
+                <span class="lang-chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="lang-dropdown-menu" role="menu" aria-label="Select Language Options">
+                <a href="terms-of-service-zh.html" role="menuitem">中文</a>
+                <a href="terms-of-service-en.html" role="menuitem">English</a>
+                <a href="terms-of-service-da.html" role="menuitem">Dansk</a>
+                <a href="terms-of-service-tr.html" class="active" role="menuitem">Türkçe</a>
+                <a href="terms-of-service-fr.html" role="menuitem">Français</a>
+            </div>
+        </div>
     </header>
     <div class="container">
         <div class="header">
-            <div class="page-brand-row">
-                <div class="page-app-icon"><img src="AppIcon-Preview.png" alt="PurrrrrFocus"></div>
-                <span class="page-brand-name">PurrrrrFocus</span>
-            </div>
             <h1>Kullanım Şartları</h1>
             <p class="last-updated">Son güncelleme: 22 Eylül 2025</p>
         </div>
@@ -312,16 +459,49 @@
                 <p>Sorunuza en kısa zamanda yanıt vereceğiz.</p>
             </div>
             
-            <div class="back-link">
-                <a href="index-tr.html">← Ana sayfaya dön</a>
             </div>
-        </div>
         
-        <div class="footer">
-            <p>&copy; 2026 PurrrrrFocus.</p>
-            <p>A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
-        </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <a href="index-tr.html" class="footer-back-link">← Ana sayfaya dön</a>
+                <div class="footer-info">
+                    <p>&copy; 2026 PurrrrrFocus.</p>
+                    <p>A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
+    <script>
+        (function () {
+            var header = document.querySelector('.site-header');
+            if (!header) return;
+            var threshold = 30;
+            function updateHeader() {
+                if (window.scrollY > threshold) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', updateHeader, { passive: true });
+            updateHeader();
+        })();
+        (function () {
+            var dropdown = document.querySelector('.lang-dropdown');
+            var trigger = document.querySelector('.lang-dropdown-trigger');
+            if (!dropdown || !trigger) return;
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = dropdown.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function () {
+                dropdown.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+                trigger.blur();
+            });
+        })();
+    </script>
 </body>
 </html>
 
