@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <title>Support – Step1st</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #1C1C1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #E5E5EA;
+            --text-muted: #8E8E93;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 24px;
+            max-width: 800px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        .intro {
+            margin-bottom: 40px;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 15px;
+        }
+
+        .footer a:hover {
+            color: var(--text-primary);
+        }
+
+        /* FAQ 折叠列表（参考 purrrrrfocus） */
+        .faq-list {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 16px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item.active {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            text-align: left;
+            transition: opacity 0.3s ease, color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .faq-question:focus,
+        .faq-question:focus-visible {
+            outline: none;
+        }
+
+        .faq-question:hover {
+            opacity: 0.85;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--text-primary);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            font-size: 20px;
+            opacity: 0.6;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-4px);
+            transition: max-height 0.45s ease, opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .faq-answer p,
+        .faq-answer ul,
+        .faq-answer ol {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .faq-answer ul,
+        .faq-answer ol {
+            padding-left: 24px;
+        }
+
+        .faq-answer p:last-child,
+        .faq-answer ul:last-child,
+        .faq-answer ol:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer .faq-answer-inner {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 900px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 32px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+                padding: 16px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Support</h1>
+    <div class="intro">
+        <p><strong>Need help with Step1st?</strong><br>We're here to help you get the most out of your daily step goals.</p>
+        <p>If you can't find the answer below, feel free to contact us.</p>
+    </div>
+
+    <h2>Contact Support</h2>
+    <p>If you have questions, feedback, or run into an issue while using Step1st, you can contact us directly.</p>
+    <p><strong>Email:</strong> <a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></p>
+    <p>We usually respond within <strong>24–48 hours</strong>.</p>
+    <p>When contacting support, it helps to include:</p>
+    <ul>
+        <li>your device model</li>
+        <li>iOS version</li>
+        <li>a short description of the issue</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-1" id="faq-q1">
+                <span>How does Step1st work?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-q1">
+                <div class="faq-answer-inner">
+                    <p>Step1st helps you reduce distractions by locking selected apps until you reach your daily step goal.</p>
+                    <p>The process is simple:</p>
+                    <ol>
+                        <li>Choose which apps you want to limit.</li>
+                        <li>Set a daily step goal.</li>
+                        <li>Walk until you reach your goal.</li>
+                        <li>Once the goal is reached, your locked apps unlock for the rest of the day.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-2" id="faq-q2">
+                <span>Why does Step1st need Screen Time access?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-q2">
+                <div class="faq-answer-inner">
+                    <p>Step1st uses Apple's <strong>Screen Time API</strong> to temporarily pause the apps you selected.</p>
+                    <p>This allows the app to automatically:</p>
+                    <ul>
+                        <li>lock selected apps before your step goal is reached</li>
+                        <li>unlock them once your daily milestone is completed</li>
+                    </ul>
+                    <p>Step1st does <strong>not collect or transmit your Screen Time activity data</strong>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-3" id="faq-q3">
+                <span>Why does Step1st request Motion &amp; Fitness permission?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-q3">
+                <div class="faq-answer-inner">
+                    <p>Step1st needs Motion &amp; Fitness access to count your steps and track your daily progress.</p>
+                    <p>This allows the app to determine when your step goal has been reached.</p>
+                    <p>Your motion data stays <strong>on your device</strong> and is never shared.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-4" id="faq-q4">
+                <span>Why should I connect the Health app?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-q4">
+                <div class="faq-answer-inner">
+                    <p>Connecting the Apple Health app allows Step1st to show:</p>
+                    <ul>
+                        <li>your step history</li>
+                        <li>walking trends</li>
+                        <li>longer-term statistics</li>
+                    </ul>
+                    <p>Step1st only <strong>reads step count data</strong> and never modifies your Health data.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-5" id="faq-q5">
+                <span>My apps are not locking. What should I check?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-q5">
+                <div class="faq-answer-inner">
+                    <p>Make sure that:</p>
+                    <ul>
+                        <li>Screen Time access has been granted</li>
+                        <li>the apps are selected in your locked apps list</li>
+                        <li>your daily step goal has not already been reached</li>
+                    </ul>
+                    <p>If the issue continues, try restarting the app.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-6" id="faq-q6">
+                <span>How do I manage or cancel my subscription?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-6" role="region" aria-labelledby="faq-q6">
+                <div class="faq-answer-inner">
+                    <p>Subscriptions are managed through your Apple ID.</p>
+                    <p>You can manage or cancel your subscription in:</p>
+                    <p><strong>Settings → Apple ID → Subscriptions</strong></p>
+                    <p>Deleting the app does not automatically cancel an active subscription.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-7" id="faq-q7">
+                <span>Can I use Step1st without Health access?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-7" role="region" aria-labelledby="faq-q7">
+                <div class="faq-answer-inner">
+                    <p>Yes.</p>
+                    <p>Step1st can still track steps using Motion &amp; Fitness permission.</p>
+                    <p>However, connecting the Health app enables additional statistics and longer step history.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Feedback</h2>
+    <p>We're always looking to improve Step1st.</p>
+    <p>If you have suggestions for new features or improvements, we'd love to hear from you.</p>
+    <p>Send feedback to: <strong><a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></strong></p>
+
+    <h2>Privacy &amp; Terms</h2>
+    <p>You can read more about how Step1st handles data:</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    <p><a href="terms-of-service.html">Terms of Service</a></p>
+
+    <div class="footer">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var item = button.parentElement;
+                var isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(function(i) {
+                    i.classList.remove('active');
+                    var btn = i.querySelector('.faq-question');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
