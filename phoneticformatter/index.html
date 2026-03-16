@@ -1180,9 +1180,22 @@
             }
             
             nav ul {
-                gap: 1rem;
-                justify-content: center;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem 0.75rem;
+                justify-items: center;
+                text-align: center;
+                margin: 0;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                font-size: 0.85rem;
+                padding: 0.35rem 0.25rem;
             }
             
             .header-cta {
@@ -1214,20 +1227,44 @@
                 font-size: 2.75rem;
                 max-width: 100%;
                 padding: 0 1rem;
+                text-wrap: balance;
+                -webkit-text-wrap: balance;
             }
             
             .hero h1 br {
-                display: block;
+                display: none;
             }
             
             .hero h2 {
                 font-size: 1.05rem;
+                padding: 0 0.5rem;
             }
             
             .hero-buttons {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
                 gap: 1rem;
+                max-width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-buttons .btn-primary {
+                width: 100%;
+                justify-content: center;
+                padding: 0.85rem 1.5rem;
+                min-height: 48px;
+            }
+            
+            .hero-buttons .app-store-badge {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .hero-buttons .app-store-badge img {
+                max-height: 56px;
+                width: auto;
             }
             
             .btn-secondary {
@@ -1236,6 +1273,7 @@
                 padding: 0.65rem 1.25rem;
                 font-size: 0.9rem;
                 justify-content: center;
+                align-self: center;
             }
             
             .app-store-badge {
@@ -1297,10 +1335,16 @@
                 font-size: 1.1rem;
             }
             
+            .pricing-table th:first-child,
+            .pricing-table td:first-child {
+                width: 110px !important;
+                min-width: 110px !important;
+                font-size: 0.8rem;
+                white-space: normal;
+                word-wrap: break-word;
+            }
             .pricing-table th:first-child {
-                width: 140px;
-                min-width: 140px;
-                padding: 1rem 0.75rem;
+                padding: 1rem 0.5rem;
             }
             
             .pricing-table th.free-col,
@@ -1346,8 +1390,7 @@
             }
             
             .pricing-table td:first-child {
-                font-size: 0.85rem;
-                padding: 1rem 0.75rem;
+                padding: 1rem 0.5rem;
             }
             
             .pricing-table td.free-col,
@@ -1373,8 +1416,8 @@
         @media (max-width: 480px) {
             .pricing-table th:first-child,
             .pricing-table td:first-child {
-                width: 120px !important;
-                min-width: 120px !important;
+                width: 110px !important;
+                min-width: 110px !important;
             }
             .pricing-table .price-row td {
                 padding-top: 1rem;
@@ -1470,7 +1513,7 @@
                     </h1>
 
                     <h2>
-                        Convert English text into clear, structured IPA phonetic transcription.
+                        Convert English text into clear, structured IPA phonetic transcription.<br>
                         Designed for teachers, linguistics students, and serious learners.
                     </h2>
 
