@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why We Built Phonetic Formatter on the CMU Pronouncing Dictionary - Phonetic Formatter</title>
+    <meta name="description" content="Discover why Phonetic Formatter uses the CMU Pronouncing Dictionary for high-accuracy, offline IPA transcriptions. Built for linguistics and ESL professionals.">
+    <meta name="keywords" content="CMU Pronouncing Dictionary, CMUdict, IPA transcription, offline phonetic, linguistics, ESL, Phonetic Formatter">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/blog/why-cmu-pronouncing-dictionary.html">
+    <meta property="og:title" content="Why We Built Phonetic Formatter on the CMU Pronouncing Dictionary">
+    <meta property="og:description" content="Discover why Phonetic Formatter uses the CMU Pronouncing Dictionary for high-accuracy, offline IPA transcriptions. Built for linguistics and ESL professionals.">
+    <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Why We Built Phonetic Formatter on the CMU Pronouncing Dictionary">
+    <meta property="twitter:description" content="Discover why Phonetic Formatter uses the CMU Pronouncing Dictionary for high-accuracy, offline IPA transcriptions. Built for linguistics and ESL professionals.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/blog/why-cmu-pronouncing-dictionary.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #111827;
+            background: #fafaf9;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: #fff;
+            padding: 1.5rem 0;
+            box-shadow: 0 1px 0 #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: nowrap;
+        }
+        .header-content > a { flex-shrink: 0; margin-right: 2.5rem; }
+        nav { flex: 1; min-width: 0; display: flex; align-items: center; }
+        nav ul { list-style: none; display: flex; flex-wrap: nowrap; gap: 2.5rem; margin: 0; }
+        nav a { color: #4b5563; text-decoration: none; font-weight: 500; transition: color 0.2s, transform 0.15s; }
+        nav a:hover { color: #2563eb; transform: translateY(-1px); }
+        .header-cta { flex-shrink: 0; display: none; }
+        @media (min-width: 769px) {
+            .header-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 0.65rem 1.4rem;
+                background: #2563eb;
+                color: #fff;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.95rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+                transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            }
+            .header-cta svg { width: 20px; height: 20px; }
+            .header-cta:hover {
+                background: #1d4ed8;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
+            }
+            .header-cta:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
+            }
+        }
+        .logo { height: 50px; width: auto; max-width: 200px; object-fit: contain; }
+        .logo-text { font-size: 1.75rem; font-weight: 700; margin: 0; color: #111827; }
+        .article-wrap { max-width: 48rem; margin: 0 auto; padding: 3rem 0 4rem; }
+        .article-wrap h1 { font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; line-height: 1.25; }
+        .article-wrap .article-meta { font-size: 0.95rem; color: #6b7280; margin-bottom: 2rem; }
+        .article-wrap .article-meta a { color: #2563eb; text-decoration: none; }
+        .article-wrap .article-meta a:hover { color: #1d4ed8; }
+        .article-wrap h2 { font-size: 1.375rem; font-weight: 600; color: #111827; margin-top: 2.25rem; margin-bottom: 0.75rem; }
+        .article-wrap p { color: #374151; margin-bottom: 1.25rem; }
+        .article-wrap ul, .article-wrap ol { margin: 0 0 1.25rem 1.5rem; color: #374151; }
+        .article-wrap li { margin-bottom: 0.5rem; }
+        .article-wrap strong { color: #111827; }
+        .article-wrap a { color: #2563eb; text-decoration: none; }
+        .article-wrap a:hover { color: #1d4ed8; }
+        footer {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 4rem 0 3rem;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+        }
+        .footer-links { margin-bottom: 1rem; }
+        .footer-links a { color: #2563eb; text-decoration: none; margin: 0 0.5rem; font-size: 0.9rem; }
+        .footer-links a:hover { color: #1d4ed8; }
+        .footer-copyright { font-size: 0.9rem; color: #6b7280; line-height: 1.8; margin: 0; }
+        footer a { color: #2563eb; text-decoration: none; }
+        footer a:hover { color: #1d4ed8; }
+        @media (max-width: 768px) {
+            .header-content { flex-wrap: wrap; }
+            .header-content > a { order: 1; margin-right: 0; }
+            nav { order: 3; width: 100%; }
+            nav ul { gap: 1rem; justify-content: center; flex-wrap: wrap; }
+            .header-cta { order: 2; margin-left: auto; padding: 0.55rem 1.2rem; font-size: 0.9rem; gap: 0.5rem; }
+            .header-cta svg { width: 18px; height: 18px; }
+            .article-wrap { padding: 2rem 0 3rem; }
+            .article-wrap h1 { font-size: 1.875rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html"><img src="../logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';"></a>
+                <h1 class="logo-text" style="display: none;"><a href="../index.html">Phonetic Formatter</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../blogs.html">Blogs</a></li>
+                        <li><a href="../support.html">Support</a></li>
+                        <li><a href="../privacy.html">Privacy</a></li>
+                        <li><a href="../terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+                <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="header-cta" target="_blank" rel="noopener noreferrer">
+                    Get App
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <article class="article-wrap">
+        <h1>Why We Built Phonetic Formatter on the CMU Pronouncing Dictionary</h1>
+        <p class="article-meta"><a href="../blogs.html">← Blogs</a></p>
+
+        <p>For anyone working deeply with English phonetics—whether you are a linguistics researcher, a speech pathologist, or an ESL educator—accuracy and consistency are non-negotiable. When we began developing Phonetic Formatter, the most critical decision we faced was selecting the underlying data source for our transcriptions.</p>
+
+        <p>After evaluating various APIs and datasets, we chose the CMU Pronouncing Dictionary (CMUdict). Here is why this choice defines the professional standard of our app.</p>
+
+        <h2>What is CMUdict?</h2>
+        <p>The CMU Pronouncing Dictionary is an open-source, machine-readable pronunciation dictionary for North American English, developed and maintained by Carnegie Mellon University. It contains over 134,000 words and their phonetic transcriptions, making it one of the most comprehensive and academically respected resources in speech recognition and computational linguistics.</p>
+
+        <h2>1. Unmatched Consistency across Long Texts</h2>
+        <p>A common frustration with many online "English-to-IPA" converters is their reliance on fragmented data sources. This often results in inconsistent symbols within the same paragraph.</p>
+
+        <p>By grounding our engine in the CMUdict, Phonetic Formatter ensures that every sentence is transcribed using a unified phonetic logic. This consistency is vital when you are preparing classroom materials or analyzing a corpus where variations in notation can lead to student confusion or data errors.</p>
+
+        <h2>2. Privacy by Design: 100% Offline Processing</h2>
+        <p>Most modern tools rely on external APIs, meaning your text is sent to a third-party server for processing. For researchers handling sensitive data or educators working in environments with restricted internet access, this is a significant bottleneck.</p>
+
+        <p>Because we have optimized and integrated the CMUdict directly into the app’s architecture:</p>
+
+        <ul>
+            <li><strong>No data leaves your device:</strong> All transcriptions are processed locally.</li>
+            <li><strong>Zero Latency:</strong> High-speed conversion even for long-form essays and scripts.</li>
+            <li><strong>Reliability:</strong> The app works in classrooms, airplanes, or remote research sites without a Wi-Fi connection.</li>
+        </ul>
+
+        <h2>3. A Foundation for "Real English"</h2>
+        <p>Unlike a standard dictionary app that only looks up isolated words, Phonetic Formatter is designed for "Real English"—the way language exists in paragraphs and conversations. Using the CMUdict as our base allowed us to build our unique Word-Aligned and Sentence-Based layouts, ensuring that the structural integrity of your original text remains intact during the phonetic conversion.</p>
+
+        <h2>The Professional’s Choice</h2>
+        <p>We didn't want to build just another "cool" app; we wanted to build a reliable tool for people whose work depends on the precision of language. By leveraging the academic rigor of Carnegie Mellon’s research, Phonetic Formatter provides a bridge between complex linguistic data and daily practical application.</p>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p class="footer-links">
+                <a href="../privacy.html">Privacy Policy</a> |
+                <a href="../terms.html">Terms of Service</a> |
+                <a href="../support.html">Technical Support</a>
+            </p>
+            <p class="footer-copyright">© 2026 Phonetic Formatter<br>A product by Louis · <a href="https://louisbuilds.me">louisbuilds.me</a></p>
+        </div>
+    </footer>
+</body>
+</html>
