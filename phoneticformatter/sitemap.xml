@@ -6,18 +6,38 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://louisbuilds.me/phoneticformatter/support.html</loc>
+    <loc>https://louisbuilds.me/phoneticformatter/blogs.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/blog/why-cmu-pronouncing-dictionary.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://louisbuilds.me/phoneticformatter/privacy.html</loc>
+    <loc>https://louisbuilds.me/phoneticformatter/blog/from-screen-to-classroom.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/blog/mastering-connected-speech.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/support.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/phoneticformatter/terms.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>
