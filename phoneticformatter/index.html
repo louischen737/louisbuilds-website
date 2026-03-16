@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Phonetic Formatter - Structured IPA Transcription for Real English Text</title>
-    <meta name="title" content="Phonetic Formatter - Structured IPA Transcription for Real English Text">
+    <title>English to IPA Converter | Structured Phonetic Transcription App</title>
+    <meta name="title" content="English to IPA Converter | Structured Phonetic Transcription App">
     <meta name="description" content="Convert full English passages into clear, properly formatted IPA transcription. Built for teachers, linguistics students, and serious learners.">
     <meta name="keywords" content="phonetic transcription, IPA converter, phonetic formatter, English to IPA, phonetic alphabet, language learning, pronunciation guide, CMU dictionary">
     <meta name="author" content="Phonetic Formatter">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
@@ -17,7 +18,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/">
-    <meta property="og:title" content="Phonetic Formatter - Structured IPA Transcription for Real English Text">
+    <meta property="og:title" content="English to IPA Converter | Structured Phonetic Transcription App">
     <meta property="og:description" content="Convert full English passages into clear, properly formatted IPA transcription. Built for teachers and learners.">
     <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
     <meta property="og:site_name" content="Phonetic Formatter">
@@ -26,7 +27,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://louisbuilds.me/phoneticformatter/">
-    <meta property="twitter:title" content="Phonetic Formatter - Structured IPA Transcription for Real English Text">
+    <meta property="twitter:title" content="English to IPA Converter | Structured Phonetic Transcription App">
     <meta property="twitter:description" content="Convert full English passages into clear, properly formatted IPA transcription.">
     <meta property="twitter:image" content="https://louisbuilds.me/phoneticformatter/logo.png">
     
@@ -101,7 +102,9 @@
         }
         
         header {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             color: #111827;
             padding: 1.5rem 0;
             box-shadow: 0 1px 0 #e5e7eb;
@@ -249,12 +252,12 @@
         
         .hero h2 {
             font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             font-weight: 400;
-            color: #9ca3af;
+            color: #4b5563;
             line-height: 1.6;
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 1.5rem;
@@ -314,7 +317,7 @@
         
         .hero-screenshot {
             width: 100%;
-            max-width: 280px;
+            max-width: 320px;
             border-radius: 12px;
             display: block;
             margin: 2rem auto 0 auto;
@@ -414,36 +417,223 @@
         }
         
         .features {
-            padding: 6rem 0;
             background: #fff;
         }
         
         .features .container {
             max-width: 48rem;
         }
-        
-        .features-header {
-            margin-bottom: 3rem;
+
+        .section {
+            padding: 80px 0;
         }
-        
-        .features-header h2 {
-            font-size: 2.25rem;
+        .section-alt {
+            background: #f9fafb;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 48px auto;
+        }
+        .section-header h2 {
+            font-size: 1.9rem;
             font-weight: 700;
             color: #111827;
-            margin-bottom: 0.75rem;
-            text-wrap: balance;
+            margin: 0 0 12px 0;
         }
-        
-        .features-header p {
-            font-size: 1.125rem;
+        .section-header p {
             color: #4b5563;
+            line-height: 1.6;
             margin: 0;
-            max-width: 48rem;
+            font-size: 1.05rem;
+        }
+        .section-header p + p {
+            margin-top: 1rem;
+        }
+        .section-divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 60px auto;
+            max-width: 1000px;
+        }
+        .section-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .section-cta .app-store-badge {
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .section {
+                padding: 48px 0;
+            }
+            .section-header {
+                margin-bottom: 32px;
+            }
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+            align-items: stretch;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 26px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+        }
+        .feature-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 0.5rem 0;
+        }
+        .feature-card p {
+            font-size: 0.9375rem;
+            color: #4b5563;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.5;
+            max-width: 260px;
+        }
+        .feature-card-link {
+            display: inline-block;
+            margin-top: auto;
+            padding-top: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .feature-card-link:hover {
+            color: #1d4ed8;
+        }
+        .feature-learn-more {
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.2s;
+        }
+        .feature-learn-more:hover {
+            color: #1d4ed8;
+        }
+
+        .how-it-works .section-content {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .how-it-works-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 1rem 0;
+        }
+        .how-it-works-steps {
+            margin: 0;
+            padding-left: 1.5rem;
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .how-it-works-steps li {
+            margin-bottom: 0.75rem;
+        }
+        .how-it-works-steps li:last-child {
+            margin-bottom: 0;
+        }
+        .how-it-works-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem 1.5rem;
+            background: linear-gradient(to bottom, #fdfdfd, #ffffff);
+            border-radius: 24px;
+            border: 1px dashed #d1d5db;
+        }
+        .cta-content-box {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        .cta-mini-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #2563eb;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+        }
+        .cta-main-text {
+            font-size: 1.25rem;
+            color: #111827;
+            margin: 0 0 2rem 0;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .btn-cta-pill {
+            padding: 1rem 2.5rem !important;
+            font-size: 1.1rem !important;
+            border-radius: 50px !important;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-cta-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.4);
+        }
+        .btn-cta-pill:active {
+            transform: scale(0.98);
+        }
+        .btn-cta-pill svg {
+            flex-shrink: 0;
+            vertical-align: middle;
+        }
+        .how-it-works-cta-note {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            gap: 0.35rem;
+        }
+        .cta-note-icon {
+            flex-shrink: 0;
+            stroke: #10b981;
+        }
+        @media (max-width: 768px) {
+            .btn-cta-pill {
+                display: inline-flex;
+                min-width: 200px;
+                justify-content: center;
+            }
+            .how-it-works-cta-note {
+                margin-top: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .cta-main-text {
+                font-size: 1.15rem;
+            }
+            .btn-cta-pill {
+                width: 100%;
+                min-width: 0;
+                justify-content: center;
+            }
+            .how-it-works-cta {
+                margin-top: 2rem;
+                padding: 2rem 1rem;
+            }
         }
         
         .feature-video {
             text-align: center;
-            margin: 2.5rem 0;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -525,6 +715,12 @@
             max-width: 48rem;
             margin: 0;
         }
+        .feature-description p {
+            margin: 0 0 0.75rem 0;
+        }
+        .feature-description p:last-child {
+            margin-bottom: 0;
+        }
         
         .pricing {
             padding: 4.5rem 0;
@@ -539,9 +735,20 @@
             font-weight: 700;
         }
         
-        .pricing-table-container {
+        .pricing-table-wrapper {
             max-width: 900px;
             margin: 3rem auto;
+        }
+        .pricing-swipe-hint {
+            display: none;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            text-align: center;
+            margin: 0 0 0.5rem 0;
+        }
+        .pricing-table-container {
+            max-width: 900px;
+            margin: 0 auto;
             background: #fff;
             border-radius: 8px;
             overflow: hidden;
@@ -598,6 +805,25 @@
         
         .pricing-footer-price.pro-price {
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .pro-price .pricing-footer-price-value {
+            color: #2563eb;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .pro-price .pricing-footer-price-note {
+            background: #2563eb;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         .pricing-table {
@@ -694,10 +920,11 @@
         }
         
         .pricing-table td.pro-col,
+        .pricing-table th.pro-col,
         .pro-col {
             color: #111827;
             font-weight: 600;
-            background: rgba(0, 0, 0, 0.02);
+            background: rgba(37, 99, 235, 0.03);
         }
         
         .price-row td {
@@ -745,6 +972,146 @@
             height: 24px;
         }
         
+        .faq {
+            background: #fff;
+            padding: 4rem 0;
+        }
+        .faq .container {
+            max-width: 48rem;
+        }
+        .faq h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 2rem 0;
+            text-align: center;
+        }
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .faq-item h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 0.5rem 0;
+        }
+        .faq-item p {
+            font-size: 1rem;
+            color: #4b5563;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .blog-highlights {
+            padding: 4rem 0;
+            background: #fff;
+            border-top: 1px solid #e5e7eb;
+        }
+        .blog-highlights-inner {
+            max-width: 800px;
+        }
+        .blog-highlights h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        .blog-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .blog-highlight-card {
+            padding: 1.25rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .blog-highlight-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 0.5rem 0;
+        }
+        .blog-highlight-card p {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin: 0 0 1rem 0;
+            line-height: 1.5;
+        }
+        .blog-highlight-card a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .blog-highlight-card a:hover {
+            color: #1d4ed8;
+        }
+        .blog-highlights-all {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+        .blog-highlights-all a {
+            color: #4b5563;
+            text-decoration: underline;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .blog-highlights-all a:hover {
+            color: #111827;
+        }
+
+        .who-is-it-for {
+            padding: 4rem 0;
+            background: #fff;
+        }
+        .who-is-it-for-inner {
+            max-width: 900px;
+            text-align: center;
+        }
+        .who-is-it-for h2 {
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+            color: #111827;
+        }
+        .who-is-it-for-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .who-is-it-for-card h4 {
+            color: #2563eb;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+        .who-is-it-for-card p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .developer-note {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #e5e7eb;
+            background: #fff;
+        }
+        .developer-note p {
+            color: #6b7280;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
         footer {
             background: #f3f4f6;
             color: #374151;
@@ -876,13 +1243,49 @@
             }
             
             .hero-screenshot {
-                max-width: 240px;
+                max-width: 300px;
             }
             
-            .pricing-table-container {
+            .pricing-table-wrapper {
                 margin: 2rem 1rem;
+                position: relative;
+            }
+            .pricing-swipe-hint {
+                display: block;
+                margin-bottom: 1rem;
+            }
+            .pricing-table-container {
+                margin: 0;
                 border-radius: 8px;
                 overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .pricing-table th:first-child,
+            .pricing-table td:first-child {
+                position: sticky;
+                left: 0;
+                z-index: 2;
+                background: #fff;
+                box-shadow: 2px 0 6px rgba(0,0,0,0.06);
+            }
+            .pricing-table thead th:first-child {
+                background: #f9fafb;
+            }
+            .pricing-table td.pro-col,
+            .pricing-table th.pro-col,
+            .pro-col {
+                background: rgba(37, 99, 235, 0.05);
+            }
+            .pricing-table-wrapper::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 28px;
+                pointer-events: none;
+                background: linear-gradient(to left, rgba(0,0,0,0.04), transparent);
+                border-radius: 0 8px 8px 0;
             }
             
             .pricing-table {
@@ -966,6 +1369,20 @@
                 padding: 0 1rem;
             }
         }
+
+        @media (max-width: 480px) {
+            .pricing-table th:first-child,
+            .pricing-table td:first-child {
+                width: 120px !important;
+                min-width: 120px !important;
+            }
+            .pricing-table .price-row td {
+                padding-top: 1rem;
+            }
+            .pro-price .pricing-footer-price-value {
+                font-size: 1.25rem !important;
+            }
+        }
         
         /* Section scroll reveal */
         .scroll-reveal {
@@ -1017,9 +1434,7 @@
                     <img src="logo.png" alt="Phonetic Formatter Logo" class="logo" 
                          onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
                 </a>
-                <h1 class="logo-text" style="display: none;">
-                    <a href="index.html">Phonetic Formatter</a>
-                </h1>
+                <span class="logo-text" style="display: none;"><a href="index.html">Phonetic Formatter</a></span>
     
                 <nav>
                     <ul>
@@ -1046,70 +1461,149 @@
     <section class="hero scroll-reveal">
         <div class="container">
             <div class="hero-inner">
+
                 <div class="hero-left">
+
                     <h1>
-                        Structured IPA Transcription<br>
-                        for Real English Text
+                        Convert English Text to<br>
+                        Clear, Structured IPA
                     </h1>
+
                     <h2>
-                        Convert full English passages into clear, properly formatted IPA — not just isolated words.<br>
-                        Perfect for teachers, linguistics students, and serious learners who need reliable pronunciation formatting.
+                        Convert English text into clear, structured IPA phonetic transcription.
+                        Designed for teachers, linguistics students, and serious learners.
                     </h2>
+
                     <div class="hero-buttons">
-                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero" class="app-store-badge" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'hero'});">
+
+                        <!-- Primary CTA -->
+                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero"
+                           class="btn-primary"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'hero_primary'});">
+                            Get the App
+                        </a>
+
+                        <!-- App Store badge -->
+                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero_badge"
+                           class="app-store-badge"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'hero_badge'});">
                             <img src="app-store-badge.svg" alt="Download on the App Store" />
                         </a>
+
+                        <!-- Secondary CTA -->
                         <a href="#features" class="btn-secondary">
-                            Learn More
+                            See Features
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M10 14l-5-5h10l-5 5z"/>
                             </svg>
                         </a>
+
                     </div>
+
                 </div>
+
                 <div class="hero-right">
+
                     <div class="hero-image">
-                        <img src="hero-feature.png" alt="App Interface Screenshot" class="hero-screenshot" onerror="this.style.display='none';">
+                        <img 
+                            src="hero-feature.png"
+                            alt="English text to IPA transcription word-by-word layout screenshot"
+                            class="hero-screenshot"
+                            onerror="this.style.display='none';"
+                        >
                     </div>
+
                     <div class="cmu-credit">
                         Powered by
-                        <a href="https://www.speech.cs.cmu.edu/cgi-bin/cmudict" target="_blank" rel="noopener noreferrer">CMU Pronouncing Dictionary</a>
+                        <a href="https://www.speech.cs.cmu.edu/cgi-bin/cmudict"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           CMU Pronouncing Dictionary
+                        </a>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </section>
 
     <section class="features scroll-reveal" id="features">
-        <div class="container">
-            <div class="features-header">
-                <!-- 优化标题，使用 non-breaking spaces 避免孤词换行，同时视觉居中 -->
-                <h2 style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.3;">
-                    Designed for Real Sentences — Beyond Single Word Lookups
-                </h2>
-                <!-- 副标题加入 Export 功能亮点 -->
-                <p style="text-align: center; max-width: 700px; margin: 1rem auto 0 auto; color: #4b5563;">
-                    Convert full paragraphs into structured IPA with consistent formatting, and export your results to 
-                    <strong>TXT, DOCX, or PDF</strong> for teaching, study, or research purposes.
-                </p>
-            </div>
-    
-            <!-- 视频展示区 -->
-            <div class="feature-video">
-                <div class="phone-frame">
-                    <video 
-                        src="feature-demo.MP4" 
-                        controls 
-                        autoplay 
-                        muted 
-                        loop 
-                        playsinline
-                    >
-                        Your browser does not support the video tag.
-                    </video>
+        <!-- 1. Video Demo (white) -->
+        <div class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How the English to IPA Converter Works</h2>
+                    <p>See how Phonetic Formatter converts full English passages into structured IPA phonetic transcription in seconds.</p>
+                </div>
+                <div class="section-content">
+                    <div class="feature-video">
+                        <div class="phone-frame">
+                            <video
+                                src="feature-demo.MP4"
+                                poster="feature-demo-poster.png"
+                                controls
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                            >
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="section-cta">
+                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_video" class="app-store-badge" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'video'});">
+                            <img src="app-store-badge.svg" alt="Download on the App Store" />
+                        </a>
+                    </div>
                 </div>
             </div>
-    
+        </div>
+
+        <!-- 2. Key Capabilities (light gray) -->
+        <div class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Key Capabilities</h2>
+                    <p>Designed for working with real English text — not just isolated word lookups.</p>
+                </div>
+                <div class="section-content">
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h3>Sentence-Level Transcription</h3>
+                            <p>Convert full sentences and paragraphs into structured IPA while preserving punctuation and natural sentence boundaries.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Word-by-Word Alignment</h3>
+                            <p>Display each word together with its pronunciation to clearly connect spelling and phonetic representation.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Readable Formatting</h3>
+                            <p>Outputs are structured into clean transcription blocks designed for study, teaching, and linguistic analysis.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Offline Processing</h3>
+                            <p>All transcription runs locally on your device with no cloud processing and no data tracking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Core Capabilities (white) -->
+        <div class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Core Capabilities</h2>
+                    <p>What you can do with this English-to-IPA transcription tool.</p>
+                    <p>Phonetic Formatter converts real English text into clear, structured IPA phonetic transcription designed for study, teaching, and linguistic analysis. Instead of simple word lookups, the app processes complete sentences and paragraphs while preserving readable formatting.</p>
+                </div>
+                <div class="section-content">
             <div class="feature-list">
                 <!-- Sentence-Level -->
                 <div class="feature-item">
@@ -1119,10 +1613,11 @@
                         </svg>
                         <h3>Sentence-Level Transcription</h3>
                     </div>
-                    <p class="feature-description">
-                        Converts full paragraphs into IPA while preserving natural sentence boundaries.
-                        Handles abbreviations, numbers, percentages, domain names, and punctuation with consistent formatting.
-                    </p>
+                    <div class="feature-description">
+                        <p>Convert full English sentences and paragraphs into structured IPA transcription while preserving natural sentence boundaries.</p>
+                        <p>The formatter processes real-world text including abbreviations, numbers, percentages, domain names, and punctuation, so entire passages can be transcribed without manual cleanup.</p>
+                        <p>This makes it suitable for classroom materials, pronunciation study, and linguistic analysis where complete text passages are required.</p>
+                    </div>
                 </div>
     
                 <!-- Word-by-Word -->
@@ -1134,10 +1629,11 @@
                         </svg>
                         <h3>Word‑by‑Word Alignment (Pro)</h3>
                     </div>
-                    <p class="feature-description">
-                        Align each word directly with its pronunciation.
-                        Useful for classroom projection, worksheet preparation, and detailed pronunciation analysis.
-                    </p>
+                    <div class="feature-description">
+                        <p>Display each word together with its corresponding IPA pronunciation in a structured alignment format.</p>
+                        <p>This layout makes it easy to examine pronunciation at the individual word level while still preserving the full sentence context.</p>
+                        <p>It is especially useful for teaching, worksheet preparation, pronunciation analysis, and classroom projection, where learners need to connect written words with their phonetic representation.</p>
+                    </div>
                 </div>
     
                 <!-- Formatting -->
@@ -1148,10 +1644,11 @@
                         </svg>
                         <h3>Clean, Readable Formatting</h3>
                     </div>
-                    <p class="feature-description">
-                        Displays original text and IPA in structured blocks with proper stress marks and consistent spacing.
-                        Optimized for long passages, not just quick dictionary lookups.
-                    </p>
+                    <div class="feature-description">
+                        <p>Outputs are formatted into clear transcription blocks that pair original text with IPA lines in a consistent, readable structure.</p>
+                        <p>Stress marks, spacing, and punctuation are preserved so the transcription remains easy to read even for long passages or academic materials.</p>
+                        <p>The result is designed to be practical for study notes, teaching resources, and linguistic documentation.</p>
+                    </div>
                 </div>
     
                 <!-- Offline -->
@@ -1163,10 +1660,69 @@
                         </svg>
                         <h3>Fully Offline & Private</h3>
                     </div>
-                    <p class="feature-description">
-                        All processing happens locally on your device.
-                        No data upload, no tracking, no cloud processing.
-                    </p>
+                    <div class="feature-description">
+                        <p>All transcription is performed locally on your device, with no cloud processing required.</p>
+                        <p>Your text never leaves the device, which ensures privacy, reliability, and instant response time.</p>
+                        <p>This makes the tool suitable for classroom environments, research work, and situations where internet access or data sharing is restricted.</p>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. How It Works (light gray) -->
+        <div class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Convert English text into structured IPA in seconds.</p>
+                </div>
+                <div class="section-content how-it-works">
+                    <ol class="how-it-works-steps">
+                        <li><strong>Paste or type English text</strong> — Enter a sentence or a full paragraph directly into the formatter.</li>
+                        <li><strong>Generate IPA transcription</strong> — The app processes the text and produces structured phonetic transcription based on the CMU pronunciation dictionary.</li>
+                        <li><strong>Copy or export the result</strong> — Copy the transcription or export it as TXT, DOCX, or PDF for study materials or classroom use.</li>
+                    </ol>
+                    <div class="how-it-works-cta">
+                        <div class="cta-content-box">
+                            <h4 class="cta-mini-title">No barriers, just better phonetics.</h4>
+                            <p class="cta-main-text">Start your first conversion in seconds.</p>
+                            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_howitworks" class="btn-primary btn-cta-pill" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'how_it_works'});">
+                                <span>Download for iOS</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                            <div class="how-it-works-cta-note">
+                                <svg class="cta-note-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Fully offline. No account required.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-is-it-for scroll-reveal" id="who-is-it-for">
+        <div class="container who-is-it-for-inner">
+            <h2>Designed for professional linguists & educators</h2>
+            <div class="who-is-it-for-grid">
+                <div class="who-is-it-for-card">
+                    <h4>ESL/EFL Teachers</h4>
+                    <p>Create clean, professional pronunciation handouts in seconds without fighting Word fonts.</p>
+                </div>
+                <div class="who-is-it-for-card">
+                    <h4>Linguistics Students</h4>
+                    <p>Transcribe long-form text for phonetic analysis with 100% offline accuracy.</p>
+                </div>
+                <div class="who-is-it-for-card">
+                    <h4>Serious Learners</h4>
+                    <p>Understand the flow of real English sentences by visualizing the connected speech via IPA.</p>
                 </div>
             </div>
         </div>
@@ -1175,8 +1731,10 @@
     <section class="pricing scroll-reveal">
         <div class="container">
             <h2>Free and Pro Access</h2>
-    
-            <div class="pricing-table-container">
+
+            <div class="pricing-table-wrapper">
+                <p class="pricing-swipe-hint" aria-hidden="true">Swipe to compare plans</p>
+                <div class="pricing-table-container">
                 <table class="pricing-table">
                     <colgroup>
                         <col style="width: 42%;">
@@ -1225,14 +1783,17 @@
                             <td class="feature-name price-label">Price</td>
                             <td class="value free-col price-value">Free</td>
                             <td class="value pro-col price-value">
-                                <div>$19.99</div>
-                                <div class="price-note">One-time purchase</div>
+                                <div class="pricing-footer-price pro-price">
+                                    <span class="pricing-footer-price-value">$19.99</span>
+                                    <span class="pricing-footer-price-note">One-time purchase</span>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                </div>
             </div>
-    
+
             <div class="pricing-cta">
                 <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_footer" class="app-store-badge" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'footer'});">
                     <img src="app-store-badge.svg" alt="Download on the App Store" />
@@ -1240,6 +1801,52 @@
             </div>
         </div>
     </section>
+
+    <section class="faq scroll-reveal" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>How do I convert an entire English paragraph to IPA?</h3>
+                    <p>Open Phonetic Formatter, paste your paragraph into the text field, and tap Convert. The app transcribes the whole passage at once using the CMU Pronouncing Dictionary. You can choose sentence-level output or, with Pro, word-by-word alignment. Results can be copied or exported to TXT, DOCX, or PDF.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there an offline IPA transcriber for iOS?</h3>
+                    <p>Yes. Phonetic Formatter runs fully offline on your iPhone or iPad. All phonetic conversion happens on device—no internet required and no data is sent to servers. It works anywhere: in the classroom, on the go, or in areas with poor connectivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-highlights scroll-reveal" id="deep-dive">
+        <div class="container blog-highlights-inner">
+            <h2>Linguistic Insights & Guides</h2>
+            <div class="blog-highlights-grid">
+                <div class="blog-highlight-card">
+                    <h4>Why CMUdict?</h4>
+                    <p>Learn why we chose the gold standard of North American English for our app.</p>
+                    <a href="blog/why-cmu-pronouncing-dictionary.html">Read More →</a>
+                </div>
+                <div class="blog-highlight-card">
+                    <h4>For Educators</h4>
+                    <p>How to streamline your lesson prep with Word-aligned IPA layouts.</p>
+                    <a href="blog/from-screen-to-classroom.html">Read More →</a>
+                </div>
+                <div class="blog-highlight-card">
+                    <h4>Connected Speech</h4>
+                    <p>Understanding assimilation, elision, and why IPA helps beyond single words.</p>
+                    <a href="blog/mastering-connected-speech.html">Read More →</a>
+                </div>
+            </div>
+            <p class="blog-highlights-all">
+                <a href="blogs.html">View all blog posts</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="developer-note">
+        <p>"I built this tool because I was frustrated with manual IPA formatting.<br>No tracking, no ads, just a tool that works." — Louis, Developer</p>
+    </div>
 
     <footer>
         <div class="container">
