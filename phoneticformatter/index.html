@@ -1192,6 +1192,7 @@
                 flex: 1 1 100%;
                 position: relative;
                 margin-top: 0.25rem;
+                margin-right: -20px;
             }
             
             .nav-scroll-wrap {
@@ -1205,7 +1206,7 @@
             .nav-scroll-wrap::-webkit-scrollbar {
                 display: none;
             }
-            /* 渐变与提示作为叠加层，不参与滚动布局，始终在 nav 右侧 */
+            /* 渐变贴齐视口右边缘（nav 已 margin-right: -20px 抵消 container 内边距） */
             nav::after {
                 content: '';
                 position: absolute;
@@ -1226,7 +1227,7 @@
                 flex-wrap: nowrap;
                 gap: 1.25rem;
                 margin: 0;
-                padding: 0;
+                padding: 0 52px 0 0;
                 list-style: none;
             }
             
@@ -1360,7 +1361,11 @@
                 border-radius: 0 8px 8px 0;
             }
             
-            /* 表格总宽控制第二、三列宽度；首列越窄，留给二、三列的可见区越大 */
+            /* 覆盖 colgroup 的 42%，否则首列会按百分比变宽 */
+            .pricing-table col:first-child {
+                width: 60px !important;
+                min-width: 60px !important;
+            }
             .pricing-table {
                 min-width: 460px;
             }
@@ -1370,14 +1375,14 @@
                 font-size: 1.1rem;
             }
             
-            /* 首列尽量收窄：保证「视口 - 首列」能完整显示至少一列（约 200px） */
+            /* 首列 60px：兼顾可读性与为第二、三列留出可见区（视口 - 60 能完整显示一列） */
             .pricing-table th:first-child,
             .pricing-table td:first-child {
                 width: 60px !important;
                 min-width: 60px !important;
                 max-width: 60px !important;
                 font-size: 0.75rem;
-                line-height: 1.2;
+                line-height: 1.25;
                 padding: 0.5rem 0.28rem;
                 white-space: normal;
                 word-wrap: break-word;
@@ -1454,6 +1459,10 @@
         }
 
         @media (max-width: 480px) {
+            .pricing-table col:first-child {
+                width: 60px !important;
+                min-width: 60px !important;
+            }
             .pricing-table th:first-child,
             .pricing-table td:first-child {
                 width: 60px !important;
