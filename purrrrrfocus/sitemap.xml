@@ -26,12 +26,47 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/best-pomodoro-timer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/focus-for-adhd.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/study-focus-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/how-to-build-focus-habit.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/purrrrrfocus/wallpapers.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://louisbuilds.me/purrrrrfocus/wallpapers-en.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/wallpapers-da.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/wallpapers-tr.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/wallpapers-fr.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
