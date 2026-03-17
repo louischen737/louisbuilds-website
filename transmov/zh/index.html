@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>TransMov — AI 驱动视频抠图，生成透明动图 | macOS</title>
+    <meta name="title" content="TransMov — AI 驱动视频抠图，生成透明动图 | macOS">
+    <meta name="description" content="将视频转换为 APNG、GIF 或 WebP 透明动图，AI 抠图全在本地完成，无需上传。快速、保护隐私，适用于应用与网页。">
+    <meta name="keywords" content="AI 视频抠图, 透明动图, APNG, GIF, WebP, 视频转动图, 去背景, macOS 应用, 本地处理">
+    <meta name="author" content="TransMov">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/transmov/zh/">
+    <meta property="og:title" content="TransMov — AI 驱动视频抠图，生成透明动图 | macOS">
+    <meta property="og:description" content="将视频转换为 APNG、GIF 或 WebP，全部本地处理，无需上传。">
+    <meta property="og:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="TransMov">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://louisbuilds.me/transmov/zh/">
+    <meta property="twitter:title" content="TransMov — AI 驱动视频抠图，生成透明动图 | macOS">
+    <meta property="twitter:description" content="将视频转换为 APNG、GIF 或 WebP，全部本地处理，无需上传。">
+    <meta property="twitter:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://louisbuilds.me/transmov/zh/">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/">
+    <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN');
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TransMov",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "macOS",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "将视频转换为 APNG、GIF 或 WebP 透明动图，AI 抠图全在本地完成。",
+        "inLanguage": "zh-CN",
+        "downloadUrl": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12"
+    }
+    </script>
+    
+    <!-- VideoObject: 对比区「处理前」视频，便于视频搜索 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "TransMov — 处理前：AI 抠图前的原视频",
+        "description": "使用 TransMov 处理前的原视频片段。TransMov 在 macOS 上通过 AI 本地抠图，将视频转换为透明 APNG、GIF、WebP 动图。",
+        "contentUrl": "https://louisbuilds.me/transmov/images/before-comparison.mp4",
+        "thumbnailUrl": "https://louisbuilds.me/transmov/images/after-comparison.webp",
+        "uploadDate": "2026-01-01",
+        "embedUrl": "https://louisbuilds.me/transmov/zh/",
+        "inLanguage": "zh-CN",
+        "publisher": { "@type": "Organization", "name": "TransMov" }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "zh-CN",
+        "mainEntity": [
+            { "@type": "Question", "name": "在 macOS 上如何把视频转成 APNG？", "acceptedAnswer": { "@type": "Answer", "text": "在 TransMov 中导入视频，选择 APNG 为输出格式并导出即可，全部在 macOS 本地完成处理。" } },
+            { "@type": "Question", "name": "GIF 支持透明吗？", "acceptedAnswer": { "@type": "Answer", "text": "GIF 仅支持 1 位透明（全有或全无），容易产生锯齿。APNG 和 WebP 支持完整 Alpha 透明，效果更平滑自然。" } },
+            { "@type": "Question", "name": "APNG 和 GIF 有什么区别？", "acceptedAnswer": { "@type": "Answer", "text": "APNG 支持全色和 Alpha 透明，GIF 仅 256 色和简单透明。APNG 动图质量更高，尤其适合 UI 和渐变内容。" } },
+            { "@type": "Question", "name": "能在 Mac 上本地去除视频背景吗？", "acceptedAnswer": { "@type": "Answer", "text": "可以。TransMov 使用 Apple Vision 在设备端处理，无需上传即可去除视频背景，兼顾隐私与速度。" } },
+            { "@type": "Question", "name": "哪种格式最适合网页动图？", "acceptedAnswer": { "@type": "Answer", "text": "视需求而定：GIF 兼容最广，APNG 透明质量更好，WebP 压缩率常更优。做 UI 与设计素材时，多选 APNG 或 WebP。" } }
+        ]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://api.producthunt.com">
+    <link rel="dns-prefetch" href="https://api.producthunt.com">
+    <link rel="dns-prefetch" href="https://apps.apple.com">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #0d0d0d; position: relative; }
+        .hero { background: #0d0d0d; color: #f5f5f5; padding: 4rem 1.5rem 5rem; text-align: center; position: relative; }
+        .hero-headline { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 600; line-height: 1.3; margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .hero-subheadline { font-size: clamp(0.95rem, 2vw, 1.1rem); color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem; line-height: 1.5; }
+        .hero-cta { margin-bottom: 0; margin-top: 0; }
+        .hero-note { font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); margin-top: 1.25rem; line-height: 1.5; }
+        .hero-inner { max-width: 1100px; margin: 0 auto; }
+        @media (min-width: 1024px) {
+            .hero { padding-top: 7rem; padding-bottom: 6rem; }
+            .hero-inner { max-width: 900px; margin-left: auto; margin-right: auto; }
+            .hero-headline { font-size: clamp(2.5rem, 4vw, 3.25rem); margin-bottom: 1.25rem; }
+            .hero-subheadline { font-size: 1.25rem; margin-bottom: 2.5rem; }
+            .hero-cta { margin-top: 6rem; }
+            .hero-note { margin-top: 1.5rem; }
+        }
+        .badges-container { display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .badge-link { display: inline-block; transition: transform 0.2s; text-decoration: none; }
+        .badge-link:hover { transform: scale(1.05); }
+        .badge-link img { display: block; height: 54px; width: auto; }
+        .comparison-section { background: #0d0d0d; padding: 4rem 1.5rem; text-align: center; }
+        .comparison-micro { font-size: 0.9rem; color: rgba(255, 255, 255, 0.65); margin-bottom: 2rem; }
+        .comparison-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; }
+        .comparison-item { flex: 1; min-width: 240px; max-width: 360px; }
+        .comparison-item picture, .comparison-item img, .comparison-item video { width: 100%; height: auto; display: block; }
+        @media (max-width: 768px) { .comparison-container { flex-direction: column; gap: 1.5rem; } .comparison-item { min-width: 100%; } }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .top-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; background: rgba(13, 13, 13, 0.96); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .top-bar-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+        .top-bar-icon { width: 32px; height: 32px; border-radius: 8px; display: block; }
+        .top-bar-name { font-size: 1.1rem; font-weight: 600; color: #f5f5f5; letter-spacing: -0.01em; }
+        .main-content { padding-top: 4rem; }
+        .language-switcher a { margin-left: 8px; padding: 6px 14px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; font-size: 0.875em; text-decoration: none; color: rgba(255, 255, 255, 0.9); transition: all 0.2s; }
+        .language-switcher a:hover { background: rgba(255, 255, 255, 0.12); }
+        .language-switcher a.active { background: rgba(255, 255, 255, 0.18); color: #fff; }
+        .section { padding: 3rem 0; margin-bottom: 0; }
+        .section + .section { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+        h2 { color: #f5f5f5; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600; border: none; padding: 0; }
+        h3 { color: #f5f5f5; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 600; }
+        p { margin-bottom: 1rem; color: rgba(255, 255, 255, 0.75); }
+        .use-cases { display: flex; flex-direction: column; gap: 4rem; }
+        .use-case { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .use-case--reverse .use-case-text { order: 2; }
+        .use-case--reverse .use-case-visual { order: 1; }
+        .use-case-visual { width: 100%; display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.03); border-radius: 12px; padding: 20px; min-height: 300px; }
+        .use-case-visual picture, .use-case-visual img { max-width: 100%; max-height: 400px; width: auto; height: auto; display: block; border-radius: 8px; object-fit: contain; }
+        .use-case--square .use-case-visual img { max-width: 280px; }
+        .use-case--portrait .use-case-visual img { max-height: 420px; max-width: 240px; }
+        .use-case--landscape .use-case-visual img { max-width: 100%; }
+        .use-case-text h3 { margin-bottom: 0.75rem; font-size: 1.25rem; }
+        .use-case-text p { margin-bottom: 0; }
+        @media (max-width: 768px) { .use-case { grid-template-columns: 1fr; gap: 1.5rem; } .use-case--reverse .use-case-text, .use-case--reverse .use-case-visual { order: unset; } }
+        .why-list { list-style: none; margin: 0; padding: 0; }
+        .why-list li { color: rgba(255, 255, 255, 0.75); padding: 0.35rem 0; padding-left: 1.25rem; position: relative; }
+        .why-list li::before { content: "•"; position: absolute; left: 0; color: rgba(255, 255, 255, 0.65); }
+        .cta { text-align: center; padding: 4rem 1.5rem; background: #0d0d0d; color: #f5f5f5; margin-top: 0; }
+        .cta h2 { color: #f5f5f5; border: none; margin-bottom: 0.5rem; font-size: 1.5rem; }
+        .cta .cta-trust { font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); margin-top: 1rem; }
+        .cta .badges-container { margin-top: 1rem; }
+        .footer { text-align: center; padding: 2rem 1.5rem; color: rgba(255, 255, 255, 0.6); margin-top: 0; }
+        .footer a { color: rgba(255, 255, 255, 0.75); text-decoration: none; margin: 0 10px; }
+        .container a,
+        .section a { color: #a5b4fc; text-decoration: none; }
+        .container a:hover,
+        .section a:hover { color: #c7d2fe; text-decoration: underline; }
+        /* FAQ Section — expand/collapse (details/summary) */
+        .faq-section .faq-title { margin-bottom: 1.25rem; }
+        .faq-list { display: flex; flex-direction: column; gap: 0; }
+        .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 14px 0; }
+        .faq-item:first-of-type { padding-top: 0; }
+        .faq-item summary { cursor: pointer; font-weight: 500; color: #f5f5f5; list-style: none; position: relative; padding-right: 24px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "+"; position: absolute; right: 0; top: 0; font-size: 1.2rem; opacity: 0.7; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .faq-item[open] summary::after { transform: rotate(45deg); opacity: 1; }
+        .faq-item .faq-answer { margin-top: 10px; color: rgba(255, 255, 255, 0.75); line-height: 1.6; }
+        .faq-item .faq-answer p { margin: 0; }
+        @media (max-width: 768px) { .badge-link img { height: 40px; } }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <a href="../" class="top-bar-brand">
+            <img src="../images/app-icon.png" alt="TransMov 应用图标" class="top-bar-icon" width="32" height="32">
+            <span class="top-bar-name">TransMov</span>
+        </a>
+        <div class="language-switcher">
+            <a href="../">English</a>
+            <a href="./" class="active">中文</a>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1 class="hero-headline">AI 驱动的视频抠图<br>生成透明动图</h1>
+                    <p class="hero-subheadline">将视频转换为 APNG、GIF 或 WebP — 全部本地处理，无需上传</p>
+                    <div class="hero-cta badges-container">
+                        <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener noreferrer" class="badge-link">
+                            <img src="../images/app-store-badge.svg" alt="在 Mac App Store 上下载" onerror="this.src='../images/app-store-badge.png'; this.onerror=null;">
+                        </a>
+                    </div>
+                    <p class="hero-note">快速、隐私保护、适用于应用或网页</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison-section">
+            <p class="comparison-micro">从原视频到干净动图 — 直观感受 AI 效果！</p>
+            <div class="comparison-container">
+                <div class="comparison-item">
+                    <video class="comparison-video-before" src="../images/before-comparison.mp4" muted loop playsinline title="处理前：原视频"></video>
+                </div>
+                <div class="comparison-item">
+                    <picture>
+                        <source type="image/webp" srcset="../images/after-comparison.webp">
+                        <img class="comparison-gif-after" src="../images/after-comparison.gif" alt="TransMov 生成的透明 WebP 动图 — AI 抠图效果" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section">
+                <h2>关于</h2>
+                <p>TransMov 是一款 macOS 原生工具，可将视频转换为可直接使用的透明动图。</p>
+                <p>所有处理均在本地完成，文件不会离开你的设备。</p>
+            </div>
+            
+            <div class="section">
+                <h2>使用场景</h2>
+                <div class="use-cases">
+                    <div class="use-case use-case--square">
+                        <div class="use-case-visual">
+                            <picture>
+                                <source type="image/webp" srcset="../images/use-case-1.webp">
+                                <source type="image/png" srcset="../images/use-case-1.png">
+                                <img src="../images/use-case-1.gif" alt="TransMov 导出的透明动图用于 App 与 UI — APNG GIF WebP" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="use-case-text">
+                            <h3>App 与 UI 动图</h3>
+                            <p>制作精致的透明动图，适合 App 界面或引导页。短视频轻松转换为轻量动图。</p>
+                        </div>
+                    </div>
+                    <div class="use-case use-case--portrait use-case--reverse">
+                        <div class="use-case-visual">
+                            <picture>
+                                <source type="image/webp" srcset="../images/use-case-2.webp">
+                                <source type="image/png" srcset="../images/use-case-2.png">
+                                <img src="../images/use-case-2.gif" alt="TransMov 本地 AI 抠图将视频转为透明动图" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="use-case-text">
+                            <h3>AI 视频素材处理</h3>
+                            <p>将 AI 视频变成可用素材。本地抠背景，导出透明动图，可直接用于产品和设计。</p>
+                        </div>
+                    </div>
+                    <div class="use-case use-case--landscape">
+                        <div class="use-case-visual">
+                            <picture>
+                                <source type="image/webp" srcset="../images/use-case-3.webp">
+                                <source type="image/png" srcset="../images/use-case-3.png">
+                                <img src="../images/use-case-3.gif" alt="TransMov 导出透明 WebP GIF 用于网页与设计" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="use-case-text">
+                            <h3>Web / 设计输出</h3>
+                            <p>为 Web 和设计工具导出干净动图。APNG、GIF 或 WebP，自由控制质量和尺寸，随时可用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>为什么选 TransMov</h2>
+                <ul class="why-list">
+                    <li>100% 本地处理</li>
+                    <li>基于 Apple Vision 与神经引擎</li>
+                    <li>支持 APNG、GIF 和 WebP，完整 Alpha 通道</li>
+                    <li>为开发者和设计师打造</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>工作原理</h2>
+                <p>TransMov 通过逐帧处理，将视频转换为 APNG、GIF、WebP 等动图格式。每一帧在本地使用 Apple Vision 分析、去除背景并保留清晰边缘。</p>
+                <p>与云端工具不同，一切都在你的 Mac 上完成：处理更快、无需上传、视频文件完全私密。</p>
+                <p>想了解格式差异，可阅读我们的 <a href="../blog/what-is-apng-zh.html">APNG 与 GIF 对比说明</a>。</p>
+            </div>
+            
+            <div class="section faq-section">
+                <h2 class="faq-title">常见问题</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>在 macOS 上如何把视频转成 APNG？</summary>
+                        <div class="faq-answer">
+                            <p>在 TransMov 中导入视频，选择 APNG 为输出格式并导出即可，全部在 macOS 本地完成处理。</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>GIF 支持透明吗？</summary>
+                        <div class="faq-answer">
+                            <p>GIF 仅支持 1 位透明（全有或全无），容易产生锯齿。APNG 和 WebP 支持完整 Alpha 透明，效果更平滑自然。</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>APNG 和 GIF 有什么区别？</summary>
+                        <div class="faq-answer">
+                            <p>APNG 支持全色和 Alpha 透明，GIF 仅 256 色和简单透明。APNG 动图质量更高，尤其适合 UI 和渐变内容。</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>能在 Mac 上本地去除视频背景吗？</summary>
+                        <div class="faq-answer">
+                            <p>可以。TransMov 使用 Apple Vision 在设备端处理，无需上传即可去除视频背景，兼顾隐私与速度。</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>哪种格式最适合网页动图？</summary>
+                        <div class="faq-answer">
+                            <p>视需求而定：GIF 兼容最广，APNG 透明质量更好，WebP 压缩率常更优。做 UI 与设计素材时，多选 APNG 或 WebP。</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <h2>快速导出透明动图</h2>
+                <div class="badges-container">
+                    <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener noreferrer" class="badge-link">
+                        <img src="../images/app-store-badge.svg" alt="在 macOS 下载" onerror="this.src='../images/app-store-badge.png'; this.onerror=null;">
+                    </a>
+                </div>
+                <p class="cta-trust">AI 驱动 · 全本地 · 无上传 · APNG / GIF / WebP</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                <a href="../privacy-policy.html">隐私政策</a> |
+                <a href="../support.html">技术支持</a> |
+                <a href="../terms-of-service.html">用户使用协议</a>
+            </p>
+            <p style="margin-top: 10px;">© 2026 TransMov</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" style="color: #667eea; text-decoration: none;">louisbuilds.me</a></p>
+        </div>
+    </main>
+    
+    <script>
+        function initComparisonSync() {
+            var before = document.querySelector('.comparison-video-before');
+            var after = document.querySelector('.comparison-gif-after');
+            if (!before || !after) return;
+            function start() {
+                before.currentTime = 0;
+                before.playbackRate = 1;
+                before.play();
+                var src = after.getAttribute('src');
+                if (src) { after.setAttribute('src', ''); after.setAttribute('src', src); }
+            }
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) start();
+                });
+            }, { rootMargin: '50px', threshold: 0.2 });
+            observer.observe(before.closest('.comparison-section'));
+        }
+        window.addEventListener('load', initComparisonSync);
+    </script>
+</body>
+</html>
