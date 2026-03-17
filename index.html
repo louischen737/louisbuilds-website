@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Louis Builds — Independent apps for focus and mindfulness: TapPause, PurrrrrFocus, TransMov, Phonetic Formatter. Thoughtfully built for rest, productivity, and learning." />
 <link rel="canonical" href="https://louisbuilds.me/" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -221,6 +222,9 @@ body {
 
 .product-screenshot img {
     width: 100%;
+    height: auto;
+    display: block;
+    align-self: start;
     border-radius: 18px;
     box-shadow: 0 25px 60px rgba(0,0,0,0.5);
     transition: all 0.5s var(--ease);
@@ -245,7 +249,7 @@ footer {
     padding: 120px 24px 60px;
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.08);
-    color: var(--text-muted);
+    color: var(--text-secondary);
 }
 
 footer a {
@@ -281,6 +285,7 @@ footer p {
 
 <div class="progress-bar" id="progressBar"></div>
 
+<main>
 <section class="hero">
     <h1>Louis Builds</h1>
     <p>Built with intention. Designed to feel effortless.</p>
@@ -292,88 +297,89 @@ footer p {
 <!-- TapPause -->
 <div class="product">
 <div class="product-info">
-<h2><img src="tappause/icon.png" class="app-icon"> TapPause</h2>
+<h2><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60"> TapPause</h2>
 <p>A minimal pause timer to stop, pause, and rest. Designed for intentional breaks.</p>
 <div class="tags">Timer · Minimal · Rest</div>
 <div class="buttons">
-<a href="https://apps.apple.com/app/tappause" target="_blank" class="app-store-badge">
-<img src="assets/app-store-badge.svg">
+<a href="https://apps.apple.com/app/tappause" target="_blank" class="app-store-badge" aria-label="Download TapPause on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download TapPause on the App Store" width="120" height="40">
 </a>
 <a href="tappause/" class="btn-learn">Learn More →</a>
 </div>
 </div>
 <div class="product-screenshot ios">
-<img src="tappause/screenshot1.png">
-<img src="tappause/screenshot2.png">
-<img src="tappause/screenshot3.png">
-<img src="tappause/screenshot4.png">
+<img src="tappause/screenshot1.webp" alt="TapPause app screenshot - timer screen" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot2.webp" alt="TapPause app screenshot - pause state" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot3.webp" alt="TapPause app screenshot - rest reminder" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot4.webp" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
 <!-- PurrrrrFocus -->
 <div class="product">
 <div class="product-info">
-<h2><img src="purrrrrfocus/icon.png" class="app-icon"> PurrrrrFocus</h2>
+<h2><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60"> PurrrrrFocus</h2>
 <p>Deep focus timers with progress tracking and your cat companion.</p>
 <div class="tags">Pomodoro · Productivity · Cats</div>
 <div class="buttons">
-<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" class="app-store-badge">
-<img src="assets/app-store-badge.svg">
+<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40">
 </a>
 <a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
 </div>
 </div>
 <div class="product-screenshot ios">
-<img src="purrrrrfocus/screenshot1.webp">
-<img src="purrrrrfocus/screenshot2.webp">
-<img src="purrrrrfocus/screenshot3.webp">
-<img src="purrrrrfocus/screenshot4.webp">
+<img src="purrrrrfocus/screenshot1.webp" alt="PurrrrrFocus app screenshot - focus timer" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot2.webp" alt="PurrrrrFocus app screenshot - cat companion" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot3.webp" alt="PurrrrrFocus app screenshot - progress tracking" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot4.webp" alt="PurrrrrFocus app screenshot - Pomodoro mode" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
 <!-- TransMov -->
 <div class="product">
 <div class="product-info">
-<h2><img src="transmov/icon.png" class="app-icon"> TransMov</h2>
+<h2><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60"> TransMov</h2>
 <p>Convert videos into transparent GIF, APNG, and WebP with AI-powered background removal — fully offline on your Mac.</p>
 <div class="tags">macOS · AI Video Cutout · Offline Processing</div>
 <div class="buttons">
-<a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" class="app-store-badge">
-<img src="assets/app-store-badge.svg">
+<a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" class="app-store-badge" aria-label="Download TransMov on the Mac App Store">
+<img src="assets/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40">
 </a>
 <a href="transmov/" class="btn-learn">Learn More →</a>
 </div>
 </div>
 <div class="product-screenshot macos">
-<img src="transmov/screenshot1.png">
-<img src="transmov/screenshot2.png">
-<img src="transmov/screenshot3.png">
-<img src="transmov/screenshot4.png">
+<img src="transmov/screenshot1.webp" alt="TransMov app screenshot - main window" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot2.webp" alt="TransMov app screenshot - video import" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot3.webp" alt="TransMov app screenshot - background removal" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot4.webp" alt="TransMov app screenshot - export options" width="1280" height="800" loading="lazy">
 </div>
 </div>
 
 <!-- Phonetic Formatter -->
 <div class="product">
 <div class="product-info">
-<h2><img src="phoneticformatter/icon.png" class="app-icon"> Phonetic Formatter</h2>
+<h2><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60"> Phonetic Formatter</h2>
 <p>Convert English text into accurate IPA transcription. Supports sentence-level and word-aligned formatting.</p>
 <div class="tags">iOS · English · IPA · Linguistics</div>
 <div class="buttons">
-<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" class="app-store-badge">
-<img src="assets/app-store-badge.svg">
+<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" class="app-store-badge" aria-label="Download Phonetic Formatter on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download Phonetic Formatter on the App Store" width="120" height="40">
 </a>
 <a href="phoneticformatter/" class="btn-learn">Learn More →</a>
 </div>
 </div>
 <div class="product-screenshot ios">
-<img src="phoneticformatter/screenshot1.png">
-<img src="phoneticformatter/screenshot2.png">
-<img src="phoneticformatter/screenshot3.png">
-<img src="phoneticformatter/screenshot4.png">
+<img src="phoneticformatter/screenshot1.webp" alt="Phonetic Formatter app screenshot - text input" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot2.webp" alt="Phonetic Formatter app screenshot - IPA output" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot3.webp" alt="Phonetic Formatter app screenshot - word alignment" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot4.webp" alt="Phonetic Formatter app screenshot - settings" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
 </section>
+</main>
 
 <footer>
 <div>
