@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/index-en.html">
-    <title>PurrrrrFocus – Focus Enhancement Partner</title>
+    <title>PurrrrrFocus – Pomodoro Timer & Focus App with Cat Companion</title>
     
     <!-- 基础 SEO Meta 标签 -->
-    <meta name="description" content="PurrrrrFocus – Focus timer app with cat companion. Pomodoro timer, count-up timer, and deep focus mode. Build focus habits with calm Chinese aesthetics. Perfect for ADHD support and productivity.">
+    <meta name="description" content="PurrrrrFocus is a minimalist Pomodoro timer app designed to help you stay focused, reduce distractions, and build consistent habits. Perfect for studying, deep work, and ADHD support.">
     <meta name="keywords" content="PurrrrrFocus,Pomodoro timer,focus timer,productivity app,ADHD support,cat companion,habit tracker">
     <meta name="author" content="PurrrrrFocus Team">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -25,7 +25,7 @@
     
     <!-- Open Graph 标签（社交媒体分享） -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PurrrrrFocus – Focus Enhancement Partner">
+    <meta property="og:title" content="PurrrrrFocus – Pomodoro Timer & Focus App with Cat Companion">
     <meta property="og:description" content="Focus better with PurrrrrFocus! Simple & user friendly focus timer app combining Chinese aesthetics with adorable cats. Features Pomodoro timer, count-up timer, deep focus mode, cat companion system, achievements, and 6 classical themes. Stay focused with your cute pet companion, build study and habit tracking, enter flow state. Perfect for ADHD support and productivity enhancement.">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/index-en.html">
     <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
@@ -42,7 +42,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@LouisChen737">
     <meta name="twitter:creator" content="@LouisChen737">
-    <meta name="twitter:title" content="PurrrrrFocus – Focus Enhancement Partner">
+    <meta name="twitter:title" content="PurrrrrFocus – Pomodoro Timer & Focus App with Cat Companion">
     <meta name="twitter:description" content="Focus better with PurrrrrFocus! Pomodoro timer, cat companionship, productivity app. Simple & user friendly, stay focused with your cute cat companion.">
     <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="PurrrrrFocus app icon - Focus timer app with cat companion">
@@ -54,6 +54,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
+    <link rel="preload" href="ink-texture.jpg" as="image">
     
     <!-- JSON-LD 结构化数据 -->
     <script type="application/ld+json">
@@ -868,6 +869,98 @@
             text-align: right;
         }
         
+        /* SEO Section */
+        .seo-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .seo-block h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .seo-block p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-primary);
+            list-style: none;
+            position: relative;
+            padding-right: 24px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.2rem;
+            opacity: 0.6;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+        .faq-item p {
+            margin-top: 10px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .seo-section {
+                padding: 60px 16px;
+            }
+            .seo-block h2 {
+                font-size: 1.5rem;
+            }
+            .seo-content {
+                gap: 36px;
+            }
+            .faq-section {
+                padding: 60px 16px;
+            }
+            .faq-title {
+                font-size: 1.6rem;
+            }
+        }
+        
         .cta-section-upgrade {
             padding: 80px 20px;
             background: linear-gradient(135deg, #7A1E1E 0%, #5C1616 100%);
@@ -932,7 +1025,61 @@
             margin-top: 16px;
             opacity: 0.8;
         }
-        
+
+        /* Learn More Section */
+        .learn-more {
+            padding: 40px 20px 60px;
+            background: transparent;
+        }
+        .learn-more .container {
+            max-width: 800px;
+        }
+        .learn-more-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+        .learn-more-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .learn-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+        }
+        .learn-text {
+            font-size: 0.95rem;
+        }
+        .learn-arrow {
+            font-size: 0.9rem;
+            opacity: 0.4;
+            transform: translateX(0);
+            transition: all 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .learn-item:hover {
+                color: var(--accent);
+            }
+            .learn-item:hover .learn-arrow {
+                opacity: 0.8;
+                transform: translateX(4px);
+            }
+        }
+        @media (max-width: 768px) {
+            .learn-more {
+                padding: 32px 16px 48px;
+            }
+        }
+
         .footer {
             background: var(--bg-primary);
             padding: 40px 20px;
@@ -1247,11 +1394,11 @@
                 <span class="lang-chevron" aria-hidden="true">▼</span>
             </button>
             <div class="lang-dropdown-menu" role="menu" aria-label="Select Language Options">
-                <a href="index.html" role="menuitem">中文</a>
-                <a href="index-en.html" class="active" role="menuitem">English</a>
-                <a href="index-da.html" role="menuitem">Dansk</a>
-                <a href="index-tr.html" role="menuitem">Türkçe</a>
-                <a href="index-fr.html" role="menuitem">Français</a>
+                <a href="index.html" hreflang="zh-CN" role="menuitem">中文</a>
+                <a href="index-en.html" hreflang="en" class="active" role="menuitem">English</a>
+                <a href="index-da.html" hreflang="da" role="menuitem">Dansk</a>
+                <a href="index-tr.html" hreflang="tr" role="menuitem">Türkçe</a>
+                <a href="index-fr.html" hreflang="fr" role="menuitem">Français</a>
             </div>
         </div>
     </header>
@@ -1264,8 +1411,8 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Focus Without Distractions</h1>
-            <p class="hero-subtitle">Track your sessions, earn rewards, grow your focus habits — with a calm cat companion.</p>
+            <h1 class="hero-title">Pomodoro Timer for Focus Without Distractions</h1>
+            <p class="hero-subtitle">The most adorable Pomodoro timer to track sessions, earn rewards, grow your focus habits — with a calm cat companion.</p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" 
                    target="_blank" rel="noopener noreferrer" 
@@ -1347,6 +1494,36 @@
         </div>
     </section>
     
+    <!-- SEO Content Section -->
+    <section class="seo-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="seo-block">
+                    <h2>Why Use a Pomodoro Timer?</h2>
+                    <p>
+                        A Pomodoro timer helps you stay focused by breaking work into structured sessions with short breaks.
+                        This method improves productivity, reduces mental fatigue, and makes it easier to start and sustain deep work.
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>Designed for Focus, Study, and ADHD</h2>
+                    <p>
+                        PurrrrrFocus is built for students, creators, and anyone who struggles with distractions.
+                        With a calm interface, flexible timing modes, and gentle visual feedback,
+                        it supports deep focus, habit building, and ADHD-friendly workflows.
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>A Minimalist Focus Timer That Feels Calm</h2>
+                    <p>
+                        Unlike complex productivity apps, PurrrrrFocus keeps things simple.
+                        No clutter, no pressure—just a clean space to focus, with optional themes and a soft companion presence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
@@ -1374,6 +1551,47 @@ role="region"
         </div>
     </section>
     
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>What is the best Pomodoro timer app?</summary>
+                    <p>
+                        PurrrrrFocus is a minimalist Pomodoro timer designed to help you stay focused,
+                        reduce distractions, and build consistent work habits.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is this app suitable for ADHD?</summary>
+                    <p>
+                        Yes. PurrrrrFocus is designed with simplicity and calmness in mind,
+                        helping reduce overwhelm and support structured focus sessions for ADHD users.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I use it for studying and work?</summary>
+                    <p>
+                        Absolutely. It works well for studying, deep work, and daily productivity routines.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Does the app track focus time?</summary>
+                    <p>
+                        Yes. You can view your focus sessions, track time, and build consistent habits over time.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is it a free Pomodoro timer?</summary>
+                    <p>
+                        The app offers core features for free, with optional premium features for advanced usage.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+    
     <!-- Enhanced CTA Section -->
     <section class="cta-section-upgrade">
         <div class="container">
@@ -1393,6 +1611,30 @@ role="region"
                 </a>
             </div>
             <p class="cta-note">Trusted by users worldwide. Start your focus journey now!</p>
+        </div>
+    </section>
+
+    <section class="learn-more">
+        <div class="container">
+            <h3 class="learn-more-title">Focus & Productivity Guides</h3>
+            <div class="learn-more-list">
+                <a href="best-pomodoro-timer.html" class="learn-item">
+                    <span class="learn-text">Best Pomodoro Timer for Focus</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="focus-for-adhd.html" class="learn-item">
+                    <span class="learn-text">How to Stay Focused with ADHD</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="study-focus-guide.html" class="learn-item">
+                    <span class="learn-text">How to Stay Focused While Studying</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="how-to-build-focus-habit.html" class="learn-item">
+                    <span class="learn-text">How to Build a Focus Habit</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 </main>

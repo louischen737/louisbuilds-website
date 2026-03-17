@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PurrrrrFocus – Fokusforbedringspartner</title>
+    <title>PurrrrrFocus – Pomodoro Timer & Fokus-app med kattekompagnon</title>
     
     <!-- 基础 SEO Meta 标签 -->
-    <meta name="description" content="PurrrrrFocus – Fokustimer-app med kattekompagnon. Pomodoro-timer, optællingstimer og dyb fokus-tilstand. Byg fokusvaner med rolig kinesisk æstetik. Perfekt til ADHD-støtte og produktivitet.">
+    <meta name="description" content="PurrrrrFocus er en minimalistisk Pomodoro-timer-app, der hjælper dig med at holde fokus, reducere distraktioner og bygge konsistente vaner. Perfekt til studier, dybt arbejde og ADHD-støtte.">
     <meta name="keywords" content="PurrrrrFocus,Pomodoro timer,fokus timer,produktivitetsapp,ADHD støtte,kattekompagnon,vanetracker">
     <meta name="author" content="PurrrrrFocus Team">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -25,7 +25,7 @@
     
     <!-- Open Graph 标签（社交媒体分享） -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PurrrrrFocus – Fokusforbedringspartner">
+    <meta property="og:title" content="PurrrrrFocus – Pomodoro Timer & Fokus-app med kattekompagnon">
     <meta property="og:description" content="Fokuser bedre med PurrrrrFocus! Simpel og brugervenlig fokustimer-app, der kombinerer kinesisk æstetik med nuttede katte. Funktioner inkluderer Pomodoro-timer, optællingstimer, dyb fokus-tilstand, kattekompagnonsystem, præstationer og 6 klassiske temaer. Hold fokus med din nuttede kæledyrsven, byg studie- og vanetracking, kom i flow-tilstand. Perfekt til ADHD-støtte og produktivitetsforbedring.">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/index-da.html">
     <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
@@ -42,7 +42,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@LouisChen737">
     <meta name="twitter:creator" content="@LouisChen737">
-    <meta name="twitter:title" content="PurrrrrFocus – Fokusforbedringspartner">
+    <meta name="twitter:title" content="PurrrrrFocus – Pomodoro Timer & Fokus-app med kattekompagnon">
     <meta name="twitter:description" content="Fokuser bedre med PurrrrrFocus! Pomodoro-timer, kattekompagnonskab, produktivitetsapp. Simpel og brugervenlig, hold fokus med din nuttede kattekompagnon.">
     <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="PurrrrrFocus app-ikon - Fokustimer-app med kattekompagnon">
@@ -54,7 +54,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
-    
+    <link rel="preload" href="ink-texture.jpg" as="image">
+
     <!-- JSON-LD 结构化数据 -->
     <script type="application/ld+json">
     {
@@ -867,7 +868,99 @@
             font-size: 1em;
             text-align: right;
         }
-        
+
+        /* SEO Section */
+        .seo-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .seo-block h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .seo-block p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-primary);
+            list-style: none;
+            position: relative;
+            padding-right: 24px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.2rem;
+            opacity: 0.6;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+        .faq-item p {
+            margin-top: 10px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .seo-section {
+                padding: 60px 16px;
+            }
+            .seo-block h2 {
+                font-size: 1.5rem;
+            }
+            .seo-content {
+                gap: 36px;
+            }
+            .faq-section {
+                padding: 60px 16px;
+            }
+            .faq-title {
+                font-size: 1.6rem;
+            }
+        }
+
         .cta-section-upgrade {
             padding: 80px 20px;
             background: linear-gradient(135deg, #7A1E1E 0%, #5C1616 100%);
@@ -932,7 +1025,61 @@
             margin-top: 16px;
             opacity: 0.8;
         }
-        
+
+        /* Learn More Section */
+        .learn-more {
+            padding: 40px 20px 60px;
+            background: transparent;
+        }
+        .learn-more .container {
+            max-width: 800px;
+        }
+        .learn-more-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+        .learn-more-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .learn-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+        }
+        .learn-text {
+            font-size: 0.95rem;
+        }
+        .learn-arrow {
+            font-size: 0.9rem;
+            opacity: 0.4;
+            transform: translateX(0);
+            transition: all 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .learn-item:hover {
+                color: var(--accent);
+            }
+            .learn-item:hover .learn-arrow {
+                opacity: 0.8;
+                transform: translateX(4px);
+            }
+        }
+        @media (max-width: 768px) {
+            .learn-more {
+                padding: 32px 16px 48px;
+            }
+        }
+
         .footer {
             background: var(--bg-primary);
             padding: 40px 20px;
@@ -1247,11 +1394,11 @@
                 <span class="lang-chevron" aria-hidden="true">▼</span>
             </button>
             <div class="lang-dropdown-menu" role="menu" aria-label="Sprogindstillinger">
-                <a href="index.html" role="menuitem">中文</a>
-                <a href="index-en.html" role="menuitem">English</a>
-                <a href="index-da.html" class="active" role="menuitem">Dansk</a>
-                <a href="index-tr.html" role="menuitem">Türkçe</a>
-                <a href="index-fr.html" role="menuitem">Français</a>
+                <a href="index.html" hreflang="zh-CN" role="menuitem">中文</a>
+                <a href="index-en.html" hreflang="en" role="menuitem">English</a>
+                <a href="index-da.html" hreflang="da" class="active" role="menuitem">Dansk</a>
+                <a href="index-tr.html" hreflang="tr" role="menuitem">Türkçe</a>
+                <a href="index-fr.html" hreflang="fr" role="menuitem">Français</a>
             </div>
         </div>
     </header>
@@ -1264,8 +1411,8 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Fokus Uden Distraktioner</h1>
-            <p class="hero-subtitle">Spor dine sessioner, optjen belønninger, vækst dine fokusvaner — med en rolig kattekompagnon.</p>
+            <h1 class="hero-title">Pomodoro-timer til fokus uden distraktioner</h1>
+            <p class="hero-subtitle">Den mest nuttede Pomodoro-timer til at spore sessioner, optjene belønninger, vækste fokusvaner — med en rolig kattekompagnon.</p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" 
                    target="_blank" rel="noopener noreferrer" 
@@ -1347,6 +1494,36 @@
         </div>
     </section>
     
+    <!-- SEO Content Section -->
+    <section class="seo-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="seo-block">
+                    <h2>Hvorfor bruge en Pomodoro-timer?</h2>
+                    <p>
+                        En Pomodoro-timer hjælper dig med at holde fokus ved at opdele arbejde i strukturerede sessioner med korte pauser.
+                        Metoden forbedrer produktiviteten, reducerer mental træthed og gør det nemmere at starte og opretholde dybt arbejde.
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>Designet til fokus, studie og ADHD</h2>
+                    <p>
+                        PurrrrrFocus er bygget til studerende, skabere og alle, der kæmper med distraktioner.
+                        Med et roligt interface, fleksible tidsindstillinger og blid visuel feedback
+                        understøtter det dybt fokus, vanedannelse og ADHD-venlige workflows.
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>En minimalistisk fokustimer der føles rolig</h2>
+                    <p>
+                        I modsætning til komplekse produktivitetsapps holder PurrrrrFocus tingene enkle.
+                        Ingen rod, intet pres—kun et rent rum til fokus, med valgfrie temaer og en blid kompagnon-tilstedeværelse.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
@@ -1374,6 +1551,35 @@ role="region"
         </div>
     </section>
     
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Ofte stillede spørgsmål</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Hvad er den bedste Pomodoro-timer-app?</summary>
+                    <p>PurrrrrFocus er en minimalistisk Pomodoro-timer designet til at hjælpe dig med at holde fokus, reducere distraktioner og bygge konsistente arbejdsvaner.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Er appen egnet til ADHD?</summary>
+                    <p>Ja. PurrrrrFocus er designet med enkelhed og ro i tankerne og hjælper med at reducere overvældelse og understøtte strukturerede fokussessioner for ADHD-brugere.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Kan jeg bruge den til studie og arbejde?</summary>
+                    <p>Absolut. Den fungerer godt til studier, dybt arbejde og daglige produktivitetsrutiner.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Sporer appen fokustid?</summary>
+                    <p>Ja. Du kan se dine fokussessioner, spore tid og bygge konsistente vaner over tid.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Er det en gratis Pomodoro-timer?</summary>
+                    <p>Appen tilbyder kernefunktioner gratis med valgfrie premium-funktioner til avanceret brug.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+    
     <!-- Enhanced CTA Section -->
     <section class="cta-section-upgrade">
         <div class="container">
@@ -1393,6 +1599,30 @@ role="region"
                 </a>
             </div>
             <p class="cta-note">Betroet af brugere verden over. Start din fokusrejse nu!</p>
+        </div>
+    </section>
+
+    <section class="learn-more">
+        <div class="container">
+            <h3 class="learn-more-title">Fokus & produktivitet-guider</h3>
+            <div class="learn-more-list">
+                <a href="best-pomodoro-timer.html" class="learn-item">
+                    <span class="learn-text">Bedste Pomodoro-timer til fokus</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="focus-for-adhd.html" class="learn-item">
+                    <span class="learn-text">Sådan holder du fokus med ADHD</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="study-focus-guide.html" class="learn-item">
+                    <span class="learn-text">Sådan holder du fokus under studier</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="how-to-build-focus-habit.html" class="learn-item">
+                    <span class="learn-text">Sådan bygger du en fokusvane</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 </main>

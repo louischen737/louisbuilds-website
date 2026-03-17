@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PurrrrrFocus – Partenaire d'amélioration de la concentration</title>
+    <title>PurrrrrFocus – Minuteur Pomodoro et app de concentration avec compagnon félin</title>
     
     <!-- 基础 SEO Meta 标签 -->
-    <meta name="description" content="PurrrrrFocus – Application de minuterie de concentration avec compagnon félin. Minuterie Pomodoro, minuterie de comptage et mode de concentration profonde. Développez des habitudes de concentration avec une esthétique chinoise apaisante. Parfait pour le soutien TDAH et la productivité.">
+    <meta name="description" content="PurrrrrFocus est une app de minuteur Pomodoro minimaliste pour rester concentré, réduire les distractions et ancrer de bonnes habitudes. Idéal pour les études, le travail en profondeur et le soutien TDAH.">
     <meta name="keywords" content="PurrrrrFocus,minuterie Pomodoro,minuterie de concentration,application de productivité,soutien TDAH,compagnon félin,suivi des habitudes">
     <meta name="author" content="PurrrrrFocus Team">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -25,7 +25,7 @@
     
     <!-- Open Graph 标签（社交媒体分享） -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PurrrrrFocus – Partenaire d'amélioration de la concentration">
+    <meta property="og:title" content="PurrrrrFocus – Minuteur Pomodoro et app de concentration avec compagnon félin">
     <meta property="og:description" content="Concentrez-vous mieux avec PurrrrrFocus ! Application de minuterie de concentration simple et conviviale combinant l'esthétique chinoise avec des chats adorables. Fonctionnalités : minuterie Pomodoro, minuterie de comptage, mode de concentration profonde, système de compagnon félin, réalisations et 6 thèmes classiques. Restez concentré avec votre compagnon félin mignon, développez le suivi des études et des habitudes, entrez dans un état de flux. Parfait pour le soutien TDAH et l'amélioration de la productivité.">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/index-fr.html">
     <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
@@ -42,7 +42,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@LouisChen737">
     <meta name="twitter:creator" content="@LouisChen737">
-    <meta name="twitter:title" content="PurrrrrFocus – Partenaire d'amélioration de la concentration">
+    <meta name="twitter:title" content="PurrrrrFocus – Minuteur Pomodoro et app de concentration avec compagnon félin">
     <meta name="twitter:description" content="Concentrez-vous mieux avec PurrrrrFocus ! Minuterie Pomodoro, compagnie féline, application de productivité. Simple et convivial, restez concentré avec votre compagnon félin mignon.">
     <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="Icône de l'application PurrrrrFocus - Application de minuterie de concentration avec compagnon félin">
@@ -54,7 +54,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
-    
+    <link rel="preload" href="ink-texture.jpg" as="image">
+
     <!-- JSON-LD 结构化数据 -->
     <script type="application/ld+json">
     {
@@ -890,7 +891,99 @@
             font-size: 1em;
             text-align: right;
         }
-        
+
+        /* SEO Section */
+        .seo-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .seo-block h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .seo-block p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-primary);
+            list-style: none;
+            position: relative;
+            padding-right: 24px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.2rem;
+            opacity: 0.6;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+        .faq-item p {
+            margin-top: 10px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .seo-section {
+                padding: 60px 16px;
+            }
+            .seo-block h2 {
+                font-size: 1.5rem;
+            }
+            .seo-content {
+                gap: 36px;
+            }
+            .faq-section {
+                padding: 60px 16px;
+            }
+            .faq-title {
+                font-size: 1.6rem;
+            }
+        }
+
         .cta-section-upgrade {
             padding: 80px 20px;
             background: linear-gradient(135deg, #7A1E1E 0%, #5C1616 100%);
@@ -955,7 +1048,61 @@
             margin-top: 16px;
             opacity: 0.8;
         }
-        
+
+        /* Learn More Section */
+        .learn-more {
+            padding: 40px 20px 60px;
+            background: transparent;
+        }
+        .learn-more .container {
+            max-width: 800px;
+        }
+        .learn-more-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+        .learn-more-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .learn-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+        }
+        .learn-text {
+            font-size: 0.95rem;
+        }
+        .learn-arrow {
+            font-size: 0.9rem;
+            opacity: 0.4;
+            transform: translateX(0);
+            transition: all 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .learn-item:hover {
+                color: var(--accent);
+            }
+            .learn-item:hover .learn-arrow {
+                opacity: 0.8;
+                transform: translateX(4px);
+            }
+        }
+        @media (max-width: 768px) {
+            .learn-more {
+                padding: 32px 16px 48px;
+            }
+        }
+
         .footer {
             background: var(--bg-primary);
             padding: 40px 20px;
@@ -1270,11 +1417,11 @@
                 <span class="lang-chevron" aria-hidden="true">▼</span>
             </button>
             <div class="lang-dropdown-menu" role="menu" aria-label="Options de sélection de langue">
-                <a href="index.html" role="menuitem">中文</a>
-                <a href="index-en.html" role="menuitem">English</a>
-                <a href="index-da.html" role="menuitem">Dansk</a>
-                <a href="index-tr.html" role="menuitem">Türkçe</a>
-                <a href="index-fr.html" class="active" role="menuitem">Français</a>
+                <a href="index.html" hreflang="zh-CN" role="menuitem">中文</a>
+                <a href="index-en.html" hreflang="en" role="menuitem">English</a>
+                <a href="index-da.html" hreflang="da" role="menuitem">Dansk</a>
+                <a href="index-tr.html" hreflang="tr" role="menuitem">Türkçe</a>
+                <a href="index-fr.html" hreflang="fr" class="active" role="menuitem">Français</a>
             </div>
         </div>
     </header>
@@ -1287,8 +1434,8 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Concentration sans distractions</h1>
-            <p class="hero-subtitle">Suivez vos sessions, gagnez des récompenses, développez vos habitudes de concentration — avec un compagnon félin apaisant.</p>
+            <h1 class="hero-title">Minuteur Pomodoro pour une concentration sans distractions</h1>
+            <p class="hero-subtitle">Le minuteur Pomodoro le plus adorable pour suivre vos sessions, gagner des récompenses, développer vos habitudes de concentration — avec un compagnon félin apaisant.</p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" 
                    target="_blank" rel="noopener noreferrer" 
@@ -1370,6 +1517,36 @@
         </div>
     </section>
     
+    <!-- SEO Content Section -->
+    <section class="seo-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="seo-block">
+                    <h2>Pourquoi utiliser un minuteur Pomodoro ?</h2>
+                    <p>
+                        Un minuteur Pomodoro vous aide à rester concentré en découpant le travail en sessions structurées avec de courtes pauses.
+                        Cette méthode améliore la productivité, réduit la fatigue mentale et facilite le démarrage et le maintien d'un travail en profondeur.
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>Conçu pour la concentration, l'étude et le TDAH</h2>
+                    <p>
+                        PurrrrrFocus est conçu pour les étudiants, les créateurs et tous ceux qui luttent contre les distractions.
+                        Avec une interface apaisante, des modes de minuterie flexibles et un retour visuel doux,
+                        il favorise la concentration profonde, la construction d'habitudes et des flux de travail adaptés au TDAH.
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>Un minuteur de concentration minimaliste et apaisant</h2>
+                    <p>
+                        Contrairement aux applications de productivité complexes, PurrrrrFocus reste simple.
+                        Pas d'encombrement, pas de pression—juste un espace épuré pour se concentrer, avec des thèmes optionnels et une présence de compagnon douce.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
@@ -1397,6 +1574,35 @@ role="region"
         </div>
     </section>
     
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Questions fréquentes</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Quelle est la meilleure application minuteur Pomodoro ?</summary>
+                    <p>PurrrrrFocus est un minuteur Pomodoro minimaliste conçu pour vous aider à rester concentré, réduire les distractions et construire des habitudes de travail régulières.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>L'application convient-elle au TDAH ?</summary>
+                    <p>Oui. PurrrrrFocus est conçu avec la simplicité et le calme en tête, pour réduire la surcharge et soutenir des sessions de concentration structurées pour les utilisateurs TDAH.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Puis-je l'utiliser pour étudier et travailler ?</summary>
+                    <p>Absolument. Il convient à l'étude, au travail en profondeur et aux routines de productivité quotidiennes.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>L'application suit-elle le temps de concentration ?</summary>
+                    <p>Oui. Vous pouvez consulter vos sessions de concentration, suivre le temps et construire des habitudes régulières au fil du temps.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Est-ce un minuteur Pomodoro gratuit ?</summary>
+                    <p>L'application propose les fonctionnalités de base gratuitement, avec des fonctionnalités premium optionnelles pour une utilisation avancée.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+    
     <!-- Enhanced CTA Section -->
     <section class="cta-section-upgrade">
         <div class="container">
@@ -1416,6 +1622,30 @@ role="region"
                 </a>
             </div>
             <p class="cta-note">Fait confiance par les utilisateurs du monde entier. Commencez votre parcours de concentration maintenant !</p>
+        </div>
+    </section>
+
+    <section class="learn-more">
+        <div class="container">
+            <h3 class="learn-more-title">Guides concentration et productivité</h3>
+            <div class="learn-more-list">
+                <a href="best-pomodoro-timer.html" class="learn-item">
+                    <span class="learn-text">Meilleur minuteur Pomodoro pour la concentration</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="focus-for-adhd.html" class="learn-item">
+                    <span class="learn-text">Rester concentré avec le TDAH</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="study-focus-guide.html" class="learn-item">
+                    <span class="learn-text">Rester concentré en étudiant</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="how-to-build-focus-habit.html" class="learn-item">
+                    <span class="learn-text">Comment construire une habitude de concentration</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 </main>

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>喵时计 – 专注力提升伙伴</title>
+    <title>喵时计 – 番茄钟与专注应用，自带猫咪伙伴</title>
     
     <!-- 基础 SEO Meta 标签 -->
-    <meta name="description" content="喵时计 – 自带猫咪伙伴的专注计时器！支持番茄工作法、正计时、学霸模式，以温润的中式美学帮你培养专注习惯，适配ADHD人群，高效提升生产力。">
+    <meta name="description" content="喵时计是一款极简番茄钟应用，助你保持专注、减少分心、养成稳定习惯。适合学习、深度工作与ADHD支持。">
     <meta name="keywords" content="喵时计,PurrrrrFocus,番茄钟,专注计时器,专注学习,专注力,专注工作,自律,极简,治愈,萌系,学霸必备,正计时,效率,心流,番茄工作法,时间管理,好习惯,猫咪,专注应用,iOS应用,生产力工具,专注力训练,时间管理工具,学习助手,工作助手,ADHD辅助工具">
     <meta name="author" content="PurrrrrFocus Team">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -25,7 +25,7 @@
     
     <!-- Open Graph 标签（社交媒体分享） -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="喵时计 – 专注力提升伙伴">
+    <meta property="og:title" content="喵时计 – 番茄钟与专注应用，自带猫咪伙伴">
     <meta property="og:description" content="用喵时计，专注更轻松！这款简单友好的专注计时器融合中式美学与软萌猫咪，支持番茄钟、正计时、学霸模式、猫咪伙伴、成就系统及6款古典主题，陪你专注学习、养成习惯、进入心流状态，适配ADHD人群，高效提升生产力。">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/">
     <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
@@ -42,7 +42,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@LouisChen737">
     <meta name="twitter:creator" content="@LouisChen737">
-    <meta name="twitter:title" content="喵时计 – 专注力提升伙伴">
+    <meta name="twitter:title" content="喵时计 – 番茄钟与专注应用，自带猫咪伙伴">
     <meta name="twitter:description" content="用喵时计，专注更轻松！番茄钟计时、萌猫陪伴，简单友好的效率工具，和软萌猫咪一起保持专注吧～">
     <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="喵时计应用图标 - 配有猫咪伙伴的专注计时器应用">
@@ -54,7 +54,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
-    
+    <link rel="preload" href="ink-texture.jpg" as="image">
+
     <!-- JSON-LD 结构化数据 -->
     <script type="application/ld+json">
     {
@@ -868,6 +869,98 @@
             text-align: right;
         }
         
+        /* SEO Section */
+        .seo-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .seo-block h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .seo-block p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: var(--bg-primary);
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-primary);
+            list-style: none;
+            position: relative;
+            padding-right: 24px;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.2rem;
+            opacity: 0.6;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+        .faq-item p {
+            margin-top: 10px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .seo-section {
+                padding: 60px 16px;
+            }
+            .seo-block h2 {
+                font-size: 1.5rem;
+            }
+            .seo-content {
+                gap: 36px;
+            }
+            .faq-section {
+                padding: 60px 16px;
+            }
+            .faq-title {
+                font-size: 1.6rem;
+            }
+        }
+        
         .cta-section-upgrade {
             padding: 80px 20px;
             background: linear-gradient(135deg, #7A1E1E 0%, #5C1616 100%);
@@ -932,7 +1025,61 @@
             margin-top: 16px;
             opacity: 0.8;
         }
-        
+
+        /* Learn More Section */
+        .learn-more {
+            padding: 40px 20px 60px;
+            background: transparent;
+        }
+        .learn-more .container {
+            max-width: 800px;
+        }
+        .learn-more-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+        .learn-more-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .learn-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            text-decoration: none;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+        }
+        .learn-text {
+            font-size: 0.95rem;
+        }
+        .learn-arrow {
+            font-size: 0.9rem;
+            opacity: 0.4;
+            transform: translateX(0);
+            transition: all 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            .learn-item:hover {
+                color: var(--accent);
+            }
+            .learn-item:hover .learn-arrow {
+                opacity: 0.8;
+                transform: translateX(4px);
+            }
+        }
+        @media (max-width: 768px) {
+            .learn-more {
+                padding: 32px 16px 48px;
+            }
+        }
+
         .footer {
             background: var(--bg-primary);
             padding: 40px 20px;
@@ -1247,11 +1394,11 @@
                 <span class="lang-chevron" aria-hidden="true">▼</span>
             </button>
             <div class="lang-dropdown-menu" role="menu" aria-label="语言选择选项">
-                <a href="index.html" class="active" role="menuitem">中文</a>
-                <a href="index-en.html" role="menuitem">English</a>
-                <a href="index-da.html" role="menuitem">Dansk</a>
-                <a href="index-tr.html" role="menuitem">Türkçe</a>
-                <a href="index-fr.html" role="menuitem">Français</a>
+                <a href="index.html" hreflang="zh-CN" class="active" role="menuitem">中文</a>
+                <a href="index-en.html" hreflang="en" role="menuitem">English</a>
+                <a href="index-da.html" hreflang="da" role="menuitem">Dansk</a>
+                <a href="index-tr.html" hreflang="tr" role="menuitem">Türkçe</a>
+                <a href="index-fr.html" hreflang="fr" role="menuitem">Français</a>
             </div>
         </div>
     </header>
@@ -1264,8 +1411,8 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">专注不受干扰</h1>
-            <p class="hero-subtitle">记录你的专注时光，解锁萌趣奖励，培养专注习惯 —— 有软萌的猫咪伙伴一路陪伴。</p>
+            <h1 class="hero-title">极简番茄钟：专注不受干扰</h1>
+            <p class="hero-subtitle">最治愈的番茄钟，记录专注时光、解锁奖励、养成专注习惯 —— 有软萌猫咪伙伴一路陪伴。</p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008" 
                    target="_blank" rel="noopener noreferrer" 
@@ -1347,6 +1494,32 @@
         </div>
     </section>
     
+    <!-- SEO Content Section -->
+    <section class="seo-section">
+        <div class="container">
+            <div class="seo-content">
+                <div class="seo-block">
+                    <h2>为什么用番茄钟？</h2>
+                    <p>
+                        番茄钟通过「专注段 + 短休息」的结构化节奏帮你保持专注，提升效率、减轻用脑疲劳，更容易进入并维持深度工作状态。
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>为专注、学习与 ADHD 设计</h2>
+                    <p>
+                        喵时计面向学生、创作者和容易分心的用户，以简洁界面、灵活计时和温和反馈，支持深度专注、习惯养成和 ADHD 友好式工作流。
+                    </p>
+                </div>
+                <div class="seo-block">
+                    <h2>极简专注计时，氛围更安心</h2>
+                    <p>
+                        不堆功能、不制造压力。喵时计只保留必要功能，提供清爽的专注空间，可选主题与软萌伙伴陪伴，让专注更轻松。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
@@ -1374,6 +1547,35 @@
         </div>
     </section>
     
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">常见问题</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>最好的番茄钟应用是哪个？</summary>
+                    <p>喵时计是一款极简番茄钟应用，助你保持专注、减少分心、养成稳定的工作与学习习惯。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>适合 ADHD 用户吗？</summary>
+                    <p>适合。喵时计注重简洁与平静，有助于减轻 overwhelm，为 ADHD 用户提供结构化的专注时段支持。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>可以用于学习和工作吗？</summary>
+                    <p>可以。适合学习、深度工作和日常效率习惯。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>会记录专注时长吗？</summary>
+                    <p>会。你可以查看专注会话、统计时长，并随时间养成稳定习惯。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>是免费的番茄钟吗？</summary>
+                    <p>核心功能免费使用，高级功能为可选付费。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+    
     <!-- Enhanced CTA Section -->
     <section class="cta-section-upgrade">
         <div class="container">
@@ -1393,6 +1595,30 @@
                 </a>
             </div>
             <p class="cta-note">收获全球用户的喜爱，现在就开启你的专注之旅吧！</p>
+        </div>
+    </section>
+
+    <section class="learn-more">
+        <div class="container">
+            <h3 class="learn-more-title">专注与效率指南</h3>
+            <div class="learn-more-list">
+                <a href="best-pomodoro-timer.html" class="learn-item">
+                    <span class="learn-text">最佳番茄钟专注工具</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="focus-for-adhd.html" class="learn-item">
+                    <span class="learn-text">如何与 ADHD 保持专注</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="study-focus-guide.html" class="learn-item">
+                    <span class="learn-text">学习时如何保持专注</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+                <a href="how-to-build-focus-habit.html" class="learn-item">
+                    <span class="learn-text">如何养成专注习惯</span>
+                    <span class="learn-arrow">→</span>
+                </a>
+            </div>
         </div>
     </section>
 </main>
