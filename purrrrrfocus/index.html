@@ -1747,8 +1747,9 @@
             
             function checkScrollable() {
                 afterLayout(function () {
-                    var isScrollable = testimonialsGrid.scrollWidth > testimonialsGrid.clientWidth;
-                    if (isScrollable) {
+                    var sw = testimonialsGrid.scrollWidth;
+                    var cw = testimonialsGrid.clientWidth;
+                    if (sw > cw) {
                         testimonialsGrid.classList.add('scrollable');
                     } else {
                         testimonialsGrid.classList.remove('scrollable');
@@ -1782,9 +1783,10 @@
             
             function updateAriaLive() {
                 afterLayout(function () {
-                    var scrollLeft = testimonialsGrid.scrollLeft;
-                    var cardWidth = testimonialsGrid.clientWidth * 0.85;
-                    var currentIndex = Math.round(scrollLeft / (cardWidth + 16));
+                    var sl = testimonialsGrid.scrollLeft;
+                    var cw = testimonialsGrid.clientWidth;
+                    var cardWidth = cw * 0.85;
+                    var currentIndex = Math.round(sl / (cardWidth + 16));
                     if (currentIndex >= 0 && currentIndex < cards.length) {
                         var currentCard = cards[currentIndex];
                         var author = currentCard.querySelector('.testimonial-author')?.textContent || '';
@@ -1811,7 +1813,10 @@
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(function() {
                     afterLayout(function () {
-                        var isAtEnd = testimonialsGrid.scrollLeft + testimonialsGrid.clientWidth >= testimonialsGrid.scrollWidth - 10;
+                        var sl = testimonialsGrid.scrollLeft;
+                        var cw = testimonialsGrid.clientWidth;
+                        var sw = testimonialsGrid.scrollWidth;
+                        var isAtEnd = sl + cw >= sw - 10;
                         if (isAtEnd && hintElement) {
                             hintElement.style.opacity = '0';
                         }
@@ -1819,8 +1824,15 @@
                 }, 100);
             });
             
-            updateAriaLive();
-            checkScrollable();
+            function runWhenIdle() {
+                if (typeof requestIdleCallback !== 'undefined') {
+                    requestIdleCallback(function() { checkScrollable(); updateAriaLive(); }, { timeout: 500 });
+                } else {
+                    setTimeout(function() { checkScrollable(); updateAriaLive(); }, 1);
+                }
+            }
+            if (document.readyState === 'complete') runWhenIdle();
+            else window.addEventListener('load', runWhenIdle);
             window.addEventListener('resize', onResize);
         })();
     </script>
