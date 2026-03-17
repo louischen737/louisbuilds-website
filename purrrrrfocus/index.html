@@ -956,11 +956,12 @@
             text-decoration: underline;
         }
         
-        .footer-link {
+.footer-link {
             color: var(--accent);
-            text-decoration: none;
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
-        
+
         .footer-link:hover {
             text-decoration: underline;
         }
@@ -1270,7 +1271,7 @@
                    target="_blank" rel="noopener noreferrer" 
                    class="app-store-badge"
                    onclick="gtag('event', 'download_click', {'app': 'purrrrrfocus', 'lang': 'zh', 'position': 'hero'});">
-                    <img src="app-store-badge-zh.svg" alt="在 App Store 下载喵时计">
+                    <img src="app-store-badge-zh.svg" alt="在 App Store 下载喵时计" width="109" height="40" fetchpriority="high">
                 </a>
             </div>
             <p class="hero-cta-note">从此告别分心，开启专注之旅</p>
@@ -1355,9 +1356,7 @@
             <div class="testimonials-grid" 
                  role="region" 
                  aria-label="用户评价轮播，滑动或滚动查看更多" 
-                 tabindex="0"
-                 aria-orientation="horizontal"
-                 aria-live="polite">
+                 tabindex="0">
                 <article class="testimonial-card" role="group" aria-label="来自 Chenxinyi 的用户评价" tabindex="0">
                     <p class="testimonial-text">"喵时计也太好用了！大人小孩都适配——又萌又实用，每天都能进步一点点。对提升专注力超有帮助，长期用下来，真的能成为更好的自己。"</p>
                     <p class="testimonial-author">— Chenxinyi</p>
@@ -1385,12 +1384,12 @@
                    target="_blank" rel="noopener noreferrer" 
                    class="app-store-badge"
                    onclick="gtag('event', 'download_click', {'app': 'purrrrrfocus', 'lang': 'zh', 'position': 'footer'});">
-                    <img src="app-store-badge-zh.svg" alt="在 App Store 下载喵时计" loading="lazy">
+                    <img src="app-store-badge-zh.svg" alt="在 App Store 下载喵时计" width="109" height="40" loading="lazy">
                 </a>
                 <a href="https://www.producthunt.com/products/purrrrrfocus-pomodoro" 
                    target="_blank" rel="noopener noreferrer" 
                    class="product-hunt-badge">
-                    <img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1141180&theme=light&size=medium" alt="在 Product Hunt 关注" loading="lazy">
+                    <img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1141180&theme=light&size=medium" alt="在 Product Hunt 关注" width="200" height="40" loading="lazy">
                 </a>
             </div>
             <p class="cta-note">收获全球用户的喜爱，现在就开启你的专注之旅吧！</p>
@@ -1429,12 +1428,19 @@
             var header = document.querySelector('.site-header');
             if (!header) return;
             var threshold = 30;
+            var rafScheduled = false;
             function updateHeader() {
-                if (window.scrollY > threshold) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
+                if (rafScheduled) return;
+                rafScheduled = true;
+                requestAnimationFrame(function () {
+                    rafScheduled = false;
+                    var y = window.scrollY;
+                    if (y > threshold) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
             }
             window.addEventListener('scroll', updateHeader, { passive: true });
             updateHeader();
@@ -1506,26 +1512,30 @@
             var isMobile = window.matchMedia('(max-width: 768px)').matches;
             if (!isMobile) return;
             
-            // 检测是否可滚动
+            // 检测是否可滚动（在 rAF 中读取布局，避免强制同步重排）
             function checkScrollable() {
-                var isScrollable = testimonialsGrid.scrollWidth > testimonialsGrid.clientWidth;
-                if (isScrollable) {
-                    testimonialsGrid.classList.add('scrollable');
-                } else {
-                    testimonialsGrid.classList.remove('scrollable');
-                }
+                requestAnimationFrame(function () {
+                    var isScrollable = testimonialsGrid.scrollWidth > testimonialsGrid.clientWidth;
+                    if (isScrollable) {
+                        testimonialsGrid.classList.add('scrollable');
+                    } else {
+                        testimonialsGrid.classList.remove('scrollable');
+                    }
+                });
             }
             
             // 键盘导航支持
             testimonialsGrid.addEventListener('keydown', function (e) {
-                var scrollAmount = testimonialsGrid.clientWidth * 0.85;
-                if (e.key === 'ArrowLeft') {
-                    e.preventDefault();
-                    testimonialsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                } else if (e.key === 'ArrowRight') {
-                    e.preventDefault();
-                    testimonialsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                }
+                requestAnimationFrame(function () {
+                    var scrollAmount = testimonialsGrid.clientWidth * 0.85;
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        testimonialsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        testimonialsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                });
             });
             
             // 检测滚动位置，隐藏/显示提示，更新aria-live
@@ -1534,16 +1544,18 @@
             var scrollTimeout;
             var cards = testimonialsGrid.querySelectorAll('.testimonial-card');
             
-            // 更新当前显示的testimonial的aria-live
+            // 更新当前显示的testimonial的aria-live（在 rAF 中读取布局，避免强制同步重排）
             function updateAriaLive() {
-                var scrollLeft = testimonialsGrid.scrollLeft;
-                var cardWidth = testimonialsGrid.clientWidth * 0.85;
-                var currentIndex = Math.round(scrollLeft / (cardWidth + 16));
-                if (currentIndex >= 0 && currentIndex < cards.length) {
-                    var currentCard = cards[currentIndex];
-                    var author = currentCard.querySelector('.testimonial-author')?.textContent || '';
-                    testimonialsGrid.setAttribute('aria-label', '用户评价轮播，当前显示来自 ' + author + ' 的评价，滑动或滚动查看更多');
-                }
+                requestAnimationFrame(function () {
+                    var scrollLeft = testimonialsGrid.scrollLeft;
+                    var cardWidth = testimonialsGrid.clientWidth * 0.85;
+                    var currentIndex = Math.round(scrollLeft / (cardWidth + 16));
+                    if (currentIndex >= 0 && currentIndex < cards.length) {
+                        var currentCard = cards[currentIndex];
+                        var author = currentCard.querySelector('.testimonial-author')?.textContent || '';
+                        testimonialsGrid.setAttribute('aria-label', '用户评价轮播，当前显示来自 ' + author + ' 的评价，滑动或滚动查看更多');
+                    }
+                });
             }
             
             // 首次加载显示提示
@@ -1566,10 +1578,12 @@
                 
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(function() {
-                    var isAtEnd = testimonialsGrid.scrollLeft + testimonialsGrid.clientWidth >= testimonialsGrid.scrollWidth - 10;
-                    if (isAtEnd && hintElement) {
-                        hintElement.style.opacity = '0';
-                    }
+                    requestAnimationFrame(function () {
+                        var isAtEnd = testimonialsGrid.scrollLeft + testimonialsGrid.clientWidth >= testimonialsGrid.scrollWidth - 10;
+                        if (isAtEnd && hintElement) {
+                            hintElement.style.opacity = '0';
+                        }
+                    });
                 }, 100);
             });
             

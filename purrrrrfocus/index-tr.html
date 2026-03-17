@@ -956,11 +956,12 @@
             text-decoration: underline;
         }
         
-        .footer-link {
+.footer-link {
             color: var(--accent);
-            text-decoration: none;
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
-        
+
         .footer-link:hover {
             text-decoration: underline;
         }
@@ -1270,7 +1271,7 @@
                    target="_blank" rel="noopener noreferrer" 
                    class="app-store-badge"
                    onclick="gtag('event', 'download_click', {'app': 'purrrrrfocus', 'lang': 'tr', 'position': 'hero'});">
-                    <img src="app-store-badge-tr.svg" alt="App Store'da PurrrrrFocus'u İndir">
+                    <img src="app-store-badge-tr.svg" alt="App Store'da PurrrrrFocus'u İndir" width="109" height="40" fetchpriority="high">
                 </a>
             </div>
             <p class="hero-cta-note">Odak Yolculuğunuza Başlayın</p>
@@ -1353,11 +1354,9 @@
             <p class="section-subtitle">Kullanıcılarımızdan PurrrrrFocus deneyimi hakkında gerçek geri bildirimler.</p>
             
             <div class="testimonials-grid" 
-                 role="region" 
-                 aria-label="Kullanıcı görüşleri carousel, daha fazlasını görmek için kaydırın veya kaydırın" 
-                 tabindex="0"
-                 aria-orientation="horizontal"
-                 aria-live="polite">
+role="region"
+                 aria-label="Kullanıcı görüşleri carousel, daha fazlasını görmek için kaydırın veya kaydırın"
+                 tabindex="0">
                 <article class="testimonial-card" role="group" aria-label="Chenxinyi'den kullanıcı görüşü" tabindex="0">
                     <p class="testimonial-text">"PurrrrrFocus kesinlikle harika! Hem çocuklar hem de benim için mükemmel—sevimli ve pratik, her gün biraz ilerleme kaydetmemize yardımcı oluyor. Odaklamayı geliştirmek için harika ve kendimin daha iyi bir versiyonu olmak için uzun vadede kullanmaya devam edeceğim."</p>
                     <p class="testimonial-author">— Chenxinyi</p>
@@ -1385,12 +1384,12 @@
                    target="_blank" rel="noopener noreferrer" 
                    class="app-store-badge"
                    onclick="gtag('event', 'download_click', {'app': 'purrrrrfocus', 'lang': 'tr', 'position': 'footer'});">
-                    <img src="app-store-badge-tr.svg" alt="App Store'da PurrrrrFocus'u İndir" loading="lazy">
+                    <img src="app-store-badge-tr.svg" alt="App Store'da PurrrrrFocus'u İndir" width="109" height="40" loading="lazy">
                 </a>
                 <a href="https://www.producthunt.com/products/purrrrrfocus-pomodoro" 
                    target="_blank" rel="noopener noreferrer" 
                    class="product-hunt-badge">
-                    <img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1141180&theme=light&size=medium" alt="Product Hunt'ta Takip Et" loading="lazy">
+                    <img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1141180&theme=light&size=medium" alt="Product Hunt'ta Takip Et" width="200" height="40" loading="lazy">
                 </a>
             </div>
             <p class="cta-note">Dünya çapında kullanıcılar tarafından güveniliyor. Odak yolculuğunuza şimdi başlayın!</p>
@@ -1429,12 +1428,19 @@
             var header = document.querySelector('.site-header');
             if (!header) return;
             var threshold = 30;
+            var rafScheduled = false;
             function updateHeader() {
-                if (window.scrollY > threshold) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
+                if (rafScheduled) return;
+                rafScheduled = true;
+                requestAnimationFrame(function () {
+                    rafScheduled = false;
+                    var y = window.scrollY;
+                    if (y > threshold) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
             }
             window.addEventListener('scroll', updateHeader, { passive: true });
             updateHeader();
@@ -1506,26 +1512,30 @@
             var isMobile = window.matchMedia('(max-width: 768px)').matches;
             if (!isMobile) return;
             
-            // 检测是否可滚动
+            // 检测是否可滚动（在 rAF 中读取布局，避免强制同步重排）
             function checkScrollable() {
-                var isScrollable = testimonialsGrid.scrollWidth > testimonialsGrid.clientWidth;
-                if (isScrollable) {
-                    testimonialsGrid.classList.add('scrollable');
-                } else {
-                    testimonialsGrid.classList.remove('scrollable');
-                }
+                requestAnimationFrame(function () {
+                    var isScrollable = testimonialsGrid.scrollWidth > testimonialsGrid.clientWidth;
+                    if (isScrollable) {
+                        testimonialsGrid.classList.add('scrollable');
+                    } else {
+                        testimonialsGrid.classList.remove('scrollable');
+                    }
+                });
             }
             
             // 键盘导航支持
             testimonialsGrid.addEventListener('keydown', function (e) {
-                var scrollAmount = testimonialsGrid.clientWidth * 0.85;
-                if (e.key === 'ArrowLeft') {
-                    e.preventDefault();
-                    testimonialsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                } else if (e.key === 'ArrowRight') {
-                    e.preventDefault();
-                    testimonialsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                }
+                requestAnimationFrame(function () {
+                    var scrollAmount = testimonialsGrid.clientWidth * 0.85;
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        testimonialsGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        testimonialsGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    }
+                });
             });
             
             // 检测滚动位置，隐藏/显示提示，更新aria-live
@@ -1534,16 +1544,18 @@
             var scrollTimeout;
             var cards = testimonialsGrid.querySelectorAll('.testimonial-card');
             
-            // 更新当前显示的testimonial的aria-live
+            // 更新当前显示的testimonial的aria-live（在 rAF 中读取布局，避免强制同步重排）
             function updateAriaLive() {
-                var scrollLeft = testimonialsGrid.scrollLeft;
-                var cardWidth = testimonialsGrid.clientWidth * 0.85;
-                var currentIndex = Math.round(scrollLeft / (cardWidth + 16));
-                if (currentIndex >= 0 && currentIndex < cards.length) {
-                    var currentCard = cards[currentIndex];
-                    var author = currentCard.querySelector('.testimonial-author')?.textContent || '';
-                    testimonialsGrid.setAttribute('aria-label', 'Kullanıcı görüşleri carousel, şu anda ' + author + ' görüşünü gösteriyor, daha fazlasını görmek için kaydırın veya kaydırın');
-                }
+                requestAnimationFrame(function () {
+                    var scrollLeft = testimonialsGrid.scrollLeft;
+                    var cardWidth = testimonialsGrid.clientWidth * 0.85;
+                    var currentIndex = Math.round(scrollLeft / (cardWidth + 16));
+                    if (currentIndex >= 0 && currentIndex < cards.length) {
+                        var currentCard = cards[currentIndex];
+                        var author = currentCard.querySelector('.testimonial-author')?.textContent || '';
+                        testimonialsGrid.setAttribute('aria-label', 'Kullanıcı görüşleri carousel, şu anda ' + author + ' görüşünü gösteriyor, daha fazlasını görmek için kaydırın veya kaydırın');
+                    }
+                });
             }
             
             // 首次加载显示提示
@@ -1566,10 +1578,12 @@
                 
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(function() {
-                    var isAtEnd = testimonialsGrid.scrollLeft + testimonialsGrid.clientWidth >= testimonialsGrid.scrollWidth - 10;
-                    if (isAtEnd && hintElement) {
-                        hintElement.style.opacity = '0';
-                    }
+                    requestAnimationFrame(function () {
+                        var isAtEnd = testimonialsGrid.scrollLeft + testimonialsGrid.clientWidth >= testimonialsGrid.scrollWidth - 10;
+                        if (isAtEnd && hintElement) {
+                            hintElement.style.opacity = '0';
+                        }
+                    });
                 }, 100);
             });
             
