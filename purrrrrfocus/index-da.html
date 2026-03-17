@@ -1297,7 +1297,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/da/01.webp" srcset="screenshots/da/01-400w.webp 400w, screenshots/da/01-800w.webp 800w, screenshots/da/01.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Timer hovedskærm viser Dyb Fokus-tilstand med rent interface" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/da/01.webp" srcset="screenshots/da/01-400w.webp 400w, screenshots/da/01-800w.webp 800w, screenshots/da/01.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Timer hovedskærm viser Dyb Fokus-tilstand med rent interface" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Et Rum til Dyb Fokus</h3>
@@ -1307,7 +1307,7 @@
 
             <article class="story-item reverse">
                 <div class="story-image">
-                    <img src="screenshots/da/02.webp" srcset="screenshots/da/02-400w.webp 400w, screenshots/da/02-800w.webp 800w, screenshots/da/02.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Elite Fokus-tilstand skærm viser indbyggede disciplin-funktioner" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/da/02.webp" srcset="screenshots/da/02-400w.webp 400w, screenshots/da/02-800w.webp 800w, screenshots/da/02.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Elite Fokus-tilstand skærm viser indbyggede disciplin-funktioner" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Indbygget Disciplin</h3>
@@ -1317,7 +1317,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/da/03.webp" srcset="screenshots/da/03-400w.webp 400w, screenshots/da/03-800w.webp 800w, screenshots/da/03.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Statistikker skærm viser fokusstreger, samlede timer og fremskridtssporing" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/da/03.webp" srcset="screenshots/da/03-400w.webp 400w, screenshots/da/03-800w.webp 800w, screenshots/da/03.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Statistikker skærm viser fokusstreger, samlede timer og fremskridtssporing" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Spor Dine Fremskridt</h3>
@@ -1327,7 +1327,7 @@
 
             <article class="story-item story-item-subdued reverse">
                 <div class="story-image">
-                    <img src="screenshots/da/04.webp" srcset="screenshots/da/04-400w.webp 400w, screenshots/da/04-800w.webp 800w, screenshots/da/04.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Kattekompagnon skærm viser rolig kattekompagnon-funktion" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/da/04.webp" srcset="screenshots/da/04-400w.webp 400w, screenshots/da/04-800w.webp 800w, screenshots/da/04.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Kattekompagnon skærm viser rolig kattekompagnon-funktion" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>En Stille Kompagnon</h3>
@@ -1337,7 +1337,7 @@
 
             <article class="story-item story-item-subdued">
                 <div class="story-image">
-                    <img src="screenshots/da/05.webp" srcset="screenshots/da/05-400w.webp 400w, screenshots/da/05-800w.webp 800w, screenshots/da/05.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Tema Valg skærm viser 6 klassiske orientalsk-inspirerede fokustemaer" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/da/05.webp" srcset="screenshots/da/05-400w.webp 400w, screenshots/da/05-800w.webp 800w, screenshots/da/05.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Tema Valg skærm viser 6 klassiske orientalsk-inspirerede fokustemaer" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Designet til Ro</h3>
@@ -1512,9 +1512,14 @@ role="region"
             var isMobile = window.matchMedia('(max-width: 768px)').matches;
             if (!isMobile) return;
             
-            // 检测是否可滚动（在 rAF 中读取布局，避免强制同步重排）
-            function checkScrollable() {
+            function afterLayout(cb) {
                 requestAnimationFrame(function () {
+                    requestAnimationFrame(cb);
+                });
+            }
+            
+            function checkScrollable() {
+                afterLayout(function () {
                     var isScrollable = testimonialsGrid.scrollWidth > testimonialsGrid.clientWidth;
                     if (isScrollable) {
                         testimonialsGrid.classList.add('scrollable');
@@ -1524,9 +1529,14 @@ role="region"
                 });
             }
             
-            // 键盘导航支持
+            var resizeTimer;
+            function onResize() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(checkScrollable, 120);
+            }
+            
             testimonialsGrid.addEventListener('keydown', function (e) {
-                requestAnimationFrame(function () {
+                afterLayout(function () {
                     var scrollAmount = testimonialsGrid.clientWidth * 0.85;
                     if (e.key === 'ArrowLeft') {
                         e.preventDefault();
@@ -1538,15 +1548,13 @@ role="region"
                 });
             });
             
-            // 检测滚动位置，隐藏/显示提示，更新aria-live
             var hintElement = document.querySelector('.testimonials-hint');
             var hasScrolled = false;
             var scrollTimeout;
             var cards = testimonialsGrid.querySelectorAll('.testimonial-card');
             
-            // 更新当前显示的testimonial的aria-live（在 rAF 中读取布局，避免强制同步重排）
             function updateAriaLive() {
-                requestAnimationFrame(function () {
+                afterLayout(function () {
                     var scrollLeft = testimonialsGrid.scrollLeft;
                     var cardWidth = testimonialsGrid.clientWidth * 0.85;
                     var currentIndex = Math.round(scrollLeft / (cardWidth + 16));
@@ -1558,7 +1566,6 @@ role="region"
                 });
             }
             
-            // 首次加载显示提示
             if (hintElement) {
                 hintElement.style.opacity = '0.7';
                 setTimeout(function() {
@@ -1573,12 +1580,10 @@ role="region"
                 if (hintElement) {
                     hintElement.style.opacity = '0';
                 }
-                
                 updateAriaLive();
-                
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(function() {
-                    requestAnimationFrame(function () {
+                    afterLayout(function () {
                         var isAtEnd = testimonialsGrid.scrollLeft + testimonialsGrid.clientWidth >= testimonialsGrid.scrollWidth - 10;
                         if (isAtEnd && hintElement) {
                             hintElement.style.opacity = '0';
@@ -1587,12 +1592,9 @@ role="region"
                 }, 100);
             });
             
-            // 初始aria-live更新
             updateAriaLive();
-            
-            // 初始检查
             checkScrollable();
-            window.addEventListener('resize', checkScrollable);
+            window.addEventListener('resize', onResize);
         })();
     </script>
 </body>
