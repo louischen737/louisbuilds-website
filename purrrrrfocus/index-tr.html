@@ -28,9 +28,10 @@
     <meta property="og:title" content="PurrrrrFocus – Odak Geliştirme Ortağı">
     <meta property="og:description" content="PurrrrrFocus ile daha iyi odaklanın! Sevimli kedilerle Çin estetiğini birleştiren basit ve kullanıcı dostu odak zamanlayıcı uygulaması. Pomodoro zamanlayıcı, geri sayım zamanlayıcı, derin odak modu, kedi arkadaşı sistemi, başarılar ve 6 klasik tema özellikleri. Sevimli evcil hayvan arkadaşınızla odaklanın, çalışma ve alışkanlık takibi oluşturun, akış durumuna girin. ADHD desteği ve üretkenlik artırma için mükemmel.">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/index-tr.html">
-    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
+    <meta property="og:image:type" content="image/webp">
     <!-- Note: For optimal Twitter sharing, consider using 1200x630 image. Current 1024x1024 works for OG. -->
     <meta property="og:image:alt" content="PurrrrrFocus uygulama simgesi - Kedi arkadaşıyla odak zamanlayıcı uygulaması">
     <meta property="og:locale" content="tr_TR">
@@ -43,7 +44,7 @@
     <meta name="twitter:creator" content="@LouisChen737">
     <meta name="twitter:title" content="PurrrrrFocus – Odak Geliştirme Ortağı">
     <meta name="twitter:description" content="PurrrrrFocus ile daha iyi odaklanın! Pomodoro zamanlayıcı, kedi arkadaşlığı, üretkenlik uygulaması. Basit ve kullanıcı dostu, sevimli kedi arkadaşınızla odaklanın.">
-    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="PurrrrrFocus uygulama simgesi - Kedi arkadaşıyla odak zamanlayıcı uygulaması">
     
     <!-- App Store 相关标签 -->
@@ -51,7 +52,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" href="AppIcon-Preview.png">
+    <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
     
     <!-- JSON-LD 结构化数据 -->
@@ -78,7 +79,7 @@
         "@type": "Organization",
         "name": "PurrrrrFocus Team",
         "url": "https://louisbuilds.me/purrrrrfocus",
-        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png"
+        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp"
       },
       "keywords": "Pomodoro zamanlayıcı,geri sayım zamanlayıcı,zamanlayıcı saat,odaklan,derin odak,üretkenlik,ADHD,çalışma takipçisi,alışkanlık takipçisi,kedi arkadaşı,kedi arkadaşı,kedi odak,kedi mırlama,basit ve kullanıcı dostu,sevimli,evcil hayvan arkadaşı,kedi avatarları,akış",
       "featureList": [
@@ -653,6 +654,7 @@
             min-width: 280px;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
         }
         
         .story-image picture {
@@ -663,8 +665,10 @@
         .story-image img {
             width: 100%;
             max-width: 320px;
+            height: auto;
             border-radius: 16px;
             transition: transform 0.3s ease;
+            object-fit: contain;
         }
         
         .story-image img:hover {
@@ -1232,7 +1236,7 @@
     <header class="site-header">
         <a href="index-tr.html" class="header-brand" id="header-brand-link" aria-label="PurrrrrFocus ana sayfa">
             <div class="header-app-icon">
-                <img src="AppIcon-Preview.png" alt="PurrrrrFocus uygulama simgesi">
+                <img src="AppIcon-Preview-128.webp" alt="PurrrrrFocus uygulama simgesi" width="64" height="64" fetchpriority="high">
             </div>
             <span class="header-brand-name">PurrrrrFocus</span>
         </a>
@@ -1292,7 +1296,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/tr/01.webp" alt="PurrrrrFocus Zamanlayıcı ana ekran, temiz arayüzle Derin Odak modunu gösteriyor" loading="lazy">
+                    <img src="screenshots/tr/01.webp" srcset="screenshots/tr/01-400w.webp 400w, screenshots/tr/01-800w.webp 800w, screenshots/tr/01.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Zamanlayıcı ana ekran, temiz arayüzle Derin Odak modunu gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Derin Odak İçin Bir Alan</h3>
@@ -1302,7 +1306,7 @@
 
             <article class="story-item reverse">
                 <div class="story-image">
-                    <img src="screenshots/tr/02.webp" alt="PurrrrrFocus Elite Odak Modu ekranı, yerleşik disiplin özelliklerini gösteriyor" loading="lazy">
+                    <img src="screenshots/tr/02.webp" srcset="screenshots/tr/02-400w.webp 400w, screenshots/tr/02-800w.webp 800w, screenshots/tr/02.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Elite Odak Modu ekranı, yerleşik disiplin özelliklerini gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Yerleşik Disiplin</h3>
@@ -1312,7 +1316,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/tr/03.webp" alt="PurrrrrFocus İstatistikler ekranı, odak serileri, toplam saatler ve ilerleme takibini gösteriyor" loading="lazy">
+                    <img src="screenshots/tr/03.webp" srcset="screenshots/tr/03-400w.webp 400w, screenshots/tr/03-800w.webp 800w, screenshots/tr/03.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus İstatistikler ekranı, odak serileri, toplam saatler ve ilerleme takibini gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>İlerlemenizi Takip Edin</h3>
@@ -1322,7 +1326,7 @@
 
             <article class="story-item story-item-subdued reverse">
                 <div class="story-image">
-                    <img src="screenshots/tr/04.webp" alt="PurrrrrFocus Kedi Arkadaşı ekranı, sakin kedi arkadaşı özelliğini gösteriyor" loading="lazy">
+                    <img src="screenshots/tr/04.webp" srcset="screenshots/tr/04-400w.webp 400w, screenshots/tr/04-800w.webp 800w, screenshots/tr/04.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Kedi Arkadaşı ekranı, sakin kedi arkadaşı özelliğini gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Sessiz Bir Arkadaş</h3>
@@ -1332,7 +1336,7 @@
 
             <article class="story-item story-item-subdued">
                 <div class="story-image">
-                    <img src="screenshots/tr/05.webp" alt="PurrrrrFocus Tema Seçimi ekranı, 6 klasik doğu ilhamlı odak temasını gösteriyor" loading="lazy">
+                    <img src="screenshots/tr/05.webp" srcset="screenshots/tr/05-400w.webp 400w, screenshots/tr/05-800w.webp 800w, screenshots/tr/05.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Tema Seçimi ekranı, 6 klasik doğu ilhamlı odak temasını gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Sakinlik İçin Tasarlandı</h3>

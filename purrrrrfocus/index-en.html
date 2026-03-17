@@ -28,9 +28,10 @@
     <meta property="og:title" content="PurrrrrFocus – Focus Enhancement Partner">
     <meta property="og:description" content="Focus better with PurrrrrFocus! Simple & user friendly focus timer app combining Chinese aesthetics with adorable cats. Features Pomodoro timer, count-up timer, deep focus mode, cat companion system, achievements, and 6 classical themes. Stay focused with your cute pet companion, build study and habit tracking, enter flow state. Perfect for ADHD support and productivity enhancement.">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/index-en.html">
-    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
+    <meta property="og:image:type" content="image/webp">
     <!-- Note: For optimal Twitter sharing, consider using 1200x630 image. Current 1024x1024 works for OG. -->
     <meta property="og:image:alt" content="PurrrrrFocus app icon - Focus timer app with cat companion">
     <meta property="og:locale" content="en_US">
@@ -43,7 +44,7 @@
     <meta name="twitter:creator" content="@LouisChen737">
     <meta name="twitter:title" content="PurrrrrFocus – Focus Enhancement Partner">
     <meta name="twitter:description" content="Focus better with PurrrrrFocus! Pomodoro timer, cat companionship, productivity app. Simple & user friendly, stay focused with your cute cat companion.">
-    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="PurrrrrFocus app icon - Focus timer app with cat companion">
     
     <!-- App Store 相关标签 -->
@@ -51,7 +52,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" href="AppIcon-Preview.png">
+    <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
     
     <!-- JSON-LD 结构化数据 -->
@@ -78,7 +79,7 @@
         "@type": "Organization",
         "name": "PurrrrrFocus Team",
         "url": "https://louisbuilds.me/purrrrrfocus",
-        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png"
+        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp"
       },
       "keywords": "Pomodoro timer,count-up timer,timer clock,stay focused,deep focus,productivity,ADHD,study tracker,habit tracker,cat companion,kitty companion,cat focus,cat purring,simple & user friendly,cute,pet companion,cat avatars,flow",
       "featureList": [
@@ -653,6 +654,7 @@
             min-width: 280px;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
         }
         
         .story-image picture {
@@ -663,8 +665,10 @@
         .story-image img {
             width: 100%;
             max-width: 320px;
+            height: auto;
             border-radius: 16px;
             transition: transform 0.3s ease;
+            object-fit: contain;
         }
         
         .story-image img:hover {
@@ -1232,7 +1236,7 @@
     <header class="site-header">
         <a href="index-en.html" class="header-brand" id="header-brand-link" aria-label="PurrrrrFocus home">
             <div class="header-app-icon">
-                <img src="AppIcon-Preview.png" alt="PurrrrrFocus app icon">
+                <img src="AppIcon-Preview-128.webp" alt="PurrrrrFocus app icon" width="64" height="64" fetchpriority="high">
             </div>
             <span class="header-brand-name">PurrrrrFocus</span>
         </a>
@@ -1292,7 +1296,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/en/01.webp" alt="PurrrrrFocus Timer main screen showing Deep Focus mode with clean interface" loading="lazy">
+                    <img src="screenshots/en/01.webp" srcset="screenshots/en/01-400w.webp 400w, screenshots/en/01-800w.webp 800w, screenshots/en/01.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Timer main screen showing Deep Focus mode with clean interface" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>A Space for Deep Focus</h3>
@@ -1302,7 +1306,7 @@
 
             <article class="story-item reverse">
                 <div class="story-image">
-                    <img src="screenshots/en/02.webp" alt="PurrrrrFocus Elite Focus Mode screen showing built-in discipline features" loading="lazy">
+                    <img src="screenshots/en/02.webp" srcset="screenshots/en/02-400w.webp 400w, screenshots/en/02-800w.webp 800w, screenshots/en/02.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Elite Focus Mode screen showing built-in discipline features" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Built-in Discipline</h3>
@@ -1312,7 +1316,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/en/03.webp" alt="PurrrrrFocus Statistics screen showing focus streaks, total hours, and progress tracking" loading="lazy">
+                    <img src="screenshots/en/03.webp" srcset="screenshots/en/03-400w.webp 400w, screenshots/en/03-800w.webp 800w, screenshots/en/03.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Statistics screen showing focus streaks, total hours, and progress tracking" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Track Your Progress</h3>
@@ -1322,7 +1326,7 @@
 
             <article class="story-item story-item-subdued reverse">
                 <div class="story-image">
-                    <img src="screenshots/en/04.webp" alt="PurrrrrFocus Cat Companion screen showing calm cat companion feature" loading="lazy">
+                    <img src="screenshots/en/04.webp" srcset="screenshots/en/04-400w.webp 400w, screenshots/en/04-800w.webp 800w, screenshots/en/04.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Cat Companion screen showing calm cat companion feature" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>A Quiet Companion</h3>
@@ -1332,7 +1336,7 @@
 
             <article class="story-item story-item-subdued">
                 <div class="story-image">
-                    <img src="screenshots/en/05.webp" alt="PurrrrrFocus Theme Selection screen showing 6 classical oriental-inspired focus themes" loading="lazy">
+                    <img src="screenshots/en/05.webp" srcset="screenshots/en/05-400w.webp 400w, screenshots/en/05-800w.webp 800w, screenshots/en/05.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="PurrrrrFocus Theme Selection screen showing 6 classical oriental-inspired focus themes" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Designed for Calm</h3>

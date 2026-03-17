@@ -28,9 +28,10 @@
     <meta property="og:title" content="喵时计 – 专注力提升伙伴">
     <meta property="og:description" content="用喵时计，专注更轻松！这款简单友好的专注计时器融合中式美学与软萌猫咪，支持番茄钟、正计时、学霸模式、猫咪伙伴、成就系统及6款古典主题，陪你专注学习、养成习惯、进入心流状态，适配ADHD人群，高效提升生产力。">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/">
-    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
+    <meta property="og:image:type" content="image/webp">
     <!-- Note: For optimal Twitter sharing, consider using 1200x630 image. Current 1024x1024 works for OG. -->
     <meta property="og:image:alt" content="喵时计应用图标 - 配有猫咪伙伴的专注计时器应用">
     <meta property="og:locale" content="zh_CN">
@@ -43,7 +44,7 @@
     <meta name="twitter:creator" content="@LouisChen737">
     <meta name="twitter:title" content="喵时计 – 专注力提升伙伴">
     <meta name="twitter:description" content="用喵时计，专注更轻松！番茄钟计时、萌猫陪伴，简单友好的效率工具，和软萌猫咪一起保持专注吧～">
-    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="喵时计应用图标 - 配有猫咪伙伴的专注计时器应用">
     
     <!-- App Store 相关标签 -->
@@ -51,7 +52,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" href="AppIcon-Preview.png">
+    <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
     
     <!-- JSON-LD 结构化数据 -->
@@ -78,7 +79,7 @@
         "@type": "Organization",
         "name": "PurrrrrFocus Team",
         "url": "https://louisbuilds.me/purrrrrfocus",
-        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png"
+        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp"
       },
       "keywords": "番茄钟,专注计时器,专注学习,专注力,专注工作,自律,极简,治愈,萌系,学霸必备,正计时,效率,心流,番茄工作法,时间管理,好习惯,猫咪,专注应用,iOS应用,生产力工具,专注力训练,时间管理工具,学习助手,工作助手,ADHD辅助工具",
       "featureList": [
@@ -653,6 +654,7 @@
             min-width: 280px;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
         }
         
         .story-image picture {
@@ -663,8 +665,10 @@
         .story-image img {
             width: 100%;
             max-width: 320px;
+            height: auto;
             border-radius: 16px;
             transition: transform 0.3s ease;
+            object-fit: contain;
         }
         
         .story-image img:hover {
@@ -1232,7 +1236,7 @@
     <header class="site-header">
         <a href="index.html" class="header-brand" id="header-brand-link" aria-label="喵时计首页">
             <div class="header-app-icon">
-                <img src="AppIcon-Preview.png" alt="喵时计应用图标">
+                <img src="AppIcon-Preview-128.webp" alt="喵时计应用图标" width="64" height="64" fetchpriority="high">
             </div>
             <span class="header-brand-name">喵时计</span>
         </a>
@@ -1292,7 +1296,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/zh/01.webp" alt="喵时计计时器主界面，显示学霸模式与简洁界面" loading="lazy">
+                    <img src="screenshots/zh/01.webp" srcset="screenshots/zh/01-400w.webp 400w, screenshots/zh/01-800w.webp 800w, screenshots/zh/01.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="喵时计计时器主界面，显示学霸模式与简洁界面" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>沉浸式专注空间</h3>
@@ -1302,7 +1306,7 @@
 
             <article class="story-item reverse">
                 <div class="story-image">
-                    <img src="screenshots/zh/02.webp" alt="喵时计学霸模式界面，显示内置自律功能" loading="lazy">
+                    <img src="screenshots/zh/02.webp" srcset="screenshots/zh/02-400w.webp 400w, screenshots/zh/02-800w.webp 800w, screenshots/zh/02.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="喵时计学霸模式界面，显示内置自律功能" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>自带自律属性</h3>
@@ -1312,7 +1316,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/zh/03.webp" alt="喵时计统计界面，显示专注连续天数、总时长和进度追踪" loading="lazy">
+                    <img src="screenshots/zh/03.webp" srcset="screenshots/zh/03-400w.webp 400w, screenshots/zh/03-800w.webp 800w, screenshots/zh/03.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="喵时计统计界面，显示专注连续天数、总时长和进度追踪" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>看得见的成长</h3>
@@ -1322,7 +1326,7 @@
 
             <article class="story-item story-item-subdued reverse">
                 <div class="story-image">
-                    <img src="screenshots/zh/04.webp" alt="喵时计猫咪伙伴界面，显示温和猫咪陪伴功能" loading="lazy">
+                    <img src="screenshots/zh/04.webp" srcset="screenshots/zh/04-400w.webp 400w, screenshots/zh/04-800w.webp 800w, screenshots/zh/04.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="喵时计猫咪伙伴界面，显示温和猫咪陪伴功能" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>软萌陪伴不孤单</h3>
@@ -1332,7 +1336,7 @@
 
             <article class="story-item story-item-subdued">
                 <div class="story-image">
-                    <img src="screenshots/zh/05.webp" alt="喵时计主题选择界面，显示6种古典东方风格专注主题" loading="lazy">
+                    <img src="screenshots/zh/05.webp" srcset="screenshots/zh/05-400w.webp 400w, screenshots/zh/05-800w.webp 800w, screenshots/zh/05.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="喵时计主题选择界面，显示6种古典东方风格专注主题" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>为静心而生的设计</h3>

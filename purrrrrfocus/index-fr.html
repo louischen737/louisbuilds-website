@@ -28,9 +28,10 @@
     <meta property="og:title" content="PurrrrrFocus – Partenaire d'amélioration de la concentration">
     <meta property="og:description" content="Concentrez-vous mieux avec PurrrrrFocus ! Application de minuterie de concentration simple et conviviale combinant l'esthétique chinoise avec des chats adorables. Fonctionnalités : minuterie Pomodoro, minuterie de comptage, mode de concentration profonde, système de compagnon félin, réalisations et 6 thèmes classiques. Restez concentré avec votre compagnon félin mignon, développez le suivi des études et des habitudes, entrez dans un état de flux. Parfait pour le soutien TDAH et l'amélioration de la productivité.">
     <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/index-fr.html">
-    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
+    <meta property="og:image:type" content="image/webp">
     <!-- Note: For optimal Twitter sharing, consider using 1200x630 image. Current 1024x1024 works for OG. -->
     <meta property="og:image:alt" content="Icône de l'application PurrrrrFocus - Application de minuterie de concentration avec compagnon félin">
     <meta property="og:locale" content="fr_FR">
@@ -43,7 +44,7 @@
     <meta name="twitter:creator" content="@LouisChen737">
     <meta name="twitter:title" content="PurrrrrFocus – Partenaire d'amélioration de la concentration">
     <meta name="twitter:description" content="Concentrez-vous mieux avec PurrrrrFocus ! Minuterie Pomodoro, compagnie féline, application de productivité. Simple et convivial, restez concentré avec votre compagnon félin mignon.">
-    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png">
+    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp">
     <meta name="twitter:image:alt" content="Icône de l'application PurrrrrFocus - Application de minuterie de concentration avec compagnon félin">
     
     <!-- App Store 相关标签 -->
@@ -51,7 +52,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" href="AppIcon-Preview.png">
+    <link rel="apple-touch-icon" href="AppIcon-Preview.webp">
     <link rel="alternate" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
     
     <!-- JSON-LD 结构化数据 -->
@@ -78,7 +79,7 @@
         "@type": "Organization",
         "name": "PurrrrrFocus Team",
         "url": "https://louisbuilds.me/purrrrrfocus",
-        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.png"
+        "logo": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp"
       },
       "keywords": "minuterie Pomodoro,minuterie de comptage,horloge de minuterie,rester concentré,concentration profonde,productivité,TDAH,suivi des études,suivi des habitudes,compagnon félin,compagnon chat,concentration féline,ronronnement de chat,simple et convivial,mignon,compagnon animal,avatars de chat,flux",
       "featureList": [
@@ -676,6 +677,7 @@
             min-width: 280px;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
         }
         
         .story-image picture {
@@ -686,8 +688,10 @@
         .story-image img {
             width: 100%;
             max-width: 320px;
+            height: auto;
             border-radius: 16px;
             transition: transform 0.3s ease;
+            object-fit: contain;
         }
         
         .story-image img:hover {
@@ -1255,7 +1259,7 @@
     <header class="site-header">
         <a href="index-fr.html" class="header-brand" id="header-brand-link" aria-label="PurrrrrFocus accueil">
             <div class="header-app-icon">
-                <img src="AppIcon-Preview.png" alt="Icône de l'application PurrrrrFocus">
+                <img src="AppIcon-Preview-128.webp" alt="Icône de l'application PurrrrrFocus" width="64" height="64" fetchpriority="high">
             </div>
             <span class="header-brand-name">PurrrrrFocus</span>
         </a>
@@ -1315,7 +1319,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/fr/01.webp" alt="Écran principal du minuteur PurrrrrFocus montrant le mode de concentration profonde avec une interface épurée" loading="lazy">
+                    <img src="screenshots/fr/01.webp" srcset="screenshots/fr/01-400w.webp 400w, screenshots/fr/01-800w.webp 800w, screenshots/fr/01.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="Écran principal du minuteur PurrrrrFocus montrant le mode de concentration profonde avec une interface épurée" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Un espace pour une concentration profonde</h3>
@@ -1325,7 +1329,7 @@
 
             <article class="story-item reverse">
                 <div class="story-image">
-                    <img src="screenshots/fr/02.webp" alt="Écran du mode de concentration d'élite PurrrrrFocus montrant les fonctionnalités de discipline intégrées" loading="lazy">
+                    <img src="screenshots/fr/02.webp" srcset="screenshots/fr/02-400w.webp 400w, screenshots/fr/02-800w.webp 800w, screenshots/fr/02.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="Écran du mode de concentration d'élite PurrrrrFocus montrant les fonctionnalités de discipline intégrées" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Discipline intégrée</h3>
@@ -1335,7 +1339,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/fr/03.webp" alt="Écran des statistiques PurrrrrFocus montrant les séries de concentration, le total d'heures et le suivi des progrès" loading="lazy">
+                    <img src="screenshots/fr/03.webp" srcset="screenshots/fr/03-400w.webp 400w, screenshots/fr/03-800w.webp 800w, screenshots/fr/03.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="Écran des statistiques PurrrrrFocus montrant les séries de concentration, le total d'heures et le suivi des progrès" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Suivez vos progrès</h3>
@@ -1345,7 +1349,7 @@
 
             <article class="story-item story-item-subdued reverse">
                 <div class="story-image">
-                    <img src="screenshots/fr/04.webp" alt="Écran du compagnon félin PurrrrrFocus montrant la fonctionnalité de compagnon félin apaisant" loading="lazy">
+                    <img src="screenshots/fr/04.webp" srcset="screenshots/fr/04-400w.webp 400w, screenshots/fr/04-800w.webp 800w, screenshots/fr/04.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="Écran du compagnon félin PurrrrrFocus montrant la fonctionnalité de compagnon félin apaisant" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Un compagnon silencieux</h3>
@@ -1355,7 +1359,7 @@
 
             <article class="story-item story-item-subdued">
                 <div class="story-image">
-                    <img src="screenshots/fr/05.webp" alt="Écran de sélection de thème PurrrrrFocus montrant 6 thèmes de concentration classiques d'inspiration orientale" loading="lazy">
+                    <img src="screenshots/fr/05.webp" srcset="screenshots/fr/05-400w.webp 400w, screenshots/fr/05-800w.webp 800w, screenshots/fr/05.webp 1242w" sizes="(max-width: 768px) 100vw, 320px" alt="Écran de sélection de thème PurrrrrFocus montrant 6 thèmes de concentration classiques d'inspiration orientale" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Conçu pour le calme</h3>
