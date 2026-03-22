@@ -6,6 +6,26 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-fr.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-es.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-de.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-zh.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/phoneticformatter/blogs.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
