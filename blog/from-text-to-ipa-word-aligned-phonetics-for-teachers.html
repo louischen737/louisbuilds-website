@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>From Text to IPA: Why Word-Aligned Phonetics is a Game Changer for English Teachers — Louis Builds</title>
+<meta name="description" content="Phonetic Formatter fixes the IPA paste-and-break problem: word-aligned layouts, sentence-level processing, DOCX/PDF export, and offline CMU-based GenAm accuracy for ESL and linguistics classrooms." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://louisbuilds.me/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html" />
+<link rel="icon" type="image/png" href="../favicon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://louisbuilds.me/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html" />
+<meta property="og:title" content="From Text to IPA: Why Word-Aligned Phonetics is a Game Changer for English Teachers" />
+<meta property="og:description" content="Word-aligned IPA, export-ready worksheets, and offline lesson prep—built for teachers who are tired of fighting Word." />
+<meta property="og:image" content="https://louisbuilds.me/phoneticformatter/screenshot3.webp" />
+<meta property="article:published_time" content="2026-03-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="From Text to IPA: Why Word-Aligned Phonetics is a Game Changer for English Teachers" />
+<meta name="twitter:description" content="Structured IPA layouts and one-tap export for print-ready phonetics materials." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "From Text to IPA: Why Word-Aligned Phonetics is a Game Changer for English Teachers",
+  "description": "Phonetic Formatter: word-aligned IPA, CMU-based GenAm, offline export to DOCX and PDF for educators.",
+  "datePublished": "2026-03-01",
+  "author": { "@type": "Organization", "name": "Louis Builds", "url": "https://louisbuilds.me/" },
+  "publisher": { "@type": "Organization", "name": "Louis Builds" },
+  "mainEntityOfPage": "https://louisbuilds.me/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html"
+}
+</script>
+
+<style>
+:root {
+    --bg: #000;
+    --text: #fff;
+    --muted: #a1a1a6;
+    --faint: #6e6e73;
+    --accent: #007aff;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --line: rgba(255,255,255,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.05rem;
+}
+a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+a:hover { opacity: 0.85; text-decoration: underline; text-underline-offset: 0.2em; }
+.site-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+}
+.site-header a { color: var(--muted); font-size: 0.9rem; }
+.site-header a:hover { color: #fff; }
+article {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+}
+article h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--faint);
+    margin-bottom: 2.5rem;
+}
+article h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+article p {
+    margin-bottom: 1.15rem;
+    color: var(--muted);
+}
+article em { color: #d1d1d6; font-style: italic; }
+article strong { color: #fff; font-weight: 600; }
+article ul {
+    margin: 0 0 1.25rem 1.25rem;
+    color: var(--muted);
+}
+article li { margin-bottom: 0.5rem; }
+article li::marker { color: var(--faint); }
+.lede {
+    font-size: 1.05rem;
+    color: #d1d1d6;
+    margin-bottom: 2rem;
+}
+.figure-block {
+    margin: 2rem 0 2.5rem;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.02);
+}
+.figure-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+.figure-block--phone {
+    max-width: min(40rem, 92vw);
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+}
+.figure-block--phone img {
+    display: block;
+    width: min(260px, 88vw);
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+}
+.figure-block--phone .figure-caption {
+    border-top: none;
+    padding: 0.85rem 0 0;
+    margin-top: 0;
+    text-align: center;
+    text-wrap: balance;
+    line-height: 1.55;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.figure-caption {
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+    color: var(--faint);
+    border-top: 1px solid var(--line);
+}
+.closing {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-weight: 500;
+    color: #fff;
+}
+footer {
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    color: var(--faint);
+    font-size: 0.85rem;
+}
+footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="../">← Louis Builds</a>
+</header>
+
+<article>
+    <h1>From Text to IPA: Why Word-Aligned Phonetics is a Game Changer for English Teachers</h1>
+    <p class="article-meta">March 2026 · Journal</p>
+
+    <p class="lede"><a href="../phoneticformatter/"><strong>Phonetic Formatter</strong></a> turns raw English into structured, word-aligned IPA—so you spend less time fighting fonts and more time teaching. <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer">Get it on the App Store</a> · <a href="../phoneticformatter/">Product site</a> (multiple languages).</p>
+
+    <h2 id="headache">The “IPA formatting” headache</h2>
+    <p>Every English teacher knows the struggle: copying IPA symbols from an online dictionary, only to have the font break, the alignment shift, or the formatting disappear when pasted into Word. It’s a time-consuming barrier to creating high-quality teaching materials.</p>
+
+    <h2 id="beyond-translation">Beyond simple translation</h2>
+    <p><a href="../phoneticformatter/">Phonetic Formatter</a> was built to solve the <strong>presentation</strong> problem. It doesn’t just give you the IPA; it creates a structured, word-aligned layout.</p>
+    <ul>
+        <li><strong>Vertical alignment:</strong> Each word is paired with its phonetic form in a clear, consistent layout.</li>
+        <li><strong>Sentence-level processing:</strong> Process entire paragraphs while keeping a natural reading flow.</li>
+    </ul>
+
+    <figure class="figure-block figure-block--phone">
+        <img
+            src="../phoneticformatter/screenshot3.webp"
+            srcset="../phoneticformatter/screenshot3-400w.webp 400w,
+                    ../phoneticformatter/screenshot3-800w.webp 800w,
+                    ../phoneticformatter/screenshot3.webp 1242w"
+            sizes="(max-width: 360px) 88vw, 260px"
+            width="1242"
+            height="2688"
+            loading="lazy"
+            alt="Phonetic Formatter — word-aligned IPA under each English word" />
+        <figcaption class="figure-caption">Word-aligned output: spellings and IPA stay lined up for slides and handouts.<br />No manual tab stops.</figcaption>
+    </figure>
+
+    <h2 id="classroom">Built for the classroom (and the university)</h2>
+    <p>Whether you are a <em>Gymnasium</em> teacher in Germany preparing for a phonetics unit or a linguistics student in the US, accuracy and exportability are key.</p>
+    <ul>
+        <li><strong>Export with ease:</strong> One-tap export to DOCX or PDF means your worksheets are ready for print in seconds, with reliable IPA rendering in the exported file.</li>
+        <li><strong>Standardized accuracy:</strong> Powered by the <a href="../phoneticformatter/blog/why-cmu-pronouncing-dictionary.html">CMU Pronouncing Dictionary</a>, giving a consistent American English (General American) baseline. See also <a href="building-offline-first-apps.html">why we build offline-first</a>.</li>
+    </ul>
+
+    <h2 id="offline">The offline advantage in education</h2>
+    <p>School Wi-Fi can be unreliable, and student privacy is paramount. By working <strong>100% offline</strong>, Phonetic Formatter lets you prepare lessons anywhere—from a commute to a classroom—without compromising data security.</p>
+
+    <h2 id="elevate">Elevate your teaching materials</h2>
+    <p>Stop fighting with copy-paste. Start creating beautiful, professional phonetic worksheets that actually help your students visualize the sounds of English.</p>
+    <p class="closing">Structured IPA. Export-ready. Yours on the device.</p>
+</article>
+
+<footer>
+    <p><a href="../">Home</a> · <a href="../#journal">Journal</a></p>
+</footer>
+
+</body>
+</html>

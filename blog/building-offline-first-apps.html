@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud — Louis Builds</title>
+<meta name="description" content="Discover why Louis Builds prioritizes offline-first development. Explore PurrrrrFocus, a minimalist Guochao cat-themed Pomodoro timer, and Phonetic Formatter—tools designed for 100% privacy and deep focus." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://louisbuilds.me/blog/building-offline-first-apps.html" />
+<link rel="icon" type="image/png" href="../favicon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://louisbuilds.me/blog/building-offline-first-apps.html" />
+<meta property="og:title" content="Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud" />
+<meta property="og:description" content="Discover why Louis Builds prioritizes offline-first development. Explore PurrrrrFocus and Phonetic Formatter—tools designed for 100% privacy and deep focus." />
+<meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/screenshots/en/01.webp" />
+<meta property="article:published_time" content="2026-01-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud" />
+<meta name="twitter:description" content="Offline-first Pomodoro and IPA tools—built for privacy and deep focus." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud",
+  "description": "Discover why Louis Builds prioritizes offline-first development for PurrrrrFocus and Phonetic Formatter.",
+  "datePublished": "2026-01-01",
+  "author": { "@type": "Organization", "name": "Louis Builds", "url": "https://louisbuilds.me/" },
+  "publisher": { "@type": "Organization", "name": "Louis Builds" },
+  "mainEntityOfPage": "https://louisbuilds.me/blog/building-offline-first-apps.html"
+}
+</script>
+
+<style>
+:root {
+    --bg: #000;
+    --text: #fff;
+    --muted: #a1a1a6;
+    --faint: #6e6e73;
+    --accent: #007aff;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --line: rgba(255,255,255,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.05rem;
+}
+a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+a:hover { opacity: 0.85; text-decoration: underline; text-underline-offset: 0.2em; }
+.site-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+}
+.site-header a { color: var(--muted); font-size: 0.9rem; }
+.site-header a:hover { color: #fff; }
+article {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+}
+article h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--faint);
+    margin-bottom: 2.5rem;
+}
+article h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+article p {
+    margin-bottom: 1.15rem;
+    color: var(--muted);
+}
+article em { color: #d1d1d6; font-style: italic; }
+article strong { color: #fff; font-weight: 600; }
+article ul {
+    margin: 0 0 1.25rem 1.25rem;
+    color: var(--muted);
+}
+article li { margin-bottom: 0.5rem; }
+article li::marker { color: var(--faint); }
+.lede {
+    font-size: 1.05rem;
+    color: #d1d1d6;
+    margin-bottom: 2rem;
+}
+.figure-block {
+    margin: 2rem 0 2.5rem;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.02);
+}
+.figure-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+/* 手机竖屏截图：图片保持窄宽度；说明文字与正文同宽，换行更自然 */
+.figure-block--phone {
+    max-width: min(40rem, 92vw);
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+}
+.figure-block--phone img {
+    display: block;
+    width: min(260px, 88vw);
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+}
+.figure-block--phone .figure-caption {
+    border-top: none;
+    padding: 0.85rem 0 0;
+    margin-top: 0;
+    text-align: center;
+    text-wrap: balance;
+    line-height: 1.55;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.figure-caption {
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+    color: var(--faint);
+    border-top: 1px solid var(--line);
+}
+.closing {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-weight: 500;
+    color: #fff;
+}
+footer {
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    color: var(--faint);
+    font-size: 0.85rem;
+}
+footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="../">← Louis Builds</a>
+</header>
+
+<article>
+    <h1>Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud</h1>
+    <p class="article-meta">January 2026 · Journal</p>
+
+    <p class="lede">Most productivity apps want your account, your data, and a constant connection. I build the opposite: tools that work fully on your device—so focus stays private and quiet.</p>
+
+    <h2 id="connected-distraction">The distraction of the “connected” productivity</h2>
+    <p>We live in an era of digital noise. Most productivity apps today have become distractions themselves. They demand mandatory account registrations, push relentless notifications, and insist on syncing every second of your life to a remote server.</p>
+    <p>But I’ve always wondered: <em>Is a timer truly “private” if it’s constantly talking to a server? Does a tool for mindfulness really need to know your email address?</em></p>
+    <p>At <strong>Louis Builds</strong>, I believe the answer is a firm <strong>No</strong>.</p>
+
+    <h2 id="purrrrrfocus">PurrrrrFocus: where Guochao meets minimalism</h2>
+    <p>When I built <a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer"><strong>PurrrrrFocus</strong></a> (<a href="../purrrrrfocus/index-en.html">product page</a>), I didn’t want to create just another utility. I wanted to create a sanctuary. It’s a Pomodoro timer that blends <strong>traditional Chinese aesthetics (Guochao)</strong> with a minimalist, cat-themed design—built for those who want a sense of “Zen” and quiet companionship during work or study. No cluttered charts, no social leaderboards—just you, a beautifully crafted interface, and the rhythmic flow of time.</p>
+
+    <figure class="figure-block figure-block--phone">
+        <img
+            src="../purrrrrfocus/screenshots/en/01.webp"
+            srcset="../purrrrrfocus/screenshots/en/01-400w.webp 400w,
+                    ../purrrrrfocus/screenshots/en/01-800w.webp 800w,
+                    ../purrrrrfocus/screenshots/en/01.webp 1242w"
+            sizes="(max-width: 360px) 88vw, 260px"
+            width="1242"
+            height="2688"
+            loading="lazy"
+            alt="PurrrrrFocus app screenshot — Guochao-inspired timer interface (English)" />
+        <figcaption class="figure-caption">Guochao-inspired interface: a quiet companion for focus.<br />No analytics, no noise.</figcaption>
+    </figure>
+
+    <h2 id="offline-first">The “offline-first” commitment</h2>
+    <p>To protect this sanctuary, I made a fundamental technical choice: all my apps, including <a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer">PurrrrrFocus</a> and <a href="../phoneticformatter/"><strong>Phonetic Formatter</strong></a>, are built with an <strong>offline-first</strong> philosophy. The <a href="../phoneticformatter/">Phonetic Formatter</a> site is available in multiple languages—same offline engine, local on your phone.</p>
+    <p>What does this mean for you?</p>
+    <ul>
+        <li><strong>Zero distractions:</strong> No “login expired” pop-ups, no sync errors, and no hidden background data usage. It just works, instantly.</li>
+        <li><strong>Absolute privacy:</strong> Your daily routines, your study habits, and your transcribed texts are yours alone. They are stored locally on your device and never touch a cloud server.</li>
+        <li><strong>Reliability anywhere:</strong> Whether you are in a library with spotty Wi-Fi, on a long-haul flight, or in a remote retreat, your tools remain fully functional.</li>
+    </ul>
+
+    <h2 id="no-data">Why I don’t want your data</h2>
+    <p>Developing offline-first apps is a deliberate, often more difficult path. It requires optimizing complex algorithms (like the IPA transcription engine in <a href="../phoneticformatter/">Phonetic Formatter</a>) to run efficiently on mobile hardware without relying on powerful cloud APIs.</p>
+    <p>I take this path because my business model is simple: <strong>I build thoughtful tools, and you use them.</strong> I don’t track your behavior, I don’t “analyze” your focus patterns for marketing, and I don’t sell your data to third parties. By keeping the data on your device, I am physically unable to access it—which is the strongest privacy guarantee I can offer.</p>
+
+    <h2 id="quiet-tools">Quiet tools for a noisy world</h2>
+    <p>Progress doesn’t need to be loud. True productivity should be quiet, focused, and deeply personal.</p>
+    <p>Whether you are mastering English pronunciation with <a href="../phoneticformatter/">Phonetic Formatter</a> or finding your flow with the cat-themed elegance of <a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer">PurrrrrFocus</a>, you can rest assured that your digital space remains your own.</p>
+    <p class="closing">Built for focus. Built for privacy. Built to stay offline.</p>
+</article>
+
+<footer>
+    <p><a href="../">Home</a> · <a href="../#journal">Journal</a></p>
+</footer>
+
+</body>
+</html>
