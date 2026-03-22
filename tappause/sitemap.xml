@@ -6,6 +6,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/tappause/index-de.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/tappause/index-ja.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/tappause/index-tr.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/tappause/support.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
