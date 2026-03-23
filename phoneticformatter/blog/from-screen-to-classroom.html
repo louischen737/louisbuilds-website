@@ -17,6 +17,12 @@
     <meta property="twitter:description" content="Stop struggling with IPA formatting. Learn how to export structured English-to-IPA transcriptions to Word and PDF for better classroom handouts and lesson plans.">
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/blog/from-screen-to-classroom.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/phoneticformatter/blog/from-screen-to-classroom.html">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/phoneticformatter/index-fr.html">
+    <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/phoneticformatter/index-zh.html">
+    <link rel="alternate" hreflang="de" href="https://louisbuilds.me/phoneticformatter/index-de.html">
+    <link rel="alternate" hreflang="es" href="https://louisbuilds.me/phoneticformatter/index-es.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/phoneticformatter/index.html">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -44,10 +50,10 @@
             flex-wrap: nowrap;
         }
         .header-content > a { flex-shrink: 0; margin-right: 2.5rem; }
-        nav { flex: 1; min-width: 0; display: flex; align-items: center; }
-        nav ul { list-style: none; display: flex; flex-wrap: nowrap; gap: 2.5rem; margin: 0; }
-        nav a { color: #4b5563; text-decoration: none; font-weight: 500; transition: color 0.2s, transform 0.15s; }
-        nav a:hover { color: #2563eb; transform: translateY(-1px); }
+        header nav { flex: 1; min-width: 0; display: flex; align-items: center; }
+        header nav ul { list-style: none; display: flex; flex-wrap: nowrap; gap: 2.5rem; margin: 0; }
+        header nav a { color: #4b5563; text-decoration: none; font-weight: 500; transition: color 0.2s, transform 0.15s; }
+        header nav a:hover { color: #2563eb; transform: translateY(-1px); }
         .header-cta { flex-shrink: 0; display: none; }
         @media (min-width: 769px) {
             .header-cta {
@@ -89,28 +95,209 @@
         .article-wrap strong { color: #111827; }
         .article-wrap a { color: #2563eb; text-decoration: none; }
         .article-wrap a:hover { color: #1d4ed8; }
-        footer {
-            background: #f3f4f6;
-            color: #374151;
-            padding: 4rem 0 3rem;
-            text-align: center;
-            border-top: 1px solid #e5e7eb;
+        .multilingual-abstract {
+            margin: 1.25rem 0 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.9rem;
         }
-        .footer-links { margin-bottom: 1rem; }
-        .footer-links a { color: #2563eb; text-decoration: none; margin: 0 0.5rem; font-size: 0.9rem; }
-        .footer-links a:hover { color: #1d4ed8; }
-        .footer-copyright { font-size: 0.9rem; color: #6b7280; line-height: 1.8; margin: 0; }
-        footer a { color: #2563eb; text-decoration: none; }
-        footer a:hover { color: #1d4ed8; }
+        .multilingual-abstract details {
+            background: #f8fafc;
+        }
+        .multilingual-abstract summary {
+            padding: 12px 15px;
+            font-weight: 600;
+            color: #374151;
+            list-style: none;
+            cursor: pointer;
+            outline: none;
+            transition: background 0.2s ease;
+        }
+        .multilingual-abstract summary::-webkit-details-marker {
+            display: none;
+        }
+        .multilingual-abstract summary::marker {
+            content: "";
+        }
+        .multilingual-abstract summary:hover {
+            background-color: #f1f5f9;
+        }
+        .multilingual-abstract summary:focus-visible {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .multilingual-abstract summary {
+                transition: none;
+            }
+        }
+        .multilingual-abstract .abstract-body {
+            padding: 15px;
+            background: #ffffff;
+            border-top: 1px solid #e5e7eb;
+            display: grid;
+            gap: 15px;
+        }
+        .multilingual-abstract .abstract-body p {
+            margin: 0;
+            color: #374151;
+            line-height: 1.65;
+        }
+        .multilingual-abstract .abstract-body strong {
+            color: #111827;
+        }
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid #edf2f7;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            text-align: center;
+            color: #64748b;
+        }
+        .blog-lang-nav {
+            margin: 0 auto 40px;
+            max-width: 36rem;
+            text-align: center;
+        }
+        .blog-lang-nav-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin: 0 0 12px;
+            font-weight: 500;
+        }
+        .blog-lang-nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.25rem 0.35rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        footer .blog-lang-nav a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+        footer .blog-lang-nav a:hover {
+            background-color: #eff6ff;
+            text-decoration: underline;
+            color: #2563eb;
+            transform: none;
+        }
+        footer .blog-lang-nav a:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        .blog-lang-sep {
+            color: #cbd5e1;
+            margin: 0 4px;
+            user-select: none;
+        }
+        .footer-secondary {
+            margin: 0;
+        }
+        .footer-links {
+            margin: 0;
+            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+        .footer-links a {
+            color: #64748b;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: #1e293b;
+        }
+        .footer-copyright {
+            margin: 15px 0 0;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+        .footer-copyright strong {
+            color: #475569;
+            font-weight: 600;
+        }
         @media (max-width: 768px) {
             .header-content { flex-wrap: wrap; }
             .header-content > a { order: 1; margin-right: 0; }
-            nav { order: 3; width: 100%; }
-            nav ul { gap: 1rem; justify-content: center; flex-wrap: wrap; }
+            header nav { order: 3; width: 100%; }
+            header nav ul { gap: 1rem; justify-content: center; flex-wrap: wrap; }
             .header-cta { order: 2; margin-left: auto; padding: 0.55rem 1.2rem; font-size: 0.9rem; gap: 0.5rem; }
             .header-cta svg { width: 18px; height: 18px; }
             .article-wrap { padding: 2rem 0 3rem; }
             .article-wrap h1 { font-size: 1.875rem; }
+            .cta-features { flex-wrap: wrap; }
+        }
+
+        /* CTA 模块样式 */
+        .cta-section {
+            background-color: #f3f4f6;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .cta-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .cta-description {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .app-store-badge {
+            height: 40px;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .cta-section .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cta-section .app-store-badge {
+                transition: none;
+            }
+            .cta-section .app-store-badge:hover {
+                transform: none;
+            }
+        }
+
+        .cta-features {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            list-style: none;
+            padding: 0;
+        }
+
+        .cta-features li::before {
+            content: "✓ ";
+            color: #10b981;
         }
     </style>
 </head>
@@ -142,6 +329,30 @@
 
     <article class="article-wrap">
         <h1>From Screen to Classroom: How to Create Professional Phonetic Handouts Effortlessly</h1>
+
+        <section class="multilingual-abstract" aria-label="Multilingual summary">
+            <details>
+                <summary>🌐 Read summary in Français, Deutsch, Español, Türkçe, or 中文</summary>
+                <div class="abstract-body">
+                    <div lang="fr">
+                        <p><strong>Français :</strong> Cet article explique comment transformer vos textes anglais en transcriptions phonétiques (IPA) organisées pour vos supports de cours. Utilisez <strong>Phonetic Formatter</strong> pour exporter vers PDF ou Word avec un alignement parfait mot par mot. Idéal pour les enseignants d'anglais.</p>
+                    </div>
+                    <div lang="de">
+                        <p><strong>Deutsch:</strong> Dieser Artikel erklärt, wie Sie englische Texte in übersichtliche phonetische (IPA-)Transkriptionen für Ihre Unterrichtsmaterialien umwandeln. Mit <strong>Phonetic Formatter</strong> exportieren Sie wortweise ausgerichtete Ergebnisse als PDF oder Word – ideal für Englischlehrkräfte.</p>
+                    </div>
+                    <div lang="es">
+                        <p><strong>Español:</strong> Este artículo explica cómo convertir textos en inglés en transcripciones fonéticas (AFI/IPA) bien estructuradas para sus apuntes de clase. Use <strong>Phonetic Formatter</strong> para exportar a Word o PDF con alineación palabra por palabra. Ideal para docentes de inglés.</p>
+                    </div>
+                    <div lang="tr">
+                        <p><strong>Türkçe :</strong> Bu makale, İngilizce metinleri sınıf materyalleri için düzenli fonetik (IPA) transkripsiyonlara nasıl dönüştüreceğinizi anlatıyor. Word ve PDF'ye kelime kelime hizalanmış şekilde dışa aktarmak için <strong>Phonetic Formatter</strong>'ı kullanın.</p>
+                    </div>
+                    <div lang="zh-CN">
+                        <p><strong>中文：</strong> 本文介绍如何将英文文本转换为排版整齐的音标 (IPA) 讲义。通过 <strong>Phonetic Formatter</strong>，您可以轻松将逐词对齐的音标导出为 Word 或 PDF 文档，非常适合英语教师准备课件。</p>
+                    </div>
+                </div>
+            </details>
+        </section>
+
         <p class="article-meta"><a href="../blogs.html">← Blogs</a></p>
 
         <p>For educators, the challenge of teaching English pronunciation isn't just about knowing the International Phonetic Alphabet (IPA)—it's about presenting that information in a way that is readable, organized, and pedagogical.</p>
@@ -176,16 +387,43 @@
 
         <h2>Efficiency is Excellence</h2>
         <p>Every minute a teacher spends fighting with Word formatting is a minute taken away from actual instruction. Phonetic Formatter transforms hours of manual alignment into a few seconds of processing, allowing you to focus on what you do best: teaching.</p>
+
+        <section class="cta-section" aria-labelledby="cta-from-screen-heading">
+            <h3 id="cta-from-screen-heading" class="cta-title">Ready to Save Hours on Lesson Prep?</h3>
+            <p class="cta-description">
+                Join educators worldwide using Phonetic Formatter to create crystal-clear IPA handouts in seconds.
+                Export to PDF and Word with perfect alignment.
+            </p>
+            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_blog_from_screen" target="_blank" rel="noopener noreferrer">
+                <img src="../app-store-badge.svg" alt="Download on the App Store" class="app-store-badge" width="120" height="40">
+            </a>
+            <ul class="cta-features">
+                <li>100% Offline</li>
+                <li>Bulk Transcription</li>
+                <li>No Subscription</li>
+            </ul>
+        </section>
     </article>
 
     <footer>
         <div class="container">
-            <p class="footer-links">
-                <a href="../privacy.html">Privacy Policy</a> |
-                <a href="../terms.html">Terms of Service</a> |
-                <a href="../support.html">Technical Support</a>
-            </p>
-            <p class="footer-copyright">© 2026 Phonetic Formatter<br>A product by Louis · <a href="https://louisbuilds.me">louisbuilds.me</a></p>
+            <nav class="blog-lang-nav" aria-label="Language Selector">
+                <p class="blog-lang-nav-label">Explore Phonetic Formatter in your language:</p>
+                <div class="blog-lang-nav-links">
+                    <a href="../index.html" title="English">English</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-fr.html" title="Français">Français</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-de.html" title="Deutsch">Deutsch</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-es.html" title="Español">Español</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-zh.html" title="中文">中文</a>
+                </div>
+            </nav>
+            <div class="footer-secondary">
+                <p class="footer-links">
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                    <a href="../support.html">Support</a>
+                </p>
+                <p class="footer-copyright">
+                    © 2026 Phonetic Formatter · Designed by <strong>Louis</strong><br>
+                    Precision IPA tools for educators and linguists worldwide.
+                </p>
+            </div>
         </div>
     </footer>
 </body>
