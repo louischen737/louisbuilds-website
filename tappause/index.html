@@ -52,6 +52,46 @@
         "downloadUrl": "https://apps.apple.com/app/tappause?pt=128214084&ct=web_tappause"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does TapPause track my usage data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. TapPause is built on a 100% offline-first philosophy. We do not collect, store, or share any personal data, usage habits, or analytics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a subscription-based app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. TapPause offers a one-time purchase to unlock premium features forever. No recurring fees or hidden costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the free version limited to 5 minutes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 5-minute pause is an effective micro-break to reset your focus. The free version offers this essential tool; the paid version unlocks longer sessions from 1 to 30 minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use TapPause without an internet connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. TapPause functions entirely on your device and works without an internet connection, including in Airplane Mode."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
@@ -496,6 +536,75 @@
             height: 50px;
         }
 
+        .cta-content > a {
+            display: inline-block;
+            transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.28s ease;
+            border-radius: 10px;
+            line-height: 0;
+        }
+
+        .cta-content > a:hover {
+            transform: translateY(-3px) scale(1.04);
+            filter: brightness(1.12);
+        }
+
+        .cta-content > a:active {
+            transform: translateY(-1px) scale(1.02);
+            transition-duration: 0.12s;
+        }
+
+        .cta-content > a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cta-content > a {
+                transition: none;
+            }
+            .cta-content > a:hover,
+            .cta-content > a:active {
+                transform: none;
+                filter: none;
+            }
+        }
+
+        .faq-section {
+            padding: 80px 24px 100px;
+            max-width: 720px;
+            margin: 0 auto;
+            border-top: 1px solid var(--divider-light);
+        }
+
+        .faq-section h2 {
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .faq-item {
+            margin-bottom: 32px;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
         .footer {
             padding: 60px 24px 40px;
             text-align: center;
@@ -682,6 +791,28 @@
                 <img src="app-store-badge-en.svg" alt="Download TapPause on the App Store" width="120" height="40">
             </a>
             <p class="cta-micro-note">One-time purchase to unlock all features. No subscriptions.</p>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>Does TapPause track my usage data?</h3>
+                <p>No. TapPause is built on a 100% offline-first philosophy. We do not collect, store, or share any personal data, usage habits, or analytics. Your peace of mind is our priority.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this a subscription-based app?</h3>
+                <p>No. We believe in &quot;Stress-Free&quot; ownership. TapPause offers a one-time purchase to unlock premium features forever. No recurring fees, no hidden costs.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why is the free version limited to 5 minutes?</h3>
+                <p>The 5-minute pause is scientifically proven to be an effective &quot;micro-break&quot; to reset your focus. The free version allows everyone to access this essential tool, while the Pro version offers flexibility for longer sessions (1–30 minutes).</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use TapPause without an internet connection?</h3>
+                <p>Absolutely. TapPause functions entirely on your device. This ensures it works in &quot;Airplane Mode&quot; or deep-work environments where you might want to stay disconnected.</p>
+            </div>
         </div>
     </section>
 

@@ -52,6 +52,39 @@
         "downloadUrl": "https://apps.apple.com/app/tappause?pt=128214084&ct=web_tappause"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "ko",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "사용자 데이터를 추적하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요. TapPause는 100% 오프라인 앱으로 어떠한 개인 데이터도 수집하거나 공유하지 않습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "구독형 앱인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요. 한 번 구매로 평생 이용 가능하며, 구독료나 추가 비용은 없습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "인터넷 연결 없이도 사용할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. TapPause는 기기 내에서만 작동하며, 에어플레인 모드에서도 사용할 수 있습니다."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
@@ -500,6 +533,75 @@
             height: 50px;
         }
 
+        .cta-content > a {
+            display: inline-block;
+            transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.28s ease;
+            border-radius: 10px;
+            line-height: 0;
+        }
+
+        .cta-content > a:hover {
+            transform: translateY(-3px) scale(1.04);
+            filter: brightness(1.12);
+        }
+
+        .cta-content > a:active {
+            transform: translateY(-1px) scale(1.02);
+            transition-duration: 0.12s;
+        }
+
+        .cta-content > a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cta-content > a {
+                transition: none;
+            }
+            .cta-content > a:hover,
+            .cta-content > a:active {
+                transform: none;
+                filter: none;
+            }
+        }
+
+        .faq-section {
+            padding: 80px 24px 100px;
+            max-width: 720px;
+            margin: 0 auto;
+            border-top: 1px solid var(--divider-light);
+        }
+
+        .faq-section h2 {
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .faq-item {
+            margin-bottom: 32px;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
         .footer {
             padding: 60px 24px 40px;
             text-align: center;
@@ -683,6 +785,24 @@
                 <img src="app-store-badge-ko.svg" alt="App Store에서 TapPause 다운로드" width="120" height="40">
             </a>
             <p class="cta-micro-note">일회성 구매로 모든 기능을 잠금 해제합니다. 구독 없음.</p>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">자주 묻는 질문</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>사용자 데이터를 추적하나요?</h3>
+                <p>아니요. TapPause는 100% 오프라인 기반 철학으로 제작되었습니다. 개인 데이터나 사용 습관, 분석 정보를 수집, 저장 또는 공유하지 않습니다. 사용자의 프라이버시가 최우선입니다.</p>
+            </div>
+            <div class="faq-item">
+                <h3>구독형 앱인가요?</h3>
+                <p>아니요. TapPause는 스트레스 없는 경험을 지향합니다. 한 번의 구매로 모든 프리미엄 기능을 영구적으로 사용할 수 있는 단판 결제 방식입니다. 추가 비용이나 숨겨진 요금은 없습니다.</p>
+            </div>
+            <div class="faq-item">
+                <h3>인터넷 연결 없이도 사용할 수 있나요?</h3>
+                <p>네, 당연합니다. TapPause는 기기 내에서만 작동합니다. 에어플레인 모드나 인터넷을 차단하고 깊은 휴식에 집중하고 싶은 순간에도 완벽하게 작동합니다.</p>
+            </div>
         </div>
     </section>
 

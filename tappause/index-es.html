@@ -52,6 +52,39 @@
         "downloadUrl": "https://apps.apple.com/app/tappause?pt=128214084&ct=web_tappause"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿TapPause rastrea mis datos de uso?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. TapPause es una aplicación 100% local y privada. No recopilamos ni compartimos ningún dato personal o hábito de uso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es una aplicación de suscripción?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. TapPause ofrece una compra única para acceso de por vida. No hay suscripciones ni cargos recurrentes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo usar TapPause sin conexión a Internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. TapPause funciona totalmente fuera de línea en tu dispositivo, garantizando privacidad y disponibilidad total sin Internet."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
@@ -496,6 +529,75 @@
             height: 50px;
         }
 
+        .cta-content > a {
+            display: inline-block;
+            transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.28s ease;
+            border-radius: 10px;
+            line-height: 0;
+        }
+
+        .cta-content > a:hover {
+            transform: translateY(-3px) scale(1.04);
+            filter: brightness(1.12);
+        }
+
+        .cta-content > a:active {
+            transform: translateY(-1px) scale(1.02);
+            transition-duration: 0.12s;
+        }
+
+        .cta-content > a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cta-content > a {
+                transition: none;
+            }
+            .cta-content > a:hover,
+            .cta-content > a:active {
+                transform: none;
+                filter: none;
+            }
+        }
+
+        .faq-section {
+            padding: 80px 24px 100px;
+            max-width: 720px;
+            margin: 0 auto;
+            border-top: 1px solid var(--divider-light);
+        }
+
+        .faq-section h2 {
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .faq-item {
+            margin-bottom: 32px;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
         .footer {
             padding: 60px 24px 40px;
             text-align: center;
@@ -679,6 +781,24 @@
                 <img src="app-store-badge-es.svg" alt="Descargar TapPause en el App Store" width="120" height="40">
             </a>
             <p class="cta-micro-note">Compra única para desbloquear todas las funciones. Sin suscripciones.</p>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Preguntas frecuentes</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>¿TapPause rastrea mis datos de uso?</h3>
+                <p>No. TapPause se basa en una filosofía 100&nbsp;% offline (fuera de línea). No recopilamos, almacenamos ni compartimos ningún dato personal, hábitos de uso o análisis. Tu privacidad es nuestra prioridad absoluta.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Es una aplicación de suscripción?</h3>
+                <p>No. Creemos en una experiencia libre de estrés. TapPause ofrece una compra única para desbloquear todas las funciones premium para siempre. Sin cuotas recurrentes ni costes ocultos.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Puedo usar TapPause sin conexión a Internet?</h3>
+                <p>Por supuesto. TapPause funciona completamente en tu dispositivo. Esto garantiza que funcione en &quot;Modo avión&quot; o en entornos de trabajo profundo donde prefieras mantenerte desconectado.</p>
+            </div>
         </div>
     </section>
 
