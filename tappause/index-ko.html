@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TapPause — iPhone için Minimal Duraklatma Uygulaması</title>
-    <meta name="description" content="TapPause, iPhone için minimal bir duraklatma uygulamasıdır. Takip, hedef veya baskı yok. Sadece durun ve derin bir nefes alın.">
+    <title>TapPause — iPhone용 미니멀 일시정지 앱</title>
+    <meta name="description" content="TapPause는 iPhone을 위한 미니멀한 일시정지·마음챙김 앱입니다. 기록도, 목표도, 부담도 없이. 잠시 멈춰 깊게 숨 고르는 시간을.">
 
     <!-- Open Graph (iMessage, Twitter, etc. share preview) — use og-image.png 1200×630 -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://louisbuilds.me/tappause/index-tr.html">
-    <meta property="og:title" content="TapPause — iPhone için Minimal Duraklatma Uygulaması">
-    <meta property="og:description" content="TapPause, iPhone için minimal bir duraklatma uygulamasıdır. Takip, hedef veya baskı yok. Sadece durun ve derin bir nefes alın.">
+    <meta property="og:url" content="https://louisbuilds.me/tappause/index-ko.html">
+    <meta property="og:title" content="TapPause — iPhone용 미니멀 일시정지 앱">
+    <meta property="og:description" content="TapPause는 iPhone용 미니멀 일시정지 앱입니다. 기록도, 목표도, 부담도 없이. 잠시 멈춰 깊게 숨 고르는 시간을.">
     <meta property="og:image" content="https://louisbuilds.me/tappause/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -19,11 +19,11 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TapPause — iPhone için Minimal Duraklatma Uygulaması">
-    <meta name="twitter:description" content="TapPause, iPhone için minimal bir duraklatma uygulamasıdır. Takip, hedef veya baskı yok. Sadece durun ve derin bir nefes alın.">
+    <meta name="twitter:title" content="TapPause — iPhone용 미니멀 일시정지 앱">
+    <meta name="twitter:description" content="TapPause는 iPhone용 미니멀 일시정지 앱입니다. 기록도, 목표도, 부담도 없이. 잠시 멈춰 깊게 숨 고르는 시간을.">
     <meta name="twitter:image" content="https://louisbuilds.me/tappause/og-image.png">
 
-    <link rel="canonical" href="https://louisbuilds.me/tappause/index-tr.html">
+    <link rel="canonical" href="https://louisbuilds.me/tappause/index-ko.html">
     <link rel="alternate" hreflang="en" href="https://louisbuilds.me/tappause/">
     <link rel="alternate" hreflang="de" href="https://louisbuilds.me/tappause/index-de.html">
     <link rel="alternate" hreflang="ja" href="https://louisbuilds.me/tappause/index-ja.html">
@@ -47,8 +47,8 @@
             "price": "0",
             "priceCurrency": "USD"
         },
-        "description": "TapPause, iPhone için minimal duraklatma uygulaması. Takip, hedef veya baskı yok; derin nefes. Hesap yok; %100 çevrimdışı ve kişisel. Hiçbir veri toplanmaz.",
-        "inLanguage": "tr",
+        "description": "TapPause는 iPhone용 미니멀 일시정지 앱입니다. 기록·목표·부담 없음. 100% 오프라인 기반. 어떤 데이터도 수집하지 않습니다.",
+        "inLanguage": "ko",
         "downloadUrl": "https://apps.apple.com/app/tappause?pt=128214084&ct=web_tappause"
     }
     </script>
@@ -97,11 +97,15 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+        }
+
+        html[lang="ko"] body {
+            letter-spacing: -0.02em;
         }
 
         .site-header {
@@ -528,169 +532,165 @@
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+    <a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
     <header class="site-header">
-        <a href="index-tr.html" class="header-brand" id="header-brand-link" aria-label="TapPause ana sayfa">
+        <a href="index-ko.html" class="header-brand" id="header-brand-link" aria-label="TapPause 홈">
             <div class="header-app-icon">
                 <img src="icon.png" alt="" width="40" height="40" fetchpriority="high">
             </div>
             <span class="header-brand-name">TapPause</span>
         </a>
         <div class="lang-dropdown">
-            <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Dil seçin">
-                <span class="lang-current">Türkçe</span>
+            <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="언어 선택">
+                <span class="lang-current">한국어</span>
                 <span class="lang-chevron" aria-hidden="true">▼</span>
             </button>
-            <div class="lang-dropdown-menu" role="menu" aria-label="Diller">
+            <div class="lang-dropdown-menu" role="menu" aria-label="언어">
                 <a href="index.html" hreflang="en" role="menuitem">English</a>
                 <a href="index-de.html" hreflang="de" role="menuitem">Deutsch</a>
                 <a href="index-fr.html" hreflang="fr" role="menuitem">Français</a>
                 <a href="index-es.html" hreflang="es" role="menuitem">Español</a>
                 <a href="index-ja.html" hreflang="ja" role="menuitem">日本語</a>
-                <a href="index-ko.html" hreflang="ko" role="menuitem">한국어</a>
-                <a href="index-tr.html" hreflang="tr" class="active" role="menuitem">Türkçe</a>
+                <a href="index-ko.html" hreflang="ko" class="active" role="menuitem">한국어</a>
+                <a href="index-tr.html" hreflang="tr" role="menuitem">Türkçe</a>
             </div>
         </div>
     </header>
 
     <main id="main-content">
     <section class="hero">
-        <h1>TapPause — iPhone için Minimal Duraklatma</h1>
-        <p class="subtitle">Takip, hedef veya baskı yok. Sadece durun ve derin bir nefes alın.</p>
+        <h1>TapPause — iPhone용 미니멀 일시정지 앱</h1>
+        <p class="subtitle">기록도, 목표도, 부담도 없이. 잠시 멈춰 깊게 숨 고르는 시간을.</p>
     </section>
 
     <section class="core-message">
         <p>
-            Görev yok.<br>
-            Takip yok.<br>
-            Hedef yok.<br><br>
-            Sadece bir duraklama.
+            할 일 없음.<br>
+            기록 없음.<br>
+            목표 없음.<br><br>
+            그저 멈춤.
         </p>
     </section>
 
     <section class="visual-focus">
         <picture>
             <source type="image/webp" srcset="pause-symbol.webp">
-            <img src="pause-symbol.png" alt="TapPause duraklatma zamanlayıcısı — iPhone’da farkındalık molaları" width="583" height="583" loading="lazy">
+            <img src="pause-symbol.png" alt="TapPause 일시정지 타이머 — iPhone에서 마음챙김 휴식" width="583" height="583" loading="lazy">
         </picture>
     </section>
 
     <section class="how-it-works">
         <p>
-            Düğmeye dokun.<br>
-            Zamanın geçmesine izin ver.<br>
-            Hiçbir şey yapmak zorunda değilsin.
+            버튼을 누르세요.<br>
+            시간이 흐르게 두세요.<br>
+            아무것도 하지 않아도 됩니다.
         </p>
     </section>
 
     <section class="features">
-        <h2>Neler var</h2>
+        <h2>포함된 기능</h2>
         <ul>
-            <li>Zihin yormayan minimalist tasarım</li>
-            <li>Tek bir duraklatma düğmesi</li>
-            <li>Mola sürenizi kendiniz belirleyin</li>
-            <li>İsteğe bağlı ses ve dokunsal geri bildirim</li>
-            <li>Yatay mod desteği</li>
-            <li>Hesap yok. %100 çevrimdışı ve kişisel. Hiçbir veri toplanmaz.</li>
+            <li>군더더기 없는 미니멀 디자인</li>
+            <li>일시정지 버튼 하나</li>
+            <li>원하는 대로 멈춤 시간 설정</li>
+            <li>선택적 소리 및 햅틱 피드백</li>
+            <li>가로 모드 지원</li>
+            <li>계정 없음. 100% 오프라인 기반. 어떤 데이터도 수집하지 않습니다.</li>
         </ul>
     </section>
 
     <section class="purchase-note">
         <p>
-            5 dakikalık standart mola ile ücretsiz başlayın.<br>
-            Tek seferlik satın alma ile 1–30 dakikalık duraklamaların kilidini açın.
+            표준 5분 휴식으로 가볍게 시작해 보세요 (무료).<br>
+            일회성 구매로 1~30분 멈춤을 잠금 해제하세요.
         </p>
     </section>
 
     <section class="seo-section">
-        <h2>iPhone için minimal duraklatma zamanlayıcısı ve farkındalık uygulaması</h2>
+        <h2>iPhone용 미니멀 일시정지 타이머·마음챙김 앱</h2>
         <p>
-            TapPause, üretkenlik için değil; bilinçli molalar için tasarlanmış, iPhone kullanıcılarına yönelik minimal bir duraklatma uygulamasıdır.
-            Geleneksel farkındalık uygulamalarının aksine seri, skor veya performans metrikleri içermez.
+            TapPause는 방해 없이 마음챙김 휴식을 원하는 iPhone 사용자를 위한 미니멀 일시정지 타이머 앱입니다. 기존 마음챙김 앱과 달리 연속 기록, 점수, 성과 지표가 없습니다.
         </p>
         <p>
-            Basit bir dijital detoks aracı olarak TapPause, sürekli bildirimlerden uzaklaşmanıza ve odağınızı yenilemenize yardımcı olur.
-            1–30 dakika arası, baskı olmadan duraklama imkânı sunar.
+            디지털 디톡스를 위한 간단한 휴식 리추얼로, TapPause는 끊임없는 알림에서 벗어나 집중을 되찾도록 돕습니다. 가볍고 부담 없이 1분부터 30분까지 멈출 수 있습니다.
         </p>
         <p>
-            Görevler arasında kısa bir mola veya yoğun bir günde sessiz bir an arıyor olun,
-            TapPause sade ve dikkat dağıtmayan bir deneyim sunar.
+            업무 사이의 짧은 멈춤이든 바쁜 하루의 고요한 순간이든, TapPause는 깔끔하고 방해 없는 경험을 제공합니다.
         </p>
         <p>
-            Ekran süresini azaltmak için
-            <a href="how-to-take-a-break-from-your-phone.html">Telefondan Her Şeyi Bırakmadan Nasıl Mola Verilir?</a> başlıklı İngilizce rehberimize göz atın.
+            화면 시간을 줄이고 싶다면 영문 가이드 <a href="how-to-take-a-break-from-your-phone.html">폰에서 완전히 끊지 않고 쉬는 방법</a>을 읽어 보세요.
         </p>
     </section>
 
     <section class="seo-section">
-        <h2>Bir duraklatma uygulaması ne zaman işe yarar</h2>
+        <h2>일시정지 앱을 쓰기 좋은 때</h2>
         <p>
-            TapPause birçok günlük durumda kullanılabilir:
+            TapPause는 일상의 여러 상황에 쓸 수 있습니다.
         </p>
         <ul>
-            <li>Uygulamaları silmeden telefondan uzaklaşın</li>
-            <li>Kısa ve bilinçli molalarla ekran süresini azaltın</li>
-            <li>Baskı olmadan basit bir farkındalık alışkanlığı oluşturun</li>
-            <li>İş sırasında görevler arasında odağı sıfırlayın</li>
+            <li>앱을 지우지 않고 휴대전화에서 잠시 벗어나기</li>
+            <li>짧고 의도적인 멈춤으로 화면 시간 줄이기</li>
+            <li>부담 없이 간단한 마음챙김 습관 만들기</li>
+            <li>업무 중 과제 사이에 집중을 리셋하기</li>
         </ul>
     </section>
 
     <section class="blog-preview">
-        <h2>Farkındalık molaları hakkında okuyun</h2>
+        <h2>마음챙김 멈춤에 대해 읽기</h2>
 
         <div class="blog-card">
             <a href="how-to-take-a-break-from-your-phone.html">
                 <div class="blog-meta">
-                    <span>Makale</span>
+                    <span>아티클</span>
                     <span>•</span>
-                    <span>3 dk okuma</span>
+                    <span>3분 읽기</span>
                 </div>
-                <h3>Telefondan Her Şeyi Bırakmadan Nasıl Mola Verilir?</h3>
-                <p>İngilizce rehber. Ekran süresini yavaşlatma ipuçları.</p>
+                <h3>폰에서 완전히 끊지 않고 쉬는 방법</h3>
+                <p>앱을 지우거나 완전히 오프라인이 되지 않고도 화면 시간을 늦추는 간단한 방법.</p>
             </a>
         </div>
 
         <div class="blog-card">
             <a href="what-if-rest-didnt-need-to-be-productive.html">
                 <div class="blog-meta">
-                    <span>Deneme</span>
+                    <span>에세이</span>
                     <span>•</span>
-                    <span>2 dk okuma</span>
+                    <span>2분 읽기</span>
                 </div>
-                <h3>Ya Dinlenmenin Üretken Olması Gerekmezse?</h3>
-                <p>İngilizce. Ölçülmeyen dinlenme üzerine kısa düşünce.</p>
+                <h3>쉼이 꼭 생산적일 필요가 없다면?</h3>
+                <p>최적화에 집착하는 세상에서 잘리지 않은 휴식에 대한 짧은 생각. (영문)</p>
             </a>
         </div>
 
         <div class="blog-card">
             <a href="simple-ways-to-pause-during-a-busy-workday.html">
                 <div class="blog-meta">
-                    <span>Pratik</span>
+                    <span>실전 가이드</span>
                     <span>•</span>
-                    <span>2 dk okuma</span>
+                    <span>2분 읽기</span>
                 </div>
-                <h3>Yoğun Bir İş Gününde Duraklamanın Basit Yolları</h3>
-                <p>İngilizce. Yoğun iş gününde mola verme teknikleri.</p>
+                <h3>바쁜 업무일에 멈추는 간단한 방법</h3>
+                <p>집중을 되찾고 정신적 부담을 줄이는 실용적인 기법. (영문)</p>
             </a>
         </div>
     </section>
 
     <section class="cta">
         <div class="cta-content">
-            <h2>Mola vermeye hazır mısın?</h2>
-            <p>Bugün ilk duraklamanı başlat. Hesap yok, gürültü yok — sadece sen.</p>
-            <a href="https://apps.apple.com/app/tappause?pt=128214084&ct=web_tappause" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'tappause', 'lang': 'tr'});">
-                <img src="app-store-badge-tr.svg" alt="App Store’dan TapPause indir" width="151" height="40">
+            <h2>지금 멈출 준비가 되셨나요?</h2>
+            <p>오늘 첫 멈춤을 시작하세요. 계정도, 소음도 없이 오직 당신만.</p>
+            <a href="https://apps.apple.com/app/tappause?pt=128214084&ct=web_tappause" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'tappause', 'lang': 'ko'});">
+                <img src="app-store-badge-ko.svg" alt="App Store에서 TapPause 다운로드" width="120" height="40">
             </a>
-            <p class="cta-micro-note">Tüm özellikler tek seferlik satın alma ile açılır. Abonelik yok.</p>
+            <p class="cta-micro-note">일회성 구매로 모든 기능을 잠금 해제합니다. 구독 없음.</p>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-links">
-            <a href="privacy-policy.html">Gizlilik</a>
-            <a href="terms-of-use.html">Kullanım Şartları</a>
-            <a href="support.html">Destek</a>
+            <a href="privacy-policy.html">개인정보 처리방침</a>
+            <a href="terms-of-use.html">이용 약관</a>
+            <a href="support.html">고객 지원</a>
         </div>
         <div class="footer-copyright">
             <p>© 2026 TapPause</p>
