@@ -6,12 +6,42 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://louisbuilds.me/transmov/zh/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
         <loc>https://louisbuilds.me/transmov/animated-assets.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://louisbuilds.me/transmov/blog/what-is-apng.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/blog/what-is-apng-zh.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/blog/why-local-ai-matters-for-video-privacy.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/blog/transparent-animation-web-design-workflow.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/blog/why-local-ai-matters-for-video-privacy-zh.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/blog/transparent-animation-web-design-workflow-zh.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
