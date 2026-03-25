@@ -1,722 +1,2874 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Louis Builds — Independent apps for focus and mindfulness: TapPause, PurrrrrFocus, TransMov, Phonetic Formatter. Thoughtfully built for rest, productivity, and learning." />
-<link rel="canonical" href="https://louisbuilds.me/" />
-<link rel="icon" type="image/png" href="favicon.png" />
-<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-<title>Louis Builds — Independent Apps for Focus & Mindfulness</title>
-
-<!-- Open Graph / 社交分享 -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://louisbuilds.me/" />
-<meta property="og:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
-<meta property="og:description" content="Independent apps for focus and mindfulness: TapPause, PurrrrrFocus, TransMov, Phonetic Formatter. Thoughtfully built for rest, productivity, and learning." />
-<meta property="og:image" content="https://louisbuilds.me/assets/og-image.png" />
-<meta property="og:locale" content="en_US" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
-<meta name="twitter:description" content="Independent apps for focus and mindfulness: TapPause, PurrrrrFocus, TransMov, Phonetic Formatter." />
-
-<!-- 结构化数据 (Schema.org) — applicationCategory 与站点应用页、App Store 分类对齐 -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://louisbuilds.me/#person",
-      "name": "Louis",
-      "url": "https://louisbuilds.me/",
-      "jobTitle": "Independent App Developer",
-      "description": "Creator of independent apps focusing on minimalism, productivity, and education."
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Phonetic Formatter",
-      "operatingSystem": "iOS",
-      "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.1",
-      "url": "https://louisbuilds.me/phoneticformatter/",
-      "author": { "@id": "https://louisbuilds.me/#person" }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "PurrrrrFocus",
-      "operatingSystem": "iOS",
-      "applicationCategory": "ProductivityApplication",
-      "applicationSubCategory": "Utilities",
-      "softwareVersion": "2.3",
-      "url": "https://louisbuilds.me/purrrrrfocus/",
-      "author": { "@id": "https://louisbuilds.me/#person" }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "TapPause",
-      "operatingSystem": "iOS",
-      "applicationCategory": "HealthApplication",
-      "softwareVersion": "1.1",
-      "url": "https://louisbuilds.me/tappause/",
-      "author": { "@id": "https://louisbuilds.me/#person" }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "TransMov",
-      "operatingSystem": "macOS",
-      "applicationCategory": "DesignApplication",
-      "applicationSubCategory": "Productivity",
-      "softwareVersion": "2.0",
-      "url": "https://louisbuilds.me/transmov/",
-      "author": { "@id": "https://louisbuilds.me/#person" }
-    }
-  ]
-}
-</script>
-
-<!-- Google Analytics: 延迟到 load 后加载，避免影响 LCP/FCP（减少未使用 JS 约 61 KiB） -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  function loadGtag() {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN';
-    document.head.appendChild(s);
-    s.onload = function() {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>TransMov — Professional AI Video Background Removal for Mac</title>
+    <meta name="title" content="TransMov — Professional AI Video Background Removal for Mac">
+    <meta name="description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS. Fast, privacy-focused, ready for apps or web.">
+    <meta name="keywords" content="AI video processing, transparent animated images, APNG, GIF, WebP, video to animated image, background removal, macOS app, local processing, privacy-focused">
+    <meta name="author" content="TransMov">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/transmov/">
+    <meta property="og:title" content="TransMov — Professional AI Video Background Removal for Mac">
+    <meta property="og:description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.">
+    <meta property="og:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:site_name" content="TransMov">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://louisbuilds.me/transmov/">
+    <meta property="twitter:title" content="TransMov — Professional AI Video Background Removal for Mac">
+    <meta property="twitter:description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.">
+    <meta property="twitter:image" content="https://louisbuilds.me/transmov/images/app-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://louisbuilds.me/transmov/">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/">
+    <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
-    };
-  }
-  if (document.readyState === 'complete') {
-    setTimeout(loadGtag, 0);
-  } else {
-    window.addEventListener('load', function() { setTimeout(loadGtag, 0); });
-  }
-</script>
 
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    --bg-color: #000;
-    --text-primary: #fff;
-    --text-secondary: #a1a1a6;
-    --text-muted: #6e6e73;
-    --accent: #007aff;
-    --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-    background: var(--bg-color);
-    color: var(--text-primary);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-}
-
-/* Scroll progress */
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 2px;
-    width: 0%;
-    background: var(--accent);
-    z-index: 9999;
-}
-
-/* Hero */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 24px;
-    position: relative;
-    background:
-        radial-gradient(circle at center, #1c1c1e 0%, #000 70%);
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.05), transparent 60%);
-    animation: breathe 18s ease-in-out infinite alternate;
-    pointer-events: none;
-}
-
-@keyframes breathe {
-    from { opacity: 0.6; }
-    to { opacity: 1; }
-}
-
-.hero h1 {
-    font-size: clamp(56px, 10vw, 88px);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    margin-bottom: 28px;
-    background: linear-gradient(180deg, #ffffff 0%, #bdbdc2 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fadeUp 1s var(--ease);
-}
-
-.hero p {
-    font-size: clamp(20px, 4vw, 26px);
-    color: var(--text-secondary);
-    max-width: 720px;
-    margin-bottom: 60px;
-    animation: fadeUp 1.2s var(--ease);
-}
-
-.hero .explore-btn {
-    font-size: 16px;
-    padding: 14px 36px;
-    border-radius: 999px;
-    text-decoration: none;
-    color: var(--text-primary);
-    backdrop-filter: blur(20px);
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    transition: all 0.4s var(--ease);
-    animation: fadeUp 1.4s var(--ease);
-}
-
-.hero .explore-btn:hover {
-    background: #fff;
-    color: #000;
-}
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Products */
-.products {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 160px 24px;
-}
-
-.product {
-    display: flex;
-    gap: 80px;
-    align-items: center;
-    margin-bottom: 240px;
-    opacity: 0;
-    transform: translateY(60px);
-    filter: blur(8px);
-    transition: all 1s var(--ease);
-}
-
-.product.visible {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-}
-
-.product:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-/* Tighter gap before Journal (between rows stays 240px; last row shorter) */
-.products .product:last-child {
-    margin-bottom: 0;
-}
-
-.product-info {
-    flex: 1;
-}
-
-.product-info h2 {
-    font-size: 48px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    white-space: nowrap;
-}
-
-@media (max-width: 1200px) {
-    .product-info h2 {
-        white-space: normal;
+      gtag('config', 'G-2TMXET2TJN');
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TransMov",
+        "applicationCategory": "DesignApplication",
+        "applicationSubCategory": "Productivity",
+        "operatingSystem": "macOS",
+        "fileSize": "3.3MB",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free to download with premium subscription and lifetime options."
+        },
+        "description": "A native, 3.3MB micro-app for macOS. Convert videos to transparent GIF, APNG, and WebP using local AI background removal. Professional precision with maximum privacy.",
+        "screenshot": "https://louisbuilds.me/transmov/images/app-icon.png",
+        "softwareVersion": "2.0",
+        "releaseNotes": "Optimized AI background removal engine and native Swift performance.",
+        "downloadUrl": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12",
+        "author": {
+            "@type": "Person",
+            "name": "Louis",
+            "url": "https://louisbuilds.me"
+        },
+        "featureList": [
+            "AI-Powered Background Removal",
+            "Export Transparent APNG, GIF, WebP",
+            "Native Swift Performance",
+            "Frame-Level Editing",
+            "100% Local Processing & Privacy"
+        ]
     }
-}
-
-.app-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-.product-info p {
-    font-size: 18px;
-    color: var(--text-secondary);
-    margin-bottom: 28px;
-    max-width: 400px;
-}
-
-.tags {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 32px;
-}
-
-.product-info .tags + .tags {
-    text-transform: none;
-    letter-spacing: 0.04em;
-}
-
-.doc-lang-links a {
-    white-space: nowrap;
-}
-
-.buttons {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.app-store-badge {
-    height: 40px;
-    transition: transform 0.4s var(--ease);
-}
-
-.app-store-badge:hover {
-    transform: scale(1.05);
-}
-
-.btn-learn {
-    font-size: 15px;
-    color: var(--text-primary);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: all 0.3s var(--ease);
-}
-
-.btn-learn:hover {
-    opacity: 1;
-    transform: translateX(4px);
-}
-
-/* Screenshots */
-.product-screenshot {
-    flex: 1.4;
-    display: grid;
-    gap: 24px;
-}
-
-.product-screenshot img {
-    width: 100%;
-    height: auto;
-    display: block;
-    align-self: start;
-    border-radius: 18px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-    transition: all 0.5s var(--ease);
-    cursor: pointer;
-}
-
-.product-screenshot img:hover {
-    transform: scale(1.03) rotateX(2deg) rotateY(-2deg);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.7);
-}
-
-.product-screenshot.ios {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.product-screenshot.macos {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* Footer */
-footer {
-    padding: 120px 24px 60px;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    color: var(--text-secondary);
-}
-
-footer a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s;
-}
-
-footer a:hover { color: #fff; }
-
-footer p {
-    margin-top: 24px;
-    font-size: 12px;
-}
-
-/* Journal */
-.journal-section {
-    padding: 48px 20px 88px;
-    max-width: 900px;
-    margin: 0 auto;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-}
-
-.journal-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.journal-section .section-header {
-    margin-bottom: 50px;
-}
-
-.journal-section .section-header h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--text-primary);
-    margin-bottom: 10px;
-}
-
-.journal-section .subtitle {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-.journal-list {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.journal-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.journal-link {
-    display: flex;
-    align-items: flex-start;
-    padding: 25px 0;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: padding 0.3s var(--ease), color 0.3s var(--ease);
-    gap: 20px;
-}
-
-.journal-date {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    min-width: 80px;
-    font-family: inherit;
-}
-
-.journal-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.journal-tag {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-    display: block;
-}
-
-.journal-title {
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-    color: var(--text-primary);
-}
-
-.journal-excerpt {
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 4px;
-    line-height: 1.45;
-}
-
-.journal-arrow {
-    flex-shrink: 0;
-    margin-top: 0.2em;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
-    color: var(--accent);
-}
-
-.journal-link:hover .journal-title {
-    color: #fff;
-}
-
-.journal-link:hover .journal-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.journal-link:hover {
-    padding-left: 10px;
-}
-
-@media (max-width: 600px) {
-    .journal-link {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I convert a video to APNG on macOS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can convert a video to APNG by importing your video into TransMov, selecting APNG as the output format, and exporting the animation locally on macOS."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does GIF support transparency?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GIF supports only 1-bit transparency, which can cause jagged edges. APNG and WebP support full alpha transparency."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between APNG and GIF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "APNG supports full color and alpha transparency, while GIF is limited to 256 colors and basic transparency."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I remove video backgrounds locally on Mac?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, TransMov uses Apple Vision to remove video backgrounds locally without uploading files."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which format is best for web animations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GIF is widely supported, APNG offers better quality with transparency, and WebP provides better compression."
+                }
+            }
+        ]
     }
-
-    .journal-date {
-        min-width: auto;
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TransMov",
+        "url": "https://louisbuilds.me/transmov/",
+        "description": "TransMov — AI-Powered Transparent Animated Image Export for macOS",
+        "inLanguage": ["en", "zh-CN"],
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://louisbuilds.me/transmov/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
     }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .journal-section {
-        opacity: 1;
-        transform: none;
-        transition: none;
+    </script>
+    
+    <!-- VideoObject: comparison before video for video search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "TransMov — Before: original video before AI background removal",
+        "description": "Original video clip before processing with TransMov. TransMov converts videos into transparent APNG, GIF, and WebP animated images using AI-powered local background removal on macOS. Same clip, two states: original video and transparent export alternate every 3 seconds on a subtle checkerboard.",
+        "contentUrl": "https://louisbuilds.me/transmov/images/before-comparison.mp4",
+        "thumbnailUrl": "https://louisbuilds.me/transmov/images/before-comparison-poster.jpg",
+        "uploadDate": "2026-01-01",
+        "embedUrl": "https://louisbuilds.me/transmov/",
+        "publisher": { "@type": "Organization", "name": "TransMov" }
     }
+    </script>
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://api.producthunt.com">
+    <link rel="dns-prefetch" href="https://api.producthunt.com">
+    <link rel="dns-prefetch" href="https://apps.apple.com">
+    
+    <style>
+        :root {
+            /* Main content rail — LocalBG-style wide layout */
+            --content-max: 1160px;
+            /* Accent = hero glow indigo / blue family */
+            --accent-link: #a5b4fc;
+            --accent-link-hover: #c7d2fe;
+            --glow-indigo-rgb: 99, 102, 241;
+            --glow-blue-rgb: 59, 130, 246;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #07080d;
+            position: relative;
+            padding-bottom: 82px;
+        }
+        
+        /* Top-centered glow from viewport top (shared with header — no seam below top bar) */
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            min-height: 100svh;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(ellipse 130% 82% at 50% 0%, rgba(99, 102, 241, 0.28) 0%, transparent 56%),
+                radial-gradient(ellipse 98% 58% at 50% 14%, rgba(59, 130, 246, 0.13) 0%, transparent 52%),
+                radial-gradient(ellipse 85% 48% at 50% 40%, rgba(37, 99, 235, 0.06) 0%, transparent 64%);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        
+        /* Hero — fill first screen; glow comes from body::before */
+        .hero {
+            background: transparent;
+            color: #f5f5f5;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Match .main-content padding-top so hero + bar ≈ one viewport; prevents comparison copy peeking */
+            min-height: calc(100vh - 4rem);
+            min-height: calc(100dvh - 4rem);
+            min-height: calc(100svh - 4rem);
+            padding: 3rem clamp(1.5rem, 4vw, 2.5rem) 4rem;
+            box-sizing: border-box;
+        }
+        
+        .hero-headline {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .hero-break-desktop {
+            display: none;
+        }
+        
+        .hero-subheadline {
+            /* Match .section-lead (module subtitle) */
+            font-size: 1.0625rem;
+            line-height: 1.55;
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            max-width: 40rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-demo {
+            max-width: min(90vw, 360px);
+            margin: 0 auto 2.5rem;
+            aspect-ratio: 9 / 16;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .hero-demo img,
+        .hero-demo video,
+        .hero-demo iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .hero-demo iframe {
+            border: none;
+        }
+        
+        .hero-cta {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        
+        .hero-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .hero-brand {
+            margin-bottom: 1.25rem;
+        }
+        
+        .hero-app-icon {
+            width: 48px;
+            height: 48px;
+            display: block;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
+        }
+        
+        .hero-app-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: -0.01em;
+        }
+        
+        .hero-inner {
+            width: 100%;
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+            box-sizing: border-box;
+        }
+        .hero-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .hero-media {
+            width: min(78vw, 360px);
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 4rem clamp(1.5rem, 4vw, 2.5rem) 5rem;
+                text-align: left;
+            }
+            
+            .hero-inner {
+                max-width: var(--content-max);
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-layout {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+                align-items: center;
+                gap: clamp(2rem, 5vw, 4rem);
+            }
+            
+            .hero-content {
+                max-width: none;
+            }
+            
+            .hero-content .hero-brand {
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-content .hero-app-icon {
+                width: 52px;
+                height: 52px;
+            }
+            
+            .hero-content .hero-app-name {
+                font-size: 1.1rem;
+            }
+            
+            .hero-content .hero-headline {
+                font-size: clamp(2.5rem, 4vw, 3.25rem);
+                margin-bottom: 1.25rem;
+            }
+            .hero-content .hero-headline .hero-break-desktop {
+                display: block;
+            }
+            
+            .hero-content .hero-subheadline {
+                margin-bottom: 2.25rem;
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 36rem;
+            }
+            
+            .hero-content .hero-cta {
+                margin-top: 0;
+            }
+            
+            .hero-content .hero-note {
+                margin-top: 1.75rem;
+            }
+            
+            .hero-content .badges-container {
+                justify-content: flex-start;
+            }
+            .hero-media {
+                width: min(360px, 100%);
+                margin: 0;
+            }
+            .hero-media .comparison-reveal {
+                margin: 0;
+            }
+        }
+        
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .badge-link {
+            display: inline-block;
+            transition: transform 0.2s;
+            text-decoration: none;
+        }
+        
+        .badge-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .badge-link img {
+            display: block;
+            height: 54px;
+            width: auto;
+        }
+        
+        /* Before/After — same base as hero; horizontal inset aligned to content rail */
+        .comparison-section {
+            background: #07080d;
+            padding: 5.5rem clamp(1.5rem, 4vw, 2.5rem) 5rem;
+            text-align: center;
+        }
+        
+        /* Auto mask reveal: one stage, original video ↔ transparent export every 3s */
+        .comparison-reveal {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        
+        .comparison-reveal-stage {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #0a0a0f;
+        }
+        
+        .comparison-checkerboard {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-color: #101014;
+            background-image:
+                linear-gradient(45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.035) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.035) 75%);
+            background-size: 14px 14px;
+            background-position: 0 0, 0 7px, 7px -7px, -7px 0;
+        }
+        
+        .comparison-layer {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.45s ease;
+        }
+        
+        .comparison-layer--after {
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .comparison-layer--before {
+            z-index: 2;
+            opacity: 1;
+        }
+        
+        .comparison-reveal--after .comparison-layer--after {
+            z-index: 2;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .comparison-reveal--after .comparison-layer--before {
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .comparison-layer picture,
+        .comparison-layer img,
+        .comparison-layer video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .comparison-layer {
+                transition: none;
+            }
+            .comparison-layer--after {
+                opacity: 0 !important;
+            }
+            .comparison-layer--before {
+                opacity: 1 !important;
+                z-index: 2;
+                pointer-events: auto;
+            }
+        }
+        
+        .container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 4vw, 2.5rem) 4rem;
+        }
+        
+        /* 顶栏胶囊：同一容器承载全部元素，中间导航始终固定 */
+        .top-bar {
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: min(96vw, var(--content-max));
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.45rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(7, 8, 13, 0.54);
+            -webkit-backdrop-filter: blur(12px) saturate(1.1);
+            backdrop-filter: blur(12px) saturate(1.1);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.08),
+                0 10px 36px rgba(3, 6, 20, 0.35);
+            transition:
+                width 0.28s ease,
+                padding 0.28s ease,
+                background 0.28s ease,
+                border-color 0.28s ease,
+                -webkit-backdrop-filter 0.28s ease,
+                backdrop-filter 0.28s ease;
+        }
+        .top-bar.top-bar--scrolled {
+            width: clamp(760px, 76vw, 940px);
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+            background: rgba(7, 8, 13, 0.64);
+            border-color: rgba(255, 255, 255, 0.14);
+            -webkit-backdrop-filter: blur(14px) saturate(1.14);
+            backdrop-filter: blur(14px) saturate(1.14);
+        }
+        .top-bar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            z-index: 2;
+        }
+        .top-bar-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: block;
+        }
+        .top-bar-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f5f5f5;
+            letter-spacing: -0.01em;
+        }
+        .top-bar-nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .top-bar-nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            background: transparent;
+            -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+        }
+        .top-bar-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.78);
+            font-weight: 550;
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease, background 0.2s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 32px;
+            padding: 0 0.7rem;
+            border-radius: 999px;
+        }
+        .top-bar-nav a:hover {
+            color: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .top-bar-nav a.top-bar-nav-cta {
+            font-size: 0.82rem;
+            color: #fff;
+            background: rgba(99, 102, 241, 0.9);
+            border: 1px solid rgba(199, 210, 254, 0.5);
+            min-height: 32px;
+            padding: 0 0.8rem;
+        }
+        .top-bar-nav a.top-bar-nav-cta:hover {
+            background: rgba(99, 102, 241, 1);
+        }
+        .top-bar-actions {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            position: relative;
+            z-index: 2;
+        }
+        .top-bar-menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 10px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1.35rem;
+            line-height: 1;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .top-bar-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+        }
+        .top-bar-menu-toggle:focus-visible {
+            outline: 2px solid rgba(199, 210, 254, 0.85);
+            outline-offset: 2px;
+        }
+        .top-bar-menu-icon {
+            display: block;
+            font-weight: 300;
+            letter-spacing: 0;
+        }
+        .top-bar-mobile-nav {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 0.4rem 0.9rem 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            background: rgba(7, 8, 13, 0.78);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 14px 34px rgba(1, 3, 12, 0.4);
+        }
+        .top-bar-mobile-nav[hidden] {
+            display: none !important;
+        }
+        .top-bar-mobile-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .top-bar-mobile-nav li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .top-bar-mobile-nav li:last-child {
+            border-bottom: none;
+        }
+        .top-bar-mobile-nav a {
+            display: flex;
+            align-items: center;
+            min-height: 48px;
+            padding: 0.55rem 0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease;
+        }
+        .top-bar-mobile-nav a:hover,
+        .top-bar-mobile-nav a:focus-visible {
+            color: #fff;
+        }
+        .top-bar-mobile-nav a:focus-visible {
+            outline: none;
+            box-shadow: inset 3px 0 0 rgba(129, 140, 248, 0.9);
+        }
+        .top-bar-mobile-nav a.top-bar-mobile-nav-download {
+            font-weight: 600;
+            color: #c7d2fe;
+        }
+        .main-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 4rem;
+        }
+        
+        .language-switcher {
+            position: relative;
+            z-index: 20;
+        }
+        .language-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            min-height: 34px;
+            padding: 0 11px 0 9px;
+            background: rgba(255, 255, 255, 0.065);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: rgba(255, 255, 255, 0.92);
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+        .language-toggle-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: inherit;
+            opacity: 0.9;
+        }
+        .language-toggle-icon svg {
+            width: 15px;
+            height: 15px;
+            display: block;
+        }
+        .language-toggle .chevron {
+            font-size: 0.72rem;
+            line-height: 1;
+            opacity: 0.85;
+        }
+        .language-menu {
+            list-style: none;
+            margin: 8px 0 0;
+            padding: 6px;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            min-width: 150px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(7, 8, 13, 0.92);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            display: none;
+        }
+        .language-switcher.open .language-menu {
+            display: block;
+        }
+        .language-menu a {
+            display: block;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 0.86rem;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.88);
+            transition: background 0.2s ease;
+        }
+        .language-menu a:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .language-menu a.active {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+        
+        /* Editorial sections — generous vertical rhythm (native-style landing) */
+        .section {
+            padding: 9rem 0;
+            margin-bottom: 0;
+        }
+        
+        /* Module titles: ~36–40px white, centered (LocalBG reference) */
+        .section > h2,
+        .comparison-heading,
+        .faq-section .faq-title {
+            text-align: center;
+            font-size: clamp(2rem, 4.5vw, 2.5rem);
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1.35rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            border: none;
+            padding: 0;
+        }
+        
+        /* Subtitle / lead: ~16–17px, muted gray (#9CA3AF band) */
+        .section-lead {
+            font-size: 1.0625rem;
+            line-height: 1.55;
+            color: #9ca3af;
+            text-align: center;
+            max-width: 40rem;
+            margin: 0 auto 2.5rem;
+            text-wrap: pretty;
+        }
+        
+        /* Two consecutive leads (About): keep tighter gap between lines, wide gap before next block */
+        .section-lead:has(+ .section-lead) {
+            margin-bottom: 1.25rem;
+        }
+        
+        .section-body {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.72);
+            max-width: 40rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section-body + .section-body {
+            margin-top: 0;
+        }
+        
+        /* How it works — three-step workflow */
+        .section--workflow .section-lead--spacious {
+            margin-bottom: 5rem;
+        }
+        .workflow-break-desktop {
+            display: none;
+        }
+        .workflow-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 2rem;
+            position: relative;
+        }
+        .workflow-step {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: visible;
+            padding: 3.5rem 2rem 3rem;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+            z-index: 2;
+        }
+        .workflow-step .step-content {
+            flex: 1;
+        }
+        .workflow-step:hover {
+            background: rgba(99, 102, 241, 0.05);
+            border-color: rgba(99, 102, 241, 0.72);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .workflow-step {
+                transition-duration: 0.01ms;
+            }
+            .workflow-connector::after {
+                animation: none;
+                left: calc(100% - 8px);
+                opacity: 0.55;
+            }
+        }
+        .step-number {
+            position: absolute;
+            top: 0.35rem;
+            right: 1.25rem;
+            font-size: 5rem;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+            color: rgba(255, 255, 255, 0.035);
+            pointer-events: none;
+            user-select: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        .step-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .step-content p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #888;
+            margin: 0;
+        }
+        .workflow-connector {
+            flex: 0 0 2.4rem;
+            width: 2.4rem;
+            height: 14px;
+            align-self: center;
+            position: relative;
+            pointer-events: none;
+        }
+        .workflow-connector::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.08) 0%,
+                rgba(255, 255, 255, 0.28) 50%,
+                rgba(255, 255, 255, 0.08) 100%
+            );
+        }
+        .workflow-connector::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid rgba(199, 210, 254, 0.85);
+            border-right: 1.5px solid rgba(199, 210, 254, 0.85);
+            transform: translateY(-50%) rotate(45deg);
+            opacity: 0.45;
+            filter: drop-shadow(0 0 6px rgba(129, 140, 248, 0.55));
+            animation: workflowConnectorFlow 2.2s ease-in-out infinite;
+        }
+        .workflow-connector:nth-of-type(2)::after {
+            animation-delay: 0.3s;
+        }
+        @keyframes workflowConnectorFlow {
+            0% {
+                left: 2px;
+                opacity: 0.15;
+            }
+            30% {
+                opacity: 0.9;
+            }
+            100% {
+                left: calc(100% - 8px);
+                opacity: 0.2;
+            }
+        }
+        
+        /* Emphasis in body text — not the link accent (reserved for <a>) */
+        .section-lead strong {
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 600;
+        }
+        .section-body strong {
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 600;
+        }
+        
+        /* About: wider measure so English lines don’t orphan a single word */
+        .section--about .section-lead {
+            max-width: min(100%, 56rem);
+        }
+        
+        .section--why .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .section--why .feature-item {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 1.6rem 1.3rem 1.4rem;
+            text-align: left;
+            transition: border-color 0.22s ease, background 0.22s ease;
+        }
+        .section--why .feature-item:hover {
+            border-color: rgba(99, 102, 241, 0.72);
+            background: rgba(99, 102, 241, 0.05);
+        }
+        .section--why .feature-icon {
+            width: 30px;
+            height: 30px;
+            color: #6366f1;
+            display: block;
+            margin-bottom: 1.05rem;
+        }
+        .section--why .feature-item h3 {
+            font-size: 1.02rem;
+            margin-bottom: 0.55rem;
+        }
+        .section--why .feature-item p {
+            font-size: 0.92rem;
+            line-height: 1.58;
+            color: #9ca3af;
+            margin: 0;
+        }
+        .authority-link {
+            text-decoration: underline;
+            color: inherit;
+        }
+        
+        h3 {
+            color: #f5f5f5;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+        
+        /* Use cases — one visual, minimal text */
+        .section--use-cases .section-lead {
+            margin-bottom: 0;
+        }
+        .section--use-cases .use-cases {
+            display: flex;
+            flex-direction: column;
+            gap: 10rem;
+            padding-top: 0;
+            margin-top: 12rem;
+        }
+        
+        .use-case {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .use-case--reverse .use-case-text {
+            order: 2;
+        }
+        
+        .use-case--reverse .use-case-visual {
+            order: 1;
+        }
+        
+        .use-case-visual {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: none;
+            padding: 0;
+            min-height: 420px;
+        }
 
-    .journal-arrow {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
-
-/* Responsive */
-@media (max-width: 968px) {
-    .product {
-        flex-direction: column !important;
-        text-align: center;
-        gap: 60px;
-    }
-
-    .product-screenshot.ios {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-</style>
+        .use-case-visual picture,
+        .use-case-visual img {
+            max-width: 100%;
+            max-height: 400px;
+            width: auto;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        
+        /* Use-case image aspect ratio (semantic classes) */
+        .use-case--square .use-case-visual img {
+            max-width: 280px;
+        }
+        
+        .use-case--portrait .use-case-visual img {
+            max-height: 420px;
+            max-width: 240px;
+        }
+        
+        .use-case--landscape .use-case-visual img {
+            max-width: 100%;
+        }
+        
+        .use-case-text h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        .use-case-text p {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .use-case {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .use-case-visual {
+                min-height: 0;
+                align-items: center;
+            }
+            .use-case--reverse .use-case-text,
+            .use-case--reverse .use-case-visual {
+                order: unset;
+            }
+            .section--use-cases .section-lead {
+                margin-bottom: 0;
+            }
+            .section--use-cases .use-cases {
+                gap: 5rem;
+                margin-top: 5rem;
+            }
+        }
+        
+        /* CTA — bottom breathing room + soft glow */
+        .section.cta-section {
+            position: relative;
+            padding: 12rem 1.5rem;
+            overflow: hidden;
+            text-align: center;
+        }
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cta-section .cta-title {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: none;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            border: none;
+            padding: 0;
+            background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.72) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .cta-lead {
+            font-size: 1.2rem;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.48);
+            margin: 0 auto 4rem;
+            max-width: 600px;
+            text-wrap: pretty;
+        }
+        .cta-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+        .download-button:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.28);
+            color: #fff;
+        }
+        .download-button:focus-visible {
+            outline: 2px solid rgba(165, 180, 252, 0.7);
+            outline-offset: 3px;
+        }
+        .cta-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.38);
+            margin: 0;
+        }
+        .cta-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: 1;
+            pointer-events: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .download-button {
+                transition-duration: 0.01ms;
+            }
+            .cta-glow {
+                filter: blur(48px);
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 10rem clamp(1.5rem, 4vw, 2.5rem) 5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0;
+        }
+        .footer .footer-tagline {
+            font-size: 0.85rem;
+            letter-spacing: 0.01em;
+            line-height: 1.35;
+            color: rgba(255, 255, 255, 0.95);
+            opacity: 0.3;
+            max-width: none;
+            width: 100%;
+            margin: 0 0 3rem !important;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            min-height: 46px;
+            background: linear-gradient(90deg, #4f46e5, #5b39d6);
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+            padding-bottom: env(safe-area-inset-bottom, 0);
+        }
+        .sticky-footer.is-hidden {
+            transform: translateY(110%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .sticky-footer .footer-content {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 48px 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 46px;
+        }
+        .sticky-footer .footer-icon {
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+            border-radius: 4px;
+            display: inline-block;
+            vertical-align: -2px;
+        }
+        .sticky-footer .footer-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.96);
+            min-width: 0;
+            text-align: center;
+            line-height: 1.3;
+        }
+        .sticky-footer .footer-inline-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+            padding-bottom: 1px;
+            white-space: nowrap;
+        }
+        .sticky-footer .footer-inline-link:hover {
+            border-bottom-color: rgba(255, 255, 255, 0.95);
+        }
+        .sticky-footer .footer-close {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            line-height: 1;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .sticky-footer .footer-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.55);
+        }
+        .sticky-footer .footer-close:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.7);
+            outline-offset: 2px;
+        }
+        
+        .container a,
+        .section a {
+            color: var(--accent-link);
+            text-decoration: none;
+        }
+        .container a:hover,
+        .section a:hover {
+            color: var(--accent-link-hover);
+            text-decoration: underline;
+        }
+        .footer a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a.footer-accent {
+            color: var(--accent-link);
+            margin: 0;
+        }
+        .footer a.footer-accent:hover {
+            color: var(--accent-link-hover);
+            text-decoration: underline;
+        }
+        
+        /* FAQ — responsive card grid */
+        .faq-section .faq-title {
+            margin-bottom: 0;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        @media (min-width: 769px) {
+            .faq-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .faq-card {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+        }
+        .faq-card.pricing-card--featured {
+            overflow: visible;
+        }
+        /* Top hairline reflex — stacked border hint without colored glow */
+        .faq-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .faq-card:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(99, 102, 241, 0.72);
+            transform: translateY(-4px);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .faq-card {
+                transition-duration: 0.01ms;
+            }
+            .faq-card:hover {
+                transform: none;
+            }
+        }
+        .faq-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        .faq-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #9ca3af;
+            margin-bottom: 0;
+        }
+        .privacy-pillar-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1rem;
+            display: block;
+            color: rgba(255, 255, 255, 0.48);
+        }
+        .privacy-pillar-icon path,
+        .privacy-pillar-icon line,
+        .privacy-pillar-icon rect {
+            vector-effect: non-scaling-stroke;
+        }
+        .privacy-pillar h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .privacy-pillar p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #888;
+        }
+        .section--privacy .faq-card:hover {
+            border-color: rgba(99, 102, 241, 0.72);
+            background: rgba(99, 102, 241, 0.05);
+        }
+        .section--format-matrix-visual {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .section--technical-standards {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .section--technical-standards .section-lead {
+            margin-bottom: 5rem;
+        }
+        .tech-standard-wrapper {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 32px;
+            padding: 4rem;
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+        }
+        .standard-part {
+            width: 100%;
+        }
+        .standard-part .matrix-container {
+            margin: 0 auto;
+        }
+        .part-divider {
+            display: flex;
+            align-items: center;
+            margin: 5rem 0;
+        }
+        .part-divider::before,
+        .part-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+        }
+        .part-divider span {
+            padding: 0 1.5rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .section--technical-standards .spec-table-wrap {
+            margin-top: 0;
+            padding: 0;
+            border: none;
+            background: transparent;
+        }
+        .native-advantage-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 0 auto 1.25rem;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .native-advantage-badge svg {
+            flex-shrink: 0;
+            opacity: 0.9;
+        }
+        .section--native-advantage {
+            text-align: center;
+        }
+        .section--native-advantage .section-lead {
+            max-width: min(100%, 46rem);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .matrix-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 4rem auto;
+            max-width: 900px;
+        }
+        .matrix-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .matrix-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.38);
+            text-transform: uppercase;
+        }
+        .matrix-label--accent {
+            color: var(--accent-link);
+        }
+        .format-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+        }
+        .tag-pro {
+            background: rgba(165, 180, 252, 0.05);
+            border: 1px solid rgba(165, 180, 252, 0.2);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .alpha-badge {
+            font-size: 0.65rem;
+            color: var(--accent-link);
+            margin-top: 4px;
+            font-weight: 400;
+        }
+        .matrix-connector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+            color: rgba(255, 255, 255, 0.1);
+        }
+        .connector-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        .ai-badge {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.45);
+            white-space: nowrap;
+        }
+        .matrix-footer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .matrix-footer .spec-item {
+            text-align: center;
+        }
+        .matrix-footer .spec-item strong {
+            display: block;
+            color: #fff;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .matrix-footer .spec-item span {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.85rem;
+        }
+        .pricing-section {
+            text-align: center;
+        }
+        .pricing-section .section-lead {
+            margin-bottom: 0;
+        }
+        .pricing-compare-note {
+            text-align: center;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 36rem;
+            margin: 0.75rem auto 1.75rem;
+            text-wrap: pretty;
+        }
+        .pricing-lifetime-line {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: rgba(199, 210, 254, 0.95);
+            margin: 0.35rem 0 0.65rem;
+            line-height: 1.45;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 0;
+        }
+        @media (min-width: 769px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .pricing-card {
+            text-align: center;
+        }
+        .pricing-card .pricing-title {
+            color: rgba(255, 255, 255, 0.96);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .pricing-price {
+            margin: 1rem 0 0.5rem;
+            padding-top: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            line-height: 1.1;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .pricing-price span {
+            font-size: 1rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        .pricing-card p {
+            margin: 0;
+        }
+        .pricing-card--featured {
+            position: relative;
+            overflow: visible;
+            border-color: rgba(99, 102, 241, 0.72);
+            background: rgba(255, 255, 255, 0.022);
+        }
+        .pricing-card--featured::before {
+            content: "";
+            position: absolute;
+            inset: 1px;
+            border-radius: 19px;
+            background: linear-gradient(
+                0deg,
+                rgba(99, 102, 241, 0.26) 0%,
+                rgba(99, 102, 241, 0.14) 28%,
+                rgba(99, 102, 241, 0.06) 52%,
+                rgba(99, 102, 241, 0) 78%
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+        .pricing-card--featured > * {
+            position: relative;
+            z-index: 1;
+        }
+        .pricing-badge {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: #6366f1;
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            z-index: 2;
+            pointer-events: none;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+        }
+        .pricing-comparison-section {
+            padding-top: 2.5rem;
+            padding-bottom: 5rem;
+            background: transparent;
+        }
+        .pricing-comparison-section .comparison-title {
+            text-align: center;
+            font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+            font-weight: 600;
+            margin: 0 0 1.8rem;
+            color: rgba(255, 255, 255, 0.96);
+            letter-spacing: -0.01em;
+        }
+        .pricing-comparison-section .comparison-wrapper {
+            overflow-x: auto;
+            max-width: 960px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.015);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+        .pricing-comparison-section .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.93rem;
+            color: rgba(255, 255, 255, 0.86);
+            min-width: 760px;
+        }
+        .pricing-comparison-section .comparison-table th,
+        .pricing-comparison-section .comparison-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            vertical-align: top;
+        }
+        .pricing-comparison-section .comparison-table th:nth-child(2),
+        .pricing-comparison-section .comparison-table th:nth-child(3),
+        .pricing-comparison-section .comparison-table td:nth-child(2),
+        .pricing-comparison-section .comparison-table td:nth-child(3) {
+            text-align: center;
+        }
+        .pricing-comparison-section .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .pricing-comparison-section .comparison-table th {
+            background: rgba(255, 255, 255, 0.02);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.65);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .pricing-comparison-section .comparison-table .pro-column .pro-line-main {
+            display: block;
+        }
+        .pricing-comparison-section .comparison-table .pro-column .pro-line-sub {
+            display: block;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 500;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            text-align: center;
+            margin-top: 2px;
+        }
+        .pricing-comparison-section .comparison-table .pro-column {
+            color: rgba(255, 255, 255, 0.86);
+            background: rgba(99, 102, 241, 0.18);
+        }
+        .pricing-comparison-section .comparison-table td:nth-child(3) {
+            background: rgba(99, 102, 241, 0.08);
+        }
+        .pricing-comparison-section .comparison-table .highlight-pro {
+            color: rgba(255, 255, 255, 0.86);
+            font-weight: 500;
+        }
+        .pricing-comparison-section .comparison-table .status-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .pricing-comparison-section .comparison-table .status-chip--yes {
+            background: #eef2ff;
+            color: #111827;
+        }
+        .pricing-comparison-section .comparison-table .status-chip--no {
+            background: rgba(148, 163, 184, 0.35);
+            color: #0f172a;
+        }
+        .pricing-comparison-section .comparison-table td.icon-cell {
+            text-align: center;
+            white-space: nowrap;
+        }
+        .pricing-comparison-section .comparison-table .icon-text-cell {
+            text-align: center;
+        }
+        .pricing-comparison-section .comparison-table .icon-text-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .pricing-comparison-section .comparison-table td:first-child {
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 500;
+            width: 34%;
+        }
+        .pricing-comparison-section .comparison-readmore {
+            margin: 1rem auto 0;
+            max-width: 960px;
+            text-align: center;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.66);
+        }
+        .pricing-comparison-section .comparison-readmore a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .pricing-comparison-section .comparison-readmore a:hover {
+            color: #c7d2fe;
+            border-bottom-color: rgba(199, 210, 254, 0.7);
+        }
+        .guides-section {
+            padding: 5rem 0;
+            background: transparent;
+            margin: 0 0 2rem;
+        }
+        .guides-title {
+            text-align: center;
+            margin: 0 0 2rem;
+            font-size: clamp(1.5rem, 3vw, 1.85rem);
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .guide-card {
+            text-decoration: none;
+            color: inherit;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 1.3rem 1.15rem;
+            transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+            display: block;
+        }
+        .guide-card:hover {
+            border-color: rgba(99, 102, 241, 0.72);
+            transform: translateY(-4px);
+            background: rgba(99, 102, 241, 0.06);
+        }
+        .guide-card-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #818cf8;
+        }
+        .guide-card h3 {
+            font-size: 1.05rem;
+            margin: 0.7rem 0;
+            color: #f3f4f6;
+        }
+        .guide-card p {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .guide-card-more {
+            margin-top: 0.9rem;
+            font-size: 0.82rem;
+            color: #a5b4fc;
+            font-weight: 500;
+        }
+        @media (max-width: 640px) {
+            .pricing-comparison-section {
+                padding-top: 2rem;
+                padding-bottom: 4rem;
+            }
+            .pricing-comparison-section .comparison-table th,
+            .pricing-comparison-section .comparison-table td {
+                padding: 11px 14px;
+                font-size: 0.8rem;
+            }
+        }
+        /* Technical comparison table — CLS-safe layout, no inline styles */
+        .spec-table-wrap {
+            margin-top: 0;
+            overflow-x: auto;
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+        .spec-table caption {
+            caption-side: bottom;
+            padding-top: 0.75rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: left;
+        }
+        .spec-table th,
+        .spec-table td {
+            text-align: left;
+            padding: 10px 8px;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .spec-table thead th {
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+            font-weight: 700;
+            font-size: 0.92rem;
+            letter-spacing: 0.01em;
+            color: rgba(255, 255, 255, 0.94);
+        }
+        .spec-table tbody th[scope="row"] {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .spec-col-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .spec-col-icon-app {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            display: block;
+        }
+        .spec-col-icon-cloud {
+            width: 16px;
+            height: 16px;
+            display: block;
+            color: rgba(148, 163, 184, 0.95);
+            flex-shrink: 0;
+        }
+        .spec-table thead th:nth-child(2) {
+            background: rgba(99, 102, 241, 0.16);
+        }
+        .spec-table tbody td:nth-child(2) {
+            background: rgba(99, 102, 241, 0.08);
+        }
+        .spec-table .spec-highlight {
+            color: #f5f5f5;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            .hero-demo {
+                margin-bottom: 1.5rem;
+            }
+            .badge-link img {
+                height: 40px;
+            }
+            .section.cta-section {
+                padding: 8rem 1.5rem;
+            }
+            .cta-section .cta-title {
+                font-size: 2.2rem;
+            }
+            .section--why .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+            .matrix-container {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            .matrix-connector {
+                flex-direction: column;
+            }
+            .connector-line {
+                width: 1px;
+                height: 40px;
+                background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            }
+            .tech-standard-wrapper {
+                padding: 2rem 1rem;
+            }
+            .part-divider {
+                margin: 3rem 0;
+            }
+            body {
+                padding-bottom: 88px;
+            }
+            .sticky-footer .footer-content {
+                padding: 0 38px 0 12px;
+            }
+        }
+        @media (max-width: 980px) {
+            .top-bar {
+                top: 10px;
+                left: 12px;
+                right: 12px;
+                transform: none;
+                width: auto;
+                min-height: 52px;
+                border-radius: 18px;
+                padding: 0.35rem 0.55rem 0.35rem 0.7rem;
+            }
+            .top-bar-nav {
+                display: none;
+            }
+            .top-bar-menu-toggle {
+                display: inline-flex;
+            }
+            .top-bar-name {
+                font-size: 1rem;
+            }
+            .language-toggle {
+                min-height: 32px;
+                padding: 0 9px 0 7px;
+            }
+            .top-bar.top-bar--menu-open:not(.top-bar--scrolled) {
+                background: rgba(7, 8, 13, 0.6);
+                border-color: rgba(255, 255, 255, 0.12);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+            }
+        }
+        @media (min-width: 981px) {
+            .top-bar-mobile-nav {
+                display: none !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .sticky-footer .footer-text span {
+                display: inline;
+            }
+            .sticky-footer .footer-text {
+                font-size: 13px;
+            }
+            .sticky-footer .footer-icon {
+                display: none;
+            }
+            .sticky-footer .footer-close {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        @media (max-width: 992px) {
+            .workflow-container {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            .workflow-connector {
+                display: none;
+            }
+            .step-number {
+                font-size: 4rem;
+                top: 0.5rem;
+                right: 1rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .workflow-break-desktop {
+                display: block;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header class="top-bar">
+        <a href="./" class="top-bar-brand">
+            <img src="images/app-icon.png" alt="TransMov macOS AI background removal app icon" class="top-bar-icon" width="32" height="32">
+            <span class="top-bar-name">TransMov</span>
+        </a>
+        <nav class="top-bar-nav" aria-label="Primary">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#guides">Guides</a></li>
+                <li><a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" class="top-bar-nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'top_nav'});">Download</a></li>
+            </ul>
+        </nav>
+        <div class="top-bar-actions">
+            <button type="button" class="top-bar-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="top-bar-mobile-nav" data-top-bar-menu-toggle>
+                <span class="top-bar-menu-icon" aria-hidden="true">☰</span>
+            </button>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Language: English">
+                    <span class="language-toggle-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M2 12h20"></path>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </span>
+                    <span class="current-language">EN</span>
+                    <span class="chevron" aria-hidden="true">▾</span>
+                </button>
+                <ul class="language-menu" role="menu" aria-label="Language options">
+                    <li role="none"><a role="menuitem" href="./" class="active" lang="en">English</a></li>
+                    <li role="none"><a role="menuitem" href="zh/" lang="zh-CN">简体中文</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="top-bar-mobile-nav" id="top-bar-mobile-nav" aria-label="Site" hidden>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#guides">Guides</a></li>
+                <li><a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" class="top-bar-mobile-nav-download" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'top_nav_mobile'});">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <div class="hero">
+            <div class="hero-inner">
+                <div class="hero-layout">
+                    <div class="hero-content">
+                        <h1 class="hero-headline">Remove Video Background Instantly with AI —<span class="hero-break-desktop"></span>100% Local on Mac</h1>
+                        <p class="hero-subheadline">Convert video to transparent APNG, GIF, WebP — no upload, no cloud, no&nbsp;risk.</p>
+                        <div class="hero-cta badges-container">
+                            <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener" class="badge-link" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'hero'});">
+                                <img src="images/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
+                            </a>
+                        </div>
+                        <p class="hero-note">Only 3.3MB • Runs fully on your Mac • No internet required</p>
+                    </div>
+                    <div class="hero-media">
+                        <div class="comparison-reveal" data-comparison-reveal>
+                            <div class="comparison-reveal-stage">
+                                <div class="comparison-checkerboard" aria-hidden="true"></div>
+                                <div class="comparison-layer comparison-layer--after">
+                                    <picture>
+                                        <source type="image/webp" srcset="images/after-comparison.webp">
+                                        <img
+                                            class="comparison-gif-after"
+                                            src="images/after-comparison.gif"
+                                            alt="Transparent WebP animation by TransMov — AI background removal result"
+                                            width="540"
+                                            height="960"
+                                            loading="lazy"
+                                            decoding="async"
+                                            fetchpriority="low">
+                                    </picture>
+                                </div>
+                                <div class="comparison-layer comparison-layer--before">
+                                    <video
+                                        class="comparison-video-before"
+                                        src="images/before-comparison.mp4"
+                                        poster="images/before-comparison-poster.jpg"
+                                        width="360"
+                                        height="640"
+                                        preload="metadata"
+                                        muted
+                                        loop
+                                        playsinline
+                                        title="Original video before AI background removal">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section section--privacy">
+                <h2>Your Videos Never Leave Your Mac</h2>
+                <p class="section-lead">
+                    <strong>No uploads. No servers. No risk.</strong><br>
+                    Unlike online tools, everything runs locally — so your files stay private, even for NDA or client work.
+                </p>
+                <div class="faq-grid">
+                    <div class="faq-card privacy-pillar">
+                        <svg class="privacy-pillar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="4" y="5" width="16" height="11" rx="1.75" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                            <path d="M9 19.5h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                            <path d="M7.5 22.5h9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                        </svg>
+                        <h3>100% Local Processing</h3>
+                        <p>AI segmentation runs on-device with Apple Vision on your Mac — including Neural Engine acceleration where available. Your creative assets never leave your local environment, supporting strong privacy expectations.</p>
+                    </div>
+                    <div class="faq-card privacy-pillar">
+                        <svg class="privacy-pillar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path
+                                d="M6.5 17.5h11.5a3.5 3.5 0 0 0 .2-7 4.4 4.4 0 0 0-8.4-1.3 3.7 3.7 0 0 0-3.3 8.3z"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linejoin="round"></path>
+                            <path d="M4.5 5.5 19.5 18.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                        </svg>
+                        <h3>Zero Data Logging</h3>
+                        <p>We don't track your usage, we don't collect your files, and we don't run a backend for your media. TransMov is a native tool — not a cloud service.</p>
+                    </div>
+                </div>
+            </div>
 
-<div class="progress-bar" id="progressBar"></div>
+            <div class="section section--why" id="features">
+                <h2>Why Choose TransMov for Video Background Removal on Mac</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+                            <path d="M8 10V7.6a4 4 0 0 1 8 0V10"></path>
+                            <circle cx="12" cy="15" r="1.2" fill="currentColor" stroke="none"></circle>
+                        </svg>
+                        <h3>100% Local Processing — No Upload Required</h3>
+                        <p>No upload, no server exposure. Sensitive assets stay fully on your Mac from import to export.</p>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="7" y="7" width="10" height="10" rx="2"></rect>
+                            <path d="M12 3.6v2.2M12 18.2v2.2M3.6 12h2.2M18.2 12h2.2"></path>
+                            <path d="M10 10h4M10 14h4M12 10v4"></path>
+                        </svg>
+                        <h3>Optimized for Apple Silicon — Fast, Real-Time Processing</h3>
+                        <p>Powered by the <a href="https://developer.apple.com/documentation/vision" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Vision framework</a> and <a href="https://support.apple.com/116943" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Silicon</a> Neural Engine acceleration for instant, production-ready results.</p>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <path d="M12 4v10"></path>
+                            <path d="m8.6 10.4 3.4 3.6 3.4-3.6"></path>
+                            <path d="M5 15.5v2.3A2.2 2.2 0 0 0 7.2 20h9.6a2.2 2.2 0 0 0 2.2-2.2v-2.3"></path>
+                            <rect x="4.2" y="3.8" width="15.6" height="16.4" rx="2.4" opacity="0.18"></rect>
+                        </svg>
+                        <h3>True Transparency Export (APNG, WebP, GIF)</h3>
+                        <p>Export 8-bit alpha APNG and WebP for seamless design integration, plus GIF for compatibility.</p>
+                    </div>
+                </div>
+            </div>
 
-<main>
-<section class="hero">
-    <h1>Louis Builds</h1>
-    <p>Built with intention. Designed to feel effortless.</p>
-    <a href="#products" class="explore-btn">Explore Apps</a>
-</section>
+            <section id="how-it-works" class="section section--workflow" aria-labelledby="how-it-works-heading">
+                <h2 id="how-it-works-heading">From Video to Transparent Animation<span class="workflow-break-desktop"></span> in 3 Steps</h2>
+                <p class="section-lead section-lead--spacious">No upload. No setup. Just drag, process, export.</p>
 
-<section class="products" id="products">
+                <div class="workflow-container">
+                    <div class="workflow-step">
+                        <div class="step-number" aria-hidden="true">01</div>
+                        <div class="step-content">
+                            <h3>Drop your file</h3>
+                            <p>Drag &amp; drop. No uploads.</p>
+                        </div>
+                    </div>
 
-<!-- TapPause -->
-<div class="product">
-<div class="product-info">
-<h2><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60"> TapPause</h2>
-<p>A minimal pause timer to stop, pause, and rest. Designed for intentional breaks.</p>
-<div class="tags">iOS · Health &amp; Fitness · v1.1</div>
-<div class="tags doc-lang-links" style="margin-top: -20px;">
-Documentation available in:
-<a href="tappause/" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="tappause/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
-<a href="tappause/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
-<a href="tappause/index-es.html" style="color: inherit; text-decoration: underline;">Español</a> ·
-<a href="tappause/index-ja.html" style="color: inherit; text-decoration: underline;">日本語</a> ·
-<a href="tappause/index-ko.html" style="color: inherit; text-decoration: underline;">한국어</a> ·
-<a href="tappause/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
-</div>
-<div class="buttons">
-<a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download TapPause on the App Store" width="120" height="40">
-</a>
-<a href="tappause/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="product-screenshot ios">
-<img src="tappause/screenshot1.webp" srcset="tappause/screenshot1-400w.webp 400w, tappause/screenshot1-800w.webp 800w, tappause/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - duration selection" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot2.webp" srcset="tappause/screenshot2-400w.webp 400w, tappause/screenshot2-800w.webp 800w, tappause/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - pause timer" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot3.webp" srcset="tappause/screenshot3-400w.webp 400w, tappause/screenshot3-800w.webp 800w, tappause/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot4.webp" srcset="tappause/screenshot4-400w.webp 400w, tappause/screenshot4-800w.webp 800w, tappause/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - splash screen" width="1242" height="2688" loading="lazy">
-</div>
-</div>
+                    <div class="workflow-connector" aria-hidden="true"></div>
 
-<!-- PurrrrrFocus -->
-<div class="product">
-<div class="product-info">
-<h2><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60"> PurrrrrFocus</h2>
-<p>Deep focus timers with progress tracking and your cat companion.</p>
-<div class="tags">iOS · iPhone &amp; iPad · v2.3 · Productivity · Utilities</div>
-<div class="tags" style="margin-top: -20px;">
-Documentation available in:
-<a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
-<a href="purrrrrfocus/index-en.html" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="purrrrrfocus/index-da.html" style="color: inherit; text-decoration: underline;">Dansk</a> ·
-<a href="purrrrrfocus/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
-<a href="purrrrrfocus/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
-</div>
-<div class="buttons">
-<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40">
-</a>
-<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="product-screenshot ios">
-<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
-</div>
-</div>
+                    <div class="workflow-step">
+                        <div class="step-number" aria-hidden="true">02</div>
+                        <div class="step-content">
+                            <h3>AI magic</h3>
+                            <p>Instant AI isolation. Powered by Neural Engine.</p>
+                        </div>
+                    </div>
 
-<!-- TransMov -->
-<div class="product">
-<div class="product-info">
-<h2><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60"> TransMov</h2>
-<p>Convert videos into transparent GIF, APNG, and WebP with AI-powered background removal — fully offline on your Mac.</p>
-<div class="tags">macOS · Graphics &amp; Design · Productivity · v2.0</div>
-<div class="tags" style="margin-top: -20px;">
-Documentation available in:
-<a href="transmov/" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="transmov/zh/" style="color: inherit; text-decoration: underline;">中文</a>
-</div>
-<div class="buttons">
-<a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TransMov on the Mac App Store">
-<img src="assets/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40">
-</a>
-<a href="transmov/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="product-screenshot macos">
-<img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
-</div>
-</div>
+                    <div class="workflow-connector" aria-hidden="true"></div>
 
-<!-- Phonetic Formatter -->
-<div class="product">
-<div class="product-info">
-<h2><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60"> Phonetic Formatter</h2>
-<p>Convert English text into accurate IPA transcription. Supports sentence-level and word-aligned formatting.</p>
-<div class="tags">iOS · Tools · v1.1 · English · IPA · Linguistics</div>
-<div class="tags" style="margin-top: -20px;">
-Documentation available in:
-<a href="phoneticformatter/index-zh.html" style="color: inherit; text-decoration: underline;">中文</a> ·
-<a href="phoneticformatter/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
-<a href="phoneticformatter/index-es.html" style="color: inherit; text-decoration: underline;">Español</a> ·
-<a href="phoneticformatter/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a>
-</div>
-<div class="buttons">
-<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Phonetic Formatter on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download Phonetic Formatter on the App Store" width="120" height="40">
-</a>
-<a href="phoneticformatter/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="product-screenshot ios">
-<img src="phoneticformatter/screenshot1.webp" srcset="phoneticformatter/screenshot1-400w.webp 400w, phoneticformatter/screenshot1-800w.webp 800w, phoneticformatter/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - process full English texts, input and generate" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot2.webp" srcset="phoneticformatter/screenshot2-400w.webp 400w, phoneticformatter/screenshot2-800w.webp 800w, phoneticformatter/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - sentence-level alignment, original text with IPA transcription" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot3.webp" srcset="phoneticformatter/screenshot3-400w.webp 400w, phoneticformatter/screenshot3-800w.webp 800w, phoneticformatter/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - word-aligned transcription, each word with IPA form" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot4.webp" srcset="phoneticformatter/screenshot4-400w.webp 400w, phoneticformatter/screenshot4-800w.webp 800w, phoneticformatter/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - copy or export to TXT DOCX PDF" width="1242" height="2688" loading="lazy">
-</div>
-</div>
+                    <div class="workflow-step">
+                        <div class="step-number" aria-hidden="true">03</div>
+                        <div class="step-content">
+                            <h3>Save &amp; Use</h3>
+                            <p>Pro export. Ready for any platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-</section>
+            <section id="technical-standards" class="section section--technical-standards" aria-labelledby="technical-standards-heading">
+                <h2 id="technical-standards-heading">Technical Standards</h2>
+                <p class="section-lead">
+                    Built for high-end production environments with no quality compromise.
+                </p>
 
-<section class="journal-section" id="journal" aria-labelledby="journal-heading">
-    <div class="section-header">
-        <h2 id="journal-heading">Journal</h2>
-        <p class="subtitle">Notes on craft, focus, and building independent apps.</p>
+                <div class="tech-standard-wrapper">
+                    <div id="format-matrix" class="standard-part section--format-matrix-inner">
+                        <div class="matrix-container">
+                            <div class="matrix-column">
+                                <span class="matrix-label">Input Source</span>
+                                <div class="format-group">
+                                    <span class="tag">MOV</span>
+                                    <span class="tag">MP4</span>
+                                </div>
+                            </div>
+
+                            <div class="matrix-connector" aria-hidden="true">
+                                <div class="connector-line"></div>
+                                <div class="ai-badge">Native AI</div>
+                                <div class="connector-line"></div>
+                            </div>
+
+                            <div class="matrix-column">
+                                <span class="matrix-label matrix-label--accent">Pro Output</span>
+                                <div class="format-group">
+                                    <div class="tag-pro">
+                                        APNG
+                                        <span class="alpha-badge">8-bit Alpha</span>
+                                    </div>
+                                    <div class="tag-pro">
+                                        WebP
+                                        <span class="alpha-badge">8-bit Alpha</span>
+                                    </div>
+                                    <span class="tag">GIF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="part-divider">
+                        <span>Detailed Capability Comparison</span>
+                    </div>
+
+                    <div class="standard-part">
+                        <div class="spec-table-wrap">
+                            <table class="spec-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Capabilities</th>
+                                        <th scope="col">
+                                            <span class="spec-col-label">
+                                                <img src="images/app-icon.png" alt="" class="spec-col-icon-app" width="16" height="16" aria-hidden="true">
+                                                <span>TransMov (Native AI)</span>
+                                            </span>
+                                        </th>
+                                        <th scope="col">
+                                            <span class="spec-col-label">
+                                                <svg class="spec-col-icon-cloud" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M6.8 18.2h10.3a3.1 3.1 0 0 0 .2-6.2 4.2 4.2 0 0 0-8-1.2 3.4 3.4 0 0 0-2.5 7.4z"></path>
+                                                </svg>
+                                                <span>Legacy Cloud Services</span>
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Max Resolution</th>
+                                        <td class="spec-highlight">Original Quality (No Limit)</td>
+                                        <td>Often capped (e.g., 720p)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Data Privacy</th>
+                                        <td class="spec-highlight">100% Offline (On-Device)</td>
+                                        <td>Stored on 3rd-party servers</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Transparency</th>
+                                        <td class="spec-highlight">8-bit Pro Alpha Channel (APNG/WebP)</td>
+                                        <td>1-bit or restricted GIF</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Data Ownership</th>
+                                        <td class="spec-highlight">You own it</td>
+                                        <td>Terms may vary</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Pricing Model</th>
+                                        <td class="spec-highlight">Lifetime Buyout Available</td>
+                                        <td>Monthly / credit-based</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section section--use-cases" id="use-cases">
+                <h2>Built for How You Ship</h2>
+                <p class="section-lead">From UI polish to campaigns and shipping — three ways teams use TransMov.</p>
+                <div class="use-cases">
+                    <div class="use-case use-case--square">
+                        <div class="use-case-text">
+                            <h3>Create Transparent Motion for UI &amp; Prototypes</h3>
+                            <p>Turn short clips into crisp, transparent motion for app UI, onboarding, and interactive prototypes — lightweight assets, zero cloud handoff.</p>
+                        </div>
+                        <div class="use-case-visual">
+                            <picture>
+                                <source type="image/webp" srcset="images/use-case-1.webp">
+                                <source type="image/png" srcset="images/use-case-1.png">
+                                <img src="images/use-case-1.gif" alt="Transparent animated image for app UI created by TransMov — APNG GIF WebP export" width="280" height="280" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="use-case use-case--portrait use-case--reverse">
+                        <div class="use-case-text">
+                            <h3>Turn Videos into Branded Social Content</h3>
+                            <p>Repurpose video and AI-generated clips into branded loops with clean cutouts — all processed locally for consistent, repeatable output.</p>
+                        </div>
+                        <div class="use-case-visual">
+                            <picture>
+                                <source type="image/webp" srcset="images/use-case-2.webp">
+                                <source type="image/png" srcset="images/use-case-2.png">
+                                <img src="images/use-case-2.gif" alt="AI video to transparent animated image with TransMov — local background removal" width="240" height="420" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="use-case use-case--landscape">
+                        <div class="use-case-text">
+                            <h3>Production Web &amp; Motion</h3>
+                            <p>Export APNG, WebP, or GIF for landing pages, decks, and handoff — tuned for modern browsers and design tools.</p>
+                        </div>
+                        <div class="use-case-visual">
+                            <picture>
+                                <source type="image/webp" srcset="images/use-case-3.webp">
+                                <source type="image/png" srcset="images/use-case-3.png">
+                                <img src="images/use-case-3.gif" alt="Transparent WebP GIF for web and design export from TransMov" width="640" height="360" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section pricing-section" id="pricing">
+                <h2>Simple, Native Pricing</h2>
+                <p class="section-lead">Professional tools shouldn't come with hidden cloud costs.</p>
+                <p class="pricing-compare-note">Stop paying for monthly cloud credits.</p>
+                <div class="pricing-grid">
+                    <div class="faq-card pricing-card">
+                        <h3 class="pricing-title">Monthly Subscription</h3>
+                        <div class="pricing-price">$2.99 <span>/mo</span></div>
+                        <p>Full access. Cancel anytime.</p>
+                    </div>
+                    <div class="faq-card pricing-card">
+                        <h3 class="pricing-title">Annual Subscription</h3>
+                        <div class="pricing-price">$19.99 <span>/yr</span></div>
+                        <p>Lower effective monthly cost for regular use.</p>
+                    </div>
+                    <div class="faq-card pricing-card pricing-card--featured">
+                        <span class="pricing-badge">BEST VALUE</span>
+                        <h3 class="pricing-title">Lifetime Access</h3>
+                        <div class="pricing-price">$29.99 <span>/once</span></div>
+                        <p class="pricing-lifetime-line">Own the tool, keep your privacy. Forever.</p>
+                        <p>One payment, lifetime local access.</p>
+                    </div>
+                </div>
+            </div>
+            <section class="section comparison-section pricing-comparison-section">
+                <h3 class="comparison-title">Comparison of Features</h3>
+                <div class="comparison-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Capability</th>
+                                <th>Free</th>
+                                <th class="pro-column">
+                                    <span class="pro-line-main">Pro</span>
+                                    <span class="pro-line-sub">(subscription/lifetime)</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Unlimited Video Duration</td>
+                                <td class="icon-cell"><span class="status-chip status-chip--no" aria-label="Limited">×</span></td>
+                                <td class="icon-cell"><span class="status-chip status-chip--yes" aria-label="Unlimited">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Export Formats</td>
+                                <td>GIF</td>
+                                <td><span class="highlight-pro">APNG / GIF / WebP / PNG Sequence</span></td>
+                            </tr>
+                            <tr>
+                                <td>Watermark-Free Export</td>
+                                <td class="icon-cell"><span class="status-chip status-chip--no" aria-label="With watermark">×</span></td>
+                                <td class="icon-cell"><span class="status-chip status-chip--yes" aria-label="No watermark">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Custom Resolution</td>
+                                <td class="icon-cell"><span class="status-chip status-chip--no" aria-label="Disabled">×</span></td>
+                                <td class="icon-text-cell">
+                                    <span class="icon-text-wrap">
+                                        <span class="status-chip status-chip--yes" aria-label="Enabled">✓</span>
+                                        <span class="highlight-pro">100 - 4096px</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Edge Tools</td>
+                                <td class="icon-cell"><span class="status-chip status-chip--no" aria-label="Disabled">×</span></td>
+                                <td class="icon-text-cell">
+                                    <span class="icon-text-wrap">
+                                        <span class="status-chip status-chip--yes" aria-label="Enabled">✓</span>
+                                        <span class="highlight-pro">Feather / Scale / Sharpen / Denoise / Smooth</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Spatial Crop (Reframing)</td>
+                                <td class="icon-cell"><span class="status-chip status-chip--no" aria-label="Disabled">×</span></td>
+                                <td class="icon-cell"><span class="status-chip status-chip--yes" aria-label="Enabled">✓</span></td>
+                            </tr>
+                            <tr>
+                                <td>Matting Modes</td>
+                                <td>AI / Chroma Key</td>
+                                <td>AI / Chroma Key</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="comparison-readmore">💡 Not sure which format to choose? Read our deep dive: <a href="blog/what-is-apng.html">APNG vs. GIF: Which is better for your project? →</a></p>
+            </section>
+
+            <div class="section section--native-advantage">
+                <h2>The Native Advantage</h2>
+                <div class="native-advantage-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="5" y="4" width="14" height="12" rx="1.5"></rect>
+                        <path d="M9 20h6" stroke-linecap="round"></path>
+                    </svg>
+                    <span>Designed for macOS</span>
+                </div>
+                <p class="section-lead">
+                    TransMov was born from a simple need: a professional-grade, one-time payment tool for Mac users that respects privacy. We don't believe in cloud subscriptions for tasks your Mac can handle locally.
+                </p>
+            </div>
+            <section id="guides" class="section guides-section" aria-labelledby="guides-heading">
+                <h2 id="guides-heading" class="guides-title">Resources &amp; Guides</h2>
+                <div class="guides-grid">
+                    <a href="blog/what-is-apng.html" class="guide-card">
+                        <span class="guide-card-tag">Format Guide</span>
+                        <h3>What is APNG?</h3>
+                        <p>Learn why APNG is the superior successor to GIF for high-quality transparent animations.</p>
+                        <div class="guide-card-more">Read More →</div>
+                    </a>
+                    <a href="blog/why-local-ai-matters-for-video-privacy.html" class="guide-card">
+                        <span class="guide-card-tag guide-card-tag--privacy">Privacy</span>
+                        <h3>Why Local AI Matters</h3>
+                        <p>How processing video on your Mac protects your data better than any cloud-based tool.</p>
+                        <div class="guide-card-more">Read More →</div>
+                    </a>
+                    <a href="blog/transparent-animation-web-design-workflow.html" class="guide-card">
+                        <span class="guide-card-tag guide-card-tag--workflow">Workflow</span>
+                        <h3>Web Design Workflows</h3>
+                        <p>Best practices for integrating transparent animations into modern web and app projects.</p>
+                        <div class="guide-card-more">Read More →</div>
+                    </a>
+                </div>
+            </section>
+
+            <div class="section faq-section">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <h3>How do I convert a video to APNG on macOS?</h3>
+                        <p>You can convert a video to APNG by importing your video into TransMov, selecting APNG as the output format, and exporting the animation. Everything is processed locally on macOS.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h3>Does GIF support transparency?</h3>
+                        <p>GIF only supports 1-bit transparency (fully on or off), which can cause jagged edges. Formats like APNG and WebP support full alpha transparency for smoother and more natural results.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h3>What is the difference between APNG and GIF?</h3>
+                        <p>APNG supports full color and alpha transparency, while GIF is limited to 256 colors and basic transparency. APNG generally produces higher-quality animations, especially for UI and gradient-heavy content.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h3>Can I remove video backgrounds locally on Mac?</h3>
+                        <p>Yes. TransMov uses the <a href="https://developer.apple.com/documentation/vision" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Vision framework</a> and on-device processing to remove video backgrounds without uploading files, ensuring privacy and fast performance.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h3>Which format is best for web animations?</h3>
+                        <p>It depends on your needs. GIF is widely supported, APNG offers better quality with transparency, and WebP provides better compression in many cases. For UI and design assets, APNG or WebP are often preferred.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <section class="section cta-section" aria-labelledby="cta-heading">
+                <div class="cta-container">
+                    <div class="cta-glow" aria-hidden="true"></div>
+
+                    <h2 id="cta-heading" class="cta-title">Start Removing Video Backgrounds<span class="workflow-break-desktop"></span> in Seconds</h2>
+                    <p class="cta-lead">Download TransMov and create transparent assets locally on your Mac.</p>
+
+                    <div class="cta-actions">
+                        <a
+                            href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8"
+                            class="download-button"
+                            target="_blank"
+                            rel="noopener"
+                            onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'cta'});">
+                            <span class="btn-text">Download on the Mac App Store</span>
+                        </a>
+                        <p class="cta-note">Version 2.0 · macOS 14 or later</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-tagline">TransMov is a lightweight macOS utility for designers to remove video backgrounds locally.</p>
+            <p>
+                <a href="privacy-policy.html?lang=en">Privacy Policy</a> |
+                <a href="support.html?lang=en">Support</a> |
+                <a href="terms-of-service.html?lang=en">Terms of Service</a>
+            </p>
+            <p style="margin-top: 10px;">© 2026 TransMov</p>
+            <p>A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
+        </div>
+    </main>
+
+    <div class="sticky-footer is-hidden" data-sticky-footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <img src="images/app-icon.png" alt="TransMov macOS AI background removal app icon" class="footer-icon" width="32" height="32">
+                <span><strong>TransMov</strong> — AI Video Background Remover for Mac</span>
+                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" class="footer-inline-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'sticky_footer'});">Try it free →</a>
+            </div>
+            <button class="footer-close" type="button" aria-label="Close download bar" data-sticky-footer-close>×</button>
+        </div>
     </div>
+    
+    <script>
+        function initComparisonReveal() {
+            var root = document.querySelector('[data-comparison-reveal]');
+            if (!root) return;
+            var before = root.querySelector('.comparison-video-before');
+            var after = root.querySelector('.comparison-gif-after');
+            if (!before || !after) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                before.play().catch(function() {});
+                return;
+            }
+            var intervalMs = 3000;
+            var timer = null;
+            var showingAfter = false;
+            function restartGif() {
+                var src = after.getAttribute('src');
+                if (src) {
+                    after.setAttribute('src', '');
+                    after.setAttribute('src', src);
+                }
+            }
+            function showBefore() {
+                showingAfter = false;
+                root.classList.remove('comparison-reveal--after');
+                before.currentTime = 0;
+                before.play().catch(function() {});
+            }
+            function showAfter() {
+                showingAfter = true;
+                root.classList.add('comparison-reveal--after');
+                before.pause();
+                restartGif();
+            }
+            function tick() {
+                if (showingAfter) showBefore();
+                else showAfter();
+            }
+            function startCycle() {
+                if (timer) return;
+                showBefore();
+                timer = window.setInterval(tick, intervalMs);
+            }
+            function stopCycle() {
+                if (timer) {
+                    window.clearInterval(timer);
+                    timer = null;
+                }
+                root.classList.remove('comparison-reveal--after');
+                before.pause();
+                showingAfter = false;
+            }
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) startCycle();
+                    else stopCycle();
+                });
+            }, { rootMargin: '50px', threshold: 0.2 });
+            observer.observe(root);
+        }
+        window.addEventListener('load', initComparisonReveal);
+        
+        function initTopBarScroll() {
+            var bar = document.querySelector('.top-bar');
+            if (!bar) return;
+            var threshold = 8;
+            function update() {
+                var y = window.scrollY || window.pageYOffset || 0;
+                bar.classList.toggle('top-bar--scrolled', y > threshold);
+            }
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update, { passive: true });
+            update();
+        }
+        window.addEventListener('load', initTopBarScroll);
 
-    <div class="journal-list">
-        <article class="journal-item">
-            <a href="/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html" class="journal-link">
-                <span class="journal-date">Mar 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Engineering</span>
-                    <h3 class="journal-title">The Technical Challenge of Aligning English Sentences with IPA</h3>
-                    <p class="journal-excerpt">Building a word-aligned transcription engine that works 100% offline.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
-            </a>
-        </article>
-        <article class="journal-item">
-            <a href="/blog/the-zen-of-productivity-silent-companion.html" class="journal-link">
-                <span class="journal-date">Feb 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Design</span>
-                    <h3 class="journal-title">Digital Minimalism &amp; China-Chic: The Zen of a Cat-Themed Pomodoro Timer</h3>
-                    <p class="journal-excerpt">Exploring the balance between Guochao aesthetics and deep work rituals.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
-            </a>
-        </article>
-        <article class="journal-item">
-            <a href="/blog/building-offline-first-apps.html" class="journal-link">
-                <span class="journal-date">Jan 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Philosophy</span>
-                    <h3 class="journal-title">Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud</h3>
-                    <p class="journal-excerpt">My commitment to privacy: why none of my 4 apps require an account.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
-            </a>
-        </article>
-    </div>
-</section>
+        function initTopBarMobileMenu() {
+            var header = document.querySelector('.top-bar');
+            var toggle = document.querySelector('[data-top-bar-menu-toggle]');
+            var nav = document.getElementById('top-bar-mobile-nav');
+            if (!header || !toggle || !nav) return;
 
-</main>
+            function closeMenu() {
+                nav.hidden = true;
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Open navigation menu');
+                header.classList.remove('top-bar--menu-open');
+            }
+            function openMenu() {
+                var ls = document.querySelector('[data-language-switcher]');
+                if (ls) {
+                    ls.classList.remove('open');
+                    var lt = ls.querySelector('.language-toggle');
+                    if (lt) lt.setAttribute('aria-expanded', 'false');
+                }
+                nav.hidden = false;
+                toggle.setAttribute('aria-expanded', 'true');
+                toggle.setAttribute('aria-label', 'Close navigation menu');
+                header.classList.add('top-bar--menu-open');
+            }
 
-<footer>
-<div>
-<a href="mailto:support@louisbuilds.me">Contact</a>
-<a href="https://github.com/louischen737" target="_blank" rel="noopener noreferrer">GitHub</a>
-</div>
-<p>Independent apps, thoughtfully built. © 2026 Louis Builds.</p>
-</footer>
+            toggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+                if (nav.hidden) openMenu();
+                else closeMenu();
+            });
 
-<script>
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-}
-});
-}, { threshold: 0.15 });
+            nav.addEventListener('click', function(event) {
+                var t = event.target;
+                if (t && t.closest && t.closest('a')) closeMenu();
+            });
 
-document.querySelectorAll('.product, .journal-section').forEach(el => observer.observe(el));
+            document.addEventListener('click', function(event) {
+                if (!nav.hidden && !header.contains(event.target)) closeMenu();
+            });
 
-window.addEventListener('scroll', () => {
-const scrollTop = window.scrollY;
-const docHeight = document.body.scrollHeight - window.innerHeight;
-const progress = (scrollTop / docHeight) * 100;
-document.getElementById('progressBar').style.width = progress + '%';
-});
-</script>
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && !nav.hidden) closeMenu();
+            });
 
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 980) closeMenu();
+            });
+        }
+        window.addEventListener('load', initTopBarMobileMenu);
+
+        function initLanguageSwitcher() {
+            var root = document.querySelector('[data-language-switcher]');
+            if (!root) return;
+            var toggle = root.querySelector('.language-toggle');
+            if (!toggle) return;
+
+            function closeMenu() {
+                root.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            function openMenu() {
+                root.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+
+            toggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+                if (root.classList.contains('open')) closeMenu();
+                else openMenu();
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!root.contains(event.target)) closeMenu();
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') closeMenu();
+            });
+        }
+        window.addEventListener('load', initLanguageSwitcher);
+
+        function initStickyFooter() {
+            var bar = document.querySelector('[data-sticky-footer]');
+            if (!bar) return;
+            var closeBtn = bar.querySelector('[data-sticky-footer-close]');
+            var isClosed = false;
+            var revealThreshold = 120;
+
+            function updateVisibility() {
+                if (isClosed) {
+                    bar.classList.add('is-hidden');
+                    return;
+                }
+                var y = window.scrollY || window.pageYOffset || 0;
+                bar.classList.toggle('is-hidden', y < revealThreshold);
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    isClosed = true;
+                    bar.classList.add('is-hidden');
+                });
+            }
+
+            window.addEventListener('scroll', updateVisibility, { passive: true });
+            window.addEventListener('resize', updateVisibility, { passive: true });
+            updateVisibility();
+        }
+        window.addEventListener('load', initStickyFooter);
+    </script>
 </body>
 </html>
