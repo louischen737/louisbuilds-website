@@ -1,1695 +1,722 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
-
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-    <link rel="canonical" href="https://louisbuilds.me/step1st/">
-    <link rel="preload" href="Outfit/static/Outfit-Bold.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="Outfit/static/Outfit-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="Outfit/static/Outfit-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Louis Builds — Independent apps for focus and mindfulness: TapPause, PurrrrrFocus, TransMov, Phonetic Formatter. Thoughtfully built for rest, productivity, and learning." />
+<link rel="canonical" href="https://louisbuilds.me/" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<title>Louis Builds — Independent Apps for Focus & Mindfulness</title>
 
-    <title>Step1st — Unlock Apps with Step Goals | Digital Detox &amp; Fitness</title>
+<!-- Open Graph / 社交分享 -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://louisbuilds.me/" />
+<meta property="og:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
+<meta property="og:description" content="Independent apps for focus and mindfulness: TapPause, PurrrrrFocus, TransMov, Phonetic Formatter. Thoughtfully built for rest, productivity, and learning." />
+<meta property="og:image" content="https://louisbuilds.me/assets/og-image.png" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
+<meta name="twitter:description" content="Independent apps for focus and mindfulness: TapPause, PurrrrrFocus, TransMov, Phonetic Formatter." />
 
-    <meta name="description" content="Boost productivity and daily movement with Step1st: unlock apps only after you hit your step goal. Build healthier screen habits, protect focus, and stay active—HealthKit-powered, privacy-first.">
-    <meta name="keywords" content="step goal, screen time, productivity, health, digital detox, iOS app">
-
-    <meta property="og:title" content="Step1st — Unlock Apps with Step Goals | Digital Detox &amp; Fitness">
-    <meta property="og:description" content="Boost productivity and daily movement with Step1st: unlock apps only after you hit your step goal. Build healthier screen habits, protect focus, and stay active—HealthKit-powered, privacy-first.">
-    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/step1st/">
-    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/step1st/?lang=zh-CN">
-    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/step1st/">
-    <script type="application/ld+json">
+<!-- 结构化数据 (Schema.org) — applicationCategory 与站点应用页、App Store 分类对齐 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://louisbuilds.me/#person",
+      "name": "Louis",
+      "url": "https://louisbuilds.me/",
+      "jobTitle": "Independent App Developer",
+      "description": "Creator of independent apps focusing on minimalism, productivity, and education."
+    },
+    {
       "@type": "SoftwareApplication",
-      "name": "Step1st",
+      "name": "Phonetic Formatter",
+      "operatingSystem": "iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "softwareVersion": "1.1",
+      "url": "https://louisbuilds.me/phoneticformatter/",
+      "author": { "@id": "https://louisbuilds.me/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "PurrrrrFocus",
+      "operatingSystem": "iOS",
+      "applicationCategory": "ProductivityApplication",
+      "applicationSubCategory": "Utilities",
+      "softwareVersion": "2.3",
+      "url": "https://louisbuilds.me/purrrrrfocus/",
+      "author": { "@id": "https://louisbuilds.me/#person" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "TapPause",
       "operatingSystem": "iOS",
       "applicationCategory": "HealthApplication",
-      "applicationSubCategory": "Productivity",
-      "description": "Boost productivity and daily movement with Step1st: unlock apps only after you hit your step goal. Build healthier screen habits, protect focus, and stay active—HealthKit-powered, privacy-first.",
-      "url": "https://louisbuilds.me/step1st/",
-      "downloadUrl": "https://apps.apple.com/app/id6760578956",
-      "permissions": [
-        "Family Controls (Screen Time)",
-        "Motion & Fitness",
-        "HealthKit Storage"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
+      "softwareVersion": "1.1",
+      "url": "https://louisbuilds.me/tappause/",
+      "author": { "@id": "https://louisbuilds.me/#person" }
+    },
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can Step1st block apps on iPhone?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Step1st works as an app blocker using Apple's Screen Time API. You can select apps to lock, and they will only unlock after you reach your daily step goal. Unlike traditional app blockers, there's no easy override—your movement becomes the key."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Step1st a screen time control app?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes—but with a different approach. Instead of relying on limits or willpower, Step1st helps reduce screen time by linking it to physical activity. You earn your screen time by moving."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Step1st track my steps?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Step1st counts your steps directly on your iPhone using built-in motion sensors. This process happens entirely on your device and does not require GPS or location tracking. For deeper insights, you can optionally sync with Apple Health to view your long-term trends."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does it drain my battery?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Not at all. We built Step1st using the latest Apple native technology, designed specifically to be ultra-efficient. It works quietly in the background without noticeably affecting your battery life."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is my data private?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely. Your movement data and app rules are processed locally. While we analyze general usage patterns to improve the experience, this data is completely anonymized and is never linked to your personal identity. Your health records remain read-only and under your total control. Read our Privacy Policy to learn how we protect your privacy."
-          }
-        }
-      ]
+      "@type": "SoftwareApplication",
+      "name": "TransMov",
+      "operatingSystem": "macOS",
+      "applicationCategory": "DesignApplication",
+      "applicationSubCategory": "Productivity",
+      "softwareVersion": "2.0",
+      "url": "https://louisbuilds.me/transmov/",
+      "author": { "@id": "https://louisbuilds.me/#person" }
     }
+  ]
+}
 </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+<!-- Google Analytics: 延迟到 load 后加载，避免影响 LCP/FCP（减少未使用 JS 约 61 KiB） -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN';
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+    };
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(loadGtag, 0);
+  } else {
+    window.addEventListener('load', function() { setTimeout(loadGtag, 0); });
+  }
+</script>
 
 <style>
-        @font-face {
-            font-family: "OutfitCustom";
-            src: url("Outfit/static/Outfit-Regular.ttf") format("truetype");
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: "OutfitCustom";
-            src: url("Outfit/static/Outfit-Medium.ttf") format("truetype");
-            font-style: normal;
-            font-weight: 500;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: "OutfitCustom";
-            src: url("Outfit/static/Outfit-SemiBold.ttf") format("truetype");
-            font-style: normal;
-            font-weight: 600;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: "OutfitCustom";
-            src: url("Outfit/static/Outfit-Bold.ttf") format("truetype");
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --bg: #000000;
-            --card-bg: #1C1C1E;
-            --text-primary: #FFFFFF;
-            --text-secondary: #A1A1A6;
-            --brand-orange: #FF8A00;
-            --brand-yellow: #FFC947;
-            --accent-gradient: linear-gradient(135deg, #FF8A00 0%, #FFC947 100%);
-            --glass: rgba(22, 22, 23, 0.8);
-            --border: rgba(255, 255, 255, 0.12);
-            --border-hover: rgba(255, 255, 255, 0.2);
-            --heading-font: "OutfitCustom", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
-        }
+:root {
+    --bg-color: #000;
+    --text-primary: #fff;
+    --text-secondary: #a1a1a6;
+    --text-muted: #6e6e73;
+    --accent: #007aff;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
-            background-color: var(--bg);
-            color: var(--text-primary);
-            line-height: 1.45;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
 
-        h1, h2 {
-            font-family: var(--heading-font);
-        }
-        h1 { font-weight: 500; }
-        h2 { font-weight: 400; }
+/* Scroll progress */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--accent);
+    z-index: 9999;
+}
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+    background:
+        radial-gradient(circle at center, #1c1c1e 0%, #000 70%);
+}
 
-        /* --- NAVIGATION --- */
-        .site-nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000; padding: 14px 0;
-            border-bottom: 0.5px solid transparent;
-            transition: background 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .site-nav.is-scrolled {
-            background: var(--glass); backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 0.5px solid var(--border);
-        }
-        .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-        .nav-start {
-            display: flex;
-            align-items: center;
-            gap: clamp(32px, 5vw, 64px);
-            min-width: 0;
-            flex: 1 1 auto;
-        }
-        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; flex-shrink: 0; }
-        .nav-brand-icon { width: 28px; height: 28px; border-radius: 7px; box-shadow: 0 0 15px rgba(255, 138, 0, 0.3); }
-        .nav-brand-logo { height: 24px; width: auto; display: block; }
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.05), transparent 60%);
+    animation: breathe 18s ease-in-out infinite alternate;
+    pointer-events: none;
+}
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .nav-end {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-        }
-        .nav-link {
-            color: rgba(255, 255, 255, 0.82);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 8px 14px;
-            border-radius: 980px;
-            background: transparent;
-            transition: color 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .nav-link:hover {
-            color: var(--brand-yellow);
-            background: transparent;
-        }
-        .nav-link:focus-visible {
-            outline: 2px solid rgba(255, 201, 71, 0.55);
-            outline-offset: 4px;
-            border-radius: 6px;
-        }
-        .nav-link:active {
-            transform: scale(0.97);
-            color: var(--brand-yellow);
-        }
+@keyframes breathe {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
 
-        .btn-nav {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent-gradient);
-            color: #000000;
-            padding: 8px 18px;
-            border-radius: 980px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            box-shadow: 0 6px 18px rgba(255, 138, 0, 0.28);
-            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, opacity 0.2s ease;
-        }
-        .btn-nav:hover:not(:active) {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 24px rgba(255, 138, 0, 0.4);
-        }
-        .btn-nav:active {
-            transform: scale(0.97);
-        }
+.hero h1 {
+    font-size: clamp(56px, 10vw, 88px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    background: linear-gradient(180deg, #ffffff 0%, #bdbdc2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeUp 1s var(--ease);
+}
 
-        /* --- HERO --- */
-        .hero {
-            min-height: 100vh; display: flex; align-items: center; padding-top: 80px;
-            background: radial-gradient(circle at 70% 30%, rgba(255, 138, 0, 0.12) 0%, transparent 50%);
-        }
-        .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 60px; width: 100%; }
-        .hero-content { flex: 1 1 56%; min-width: 0; }
-        .hero-visual { flex: 0 0 320px; display: flex; justify-content: center; }
-        .hero-title { 
-            font-size: clamp(48px, 8vw, 82px); font-weight: 700; line-height: 1; 
-            letter-spacing: -0.04em; margin-bottom: 24px;
-        }
-        .hero-subtitle { font-size: 22px; margin-bottom: 40px; max-width: 520px; font-weight: 500; line-height: 1.6; }
-        .hero-subtitle-lead {
-            color: #FFFFFF;
-            display: inline-block;
-            position: relative;
-            padding-bottom: 0.14em;
-            max-width: 100%;
-            vertical-align: baseline;
-        }
-        .hero-subtitle-lead::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 2px;
-            background: var(--brand-orange);
-            border-radius: 9999px;
-        }
-        .hero-subtitle-note { color: #A1A1A6; }
-        .hero-cta-stack {
-            margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 18px;
-        }
-        .hero-human-proof {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 420px;
-            line-height: 1.5;
-            margin: 0;
-        }
-        .hero-cta-stack .btn-primary {
-            padding: 14px 28px;
-            font-size: 16px;
-            font-weight: 600;
-            box-shadow: 0 8px 22px rgba(255, 138, 0, 0.26);
-        }
-        .hero-cta-stack .btn-primary:hover:not(:active) {
-            box-shadow: 0 12px 28px rgba(255, 138, 0, 0.38);
-        }
-        .hero-cta-primary {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            align-self: flex-start;
-            width: min(100%, max-content);
-            max-width: 100%;
-            gap: 12px;
-        }
-        .hero-cta-subline {
-            margin: 0;
-            width: 100%;
-            max-width: min(100%, 22rem);
-            margin-inline: 0;
-            text-align: left;
-            text-wrap: balance;
-            font-size: 13px;
-            font-weight: 500;
-            color: rgba(161, 161, 166, 0.95);
-            letter-spacing: 0.01em;
-            line-height: 1.5;
-            padding: 0;
-            padding-right: 8px;
-            box-sizing: border-box;
-        }
-        .hero-tech-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 8px 10px;
-            opacity: 0.92;
-        }
-        .hero-tech-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 12px;
-            border-radius: 980px;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            background: rgba(255, 255, 255, 0.03);
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 1.25;
-            color: rgba(255, 255, 255, 0.72);
-            white-space: nowrap;
-        }
-        .hero-tech-pill-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            width: 14px;
-            height: 14px;
-            color: rgba(255, 201, 71, 0.78);
-        }
-        .hero-tech-pill-icon svg {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+.hero p {
+    font-size: clamp(20px, 4vw, 26px);
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin-bottom: 60px;
+    animation: fadeUp 1.2s var(--ease);
+}
 
-        .btn-primary {
-            position: relative;
-            overflow: hidden;
-            background: var(--accent-gradient); color: white; padding: 18px 38px; border-radius: 980px;
-            text-decoration: none; font-weight: 700; font-size: 18px; display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(255, 138, 0, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-primary:hover:not(:active) {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 138, 0, 0.5);
-        }
-        .btn-primary:active {
-            transform: scale(0.97);
-        }
+.hero .explore-btn {
+    font-size: 16px;
+    padding: 14px 36px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--text-primary);
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.4s var(--ease);
+    animation: fadeUp 1.4s var(--ease);
+}
 
-        .app-experience-content > .btn-primary,
-        .problem-solution-block .btn-primary {
-            padding: 12px 24px;
-            font-size: 15px;
-            font-weight: 600;
-            line-height: 1.2;
-            box-shadow: 0 7px 20px rgba(255, 138, 0, 0.22);
-        }
-        .app-experience-content > .btn-primary:hover:not(:active),
-        .problem-solution-block .btn-primary:hover:not(:active) {
-            transform: translateY(-2px);
-            box-shadow: 0 11px 26px rgba(255, 138, 0, 0.34);
-        }
+.hero .explore-btn:hover {
+    background: #fff;
+    color: #000;
+}
 
-        .cta-appstore-link {
-            display: inline-block;
-            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            line-height: 0;
-        }
-        .cta-appstore-link:active {
-            transform: scale(0.97);
-        }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .mockup-container {
-            width: 300px; background: #000; border-radius: 50px; padding: 12px;
-            border: 1px solid rgba(255,255,255,0.1); animation: float 6s ease-in-out infinite;
-        }
-        .mockup-container img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1170 / 2532;
-            object-fit: contain;
-            display: block;
-            border-radius: 38px;
-        }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+/* Products */
+.products {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 160px 24px;
+}
 
-        /* --- SECTIONS --- */
-        .section { padding: 100px 0; }
-        .section-title { font-size: 42px; font-weight: 600; text-align: center; margin-bottom: 60px; }
+.product {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 240px;
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(8px);
+    transition: all 1s var(--ease);
+}
 
-        .feature-overview {
-            background: rgba(255, 255, 255, 0.02);
-        }
-        .feature-list {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 560px;
-        }
-        .feature-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin-bottom: 20px;
-            font-size: 17px;
-            line-height: 1.55;
-            color: #A1A1A6;
-        }
-        .feature-list li:last-child {
-            margin-bottom: 0;
-        }
-        @media (min-width: 969px) {
-            .feature-overview .feature-list {
-                max-width: 600px;
-                padding-inline: 0;
-            }
-            .feature-overview .feature-list li {
-                padding-left: 88px;
-            }
-        }
+.product.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
 
-        .app-experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .narrative-main-title {
-            margin-bottom: 14px;
-        }
-        .section-header .narrative-subtitle {
-            max-width: 980px;
-        }
-        .narrative-flow {
-            position: relative;
-            max-width: 1000px;
-            margin: 80px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 140px;
-            --flow-gap: 140px;
-        }
-        @media (min-width: 992px) {
-            .section-header .narrative-subtitle {
-                max-width: 980px;
-            }
-            /* 分段竖线：自圆点下方贯通本卡 + 块间距，止于下一圆点之前（竖线不穿入圆内） */
-            .flow-item:not(:last-child)::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 32px;
-                height: calc(100% - 32px + var(--flow-gap) - 28px);
-                width: 1px;
-                background: linear-gradient(
-                    180deg,
-                    rgba(255, 201, 71, 0.2),
-                    rgba(255, 201, 71, 0.48) 6%,
-                    rgba(255, 201, 71, 0.48) 94%,
-                    rgba(255, 201, 71, 0.2)
-                );
-                z-index: 0;
-                pointer-events: none;
-            }
-            /* 最后一项：序号下方仍有竖线（穿出本卡底部一小段，形成收尾） */
-            .flow-item:last-child::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 32px;
-                height: calc(100% - 32px + 64px);
-                width: 1px;
-                background: linear-gradient(
-                    180deg,
-                    rgba(255, 201, 71, 0.2),
-                    rgba(255, 201, 71, 0.48) 6%,
-                    rgba(255, 201, 71, 0.48) 75%,
-                    rgba(255, 201, 71, 0.05)
-                );
-                z-index: 0;
-                pointer-events: none;
-            }
-        }
-        .flow-item {
-            position: relative;
-            margin-bottom: 0;
-            z-index: 2;
-        }
-        .flow-content {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .flow-item.reversed .flow-content {
-            direction: rtl;
-        }
-        .flow-item.reversed .flow-text {
-            direction: ltr;
-        }
-        .flow-marker {
-            position: absolute;
-            left: 50%;
-            top: -10px;
-            transform: translateX(-50%);
-            background: var(--bg-color);
-            border: 1px solid var(--brand-yellow);
-            color: var(--brand-yellow);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-            z-index: 3;
-        }
-        .flow-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-        .tag-warning { background: rgba(255, 107, 107, 0.1); color: #ff6b6b; }
-        .tag-success { background: rgba(56, 217, 169, 0.1); color: #38d9a9; }
-        .tag-highlight { background: rgba(255, 212, 59, 0.1); color: var(--brand-yellow); }
-        .flow-text h3 {
-            font-size: clamp(28px, 3.4vw, 36px);
-            margin-bottom: 20px;
-            color: #fff;
-            line-height: 1.2;
-        }
-        .flow-text p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-        .mini-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-        .mini-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        .mini-icon {
-            width: 18px;
-            height: 18px;
-            margin-top: 1px;
-            flex: 0 0 18px;
-        }
-        .mini-icon i {
-            font-size: 17px;
-            line-height: 1;
-        }
-        .mini-icon.is-warning {
-            color: #ff6b6b;
-        }
-        .mini-icon.is-success {
-            color: #38d9a9;
-        }
-        .mini-text {
-            min-width: 0;
-        }
-        .mini-list li:last-child {
-            margin-bottom: 0;
-        }
-        .flow-media {
-            background: #1a1a1a;
-            border-radius: 20px;
-            aspect-ratio: 4 / 3;
-            height: auto;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #8c8f96;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .flow-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-        .flow-item:hover .flow-media {
-            transform: translateY(-5px);
-            border-color: rgba(255, 201, 71, 0.45);
-        }
-        .trust-mini-badge {
-            margin-top: 24px;
-            padding: 14px 16px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 201, 71, 0.25);
-        }
-        .trust-mini-badge p {
-            margin: 0;
-            color: #ffe9c2;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-header h2 {
-            font-size: clamp(38px, 5.2vw, 48px);
-            margin-bottom: 20px;
-            color: var(--text-primary);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        .section-header p {
-            font-size: clamp(18px, 2.2vw, 20px);
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        .app-experience-content h2 { font-size: 38px; margin-bottom: 24px; color: var(--brand-yellow); line-height: 1.1; }
-        .problem-solution-block--pain h2 { color: var(--brand-orange); }
-        .problem-solution-block--solution h2 { color: var(--brand-yellow); }
-        .solution-intro {
-            font-size: 16px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin: 0 0 24px;
-            max-width: 420px;
-        }
-        .problem-empathy {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0 0 24px;
-            max-width: 420px;
-            line-height: 1.5;
-        }
-        .app-experience-content p { font-size: 18px; color: var(--text-secondary); margin-bottom: 30px; }
-        .app-experience-content ul { list-style: none; margin-bottom: 40px; }
-        .app-experience-content li { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; font-size: 16px; }
-        .benefit-list { margin-bottom: 40px; }
-        .benefit-list li {
-            margin-bottom: 22px;
-            display: flex;
-            gap: 12px;
-            align-items: start;
-            font-size: 16px;
-            animation: benefit-breathe 5.2s ease-in-out infinite;
-        }
-        .benefit-list li:last-child {
-            margin-bottom: 0;
-        }
-        .benefit-list li:nth-child(2) { animation-delay: 0.35s; }
-        .benefit-list li:nth-child(3) { animation-delay: 0.7s; }
-        .benefit-list .item-copy {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 4px;
-            min-width: 0;
-        }
-        .benefit-list .label {
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.35;
-            display: block;
-        }
-        .benefit-list .desc {
-            color: var(--text-secondary);
-            line-height: 1.45;
-            display: block;
-        }
-        .benefit-list .icon,
-        .feature-list .icon,
-        .trust-card .icon {
-            width: 22px;
-            height: 22px;
-            color: #ffe9c2;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 22px;
-            margin-top: 1px;
-            border-radius: 8px;
-            background: linear-gradient(145deg, rgba(255, 138, 0, 0.22), rgba(255, 201, 71, 0.12));
-            border: 1px solid rgba(255, 201, 71, 0.35);
-            box-shadow: 0 4px 14px rgba(255, 138, 0, 0.18);
-        }
-        .benefit-list .icon i,
-        .feature-list .icon i,
-        .trust-card .icon i {
-            font-size: 12px;
-            line-height: 1;
-        }
-        .static-mockup { animation: none !important; }
-        .benefit-list .icon svg,
-        .feature-list .icon svg,
-        .trust-card .icon svg {
-            width: 100%;
-            height: 100%;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 1.6;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        @keyframes benefit-breathe {
-            0%, 100% { transform: translateY(0); opacity: 0.96; }
-            50% { transform: translateY(-2px); opacity: 1; }
-        }
+.product:nth-child(even) {
+    flex-direction: row-reverse;
+}
 
-        /* --- HOW IT WORKS CARDS --- */
-        .how-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            align-items: stretch;
-        }
-        .how-card { 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            min-height: 0;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px) saturate(180%);
-            -webkit-backdrop-filter: blur(12px) saturate(180%);
-            padding: 48px 32px;
-            border-radius: 36px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 10px 28px rgba(0,0,0,0.28);
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-        }
-        .how-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.06);
-            box-shadow:
-                inset 0 1px 0 rgba(255,255,255,0.12),
-                inset 0 0 28px rgba(255, 201, 71, 0.12),
-                0 16px 36px rgba(0,0,0,0.36);
-        }
-        .how-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #FFF;
-            margin-bottom: 10px;
-            letter-spacing: -0.01em;
-            display: block;
-        }
-        .how-card p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #A1A1A6;
-            font-weight: 400;
-            max-width: 260px;
-            margin: 0 auto;
-        }
-        .step-tag {
-            width: 46px;
-            height: 46px;
-            background: var(--accent-gradient);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-weight: 800;
-            font-size: 18px;
-            color: #000000;
-            box-shadow: 0 8px 16px rgba(255, 138, 0, 0.2);
-        }
-        .how-card .olo-mascot {
-            width: 120px;
-            height: auto;
-            margin-top: auto;
-            padding-top: 20px;
-            flex-shrink: 0;
-            opacity: 0.9;
-        }
+/* Tighter gap before Journal (between rows stays 240px; last row shorter) */
+.products .product:last-child {
+    margin-bottom: 0;
+}
 
-        /* --- PRICING --- */
-        .pricing-table {
-            width: 100%;
-            table-layout: fixed;
-            border-radius: 24px;
-            overflow: hidden;
-            background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-collapse: collapse;
-            margin-top: 40px;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 12px 30px rgba(0,0,0,0.3);
-        }
-        .pricing-table th:first-child,
-        .pricing-table td:first-child {
-            width: 38%;
-        }
-        .pricing-table th:nth-child(2),
-        .pricing-table td:nth-child(2) {
-            width: 28%;
-        }
-        .pricing-table th,
-        .pricing-table td {
-            padding: 24px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            transition: background 0.2s ease;
-        }
-        .pricing-table th { background: rgba(255,255,255,0.04); }
-        .pricing-table tbody tr:hover td {
-            background: rgba(255, 138, 0, 0.05);
-        }
-        .pricing-table td:last-child,
-        .pricing-table th:last-child {
-            width: 34%;
-            color: var(--brand-yellow);
-            font-weight: 600;
-            box-shadow: 0 0 20px rgba(255, 138, 0, 0.2);
-            background: linear-gradient(180deg, rgba(255, 138, 0, 0.07) 0%, rgba(255, 138, 0, 0.02) 100%);
-        }
-        .pricing-table thead th:last-child {
-            background: rgba(255, 138, 0, 0.1);
-        }
+.product-info {
+    flex: 1;
+}
 
-        #path-to-balance-title,
-        #challenge-built-title {
-            scroll-margin-top: 88px;
-        }
+.product-info h2 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    white-space: nowrap;
+}
 
-        /* --- FAQ --- */
-        #faq {
-            scroll-margin-top: 88px;
-        }
-        .faq-grid {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        /* FAQ Styles */
-        .faq-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            margin-bottom: 16px;
-            padding: 20px 24px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(12px) saturate(180%);
-            -webkit-backdrop-filter: blur(12px) saturate(180%);
-        }
-        .faq-item:last-child {
-            margin-bottom: 0;
-        }
-        .faq-item[open] {
-            border-color: var(--brand-orange);
-            background: rgba(255, 138, 0, 0.05);
-        }
-        .faq-item.faq-item--observe {
-            opacity: 0;
-            transform: translateY(28px);
-            will-change: opacity, transform;
-            transition:
-                opacity 0.7s ease-out var(--faq-stagger, 0s),
-                transform 0.7s ease-out var(--faq-stagger, 0s),
-                border-color 0.3s ease,
-                background 0.3s ease;
-        }
-        .faq-item.faq-item--observe.is-inview {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .faq-item.faq-item--observe {
-                opacity: 1;
-                transform: none;
-                transition: border-color 0.3s ease, background 0.3s ease;
-            }
-        }
-        .faq-item summary {
-            font-size: 18px;
-            font-weight: 600;
-            list-style: none;
-            cursor: pointer;
-            position: relative;
-            padding-right: 30px;
-            color: #FFF;
-        }
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-        .faq-item summary:focus-visible {
-            outline: 2px solid rgba(255, 201, 71, 0.55);
-            outline-offset: 4px;
-            border-radius: 6px;
-        }
+@media (max-width: 1200px) {
+    .product-info h2 {
+        white-space: normal;
+    }
+}
 
-        /* 自定义展开箭头 */
-        .faq-item summary::after {
-            content: '+';
-            position: absolute;
-            right: 0;
-            color: var(--brand-yellow);
-            transition: transform 0.3s ease;
-        }
-        .faq-item[open] summary::after {
-            content: '−';
-            transform: rotate(180deg);
-        }
+.app-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
 
-        .faq-answer {
-            margin-top: 12px;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #A1A1A6;
-            animation: fadeIn 0.4s ease-out;
-        }
-        .faq-inline-link {
-            color: var(--brand-yellow);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            font-weight: 500;
-        }
-        .faq-inline-link:hover {
-            color: #ffe08a;
-        }
-        .faq-inline-link .fa-arrow-up-right-from-square {
-            font-size: 0.72em;
-            margin-left: 0.28em;
-            opacity: 0.92;
-            vertical-align: 0.08em;
-        }
+.product-info p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+    max-width: 400px;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.tags {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
 
-        /* Lazy-load placeholder shimmer (excludes small UI chrome) */
-        img {
-            background: linear-gradient(110deg, #1c1c1e 8%, #2c2c2e 18%, #1c1c1e 33%);
-            background-size: 200% 100%;
-            animation: skeleton-shine 1.5s linear infinite;
-        }
-        .nav-brand-icon,
-        .nav-brand-logo,
-        .cta-appstore-badge,
-        .olo-mascot,
-        .olo-trust,
-        .trust-item img[src*="olo-full"],
-        .trust-item img[src*="trust-olo-logic"] {
-            background: none !important;
-            animation: none !important;
-        }
-        @keyframes skeleton-shine {
-            to { background-position-x: -200%; }
-        }
+.product-info .tags + .tags {
+    text-transform: none;
+    letter-spacing: 0.04em;
+}
 
-        /* --- TRUST & CTA --- */
-        .trust-container {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 40px;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .trust-matrix-title {
-            font-size: 32px;
-            margin-bottom: 16px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: #FFFFFF;
-        }
-        .trust-matrix-subtitle {
-            max-width: 720px;
-            margin: 0 auto 40px;
-            font-size: 17px;
-            line-height: 1.55;
-            font-weight: 400;
-            color: #A1A1A6;
-        }
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            text-align: left;
-        }
-        .trust-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 32px;
-            transition: border-color 0.3s ease, background 0.3s ease;
-        }
-        .trust-card-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-        .trust-card h3 {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 1.3;
-            letter-spacing: -0.01em;
-            color: #FFFFFF;
-        }
-        .trust-card p {
-            font-size: 14px;
-            color: #A1A1A6;
-            line-height: 1.55;
-            margin: 0;
-        }
-        .trust-verified-row {
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .trust-verified-row-inner {
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: center;
-            gap: 8px 10px;
-            line-height: 1.5;
-        }
-        .trust-footer-note {
-            font-size: 13px;
-            color: #86868B;
-            margin: 0;
-        }
-        .official-links {
-            display: inline-flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 8px 4px;
-        }
-        .official-links a {
-            color: #A1A1A6;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            text-decoration-color: rgba(255, 255, 255, 0.2);
-            font-size: 13px;
-            transition: color 0.2s ease, text-decoration-color 0.2s ease;
-        }
-        .official-links a:hover {
-            color: var(--brand-yellow);
-            text-decoration-color: var(--brand-yellow);
-        }
-        .trust-verified-sep {
-            color: rgba(255, 255, 255, 0.25);
-            user-select: none;
-        }
-        .faq-privacy-manifest {
-            max-width: 800px;
-            margin: 28px auto 0;
-            padding: 16px 20px;
-            font-size: 13px;
-            line-height: 1.55;
-            color: #A1A1A6;
-            text-align: center;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.02);
-        }
-        .trust-flex { display: flex; justify-content: center; align-items: center; gap: 80px; flex-wrap: wrap; margin-top: 40px; }
-        .custom-trust-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        .custom-trust-icon::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,138,0,0.1) 0%, transparent 70%);
-        }
-        .trust-symbol {
-            width: 32px;
-            height: 32px;
-            position: relative;
-            z-index: 1;
-        }
-        .trust-symbol svg {
-            width: 100%;
-            height: 100%;
-            fill: none;
-            stroke: url(#iconGradient);
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            filter: drop-shadow(0 0 6px rgba(255, 138, 0, 0.35));
-        }
-        .custom-trust-emoji {
-            font-size: 30px;
-            line-height: 1;
-        }
-        .trust-item p {
-            font-size: 14px;
-            color: var(--text-primary);
-            opacity: 0.9;
-        }
-        .olo-trust {
-            position: absolute;
-            bottom: -20px;
-            left: 20px;
-            width: 120px;
-            opacity: 0.8;
-            transform: rotate(-15deg);
-        }
+.doc-lang-links a {
+    white-space: nowrap;
+}
 
-        footer { padding: 80px 0; text-align: center; border-top: 1px solid var(--border); color: var(--text-secondary); }
-        .footer-links { margin: 30px 0; display: flex; justify-content: center; gap: 30px; }
-        .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; }
-        .footer-meta { margin: 0; color: var(--text-secondary); font-size: 13px; line-height: 1.7; }
-        .footer-home-link {
-            color: #cfd3dc;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-        .cta-appstore-badge {
-            height: 52px;
-            width: auto;
-            display: inline-block;
-        }
+.buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
 
-        @media (max-width: 968px) {
-            .hero { min-height: auto; padding: 120px 0 64px; }
-            .hero-inner { flex-direction: column; gap: 36px; text-align: center; }
-            .hero-content { width: 100%; }
-            .hero-cta-stack { align-items: center; }
-            .hero-cta-primary { align-self: center; align-items: center; }
-            .hero-cta-subline { text-align: center; margin-inline: auto; padding: 0 8px; }
-            .hero-human-proof { text-align: center; margin-inline: auto; max-width: 26rem; }
-            .hero-tech-badges { justify-content: center; }
-            .hero-visual { flex: none; width: 100%; }
-            .hero-subtitle { margin: 0 auto 28px; font-size: clamp(18px, 4.8vw, 22px); }
-            .hero-title { font-size: clamp(42px, 12vw, 64px); }
-            .mockup-container { width: min(300px, 86vw); }
+.app-store-badge {
+    height: 40px;
+    transition: transform 0.4s var(--ease);
+}
 
-            .app-experience-grid { grid-template-columns: 1fr; text-align: center; }
-            .flow-marker { display: none; }
-            .flow-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: left;
-            }
-            .flow-item.reversed .flow-content { direction: ltr; }
-            .narrative-flow { margin: 56px auto; gap: 88px; --flow-gap: 88px; }
-            .solution-intro { margin-left: auto; margin-right: auto; }
-            .problem-empathy { margin-left: auto; margin-right: auto; }
-            .app-experience-content ul { margin: 0 auto 40px; }
-            .benefit-list li { text-align: left; }
-            .section-header { margin-bottom: 42px; }
-            .how-grid { grid-template-columns: 1fr; }
+.app-store-badge:hover {
+    transform: scale(1.05);
+}
 
-            .nav-inner { flex-wrap: wrap; row-gap: 12px; }
-            .nav-start { flex: 1 1 auto; flex-wrap: wrap; justify-content: center; gap: 16px 28px; min-width: min(100%, 280px); }
-            .nav-links { gap: 6px; justify-content: center; }
-            .nav-end { flex: 1 1 100%; justify-content: center; }
-            .nav-link { padding: 8px 10px; font-size: 13px; }
-            .btn-nav { padding: 8px 14px; font-size: 12px; }
-        }
+.btn-learn {
+    font-size: 15px;
+    color: var(--text-primary);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s var(--ease);
+}
+
+.btn-learn:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+/* Screenshots */
+.product-screenshot {
+    flex: 1.4;
+    display: grid;
+    gap: 24px;
+}
+
+.product-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    align-self: start;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    transition: all 0.5s var(--ease);
+    cursor: pointer;
+}
+
+.product-screenshot img:hover {
+    transform: scale(1.03) rotateX(2deg) rotateY(-2deg);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+}
+
+.product-screenshot.ios {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-screenshot.macos {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Footer */
+footer {
+    padding: 120px 24px 60px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-secondary);
+}
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+footer a:hover { color: #fff; }
+
+footer p {
+    margin-top: 24px;
+    font-size: 12px;
+}
+
+/* Journal */
+.journal-section {
+    padding: 48px 20px 88px;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.journal-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.journal-section .section-header {
+    margin-bottom: 50px;
+}
+
+.journal-section .section-header h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.journal-section .subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.journal-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.journal-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.journal-link {
+    display: flex;
+    align-items: flex-start;
+    padding: 25px 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: padding 0.3s var(--ease), color 0.3s var(--ease);
+    gap: 20px;
+}
+
+.journal-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    min-width: 80px;
+    font-family: inherit;
+}
+
+.journal-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.journal-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.journal-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.journal-excerpt {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 4px;
+    line-height: 1.45;
+}
+
+.journal-arrow {
+    flex-shrink: 0;
+    margin-top: 0.2em;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    color: var(--accent);
+}
+
+.journal-link:hover .journal-title {
+    color: #fff;
+}
+
+.journal-link:hover .journal-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.journal-link:hover {
+    padding-left: 10px;
+}
+
+@media (max-width: 600px) {
+    .journal-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .journal-date {
+        min-width: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .journal-section {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .journal-arrow {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .product {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .product-screenshot.ios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 </style>
 </head>
 
 <body>
-    <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-        <defs>
-            <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FF8A00"></stop>
-                <stop offset="100%" stop-color="#FFC947"></stop>
-            </linearGradient>
-        </defs>
-    </svg>
 
-    <nav class="site-nav" id="navbar" aria-label="Main navigation">
-        <div class="container nav-inner">
-            <div class="nav-start">
-                <a href="https://louisbuilds.me/step1st/" class="nav-brand">
-                    <img src="step1st-icon.png" class="nav-brand-icon" alt="Step1st app icon" width="28" height="28" decoding="async" fetchpriority="high">
-                    <img src="Step1st_logo.png" class="nav-brand-logo" alt="Step1st logo" width="120" height="24" decoding="async" fetchpriority="high">
-                </a>
-                <div class="nav-links">
-                    <a href="#path-to-balance-title" class="nav-link">How it works</a>
-                    <a href="#challenge-built-title" class="nav-link">Features</a>
-                    <a href="#faq" class="nav-link">FAQ</a>
-                </div>
-            </div>
-            <div class="nav-end">
-                <a href="https://apps.apple.com/app/id6760578956" class="btn-nav" aria-label="Download Step1st on the App Store">Get Step1st</a>
-            </div>
-        </div>
-    </nav>
+<div class="progress-bar" id="progressBar"></div>
 
-    <main>
-        <header class="hero">
-            <div class="container hero-inner">
-              <div class="hero-content">
-                <!-- 标题 -->
-                <h1 class="hero-title">
-                  Walk First.<br>
-                  <span style="color: var(--brand-yellow);">Scroll Later.</span>
-                </h1>
-          
-                <!-- 精简副标题 -->
-                <p class="hero-subtitle">
-                  Unlock your apps with step goals. Reduce screen time and stay active.
-                </p>
-          
-                <!-- CTA -->
-                <div class="hero-cta-stack">
-                  <div class="hero-cta-primary">
-                    <a href="https://apps.apple.com/app/id6760578956" class="btn-primary" aria-label="Download Step1st on the App Store">
-                      Download Step1st
-                    </a>
-                    <p class="hero-cta-subline">Free · No sign-up required</p>
-                  </div>
-          
-                  <!-- 压缩人性化描述 -->
-                  <p class="hero-human-proof">
-                    Stop doomscrolling. Move more. Stay focused.
-                  </p>
-          
-                  <!-- 技术亮点 -->
-                  <div class="hero-tech-badges" aria-label="How Step1st works">
-                    <span class="hero-tech-pill">
-                      <span class="hero-tech-pill-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </span>
-                      Works with Screen Time
-                    </span>
-                    <span class="hero-tech-pill">
-                      <span class="hero-tech-pill-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </span>
-                      Private by design
-                    </span>
-                  </div>
-                </div>
-              </div>
-          
-              <!-- 视觉区域 -->
-              <div class="hero-visual">
-                <div class="mockup-container">
-                  <img src="step1st-home-preview.png" alt="Step1st app interface showing step goals and app blocker dashboard" width="1170" height="2532" decoding="async" fetchpriority="high">
-                </div>
-              </div>
-            </div>
-          </header>
+<main>
+<section class="hero">
+    <h1>Louis Builds</h1>
+    <p>Built with intention. Designed to feel effortless.</p>
+    <a href="#products" class="explore-btn">Explore Apps</a>
+</section>
 
-        <section id="the-journey" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="narrative-main-title">Why Willpower Alone Fails</h2>
-                    <p class="narrative-subtitle">Modern apps are designed to keep you scrolling. Step1st is designed to get you moving.</p>
-                </div>
+<section class="products" id="products">
 
-                <div class="narrative-flow">
-                    <div class="flow-item animate-on-scroll">
-                        <div class="flow-marker">01</div>
-                        <div class="flow-content">
-                            <div class="flow-text">
-                                <span class="flow-tag tag-warning">The Problem</span>
-                                <h3>The Doomscroll Trap</h3>
-                                <p>You pick up your phone for a quick check, and 30 minutes vanish. Dopamine-driven loops make it nearly impossible to stop once you've started.</p>
-                                <ul class="mini-list">
-                                    <li><span class="mini-icon is-warning" aria-hidden="true"><i class="fa-regular fa-circle-xmark"></i></span><span class="mini-text">"Just 5 more minutes" turns into an hour</span></li>
-                                    <li><span class="mini-icon is-warning" aria-hidden="true"><i class="fa-regular fa-circle-xmark"></i></span><span class="mini-text">Constant sedentary screen time</span></li>
-                                    <li><span class="mini-icon is-warning" aria-hidden="true"><i class="fa-regular fa-circle-xmark"></i></span><span class="mini-text">Decision fatigue from resisting urges</span></li>
-                                </ul>
-                            </div>
-                            <div class="flow-visual">
-                                <div class="flow-media phone-stuck">
-                                    <img src="journey-problem.jpg" alt="Person stuck in endless phone scrolling habit" width="1200" height="900" loading="lazy" decoding="async">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flow-item reversed animate-on-scroll">
-                        <div class="flow-marker">02</div>
-                        <div class="flow-content">
-                            <div class="flow-text">
-                                <span class="flow-tag tag-success">The Solution</span>
-                                <h3>Earn Your Digital Time</h3>
-                                <p>Step1st introduces <strong>Positive Friction</strong>. Instead of just blocking apps, we tie their access to your physical activity. Want Instagram? Give us 500 steps first.</p>
-                                <ul class="mini-list">
-                                    <li><span class="mini-icon is-success" aria-hidden="true"><i class="fa-regular fa-circle-check"></i></span><span class="mini-text">Gamified health goals</span></li>
-                                    <li><span class="mini-icon is-success" aria-hidden="true"><i class="fa-regular fa-circle-check"></i></span><span class="mini-text">Automatic app blocking</span></li>
-                                    <li><span class="mini-icon is-success" aria-hidden="true"><i class="fa-regular fa-circle-check"></i></span><span class="mini-text">No complex setup required</span></li>
-                                </ul>
-                            </div>
-                            <div class="flow-visual">
-                                <div class="flow-media app-unlocked">
-                                    <img src="journey-solution.jpg" alt="Step goal unlock interface after walking progress" width="1200" height="900" loading="lazy" decoding="async">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flow-item animate-on-scroll">
-                        <div class="flow-marker">03</div>
-                        <div class="flow-content">
-                            <div class="flow-text">
-                                <span class="flow-tag tag-highlight">The Result</span>
-                                <h3>A Healthier, Focused You</h3>
-                                <p>By the end of the day, you've hit your 10k steps and enjoyed your favorite apps guilt-free. You're in control of your phone, not the other way around.</p>
-                                <div class="trust-mini-badge">
-                                    <p>"It's like a personal trainer for my Screen Time."</p>
-                                </div>
-                            </div>
-                            <div class="flow-visual">
-                                <div class="flow-media health-stats">
-                                    <img src="journey-result.jpg" alt="Healthier daily routine with steps achieved and balanced screen time" width="1200" height="900" loading="lazy" decoding="async">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section feature-overview" aria-labelledby="feature-overview-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="feature-overview-title">Everything You Need to Stay in Control</h2>
-                    <p>A smarter screen time control app designed for real life.</p>
-                </div>
-
-                <ul class="feature-list">
-                    <li>
-                        <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
-                        <span>Lock apps until you reach your daily step goal</span>
-                    </li>
-                    <li>
-                        <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
-                        <span>Reduce screen time without relying on willpower</span>
-                    </li>
-                    <li>
-                        <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
-                        <span>Track movement and build consistent habits</span>
-                    </li>
-                    <li>
-                        <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
-                        <span>Works with Apple Screen Time and HealthKit</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" aria-labelledby="path-to-balance-title">
-            <div class="container">
-                <h2 id="path-to-balance-title" class="section-title">The Path to Balance</h2>
-                <div class="how-grid">
-                    <div class="how-card">
-                        <div class="step-tag">1</div>
-                        <h3>Set Your Target</h3>
-                        <p>Pick a step goal that fits your lifestyle.</p>
-                        <img src="olo-thinking.png" class="olo-mascot" alt="step goal mascot character personalized daily movement target planning illustration" width="120" height="120" loading="lazy" decoding="async">
-                    </div>
-                    <div class="how-card">
-                        <div class="step-tag">2</div>
-                        <h3>Lock Your Apps</h3>
-                        <p>Apps stay locked until you reach your step goal.</p>
-                        <img src="olo-shield.png" class="olo-mascot" alt="screen time app lock mascot family controls shield blocked apps until steps illustration" width="120" height="120" loading="lazy" decoding="async">
-                    </div>
-                    <div class="how-card">
-                        <div class="step-tag">3</div>
-                        <h3>Walk to Earn</h3>
-                        <p>Hit your goal and unlock your apps—Olo celebrates with you.</p>
-                        <img src="olo-happy.png" class="olo-mascot" alt="step goal unlocked apps reward mascot walk to earn screen time allowance illustration" width="120" height="120" loading="lazy" decoding="async">
-                    </div>
+<!-- TapPause -->
+<div class="product">
+<div class="product-info">
+<h2><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60"> TapPause</h2>
+<p>A minimal pause timer to stop, pause, and rest. Designed for intentional breaks.</p>
+<div class="tags">iOS · Health &amp; Fitness · v1.1</div>
+<div class="tags doc-lang-links" style="margin-top: -20px;">
+Documentation available in:
+<a href="tappause/" style="color: inherit; text-decoration: underline;">English</a> ·
+<a href="tappause/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
+<a href="tappause/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
+<a href="tappause/index-es.html" style="color: inherit; text-decoration: underline;">Español</a> ·
+<a href="tappause/index-ja.html" style="color: inherit; text-decoration: underline;">日本語</a> ·
+<a href="tappause/index-ko.html" style="color: inherit; text-decoration: underline;">한국어</a> ·
+<a href="tappause/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
+</div>
+<div class="buttons">
+<a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download TapPause on the App Store" width="120" height="40">
+</a>
+<a href="tappause/" class="btn-learn">Learn More →</a>
 </div>
 </div>
-</section>
-
-        <section class="section" style="background: #050505;" aria-labelledby="challenge-built-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="challenge-built-title">A Challenge Built Around You</h2>
-                    <p>Step1st analyzes your movement patterns to find the "Sweet Spot" that keeps you motivated every single day.</p>
-                </div>
-                <div class="app-experience-grid" style="grid-template-columns: 1.1fr 0.9fr; gap: 56px;">
-                    <div class="hero-visual">
-                        <div class="mockup-container static-mockup" style="width: 100%; max-width: 290px;">
-                            <img src="step1st-onboarding.png" alt="step goal onboarding screen personalized daily target screen time lock setup app blocker ios" width="1170" height="2532" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                    <div class="app-experience-content">
-                        <ul class="benefit-list" style="margin-top: 0;">
-                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-sliders"></i></span><span class="item-copy"><span class="label">Tactile Experience</span><span class="desc">Setting your goal feels as satisfying as achieving it. A new way to interact with your habits.</span></span></li>
-                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></span><span class="item-copy"><span class="label">Olo's Logic</span><span class="desc">Get smart suggestions (3.5k, 6k, 8.5k) based on your real-world activity levels.</span></span></li>
-                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span><span class="item-copy"><span class="label">Privacy-First</span><span class="desc">Native Screen Time integration ensures your data never leaves your device.</span></span></li>
-                        </ul>
-                        <a href="https://apps.apple.com/app/id6760578956" class="btn-primary" style="margin-top: 20px;">Try It Free</a>
-                    </div>
-                </div>
-            </div>
-</section>
-
-        <section class="section" aria-labelledby="visualizing-success-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="visualizing-success-title">Visualizing Success is Addictive</h2>
-                    <p>Data shouldn't be boring. It's the visual record of you winning back your time. Watch your discipline grow with every step.</p>
-                </div>
-                <div class="app-experience-grid" style="grid-template-columns: 0.9fr 1.1fr; gap: 56px;">
-                    <div class="app-experience-content">
-                        <ul class="benefit-list" style="margin-top: 0;">
-                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span><span class="item-copy"><span class="label">Meaningful Trends</span><span class="desc">Track your weekly consistency and celebrate those "Unstoppable" streaks.</span></span></li>
-                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></span><span class="item-copy"><span class="label">Deep Insights</span><span class="desc">Unlock 30-day patterns to discover the hidden rhythm of your focus.</span></span></li>
-                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></span><span class="item-copy"><span class="label">HealthKit Ready</span><span class="desc">Every step counts. Seamless synchronization for 100% accuracy.</span></span></li>
-                        </ul>
-                        <a href="https://apps.apple.com/app/id6760578956" class="btn-primary" style="margin-top: 20px;">Try It Free</a>
-                    </div>
-                    <div class="hero-visual">
-                        <div class="mockup-container static-mockup" style="width: 100%; max-width: 290px;">
-                            <img src="step1st-stats.png" alt="step statistics dashboard weekly walking trends streak healthkit activity insights screen habit analytics" width="1170" height="2532" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-            </div>
-</section>
-
-        <section class="section" aria-labelledby="unlock-potential-title">
-            <div class="container">
-                <h2 id="unlock-potential-title" class="section-title">Unlock Your Full Potential</h2>
-                <table class="pricing-table">
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Free</th>
-                            <th>Pro Member</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>App Locking</td>
-                            <td>Up to 2 Apps</td>
-                            <td>Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td>Goal Setting</td>
-                            <td>Standard</td>
-                            <td>Fully Flexible</td>
-                        </tr>
-                        <tr>
-                            <td>Stats History</td>
-                            <td>7 Days</td>
-                            <td>30 Days + Insights</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-</section>
-
-        <section class="section" id="faq" aria-labelledby="faq-title">
-            <div class="container">
-                <h2 id="faq-title" class="section-title">Common Questions</h2>
-                <div class="faq-grid" style="max-width: 800px; margin: 0 auto;">
-                    <details class="faq-item" open>
-                        <summary>Can Step1st block apps on iPhone?</summary>
-                        <div class="faq-answer">
-                            Yes. Step1st works as an app blocker using Apple’s Screen Time API. You can select apps to lock, and they will only unlock after you reach your daily step goal. Unlike traditional app blockers, there’s no easy override—your movement becomes the key.
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>Is Step1st a screen time control app?</summary>
-                        <div class="faq-answer">
-                            Yes—but with a different approach. Instead of relying on limits or willpower, Step1st helps reduce screen time by linking it to physical activity. You earn your screen time by moving.
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>How does Step1st track my steps?</summary>
-                        <div class="faq-answer">
-                            Step1st counts your steps directly on your iPhone using built-in motion sensors. This process happens entirely on your device and does not require GPS or location tracking. For deeper insights, you can optionally sync with
-                            <a href="https://www.apple.com/ios/health/" class="faq-inline-link" target="_blank" rel="noopener noreferrer">Apple Health<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-                            to view your long-term trends.
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>Does it drain my battery?</summary>
-                        <div class="faq-answer">
-                            Not at all. We built Step1st using the latest Apple native technology, designed specifically to be ultra-efficient. It works quietly in the background without noticeably affecting your battery life.
-                        </div>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>Is my data private?</summary>
-                        <div class="faq-answer">
-                            Absolutely. Your movement data and app rules are processed locally. While we analyze general usage patterns to improve the experience, this data is completely anonymized and is never linked to your personal identity. Your health records remain read-only and under your total control.
-                            <a href="privacy-policy.html" class="faq-inline-link">Learn how we protect your privacy<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>.
-                        </div>
-                    </details>
-
-                </div>
-                <p class="faq-privacy-manifest">
-                    We strictly adhere to Apple’s latest privacy standards to ensure your data is handled with the highest level of security.
-                    <a href="privacy-policy.html" class="faq-inline-link">Privacy Policy<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-                </p>
-            </div>
-</section>
-
-        <section class="section" aria-labelledby="trust-section-title">
-            <div class="container">
-                <div class="trust-container">
-                    <h2 id="trust-section-title" class="trust-matrix-title">Built on Privacy. Focused on You.</h2>
-                    <p class="trust-matrix-subtitle">Step1st is designed to respect your boundaries. We use industry-standard encryption and Apple’s native frameworks to ensure your journey remains private and secure.</p>
-
-                    <div class="trust-grid">
-                        <div class="trust-card">
-                            <div class="trust-card-header">
-                                <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-lock"></i></span>
-                                <h3>Native App Control</h3>
-                            </div>
-                            <p>We utilize Apple’s official Family Controls to manage app limits. This system-level integration means Step1st never has access to your personal content, messages, or browsing history.</p>
-                        </div>
-
-                        <div class="trust-card">
-                            <div class="trust-card-header">
-                                <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
-                                <h3>Anonymous Movement</h3>
-                            </div>
-                            <p>Your steps are processed locally on your device via motion sensors. We track activity trends to help you improve, but we never link this data to your real-world identity or location.</p>
-                        </div>
-
-                        <div class="trust-card">
-                            <div class="trust-card-header">
-                                <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></span>
-                                <h3>Secure Integration</h3>
-                            </div>
-                            <p>Our HealthKit sync is strictly read-only and remains under your total control. Your health records are never modified, never shared with third parties, and never sold.</p>
-                        </div>
-                    </div>
-
-                    <div class="trust-verified-row">
-                        <p class="trust-verified-row-inner">
-                            <span class="trust-footer-note">Apple references:</span>
-                            <span class="official-links">
-                                <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy</a>
-                                <span class="trust-verified-sep" aria-hidden="true">·</span>
-                                <a href="https://developer.apple.com/" target="_blank" rel="noopener noreferrer">Apple Developer</a>
-                                <span class="trust-verified-sep" aria-hidden="true">·</span>
-                                <a href="https://developer.apple.com/documentation/familycontrols" target="_blank" rel="noopener noreferrer">Family Controls</a>
-                                <span class="trust-verified-sep" aria-hidden="true">·</span>
-                                <a href="https://developer.apple.com/documentation/healthkit" target="_blank" rel="noopener noreferrer">HealthKit</a>
-                                <span class="trust-verified-sep" aria-hidden="true">·</span>
-                                <a href="https://www.apple.com/privacy/features/" target="_blank" rel="noopener noreferrer">Privacy features</a>
-                            </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-</section>
-
-        <section class="section" style="text-align: center;" aria-labelledby="ready-to-walk-title">
-            <div class="container">
-                <h2 id="ready-to-walk-title" style="font-size: 48px; font-weight: 600; margin-bottom: 24px;">Ready to Walk More?</h2>
-                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px;">Join thousands of users who are winning back their focus, one step at a time.</p>
-                <a href="https://apps.apple.com/app/id6760578956" class="cta-appstore-link">
-                    <img class="cta-appstore-badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="download step goal screen time lock app app store badge ios pedometer" width="250" height="83" loading="lazy" decoding="async">
-                </a>
-            </div>
-</section>
-    </main>
-
-    <footer>
-        <div class="container">
-<div class="footer-links">
-                <a href="privacy-policy.html">Privacy</a>
-                <a href="terms-of-service.html">Terms</a>
-<a href="support.html">Support</a>
+<div class="product-screenshot ios">
+<img src="tappause/screenshot1.webp" srcset="tappause/screenshot1-400w.webp 400w, tappause/screenshot1-800w.webp 800w, tappause/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - duration selection" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot2.webp" srcset="tappause/screenshot2-400w.webp 400w, tappause/screenshot2-800w.webp 800w, tappause/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - pause timer" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot3.webp" srcset="tappause/screenshot3-400w.webp 400w, tappause/screenshot3-800w.webp 800w, tappause/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot4.webp" srcset="tappause/screenshot4-400w.webp 400w, tappause/screenshot4-800w.webp 800w, tappause/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - splash screen" width="1242" height="2688" loading="lazy">
 </div>
-            <p class="footer-meta">© 2026 Step1st</p>
-            <p class="footer-meta">A product by Louis · <a class="footer-home-link" href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
 </div>
+
+<!-- PurrrrrFocus -->
+<div class="product">
+<div class="product-info">
+<h2><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60"> PurrrrrFocus</h2>
+<p>Deep focus timers with progress tracking and your cat companion.</p>
+<div class="tags">iOS · iPhone &amp; iPad · v2.3 · Productivity · Utilities</div>
+<div class="tags" style="margin-top: -20px;">
+Documentation available in:
+<a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
+<a href="purrrrrfocus/index-en.html" style="color: inherit; text-decoration: underline;">English</a> ·
+<a href="purrrrrfocus/index-da.html" style="color: inherit; text-decoration: underline;">Dansk</a> ·
+<a href="purrrrrfocus/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
+<a href="purrrrrfocus/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
+</div>
+<div class="buttons">
+<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40">
+</a>
+<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="product-screenshot ios">
+<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
+</div>
+</div>
+
+<!-- TransMov -->
+<div class="product">
+<div class="product-info">
+<h2><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60"> TransMov</h2>
+<p>Convert videos into transparent GIF, APNG, and WebP with AI-powered background removal — fully offline on your Mac.</p>
+<div class="tags">macOS · Graphics &amp; Design · Productivity · v2.0</div>
+<div class="tags" style="margin-top: -20px;">
+Documentation available in:
+<a href="transmov/" style="color: inherit; text-decoration: underline;">English</a> ·
+<a href="transmov/zh/" style="color: inherit; text-decoration: underline;">中文</a>
+</div>
+<div class="buttons">
+<a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TransMov on the Mac App Store">
+<img src="assets/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40">
+</a>
+<a href="transmov/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="product-screenshot macos">
+<img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
+</div>
+</div>
+
+<!-- Phonetic Formatter -->
+<div class="product">
+<div class="product-info">
+<h2><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60"> Phonetic Formatter</h2>
+<p>Convert English text into accurate IPA transcription. Supports sentence-level and word-aligned formatting.</p>
+<div class="tags">iOS · Tools · v1.1 · English · IPA · Linguistics</div>
+<div class="tags" style="margin-top: -20px;">
+Documentation available in:
+<a href="phoneticformatter/index-zh.html" style="color: inherit; text-decoration: underline;">中文</a> ·
+<a href="phoneticformatter/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
+<a href="phoneticformatter/index-es.html" style="color: inherit; text-decoration: underline;">Español</a> ·
+<a href="phoneticformatter/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a>
+</div>
+<div class="buttons">
+<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Phonetic Formatter on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download Phonetic Formatter on the App Store" width="120" height="40">
+</a>
+<a href="phoneticformatter/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="product-screenshot ios">
+<img src="phoneticformatter/screenshot1.webp" srcset="phoneticformatter/screenshot1-400w.webp 400w, phoneticformatter/screenshot1-800w.webp 800w, phoneticformatter/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - process full English texts, input and generate" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot2.webp" srcset="phoneticformatter/screenshot2-400w.webp 400w, phoneticformatter/screenshot2-800w.webp 800w, phoneticformatter/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - sentence-level alignment, original text with IPA transcription" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot3.webp" srcset="phoneticformatter/screenshot3-400w.webp 400w, phoneticformatter/screenshot3-800w.webp 800w, phoneticformatter/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - word-aligned transcription, each word with IPA form" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot4.webp" srcset="phoneticformatter/screenshot4-400w.webp 400w, phoneticformatter/screenshot4-800w.webp 800w, phoneticformatter/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - copy or export to TXT DOCX PDF" width="1242" height="2688" loading="lazy">
+</div>
+</div>
+
+</section>
+
+<section class="journal-section" id="journal" aria-labelledby="journal-heading">
+    <div class="section-header">
+        <h2 id="journal-heading">Journal</h2>
+        <p class="subtitle">Notes on craft, focus, and building independent apps.</p>
+    </div>
+
+    <div class="journal-list">
+        <article class="journal-item">
+            <a href="/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html" class="journal-link">
+                <span class="journal-date">Mar 2026</span>
+                <div class="journal-text">
+                    <span class="journal-tag">Engineering</span>
+                    <h3 class="journal-title">The Technical Challenge of Aligning English Sentences with IPA</h3>
+                    <p class="journal-excerpt">Building a word-aligned transcription engine that works 100% offline.</p>
+                </div>
+                <span class="journal-arrow" aria-hidden="true">→</span>
+            </a>
+        </article>
+        <article class="journal-item">
+            <a href="/blog/the-zen-of-productivity-silent-companion.html" class="journal-link">
+                <span class="journal-date">Feb 2026</span>
+                <div class="journal-text">
+                    <span class="journal-tag">Design</span>
+                    <h3 class="journal-title">Digital Minimalism &amp; China-Chic: The Zen of a Cat-Themed Pomodoro Timer</h3>
+                    <p class="journal-excerpt">Exploring the balance between Guochao aesthetics and deep work rituals.</p>
+                </div>
+                <span class="journal-arrow" aria-hidden="true">→</span>
+            </a>
+        </article>
+        <article class="journal-item">
+            <a href="/blog/building-offline-first-apps.html" class="journal-link">
+                <span class="journal-date">Jan 2026</span>
+                <div class="journal-text">
+                    <span class="journal-tag">Philosophy</span>
+                    <h3 class="journal-title">Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud</h3>
+                    <p class="journal-excerpt">My commitment to privacy: why none of my 4 apps require an account.</p>
+                </div>
+                <span class="journal-arrow" aria-hidden="true">→</span>
+            </a>
+        </article>
+    </div>
+</section>
+
+</main>
+
+<footer>
+<div>
+<a href="mailto:support@louisbuilds.me">Contact</a>
+<a href="https://github.com/louischen737" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+<p>Independent apps, thoughtfully built. © 2026 Louis Builds.</p>
 </footer>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        const ENTER_SCROLL_Y = 52;
-        const EXIT_SCROLL_Y = 24;
-        let isNavScrolled = false;
+<script>
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, { threshold: 0.15 });
 
-        const updateNavbarState = () => {
-            const y = window.scrollY;
-            if (!isNavScrolled && y >= ENTER_SCROLL_Y) {
-                isNavScrolled = true;
-                navbar.classList.add('is-scrolled');
-            } else if (isNavScrolled && y <= EXIT_SCROLL_Y) {
-                isNavScrolled = false;
-                navbar.classList.remove('is-scrolled');
-            }
-        };
-        window.addEventListener('scroll', updateNavbarState, { passive: true });
-        updateNavbarState();
+document.querySelectorAll('.product, .journal-section').forEach(el => observer.observe(el));
 
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        };
+window.addEventListener('scroll', () => {
+const scrollTop = window.scrollY;
+const docHeight = document.body.scrollHeight - window.innerHeight;
+const progress = (scrollTop / docHeight) * 100;
+document.getElementById('progressBar').style.width = progress + '%';
+});
+</script>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (!entry.isIntersecting) return;
-                const t = entry.target;
-                setTimeout(() => {
-                    if (t.classList.contains('faq-item')) {
-                        t.classList.add('is-inview');
-                    } else {
-                        t.style.opacity = "1";
-                        t.style.transform = "translateY(0)";
-                    }
-                }, index * 100);
-                observer.unobserve(t);
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.app-experience-content, .how-card, .benefit-list li, .feature-overview, .trust-container, .animate-on-scroll').forEach(el => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(20px)";
-            el.style.transition = "all 0.6s cubic-bezier(0.22, 1, 0.36, 1)";
-            observer.observe(el);
-        });
-
-        document.querySelectorAll('#faq .faq-item').forEach((el, i) => {
-            el.classList.add('faq-item--observe');
-            el.style.setProperty('--faq-stagger', `${i * 0.1}s`);
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
