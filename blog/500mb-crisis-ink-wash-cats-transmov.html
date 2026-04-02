@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough | Louis Builds</title>
+<meta name="description" content="How a 500MB asset crisis in PurrrrrFocus led to a failed build, the creation of TransMov, and a hard-won breakthrough in smooth high-fidelity animation." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html" />
+<link rel="icon" type="image/png" href="../favicon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html" />
+<meta property="og:title" content="The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough | Louis Builds" />
+<meta property="og:description" content="From a 500MB PurrrrrFocus build failure to TransMov: the technical story behind quality transparent animations and silky playback." />
+<meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png" />
+<meta property="article:published_time" content="2026-04-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough | Louis Builds" />
+<meta name="twitter:description" content="How a struggle with high-quality animation assets led to TransMov and a leaner, smoother PurrrrrFocus." />
+<meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough",
+  "description": "A 500MB asset crisis during PurrrrrFocus development triggered the creation of TransMov and a complete animation pipeline overhaul.",
+  "datePublished": "2026-04-01",
+  "author": { "@type": "Organization", "name": "Louis Builds", "url": "https://louisbuilds.me/" },
+  "publisher": { "@type": "Organization", "name": "Louis Builds" },
+  "mainEntityOfPage": "https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html"
+}
+</script>
+
+<style>
+:root {
+    --bg: #000;
+    --text: #fff;
+    --muted: #a1a1a6;
+    --faint: #6e6e73;
+    --accent: #007aff;
+    --line: rgba(255,255,255,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.05rem;
+}
+a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+a:hover { opacity: 0.85; text-decoration: underline; text-underline-offset: 0.2em; }
+.inline-link {
+    color: #7fb2ff;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.5px;
+    font-weight: 500;
+}
+.inline-link:hover {
+    color: #a9cbff;
+}
+.site-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+}
+.site-header a { color: var(--muted); font-size: 0.9rem; }
+.site-header a:hover { color: #fff; }
+article {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+}
+article h1 {
+    font-size: clamp(1.75rem, 4vw, 2.3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--faint);
+    margin-bottom: 2.2rem;
+}
+article h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2.3rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+article p {
+    margin-bottom: 1.1rem;
+    color: var(--muted);
+}
+article em { color: #d1d1d6; font-style: italic; }
+article strong { color: #fff; font-weight: 600; }
+article ul, article ol {
+    margin: 0 0 1.25rem 1.25rem;
+    color: var(--muted);
+}
+article li { margin-bottom: 0.45rem; }
+article li::marker { color: var(--faint); }
+.lede {
+    font-size: 1.05rem;
+    color: #d1d1d6;
+    margin-bottom: 1.8rem;
+}
+.closing {
+    margin-top: 2.3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: #fff;
+}
+footer {
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    color: var(--faint);
+    font-size: 0.85rem;
+}
+footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="../">← Louis Builds</a>
+</header>
+
+<article>
+    <h1>The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough</h1>
+    <p class="article-meta">April 2026 · Engineering / Indie Dev / Story</p>
+
+    <p class="lede">In the world of indie development, the most powerful tools are often born from the most frustrating constraints. My journey with <a class="inline-link" href="../purrrrrfocus/"><strong>PurrrrrFocus</strong></a> is a story of how a 500MB asset crisis led to a failed build, a new macOS app, and a vital lesson in technical persistence.</p>
+
+    <h2 id="origin">1. The Origin: A Solitary Ink-Wash Companion</h2>
+    <p><a class="inline-link" href="../purrrrrfocus/">PurrrrrFocus</a> did not start with vibrant colors. Its soul was a single, <strong>traditional ink-wash (Guohua) cat</strong>.</p>
+    <p>I wanted it to feel like a living painting on rice paper, stretching and napping as you worked. But as a developer with no background in professional animation, I faced a wall: <strong>How do you create high-quality, transparent animations with a hand-painted texture on a budget?</strong></p>
+    <p>My scrappy solution:</p>
+    <ol>
+        <li>Generate cat movement sequences using AI video tools.</li>
+        <li>Build a custom web-based tool to remove backgrounds and convert them to APNG (Animated PNG).</li>
+    </ol>
+    <p>At the time, mainstream tools lacked specialized video background removal for transparent web formats, and mobile editors exported results that were too limited for the high-fidelity transparency iOS required. That black-and-white ink cat was my first success, but it was also the precursor to a major hurdle.</p>
+
+    <h2 id="disaster">2. The Disaster: A 500MB Pomodoro Timer</h2>
+    <p>When I decided to expand the China-Chic aesthetic by adding 8 unique cats, the technical debt came due. While 7 of the new cats leaned toward a clean, <strong>flat cartoon style</strong>, one special Opera Cat remained highly detailed, featuring intricate <strong>silk textures</strong> on its traditional costume.</p>
+    <p>To preserve these delicate textures and semi-transparent edges, I used high-resolution sequences. When I hit build in Xcode for the first time, the result was soul-crushing: <strong>The app size exceeded 500MB.</strong></p>
+    <p>For a minimalist productivity tool, this was a death sentence. I spent weeks in a state of paralysis:</p>
+    <ul>
+        <li><strong>Lottie?</strong> Subscription cost was too high, and it struggled to replicate non-vector, heavy-texture brushwork.</li>
+        <li><strong>Rive?</strong> The learning curve was steep, and export limitations for indie developers felt like a moving target.</li>
+    </ul>
+
+    <h2 id="breakthrough">3. The Breakthrough: The Birth of TransMov</h2>
+    <p>Since there was no video-to-transparent-animation tool that met my standards for quality and privacy, I decided to stop building the timer and start building the tool.</p>
+    <p>I rebuilt my clunky web script as a native macOS app. Leveraging Apple Neural Engine and native AI capabilities, <a class="inline-link" href="../transmov/"><strong>TransMov</strong></a> was born. It featured:</p>
+    <ul>
+        <li><strong>AI Background Removal:</strong> Local, on-device processing for privacy and efficiency.</li>
+        <li><strong>Multi-Format Export:</strong> Seamless conversion between Video, APNG, WebP, and GIF.</li>
+        <li><strong>Frame-by-Frame Editing:</strong> Essential for inspecting and refining complex frames, like the shimmering silk details on the Opera Cat.</li>
+    </ul>
+    <p><a class="inline-link" href="../transmov/">TransMov</a> was meant to be an internal utility, but when it gained its first paying subscriber on the Mac App Store, I realized: <strong>When you build a wheel to climb a mountain, that wheel itself has value.</strong></p>
+
+    <h2 id="final-polish">4. The Final Polish: Solving the Stutter</h2>
+    <p>With <a class="inline-link" href="../transmov/">TransMov</a>, I converted all assets to WebP, cutting total asset size to roughly 300MB. I then implemented <strong>On-Demand Resources (ODR)</strong>, keeping 2 default cats in the bundle while letting users download the others after unlocking.</p>
+    <p>However, one final hurdle appeared: animation stutter. I remembered a Product Hunt user mentioning FPS issues in an early APNG version. At the time, I did not connect the dots, but eventually identified the real bottleneck in my custom playback component.</p>
+    <p>I tried resource pre-warming and aggressive caching strategies, but none fixed the lag. Finally, I replaced my custom rendering path with <strong>SDWebImage</strong> and <strong>SDWebImageWebPCoder</strong>. The difference was immediate: stutter disappeared, and the cats moved with silky smoothness without sacrificing resolution.</p>
+
+    <h2 id="closing-thoughts">Closing Thoughts</h2>
+    <p>From a solitary ink-wash cat to a 500MB crisis, and finally to the birth of TransMov.</p>
+    <p class="closing">Indie development is rarely a straight line. Sometimes, you set out to build a house, and you end up inventing a better shovel just to dig the foundation. Those moments of obsessive troubleshooting are what give independent apps their soul.</p>
+</article>
+
+<footer>
+    <p><a href="../">Home</a> · <a href="../#journal">Journal</a></p>
+</footer>
+
+</body>
+</html>
