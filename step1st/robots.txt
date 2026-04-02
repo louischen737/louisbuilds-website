@@ -1,0 +1,11 @@
+# robots.txt for Step1st — https://louisbuilds.me/step1st/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://louisbuilds.me/step1st/sitemap.xml
+
+# Optional non-page resources
+Disallow: /*.md
+Disallow: /*.sh
