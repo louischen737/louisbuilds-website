@@ -6,10 +6,10 @@
     <meta name="theme-color" content="#fafaf9">
     
     <!-- Primary Meta Tags -->
-    <title>Englisch Lautschrift Konverter (IPA) | Professionelle Transkription</title>
-    <meta name="title" content="Englisch Lautschrift Konverter (IPA) | Professionelle Transkription">
-    <meta name="description" content="Professioneller Konverter für englische Lautschrift (IPA) für Lehrkräfte und Studierende. Strukturierte phonetische Layouts, Export als PDF/Word, 100 % offline. 100 % Datenschutz: Alle Berechnungen erfolgen lokal auf Ihrem Gerät.">
-    <meta name="keywords" content="Lautschrift Englisch, IPA Konverter, phonetische Transkription, Englisch Aussprache App, Lautschriftübersetzer, IPA Lautschrift lernen, Englisch IPA, CMU Aussprachewörterbuch">
+    <title>Englisch-zu-IPA-Konverter &amp; Formatter | CMU-basiertes phonetisches Tool</title>
+    <meta name="title" content="Englisch-zu-IPA-Konverter &amp; Formatter | CMU-basiertes phonetisches Tool">
+    <meta name="description" content="Professioneller Englisch-IPA-Konverter und Formatter mit CMU-Wörterbuch. Transkriptionen erstellen, Export als PDF/Word. 100 % offline.">
+    <meta name="keywords" content="Lautschrift Englisch, IPA Konverter, phonetische Transkription, Englisch Aussprache App, Lautschriftübersetzer, IPA Lautschrift lernen, Englisch IPA, CMU Aussprachewörterbuch, IPA Export, Konverter phonetische Transkription, Text-zu-IPA-Übersetzer, CMU-basiert">
     <meta name="author" content="Phonetic Formatter">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
     <meta name="robots" content="index, follow">
@@ -19,7 +19,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/index-de.html">
-    <meta property="og:title" content="Englisch Lautschrift Konverter (IPA) | Phonetic Formatter">
+    <meta property="og:title" content="Englisch-zu-IPA-Konverter &amp; Formatter | CMU-basiertes phonetisches Tool">
     <meta property="og:description" content="Englische Texte in übersichtliche IPA-Lautschrift umwandeln. Ideal für Unterricht und Linguistik. 100 % offline — Berechnungen und Daten bleiben auf Ihrem Gerät.">
     <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/og-image.png">
     <meta property="og:site_name" content="Phonetic Formatter">
@@ -28,7 +28,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://louisbuilds.me/phoneticformatter/index-de.html">
-    <meta property="twitter:title" content="Englisch Lautschrift Konverter (IPA) | Phonetic Formatter">
+    <meta property="twitter:title" content="Englisch-zu-IPA-Konverter &amp; Formatter | CMU-basiertes phonetisches Tool">
     <meta property="twitter:description" content="Englische Texte in übersichtliche IPA-Lautschrift umwandeln. Ideal für Unterricht und Linguistik. 100 % offline — Berechnungen und Daten bleiben auf Ihrem Gerät.">
     <meta property="twitter:image" content="https://louisbuilds.me/phoneticformatter/og-image.png">
     
@@ -570,6 +570,244 @@
             height: 100%;
             width: auto;
             display: block;
+        }
+        
+        /* Pro formatter demo — formatting modes (hero → features) */
+        .pro-demo-section {
+            padding: 80px 20px;
+            background: #fff;
+            border-bottom: 1px solid #f6f6f4;
+        }
+        .pro-demo-wrap {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .pro-demo-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .pro-demo-intro h2 {
+            font-size: 2rem;
+            font-weight:700;
+            color: #1c1c19;
+            margin: 0 0 10px 0;
+        }
+        .pro-demo-intro p {
+            margin: 0;
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        .pro-demo-card {
+            background: #fff;
+            border: 1px solid #e5e5e0;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+        .pro-demo-toolbar {
+            padding: 20px;
+            background: #fcfcfb;
+            border-bottom: 1px solid #f0f0ee;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .pro-demo-layout-toggle {
+            display: flex;
+            background: #eee;
+            padding: 4px;
+            border-radius: 12px;
+            width: fit-content;
+            max-width: 100%;
+        }
+        .pro-demo-layout-btn {
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            border-radius: 9px;
+            background: transparent;
+            color: #666;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+        }
+        .pro-demo-layout-btn.is-active {
+            background: #fff;
+            color: #1c1c19;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .pro-demo-layout-btn:focus-visible {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        .pro-demo-delimiters {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #444;
+        }
+        .pro-demo-bracket-row {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .pro-demo-bracket-input {
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #f3f3f3;
+            font-weight: 700;
+            font-size: 13px;
+            color: #374151;
+        }
+        .pro-demo-bracket-mid {
+            line-height: 28px;
+            color: #999;
+            font-size: 13px;
+            user-select: none;
+        }
+        .pro-demo-output {
+            padding: 30px;
+            min-height: 300px;
+            background: #fff;
+            font-family: 'Charis SIL', 'Times New Roman', 'Liberation Serif', serif;
+            overflow-y: auto;
+        }
+        .pro-demo-out-block {
+            margin-bottom: 25px;
+        }
+        .pro-demo-out-block:last-child {
+            margin-bottom: 0;
+        }
+        .pro-demo-out-en {
+            margin: 0 0 8px 0;
+            color: #1c1c19;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+        }
+        .pro-demo-out-ipa {
+            margin: 0;
+            color: #2563eb;
+            font-size: 19px;
+            letter-spacing: 0.02em;
+            line-height: 1.65;
+        }
+        .pro-demo-wbw-section {
+            margin-bottom: 30px;
+        }
+        .pro-demo-wbw-head {
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            color: #1c1c19;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .pro-demo-wbw-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 17px;
+        }
+        .pro-demo-wbw-table td {
+            padding: 4px 0;
+            vertical-align: top;
+        }
+        .pro-demo-wbw-td-en {
+            color: #666;
+            width: 120px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .pro-demo-wbw-td-ipa {
+            color: #2563eb;
+        }
+        .pro-demo-wbw-note {
+            font-size: 13px;
+            color: #999;
+            margin: 10px 0 0 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .pro-demo-actions {
+            padding: 20px;
+            background: #fafaf9;
+            border-top: 1px solid #f0f0ee;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .pro-demo-actions-hint {
+            margin-right: auto;
+            color: #999;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .pro-demo-actions button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.15s, border-color 0.15s, color 0.15s;
+        }
+        .pro-demo-btn-secondary {
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #666;
+        }
+        .pro-demo-btn-secondary:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+        .pro-demo-btn-primary {
+            border: none;
+            background: #2563eb;
+            color: #fff;
+        }
+        .pro-demo-btn-primary:hover {
+            background: #1d4ed8;
+        }
+        .pro-demo-live {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        @media (max-width: 640px) {
+            .pro-demo-section {
+                padding: 56px 16px;
+            }
+            .pro-demo-intro h2 {
+                font-size: 1.55rem;
+            }
+            .pro-demo-layout-toggle {
+                width: 100%;
+            }
+            .pro-demo-layout-btn {
+                flex: 1;
+                text-align: center;
+            }
+            .pro-demo-actions-hint {
+                margin-right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            .pro-demo-actions {
+                justify-content: center;
+            }
         }
         
         .features {
@@ -1816,6 +2054,41 @@
         </div>
     </section>
 
+    <section class="pro-demo-section scroll-reveal" aria-labelledby="pro-demo-heading">
+        <div class="pro-demo-wrap">
+            <div class="pro-demo-intro">
+                <h2 id="pro-demo-heading">Leistungsstarke Formatierungsmodi</h2>
+                <p>Wählen Sie das Layout, das am besten zu Unterricht und Lernmaterial passt.</p>
+            </div>
+
+            <div class="pro-demo-card">
+                <div class="pro-demo-toolbar">
+                    <div class="pro-demo-layout-toggle" role="group" aria-label="Layoutmodus">
+                        <button type="button" class="pro-demo-layout-btn is-active" id="pro-demo-btn-sentence" aria-pressed="true">Satzweise</button>
+                        <button type="button" class="pro-demo-layout-btn" id="pro-demo-btn-word" aria-pressed="false">Wort für Wort</button>
+                    </div>
+                    <div class="pro-demo-delimiters">
+                        <span>IPA-Begrenzer:</span>
+                        <div class="pro-demo-bracket-row" aria-hidden="true">
+                            <input type="text" class="pro-demo-bracket-input" value="/" readonly tabindex="-1">
+                            <span class="pro-demo-bracket-mid">IPA</span>
+                            <input type="text" class="pro-demo-bracket-input" value="/" readonly tabindex="-1">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pro-demo-output-content" class="pro-demo-output"></div>
+                <span id="pro-demo-copy-live" class="pro-demo-live" aria-live="polite"></span>
+
+                <div class="pro-demo-actions">
+                    <span class="pro-demo-actions-hint">Bereit für Export als PDF oder Word?</span>
+                    <button type="button" class="pro-demo-btn-secondary" id="pro-demo-copy-result">Ergebnis kopieren</button>
+                    <button type="button" class="pro-demo-btn-primary" id="pro-demo-export-pro">Mit Pro exportieren</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="features scroll-reveal" id="features">
         <!-- 1. Video Demo (white) -->
         <div class="section">
@@ -2101,6 +2374,10 @@
                     <p>Ja. Phonetic Formatter läuft vollständig offline auf iPhone und iPad. Die Umwandlung erfolgt auf dem Gerät — kein Internet nötig, keine Daten an Server. Nutzbar im Unterricht, unterwegs oder bei schlechter Verbindung.</p>
                 </div>
                 <div class="faq-item">
+                    <h3>Verwendet dieser Konverter das CMU Pronunciation Dictionary?</h3>
+                    <p>Ja, unser Tool basiert auf dem CMU Pronunciation Dictionary, das weithin als Goldstandard für die Verarbeitung natürlicher Sprache (NLP) im nordamerikanischen Englisch gilt. Wir haben es jedoch durch eigene Logik optimiert, um die Transkription auf Satzebene und die Akzentuierung zu verbessern.</p>
+                </div>
+                <div class="faq-item">
                     <h3>Unterstützt die App britisches oder amerikanisches Englisch?</h3>
                     <p>Die App nutzt das CMU Pronouncing Dictionary und konzentriert sich aktuell auf die amerikanische Aussprache (General American). Dies ist der am weitesten verbreitete Standard in den Medien, der Technologie und der internationalen Wirtschaft. Für Nutzer, die Wert auf präzise amerikanische Phonetik legen, bietet die App eine unübertroffene Genauigkeit.</p>
                 </div>
@@ -2234,6 +2511,98 @@
                 { root: null, rootMargin: '120px 0px', threshold: 0 }
             );
             io.observe(video);
+        })();
+        (function () {
+            var outputEl = document.getElementById('pro-demo-output-content');
+            var btnSentence = document.getElementById('pro-demo-btn-sentence');
+            var btnWord = document.getElementById('pro-demo-btn-word');
+            var copyBtn = document.getElementById('pro-demo-copy-result');
+            var exportBtn = document.getElementById('pro-demo-export-pro');
+            var live = document.getElementById('pro-demo-copy-live');
+            var copyDone = 'In die Zwischenablage kopiert.';
+            var wbwNote = '… (vollständiger Satz in der App)';
+            if (!outputEl || !btnSentence || !btnWord) return;
+
+            var sentenceHtml =
+                '<div class="pro-demo-out-block">' +
+                '<p class="pro-demo-out-en">Please focus on the distinction between &lsquo;sheep&rsquo; and &lsquo;ship&rsquo;, or &lsquo;reach&rsquo; and &lsquo;rich&rsquo;.</p>' +
+                '<p class="pro-demo-out-ipa">' +
+                "/plˈiz/ /fˈoʊkəs/ /ˈɑn/ /ðə/ /dɪstˈɪŋkʃən/ /bɪtwˈin/ '/ʃˈip/' /ənd/ '/ʃˈɪp/', /ˈɔr/ '/rˈitʃ/' /ənd/ '/rˈɪtʃ/'." +
+                '</p></div>' +
+                '<div class="pro-demo-out-block">' +
+                '<p class="pro-demo-out-en">Accurate phonetic transcription helps students master these subtle vowel shifts.</p>' +
+                '<p class="pro-demo-out-ipa">' +
+                '/ˈækjɚət/ /fənˈɛtɪk/ /trˌænskrˈɪpʃən/ /hˈɛlps/ /stˈudənts/ /mˈæstɚ/ /ðˈiz/ /sˈʌtəl/ /vˈaʊəl/ /ʃˈɪfts/.' +
+                '</p></div>';
+
+            var wordHtml =
+                '<div class="pro-demo-wbw-section">' +
+                '<p class="pro-demo-wbw-head">Please focus on the distinction between &lsquo;sheep&rsquo; and &lsquo;ship&rsquo;, or &lsquo;reach&rsquo; and &lsquo;rich&rsquo;.</p>' +
+                '<table class="pro-demo-wbw-table" role="presentation">' +
+                '<tr><td class="pro-demo-wbw-td-en">Please</td><td class="pro-demo-wbw-td-ipa">/plˈiz/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">focus</td><td class="pro-demo-wbw-td-ipa">/fˈoʊkəs/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">on</td><td class="pro-demo-wbw-td-ipa">/ˈɑn/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">the</td><td class="pro-demo-wbw-td-ipa">/ðə/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">distinction</td><td class="pro-demo-wbw-td-ipa">/dɪstˈɪŋkʃən/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">between</td><td class="pro-demo-wbw-td-ipa">/bɪtwˈin/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">sheep</td><td class="pro-demo-wbw-td-ipa">/ʃˈip/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">and</td><td class="pro-demo-wbw-td-ipa">/ənd/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">ship</td><td class="pro-demo-wbw-td-ipa">/ʃˈɪp/</td></tr>' +
+                '</table>' +
+                '<p class="pro-demo-wbw-note">' + wbwNote + '</p>' +
+                '</div>';
+
+            function setMode(sentence) {
+                outputEl.innerHTML = sentence ? sentenceHtml : wordHtml;
+                if (sentence) {
+                    btnSentence.classList.add('is-active');
+                    btnWord.classList.remove('is-active');
+                    btnSentence.setAttribute('aria-pressed', 'true');
+                    btnWord.setAttribute('aria-pressed', 'false');
+                } else {
+                    btnWord.classList.add('is-active');
+                    btnSentence.classList.remove('is-active');
+                    btnWord.setAttribute('aria-pressed', 'true');
+                    btnSentence.setAttribute('aria-pressed', 'false');
+                }
+            }
+
+            btnSentence.addEventListener('click', function () { setMode(true); });
+            btnWord.addEventListener('click', function () { setMode(false); });
+            setMode(true);
+
+            if (copyBtn && live) {
+                copyBtn.addEventListener('click', function () {
+                    var t = outputEl.innerText.replace(/\s*\n\s*/g, '\n').replace(/^\s+|\s+$/g, '');
+                    if (!t) return;
+                    function announce() {
+                        live.textContent = copyDone;
+                        setTimeout(function () { live.textContent = ''; }, 2000);
+                    }
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(t).then(announce).catch(function () {});
+                    } else {
+                        var ta = document.createElement('textarea');
+                        ta.value = t;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        try {
+                            document.execCommand('copy');
+                            announce();
+                        } catch (e) {}
+                        document.body.removeChild(ta);
+                    }
+                });
+            }
+
+            if (exportBtn) {
+                exportBtn.addEventListener('click', function () {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'pro_demo_export_pro_de'});
+                    }
+                    window.open('https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_pro_demo_export_de', '_blank', 'noopener,noreferrer');
+                });
+            }
         })();
     </script>
 </body>
