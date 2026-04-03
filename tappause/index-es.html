@@ -500,6 +500,68 @@
             max-width: 600px;
         }
 
+        /* Step1st — Substack promo */
+        .step1st-promo {
+            padding: 60px 24px;
+            max-width: 760px;
+            margin: 20px auto;
+            border-top: 1px solid var(--divider-light);
+        }
+        .step1st-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--divider-light);
+            padding: 40px 32px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .step1st-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(165, 180, 252, 0.3);
+            transform: translateY(-2px);
+        }
+        .step1st-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(165, 180, 252, 0.1);
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+        .step1st-card h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .step1st-card p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            line-height: 1.6;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .step1st-btn {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s ease;
+        }
+        .step1st-btn:hover {
+            text-decoration: underline;
+            gap: 12px;
+        }
+
         .cta {
             padding: 100px 24px;
             text-align: center;
@@ -769,6 +831,20 @@
                 </div>
                 <h3>Formas sencillas de pausar durante un día de trabajo intenso</h3>
                 <p>Técnicas prácticas para recuperar el foco y reducir la carga mental.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="step1st-promo" aria-labelledby="step1st-promo-heading">
+        <div class="step1st-card">
+            <span class="step1st-tag">Nuevo proyecto</span>
+            <h2 id="step1st-promo-heading">&iquest;Necesitas un l&iacute;mite m&aacute;s firme?</h2>
+            <p>
+                Si pausar con atenci&oacute;n plena no basta para romper el h&aacute;bito del scroll, estoy creando <strong>Step1st</strong>:
+                un bloqueo de apps basado en pasos para ayudar a mi madre (y a m&iacute;) a mantenerse activos canjeando pasos por tiempo de pantalla.
+            </p>
+            <a href="https://substack.com/@louisbuilds/p-193051902" class="step1st-btn" target="_blank" rel="noopener noreferrer">
+                &Uacute;nete a la beta en Substack <span aria-hidden="true">→</span>
             </a>
         </div>
     </section>
