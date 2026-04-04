@@ -888,6 +888,29 @@
             margin: 0 0 0.5rem 0;
             line-height: 1.35;
         }
+        .feature-card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .feature-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .feature-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .feature-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .feature-card-more {
+            margin-top: auto;
+            padding-top: 0.75rem;
+            margin-bottom: 0 !important;
+        }
         @media (max-width: 480px) {
             .feature-card h3 {
                 font-size: 1.05rem;
@@ -1128,6 +1151,33 @@
             margin: 0 0 0.75rem 0;
         }
         .feature-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        #core-capabilities .section-header {
+            max-width: none;
+        }
+        #core-capabilities h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 0 0 0.75rem 0;
+            color: #111827;
+            scroll-margin-top: 5.5rem;
+        }
+        #core-capabilities h3:not(:first-of-type) {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        #core-capabilities > .container > p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #374151;
+            margin: 0 0 0.75rem 0;
+            max-width: none;
+        }
+        #core-capabilities > .container > p:last-of-type {
             margin-bottom: 0;
         }
         
@@ -2123,6 +2173,47 @@
             </div>
         </div>
 
+        <!-- Demo / Video 之后 -->
+
+        <section class="section section-alt" id="what-is-ipa">
+            <div class="container" style="max-width: 720px;">
+
+                <h2 style="text-align: left;">
+                    What Is IPA (International Phonetic Alphabet)?
+                </h2>
+
+                <p style="color: #4b5563;">
+                    The <strong>International Phonetic Alphabet (IPA)</strong> is a system for representing the sounds of spoken language.
+                    It shows how words are actually pronounced, rather than how they are spelled.
+                </p>
+
+                <p style="color: #4b5563;">
+                    Example: <strong>through</strong> /θruː/ &nbsp;·&nbsp;
+                    <strong>thought</strong> /θɔːt/
+                </p>
+
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: #2563eb;">
+                        Learn more about IPA transcription
+                    </summary>
+
+                    <div style="margin-top: 0.75rem; color: #4b5563;">
+                        <p>
+                            Each IPA symbol corresponds to a specific sound, making pronunciation clear and consistent across languages.
+                        </p>
+                        <p>
+                            An English to IPA converter transforms written text into phonetic transcription,
+                            helping learners, teachers, and linguists study pronunciation more effectively.
+                        </p>
+                        <p>
+                            This tool uses the CMU Pronouncing Dictionary and works fully offline.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
         <!-- 2. Key Capabilities (light gray) -->
         <div class="section section-alt">
             <div class="container">
@@ -2133,20 +2224,40 @@
                 <div class="section-content">
                     <div class="feature-cards">
                         <div class="feature-card">
-                            <h3>Sentence-Level IPA Transcription</h3>
-                            <p>Convert full sentences and paragraphs into structured IPA while preserving punctuation and natural sentence boundaries.</p>
+                            <h3>
+                                <a href="#feature-sentence-ipa">Sentence-Level IPA Transcription</a>
+                            </h3>
+                            <p>Convert full sentences into structured IPA instantly.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-sentence-ipa" class="feature-link">Learn more →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>Word-by-Word IPA Alignment</h3>
-                            <p>Display each word together with its pronunciation to clearly connect spelling and phonetic representation.</p>
+                            <h3>
+                                <a href="#feature-word-alignment">Word-by-Word IPA Alignment</a>
+                            </h3>
+                            <p>See each word paired with its IPA pronunciation.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-word-alignment" class="feature-link">Learn more →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>Readable IPA Formatting</h3>
-                            <p>Outputs are structured into clean transcription blocks designed for study, teaching, and linguistic analysis.</p>
+                            <h3>
+                                <a href="#feature-formatting">Readable IPA Formatting</a>
+                            </h3>
+                            <p>Get clean, structured IPA output ready for study or teaching.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-formatting" class="feature-link">Learn more →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>Offline IPA Transcription</h3>
-                            <p>All transcription runs locally on your device with no cloud processing and no data tracking.</p>
+                            <h3>
+                                <a href="#feature-offline">Offline IPA Transcription</a>
+                            </h3>
+                            <p>Convert text to IPA fully offline with complete privacy.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-offline" class="feature-link">Learn more →</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -2154,80 +2265,94 @@
         </div>
 
         <!-- 3. Core Capabilities (white) -->
-        <div class="section">
-            <div class="container">
+        <section class="section" id="core-capabilities">
+            <div class="container" style="max-width: 800px;">
+
                 <div class="section-header">
-                    <h2>Core Capabilities</h2>
-                    <p>What you can do with this English-to-IPA transcription tool.</p>
-                    <p>Phonetic Formatter converts real English text into clear, structured IPA phonetic transcription designed for study, teaching, and linguistic analysis. Instead of simple word lookups, the app processes complete sentences and paragraphs while preserving readable formatting.</p>
+                    <h2>Detailed IPA Transcription Capabilities</h2>
+                    <p>
+                        This English to IPA converter is designed to process real-world text and produce accurate, structured phonetic transcription using the International Phonetic Alphabet (IPA).
+                    </p>
                 </div>
-                <div class="section-content">
-            <div class="feature-list">
-                <!-- Sentence-Level -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 6h16M4 12h16M4 18h10"/>
-                        </svg>
-                        <h3>Sentence-Level IPA Transcription</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>Convert full English sentences and paragraphs into structured IPA transcription while preserving natural sentence boundaries.</p>
-                        <p>The formatter processes real-world text including abbreviations, numbers, percentages, domain names, and punctuation, so entire passages can be transcribed without manual cleanup.</p>
-                        <p>This makes it suitable for classroom materials, pronunciation study, and linguistic analysis where complete text passages are required.</p>
-                    </div>
-                </div>
-    
-                <!-- Word-by-Word -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="7" height="16"/>
-                            <rect x="14" y="4" width="7" height="16"/>
-                        </svg>
-                        <h3>Word‑by‑Word IPA Alignment (Pro)</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>Display each word together with its corresponding IPA pronunciation in a structured alignment format.</p>
-                        <p>This layout makes it easy to examine pronunciation at the individual word level while still preserving the full sentence context.</p>
-                        <p>It is especially useful for teaching, worksheet preparation, pronunciation analysis, and classroom projection, where learners need to connect written words with their phonetic representation.</p>
-                    </div>
-                </div>
-    
-                <!-- Formatting -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 6h18M6 12h12M9 18h6"/>
-                        </svg>
-                        <h3>Clean, Readable IPA Formatting</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>Outputs are formatted into clear transcription blocks that pair original text with IPA lines in a consistent, readable structure.</p>
-                        <p>Stress marks, spacing, and punctuation are preserved so the transcription remains easy to read even for long passages or academic materials.</p>
-                        <p>The result is designed to be practical for study notes, teaching resources, and linguistic documentation.</p>
-                    </div>
-                </div>
-    
-                <!-- Offline -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/>
-                            <path d="M9 12l2 2 4-4"/>
-                        </svg>
-                        <h3>Offline IPA Transcription & Privacy</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>All transcription is performed locally on your device, with no cloud processing required.</p>
-                        <p>Your text never leaves the device, which ensures privacy, reliability, and instant response time.</p>
-                        <p>This makes the tool suitable for classroom environments, research work, and situations where internet access or data sharing is restricted.</p>
-                    </div>
-                </div>
+
+                <!-- 1 -->
+                <h3 id="feature-sentence-ipa">Sentence-Level IPA Transcription</h3>
+
+                <p>
+                    The system converts complete English sentences and paragraphs into IPA phonetic transcription while preserving punctuation, spacing, and natural sentence boundaries.
+                </p>
+
+                <p>
+                    Unlike basic phonetic converters that rely on isolated dictionary lookups, it processes continuous text as a whole, maintaining readability and structural coherence.
+                </p>
+
+                <p>
+                    It supports real-world input such as abbreviations, numbers, percentages, domain names, and mixed punctuation, allowing full passages to be transcribed without manual preprocessing.
+                </p>
+
+                <p>
+                    This makes it suitable for pronunciation practice, classroom materials, and linguistic analysis where full-text transcription is required.
+                </p>
+
+                <!-- 2 -->
+                <h3 id="feature-word-alignment">Word-by-Word IPA Alignment</h3>
+
+                <p>
+                    Each word in the original text is aligned with its corresponding IPA transcription, creating a clear mapping between spelling and pronunciation.
+                </p>
+
+                <p>
+                    This alignment format allows users to examine pronunciation at the individual word level while still preserving full sentence context.
+                </p>
+
+                <p>
+                    The structured layout is particularly useful for teaching, worksheet preparation, and pronunciation training, where learners need to connect written forms with phonetic representation.
+                </p>
+
+                <p>
+                    It also supports detailed analysis of stress patterns, syllable structure, and phonetic variation across words in a sentence.
+                </p>
+
+                <!-- 3 -->
+                <h3 id="feature-formatting">Readable and Structured IPA Formatting</h3>
+
+                <p>
+                    Transcription output is formatted into clean, consistent blocks that pair original text with IPA lines, making the result easy to read and use.
+                </p>
+
+                <p>
+                    Stress marks, spacing, and punctuation are preserved to maintain clarity, even when processing longer passages or complex text.
+                </p>
+
+                <p>
+                    The formatting is designed for practical use in study notes, teaching materials, and linguistic documentation, rather than raw or unstructured output.
+                </p>
+
+                <p>
+                    This ensures that IPA transcription remains accessible not only to linguists but also to learners and educators.
+                </p>
+
+                <!-- 4 -->
+                <h3 id="feature-offline">Offline IPA Transcription and Privacy</h3>
+
+                <p>
+                    All transcription is performed locally on your device, with no cloud processing or external API calls required.
+                </p>
+
+                <p>
+                    This guarantees that your text remains private and is never transmitted or stored externally.
+                </p>
+
+                <p>
+                    Offline processing also ensures consistent performance, instant response time, and reliability in environments with limited or no internet access.
+                </p>
+
+                <p>
+                    It is particularly suitable for classrooms, research settings, and professional workflows where data privacy and independence from online services are important.
+                </p>
+
             </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
         <!-- 4. How It Works (light gray) -->
         <div class="section section-alt">

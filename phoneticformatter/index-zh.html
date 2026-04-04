@@ -891,6 +891,29 @@
             margin: 0 0 0.5rem 0;
             line-height: 1.35;
         }
+        .feature-card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .feature-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .feature-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .feature-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .feature-card-more {
+            margin-top: auto;
+            padding-top: 0.75rem;
+            margin-bottom: 0 !important;
+        }
         @media (max-width: 480px) {
             .feature-card h3 {
                 font-size: 1.05rem;
@@ -1131,6 +1154,33 @@
             margin: 0 0 0.75rem 0;
         }
         .feature-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        #core-capabilities .section-header {
+            max-width: none;
+        }
+        #core-capabilities h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 0 0 0.75rem 0;
+            color: #111827;
+            scroll-margin-top: 5.5rem;
+        }
+        #core-capabilities h3:not(:first-of-type) {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        #core-capabilities > .container > p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #374151;
+            margin: 0 0 0.75rem 0;
+            max-width: none;
+        }
+        #core-capabilities > .container > p:last-of-type {
             margin-bottom: 0;
         }
         
@@ -2126,30 +2176,90 @@
             </div>
         </div>
 
+        <!-- Demo / 视频之后 -->
+
+        <section class="section section-alt" id="what-is-ipa">
+            <div class="container" style="max-width: 720px;">
+
+                <h2 style="text-align: left;">
+                    什么是国际音标（IPA）？
+                </h2>
+
+                <p style="color: #4b5563;">
+                    <strong>国际音标（IPA，International Phonetic Alphabet）</strong>是一种用于表示人类语言语音的标准化符号系统。
+                    它展示的是单词的实际发音，而不是拼写形式。
+                </p>
+
+                <p style="color: #4b5563;">
+                    示例：<strong>through</strong> /θruː/ &nbsp;·&nbsp;
+                    <strong>thought</strong> /θɔːt/
+                </p>
+
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: #2563eb;">
+                        了解更多关于 IPA 音标转写
+                    </summary>
+
+                    <div style="margin-top: 0.75rem; color: #4b5563;">
+                        <p>
+                            每个 IPA 符号都对应一个特定的语音，使不同语言之间的发音表示更加清晰和一致。
+                        </p>
+                        <p>
+                            英文转 IPA 工具可以将文本转换为音标转写，帮助学习者、教师和语言学研究者更准确地理解和分析发音。
+                        </p>
+                        <p>
+                            本工具基于 CMU 发音词典，并支持完全离线使用。
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
         <!-- 2. Key Capabilities (light gray) -->
         <div class="section section-alt">
             <div class="container">
                 <div class="section-header">
                     <h2>核心能力</h2>
-                    <p>为真实英文语料设计——不仅是查单个词。</p>
+                    <p>为真实英文语料打造 —— 不止支持单个单词查询，更适配整段文本的专业处理需求。</p>
                 </div>
                 <div class="section-content">
                     <div class="feature-cards">
                         <div class="feature-card">
-                            <h3>整句音标一键转写</h3>
-                            <p>将完整句子与段落一键转为结构化 IPA，并保留标点与自然分句。</p>
+                            <h3>
+                                <a href="#feature-sentence-ipa">整句级 IPA 转写</a>
+                            </h3>
+                            <p>一键将完整英文句段转换为规范 IPA 音标。</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-sentence-ipa" class="feature-link">了解更多 →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>逐词 IPA 对齐</h3>
-                            <p>逐词显示发音，清晰对应拼写与音标。</p>
+                            <h3>
+                                <a href="#feature-word-alignment">逐词 IPA 对齐</a>
+                            </h3>
+                            <p>原文词汇与音标发音精准对应、一一匹配。</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-word-alignment" class="feature-link">了解更多 →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>清晰的 IPA 排版</h3>
-                            <p>输出为清晰的转写块，便于学习、教学与语言分析。</p>
+                            <h3>
+                                <a href="#feature-formatting">清晰化 IPA 排版</a>
+                            </h3>
+                            <p>生成适配教学与学习的结构化音标输出。</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-formatting" class="feature-link">了解更多 →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>离线 IPA 转写</h3>
-                            <p>全部转写在本地完成，无需云端，不追踪数据。</p>
+                            <h3>
+                                <a href="#feature-offline">离线式 IPA 转写</a>
+                            </h3>
+                            <p>全程本地完成转写，数据隐私有保障。</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-offline" class="feature-link">了解更多 →</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -2157,87 +2267,53 @@
         </div>
 
         <!-- 3. Core Capabilities (white) -->
-        <div class="section">
-            <div class="container">
+        <section class="section" id="core-capabilities">
+            <div class="container" style="max-width: 800px;">
+
                 <div class="section-header">
-                    <h2>主要功能</h2>
-                    <p>这款英语转 IPA 工具能为你做什么。</p>
-                    <p>Phonetic Formatter 将真实英文转为清晰、结构化的 IPA，适用于学习、教学与语言分析。不同于简单查词，应用可处理完整句段并保持可读排版。可导出为 PDF / Word，方便打印教案与课堂材料。</p>
+                    <h2>详细的 IPA 转写能力</h2>
+                    <p>
+                        本英语转 IPA 工具专为真实文本处理设计，基于国际音标（IPA）生成精准、结构化的语音转写内容，满足专业使用需求。
+                    </p>
                 </div>
-                <div class="section-content">
-            <div class="feature-list">
-                <!-- Sentence-Level -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 6h16M4 12h16M4 18h10"/>
-                        </svg>
-                        <h3>整句音标一键转写</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>将完整英文句段一键转为结构化 IPA，并保留自然句界。</p>
-                        <p>可处理真实文本：缩写、数字、百分比、域名与标点，无需手动清理即可转写整段内容。</p>
-                        <p>适合课堂材料、发音练习与需要完整篇章的语言学分析。</p>
-                    </div>
-                </div>
-    
-                <!-- Word-by-Word -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="7" height="16"/>
-                            <rect x="14" y="4" width="7" height="16"/>
-                        </svg>
-                        <h3>逐词 IPA 对齐（Pro）</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>以结构化对齐格式逐词显示对应 IPA。</p>
-                        <p>在保留整句上下文的同时，细查每个词的发音。</p>
-                        <p>特别适合教学、习题、发音分析与课堂投影。</p>
-                    </div>
-                </div>
-    
-                <!-- Formatting -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 6h18M6 12h12M9 18h6"/>
-                        </svg>
-                        <h3>清晰可读的 IPA 排版</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>将原文与 IPA 行配对为一致的转写块，结构清晰。</p>
-                        <p>保留重音、间距与标点，长段落与学术材料也易于阅读。</p>
-                        <p>适用于笔记、教学资源与语言学文档。</p>
-                    </div>
-                </div>
-    
-                <!-- Offline -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/>
-                            <path d="M9 12l2 2 4-4"/>
-                        </svg>
-                        <h3>离线 IPA 转写与隐私</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>全部转写在设备本地完成，无需云端。</p>
-                        <p>100% 隐私安全：数据完全本地处理，无需联网。文本不离开设备，兼顾可靠与即时响应。</p>
-                        <p>适合教室、科研以及网络或数据分享受限的环境。</p>
-                    </div>
-                </div>
+
+                <!-- 1 -->
+                <h3 id="feature-sentence-ipa">整句级 IPA 转写</h3>
+
+                <p>
+                    可将完整的英文句子、段落转换为 IPA 音标，全程保留原文标点、空格与自然的分句结构。区别于仅支持孤立单词词典查询的基础工具，本工具对连续语篇做整体处理，保障转写内容的可读性与结构连贯性。完美支持缩写、数字、百分比、域名及混合标点等真实场景输入，无需手动预处理，即可实现整段文本的一键转写，适用于发音练习、课堂讲义制作及需全文转写的语言分析工作。
+                </p>
+
+                <!-- 2 -->
+                <h3 id="feature-word-alignment">逐词 IPA 对齐</h3>
+
+                <p>
+                    原文中的每个词汇，都会与对应的 IPA 转写内容精准对齐，实现拼写形式与实际发音的一一对应。该对齐形式既保留整句的语境信息，又方便在单词维度单独查看发音细节，结构化的版面设计特别适配教学备课、习题制作与发音训练，能帮助学习者快速建立书写形式与音标的关联认知，也支持对句内重音模式、音节结构及语音差异展开精细化分析。
+                </p>
+
+                <!-- 3 -->
+                <h3 id="feature-formatting">清晰、结构化的 IPA 排版</h3>
+
+                <p>
+                    转写输出内容会排版为清晰、规整的板块，原文与 IPA 音标分行对应呈现，便于阅读和实际使用。音标中的重音标记、字符间距及原文标点均完整保留，即便处理长段落或复杂文本，仍能保持版面清晰易读。排版设计完全贴合学习笔记、教学材料、语言学文档等实际使用场景，拒绝杂乱无章的非结构化输出，让 IPA 转写不仅适配语言学者的专业需求，也能让普通学习者和教师轻松上手。
+                </p>
+
+                <!-- 4 -->
+                <h3 id="feature-offline">离线 IPA 转写与隐私保护</h3>
+
+                <p>
+                    所有转写工作均在设备本地完成，无需云端处理或调用外部接口，从根本上确保文本数据的私密性，不会向外传输或存储。离线处理模式带来更稳定的性能表现与即时的响应速度，即便在网络受限或无网络的环境下，也能可靠使用，尤其适合教室、研究场景，以及重视数据隐私、希望减少对在线服务依赖的专业工作流程。
+                </p>
+
             </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
         <!-- 4. How It Works (light gray) -->
         <div class="section section-alt">
             <div class="container">
                 <div class="section-header">
                     <h2>使用步骤</h2>
-                    <p>几秒即可得到结构化 IPA。</p>
+                    <p>几秒即可得到结构化 IPA</p>
                 </div>
                 <div class="section-content how-it-works">
                     <ol class="how-it-works-steps">
@@ -2247,8 +2323,8 @@
                     </ol>
                     <div class="how-it-works-cta">
                         <div class="cta-content-box">
-                            <h4 class="cta-mini-title">没有门槛，只有更好的语音学体验。</h4>
-                            <p class="cta-main-text">几秒完成第一次转换。</p>
+                            <h4 class="cta-mini-title">零门槛上手，专业音标一键生成</h4>
+                            <p class="cta-main-text">一键转写，秒出标准音标</p>
                             <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_howitworks" class="btn-primary btn-cta-pill" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'how_it_works'});">
                                 <span class="cta-label-long">iOS 下载</span>
                                 <span class="cta-label-short">下载</span>
@@ -2261,7 +2337,7 @@
                                 <svg class="cta-note-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
-                                <span>完全离线。无需账号。</span>
+                                <span>完全离线，无需账号</span>
                             </div>
                         </div>
                     </div>

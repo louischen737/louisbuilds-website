@@ -888,6 +888,29 @@
             margin: 0 0 0.5rem 0;
             line-height: 1.35;
         }
+        .feature-card h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .feature-card h3 a:hover {
+            text-decoration: underline;
+        }
+        .feature-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .feature-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .feature-card-more {
+            margin-top: auto;
+            padding-top: 0.75rem;
+            margin-bottom: 0 !important;
+        }
         @media (max-width: 480px) {
             .feature-card h3 {
                 font-size: 1.05rem;
@@ -1128,6 +1151,33 @@
             margin: 0 0 0.75rem 0;
         }
         .feature-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        #core-capabilities .section-header {
+            max-width: none;
+        }
+        #core-capabilities h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 0 0 0.75rem 0;
+            color: #111827;
+            scroll-margin-top: 5.5rem;
+        }
+        #core-capabilities h3:not(:first-of-type) {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        #core-capabilities > .container > p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #374151;
+            margin: 0 0 0.75rem 0;
+            max-width: none;
+        }
+        #core-capabilities > .container > p:last-of-type {
             margin-bottom: 0;
         }
         
@@ -2123,30 +2173,90 @@
             </div>
         </div>
 
+        <!-- Después de demo / vídeo -->
+
+        <section class="section section-alt" id="what-is-ipa">
+            <div class="container" style="max-width: 720px;">
+
+                <h2 style="text-align: left;">
+                    ¿Qué es el Alfabeto Fonético Internacional (IPA)?
+                </h2>
+
+                <p style="color: #4b5563;">
+                    El <strong>Alfabeto Fonético Internacional (IPA)</strong> es un sistema para representar los sonidos del lenguaje hablado.
+                    Muestra cómo se pronuncian realmente las palabras, en lugar de cómo se escriben.
+                </p>
+
+                <p style="color: #4b5563;">
+                    Ejemplo: <strong>through</strong> /θruː/ &nbsp;·&nbsp;
+                    <strong>thought</strong> /θɔːt/
+                </p>
+
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: #2563eb;">
+                        Más información sobre la transcripción IPA
+                    </summary>
+
+                    <div style="margin-top: 0.75rem; color: #4b5563;">
+                        <p>
+                            Cada símbolo IPA corresponde a un sonido específico, lo que hace que la pronunciación sea clara y consistente entre distintos idiomas.
+                        </p>
+                        <p>
+                            Un convertidor de inglés a IPA transforma el texto escrito en transcripción fonética, ayudando a estudiantes, profesores y lingüistas a estudiar la pronunciación.
+                        </p>
+                        <p>
+                            Esta herramienta utiliza el diccionario de pronunciación CMU y funciona completamente sin conexión.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
         <!-- 2. Key Capabilities (light gray) -->
         <div class="section section-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2>Funciones clave</h2>
-                    <p>Diseñado para trabajar con texto real en inglés, no solo búsquedas de palabras sueltas.</p>
+                    <h2>Funciones Clave</h2>
+                    <p>Diseñado para trabajar con textos reales en inglés, no solo búsquedas de palabras aisladas.</p>
                 </div>
                 <div class="section-content">
                     <div class="feature-cards">
                         <div class="feature-card">
-                            <h3>Transcripción IPA por oración</h3>
-                            <p>Convierte oraciones y párrafos completos en IPA estructurada conservando la puntuación y los límites naturales de las oraciones.</p>
+                            <h3>
+                                <a href="#feature-sentence-ipa">Transcripción IPA a nivel de oración</a>
+                            </h3>
+                            <p>Convierta oraciones completas en una estructura IPA al instante.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-sentence-ipa" class="feature-link">Saber más →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>Alineación IPA palabra por palabra</h3>
-                            <p>Muestra cada palabra con su pronunciación para conectar de forma clara la ortografía y la representación fonética.</p>
+                            <h3>
+                                <a href="#feature-word-alignment">Alineación IPA palabra por palabra</a>
+                            </h3>
+                            <p>Vea cada palabra emparejada con su pronunciación fonética IPA.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-word-alignment" class="feature-link">Saber más →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>Formato IPA legible</h3>
-                            <p>Salidas organizadas en bloques limpios para estudio, enseñanza y análisis lingüístico.</p>
+                            <h3>
+                                <a href="#feature-formatting">Formato IPA legible</a>
+                            </h3>
+                            <p>Obtenga resultados IPA limpios y estructurados, listos para estudiar o enseñar.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-formatting" class="feature-link">Saber más →</a>
+                            </p>
                         </div>
                         <div class="feature-card">
-                            <h3>Transcripción IPA sin conexión</h3>
-                            <p>Toda la transcripción se ejecuta en tu dispositivo, sin nube ni seguimiento de datos.</p>
+                            <h3>
+                                <a href="#feature-offline">Transcripción IPA sin conexión</a>
+                            </h3>
+                            <p>Convierta texto a IPA de forma totalmente local y con total privacidad.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-offline" class="feature-link">Saber más →</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -2154,80 +2264,42 @@
         </div>
 
         <!-- 3. Core Capabilities (white) -->
-        <div class="section">
-            <div class="container">
+        <section class="section" id="core-capabilities">
+            <div class="container" style="max-width: 800px;">
+
                 <div class="section-header">
-                    <h2>Capacidades principales</h2>
-                    <p>Qué puedes hacer con esta herramienta de transcripción inglés → IPA.</p>
-                    <p>Phonetic Formatter convierte texto real en inglés en transcripción IPA/AFI clara y estructurada para estudio, docencia y análisis lingüístico. En lugar de simples consultas palabra por palabra, procesa oraciones y párrafos completos con formato legible. Ideal para crear fichas de trabajo y materiales de clase imprimibles.</p>
+                    <h2>Capacidades Detalladas de Transcripción IPA</h2>
+                    <p>
+                        Este conversor de inglés a IPA está diseñado para procesar textos del mundo real y generar transcripciones fonéticas precisas y estructuradas utilizando el Alfabeto Fonético Internacional (IPA).
+                    </p>
                 </div>
-                <div class="section-content">
-            <div class="feature-list">
-                <!-- Sentence-Level -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 6h16M4 12h16M4 18h10"/>
-                        </svg>
-                        <h3>Transcripción IPA por oración</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>Convierte oraciones y párrafos completos en IPA estructurada conservando los límites naturales de las oraciones.</p>
-                        <p>Procesa texto real: abreviaturas, números, porcentajes, dominios y puntuación, para transcribir pasajes enteros sin limpieza manual.</p>
-                        <p>Adecuado para materiales de clase, estudio de pronunciación y análisis lingüístico cuando se necesitan pasajes completos.</p>
-                    </div>
-                </div>
-    
-                <!-- Word-by-Word -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="7" height="16"/>
-                            <rect x="14" y="4" width="7" height="16"/>
-                        </svg>
-                        <h3>Alineación IPA palabra por palabra (Pro)</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>Muestra cada palabra con su pronunciación IPA en un formato de alineación estructurado.</p>
-                        <p>Facilita examinar la pronunciación palabra a palabra manteniendo el contexto de la oración.</p>
-                        <p>Muy útil para docencia, hojas de ejercicios, análisis de pronunciación y proyección en clase.</p>
-                    </div>
-                </div>
-    
-                <!-- Formatting -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 6h18M6 12h12M9 18h6"/>
-                        </svg>
-                        <h3>Formato IPA legible y claro</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>Salidas en bloques de transcripción que emparejan texto original y líneas IPA de forma coherente y legible.</p>
-                        <p>Se conservan acentos, espacios y puntuación para mantener la legibilidad en pasajes largos o materiales académicos.</p>
-                        <p>Pensado para apuntes, recursos docentes y documentación lingüística.</p>
-                    </div>
-                </div>
-    
-                <!-- Offline -->
-                <div class="feature-item">
-                    <div class="feature-title-row">
-                        <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/>
-                            <path d="M9 12l2 2 4-4"/>
-                        </svg>
-                        <h3>Transcripción IPA sin conexión y privacidad</h3>
-                    </div>
-                    <div class="feature-description">
-                        <p>Toda la transcripción se realiza en tu dispositivo, sin procesamiento en la nube.</p>
-                        <p>Privacidad 100 % garantizada: funciona totalmente offline; todo el procesamiento es local en tu dispositivo. Tu texto no sale del dispositivo: fiabilidad y respuesta instantánea.</p>
-                        <p>Adecuado para aulas, investigación y entornos con acceso a Internet o intercambio de datos restringido.</p>
-                    </div>
-                </div>
+
+                <h3 id="feature-sentence-ipa">Transcripción IPA a nivel de oración</h3>
+                <p>El sistema convierte oraciones y párrafos completos en transcripciones fonéticas IPA conservando la puntuación, el espaciado y los límites naturales de las frases.</p>
+                <p>A diferencia de los conversores básicos que dependen de diccionarios de palabras aisladas, este procesa el texto continuo como un todo, manteniendo la legibilidad y la coherencia estructural.</p>
+                <p>Admite entradas reales como abreviaturas, números, porcentajes, dominios y puntuación mixta, permitiendo transcribir pasajes completos sin preprocesamiento manual.</p>
+                <p>Esto lo hace ideal para la práctica de la pronunciación, materiales de clase y análisis lingüísticos que requieren transcripciones de texto completo.</p>
+
+                <h3 id="feature-word-alignment">Alineación IPA palabra por palabra</h3>
+                <p>Cada palabra del texto original se alinea con su correspondiente transcripción IPA, creando un mapeo claro entre la ortografía y la pronunciación.</p>
+                <p>Este formato de alineación permite a los usuarios examinar la pronunciación palabra por palabra mientras se mantiene el contexto de la oración completa.</p>
+                <p>El diseño estructurado es especialmente útil para la enseñanza, la preparación de hojas de trabajo y el entrenamiento de la pronunciación.</p>
+                <p>También permite un análisis detallado de los patrones de acentuación, la estructura silábica y la variación fonética entre las palabras.</p>
+
+                <h3 id="feature-formatting">Formato IPA estructurado y legible</h3>
+                <p>Los resultados se presentan en bloques limpios y consistentes que emparejan el texto original con las líneas de IPA, facilitando su lectura y uso.</p>
+                <p>Se conservan las marcas de acentuación, el espaciado y la puntuación para mantener la claridad, incluso al procesar pasajes largos o complejos.</p>
+                <p>El formato está diseñado para uso práctico en notas de estudio y materiales didácticos, evitando salidas de texto plano sin estructura.</p>
+                <p>Esto asegura que la transcripción IPA sea accesible no solo para lingüistas, sino también para estudiantes y educadores.</p>
+
+                <h3 id="feature-offline">Transcripción sin conexión y Privacidad</h3>
+                <p>Toda la transcripción se realiza localmente en su dispositivo, sin necesidad de procesamiento en la nube ni llamadas a API externas.</p>
+                <p>Esto garantiza que su texto permanezca privado y nunca sea transmitido o almacenado externamente.</p>
+                <p>El procesamiento offline también asegura un rendimiento constante, respuesta instantánea y fiabilidad en entornos sin acceso a Internet.</p>
+                <p>Es particularmente adecuado para aulas, entornos de investigación y flujos de trabajo profesionales donde la privacidad de los datos es fundamental.</p>
+
             </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
         <!-- 4. How It Works (light gray) -->
         <div class="section section-alt">
