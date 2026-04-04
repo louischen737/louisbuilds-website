@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Louis Builds — Independent apps for focus and mindfulness. Featuring PurrrrrFocus and Phonetic Formatter. Thoughtfully designed for productivity, rest, and learning." />
+<meta name="description" content="Independent freemium apps to boost focus, reduce screen time, and build healthy habits. Discover Step1st, PurrrrrFocus, TapPause, and more." />
 <link rel="canonical" href="https://louisbuilds.me/" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -13,12 +13,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://louisbuilds.me/" />
 <meta property="og:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
-<meta property="og:description" content="Independent apps for focus and mindfulness: Step1st, TapPause, PurrrrrFocus, TransMov, Phonetic Formatter. Thoughtfully built for rest, productivity, and learning." />
+<meta property="og:description" content="Independent freemium apps to boost focus, reduce screen time, and build healthy habits. Discover Step1st, PurrrrrFocus, TapPause, and more." />
 <meta property="og:image" content="https://louisbuilds.me/assets/og-image.png" />
 <meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
-<meta name="twitter:description" content="Independent apps for focus and mindfulness: Step1st, TapPause, PurrrrrFocus, TransMov, Phonetic Formatter." />
+<meta name="twitter:description" content="Independent freemium apps to boost focus, reduce screen time, and build healthy habits. Discover Step1st, PurrrrrFocus, TapPause, and more." />
 
 <!-- 结构化数据 (Schema.org) — applicationCategory 与站点应用页、App Store 分类对齐 -->
 <script type="application/ld+json">
@@ -41,6 +41,14 @@
       "applicationSubCategory": "Productivity",
       "softwareVersion": "1.0",
       "url": "https://louisbuilds.me/step1st/",
+      "description": "Step1st helps you reduce screen time and build walking habits with simple daily step goals before you unlock chosen apps.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://apps.apple.com/app/id6760578956",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to download. Optional monthly subscription with a 3-day free trial and annual subscription with a 7-day free trial."
+      },
       "author": { "@id": "https://louisbuilds.me/#person" }
     },
     {
@@ -50,6 +58,14 @@
       "applicationCategory": "UtilitiesApplication",
       "softwareVersion": "1.1",
       "url": "https://louisbuilds.me/phoneticformatter/",
+      "description": "Phonetic Formatter converts English text into accurate IPA transcription, with sentence-level and word-aligned output, fully on device.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to download. Optional one-time purchase for lifetime membership."
+      },
       "author": { "@id": "https://louisbuilds.me/#person" }
     },
     {
@@ -58,8 +74,21 @@
       "operatingSystem": "iOS",
       "applicationCategory": "ProductivityApplication",
       "applicationSubCategory": "Utilities",
-      "softwareVersion": "2.3",
+      "softwareVersion": "2.4",
       "url": "https://louisbuilds.me/purrrrrfocus/",
+      "description": "PurrrrrFocus is a focus timer app with gentle cat animations to reduce distraction and boost productivity.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to download. Optional monthly subscription (3-day free trial), annual subscription (7-day free trial), and lifetime purchase."
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3"
+      },
       "author": { "@id": "https://louisbuilds.me/#person" }
     },
     {
@@ -69,6 +98,14 @@
       "applicationCategory": "HealthApplication",
       "softwareVersion": "1.1",
       "url": "https://louisbuilds.me/tappause/",
+      "description": "TapPause is a minimal pause timer for intentional breaks—stop, pause, and rest without clutter.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://apps.apple.com/us/app/tappause-pause-timer/id6758304453",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to download with core pause features. Optional one-time purchase for Pro lifetime access."
+      },
       "author": { "@id": "https://louisbuilds.me/#person" }
     },
     {
@@ -79,6 +116,14 @@
       "applicationSubCategory": "Productivity",
       "softwareVersion": "2.0",
       "url": "https://louisbuilds.me/transmov/",
+      "description": "TransMov is a native macOS app for transparent GIF, APNG, and WebP with local AI background removal and maximum privacy.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to download with premium subscription and lifetime options."
+      },
       "author": { "@id": "https://louisbuilds.me/#person" }
     }
   ]
@@ -311,6 +356,28 @@ body {
     transform: scale(1.05);
 }
 
+.btn-early-access {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.4s var(--ease), background 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.btn-early-access:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
 .btn-learn {
     font-size: 15px;
     color: var(--text-primary);
@@ -355,9 +422,25 @@ body {
     grid-template-columns: repeat(2, 1fr);
 }
 
+/* Pre-footer tagline — align column with Journal */
+.site-tagline {
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 56px) 24px 32px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.site-tagline p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    text-wrap: balance;
+}
+
 /* Footer */
 footer {
-    padding: 120px 24px 60px;
+    padding: clamp(64px, 10vw, 96px) 24px 60px;
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.08);
     color: var(--text-secondary);
@@ -379,7 +462,7 @@ footer p {
 
 /* Journal */
 .journal-section {
-    padding: 48px 20px 88px;
+    padding: clamp(56px, 8vw, 88px) 24px clamp(72px, 10vw, 112px);
     max-width: 900px;
     margin: 0 auto;
     opacity: 0;
@@ -393,23 +476,105 @@ footer p {
 }
 
 .journal-section .section-header {
-    margin-bottom: 50px;
+    margin-bottom: 0;
+    padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .journal-section .section-header h2 {
-    font-size: 2rem;
+    font-size: clamp(1.65rem, 4vw, 2rem);
     font-weight: 400;
     color: var(--text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
 }
 
 .journal-section .subtitle {
     color: var(--text-secondary);
     font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 36rem;
 }
 
+.journal-body {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 3vw, 1.85rem);
+    margin-top: clamp(1.35rem, 2.8vw, 1.85rem);
+}
+
+/* Featured — stronger visual weight */
+.journal-featured {
+    margin-bottom: 0;
+}
+
+.journal-featured-link {
+    display: block;
+    padding: 28px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.journal-featured-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.journal-featured-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.journal-featured-meta {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.journal-featured-title {
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 10px 0 0;
+    color: var(--text-primary);
+    transition: color 0.2s var(--ease);
+}
+
+.journal-featured-link:hover .journal-featured-title {
+    color: #fff;
+}
+
+.journal-featured-excerpt {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.journal-featured-arrow {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--accent);
+    opacity: 0.9;
+    transition: transform 0.25s var(--ease), opacity 0.2s;
+}
+
+.journal-featured-link:hover .journal-featured-arrow {
+    transform: translateX(4px);
+    opacity: 1;
+}
+
+/* List — lighter rows */
 .journal-list {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 2px;
 }
 
 .journal-item {
@@ -419,18 +584,12 @@ footer p {
 .journal-link {
     display: flex;
     align-items: flex-start;
-    padding: 25px 0;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
     text-decoration: none;
     color: var(--text-primary);
-    transition: padding 0.3s var(--ease), color 0.3s var(--ease);
-    gap: 20px;
-}
-
-.journal-date {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    min-width: 80px;
-    font-family: inherit;
+    transition: color 0.25s var(--ease);
 }
 
 .journal-text {
@@ -440,13 +599,10 @@ footer p {
     min-width: 0;
 }
 
-.journal-tag {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+.journal-meta {
+    font-size: 0.8rem;
     color: var(--text-muted);
-    margin-bottom: 6px;
-    display: block;
+    margin-bottom: 4px;
 }
 
 .journal-title {
@@ -466,10 +622,10 @@ footer p {
 
 .journal-arrow {
     flex-shrink: 0;
-    margin-top: 0.2em;
+    margin-top: 0.15em;
     opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    transform: translateX(-6px);
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
     color: var(--accent);
 }
 
@@ -483,18 +639,69 @@ footer p {
 }
 
 .journal-link:hover {
-    padding-left: 10px;
+    padding-left: 0;
+}
+
+/* CTA — soft footer to section */
+.journal-follow-cta {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0.85;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.journal-follow-cta p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    text-wrap: balance;
+}
+
+.journal-follow-cta a {
+    margin-top: 10px;
+    display: inline-block;
+    border: none;
+    background: none;
+    padding: 0;
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    font-size: 14px;
+    transition: color 0.2s var(--ease);
+}
+
+.journal-follow-cta a:hover {
+    color: #fff;
+}
+
+.journal-follow-cta a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
 }
 
 @media (max-width: 600px) {
     .journal-link {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 10px;
     }
 
-    .journal-date {
-        min-width: auto;
+    .journal-arrow {
+        align-self: flex-end;
+        margin-top: 0;
+    }
+
+    .journal-section {
+        padding-left: max(20px, env(safe-area-inset-left, 0px));
+        padding-right: max(20px, env(safe-area-inset-right, 0px));
+    }
+
+    .journal-featured-link {
+        padding: 22px 20px;
     }
 }
 
@@ -509,6 +716,14 @@ footer p {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+
+    .journal-featured-link,
+    .journal-featured-link:hover,
+    .journal-featured-arrow,
+    .journal-featured-link:hover .journal-featured-arrow {
+        transition: none;
+        transform: none;
     }
 }
 
@@ -534,7 +749,7 @@ footer p {
 <main>
 <section class="hero">
     <h1>Louis Builds</h1>
-    <p>Built with intention. Designed to feel effortless.</p>
+    <p>Independent apps to reduce screen time, improve focus, and rethink how we use our phones.</p>
     <a href="#products" class="explore-btn">Explore Apps</a>
 </section>
 
@@ -545,15 +760,16 @@ footer p {
 <div class="product-info">
 <h2><img src="step1st/step1st-icon.webp" class="app-icon" alt="Step1st app icon" width="60" height="60"> Step1st</h2>
 <p>Unlock your apps with step goals. Reduce screen time and build healthier habits through movement.</p>
+<p style="font-size:14px; color:var(--accent); margin-top:-10px;">
+Currently in TestFlight — early access available
+</p>
 <div class="tags">iOS · Health &amp; Fitness · Productivity · v1.0</div>
 <div class="tags" style="margin-top: -20px;">
 Documentation available in:
 <a href="step1st/" style="color: inherit; text-decoration: underline;">English</a>
 </div>
 <div class="buttons">
-<a href="https://apps.apple.com/app/id6760578956" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Step1st on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="120" height="40">
-</a>
+<a href="https://substack.com/@louisbuilds/p-193051902" class="btn-early-access" target="_blank" rel="noopener noreferrer" aria-label="Get early access to Step1st via Substack">Get Early Access</a>
 <a href="step1st/" class="btn-learn">Learn More →</a>
 </div>
 </div>
@@ -582,7 +798,7 @@ Documentation available in:
 <a href="tappause/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
 </div>
 <div class="buttons">
-<a href="https://apps.apple.com/app/tappause" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause on the App Store">
+<a href="https://apps.apple.com/us/app/tappause-pause-timer/id6758304453" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause on the App Store">
 <img src="assets/app-store-badge.svg" alt="Download TapPause on the App Store" width="120" height="40">
 </a>
 <a href="tappause/" class="btn-learn">Learn More →</a>
@@ -601,7 +817,7 @@ Documentation available in:
 <div class="product-info">
 <h2><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60"> PurrrrrFocus</h2>
 <p>Deep focus timers with progress tracking and your cat companion.</p>
-<div class="tags">iOS · iPhone &amp; iPad · v2.3 · Productivity · Utilities</div>
+<div class="tags">iOS · iPhone &amp; iPad · v2.4 · Productivity · Utilities</div>
 <div class="tags" style="margin-top: -20px;">
 Documentation available in:
 <a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
@@ -682,71 +898,94 @@ Documentation available in:
 </section>
 
 <section class="journal-section" id="journal" aria-labelledby="journal-heading">
+
     <div class="section-header">
         <h2 id="journal-heading">Journal</h2>
         <p class="subtitle">Notes on craft, focus, and building independent apps.</p>
     </div>
 
-    <div class="journal-list">
-        <article class="journal-item">
-            <a href="/blog/how-to-stop-doomscrolling-what-worked-for-my-mom.html" class="journal-link">
-                <span class="journal-date">Apr 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Digital Wellness / Screen Time</span>
-                    <h3 class="journal-title">How to Stop Doomscrolling (What Actually Worked for My Mom)</h3>
-                    <p class="journal-excerpt">Why traditional screen time limits fail—and how a simple daily step goal changed my mom’s habits.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
+    <div class="journal-body">
+
+        <div class="journal-featured">
+            <a href="/blog/how-to-stop-doomscrolling-what-worked-for-my-mom.html" class="journal-featured-link" aria-label="Featured: How to Stop Doomscrolling (What Actually Worked for My Mom)">
+                <div class="journal-featured-meta">Featured · Behavior</div>
+                <h3 class="journal-featured-title">How to Stop Doomscrolling (What Actually Worked for My Mom)</h3>
+                <p class="journal-featured-excerpt">
+                    Why traditional screen time limits fail—and how a simple daily step goal changed my mom’s habits.
+                </p>
+                <span class="journal-featured-arrow" aria-hidden="true">Read article →</span>
             </a>
-        </article>
-        <article class="journal-item">
-            <a href="/blog/500mb-crisis-ink-wash-cats-transmov.html" class="journal-link">
-                <span class="journal-date">Apr 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Engineering / Story</span>
-                    <h3 class="journal-title">The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough</h3>
-                    <p class="journal-excerpt">How a struggle with high-quality animations led to the creation of TransMov and a leaner, smoother PurrrrrFocus.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
-            </a>
-        </article>
-        <article class="journal-item">
-            <a href="/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html" class="journal-link">
-                <span class="journal-date">Mar 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Engineering</span>
-                    <h3 class="journal-title">The Technical Challenge of Aligning English Sentences with IPA</h3>
-                    <p class="journal-excerpt">Building a word-aligned transcription engine that works 100% offline.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
-            </a>
-        </article>
-        <article class="journal-item">
-            <a href="/blog/the-zen-of-productivity-silent-companion.html" class="journal-link">
-                <span class="journal-date">Feb 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Design</span>
-                    <h3 class="journal-title">Digital Minimalism &amp; China-Chic: The Zen of a Cat-Themed Pomodoro Timer</h3>
-                    <p class="journal-excerpt">Exploring the balance between Guochao aesthetics and deep work rituals.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
-            </a>
-        </article>
-        <article class="journal-item">
-            <a href="/blog/building-offline-first-apps.html" class="journal-link">
-                <span class="journal-date">Jan 2026</span>
-                <div class="journal-text">
-                    <span class="journal-tag">Philosophy</span>
-                    <h3 class="journal-title">Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud</h3>
-                    <p class="journal-excerpt">My commitment to privacy: why none of my 4 apps require an account.</p>
-                </div>
-                <span class="journal-arrow" aria-hidden="true">→</span>
-            </a>
-        </article>
+        </div>
+
+        <div class="journal-list">
+
+            <article class="journal-item">
+                <a href="/blog/500mb-crisis-ink-wash-cats-transmov.html" class="journal-link">
+                    <div class="journal-text">
+                        <div class="journal-meta">Apr 2026 · Engineering / Story</div>
+                        <h3 class="journal-title">The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough</h3>
+                        <p class="journal-excerpt">
+                            How a struggle with high-quality animations led to the creation of TransMov and a leaner, smoother PurrrrrFocus.
+                        </p>
+                    </div>
+                    <span class="journal-arrow" aria-hidden="true">→</span>
+                </a>
+            </article>
+
+            <article class="journal-item">
+                <a href="/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html" class="journal-link">
+                    <div class="journal-text">
+                        <div class="journal-meta">Mar 2026 · Engineering</div>
+                        <h3 class="journal-title">The Technical Challenge of Aligning English Sentences with IPA</h3>
+                        <p class="journal-excerpt">
+                            Building a word-aligned transcription engine that works 100% offline.
+                        </p>
+                    </div>
+                    <span class="journal-arrow" aria-hidden="true">→</span>
+                </a>
+            </article>
+
+            <article class="journal-item">
+                <a href="/blog/the-zen-of-productivity-silent-companion.html" class="journal-link">
+                    <div class="journal-text">
+                        <div class="journal-meta">Feb 2026 · Design</div>
+                        <h3 class="journal-title">Digital Minimalism &amp; China-Chic: The Zen of a Cat-Themed Pomodoro Timer</h3>
+                        <p class="journal-excerpt">
+                            Exploring the balance between Guochao aesthetics and deep work rituals.
+                        </p>
+                    </div>
+                    <span class="journal-arrow" aria-hidden="true">→</span>
+                </a>
+            </article>
+
+            <article class="journal-item">
+                <a href="/blog/building-offline-first-apps.html" class="journal-link">
+                    <div class="journal-text">
+                        <div class="journal-meta">Jan 2026 · Philosophy</div>
+                        <h3 class="journal-title">Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud</h3>
+                        <p class="journal-excerpt">
+                            My commitment to privacy: why none of my apps require an account.
+                        </p>
+                    </div>
+                    <span class="journal-arrow" aria-hidden="true">→</span>
+                </a>
+            </article>
+
+        </div>
+
+        <div class="journal-follow-cta">
+            <p>Occasional notes on building, focus, and quiet software.</p>
+            <a href="https://substack.com/@louisbuilds" target="_blank" rel="noopener noreferrer" aria-label="Read more on Substack">Read more on Substack →</a>
+        </div>
+
     </div>
 </section>
 
 </main>
+
+<div class="site-tagline">
+    <p>Built by Louis — independent developer exploring digital minimalism and offline-first apps.</p>
+</div>
 
 <footer>
 <div>
