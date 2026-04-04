@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough | Louis Builds</title>
+<title>The 500MB App Crisis: How I Built TransMov to Fix It | Louis Builds</title>
 <meta name="description" content="How a 500MB asset crisis in PurrrrrFocus led to a failed build, the creation of TransMov, and a hard-won breakthrough in smooth high-fidelity animation." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html" />
@@ -11,12 +11,12 @@
 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html" />
-<meta property="og:title" content="The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough | Louis Builds" />
+<meta property="og:title" content="The 500MB App Crisis: How I Built TransMov to Fix It | Louis Builds" />
 <meta property="og:description" content="From a 500MB PurrrrrFocus build failure to TransMov: the technical story behind quality transparent animations and silky playback." />
 <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png" />
 <meta property="article:published_time" content="2026-04-01T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough | Louis Builds" />
+<meta name="twitter:title" content="The 500MB App Crisis: How I Built TransMov to Fix It | Louis Builds" />
 <meta name="twitter:description" content="How a struggle with high-quality animation assets led to TransMov and a leaner, smoother PurrrrrFocus." />
 <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png" />
 
@@ -24,12 +24,13 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough",
+  "headline": "The 500MB App Crisis: How I Built TransMov to Fix It",
   "description": "A 500MB asset crisis during PurrrrrFocus development triggered the creation of TransMov and a complete animation pipeline overhaul.",
   "datePublished": "2026-04-01",
   "author": { "@type": "Organization", "name": "Louis Builds", "url": "https://louisbuilds.me/" },
   "publisher": { "@type": "Organization", "name": "Louis Builds" },
-  "mainEntityOfPage": "https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html"
+  "mainEntityOfPage": "https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html",
+  "keywords": ["Indie Development", "App Size Optimization", "TransMov", "macOS Development", "APNG vs WebP"]
 }
 </script>
 
@@ -134,7 +135,7 @@ footer a { color: var(--muted); }
 </header>
 
 <article>
-    <h1>The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough</h1>
+    <h1>The 500MB App Crisis: How I Built TransMov to Fix It</h1>
     <p class="article-meta">April 2026 · Engineering / Indie Dev / Story</p>
 
     <p class="lede">In the world of indie development, the most powerful tools are often born from the most frustrating constraints. My journey with <a class="inline-link" href="../purrrrrfocus/"><strong>PurrrrrFocus</strong></a> is a story of how a 500MB asset crisis led to a failed build, a new macOS app, and a vital lesson in technical persistence.</p>
@@ -160,16 +161,16 @@ footer a { color: var(--muted); }
 
     <h2 id="breakthrough">3. The Breakthrough: The Birth of TransMov</h2>
     <p>Since there was no video-to-transparent-animation tool that met my standards for quality and privacy, I decided to stop building the timer and start building the tool.</p>
-    <p>I rebuilt my clunky web script as a native macOS app. Leveraging Apple Neural Engine and native AI capabilities, <a class="inline-link" href="../transmov/"><strong>TransMov</strong></a> was born. It featured:</p>
+    <p>I rebuilt my clunky web script as a native macOS app. Leveraging Apple Neural Engine and native AI capabilities, <a class="inline-link" href="../transmov/" title="TransMov - AI Video Background Remover for macOS (APNG, WebP, GIF)"><strong>TransMov</strong></a> was born. It featured:</p>
     <ul>
         <li><strong>AI Background Removal:</strong> Local, on-device processing for privacy and efficiency.</li>
         <li><strong>Multi-Format Export:</strong> Seamless conversion between Video, APNG, WebP, and GIF.</li>
         <li><strong>Frame-by-Frame Editing:</strong> Essential for inspecting and refining complex frames, like the shimmering silk details on the Opera Cat.</li>
     </ul>
-    <p><a class="inline-link" href="../transmov/">TransMov</a> was meant to be an internal utility, but when it gained its first paying subscriber on the Mac App Store, I realized: <strong>When you build a wheel to climb a mountain, that wheel itself has value.</strong></p>
+    <p><a class="inline-link" href="../transmov/" title="TransMov - AI Video Background Remover for macOS (APNG, WebP, GIF)">TransMov</a> was meant to be an internal utility, but when it gained its first paying subscriber on the Mac App Store, I realized: <strong>When you build a wheel to climb a mountain, that wheel itself has value.</strong></p>
 
     <h2 id="final-polish">4. The Final Polish: Solving the Stutter</h2>
-    <p>With <a class="inline-link" href="../transmov/">TransMov</a>, I converted all assets to WebP, cutting total asset size to roughly 300MB. I then implemented <strong>On-Demand Resources (ODR)</strong>, keeping 2 default cats in the bundle while letting users download the others after unlocking.</p>
+    <p>With <a class="inline-link" href="../transmov/" title="TransMov - AI Video Background Remover for macOS (APNG, WebP, GIF)">TransMov</a>, I converted all assets to WebP, cutting total asset size to roughly 300MB. I then implemented <strong>On-Demand Resources (ODR)</strong>, keeping 2 default cats in the bundle while letting users download the others after unlocking.</p>
     <p>However, one final hurdle appeared: animation stutter. I remembered a Product Hunt user mentioning FPS issues in an early APNG version. At the time, I did not connect the dots, but eventually identified the real bottleneck in my custom playback component.</p>
     <p>I tried resource pre-warming and aggressive caching strategies, but none fixed the lag. Finally, I replaced my custom rendering path with <strong>SDWebImage</strong> and <strong>SDWebImageWebPCoder</strong>. The difference was immediate: stutter disappeared, and the cats moved with silky smoothness without sacrificing resolution.</p>
 
