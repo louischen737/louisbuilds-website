@@ -66,6 +66,87 @@
       "dateModified": "2026-03-24"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is APNG better than GIF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For quality and transparency, yes. GIF still has universal legacy support, but APNG is supported in all modern browsers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does APNG support transparency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. APNG supports full 8-bit alpha transparency with smooth semi-transparent edges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert video to APNG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Tools like TransMov allow direct video-to-APNG conversion on macOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to handle APNG in development (Sharp & Node.js)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Node.js developers, use the sharp library with { animated: true } for reading, and sharp-apng for encoding to ensure consistent support."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Convert video to APNG on macOS",
+      "description": "Export a high-quality transparent APNG from a video using TransMov on macOS.",
+      "url": "https://louisbuilds.me/transmov/blog/what-is-apng.html",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "TransMov for macOS"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Import your video",
+          "text": "Open TransMov and import the video file you want to convert to APNG."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Select APNG as export format",
+          "text": "Choose APNG as the output format in the export options."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Adjust frame rate and resolution",
+          "text": "Set the frame rate and resolution to match your target platform or design."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Export your transparent animation",
+          "text": "Run the export to save the APNG with alpha transparency preserved."
+        }
+      ]
+    }
+    </script>
     
     <!-- Alternate Languages -->
     <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/blog/what-is-apng.html">
@@ -296,6 +377,60 @@
             margin: 1.8rem 0;
             color: rgba(255,255,255,0.85);
         }
+
+        .definition-box {
+            background: rgba(102, 126, 234, 0.08); /* 稍微加深背景色 */
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-left: 4px solid #667eea;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px; /* 减小圆角更显专业 */
+        }
+        .definition-box p {
+            margin-bottom: 0;
+            font-style: normal; /* 正常字体比斜体在长文段中更易阅读 */
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .code-block-wrap {
+            position: relative;
+            margin: 1rem 0;
+        }
+        .code-block-wrap pre {
+            margin: 0;
+        }
+        .code-copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            z-index: 2;
+            padding: 0.35rem 0.7rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-family: inherit;
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(102, 126, 234, 0.35);
+            border: 1px solid rgba(102, 126, 234, 0.55);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        }
+        .code-copy-btn:hover {
+            background: rgba(102, 126, 234, 0.52);
+            border-color: rgba(102, 126, 234, 0.75);
+        }
+        .code-copy-btn:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+        .code-copy-btn.is-copied {
+            background: rgba(34, 197, 94, 0.28);
+            border-color: rgba(34, 197, 94, 0.55);
+            color: #bbf7d0;
+        }
         
         /* CTA按钮样式 */
         .cta-button {
@@ -315,6 +450,38 @@
         
         .section-spacing {
             margin-top: 3.5rem;
+        }
+
+        .conclusion-cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+        }
+        .conclusion-cta-box h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #fff;
+            font-size: clamp(1.15rem, 3vw, 1.35rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .conclusion-cta-box p {
+            color: #fff;
+            opacity: 1;
+            margin-bottom: 1.35rem;
+            max-width: 28rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.55;
+        }
+        .conclusion-cta-box .cta-button {
+            margin: 0;
+        }
+        .conclusion-cta-box .app-store-badge {
+            margin: 0 auto;
         }
 
         /* 返回首页链接 */
@@ -398,13 +565,20 @@
     <div class="blog-container">
         <h1>What is APNG? Animated PNG Explained (And Why It's Better Than GIF)</h1>
 
+        <section class="definition-box" aria-label="APNG Definition Summary">
+            <p>
+                <span style="color: #667eea; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">2026 Quick Guide</span>
+                <strong>APNG (Animated Portable Network Graphics)</strong> is the premium alternative to GIF. It supports <strong>24-bit true color</strong> and <strong>8-bit alpha transparency</strong>, ensuring sharp edges and no color banding in modern web and app UI animations.
+            </p>
+        </section>
+
         <p><strong>APNG (Animated PNG)</strong> is a modern animation format that extends PNG to support frame-based animation — similar to GIF, but with significantly higher image quality and full alpha transparency.</p>
 
         <p>If you’ve searched for “APNG vs GIF”, “how to create APNG on macOS”, or “transparent animated PNG”, this guide will walk you through everything you need to know.</p>
 
         <h2>What is APNG?</h2>
 
-        <p><strong>APNG stands for Animated Portable Network Graphics.</strong> It builds on the standard PNG format while adding animation capabilities.</p>
+        <p>APNG stands for <strong>Animated Portable Network Graphics (APNG)</strong>. It builds on the standard PNG format while adding animation capabilities.</p>
 
         <p>Unlike GIF, APNG supports true color and smooth transparency. That means:</p>
 
@@ -420,6 +594,19 @@
         </div>
 
         <h2>APNG vs GIF: Complete Comparison</h2>
+
+        <figure style="text-align: center; margin: 2.5rem 0; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+            <img src="../images/apng-vs-gif-comparison-demo.apng"
+                 alt="Animated PNG (APNG) example illustrating true-color frames and alpha transparency"
+                 style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));"
+                 width="250"
+                 loading="lazy"
+                 decoding="async">
+
+            <figcaption style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 1rem; line-height: 1.5;">
+                <span style="color: #667eea; font-weight: 600;">Live demo:</span> This figure embeds a real <strong>APNG</strong> (animated PNG) asset—not a video or GIF. In browsers that support APNG, it should play inline; otherwise you may see the first frame only. Compare anti-aliased transparent edges and color depth with typical 256-color GIFs.
+            </figcaption>
+        </figure>
 
         <table>
             <thead>
@@ -453,7 +640,7 @@
             </tbody>
         </table>
 
-        <h3>Why APNG Looks Better</h3>
+        <h3>Lossless Quality and Alpha Transparency Advantage</h3>
 
         <p>GIF is limited to 256 colors and does not support partial transparency. This often causes:</p>
 
@@ -506,11 +693,36 @@
         <h3>Can I convert video to APNG?</h3>
         <p>Yes. Tools like TransMov allow direct video-to-APNG conversion on macOS.</p>
 
+        <h3>How to handle APNG in development (Sharp &amp; Node.js)?</h3>
+        <p>For Node.js developers, you can use the <code>sharp</code> library to read animated files by passing <code>{ animated: true }</code>. However, since native APNG writing support depends on your <code>libvips</code> build, using a dedicated package like <code>sharp-apng</code> is often recommended for consistent results.</p>
+
+        <div class="code-block-wrap">
+            <button type="button" class="code-copy-btn" aria-label="Copy code to clipboard">Copy</button>
+            <pre style="background: #1a1a1a; padding: 2.4rem 1.2rem 1.2rem 1.2rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1);"><code style="color: #667eea;">const</code> sharp = require(<code style="color: #ce9178;">'sharp'</code>);
+
+<code style="color: #6a9955;">// Read animated input and check frame count</code>
+sharp(<code style="color: #ce9178;">'input.gif'</code>, { animated: <code style="color: #569cd6;">true</code> })
+  .metadata()
+  .then((meta) => console.log(<code style="color: #ce9178;">'Total Frames:'</code>, meta.pages));
+
+<code style="color: #6a9955;">// Note: For APNG encoding, consider using the 'sharp-apng' community package.</code></pre>
+        </div>
+
+        <div style="background: rgba(102,126,234,0.05); padding: 1rem; border-radius: 6px; border: 1px dashed rgba(102,126,234,0.3);">
+            <p style="margin-bottom: 0; font-size: 0.9rem;"><strong>Pro Tip:</strong> Manual coding for APNG can be tricky with frame delays and blending. For high-quality, transparent APNG exports without the coding hassle, <strong>TransMov for macOS</strong> provides a professional, one-click solution.</p>
+        </div>
+
         <h2 class="section-spacing">Final Thoughts</h2>
 
         <p>APNG combines GIF simplicity with PNG-level image quality. For designers and developers needing transparent, crisp animations, it is a modern and powerful alternative.</p>
 
-        <p>If you want to create APNG quickly on macOS, try TransMov today.</p>
+        <div class="conclusion-cta-box" role="region" aria-label="Download TransMov">
+            <h3>Ready to create pixel-perfect APNG?</h3>
+            <p>Experience the best video-to-APNG conversion on macOS with TransMov.</p>
+            <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=blog_apng_guide&mt=8" target="_blank" rel="noopener" class="cta-button" onclick="gtag('event', 'download_click', {'page_version': 'apng_blog', 'position': 'cta_conclusion'});">
+                <img src="../images/app-store-badge.svg" alt="Download TransMov on the Mac App Store" class="app-store-badge">
+            </a>
+        </div>
 
         <section class="more-reading" aria-labelledby="more-reading-title">
             <h3 id="more-reading-title">More to Read</h3>
@@ -561,7 +773,57 @@
                 if (event.key === 'Escape') closeMenu();
             });
         }
-        window.addEventListener('load', initLanguageSwitcher);
+        function initCodeCopyButtons() {
+            document.querySelectorAll('.code-block-wrap').forEach(function (wrap) {
+                var btn = wrap.querySelector('.code-copy-btn');
+                var pre = wrap.querySelector('pre');
+                if (!btn || !pre) return;
+                var defaultLabel = btn.getAttribute('aria-label') || 'Copy code';
+                btn.addEventListener('click', function () {
+                    var text = pre.innerText;
+                    var reset = function () {
+                        btn.textContent = 'Copy';
+                        btn.classList.remove('is-copied');
+                        btn.setAttribute('aria-label', defaultLabel);
+                    };
+                    function flashCopied() {
+                        btn.textContent = 'Copied';
+                        btn.classList.add('is-copied');
+                        btn.setAttribute('aria-label', 'Code copied');
+                        setTimeout(reset, 2000);
+                    }
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(text).then(flashCopied).catch(function () {
+                            btn.textContent = 'Failed';
+                            setTimeout(reset, 2000);
+                        });
+                    } else {
+                        var ta = document.createElement('textarea');
+                        ta.value = text;
+                        ta.setAttribute('readonly', '');
+                        ta.style.position = 'fixed';
+                        ta.style.left = '-9999px';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        try {
+                            if (document.execCommand('copy')) flashCopied();
+                            else {
+                                btn.textContent = 'Failed';
+                                setTimeout(reset, 2000);
+                            }
+                        } catch (e) {
+                            btn.textContent = 'Failed';
+                            setTimeout(reset, 2000);
+                        }
+                        document.body.removeChild(ta);
+                    }
+                });
+            });
+        }
+        window.addEventListener('load', function () {
+            initLanguageSwitcher();
+            initCodeCopyButtons();
+        });
     </script>
 </body>
 </html>

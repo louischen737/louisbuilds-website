@@ -35,6 +35,103 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://louisbuilds.me/transmov/blog/what-is-apng-zh.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "什么是 APNG？动态 PNG 全面解析（及其为何优于 GIF）",
+      "description": "什么是 APNG？一文读懂动态 PNG 原理、与 GIF 的区别，以及如何在 macOS 上制作高质量透明 APNG。",
+      "author": { "@type": "Organization", "name": "TransMov" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TransMov",
+        "logo": { "@type": "ImageObject", "url": "https://louisbuilds.me/transmov/images/app-icon.png" }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://louisbuilds.me/transmov/blog/what-is-apng-zh.html"
+      },
+      "isPartOf": { "@type": "WebSite", "name": "TransMov", "url": "https://louisbuilds.me/transmov/" },
+      "datePublished": "2026-03-24",
+      "dateModified": "2026-04-04"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "APNG 比 GIF 更好用吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "从画质和透明效果来看确实如此。GIF 仍具备广泛的旧版兼容优势，但现代浏览器均已支持 APNG。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "APNG 支持透明背景吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "支持。APNG 拥有完整的 8 位 Alpha 透明通道，可实现边缘平滑的半透明效果。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以将视频转换成 APNG 吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。像 TransMov 这类工具能在 macOS 上将视频直接导出为 APNG。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "开发中如何处理 APNG（Sharp 与 Node.js）？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Node.js 开发者可使用 sharp 并添加 { animated: true } 读取动画；原生 APNG 编码支持不稳定，推荐搭配 sharp-apng 插件；若不想写代码，可用 macOS 版 TransMov 一键导出高质量 APNG。"
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "在 macOS 上将视频转换为 APNG",
+      "description": "使用 TransMov 在 macOS 上导出高质量、带透明通道的 APNG。",
+      "url": "https://louisbuilds.me/transmov/blog/what-is-apng-zh.html",
+      "tool": [{ "@type": "HowToTool", "name": "TransMov（macOS）" }],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "导入视频",
+          "text": "打开 TransMov，导入需要转换为 APNG 的视频文件。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "选择 APNG 为导出格式",
+          "text": "在导出选项中将输出格式设为 APNG。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "调整帧率与分辨率",
+          "text": "按目标平台或设计需求设置帧率与分辨率。"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "导出透明动图",
+          "text": "执行导出，保存保留 Alpha 透明度的 APNG 文件。"
+        }
+      ]
+    }
+    </script>
     
     <!-- Alternate Languages -->
     <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/blog/what-is-apng.html">
@@ -261,6 +358,91 @@
             margin: 1.8rem 0;
             color: rgba(255,255,255,0.85);
         }
+
+        .definition-box {
+            background: rgba(102, 126, 234, 0.08);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-left: 4px solid #667eea;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        .definition-box p {
+            margin-bottom: 0;
+            font-style: normal;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .code-block-wrap {
+            position: relative;
+            margin: 1rem 0;
+        }
+        .code-block-wrap pre {
+            margin: 0;
+        }
+        .code-copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            z-index: 2;
+            padding: 0.35rem 0.7rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            font-family: inherit;
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(102, 126, 234, 0.35);
+            border: 1px solid rgba(102, 126, 234, 0.55);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        }
+        .code-copy-btn:hover {
+            background: rgba(102, 126, 234, 0.52);
+            border-color: rgba(102, 126, 234, 0.75);
+        }
+        .code-copy-btn:focus-visible {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+        .code-copy-btn.is-copied {
+            background: rgba(34, 197, 94, 0.28);
+            border-color: rgba(34, 197, 94, 0.55);
+            color: #bbf7d0;
+        }
+
+        .conclusion-cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+        }
+        .conclusion-cta-box h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #fff;
+            font-size: clamp(1.15rem, 3vw, 1.35rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .conclusion-cta-box p {
+            color: #fff;
+            opacity: 1;
+            margin-bottom: 1.35rem;
+            max-width: 28rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.55;
+        }
+        .conclusion-cta-box .cta-button {
+            margin: 0;
+        }
+        .conclusion-cta-box .app-store-badge {
+            margin: 0 auto;
+        }
         
         .cta-button {
             display: inline-block;
@@ -346,13 +528,20 @@
     <div class="blog-container">
         <h1>什么是 APNG？动态 PNG 全面解析（及其为何优于 GIF）</h1>
 
-        <p><strong>APNG（Animated PNG，动态 PNG）</strong>是基于 PNG 格式扩展的动画图片格式——它和 GIF 功能类似，但画质更高，还支持完整的 Alpha 透明通道。</p>
+        <section class="definition-box" aria-label="APNG 要点摘要">
+            <p>
+                <span style="color: #667eea; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">2026 核心指南</span>
+                <strong>APNG（动态 PNG，Animated Portable Network Graphics）</strong> 是 GIF 的专业级替代格式。支持 <strong>24 位真彩色</strong> 与 <strong>8 位 Alpha 透明通道</strong>，画面边缘流畅无锯齿，完美适配现代网页与应用 UI 高清动效。
+            </p>
+        </section>
 
-        <p>如果你正在了解「APNG 与 GIF 的区别」「如何在 macOS 上制作 APNG」或「透明动态图片格式」相关内容，这篇指南能帮你一次性搞清楚。</p>
+        <p><strong>APNG（动态 PNG）</strong> 在标准 PNG 上扩展了逐帧动画能力——与 GIF 类似，但画质明显更高，并支持完整 Alpha 透明通道。</p>
+
+        <p>若你正在了解「APNG 与 GIF 的区别」「如何在 macOS 上制作 APNG」或「透明动图格式」，本文将系统梳理要点。</p>
 
         <h2>什么是 APNG？</h2>
 
-        <p><strong>APNG 即动态便携式网络图形（Animated Portable Network Graphics）。</strong>它在标准 PNG 格式的基础上，新增了逐帧动画的能力。</p>
+        <p>APNG 的全称为 <strong>动态便携式网络图形（Animated Portable Network Graphics，APNG）</strong>。它在标准 PNG 的基础上增加了动画能力。</p>
 
         <p>和 GIF 相比，APNG 支持真彩色和平滑透明效果。具体来说：</p>
 
@@ -368,6 +557,18 @@
         </div>
 
         <h2>APNG 与 GIF：核心对比</h2>
+
+        <figure style="text-align: center; margin: 2.5rem 0; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+            <img src="../images/apng-vs-gif-comparison-demo.apng"
+                 alt="动态 PNG（APNG）示例：真彩色帧与 Alpha 透明"
+                 style="width: 100%; max-width: 250px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));"
+                 width="250"
+                 loading="lazy"
+                 decoding="async">
+            <figcaption style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 1rem; line-height: 1.5;">
+                <span style="color: #667eea; font-weight: 600;">动态演示：</span>这是一个真实的 <strong>APNG 动态图片</strong>，并非视频或 GIF。支持 APNG 的浏览器会自动播放，不支持则仅显示首帧。你可以直观对比：APNG 边缘更平滑、色彩更丰富，远优于 256 色的传统 GIF。
+            </figcaption>
+        </figure>
 
         <table>
             <thead>
@@ -401,7 +602,7 @@
             </tbody>
         </table>
 
-        <h3>APNG 视觉效果更优的原因</h3>
+        <h3>无损画质与 Alpha 透明优势</h3>
 
         <p>GIF 受限于 256 色且不支持半透明，容易出现以下问题：</p>
 
@@ -454,11 +655,36 @@
         <h3>可以将视频转换成 APNG 吗？</h3>
         <p>可以。像 TransMov 这类工具，能在 macOS 系统上直接将视频导出为 APNG 格式。</p>
 
+        <h3>开发中如何处理 APNG（Sharp 与 Node.js）？</h3>
+        <p>Node.js 开发者可以使用 <code>sharp</code> 库，并添加 <code>{ animated: true }</code> 参数读取动画文件。但原生 APNG 编码支持不稳定，推荐搭配 <code>sharp-apng</code> 专用插件保证导出效果。如果你不想编写代码，使用 macOS 版 TransMov 即可一键导出高质量 APNG。</p>
+
+        <div class="code-block-wrap">
+            <button type="button" class="code-copy-btn" aria-label="复制代码到剪贴板">复制</button>
+            <pre style="background: #1a1a1a; padding: 2.4rem 1.2rem 1.2rem 1.2rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1);"><code style="color: #667eea;">const</code> sharp = require(<code style="color: #ce9178;">'sharp'</code>);
+
+<code style="color: #6a9955;">// 读取动画输入并查看帧数（metadata.pages）</code>
+sharp(<code style="color: #ce9178;">'input.gif'</code>, { animated: <code style="color: #569cd6;">true</code> })
+  .metadata()
+  .then((meta) => console.log(<code style="color: #ce9178;">'总帧数:'</code>, meta.pages));
+
+<code style="color: #6a9955;">// APNG 编码可考虑使用社区包 sharp-apng</code></pre>
+        </div>
+
+        <div style="background: rgba(102,126,234,0.05); padding: 1rem; border-radius: 6px; border: 1px dashed rgba(102,126,234,0.3);">
+            <p style="margin-bottom: 0; font-size: 0.9rem;"><strong>专业建议：</strong>手动处理 APNG 的帧间隔与混合容易踩坑。若要高质量、带透明通道且不想写代码，<strong>macOS 版 TransMov</strong> 提供一键式专业导出。</p>
+        </div>
+
         <h2 class="section-spacing">总结</h2>
 
-        <p>APNG 兼具 GIF 的易用性和 PNG 的高清画质。对于需要制作透明、清晰动图的设计师和开发者而言，它是更现代、更实用的选择。</p>
+        <p>APNG 兼具 GIF 的易用性和 PNG 级画质。对需要透明、清晰动效的设计师与开发者而言，它是更现代、更实用的选择。</p>
 
-        <p>如果你想在 macOS 上快速制作 APNG 动图，不妨试试 TransMov 这款工具。</p>
+        <div class="conclusion-cta-box" role="region" aria-label="下载 TransMov">
+            <h3>想要制作高清透明的 APNG 动图？</h3>
+            <p>TransMov 为 macOS 提供极简视频转 APNG 工作流，无需专业知识，一键导出高清、带透明通道的优质动图。</p>
+            <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=blog_apng_guide_zh&mt=8" target="_blank" rel="noopener" class="cta-button" onclick="gtag('event', 'download_click', {'page_version': 'apng_blog_zh', 'position': 'cta_conclusion'});">
+                <img src="../images/app-store-badge.svg" alt="在 Mac App Store 下载 TransMov" class="app-store-badge">
+            </a>
+        </div>
 
         <section class="more-reading" aria-labelledby="more-reading-title">
             <h3 id="more-reading-title">延伸阅读</h3>
@@ -508,7 +734,57 @@
                 if (event.key === 'Escape') closeMenu();
             });
         }
-        window.addEventListener('load', initLanguageSwitcher);
+        function initCodeCopyButtons() {
+            document.querySelectorAll('.code-block-wrap').forEach(function (wrap) {
+                var btn = wrap.querySelector('.code-copy-btn');
+                var pre = wrap.querySelector('pre');
+                if (!btn || !pre) return;
+                var defaultLabel = btn.getAttribute('aria-label') || '复制代码到剪贴板';
+                btn.addEventListener('click', function () {
+                    var text = pre.innerText;
+                    var reset = function () {
+                        btn.textContent = '复制';
+                        btn.classList.remove('is-copied');
+                        btn.setAttribute('aria-label', defaultLabel);
+                    };
+                    function flashCopied() {
+                        btn.textContent = '已复制';
+                        btn.classList.add('is-copied');
+                        btn.setAttribute('aria-label', '代码已复制');
+                        setTimeout(reset, 2000);
+                    }
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(text).then(flashCopied).catch(function () {
+                            btn.textContent = '失败';
+                            setTimeout(reset, 2000);
+                        });
+                    } else {
+                        var ta = document.createElement('textarea');
+                        ta.value = text;
+                        ta.setAttribute('readonly', '');
+                        ta.style.position = 'fixed';
+                        ta.style.left = '-9999px';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        try {
+                            if (document.execCommand('copy')) flashCopied();
+                            else {
+                                btn.textContent = '失败';
+                                setTimeout(reset, 2000);
+                            }
+                        } catch (e) {
+                            btn.textContent = '失败';
+                            setTimeout(reset, 2000);
+                        }
+                        document.body.removeChild(ta);
+                    }
+                });
+            });
+        }
+        window.addEventListener('load', function () {
+            initLanguageSwitcher();
+            initCodeCopyButtons();
+        });
     </script>
 </body>
 </html>
