@@ -50,4 +50,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://louisbuilds.me/blog/how-to-stop-doomscrolling-what-worked-for-my-mom.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
