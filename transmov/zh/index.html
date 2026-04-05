@@ -12,7 +12,6 @@
     <meta name="author" content="TransMov">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Chinese">
-    <meta name="revisit-after" content="7 days">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -44,19 +43,19 @@
     <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/zh/">
     <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <!-- Google tag (gtag.js): queue early; load library after delay for INP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-2TMXET2TJN');
+      window.gtag = gtag;
     </script>
+    <script defer src="../js/gtag-delayed.js"></script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../images/favicon.png">
     <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <!-- LCP: 首屏对比区静态示意优先；原片视频仍用 poster 属性 -->
+    <link rel="preload" as="image" href="../images/hero-static-poster.jpg" fetchpriority="high">
     
     <script type="application/ld+json">
     {
@@ -81,7 +80,16 @@
         "author": {
             "@type": "Person",
             "name": "Louis",
-            "url": "https://louisbuilds.me"
+            "url": "https://louisbuilds.me",
+            "sameAs": [
+                "https://louisbuilds.me/",
+                "https://github.com/louischen737",
+                "https://apps.apple.com/us/app/transmov/id6756703030"
+            ]
+        },
+        "brand": {
+            "@type": "Brand",
+            "name": "TransMov"
         },
         "featureList": [
             "AI-Powered Background Removal",
@@ -149,12 +157,7 @@
         "name": "TransMov",
         "url": "https://louisbuilds.me/transmov/zh/",
         "description": "TransMov —— 面向 macOS 的本地 AI 视频抠图与透明动图导出工具",
-        "inLanguage": ["en", "zh-CN"],
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://louisbuilds.me/transmov/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
+        "inLanguage": ["en", "zh-CN"]
     }
     </script>
     
@@ -169,15 +172,24 @@
         "thumbnailUrl": "https://louisbuilds.me/transmov/images/before-comparison-poster.jpg",
         "uploadDate": "2026-01-01T00:00:00+00:00",
         "embedUrl": "https://louisbuilds.me/transmov/",
-        "publisher": { "@type": "Organization", "name": "TransMov" }
+        "publisher": {
+            "@type": "Person",
+            "name": "Louis",
+            "url": "https://louisbuilds.me",
+            "sameAs": [
+                "https://louisbuilds.me/",
+                "https://github.com/louischen737",
+                "https://apps.apple.com/us/app/transmov/id6756703030"
+            ]
+        }
     }
     </script>
-    <!-- Preconnect to external domains for performance -->
-    <link rel="preconnect" href="https://api.producthunt.com">
-    <link rel="dns-prefetch" href="https://api.producthunt.com">
+    <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
+    <link rel="preload" href="../style.css" as="style">
     <style>
+        /* TransMov landing — shared by index.html & zh/index.html */
         :root {
             /* Main content rail — LocalBG-style wide layout */
             --content-max: 1160px;
@@ -495,6 +507,44 @@
             pointer-events: none;
         }
         
+        .comparison-after-stack {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .comparison-after-stack .comparison-after-static {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* 透明 WebP 叠在上层；动图就绪后隐藏静态图，避免从透明区域透出形成双层 */
+        .comparison-after-stack:has(.comparison-after-animated.is-loaded) .comparison-after-static {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        .comparison-after-stack .comparison-after-animated {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .comparison-after-stack .comparison-after-animated.is-loaded {
+            opacity: 1;
+        }
+        
         .comparison-layer picture,
         .comparison-layer img,
         .comparison-layer video {
@@ -506,6 +556,9 @@
         
         @media (prefers-reduced-motion: reduce) {
             .comparison-layer {
+                transition: none;
+            }
+            .comparison-after-stack .comparison-after-animated {
                 transition: none;
             }
             .comparison-layer--after {
@@ -805,1264 +858,6 @@
             background: rgba(255, 255, 255, 0.12);
             color: #fff;
         }
-        
-        /* Editorial sections — generous vertical rhythm (native-style landing) */
-        .section {
-            padding: 9rem 0;
-            margin-bottom: 0;
-        }
-        
-        /* Module titles: ~36–40px white, centered (LocalBG reference) */
-        .section > h2,
-        .comparison-heading,
-        .faq-section .faq-title {
-            text-align: center;
-            font-size: clamp(2rem, 4.5vw, 2.5rem);
-            font-weight: 600;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 1.35rem;
-            max-width: 48rem;
-            margin-left: auto;
-            margin-right: auto;
-            border: none;
-            padding: 0;
-        }
-        
-        /* Subtitle / lead: ~16–17px, muted gray (#9CA3AF band) */
-        .section-lead {
-            font-size: 1.0625rem;
-            line-height: 1.55;
-            color: #9ca3af;
-            text-align: center;
-            max-width: 40rem;
-            margin: 0 auto 2.5rem;
-            text-wrap: pretty;
-        }
-        
-        /* Two consecutive leads (About): keep tighter gap between lines, wide gap before next block */
-        .section-lead:has(+ .section-lead) {
-            margin-bottom: 1.25rem;
-        }
-        
-        .section-body {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.72);
-            max-width: 40rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .section-body + .section-body {
-            margin-top: 0;
-        }
-        
-        /* How it works — three-step workflow */
-        .section--workflow .section-lead--spacious {
-            margin-bottom: 5rem;
-        }
-        .workflow-break-desktop {
-            display: none;
-        }
-        .workflow-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            gap: 2rem;
-            position: relative;
-        }
-        .workflow-step {
-            flex: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-            overflow: visible;
-            padding: 3.5rem 2rem 3rem;
-            background: rgba(255, 255, 255, 0.015);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            transition:
-                background 0.3s ease,
-                border-color 0.3s ease,
-                transform 0.3s ease;
-            z-index: 2;
-        }
-        .workflow-step .step-content {
-            flex: 1;
-        }
-        .workflow-step:hover {
-            background: rgba(99, 102, 241, 0.05);
-            border-color: rgba(99, 102, 241, 0.72);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .workflow-step {
-                transition-duration: 0.01ms;
-            }
-            .workflow-connector::after {
-                animation: none;
-                left: calc(100% - 8px);
-                opacity: 0.55;
-            }
-        }
-        .step-number {
-            position: absolute;
-            top: 0.35rem;
-            right: 1.25rem;
-            font-size: 5rem;
-            font-weight: 800;
-            font-variant-numeric: tabular-nums;
-            line-height: 0.92;
-            letter-spacing: -0.04em;
-            color: rgba(255, 255, 255, 0.035);
-            pointer-events: none;
-            user-select: none;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        }
-        .step-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-        .step-content p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #888;
-            margin: 0;
-        }
-        .workflow-connector {
-            flex: 0 0 2.4rem;
-            width: 2.4rem;
-            height: 14px;
-            align-self: center;
-            position: relative;
-            pointer-events: none;
-        }
-        .workflow-connector::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 1px;
-            background: linear-gradient(
-                90deg,
-                rgba(255, 255, 255, 0.08) 0%,
-                rgba(255, 255, 255, 0.28) 50%,
-                rgba(255, 255, 255, 0.08) 100%
-            );
-        }
-        .workflow-connector::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 6px;
-            height: 6px;
-            border-top: 1.5px solid rgba(199, 210, 254, 0.85);
-            border-right: 1.5px solid rgba(199, 210, 254, 0.85);
-            transform: translateY(-50%) rotate(45deg);
-            opacity: 0.45;
-            filter: drop-shadow(0 0 6px rgba(129, 140, 248, 0.55));
-            animation: workflowConnectorFlow 2.2s ease-in-out infinite;
-        }
-        .workflow-connector:nth-of-type(2)::after {
-            animation-delay: 0.3s;
-        }
-        @keyframes workflowConnectorFlow {
-            0% {
-                left: 2px;
-                opacity: 0.15;
-            }
-            30% {
-                opacity: 0.9;
-            }
-            100% {
-                left: calc(100% - 8px);
-                opacity: 0.2;
-            }
-        }
-        
-        /* Emphasis in body text — not the link accent (reserved for <a>) */
-        .section-lead strong {
-            color: rgba(255, 255, 255, 0.88);
-            font-weight: 600;
-        }
-        .section-body strong {
-            color: rgba(255, 255, 255, 0.92);
-            font-weight: 600;
-        }
-        
-        /* About: wider measure so English lines don’t orphan a single word */
-        .section--about .section-lead {
-            max-width: min(100%, 56rem);
-        }
-        
-        .section--why .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-        .section--why .feature-item {
-            background: rgba(255, 255, 255, 0.015);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 1.6rem 1.3rem 1.4rem;
-            text-align: left;
-            transition: border-color 0.22s ease, background 0.22s ease;
-        }
-        .section--why .feature-item:hover {
-            border-color: rgba(99, 102, 241, 0.72);
-            background: rgba(99, 102, 241, 0.05);
-        }
-        .section--why .feature-icon {
-            width: 30px;
-            height: 30px;
-            color: #6366f1;
-            display: block;
-            margin-bottom: 1.05rem;
-        }
-        .section--why .feature-item h3 {
-            font-size: 1.02rem;
-            margin-bottom: 0.55rem;
-        }
-        .section--why .feature-item p {
-            font-size: 0.92rem;
-            line-height: 1.58;
-            color: #9ca3af;
-            margin: 0;
-        }
-        .authority-link {
-            text-decoration: underline;
-            color: inherit;
-        }
-        
-        h3 {
-            color: #f5f5f5;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            font-size: 1.15rem;
-            font-weight: 600;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.75);
-        }
-        
-        /* Use cases — one visual, minimal text */
-        .section--use-cases .section-lead {
-            margin-bottom: 0;
-        }
-        .section--use-cases .use-cases {
-            display: flex;
-            flex-direction: column;
-            gap: 10rem;
-            padding-top: 0;
-            margin-top: 12rem;
-        }
-        
-        .use-case {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-        
-        .use-case--reverse .use-case-text {
-            order: 2;
-        }
-        
-        .use-case--reverse .use-case-visual {
-            order: 1;
-        }
-        
-        .use-case-visual {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            background: none;
-            padding: 0;
-            min-height: 420px;
-        }
-
-        .use-case-visual picture,
-        .use-case-visual img {
-            max-width: 100%;
-            max-height: 400px;
-            width: auto;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-            object-fit: contain;
-        }
-        
-        /* Use-case image aspect ratio (semantic classes) */
-        .use-case--square .use-case-visual img {
-            max-width: 280px;
-        }
-        
-        .use-case--portrait .use-case-visual img {
-            max-height: 420px;
-            max-width: 240px;
-        }
-        
-        .use-case--landscape .use-case-visual img {
-            max-width: 100%;
-        }
-        
-        .use-case-text h3 {
-            margin-bottom: 0.75rem;
-            font-size: 1.25rem;
-        }
-        
-        .use-case-text p {
-            margin-bottom: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .use-case {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .use-case-visual {
-                min-height: 0;
-                align-items: center;
-            }
-            .use-case--reverse .use-case-text,
-            .use-case--reverse .use-case-visual {
-                order: unset;
-            }
-            .section--use-cases .section-lead {
-                margin-bottom: 0;
-            }
-            .section--use-cases .use-cases {
-                gap: 5rem;
-                margin-top: 5rem;
-            }
-        }
-        
-        /* CTA — bottom breathing room + soft glow */
-        .section.cta-section {
-            position: relative;
-            padding: 12rem 1.5rem;
-            overflow: hidden;
-            text-align: center;
-        }
-        .cta-container {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .cta-section .cta-title {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            max-width: none;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            border: none;
-            padding: 0;
-            background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.72) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-        }
-        .cta-lead {
-            font-size: 1.2rem;
-            line-height: 1.55;
-            color: rgba(255, 255, 255, 0.48);
-            margin: 0 auto 4rem;
-            max-width: 600px;
-            text-wrap: pretty;
-        }
-        .cta-actions {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .download-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #f5f5f5;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            transition:
-                background 0.25s ease,
-                border-color 0.25s ease,
-                transform 0.25s ease;
-        }
-        .download-button:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.28);
-            color: #fff;
-        }
-        .download-button:focus-visible {
-            outline: 2px solid rgba(165, 180, 252, 0.7);
-            outline-offset: 3px;
-        }
-        .cta-note {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.38);
-            margin: 0;
-        }
-        .cta-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
-            filter: blur(80px);
-            z-index: 1;
-            pointer-events: none;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .download-button {
-                transition-duration: 0.01ms;
-            }
-            .cta-glow {
-                filter: blur(48px);
-            }
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 10rem clamp(1.5rem, 4vw, 2.5rem) 5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 0;
-        }
-        .footer .footer-tagline {
-            font-size: 0.85rem;
-            letter-spacing: 0.01em;
-            line-height: 1.35;
-            color: rgba(255, 255, 255, 0.95);
-            opacity: 0.3;
-            max-width: none;
-            width: 100%;
-            margin: 0 0 3rem !important;
-            padding: 0 1rem;
-            box-sizing: border-box;
-        }
-        .sticky-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            min-height: 46px;
-            background: linear-gradient(90deg, #4f46e5, #5b39d6);
-            border-top: 1px solid rgba(255, 255, 255, 0.22);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            transform: translateY(0);
-            opacity: 1;
-            transition: transform 0.35s ease, opacity 0.35s ease;
-            padding-bottom: env(safe-area-inset-bottom, 0);
-        }
-        .sticky-footer.is-hidden {
-            transform: translateY(110%);
-            opacity: 0;
-            pointer-events: none;
-        }
-        .sticky-footer .footer-content {
-            width: 100%;
-            max-width: 1200px;
-            padding: 0 48px 0 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            min-height: 46px;
-        }
-        .sticky-footer .footer-icon {
-            width: 14px;
-            height: 14px;
-            margin-right: 8px;
-            border-radius: 4px;
-            display: inline-block;
-            vertical-align: -2px;
-        }
-        .sticky-footer .footer-text {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.96);
-            min-width: 0;
-            text-align: center;
-            line-height: 1.3;
-        }
-        .sticky-footer .footer-inline-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.55);
-            padding-bottom: 1px;
-            white-space: nowrap;
-        }
-        .sticky-footer .footer-inline-link:hover {
-            border-bottom-color: rgba(255, 255, 255, 0.95);
-        }
-        .sticky-footer .footer-close {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.32);
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.12);
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 14px;
-            line-height: 1;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s ease, border-color 0.2s ease;
-        }
-        .sticky-footer .footer-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.55);
-        }
-        .sticky-footer .footer-close:focus-visible {
-            outline: 2px solid rgba(255, 255, 255, 0.7);
-            outline-offset: 2px;
-        }
-        
-        .container a,
-        .section a {
-            color: var(--accent-link);
-            text-decoration: none;
-        }
-        .container a:hover,
-        .section a:hover {
-            color: var(--accent-link-hover);
-            text-decoration: underline;
-        }
-        .footer a {
-            color: rgba(255, 255, 255, 0.75);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .footer a.footer-accent {
-            color: var(--accent-link);
-            margin: 0;
-        }
-        .footer a.footer-accent:hover {
-            color: var(--accent-link-hover);
-            text-decoration: underline;
-        }
-        
-        /* FAQ — responsive card grid */
-        .faq-section .faq-title {
-            margin-bottom: 0;
-        }
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        @media (min-width: 769px) {
-            .faq-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        .faq-card {
-            background: rgba(255, 255, 255, 0.015);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2.5rem;
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-            -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-            transition:
-                background 0.3s ease,
-                border-color 0.3s ease,
-                transform 0.3s ease;
-        }
-        .faq-card.pricing-card--featured {
-            overflow: visible;
-        }
-        /* Top hairline reflex — stacked border hint without colored glow */
-        .faq-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            padding: 1px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-        .faq-card:hover {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(99, 102, 241, 0.72);
-            transform: translateY(-4px);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .faq-card {
-                transition-duration: 0.01ms;
-            }
-            .faq-card:hover {
-                transform: none;
-            }
-        }
-        .faq-card h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-        .faq-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #9ca3af;
-            margin-bottom: 0;
-        }
-        .privacy-pillar-icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 1rem;
-            display: block;
-            color: rgba(255, 255, 255, 0.48);
-        }
-        .privacy-pillar-icon path,
-        .privacy-pillar-icon line,
-        .privacy-pillar-icon rect {
-            vector-effect: non-scaling-stroke;
-        }
-        .privacy-pillar h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-        .privacy-pillar p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #888;
-        }
-        .section--privacy .faq-card:hover {
-            border-color: rgba(99, 102, 241, 0.72);
-            background: rgba(99, 102, 241, 0.05);
-        }
-        .section--format-matrix-visual {
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        .section--technical-standards {
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        .section--technical-standards .section-lead {
-            margin-bottom: 5rem;
-        }
-        .tech-standard-wrapper {
-            background: rgba(255, 255, 255, 0.015);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 32px;
-            padding: 4rem;
-            -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
-        }
-        .standard-part {
-            width: 100%;
-        }
-        .standard-part .matrix-container {
-            margin: 0 auto;
-        }
-        .part-divider {
-            display: flex;
-            align-items: center;
-            margin: 5rem 0;
-        }
-        .part-divider::before,
-        .part-divider::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-        }
-        .part-divider span {
-            padding: 0 1.5rem;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-        .section--technical-standards .spec-table-wrap {
-            margin-top: 0;
-            padding: 0;
-            border: none;
-            background: transparent;
-        }
-        .native-advantage-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 0 auto 1.25rem;
-            padding: 6px 14px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: rgba(255, 255, 255, 0.04);
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-        .native-advantage-badge svg {
-            flex-shrink: 0;
-            opacity: 0.9;
-        }
-        .section--native-advantage {
-            text-align: center;
-        }
-        .section--native-advantage .section-lead {
-            max-width: min(100%, 46rem);
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .matrix-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            margin: 4rem auto;
-            max-width: 900px;
-        }
-        .matrix-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .matrix-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            color: rgba(255, 255, 255, 0.38);
-            text-transform: uppercase;
-        }
-        .matrix-label--accent {
-            color: var(--accent-link);
-        }
-        .format-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
-        }
-        .tag {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.55);
-        }
-        .tag-pro {
-            background: rgba(165, 180, 252, 0.05);
-            border: 1px solid rgba(165, 180, 252, 0.2);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #fff;
-            font-weight: 500;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .alpha-badge {
-            font-size: 0.65rem;
-            color: var(--accent-link);
-            margin-top: 4px;
-            font-weight: 400;
-        }
-        .matrix-connector {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-shrink: 0;
-            color: rgba(255, 255, 255, 0.1);
-        }
-        .connector-line {
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        }
-        .ai-badge {
-            font-size: 0.75rem;
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.45);
-            white-space: nowrap;
-        }
-        .matrix-footer {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        .matrix-footer .spec-item {
-            text-align: center;
-        }
-        .matrix-footer .spec-item strong {
-            display: block;
-            color: #fff;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-        .matrix-footer .spec-item span {
-            color: rgba(255, 255, 255, 0.45);
-            font-size: 0.85rem;
-        }
-        .pricing-section {
-            text-align: center;
-        }
-        .pricing-section .section-lead {
-            margin-bottom: 0;
-        }
-        .pricing-compare-note {
-            text-align: center;
-            font-size: 0.98rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.5);
-            max-width: 36rem;
-            margin: 0.75rem auto 1.75rem;
-            text-wrap: pretty;
-        }
-        .pricing-lifetime-line {
-            font-size: 0.92rem;
-            font-weight: 500;
-            color: rgba(199, 210, 254, 0.95);
-            margin: 0.35rem 0 0.65rem;
-            line-height: 1.45;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 0;
-        }
-        @media (min-width: 769px) {
-            .pricing-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .pricing-card {
-            text-align: center;
-        }
-        .pricing-card .pricing-title {
-            color: rgba(255, 255, 255, 0.96);
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin: 0;
-        }
-        .pricing-price {
-            margin: 1rem 0 0.5rem;
-            padding-top: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            line-height: 1.1;
-            color: #ffffff;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        .pricing-price span {
-            font-size: 1rem;
-            color: #6b7280;
-            font-weight: 500;
-        }
-        .pricing-card p {
-            margin: 0;
-        }
-        .pricing-card--featured {
-            position: relative;
-            overflow: visible;
-            border-color: rgba(99, 102, 241, 0.72);
-            background: rgba(255, 255, 255, 0.022);
-        }
-        .pricing-card--featured::before {
-            content: "";
-            position: absolute;
-            inset: 1px;
-            border-radius: 19px;
-            background: linear-gradient(
-                0deg,
-                rgba(99, 102, 241, 0.26) 0%,
-                rgba(99, 102, 241, 0.14) 28%,
-                rgba(99, 102, 241, 0.06) 52%,
-                rgba(99, 102, 241, 0) 78%
-            );
-            pointer-events: none;
-            z-index: 0;
-        }
-        .pricing-card--featured > * {
-            position: relative;
-            z-index: 1;
-        }
-        .pricing-badge {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            margin: 0;
-            padding: 3px 10px;
-            border-radius: 999px;
-            background: #6366f1;
-            color: #ffffff;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            white-space: nowrap;
-            z-index: 2;
-            pointer-events: none;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
-        }
-        .pricing-comparison-section {
-            padding-top: 2.5rem;
-            padding-bottom: 5rem;
-            background: transparent;
-        }
-        .pricing-comparison-section .comparison-title {
-            text-align: center;
-            font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-            font-weight: 600;
-            margin: 0 0 1.8rem;
-            color: rgba(255, 255, 255, 0.96);
-            letter-spacing: -0.01em;
-        }
-        .pricing-comparison-section .comparison-wrapper {
-            overflow-x: auto;
-            max-width: 960px;
-            margin: 0 auto;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.015);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        }
-        .pricing-comparison-section .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.93rem;
-            color: rgba(255, 255, 255, 0.86);
-            min-width: 760px;
-        }
-        .pricing-comparison-section .comparison-table th,
-        .pricing-comparison-section .comparison-table td {
-            padding: 14px 18px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            vertical-align: top;
-        }
-        .pricing-comparison-section .comparison-table th:nth-child(2),
-        .pricing-comparison-section .comparison-table th:nth-child(3),
-        .pricing-comparison-section .comparison-table td:nth-child(2),
-        .pricing-comparison-section .comparison-table td:nth-child(3) {
-            text-align: center;
-        }
-        .pricing-comparison-section .comparison-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-        .pricing-comparison-section .comparison-table th {
-            background: rgba(255, 255, 255, 0.02);
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.65);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-        .pricing-comparison-section .comparison-table .pro-column .pro-line-main {
-            display: block;
-        }
-        .pricing-comparison-section .comparison-table .pro-column .pro-line-sub {
-            display: block;
-            text-transform: none;
-            letter-spacing: 0;
-            font-weight: 500;
-            font-size: 0.78rem;
-            color: rgba(255, 255, 255, 0.65);
-            text-align: center;
-            margin-top: 2px;
-        }
-        .pricing-comparison-section .comparison-table .pro-column {
-            color: rgba(255, 255, 255, 0.86);
-            background: rgba(99, 102, 241, 0.18);
-        }
-        .pricing-comparison-section .comparison-table td:nth-child(3) {
-            background: rgba(99, 102, 241, 0.08);
-        }
-        .pricing-comparison-section .comparison-table .highlight-pro {
-            color: rgba(255, 255, 255, 0.86);
-            font-weight: 500;
-        }
-        .pricing-comparison-section .comparison-table .status-chip {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 18px;
-            height: 18px;
-            border-radius: 999px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            line-height: 1;
-            vertical-align: middle;
-        }
-        .pricing-comparison-section .comparison-table .status-chip--yes {
-            background: #eef2ff;
-            color: #111827;
-        }
-        .pricing-comparison-section .comparison-table .status-chip--no {
-            background: rgba(148, 163, 184, 0.35);
-            color: #0f172a;
-        }
-        .pricing-comparison-section .comparison-table td.icon-cell {
-            text-align: center;
-            white-space: nowrap;
-        }
-        .pricing-comparison-section .comparison-table .icon-text-cell {
-            text-align: center;
-        }
-        .pricing-comparison-section .comparison-table .icon-text-wrap {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .pricing-comparison-section .comparison-table td:first-child {
-            color: rgba(255, 255, 255, 0.92);
-            font-weight: 500;
-            width: 34%;
-        }
-        .pricing-comparison-section .comparison-readmore {
-            margin: 1rem auto 0;
-            max-width: 960px;
-            text-align: center;
-            font-size: 0.92rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.66);
-        }
-        .pricing-comparison-section .comparison-readmore a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-        .pricing-comparison-section .comparison-readmore a:hover {
-            color: #c7d2fe;
-            border-bottom-color: rgba(199, 210, 254, 0.7);
-        }
-        .guides-section {
-            padding: 5rem 0;
-            background: transparent;
-            margin: 0 0 2rem;
-        }
-        .guides-title {
-            text-align: center;
-            margin: 0 0 2rem;
-            font-size: clamp(1.5rem, 3vw, 1.85rem);
-            color: #ffffff;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1rem;
-        }
-        .guide-card {
-            text-decoration: none;
-            color: inherit;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 14px;
-            padding: 1.3rem 1.15rem;
-            transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
-            display: block;
-        }
-        .guide-card:hover {
-            border-color: rgba(99, 102, 241, 0.72);
-            transform: translateY(-4px);
-            background: rgba(99, 102, 241, 0.06);
-        }
-        .guide-card-tag {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #818cf8;
-        }
-        .guide-card h3 {
-            font-size: 1.05rem;
-            margin: 0.7rem 0;
-            color: #f3f4f6;
-        }
-        .guide-card p {
-            font-size: 0.9rem;
-            color: #9ca3af;
-            line-height: 1.6;
-            margin: 0;
-        }
-        .guide-card-more {
-            margin-top: 0.9rem;
-            font-size: 0.82rem;
-            color: #a5b4fc;
-            font-weight: 500;
-        }
-        @media (max-width: 640px) {
-            .pricing-comparison-section {
-                padding-top: 2rem;
-                padding-bottom: 4rem;
-            }
-            .pricing-comparison-section .comparison-table th,
-            .pricing-comparison-section .comparison-table td {
-                padding: 11px 14px;
-                font-size: 0.8rem;
-            }
-        }
-        /* Technical comparison table — CLS-safe layout, no inline styles */
-        .spec-table-wrap {
-            margin-top: 0;
-            overflow-x: auto;
-        }
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.95rem;
-        }
-        .spec-table caption {
-            caption-side: bottom;
-            padding-top: 0.75rem;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
-            text-align: left;
-        }
-        .spec-table th,
-        .spec-table td {
-            text-align: left;
-            padding: 10px 8px;
-            vertical-align: top;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .spec-table thead th {
-            background: rgba(255, 255, 255, 0.03);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-            font-weight: 700;
-            font-size: 0.92rem;
-            letter-spacing: 0.01em;
-            color: rgba(255, 255, 255, 0.94);
-        }
-        .spec-table tbody th[scope="row"] {
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        .spec-col-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .spec-col-icon-app {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            display: block;
-        }
-        .spec-col-icon-cloud {
-            width: 16px;
-            height: 16px;
-            display: block;
-            color: rgba(148, 163, 184, 0.95);
-            flex-shrink: 0;
-        }
-        .spec-table thead th:nth-child(2) {
-            background: rgba(99, 102, 241, 0.16);
-        }
-        .spec-table tbody td:nth-child(2) {
-            background: rgba(99, 102, 241, 0.08);
-        }
-        .spec-table .spec-highlight {
-            color: #f5f5f5;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-demo {
-                margin-bottom: 1.5rem;
-            }
-            .badge-link img {
-                height: 40px;
-            }
-            .section.cta-section {
-                padding: 8rem 1.5rem;
-            }
-            .cta-section .cta-title {
-                font-size: 2.2rem;
-            }
-            .section--why .features-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                margin-top: 2rem;
-            }
-            .matrix-container {
-                flex-direction: column;
-                gap: 3rem;
-            }
-            .matrix-connector {
-                flex-direction: column;
-            }
-            .connector-line {
-                width: 1px;
-                height: 40px;
-                background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            }
-            .tech-standard-wrapper {
-                padding: 2rem 1rem;
-            }
-            .part-divider {
-                margin: 3rem 0;
-            }
-            body {
-                padding-bottom: 88px;
-            }
-            .sticky-footer .footer-content {
-                padding: 0 38px 0 12px;
-            }
-        }
         @media (max-width: 980px) {
             .top-bar {
                 top: 10px;
@@ -2099,41 +894,8 @@
                 display: none !important;
             }
         }
-        @media (max-width: 600px) {
-            .sticky-footer .footer-text span {
-                display: inline;
-            }
-            .sticky-footer .footer-text {
-                font-size: 13px;
-            }
-            .sticky-footer .footer-icon {
-                display: none;
-            }
-            .sticky-footer .footer-close {
-                width: 22px;
-                height: 22px;
-            }
-        }
-        @media (max-width: 992px) {
-            .workflow-container {
-                flex-direction: column;
-                gap: 2.5rem;
-            }
-            .workflow-connector {
-                display: none;
-            }
-            .step-number {
-                font-size: 4rem;
-                top: 0.5rem;
-                right: 1rem;
-            }
-        }
-        @media (min-width: 1024px) {
-            .workflow-break-desktop {
-                display: block;
-            }
-        }
     </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header class="top-bar">
@@ -2202,18 +964,27 @@
                             <div class="comparison-reveal-stage">
                                 <div class="comparison-checkerboard" aria-hidden="true"></div>
                                 <div class="comparison-layer comparison-layer--after">
-                                    <picture>
-                                        <source type="image/webp" srcset="../images/after-comparison.webp">
+                                    <div class="comparison-after-stack">
                                         <img
-                                            class="comparison-gif-after"
-                                            src="../images/after-comparison.gif"
-                                            alt="TransMov 透明 WebP 动图效果（视频抠图／移除背景后）"
+                                            src="../images/hero-static-poster.jpg"
+                                            alt="TransMov 视频抠图 — 静态对比示意"
+                                            class="comparison-after-static"
                                             width="540"
                                             height="960"
-                                            loading="lazy"
+                                            loading="eager"
+                                            fetchpriority="high"
+                                            decoding="sync">
+                                        <img
+                                            src="../images/after-comparison.webp"
+                                            alt="TransMov AI 视频抠图对比 — 透明动图导出效果（WebP）"
+                                            class="comparison-gif-after comparison-after-animated"
+                                            width="540"
+                                            height="960"
+                                            loading="eager"
+                                            fetchpriority="high"
                                             decoding="async"
-                                            fetchpriority="low">
-                                    </picture>
+                                            onload="this.classList.add('is-loaded');">
+                                    </div>
                                 </div>
                                 <div class="comparison-layer comparison-layer--before">
                                     <video
@@ -2447,11 +1218,7 @@
                             <p>将短视频转换为轻量透明动图，用于应用界面、引导流程与交互原型。</p>
                         </div>
                         <div class="use-case-visual">
-                            <picture>
-                                <source type="image/webp" srcset="../images/use-case-1.webp">
-                                <source type="image/png" srcset="../images/use-case-1.png">
-                                <img src="../images/use-case-1.gif" alt="TransMov 导出的透明动图，用于 App UI（支持 APNG、GIF、WebP）" width="280" height="280" loading="lazy" decoding="async">
-                            </picture>
+                            <img src="../images/use-case-1.webp" alt="TransMov 导出的透明动图，用于 App UI（支持 APNG、GIF、WebP）" width="280" height="280" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="use-case use-case--portrait use-case--reverse">
@@ -2460,11 +1227,7 @@
                             <p>把视频与 AI 生成片段制作为可复用循环素材，全程本地处理，输出稳定可靠。</p>
                         </div>
                         <div class="use-case-visual">
-                            <picture>
-                                <source type="image/webp" srcset="../images/use-case-2.webp">
-                                <source type="image/png" srcset="../images/use-case-2.png">
-                                <img src="../images/use-case-2.gif" alt="TransMov 本地 AI 视频抠图生成透明动图示例" width="240" height="420" loading="lazy" decoding="async">
-                            </picture>
+                            <img src="../images/use-case-2.webp" alt="TransMov 本地 AI 视频抠图生成透明动图示例" width="240" height="420" loading="lazy" decoding="async">
                         </div>
                     </div>
                     <div class="use-case use-case--landscape">
@@ -2473,11 +1236,7 @@
                             <p>导出 APNG、WebP、GIF，用于落地页、演示和设计协作交付。</p>
                         </div>
                         <div class="use-case-visual">
-                            <picture>
-                                <source type="image/webp" srcset="../images/use-case-3.webp">
-                                <source type="image/png" srcset="../images/use-case-3.png">
-                                <img src="../images/use-case-3.gif" alt="TransMov 导出透明 WebP、GIF，用于网页与设计交付" width="640" height="360" loading="lazy" decoding="async">
-                            </picture>
+                            <img src="../images/use-case-3.webp" alt="TransMov 导出透明 WebP、GIF，用于网页与设计交付" width="640" height="360" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -2698,6 +1457,7 @@
             function restartGif() {
                 var src = after.getAttribute('src');
                 if (src) {
+                    after.classList.remove('is-loaded');
                     after.setAttribute('src', '');
                     after.setAttribute('src', src);
                 }
