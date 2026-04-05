@@ -6,7 +6,7 @@
 
     <title>Transparent Animation Workflow: Use APNG &amp; WebP in Figma | TransMov</title>
     <meta name="title" content="Transparent Animation Workflow: Use APNG &amp; WebP in Figma | TransMov">
-    <meta name="description" content="Master the art of using transparent APNG and WebP in your UI/UX projects. Learn the professional workflow for integrating motion into web and mobile apps.">
+    <meta name="description" content="Master the workflow for using transparent APNG & WebP in Figma, Framer, and Webflow. Integrate motion into UI/UX projects without heavy video files.">
     <meta name="keywords" content="Transparent animation workflow, UI design with transparent video, How to use WebP in web design, Figma transparent animation">
     <meta name="author" content="TransMov">
     <meta name="robots" content="index, follow">
@@ -53,6 +53,27 @@
       },
       "datePublished": "2026-03-24",
       "dateModified": "2026-03-24"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to use transparent animations in Figma",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "text": "Remove video background locally using TransMov on Mac."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Export as transparent APNG or WebP format."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Drag and drop the exported file directly into your Figma canvas."
+        }
+      ]
     }
     </script>
     <link rel="icon" type="image/png" href="../images/favicon.png">
@@ -198,6 +219,9 @@
             margin-bottom: 1rem;
             color: #fff;
         }
+        h2.section-spacing {
+            margin-top: 3.75rem;
+        }
         p { color: rgba(255, 255, 255, 0.78); margin-bottom: 1.25rem; }
         ul, ol { margin: 1rem 0 1.6rem 1.35rem; color: rgba(255, 255, 255, 0.75); }
         li { margin-bottom: 0.5rem; }
@@ -240,6 +264,49 @@
             font-size: 0.95rem;
         }
         .more-reading-links a:hover { text-decoration: underline; }
+        .cta-button {
+            display: inline-block;
+            transition: transform 0.2s;
+            margin: 1.5rem 0;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        .app-store-badge {
+            height: 54px;
+            display: block;
+        }
+        .conclusion-cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+        }
+        .conclusion-cta-box h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #fff;
+            font-size: clamp(1.15rem, 3vw, 1.35rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .conclusion-cta-box p {
+            color: #fff;
+            opacity: 1;
+            margin-bottom: 1.35rem;
+            max-width: 28rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.55;
+        }
+        .conclusion-cta-box .cta-button {
+            margin: 0;
+        }
+        .conclusion-cta-box .app-store-badge {
+            margin: 0 auto;
+        }
         .footer {
             text-align: center;
             padding: 2rem 1.5rem;
@@ -300,6 +367,19 @@
             <li><strong>Export:</strong> Choose WebP or APNG, then drag directly into <strong>Figma</strong>, <strong>Framer</strong>, or <strong>Webflow</strong>.</li>
         </ol>
 
+        <h2 class="section-spacing">Design Tool Compatibility</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 1.5rem 0;">
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center;">
+                <strong>Figma</strong><br><span style="font-size: 0.85rem; color: #818cf8;">Supports APNG &amp; WebP</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center;">
+                <strong>Framer / Webflow</strong><br><span style="font-size: 0.85rem; color: #818cf8;">Best with WebP</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center;">
+                <strong>Canva / Keynote</strong><br><span style="font-size: 0.85rem; color: #818cf8;">Supports APNG</span>
+            </div>
+        </div>
+
         <h2>3. Performance Best Practices</h2>
         <ul>
             <li><strong>Match dimensions to usage:</strong> avoid exporting oversized assets for small UI slots.</li>
@@ -318,6 +398,14 @@
         <h2>Conclusion</h2>
         <p>The future of interface storytelling is transparent motion. By mastering the path from raw video to optimized APNG/WebP assets, teams can deliver richer experiences that still load fast.</p>
         <p>TransMov bridges the gap between complex video editing and streamlined UI design so you can animate without unnecessary friction.</p>
+
+        <div class="conclusion-cta-box" role="region" aria-label="Download TransMov for UI Design">
+            <h3>Bring Your UI Mockups to Life</h3>
+            <p>Go beyond static screens and video with solid backgrounds. Use TransMov on your Mac to create high-quality transparent animations for Figma and web projects.</p>
+            <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=blog_workflow_guide&mt=8" target="_blank" rel="noopener" class="cta-button" onclick="gtag('event', 'download_click', {'page_version': 'workflow_blog', 'position': 'cta_conclusion'});">
+                <img src="../images/app-store-badge.svg" alt="Download TransMov on the Mac App Store" class="app-store-badge">
+            </a>
+        </div>
 
         <section class="more-reading" aria-labelledby="more-reading-title">
             <h3 id="more-reading-title">More to Read</h3>
