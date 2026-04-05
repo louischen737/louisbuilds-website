@@ -422,6 +422,67 @@
             flex-wrap: wrap;
             margin-bottom: 2rem;
         }
+
+        /* Hero: device compatibility badges (iPad / iPhone) */
+        .device-badge-container {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .device-label {
+            font-size: 0.85rem;
+            color: #8b8b8b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .device-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .device-badge:hover {
+            background: rgba(0, 0, 0, 0.06);
+        }
+
+        .badge-icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .device-badge-container {
+                flex-direction: column;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hero-left .device-badge-container {
+                justify-content: flex-start;
+            }
+        }
         
         .btn-primary {
             display: inline-flex;
@@ -474,34 +535,47 @@
         
         .hero-screenshot {
             width: 100%;
-            max-width: 320px;
-            border-radius: 12px;
+            max-width: min(360px, 92vw);
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            border-radius: 14px;
             display: block;
             margin: 2rem auto 0 auto;
             background: transparent;
         }
         
         @media (min-width: 769px) {
+            .hero {
+                padding: 4.25rem 0 3.75rem;
+            }
+
             .hero-inner {
                 flex-direction: row;
                 align-items: center;
-                gap: 3rem;
+                gap: clamp(2.25rem, 5vw, 4rem);
                 text-align: left;
             }
             
             .hero-left {
-                flex: 1;
+                flex: 1 1 0;
                 min-width: 0;
             }
             
             .hero-right {
-                flex: 0 0 auto;
+                flex: 0 1 44%;
+                max-width: 480px;
+                min-width: 280px;
                 align-items: center;
-                margin-right: 2rem;
+                margin-right: 0;
             }
             
             .hero-right .hero-image {
                 margin-top: 0;
+                width: 100%;
+                max-width: min(460px, 100%);
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .hero h1 {
@@ -524,9 +598,24 @@
             }
             
             .hero-screenshot {
-                margin-top: 0;
+                margin: 0 auto;
+                max-width: min(460px, 100%);
+                border-radius: 16px;
+                box-shadow: none;
             }
             
+        }
+
+        @media (min-width: 1100px) {
+            .hero-right {
+                max-width: 520px;
+            }
+            .hero-right .hero-image {
+                max-width: min(500px, 100%);
+            }
+            .hero-screenshot {
+                max-width: min(500px, 100%);
+            }
         }
         
         .cmu-credit {
@@ -1407,6 +1496,29 @@
             text-align: center;
             margin-top: 3rem;
         }
+
+        .universal-footer {
+            max-width: 900px;
+            margin: 1rem auto 0 auto;
+            padding: 12px;
+            background-color: #f9f9f8;
+            border-radius: 8px;
+            border: 1px solid #e5e5e0;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .universal-footer p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .universal-footer strong {
+            color: #111827;
+            font-weight: 600;
+        }
         
         .btn-upgrade {
             display: inline-flex;
@@ -1461,6 +1573,9 @@
             color: #4b5563;
             line-height: 1.6;
             margin: 0;
+        }
+        .faq-item p + p {
+            margin-top: 0.75rem;
         }
 
         .blog-highlights {
@@ -1778,7 +1893,7 @@
             }
             
             .hero-screenshot {
-                max-width: 300px;
+                max-width: min(340px, 90vw);
             }
             
             .pricing-table-wrapper {
@@ -2048,15 +2163,6 @@
 
                     <div class="hero-buttons">
 
-                        <!-- Primary CTA -->
-                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero"
-                           class="btn-primary"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'hero_primary'});">
-                            App laden
-                        </a>
-
                         <!-- App Store badge -->
                         <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero_badge"
                            class="app-store-badge"
@@ -2074,6 +2180,20 @@
                             </svg>
                         </a>
 
+                    </div>
+
+                    <div class="device-badge-container" role="group" aria-label="Vollständig kompatibel mit iPad und iPhone">
+                        <span class="device-label">Vollständig kompatibel mit</span>
+                        <div class="badge-group">
+                            <span class="device-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                iPad
+                            </span>
+                            <span class="device-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="1" width="14" height="22" rx="2" ry="2"></rect><line x1="12" y1="19" x2="12.01" y2="19"></line></svg>
+                                iPhone
+                            </span>
+                        </div>
                     </div>
 
                 </div>
@@ -2425,6 +2545,10 @@
                 </div>
             </div>
 
+            <div class="universal-footer">
+                <p>📱 <strong>Universal-App</strong>: Ihr Kauf ist an Ihre Apple-ID gebunden. Einmal kaufen, Pro-Funktionen auf <strong>iPhone</strong> und <strong>iPad</strong> nutzen.</p>
+            </div>
+
             <div class="pricing-cta">
                 <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_footer" class="app-store-badge" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'footer'});">
                     <img src="app-store-badge-de.svg" alt="Im App Store laden" />
@@ -2444,6 +2568,11 @@
                 <div class="faq-item">
                     <h3>Gibt es einen Offline-IPA-Transkriptor für iOS?</h3>
                     <p>Ja. Phonetic Formatter läuft vollständig offline auf iPhone und iPad. Die Umwandlung erfolgt auf dem Gerät — kein Internet nötig, keine Daten an Server. Nutzbar im Unterricht, unterwegs oder bei schlechter Verbindung.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Kann ich diese App auf meinem iPad verwenden? Muss ich erneut bezahlen?</h3>
+                    <p>Absolut! Die App ist vollständig für das iPad optimiert. Wenn Sie die Pro-Version bereits auf Ihrem iPhone gekauft haben, melden Sie sich einfach mit derselben Apple-ID auf Ihrem iPad an und nutzen Sie „Einkäufe wiederherstellen“, um die Pro-Funktionen ohne zusätzliche Kosten zu aktivieren.</p>
+                    <p><em>Hinweis: Um Ihre Privatsphäre zu schützen, speichert die App keinen Transkriptionsverlauf. Die gesamte Verarbeitung erfolgt sofort und lokal.</em></p>
                 </div>
                 <div class="faq-item">
                     <h3>Verwendet dieser Konverter das CMU Pronunciation Dictionary?</h3>

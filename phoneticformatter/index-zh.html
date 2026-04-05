@@ -134,13 +134,19 @@
             word-break: break-word;
         }
         
-        /* 中文 Hero：避免「（IPA）」与「国际音标」拆成两行（桌面两栏布局） */
+        /* 中文 Hero：避免「国际音标」与「（IPA）」拆行；桌面端避免「的」等单字孤行 */
         html[lang="zh-CN"] .hero h1 .hero-h1-zh-ipa {
             white-space: nowrap;
         }
         @media (max-width: 768px) {
             html[lang="zh-CN"] .hero h1 .hero-h1-zh-ipa {
                 white-space: normal;
+            }
+        }
+        @media (min-width: 769px) {
+            html[lang="zh-CN"] .hero h1 {
+                word-break: keep-all;
+                overflow-wrap: normal;
             }
         }
         
@@ -425,6 +431,72 @@
             flex-wrap: wrap;
             margin-bottom: 2rem;
         }
+
+        /* Hero: device compatibility badges (iPad / iPhone) */
+        .device-badge-container {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+
+        .device-label {
+            font-size: 0.85rem;
+            color: #8b8b8b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        html[lang="zh-CN"] .device-label {
+            text-transform: none;
+            letter-spacing: 0.02em;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .device-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .device-badge:hover {
+            background: rgba(0, 0, 0, 0.06);
+        }
+
+        .badge-icon {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .device-badge-container {
+                flex-direction: column;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hero-left .device-badge-container {
+                justify-content: flex-start;
+            }
+        }
         
         .btn-primary {
             display: inline-flex;
@@ -477,34 +549,47 @@
         
         .hero-screenshot {
             width: 100%;
-            max-width: 320px;
-            border-radius: 12px;
+            max-width: min(360px, 92vw);
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            border-radius: 14px;
             display: block;
             margin: 2rem auto 0 auto;
             background: transparent;
         }
         
         @media (min-width: 769px) {
+            .hero {
+                padding: 4.25rem 0 3.75rem;
+            }
+
             .hero-inner {
                 flex-direction: row;
                 align-items: center;
-                gap: 3rem;
+                gap: clamp(2.25rem, 5vw, 4rem);
                 text-align: left;
             }
             
             .hero-left {
-                flex: 1;
+                flex: 1 1 0;
                 min-width: 0;
             }
             
             .hero-right {
-                flex: 0 0 auto;
+                flex: 0 1 44%;
+                max-width: 480px;
+                min-width: 280px;
                 align-items: center;
-                margin-right: 2rem;
+                margin-right: 0;
             }
             
             .hero-right .hero-image {
                 margin-top: 0;
+                width: 100%;
+                max-width: min(460px, 100%);
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .hero h1 {
@@ -527,9 +612,24 @@
             }
             
             .hero-screenshot {
-                margin-top: 0;
+                margin: 0 auto;
+                max-width: min(460px, 100%);
+                border-radius: 16px;
+                box-shadow: none;
             }
             
+        }
+
+        @media (min-width: 1100px) {
+            .hero-right {
+                max-width: 520px;
+            }
+            .hero-right .hero-image {
+                max-width: min(500px, 100%);
+            }
+            .hero-screenshot {
+                max-width: min(500px, 100%);
+            }
         }
         
         .cmu-credit {
@@ -1410,6 +1510,29 @@
             text-align: center;
             margin-top: 3rem;
         }
+
+        .universal-footer {
+            max-width: 900px;
+            margin: 1rem auto 0 auto;
+            padding: 12px;
+            background-color: #f9f9f8;
+            border-radius: 8px;
+            border: 1px solid #e5e5e0;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .universal-footer p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .universal-footer strong {
+            color: #111827;
+            font-weight: 600;
+        }
         
         .btn-upgrade {
             display: inline-flex;
@@ -1464,6 +1587,9 @@
             color: #4b5563;
             line-height: 1.6;
             margin: 0;
+        }
+        .faq-item p + p {
+            margin-top: 0.75rem;
         }
 
         .blog-highlights {
@@ -1781,7 +1907,7 @@
             }
             
             .hero-screenshot {
-                max-width: 300px;
+                max-width: min(340px, 90vw);
             }
             
             .pricing-table-wrapper {
@@ -2040,8 +2166,8 @@
                 <div class="hero-left">
 
                     <h1>
-                        将英语转为清晰、结构化的<br>
-                        <span class="hero-h1-zh-ipa">国际音标（IPA）</span>
+                        将英语转为清晰、<br>
+                        结构化的<span class="hero-h1-zh-ipa">国际音标（IPA）</span>
                     </h1>
 
                     <h2>
@@ -2050,15 +2176,6 @@
                     </h2>
 
                     <div class="hero-buttons">
-
-                        <!-- Primary CTA -->
-                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero"
-                           class="btn-primary"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'hero_primary'});">
-                            获取 App
-                        </a>
 
                         <!-- App Store badge -->
                         <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero_badge"
@@ -2077,6 +2194,20 @@
                             </svg>
                         </a>
 
+                    </div>
+
+                    <div class="device-badge-container" role="group" aria-label="全面兼容 iPad 与 iPhone">
+                        <span class="device-label">全面兼容</span>
+                        <div class="badge-group">
+                            <span class="device-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                iPad
+                            </span>
+                            <span class="device-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="1" width="14" height="22" rx="2" ry="2"></rect><line x1="12" y1="19" x2="12.01" y2="19"></line></svg>
+                                iPhone
+                            </span>
+                        </div>
                     </div>
 
                 </div>
@@ -2432,6 +2563,10 @@
                 </div>
             </div>
 
+            <div class="universal-footer">
+                <p>📱 <strong>通用应用</strong>：您的购买与 Apple ID 绑定。只需购买一次，即可在 <strong>iPhone</strong> 和 <strong>iPad</strong> 上同时使用 Pro 功能。</p>
+            </div>
+
             <div class="pricing-cta">
                 <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_footer" class="app-store-badge" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'footer'});">
                     <img src="app-store-badge-zh.svg" alt="在 App Store 下载" />
@@ -2451,6 +2586,11 @@
                 <div class="faq-item">
                     <h3>iOS 上有离线 IPA 转写工具吗？</h3>
                     <p>有。Phonetic Formatter 在 iPhone 与 iPad 上完全离线运行，音标转换均在设备本地完成，无需联网，也不会向服务器上传数据。适合课堂、通勤或网络不佳场景。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>我可以在 iPad 上使用这款应用吗？需要另外付费吗？</h3>
+                    <p>当然可以。本应用完美适配 iPad。如果您已经在 iPhone 上购买过 Pro 版本，只需在 iPad 上登录同一个 Apple ID，即可通过「恢复购买」激活 Pro 权限，无需重复付费。</p>
+                    <p>（注：为了保护您的隐私，本应用不会保存您的任何转换历史记录，所有操作均在本地即时完成。）</p>
                 </div>
                 <div class="faq-item">
                     <h3>这个转换器是否使用了 CMU 发音词典？</h3>
