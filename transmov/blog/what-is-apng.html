@@ -12,7 +12,6 @@
     <meta name="author" content="TransMov">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
@@ -42,16 +41,24 @@
       "headline": "What is APNG? Animated PNG Explained (And Why It's Better Than GIF)",
       "description": "What is APNG? Learn how Animated PNG works, how it compares to GIF, and how to create high-quality transparent APNG files on macOS.",
       "author": {
-        "@type": "Organization",
-        "name": "TransMov"
+        "@type": "Person",
+        "name": "Louis",
+        "url": "https://louisbuilds.me",
+        "sameAs": [
+          "https://louisbuilds.me/",
+          "https://github.com/louischen737",
+          "https://apps.apple.com/us/app/transmov/id6756703030"
+        ]
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "TransMov",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://louisbuilds.me/transmov/images/app-icon.png"
-        }
+        "@type": "Person",
+        "name": "Louis",
+        "url": "https://louisbuilds.me",
+        "sameAs": [
+          "https://louisbuilds.me/",
+          "https://github.com/louischen737",
+          "https://apps.apple.com/us/app/transmov/id6756703030"
+        ]
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -64,6 +71,32 @@
       },
       "datePublished": "2026-03-24",
       "dateModified": "2026-03-24"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "TransMov Home",
+          "item": "https://louisbuilds.me/transmov/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://louisbuilds.me/transmov/#guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What is APNG?",
+          "item": "https://louisbuilds.me/transmov/blog/what-is-apng.html"
+        }
+      ]
     }
     </script>
     <script type="application/ld+json">
@@ -157,14 +190,13 @@
     <link rel="icon" type="image/png" href="../images/favicon.png">
     <link rel="apple-touch-icon" href="../images/app-icon.png">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <!-- Google tag (gtag.js): queue early; load library after delay for INP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2TMXET2TJN');
+      window.gtag = gtag;
     </script>
+    <script defer src="../js/gtag-delayed.js"></script>
     
     <style>
         * {
@@ -565,11 +597,14 @@
     <div class="blog-container">
         <h1>What is APNG? Animated PNG Explained (And Why It's Better Than GIF)</h1>
 
-        <section class="definition-box" aria-label="APNG Definition Summary">
-            <p>
-                <span style="color: #667eea; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">2026 Quick Guide</span>
-                <strong>APNG (Animated Portable Network Graphics)</strong> is the premium alternative to GIF. It supports <strong>24-bit true color</strong> and <strong>8-bit alpha transparency</strong>, ensuring sharp edges and no color banding in modern web and app UI animations.
-            </p>
+        <section class="highlight-box" style="background: rgba(129, 140, 248, 0.05); border: 1px solid rgba(129, 140, 248, 0.2); border-radius: 12px; padding: 1.25rem 1.35rem; margin: 0 0 1.5rem;" aria-labelledby="apng-quick-title-en">
+            <h2 id="apng-quick-title-en" style="font-size: 1.2rem; margin-top: 0; color: #818cf8;">Quick Guide: What is APNG?</h2>
+            <p><strong>Definition:</strong> APNG (Animated PNG) is an extension of the PNG format that supports 24-bit color and 8-bit alpha transparency, making it a high-quality alternative to GIF.</p>
+            <ul style="margin-bottom: 10px;">
+                <li><strong>Better Quality:</strong> Millions of colors vs. GIF's 256.</li>
+                <li><strong>True Transparency:</strong> No "white edges" or pixelated borders.</li>
+                <li><strong>Backward Compatible:</strong> Plays as a static PNG on older browsers.</li>
+            </ul>
         </section>
 
         <p><strong>APNG (Animated PNG)</strong> is a modern animation format that extends PNG to support frame-based animation — similar to GIF, but with significantly higher image quality and full alpha transparency.</p>

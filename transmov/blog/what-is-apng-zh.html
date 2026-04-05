@@ -12,7 +12,6 @@
     <meta name="author" content="TransMov">
     <meta name="robots" content="index, follow">
     <meta name="language" content="zh-CN">
-    <meta name="revisit-after" content="7 days">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
@@ -41,11 +40,25 @@
       "@type": "Article",
       "headline": "什么是 APNG？动态 PNG 全面解析（及其为何优于 GIF）",
       "description": "什么是 APNG？一文读懂动态 PNG 原理、与 GIF 的区别，以及如何在 macOS 上制作高质量透明 APNG。",
-      "author": { "@type": "Organization", "name": "TransMov" },
+      "author": {
+        "@type": "Person",
+        "name": "Louis",
+        "url": "https://louisbuilds.me",
+        "sameAs": [
+          "https://louisbuilds.me/",
+          "https://github.com/louischen737",
+          "https://apps.apple.com/us/app/transmov/id6756703030"
+        ]
+      },
       "publisher": {
-        "@type": "Organization",
-        "name": "TransMov",
-        "logo": { "@type": "ImageObject", "url": "https://louisbuilds.me/transmov/images/app-icon.png" }
+        "@type": "Person",
+        "name": "Louis",
+        "url": "https://louisbuilds.me",
+        "sameAs": [
+          "https://louisbuilds.me/",
+          "https://github.com/louischen737",
+          "https://apps.apple.com/us/app/transmov/id6756703030"
+        ]
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
@@ -54,6 +67,32 @@
       "isPartOf": { "@type": "WebSite", "name": "TransMov", "url": "https://louisbuilds.me/transmov/" },
       "datePublished": "2026-03-24",
       "dateModified": "2026-04-04"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://louisbuilds.me/transmov/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "博客",
+          "item": "https://louisbuilds.me/transmov/zh/#guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "什么是 APNG？",
+          "item": "https://louisbuilds.me/transmov/blog/what-is-apng-zh.html"
+        }
+      ]
     }
     </script>
     <script type="application/ld+json">
@@ -142,14 +181,13 @@
     <link rel="icon" type="image/png" href="../images/favicon.png">
     <link rel="apple-touch-icon" href="../images/app-icon.png">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <!-- Google tag (gtag.js): queue early; load library after delay for INP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2TMXET2TJN');
+      window.gtag = gtag;
     </script>
+    <script defer src="../js/gtag-delayed.js"></script>
     
     <style>
         * {
@@ -528,11 +566,15 @@
     <div class="blog-container">
         <h1>什么是 APNG？动态 PNG 全面解析（及其为何优于 GIF）</h1>
 
-        <section class="definition-box" aria-label="APNG 要点摘要">
-            <p>
-                <span style="color: #667eea; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">2026 核心指南</span>
-                <strong>APNG（动态 PNG，Animated Portable Network Graphics）</strong> 是 GIF 的专业级替代格式。支持 <strong>24 位真彩色</strong> 与 <strong>8 位 Alpha 透明通道</strong>，画面边缘流畅无锯齿，完美适配现代网页与应用 UI 高清动效。
-            </p>
+        <section class="highlight-box" style="background: rgba(129, 140, 248, 0.05); border: 1px solid rgba(129, 140, 248, 0.2); border-radius: 12px; padding: 1.25rem 1.35rem; margin: 0 0 1.5rem;" aria-labelledby="apng-quick-title-zh">
+            <h2 id="apng-quick-title-zh" style="font-size: 1.2rem; margin-top: 0; color: #818cf8;">快速概览：APNG 是什么？</h2>
+            <p><strong>定义：</strong>APNG (Animated PNG) 是动态版 PNG 格式。它支持 24 位全彩和 8 位 Alpha 透明通道，是 GIF 格式的现代替代方案。</p>
+            <h3 style="font-size: 1rem; margin: 1rem 0 0.5rem; color: rgba(255,255,255,0.92);">核心对比：</h3>
+            <table style="width: 100%; font-size: 0.9rem; color: rgba(255,255,255,0.8); border-collapse: collapse; margin-bottom: 10px;">
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><th scope="col" style="text-align: left; padding: 0.35rem 0;">特性</th><th scope="col" style="text-align: left; padding: 0.35rem 0;">GIF</th><th scope="col" style="text-align: left; padding: 0.35rem 0;">APNG</th></tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);"><td style="padding: 0.35rem 0;">色彩</td><td>256 色</td><td>1670 万色</td></tr>
+                <tr><td style="padding: 0.35rem 0;">透明度</td><td>单一色/锯齿</td><td>平滑半透明</td></tr>
+            </table>
         </section>
 
         <p><strong>APNG（动态 PNG）</strong> 在标准 PNG 上扩展了逐帧动画能力——与 GIF 类似，但画质明显更高，并支持完整 Alpha 透明通道。</p>
