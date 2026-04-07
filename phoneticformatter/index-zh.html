@@ -1437,8 +1437,18 @@
         .pricing-table th.pro-col {
             font-size: 1.5rem;
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
+            gap: 0.15rem;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        .pricing-table th.pro-col .pro-col-subtitle {
+            font-size: 1em;
+            font-weight: inherit;
+            letter-spacing: inherit;
+            color: inherit;
         }
         
         .pricing-table tbody tr {
@@ -2125,10 +2135,9 @@
                         <ul>
                             <li><a href="index-zh.html">首页</a></li>
                             <li><a href="#features">功能</a></li>
+                            <li><a href="#pricing">定价</a></li>
                             <li><a href="blogs.html">博客</a></li>
                             <li><a href="support.html">支持</a></li>
-                            <li><a href="privacy.html">隐私</a></li>
-                            <li><a href="terms.html">条款</a></li>
                         </ul>
                     </div>
                     <span class="nav-swipe-hint" aria-hidden="true">Swipe →</span>
@@ -2497,9 +2506,9 @@
         </div>
     </section>
 
-    <section class="pricing scroll-reveal">
+    <section class="pricing scroll-reveal" id="pricing">
         <div class="container">
-            <h2>免费与 Pro</h2>
+            <h2>免费版与Pro专业版</h2>
 
             <div class="pricing-table-wrapper">
                 <p class="pricing-swipe-hint" aria-hidden="true">左右滑动比较方案</p>
@@ -2513,8 +2522,8 @@
                     <thead>
                         <tr>
                             <th class="plan-label">方案详情</th>
-                            <th class="free-col">免费</th>
-                            <th class="pro-col">Pro</th>
+                            <th class="free-col">免费版</th>
+                            <th class="pro-col">Pro<span class="pro-col-subtitle">专业版</span></th>
                         </tr>
                     </thead>
                     <tbody>
