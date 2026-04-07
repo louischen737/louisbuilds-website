@@ -194,7 +194,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="style.css?v=20260407b" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -583,6 +583,28 @@
             margin: 0 auto;
             padding: 0 clamp(1.5rem, 4vw, 2.5rem) 4rem;
         }
+
+        /* Critical fallback: keep newly added below-fold diagrams centered even with cached external CSS */
+        .workflow-ai-diagram,
+        .pricing-comparison-diagram {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        .pricing-comparison-diagram {
+            max-width: 960px;
+        }
+        .workflow-ai-diagram img,
+        .pricing-comparison-diagram img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            box-sizing: border-box;
+        }
         
         /* 顶栏胶囊：同一容器承载全部元素，中间导航始终固定 */
         .top-bar {
@@ -902,7 +924,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260407b">
 </head>
 <body>
     <header class="top-bar">
