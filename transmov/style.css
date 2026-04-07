@@ -56,6 +56,46 @@
 .section--workflow .section-lead--spacious {
     margin-bottom: 5rem;
 }
+.workflow-ai-diagram {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 3.5rem auto 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+.workflow-ai-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+/* Free vs Pro comparison table — illustration below (match .comparison-wrapper max-width) */
+.pricing-comparison-diagram {
+    width: 100%;
+    max-width: 960px;
+    min-width: 0;
+    margin: 2.5rem auto 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+.pricing-comparison-diagram img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
 .workflow-break-desktop {
     display: none;
 }
