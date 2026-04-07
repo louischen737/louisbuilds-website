@@ -514,6 +514,7 @@
             pointer-events: none;
         }
         
+        .comparison-before-stack,
         .comparison-after-stack {
             position: relative;
             width: 100%;
@@ -521,6 +522,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .comparison-before-stack .comparison-before-static {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            opacity: 1;
+            transition: opacity 0.25s ease;
+        }
+        .comparison-before-stack .comparison-video-before.is-loaded + .comparison-before-static {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
         }
         
         .comparison-after-stack .comparison-after-static {
@@ -1016,18 +1033,31 @@
                                     </div>
                                 </div>
                                 <div class="comparison-layer comparison-layer--before">
-                                    <video
-                                        class="comparison-video-before"
-                                        src="images/before-comparison.mp4"
-                                        poster="images/before-comparison-poster.jpg"
-                                        width="360"
-                                        height="640"
-                                        preload="metadata"
-                                        muted
-                                        loop
-                                        playsinline
-                                        title="Original video before AI background removal">
-                                    </video>
+                                    <div class="comparison-before-stack">
+                                        <video
+                                            class="comparison-video-before"
+                                            src="images/before-comparison.mp4"
+                                            poster="images/before-comparison-poster.jpg"
+                                            width="360"
+                                            height="640"
+                                            preload="metadata"
+                                            muted
+                                            loop
+                                            playsinline
+                                            onloadeddata="this.classList.add('is-loaded');"
+                                            title="Original video before AI background removal">
+                                        </video>
+                                        <img
+                                            src="images/hero-static-poster.jpg"
+                                            alt=""
+                                            class="comparison-before-static"
+                                            width="540"
+                                            height="960"
+                                            loading="eager"
+                                            fetchpriority="high"
+                                            decoding="sync"
+                                            aria-hidden="true">
+                                    </div>
                                 </div>
                             </div>
                         </div>
