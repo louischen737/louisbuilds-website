@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
 
     <title>Simple Ways to Pause During a Busy Workday — TapPause</title>
     <meta name="description" content="Feeling overwhelmed at work? These simple pause techniques can help you slow down and reset without losing productivity.">
@@ -24,198 +25,9 @@
     {"@context":"https://schema.org","@type":"Article","headline":"Simple Ways to Pause During a Busy Workday","description":"Feeling overwhelmed at work? These simple pause techniques can help you slow down and reset without losing productivity.","datePublished":"2026-02-28","dateModified":"2026-02-28","author":{"@type":"Person","name":"Louis","url":"https://louisbuilds.me"},"publisher":{"@type":"Person","name":"Louis","url":"https://louisbuilds.me"},"image":"https://louisbuilds.me/tappause/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://louisbuilds.me/tappause/simple-ways-to-pause-during-a-busy-workday.html"}}
     </script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-color: #1C1C1E;
-            --text-primary: #FFFFFF;
-            --text-secondary: #E5E5EA;
-            --text-muted: #8E8E93;
-            --divider-light: rgba(255, 255, 255, 0.06);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 100px 24px;
-        }
-
-        .back-link {
-            margin-bottom: 40px;
-        }
-
-        .back-link a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        h1 {
-            font-size: clamp(28px, 5vw, 40px);
-            margin-bottom: 8px;
-        }
-
-        .article-date {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        h2 {
-            margin-top: 48px;
-            margin-bottom: 16px;
-            font-size: 22px;
-        }
-
-        h3 {
-            margin-top: 28px;
-            margin-bottom: 10px;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        ul {
-            margin: 20px 0 20px 20px;
-            color: var(--text-secondary);
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .article-image {
-            text-align: center;
-            margin: 40px auto 60px;
-            background-color: #121212;
-            padding: 16px;
-            border-radius: 12px;
-            display: block;
-            max-width: 280px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .article-image img {
-            max-width: 248px;
-            width: 100%;
-            border: 1px solid #444444;
-            border-radius: 10px;
-        }
-
-        .container p a {
-            color: #a5b4fc;
-            text-decoration: none;
-        }
-        .container p a:hover {
-            color: #c7d2fe;
-            text-decoration: underline;
-        }
-
-        /* 相关阅读模块样式 */
-        .related-reads {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid var(--divider-light);
-        }
-
-        .related-reads h4 {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 24px;
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        @media (max-width: 600px) {
-            .related-grid { grid-template-columns: 1fr; }
-        }
-
-        .related-card {
-            text-decoration: none;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            transition: background 0.2s ease;
-        }
-
-        .related-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .related-card h5 {
-            color: var(--text-primary);
-            font-size: 17px;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .related-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 0;
-            line-height: 1.5;
-        }
-
-        .divider {
-            height: 1px;
-            background: var(--divider-light);
-            margin: 80px 0;
-        }
-
-        .cta {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .cta a {
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .cta img {
-            height: 50px;
-        }
-
-        footer {
-            border-top: 1px solid var(--divider-light);
-            text-align: center;
-            padding: 40px 24px;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-    </style>
 </head>
 
-<body>
+<body class="page-article">
 
     <div class="container">
 
@@ -248,7 +60,10 @@
         </p>
 
         <div class="article-image">
-            <img src="mindful-work-break-app-iphone.png" alt="TapPause minimal pause app for iPhone — mindful work break and mental reset during a busy workday">
+            <picture>
+                <source type="image/webp" srcset="mindful-work-break-app-iphone-280w.webp 280w, mindful-work-break-app-iphone-560w.webp 560w, mindful-work-break-app-iphone-840w.webp 840w" sizes="(max-width: 600px) min(88vw, 280px), 280px">
+                <img src="mindful-work-break-app-iphone.png" alt="TapPause minimal pause app for iPhone — mindful work break and mental reset during a busy workday" width="1170" height="2532" loading="lazy" decoding="async">
+            </picture>
         </div>
 
         <p>

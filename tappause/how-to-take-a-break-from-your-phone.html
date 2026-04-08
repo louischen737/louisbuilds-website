@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
 
     <title>How to Take a Phone Break Without Quitting | TapPause</title>
     <meta name="description" content="Struggling with screen time? Here are simple ways to take a break from your phone without deleting apps or quitting everything entirely.">
@@ -50,213 +51,9 @@
     }
     </script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-color: #1C1C1E;
-            --text-primary: #FFFFFF;
-            --text-secondary: #E5E5EA;
-            --text-muted: #8E8E93;
-            --divider-light: rgba(255, 255, 255, 0.06);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 100px 24px;
-        }
-
-        .back-link {
-            margin-bottom: 40px;
-        }
-
-        .back-link a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        h1 {
-            font-size: clamp(28px, 5vw, 40px);
-            margin-bottom: 8px;
-        }
-
-        .article-date {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        h2 {
-            margin-top: 48px;
-            margin-bottom: 16px;
-            font-size: 22px;
-        }
-
-        h3 {
-            margin-top: 28px;
-            margin-bottom: 10px;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .quick-tips {
-            margin: 24px 0 32px;
-            padding: 20px 24px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 10px;
-            border-left: 3px solid var(--text-muted);
-        }
-
-        .quick-tips ul {
-            margin: 0;
-            list-style: none;
-        }
-
-        .quick-tips li {
-            margin-bottom: 8px;
-            padding-left: 0;
-        }
-
-        .quick-tips li::before {
-            content: "· ";
-            color: var(--text-muted);
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        .container p a {
-            color: #a5b4fc;
-            text-decoration: none;
-        }
-        .container p a:hover {
-            color: #c7d2fe;
-            text-decoration: underline;
-        }
-
-        ul {
-            margin: 20px 0 20px 20px;
-            color: var(--text-secondary);
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .article-image {
-            text-align: center;
-            margin: 40px auto 60px;
-            background-color: #121212;
-            padding: 20px;
-            border-radius: 14px;
-            display: block;
-            max-width: 320px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .article-image img {
-            max-width: 280px;
-            width: 100%;
-            border: 1px solid #444444;
-            border-radius: 12px;
-        }
-
-        .related-reads {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid var(--divider-light);
-        }
-        .related-reads h4 {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 24px;
-        }
-        .related-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-        @media (max-width: 600px) {
-            .related-grid { grid-template-columns: 1fr; }
-        }
-        .related-card {
-            text-decoration: none;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            transition: background 0.2s ease;
-        }
-        .related-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-        }
-        .related-card h5 {
-            color: var(--text-primary);
-            font-size: 17px;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        .related-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 0;
-            line-height: 1.5;
-        }
-
-        .divider {
-            height: 1px;
-            background: var(--divider-light);
-            margin: 80px 0;
-        }
-
-        .cta {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .cta a {
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .cta img {
-            height: 50px;
-        }
-
-        footer {
-            border-top: 1px solid var(--divider-light);
-            text-align: center;
-            padding: 40px 24px;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-    </style>
 </head>
 
-<body>
+<body class="page-article">
 
     <div class="container">
 
@@ -311,7 +108,10 @@
         </p>
 
         <div class="article-image">
-            <img src="pause-app-screenshot.png" alt="TapPause pause timer and mindfulness app for iPhone — minimal interface with single button to take a short break and reduce screen time">
+            <picture>
+                <source type="image/webp" srcset="pause-app-screenshot-280w.webp 280w, pause-app-screenshot-560w.webp 560w, pause-app-screenshot-840w.webp 840w" sizes="(max-width: 600px) min(88vw, 280px), 280px">
+                <img src="pause-app-screenshot.png" alt="TapPause pause timer and mindfulness app for iPhone — minimal interface with single button to take a short break and reduce screen time" width="1170" height="2532" loading="lazy" decoding="async">
+            </picture>
         </div>
 
         <p>
