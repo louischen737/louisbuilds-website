@@ -182,30 +182,30 @@
             --shadow-card-hover: 0 20px 40px var(--card-shadow-hover);
             --shadow-button-hover: 0 12px 30px rgba(0,0,0,0.45);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         /* 可访问性：确保字体可缩放 */
         html {
             font-size: 16px;
         }
-        
+
         body {
             font-size: 1rem;
             line-height: 1.6;
         }
-        
+
         /* 可访问性：键盘导航焦点样式 */
         a:focus,
         button:focus {
             outline: 2px solid var(--accent);
             outline-offset: 2px;
         }
-        
+
         /* 可访问性：跳过链接（供屏幕阅读器使用） */
         .skip-link {
             position: absolute;
@@ -217,11 +217,11 @@
             text-decoration: none;
             z-index: 100;
         }
-        
+
         .skip-link:focus {
             top: 0;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
@@ -231,12 +231,12 @@
             padding: 0;
             animation: fadeIn 0.6s ease-in;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         .hero-section {
             position: relative;
             display: flex;
@@ -358,7 +358,7 @@
                 transform: translateY(0);
             }
         }
-        
+
         .cta-buttons {
             display: flex;
             justify-content: center;
@@ -372,7 +372,7 @@
             color: rgba(255, 255, 255, 0.75);
             letter-spacing: 0.02em;
         }
-        
+
         @media (max-width: 768px) {
             .hero-cta-note {
                 font-size: 1rem;
@@ -389,7 +389,7 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-        
+
         @media (max-width: 768px) {
             .app-store-badge,
             .product-hunt-badge {
@@ -397,7 +397,7 @@
                 min-width: 160px;
             }
         }
-        
+
         .app-store-badge:focus,
         .product-hunt-badge:focus {
             outline: 2px solid var(--accent);
@@ -421,7 +421,7 @@
             transform: translateY(0) scale(0.98);
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        
+
         .product-hunt-badge {
             display: inline-flex;
             align-items: center;
@@ -429,7 +429,7 @@
             padding: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .product-hunt-badge img {
             height: 54px;
             width: auto;
@@ -438,12 +438,12 @@
             transition: all 0.3s ease;
             display: block;
         }
-        
+
         .product-hunt-badge:hover img {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 8px 20px var(--shadow-hover);
         }
-        
+
         .site-header {
             position: fixed;
             top: 0;
@@ -459,13 +459,13 @@
             -webkit-backdrop-filter: none;
             transition: background 0.25s ease, backdrop-filter 0.25s ease;
         }
-        
+
         .site-header.scrolled {
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-        
+
         .header-brand {
             display: flex;
             align-items: center;
@@ -473,11 +473,11 @@
             text-decoration: none;
             color: inherit;
         }
-        
+
         .header-brand:hover {
             opacity: 0.92;
         }
-        
+
         .header-app-icon {
             width: 40px;
             height: 40px;
@@ -487,24 +487,24 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .header-app-icon img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
         }
-        
+
         .header-brand-name {
             font-size: 1.25em;
             font-weight: 500;
             color: #FFFFFF;
         }
-        
+
         .lang-dropdown {
             position: relative;
         }
-        
+
         .lang-dropdown-trigger {
             display: inline-flex;
             align-items: center;
@@ -520,39 +520,39 @@
             outline: none;
             box-shadow: none;
         }
-        
+
         .lang-dropdown-trigger:hover {
             color: #FFFFFF;
             background: rgba(255, 255, 255, 0.12);
             border-color: rgba(255, 255, 255, 0.5);
         }
-        
+
         /* 只在键盘导航时显示outline */
         .lang-dropdown-trigger:focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 2px;
         }
-        
+
         /* 鼠标点击focus时不显示outline，保持默认border */
         .lang-dropdown-trigger:focus:not(:focus-visible) {
             outline: none;
         }
-        
+
         /* 确保active状态也不显示outline */
         .lang-dropdown-trigger:active {
             outline: none;
         }
-        
+
         .lang-chevron {
             font-size: 0.65em;
             opacity: 0.9;
             transition: transform 0.2s ease;
         }
-        
+
         .lang-dropdown.open .lang-chevron {
             transform: rotate(180deg);
         }
-        
+
         .lang-dropdown-menu {
             position: absolute;
             top: 100%;
@@ -572,13 +572,13 @@
             transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
             z-index: 20;
         }
-        
+
         .lang-dropdown.open .lang-dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .lang-dropdown-menu a {
             display: block;
             padding: 10px 16px;
@@ -587,835 +587,20 @@
             text-decoration: none;
             transition: background 0.15s ease, color 0.15s ease;
         }
-        
+
         .lang-dropdown-menu a:hover {
             background: rgba(255, 255, 255, 0.12);
             color: #FFFFFF;
         }
-        
+
         .lang-dropdown-menu a.active {
             color: #FFFFFF;
             font-weight: 500;
             background: rgba(255, 255, 255, 0.08);
         }
-        
-        .immersive-transition {
-            background: var(--bg-primary);
-            padding: 180px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .immersive-inner {
-            max-width: 760px;
-        }
-        
-        .immersive-inner h2 {
-            font-size: clamp(28px, 4vw, 44px);
-            font-weight: 300;
-            line-height: 1.5;
-            color: var(--text-primary);
-            letter-spacing: 0.02em;
-        }
-        
-        .immersive-inner h2 br {
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            .immersive-inner h2 br {
-                display: block;
-            }
-        }
-        
-        .immersive-inner h2 span {
-            display: block;
-        }
-        
-        .story-section {
-            padding: 100px 20px;
-            background: var(--bg-primary);
-        }
-        
-        .story-section .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: 300;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-        
-        .story-section .section-subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            color: var(--text-secondary);
-            max-width: 900px;
-            margin: 0 auto 60px auto;
-        }
-        
-        /* Scroll reveal animation */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Story items */
-        .story-item {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 80px;
-            flex-wrap: wrap;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        .story-item.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .story-item.reverse {
-            flex-direction: row-reverse;
-        }
-        
-        .story-image {
-            flex: 1;
-            min-width: 280px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        
-        .story-image picture {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .story-image img {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-            object-fit: contain;
-        }
-        
-        .story-image img:hover {
-            transform: scale(1.03);
-        }
-        
-        .story-content {
-            flex: 1;
-            min-width: 280px;
-        }
-        
-        .story-content h3 {
-            font-size: 1.6em;
-            color: var(--accent);
-            margin-bottom: 12px;
-        }
-        
-        .story-content p {
-            font-size: 1em;
-            color: rgba(59,36,29,0.85);
-            line-height: 1.7;
-        }
-        
-        .story-item-subdued .story-content h3 {
-            font-size: 1.3em;
-        }
-        
-        .story-item-subdued .story-image img {
-            max-width: 240px !important;
-        }
-        
-        .story-item-subdued {
-            margin-bottom: 60px;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: 300;
-            color: var(--text-primary);
-            margin-bottom: 20px;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            color: var(--text-secondary);
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .testimonials-section {
-            padding: 80px 20px;
-            background: var(--bg-primary);
-            overflow: visible;
-        }
-        
-        .testimonials-section .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            font-weight: 300;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-        
-        .testimonials-section .section-subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 60px auto;
-        }
-        
-        .testimonials-grid {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding-bottom: 16px;
-            position: relative;
-        }
-        
-        .testimonials-grid-wrapper {
-            position: relative;
-        }
-        
-        .testimonials-grid::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 60px;
-            background: linear-gradient(to right, transparent, var(--bg-primary));
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
-        
-        .testimonials-grid.scrollable::after {
-            opacity: 1;
-        }
-        
-        .testimonials-grid.scrollable::before {
-            content: '→';
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: var(--accent);
-            animation: slideHint 2s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0;
-        }
-        
-        .testimonials-grid.scrollable::before {
-            opacity: 1;
-        }
-        
-        @keyframes slideHint {
-            0%, 100% { transform: translateY(-50%) translateX(0); }
-            50% { transform: translateY(-50%) translateX(8px); }
-        }
-        
-        .testimonial-card {
-            flex: 0 1 320px;
-            max-width: 320px;
-            background: var(--card-bg);
-            backdrop-filter: blur(14px) saturate(120%);
-            -webkit-backdrop-filter: blur(14px) saturate(120%);
-            border-radius: 24px;
-            border: 1px solid var(--card-border);
-            box-shadow: var(--shadow-card);
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
-            animation: floatCard 6s ease-in-out infinite;
-            transform: translateZ(0);
-            will-change: transform;
-            min-height: 200px;
-        }
-        
-        @media (hover: hover) and (pointer: fine) {
-            .testimonial-card:hover {
-                transform: translateY(-8px) scale(1.03) translateZ(0);
-                box-shadow: var(--shadow-card-hover);
-                border-color: var(--accent);
-            }
-        }
-        
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0) scale(1) translateZ(0); }
-            50% { transform: translateY(-4px) scale(1.01) translateZ(0); }
-        }
-        
-        .testimonials-hint {
-            display: none;
-            text-align: center;
-            margin-top: 16px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-        
-        .testimonials-hint::before {
-            content: '← Daha fazlasını görmek için kaydırın →';
-            display: inline-block;
-            animation: slideHintText 2s ease-in-out infinite;
-        }
-        
-        @keyframes slideHintText {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-4px); }
-            75% { transform: translateX(4px); }
-        }
-        
-        .testimonial-text {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 1em;
-            text-align: right;
-        }
 
-        /* SEO Section */
-        .seo-section {
-            padding: 80px 20px;
-            background: var(--bg-primary);
-        }
-        .seo-content {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-        }
-        .seo-block h2 {
-            font-size: 1.8rem;
-            color: var(--accent);
-            margin-bottom: 12px;
-        }
-        .seo-block p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-        }
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 20px;
-            background: var(--bg-primary);
-        }
-        .faq-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 40px;
-        }
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 16px 0;
-        }
-        .faq-item summary {
-            cursor: pointer;
-            font-weight: 500;
-            color: var(--text-primary);
-            list-style: none;
-            position: relative;
-            padding-right: 24px;
-        }
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-        .faq-item summary::after {
-            content: "+";
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 1.2rem;
-            opacity: 0.6;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .faq-item[open] summary::after {
-            transform: rotate(45deg);
-            opacity: 1;
-        }
-        .faq-item p {
-            margin-top: 10px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            .seo-section {
-                padding: 60px 16px;
-            }
-            .seo-block h2 {
-                font-size: 1.5rem;
-            }
-            .seo-content {
-                gap: 36px;
-            }
-            .faq-section {
-                padding: 60px 16px;
-            }
-            .faq-title {
-                font-size: 1.6rem;
-            }
-        }
-
-        .cta-section-upgrade {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #7A1E1E 0%, #5C1616 100%);
-            color: #FFFFFF;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section-upgrade::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            top: -50px;
-            left: -50px;
-            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        .cta-section-upgrade h2 {
-            font-size: 2.5em;
-            font-weight: 400;
-            margin-bottom: 20px;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        .cta-section-upgrade p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            opacity: 0.95;
-            line-height: 1.6;
-            animation: fadeInUp 1s ease forwards;
-        }
-        
-        .cta-section-upgrade .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section-upgrade .app-store-badge img,
-        .cta-section-upgrade .product-hunt-badge img {
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 60px;
-        }
-        
-        .cta-section-upgrade .app-store-badge:hover img,
-        .cta-section-upgrade .product-hunt-badge:hover img {
-            transform: translateY(-4px) scale(1.06);
-            box-shadow: var(--shadow-button-hover);
-        }
-        
-        .cta-section-upgrade .cta-note {
-            font-size: 0.95em;
-            margin-top: 16px;
-            opacity: 0.8;
-        }
-
-        /* Learn More Section */
-        .learn-more {
-            padding: 40px 20px 60px;
-            background: transparent;
-        }
-        .learn-more .container {
-            max-width: 800px;
-        }
-        .learn-more-title {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            letter-spacing: 0.02em;
-        }
-        .learn-more-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .learn-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            text-decoration: none;
-            color: var(--text-primary);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.25s ease;
-        }
-        .learn-text {
-            font-size: 0.95rem;
-        }
-        .learn-arrow {
-            font-size: 0.9rem;
-            opacity: 0.4;
-            transform: translateX(0);
-            transition: all 0.25s ease;
-        }
-        @media (hover: hover) and (pointer: fine) {
-            .learn-item:hover {
-                color: var(--accent);
-            }
-            .learn-item:hover .learn-arrow {
-                opacity: 0.8;
-                transform: translateX(4px);
-            }
-        }
-        @media (max-width: 768px) {
-            .learn-more {
-                padding: 32px 16px 48px;
-            }
-        }
-
-        .footer {
-            background: var(--bg-primary);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--text-secondary);
-        }
-        
-        .footer-links {
-            margin-bottom: 20px;
-        }
-        
-        .footer-links a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--text-primary);
-            text-decoration: underline;
-        }
-        
-.footer-link {
-            color: var(--accent);
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
-
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-        
-        .footer p {
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-        
-        .footer-product-hunt {
-            margin-top: 8px;
-            margin-bottom: 4px;
-        }
-        
-        .footer-product-hunt a {
-            display: inline-block;
-            opacity: 0.9;
-            transition: opacity 0.2s ease;
-        }
-        
-        .footer-product-hunt a:hover {
-            opacity: 1;
-        }
-
-        @media (max-width: 992px) {
-            .story-item,
-            .story-item.reverse {
-                flex-direction: column;
-                gap: 30px;
-                margin-bottom: 60px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .site-header {
-                padding: 12px 16px;
-            }
-            
-            .header-app-icon {
-                width: 36px;
-                height: 36px;
-                border-radius: 8px;
-            }
-            
-            .header-app-icon img {
-                border-radius: 8px;
-            }
-            
-            .header-brand-name {
-                font-size: 1.1em;
-            }
-            
-            .hero-section {
-                min-height: 100vh;
-                padding: 0 20px;
-            }
-
-            .hero-title {
-                font-size: 2.2rem;
-                margin-bottom: 24px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.25rem;
-                margin-bottom: 44px;
-            }
-
-            .hero-cta-note {
-                font-size: 1rem;
-                margin-top: 16px;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-            
-            .cta-section-upgrade h2 {
-                font-size: 2em;
-            }
-            
-            .cta-section-upgrade p {
-                font-size: 1.1em;
-            }
-            
-            .cta-section-upgrade .cta-buttons {
-                gap: 16px;
-            }
-            
-            .cta-section-upgrade .app-store-badge img,
-            .cta-section-upgrade .product-hunt-badge img {
-                height: 56px;
-            }
-            
-            .app-store-badge img {
-                height: 56px;
-            }
-            
-            .product-hunt-badge img {
-                height: 50px;
-            }
-            
-        }
-        
-        @media (min-width: 769px) and (max-width: 992px) {
-            .testimonials-grid {
-                gap: 24px;
-            }
-            
-            .testimonial-card {
-                flex: 0 1 280px;
-                max-width: 280px;
-                padding: 28px;
-            }
-        }
-        
-        @media (min-width: 993px) {
-            .testimonials-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 32px;
-                justify-items: center;
-            }
-            
-            .testimonial-card {
-                width: 100%;
-                max-width: 320px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .testimonials-grid {
-                gap: 16px;
-                padding: 0 12px 20px 12px;
-                overflow-x: auto;
-                overflow-y: hidden;
-                scroll-snap-type: x mandatory;
-                scroll-behavior: smooth;
-                scroll-padding-left: 12px;
-                scroll-padding-right: 12px;
-                -webkit-overflow-scrolling: touch;
-                justify-content: flex-start;
-                flex-wrap: nowrap;
-                -ms-overflow-style: none;
-                scrollbar-width: thin;
-                scrollbar-color: rgba(59,36,29,0.2) transparent;
-                position: relative;
-            }
-            
-            .testimonials-grid::-webkit-scrollbar {
-                height: 6px;
-                display: block;
-            }
-            
-            .testimonials-grid::-webkit-scrollbar-thumb {
-                background: rgba(59,36,29,0.2);
-                border-radius: 3px;
-            }
-
-            .testimonial-card {
-                flex: 0 0 85%;
-                min-width: 85%;
-                max-width: 85%;
-                padding: 24px;
-                scroll-snap-align: start;
-                margin-right: 16px;
-                animation: none;
-                transform: translateZ(0);
-                will-change: transform;
-                touch-action: pan-y;
-            }
-            
-            .testimonial-card:last-child {
-                margin-right: 12px;
-            }
-            
-            /* Mobile: hover disabled */
-            
-            .testimonials-hint {
-                display: block;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .testimonials-grid {
-                padding: 0 8px 20px 8px;
-                scroll-padding-left: 8px;
-                scroll-padding-right: 8px;
-                gap: 12px;
-            }
-            
-            .testimonial-card {
-                flex: 0 0 90%;
-                min-width: 90%;
-                max-width: 90%;
-                padding: 20px;
-                margin-right: 12px;
-            }
-            
-            .testimonial-card:last-child {
-                margin-right: 8px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 36px;
-            }
-
-            .hero-cta-note {
-                font-size: 0.8rem;
-                margin-top: 12px;
-            }
-
-            .app-store-badge img {
-                height: 50px;
-            }
-
-            .story-item {
-                gap: 24px;
-                margin-bottom: 48px;
-            }
-
-            .story-content h3 {
-                font-size: 1.4em;
-            }
-
-            .story-item-subdued .story-content h3 {
-                font-size: 1.2em;
-            }
-
-            .story-item-subdued .story-image img {
-                max-width: 220px !important;
-            }
-
-            .story-image img {
-                border-radius: 14px;
-            }
-
-            .testimonial-text {
-                line-height: 1.85;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-            
-            .hero-glow::before,
-            .hero-glow::after {
-                animation: none !important;
-            }
-            
-            .testimonial-card {
-                animation: none !important;
-            }
-            
-            .cta-section-upgrade::before {
-                animation: none !important;
-            }
-        }
     </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Ana içeriğe geç</a>
@@ -1482,7 +667,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/tr/01.webp" srcset="screenshots/tr/01-400w.webp 400w, screenshots/tr/01-800w.webp 800w, screenshots/tr/01.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Zamanlayıcı ana ekran, temiz arayüzle Derin Odak modunu gösteriyor" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/tr/01.webp" srcset="screenshots/tr/01-400w.webp 400w, screenshots/tr/01-800w.webp 800w, screenshots/tr/01.webp 1242w" sizes="(max-width: 992px) min(100vw - 40px, 320px), 320px" alt="PurrrrrFocus Zamanlayıcı ana ekran, temiz arayüzle Derin Odak modunu gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Derin Odak İçin Bir Alan</h3>
@@ -1492,7 +677,7 @@
 
             <article class="story-item reverse">
                 <div class="story-image">
-                    <img src="screenshots/tr/02.webp" srcset="screenshots/tr/02-400w.webp 400w, screenshots/tr/02-800w.webp 800w, screenshots/tr/02.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Elite Odak Modu ekranı, yerleşik disiplin özelliklerini gösteriyor" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/tr/02.webp" srcset="screenshots/tr/02-400w.webp 400w, screenshots/tr/02-800w.webp 800w, screenshots/tr/02.webp 1242w" sizes="(max-width: 992px) min(100vw - 40px, 320px), 320px" alt="PurrrrrFocus Elite Odak Modu ekranı, yerleşik disiplin özelliklerini gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Yerleşik Disiplin</h3>
@@ -1502,7 +687,7 @@
 
             <article class="story-item">
                 <div class="story-image">
-                    <img src="screenshots/tr/03.webp" srcset="screenshots/tr/03-400w.webp 400w, screenshots/tr/03-800w.webp 800w, screenshots/tr/03.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus İstatistikler ekranı, odak serileri, toplam saatler ve ilerleme takibini gösteriyor" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/tr/03.webp" srcset="screenshots/tr/03-400w.webp 400w, screenshots/tr/03-800w.webp 800w, screenshots/tr/03.webp 1242w" sizes="(max-width: 992px) min(100vw - 40px, 320px), 320px" alt="PurrrrrFocus İstatistikler ekranı, odak serileri, toplam saatler ve ilerleme takibini gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>İlerlemenizi Takip Edin</h3>
@@ -1512,7 +697,7 @@
 
             <article class="story-item story-item-subdued reverse">
                 <div class="story-image">
-                    <img src="screenshots/tr/04.webp" srcset="screenshots/tr/04-400w.webp 400w, screenshots/tr/04-800w.webp 800w, screenshots/tr/04.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Kedi Arkadaşı ekranı, sakin kedi arkadaşı özelliğini gösteriyor" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/tr/04.webp" srcset="screenshots/tr/04-400w.webp 400w, screenshots/tr/04-800w.webp 800w, screenshots/tr/04.webp 1242w" sizes="(max-width: 480px) min(100vw - 40px, 220px), (max-width: 992px) min(100vw - 40px, 240px), 240px" alt="PurrrrrFocus Kedi Arkadaşı ekranı, sakin kedi arkadaşı özelliğini gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Sessiz Bir Arkadaş</h3>
@@ -1522,7 +707,7 @@
 
             <article class="story-item story-item-subdued">
                 <div class="story-image">
-                    <img src="screenshots/tr/05.webp" srcset="screenshots/tr/05-400w.webp 400w, screenshots/tr/05-800w.webp 800w, screenshots/tr/05.webp 1242w" sizes="(max-width: 768px) min(100vw, 320px), 320px" alt="PurrrrrFocus Tema Seçimi ekranı, 6 klasik doğu ilhamlı odak temasını gösteriyor" loading="lazy" width="1242" height="2688">
+                    <img src="screenshots/tr/05.webp" srcset="screenshots/tr/05-400w.webp 400w, screenshots/tr/05-800w.webp 800w, screenshots/tr/05.webp 1242w" sizes="(max-width: 480px) min(100vw - 40px, 220px), (max-width: 992px) min(100vw - 40px, 240px), 240px" alt="PurrrrrFocus Tema Seçimi ekranı, 6 klasik doğu ilhamlı odak temasını gösteriyor" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
                     <h3>Sakinlik İçin Tasarlandı</h3>
