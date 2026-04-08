@@ -3,29 +3,905 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phonetic Formatter</title>
+    <meta name="theme-color" content="#fafaf9">
+    
+    <!-- Primary Meta Tags -->
+    <title>English to IPA Converter &amp; Formatter | CMU-based Phonetic Tool</title>
+    <meta name="title" content="English to IPA Converter &amp; Formatter | CMU-based Phonetic Tool">
+    <meta name="description" content="Professional English to IPA converter & formatter powered by CMU Dictionary. Create and export phonetic transcriptions to PDF/Word. Works 100% offline.">
+    <meta name="keywords" content="phonetic transcription, IPA converter, phonetic formatter, English to IPA, phonetic alphabet, language learning, pronunciation guide, CMU dictionary, IPA export, phonetic transcription converter, text to IPA translator">
+    <meta name="author" content="Phonetic Formatter">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Phonetic Formatter — language hub for legal and support pages.">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 36rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; color: #333; }
-        h1 { font-size: 1.35rem; margin-bottom: 1rem; }
-        ul { list-style: none; padding: 0; margin: 0; }
-        li { margin: 0.5rem 0; }
-        a { color: #2563eb; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        p { color: #666; font-size: 0.95rem; margin-top: 1.5rem; }
-    </style>
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/">
+    <meta property="og:title" content="English to IPA Converter &amp; Formatter | CMU-based Phonetic Tool">
+    <meta property="og:description" content="Turn English passages into beautifully formatted IPA. Perfect for lesson plans and linguistics study. Works offline.">
+    <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/og-image.png">
+    <meta property="og:site_name" content="Phonetic Formatter">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://louisbuilds.me/phoneticformatter/">
+    <meta property="twitter:title" content="English to IPA Converter &amp; Formatter | CMU-based Phonetic Tool">
+    <meta property="twitter:description" content="Turn English passages into beautifully formatted IPA. Perfect for lesson plans and linguistics study. Works offline.">
+    <meta property="twitter:image" content="https://louisbuilds.me/phoneticformatter/og-image.png">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/phoneticformatter/">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/phoneticformatter/index-fr.html">
+    <link rel="alternate" hreflang="es" href="https://louisbuilds.me/phoneticformatter/index-es.html">
+    <link rel="alternate" hreflang="de" href="https://louisbuilds.me/phoneticformatter/index-de.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/phoneticformatter/index-zh.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/phoneticformatter/">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2TMXET2TJN');
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Phonetic Formatter",
+      "applicationCategory": "UtilitiesApplication",
+      "softwareVersion": "1.2",
+      "operatingSystem": "iOS, iPadOS",
+      "downloadUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
+      "installUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "App download",
+          "url": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro upgrade (one-time in-app purchase)",
+          "price": "19.99",
+          "priceCurrency": "USD",
+          "description": "Optional one-time unlock for unlimited daily generations, longer text, word-by-word layout, and TXT/DOCX/PDF export.",
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "purchaseType",
+            "value": "InAppPurchase"
+          }
+        }
+      ],
+      "description": "Professional English to IPA converter for teachers and students. Structured phonetic layouts, export to PDF and Word, 100% offline. No data leaves your device.",
+      "screenshot": "https://louisbuilds.me/phoneticformatter/og-image.png",
+      "featureList": [
+        "Convert full English text to IPA phonetic transcription",
+        "Sentence-based and word-by-word layout (Pro)",
+        "Powered by CMU Pronouncing Dictionary",
+        "Export to TXT, DOCX, PDF formats",
+        "Works offline",
+        "All processing local and private"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "en",
+        "url": "https://louisbuilds.me/phoneticformatter/",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I convert an entire English paragraph to IPA?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Open Phonetic Formatter, paste your paragraph into the text field, and tap Convert. The app transcribes the whole passage at once using the CMU Pronouncing Dictionary. You can choose sentence-level output or, with Pro, word-by-word alignment. Results can be copied or exported to TXT, DOCX, or PDF."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there an offline IPA transcriber for iOS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Phonetic Formatter runs fully offline on your iPhone or iPad. All phonetic conversion happens on device—no internet required and no data is sent to servers. It works anywhere: in the classroom, on the go, or in areas with poor connectivity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use this app on my iPad? Do I need to pay again?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! The app is fully optimized for iPad. If you have already purchased the Pro version on your iPhone, simply log in with the same Apple ID on your iPad and use \"Restore Purchase\" to activate Pro features at no extra cost. Note: To protect your privacy, the app does not store any transcription history. All processing is done instantly and locally."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this converter use the CMU Pronunciation Dictionary?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our tool is powered by the CMU Pronunciation Dictionary, widely considered a gold standard in North American English NLP. However, we've enhanced it with custom logic for better sentence-level transcription and stress marking."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="main.css?v=1">
 </head>
 <body>
-    <h1>Phonetic Formatter</h1>
-    <p>Marketing pages (flat filenames):</p>
-    <ul>
-        <li><a href="index.html" hreflang="en">English</a> (this file — replace with full landing if needed)</li>
-        <li><a href="index-de.html" hreflang="de">Deutsch</a></li>
-        <li><a href="index-fr.html" hreflang="fr">Français</a></li>
-        <li><a href="index-es.html" hreflang="es">Español</a></li>
-        <li><a href="index-zh.html" hreflang="zh-Hans">简体中文</a></li>
-    </ul>
-    <p>Legal &amp; support (same naming pattern): <a href="privacy.html">privacy</a>, <a href="terms.html">terms</a>, <a href="support.html">support</a> + <code>-de</code> / <code>-fr</code> / <code>-es</code> / <code>-zh</code> suffixes.</p>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html">
+                    <picture>
+                        <source type="image/webp" srcset="logo-256w.webp 256w" sizes="(max-width: 768px) 160px, 200px">
+                        <img src="logo.png" alt="Phonetic Formatter - English to IPA Converter" width="512" height="512" class="logo"
+                         onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                    </picture>
+                </a>
+                <span class="logo-text" style="display: none;"><a href="index.html">Phonetic Formatter</a></span>
+    
+                <nav>
+                    <div class="nav-scroll-wrap">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="blogs.html">Blogs</a></li>
+                            <li><a href="support.html">Support</a></li>
+                        </ul>
+                    </div>
+                    <span class="nav-swipe-hint" aria-hidden="true">Swipe →</span>
+                </nav>
+    
+                <div class="header-actions">
+                    <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_nav" class="header-cta" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'nav'});">
+                        Get App
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                        </svg>
+                    </a>
+                    <div class="lang-dropdown">
+                        <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+                            <span class="lang-current">English</span>
+                            <span class="lang-chevron" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="lang-dropdown-menu" role="menu" aria-label="Language options">
+                            <a href="index.html" hreflang="en" class="active" role="menuitem">English</a>
+                            <a href="index-fr.html" hreflang="fr" role="menuitem">Français</a>
+                            <a href="index-es.html" hreflang="es" role="menuitem">Español</a>
+                            <a href="index-de.html" hreflang="de" role="menuitem">Deutsch</a>
+                            <a href="index-zh.html" hreflang="zh-CN" role="menuitem">中文</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero scroll-reveal">
+        <div class="container">
+            <div class="hero-inner">
+
+                <div class="hero-left">
+
+                    <h1>
+                        Convert English Text to<br>
+                        Clear, Structured IPA
+                    </h1>
+
+                    <h2>
+                        Convert English text into clear, structured IPA phonetic transcription.<br>
+                        Designed for teachers, linguistics students, and serious learners.
+                    </h2>
+
+                    <div class="hero-buttons">
+
+                        <!-- App Store badge -->
+                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_hero_badge"
+                           class="app-store-badge"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'hero_badge'});">
+                            <img src="app-store-badge.svg" alt="Download on the App Store" />
+                        </a>
+
+                        <!-- Secondary CTA -->
+                        <a href="#features" class="btn-secondary">
+                            See Features
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10 14l-5-5h10l-5 5z"/>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                    <div class="device-badge-container" role="group" aria-label="Fully compatible with iPad and iPhone">
+                        <span class="device-label">Fully Compatible with</span>
+                        <div class="badge-group">
+                            <span class="device-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                iPad
+                            </span>
+                            <span class="device-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="1" width="14" height="22" rx="2" ry="2"></rect><line x1="12" y1="19" x2="12.01" y2="19"></line></svg>
+                                iPhone
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="hero-right">
+
+                    <div class="hero-image">
+                        <picture>
+                            <source type="image/webp" srcset="hero-feature-400w.webp 400w, hero-feature-800w.webp 800w, hero-feature-1200w.webp 1200w, hero-feature-1600w.webp 1600w" sizes="(max-width: 768px) min(92vw, 360px), min(500px, 45vw)">
+                            <img
+                            src="hero-feature.png"
+                            alt="English text to IPA transcription word-by-word layout screenshot"
+                            class="hero-screenshot"
+                            width="2064"
+                            height="2064"
+                            fetchpriority="high"
+                            onerror="this.style.display='none';"
+                            >
+                        </picture>
+                    </div>
+
+                    <div class="cmu-credit">
+                        Powered by
+                        <a href="https://www.speech.cs.cmu.edu/cgi-bin/cmudict"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                           CMU Pronouncing Dictionary
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="pro-demo-section scroll-reveal" aria-labelledby="pro-demo-heading">
+        <div class="pro-demo-wrap">
+            <div class="pro-demo-intro">
+                <h2 id="pro-demo-heading">Powerful Formatting Modes</h2>
+                <p>Choose the layout that best fits your teaching or study materials.</p>
+            </div>
+
+            <div class="pro-demo-card">
+                <div class="pro-demo-toolbar">
+                    <div class="pro-demo-layout-toggle" role="group" aria-label="Layout mode">
+                        <button type="button" class="pro-demo-layout-btn is-active" id="pro-demo-btn-sentence" aria-pressed="true">By Sentence</button>
+                        <button type="button" class="pro-demo-layout-btn" id="pro-demo-btn-word" aria-pressed="false">Word-by-Word</button>
+                    </div>
+                    <div class="pro-demo-delimiters">
+                        <span>IPA delimiters:</span>
+                        <div class="pro-demo-bracket-row" aria-hidden="true">
+                            <input type="text" class="pro-demo-bracket-input" value="/" readonly tabindex="-1">
+                            <span class="pro-demo-bracket-mid">IPA</span>
+                            <input type="text" class="pro-demo-bracket-input" value="/" readonly tabindex="-1">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pro-demo-output-content" class="pro-demo-output"></div>
+                <span id="pro-demo-copy-live" class="pro-demo-live" aria-live="polite"></span>
+
+                <div class="pro-demo-actions">
+                    <span class="pro-demo-actions-hint">Ready to export to PDF or Word?</span>
+                    <button type="button" class="pro-demo-btn-secondary" id="pro-demo-copy-result">Copy result</button>
+                    <button type="button" class="pro-demo-btn-primary" id="pro-demo-export-pro">Export Pro</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features scroll-reveal" id="features">
+        <!-- 1. Video Demo (white) -->
+        <div class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How the English to IPA Converter Works</h2>
+                    <p>See how Phonetic Formatter converts full English passages into structured IPA phonetic transcription in seconds.</p>
+                </div>
+                <div class="section-content">
+                    <div class="feature-video">
+                        <div class="phone-frame">
+                            <video
+                                class="feature-demo-video"
+                                data-src="feature-demo.MP4"
+                                poster="feature-demo-poster-640w.webp"
+                                width="320"
+                                height="693"
+                                controls
+                                muted
+                                loop
+                                playsinline
+                                preload="none"
+                            >
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="section-cta">
+                        <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_video" class="app-store-badge" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'video'});">
+                            <img src="app-store-badge.svg" alt="Download on the App Store" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo / Video 之后 -->
+
+        <section class="section section-alt" id="what-is-ipa">
+            <div class="container" style="max-width: 720px;">
+
+                <h2 style="text-align: left;">
+                    What Is IPA (International Phonetic Alphabet)?
+                </h2>
+
+                <p style="color: #4b5563;">
+                    The <strong>International Phonetic Alphabet (IPA)</strong> is a system for representing the sounds of spoken language.
+                    It shows how words are actually pronounced, rather than how they are spelled.
+                </p>
+
+                <p style="color: #4b5563;">
+                    Example: <strong>through</strong> /θruː/ &nbsp;·&nbsp;
+                    <strong>thought</strong> /θɔːt/
+                </p>
+
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: #2563eb;">
+                        Learn more about IPA transcription
+                    </summary>
+
+                    <div style="margin-top: 0.75rem; color: #4b5563;">
+                        <p>
+                            Each IPA symbol corresponds to a specific sound, making pronunciation clear and consistent across languages.
+                        </p>
+                        <p>
+                            An English to IPA converter transforms written text into phonetic transcription,
+                            helping learners, teachers, and linguists study pronunciation more effectively.
+                        </p>
+                        <p>
+                            This tool uses the CMU Pronouncing Dictionary and works fully offline.
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <!-- 2. Key Capabilities (light gray) -->
+        <div class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Key Capabilities</h2>
+                    <p>Designed for working with real English text — not just isolated word lookups.</p>
+                </div>
+                <div class="section-content">
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <h3>
+                                <a href="#feature-sentence-ipa">Sentence-Level IPA Transcription</a>
+                            </h3>
+                            <p>Convert full sentences into structured IPA instantly.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-sentence-ipa" class="feature-link">Learn more →</a>
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
+                                <a href="#feature-word-alignment">Word-by-Word IPA Alignment</a>
+                            </h3>
+                            <p>See each word paired with its IPA pronunciation.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-word-alignment" class="feature-link">Learn more →</a>
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
+                                <a href="#feature-formatting">Readable IPA Formatting</a>
+                            </h3>
+                            <p>Get clean, structured IPA output ready for study or teaching.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-formatting" class="feature-link">Learn more →</a>
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
+                                <a href="#feature-offline">Offline IPA Transcription</a>
+                            </h3>
+                            <p>Convert text to IPA fully offline with complete privacy.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-offline" class="feature-link">Learn more →</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Core Capabilities (white) -->
+        <section class="section" id="core-capabilities">
+            <div class="container" style="max-width: 800px;">
+
+                <div class="section-header">
+                    <h2>Detailed IPA Transcription Capabilities</h2>
+                    <p>
+                        This English to IPA converter is designed to process real-world text and produce accurate, structured phonetic transcription using the International Phonetic Alphabet (IPA).
+                    </p>
+                </div>
+
+                <!-- 1 -->
+                <h3 id="feature-sentence-ipa">Sentence-Level IPA Transcription</h3>
+
+                <p>
+                    The system converts complete English sentences and paragraphs into IPA phonetic transcription while preserving punctuation, spacing, and natural sentence boundaries.
+                </p>
+
+                <p>
+                    Unlike basic phonetic converters that rely on isolated dictionary lookups, it processes continuous text as a whole, maintaining readability and structural coherence.
+                </p>
+
+                <p>
+                    It supports real-world input such as abbreviations, numbers, percentages, domain names, and mixed punctuation, allowing full passages to be transcribed without manual preprocessing.
+                </p>
+
+                <p>
+                    This makes it suitable for pronunciation practice, classroom materials, and linguistic analysis where full-text transcription is required.
+                </p>
+
+                <!-- 2 -->
+                <h3 id="feature-word-alignment">Word-by-Word IPA Alignment</h3>
+
+                <p>
+                    Each word in the original text is aligned with its corresponding IPA transcription, creating a clear mapping between spelling and pronunciation.
+                </p>
+
+                <p>
+                    This alignment format allows users to examine pronunciation at the individual word level while still preserving full sentence context.
+                </p>
+
+                <p>
+                    The structured layout is particularly useful for teaching, worksheet preparation, and pronunciation training, where learners need to connect written forms with phonetic representation.
+                </p>
+
+                <p>
+                    It also supports detailed analysis of stress patterns, syllable structure, and phonetic variation across words in a sentence.
+                </p>
+
+                <!-- 3 -->
+                <h3 id="feature-formatting">Readable and Structured IPA Formatting</h3>
+
+                <p>
+                    Transcription output is formatted into clean, consistent blocks that pair original text with IPA lines, making the result easy to read and use.
+                </p>
+
+                <p>
+                    Stress marks, spacing, and punctuation are preserved to maintain clarity, even when processing longer passages or complex text.
+                </p>
+
+                <p>
+                    The formatting is designed for practical use in study notes, teaching materials, and linguistic documentation, rather than raw or unstructured output.
+                </p>
+
+                <p>
+                    This ensures that IPA transcription remains accessible not only to linguists but also to learners and educators.
+                </p>
+
+                <!-- 4 -->
+                <h3 id="feature-offline">Offline IPA Transcription and Privacy</h3>
+
+                <p>
+                    All transcription is performed locally on your device, with no cloud processing or external API calls required.
+                </p>
+
+                <p>
+                    This guarantees that your text remains private and is never transmitted or stored externally.
+                </p>
+
+                <p>
+                    Offline processing also ensures consistent performance, instant response time, and reliability in environments with limited or no internet access.
+                </p>
+
+                <p>
+                    It is particularly suitable for classrooms, research settings, and professional workflows where data privacy and independence from online services are important.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- 4. How It Works (light gray) -->
+        <div class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Convert English text into structured IPA in seconds.</p>
+                </div>
+                <div class="section-content how-it-works">
+                    <ol class="how-it-works-steps">
+                        <li><strong>Paste or type English text</strong> — Enter a sentence or a full paragraph directly into the formatter.</li>
+                        <li><strong>Generate IPA transcription</strong> — The app processes the text and produces structured phonetic transcription based on the CMU pronunciation dictionary.</li>
+                        <li><strong>Copy or export the result</strong> — Copy the transcription or export it as TXT, DOCX, or PDF for study materials or classroom use.</li>
+                    </ol>
+                    <div class="how-it-works-cta">
+                        <div class="cta-content-box">
+                            <h4 class="cta-mini-title">No barriers, just better phonetics.</h4>
+                            <p class="cta-main-text">Start your first conversion in seconds.</p>
+                            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_howitworks" class="btn-primary btn-cta-pill" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'how_it_works'});">
+                                <span class="cta-label-long">Download for iOS</span>
+                                <span class="cta-label-short">Get on iOS</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                            <div class="how-it-works-cta-note">
+                                <svg class="cta-note-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span>Fully offline. No account required.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-is-it-for scroll-reveal" id="who-is-it-for">
+        <div class="container who-is-it-for-inner">
+            <h2>Designed for professional linguists & educators</h2>
+            <div class="who-is-it-for-grid">
+                <div class="who-is-it-for-card">
+                    <h4>ESL/EFL Teachers</h4>
+                    <p>Create clean, professional pronunciation handouts in seconds without fighting Word fonts.</p>
+                </div>
+                <div class="who-is-it-for-card">
+                    <h4>Linguistics Students</h4>
+                    <p>Transcribe long-form text for phonetic analysis with 100% offline accuracy.</p>
+                </div>
+                <div class="who-is-it-for-card">
+                    <h4>Serious Learners</h4>
+                    <p>Understand the flow of real English sentences by visualizing the connected speech via IPA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing scroll-reveal" id="pricing">
+        <div class="container">
+            <h2>Free and Pro Access</h2>
+
+            <div class="pricing-table-wrapper">
+                <p class="pricing-swipe-hint" aria-hidden="true">Swipe to compare plans</p>
+                <div class="pricing-table-container">
+                <table class="pricing-table">
+                    <colgroup>
+                        <col style="width: 42%;">
+                        <col style="width: 29%;">
+                        <col style="width: 29%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="plan-label">Plan Details</th>
+                            <th class="free-col">Free</th>
+                            <th class="pro-col">Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Daily Generations</td>
+                            <td class="value free-col">1 per day</td>
+                            <td class="value pro-col">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Maximum Text Length</td>
+                            <td class="value free-col">Up to 400 words</td>
+                            <td class="value pro-col">Up to 6,000 words</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Display Formats</td>
+                            <td class="value free-col">Sentence-based</td>
+                            <td class="value pro-col">Sentence + Word-by-word</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Copy Results</td>
+                            <td class="value free-col">Included</td>
+                            <td class="value pro-col">Included</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Export<br>(TXT / DOCX / PDF)</td>
+                            <td class="value free-col">—</td>
+                            <td class="value pro-col">Included</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Lifetime Access</td>
+                            <td class="value free-col">—</td>
+                            <td class="value pro-col">Included</td>
+                        </tr>
+                        <tr class="price-row">
+                            <td class="feature-name price-label">Price</td>
+                            <td class="value free-col price-value">Free</td>
+                            <td class="value pro-col price-value">
+                                <div class="pricing-footer-price pro-price">
+                                    <span class="pricing-footer-price-value">$19.99</span>
+                                    <span class="pricing-footer-price-note">One-time purchase</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+            <div class="universal-footer">
+                <p>📱 <strong>Universal App</strong>: Your purchase is tied to your Apple ID. Buy once, use Pro features on both <strong>iPhone</strong> and <strong>iPad</strong>.</p>
+            </div>
+
+            <div class="pricing-cta">
+                <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_footer" class="app-store-badge" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'footer'});">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq scroll-reveal" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>How do I convert an entire English paragraph to IPA?</h3>
+                    <p>Open Phonetic Formatter, paste your paragraph into the text field, and tap Convert. The app transcribes the whole passage at once using the CMU Pronouncing Dictionary. You can choose sentence-level output or, with Pro, word-by-word alignment. Results can be copied or exported to TXT, DOCX, or PDF.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there an offline IPA transcriber for iOS?</h3>
+                    <p>Yes. Phonetic Formatter runs fully offline on your iPhone or iPad. All phonetic conversion happens on device—no internet required and no data is sent to servers. It works anywhere: in the classroom, on the go, or in areas with poor connectivity.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use this app on my iPad? Do I need to pay again?</h3>
+                    <p>Absolutely! The app is fully optimized for iPad. If you have already purchased the Pro version on your iPhone, simply log in with the same Apple ID on your iPad and use &quot;Restore Purchase&quot; to activate Pro features at no extra cost.</p>
+                    <p><em>Note: To protect your privacy, the app does not store any transcription history. All processing is done instantly and locally.</em></p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does this converter use the CMU Pronunciation Dictionary?</h3>
+                    <p>Yes, our tool is powered by the CMU Pronunciation Dictionary, widely considered a gold standard in North American English NLP. However, we've enhanced it with custom logic for better sentence-level transcription and stress marking.</p>
+                </div>
+                <!-- faq-extra-locale -->
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-highlights scroll-reveal" id="deep-dive">
+        <div class="container blog-highlights-inner">
+            <h2>Linguistic Insights & Guides</h2>
+            <div class="blog-highlights-grid">
+                <div class="blog-highlight-card">
+                    <h4>Why CMUdict?</h4>
+                    <p>Learn why we chose the gold standard of North American English for our app.</p>
+                    <a href="blog/why-cmu-pronouncing-dictionary.html">Read More →</a>
+                </div>
+                <div class="blog-highlight-card">
+                    <h4>For Educators</h4>
+                    <p>How to streamline your lesson prep with Word-aligned IPA layouts.</p>
+                    <a href="blog/from-screen-to-classroom.html">Read More →</a>
+                </div>
+                <div class="blog-highlight-card">
+                    <h4>Connected Speech</h4>
+                    <p>Understanding assimilation, elision, and why IPA helps beyond single words.</p>
+                    <a href="blog/mastering-connected-speech.html">Read More →</a>
+                </div>
+            </div>
+            <p class="blog-highlights-all">
+                <a href="blogs.html">View all blog posts</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="developer-note">
+        <p>"I built this tool because I was frustrated with manual IPA formatting.<br>No tracking, no ads, just a tool that works." — Louis, Developer</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="footer-links">
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms of Service</a> |
+                <a href="support.html">Technical Support</a>
+            </p>
+            <p class="footer-copyright">© 2026 Phonetic Formatter<br>A product by Louis · <a href="https://louisbuilds.me">louisbuilds.me</a></p>
+        </div>
+    </footer>
+    <script>
+        (function() {
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) return;
+            
+            var sections = document.querySelectorAll('.scroll-reveal');
+            if (!sections.length) return;
+            
+            function reveal(entry) {
+                entry.target.classList.add('is-visible');
+            }
+            
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) reveal(entry);
+                });
+            }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+            
+            sections.forEach(function(section) {
+                if (section.classList.contains('hero')) {
+                    section.classList.add('is-visible');
+                } else {
+                    observer.observe(section);
+                }
+            });
+        })();
+        (function () {
+            var dropdown = document.querySelector('.lang-dropdown');
+            var trigger = document.querySelector('.lang-dropdown-trigger');
+            if (!dropdown || !trigger) return;
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = dropdown.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function () {
+                dropdown.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+                trigger.blur();
+            });
+        })();
+        (function () {
+            var video = document.querySelector('video.feature-demo-video');
+            if (!video) return;
+            var dataSrc = video.getAttribute('data-src');
+            if (!dataSrc) return;
+
+            function attachSourceAndPlay() {
+                if (video.getAttribute('data-loaded') === '1') return;
+                video.setAttribute('data-loaded', '1');
+                video.src = dataSrc;
+                video.removeAttribute('data-src');
+                video.preload = 'auto';
+                video.load();
+                var playAttempt = video.play();
+                if (playAttempt && playAttempt.catch) {
+                    playAttempt.catch(function () {});
+                }
+            }
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                return;
+            }
+
+            if (!window.IntersectionObserver) {
+                attachSourceAndPlay();
+                return;
+            }
+
+            var io = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            attachSourceAndPlay();
+                            io.disconnect();
+                        }
+                    });
+                },
+                { root: null, rootMargin: '120px 0px', threshold: 0 }
+            );
+            io.observe(video);
+        })();
+        (function () {
+            var outputEl = document.getElementById('pro-demo-output-content');
+            var btnSentence = document.getElementById('pro-demo-btn-sentence');
+            var btnWord = document.getElementById('pro-demo-btn-word');
+            var copyBtn = document.getElementById('pro-demo-copy-result');
+            var exportBtn = document.getElementById('pro-demo-export-pro');
+            var live = document.getElementById('pro-demo-copy-live');
+            if (!outputEl || !btnSentence || !btnWord) return;
+
+            var sentenceHtml =
+                '<div class="pro-demo-out-block">' +
+                '<p class="pro-demo-out-en">Please focus on the distinction between &lsquo;sheep&rsquo; and &lsquo;ship&rsquo;, or &lsquo;reach&rsquo; and &lsquo;rich&rsquo;.</p>' +
+                '<p class="pro-demo-out-ipa">' +
+                "/plˈiz/ /fˈoʊkəs/ /ˈɑn/ /ðə/ /dɪstˈɪŋkʃən/ /bɪtwˈin/ '/ʃˈip/' /ənd/ '/ʃˈɪp/', /ˈɔr/ '/rˈitʃ/' /ənd/ '/rˈɪtʃ/'." +
+                '</p></div>' +
+                '<div class="pro-demo-out-block">' +
+                '<p class="pro-demo-out-en">Accurate phonetic transcription helps students master these subtle vowel shifts.</p>' +
+                '<p class="pro-demo-out-ipa">' +
+                '/ˈækjɚət/ /fənˈɛtɪk/ /trˌænskrˈɪpʃən/ /hˈɛlps/ /stˈudənts/ /mˈæstɚ/ /ðˈiz/ /sˈʌtəl/ /vˈaʊəl/ /ʃˈɪfts/.' +
+                '</p></div>';
+
+            var wordHtml =
+                '<div class="pro-demo-wbw-section">' +
+                '<p class="pro-demo-wbw-head">Please focus on the distinction between &lsquo;sheep&rsquo; and &lsquo;ship&rsquo;, or &lsquo;reach&rsquo; and &lsquo;rich&rsquo;.</p>' +
+                '<table class="pro-demo-wbw-table" role="presentation">' +
+                '<tr><td class="pro-demo-wbw-td-en">Please</td><td class="pro-demo-wbw-td-ipa">/plˈiz/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">focus</td><td class="pro-demo-wbw-td-ipa">/fˈoʊkəs/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">on</td><td class="pro-demo-wbw-td-ipa">/ˈɑn/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">the</td><td class="pro-demo-wbw-td-ipa">/ðə/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">distinction</td><td class="pro-demo-wbw-td-ipa">/dɪstˈɪŋkʃən/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">between</td><td class="pro-demo-wbw-td-ipa">/bɪtwˈin/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">sheep</td><td class="pro-demo-wbw-td-ipa">/ʃˈip/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">and</td><td class="pro-demo-wbw-td-ipa">/ənd/</td></tr>' +
+                '<tr><td class="pro-demo-wbw-td-en">ship</td><td class="pro-demo-wbw-td-ipa">/ʃˈɪp/</td></tr>' +
+                '</table>' +
+                '<p class="pro-demo-wbw-note">&hellip; (continued for the full sentence)</p>' +
+                '</div>';
+
+            function setMode(sentence) {
+                outputEl.innerHTML = sentence ? sentenceHtml : wordHtml;
+                if (sentence) {
+                    btnSentence.classList.add('is-active');
+                    btnWord.classList.remove('is-active');
+                    btnSentence.setAttribute('aria-pressed', 'true');
+                    btnWord.setAttribute('aria-pressed', 'false');
+                } else {
+                    btnWord.classList.add('is-active');
+                    btnSentence.classList.remove('is-active');
+                    btnWord.setAttribute('aria-pressed', 'true');
+                    btnSentence.setAttribute('aria-pressed', 'false');
+                }
+            }
+
+            btnSentence.addEventListener('click', function () { setMode(true); });
+            btnWord.addEventListener('click', function () { setMode(false); });
+            setMode(true);
+
+            if (copyBtn && live) {
+                copyBtn.addEventListener('click', function () {
+                    var t = outputEl.innerText.replace(/\s*\n\s*/g, '\n').replace(/^\s+|\s+$/g, '');
+                    if (!t) return;
+                    function announce() {
+                        live.textContent = 'Copied to clipboard.';
+                        setTimeout(function () { live.textContent = ''; }, 2000);
+                    }
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(t).then(announce).catch(function () {});
+                    } else {
+                        var ta = document.createElement('textarea');
+                        ta.value = t;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        try {
+                            document.execCommand('copy');
+                            announce();
+                        } catch (e) {}
+                        document.body.removeChild(ta);
+                    }
+                });
+            }
+
+            if (exportBtn) {
+                exportBtn.addEventListener('click', function () {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'pro_demo_export_pro'});
+                    }
+                    window.open('https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_pro_demo_export', '_blank', 'noopener,noreferrer');
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
