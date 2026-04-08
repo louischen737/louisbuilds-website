@@ -51,13 +51,73 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-de.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-fr.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-es.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-zh.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/phoneticformatter/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-de.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-fr.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-es.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-zh.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/phoneticformatter/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-de.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-fr.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-es.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-zh.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
   </url>
 </urlset>
