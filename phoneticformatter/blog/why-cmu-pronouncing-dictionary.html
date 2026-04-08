@@ -71,6 +71,14 @@
     }
     </script>
     <link rel="icon" type="image/png" href="../favicon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN');
+    </script>
+    <link rel="stylesheet" href="../main.css?v=4">
     <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/blog/why-cmu-pronouncing-dictionary.html">
     <link rel="alternate" hreflang="en" href="https://louisbuilds.me/phoneticformatter/blog/why-cmu-pronouncing-dictionary.html">
     <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/phoneticformatter/blog/why-cmu-pronouncing-dictionary.html">
@@ -85,55 +93,6 @@
             background: #fafaf9;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header {
-            background: #fff;
-            padding: 1.5rem 0;
-            box-shadow: 0 1px 0 #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: nowrap;
-        }
-        .header-content > a { flex-shrink: 0; margin-right: 2.5rem; }
-        header nav { flex: 1; min-width: 0; display: flex; align-items: center; }
-        header nav ul { list-style: none; display: flex; flex-wrap: nowrap; gap: 2.5rem; margin: 0; }
-        header nav a { color: #4b5563; text-decoration: none; font-weight: 500; transition: color 0.2s, transform 0.15s; }
-        header nav a:hover { color: #2563eb; transform: translateY(-1px); }
-        .header-cta { flex-shrink: 0; display: none; }
-        @media (min-width: 769px) {
-            .header-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.6rem;
-                padding: 0.65rem 1.4rem;
-                background: #2563eb;
-                color: #fff;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 0.95rem;
-                border-radius: 10px;
-                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
-                transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-            }
-            .header-cta svg { width: 20px; height: 20px; }
-            .header-cta:hover {
-                background: #1d4ed8;
-                transform: translateY(-1px);
-                box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
-            }
-            .header-cta:active {
-                transform: translateY(0);
-                box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
-            }
-        }
-        .logo { height: 50px; width: auto; max-width: 200px; object-fit: contain; }
-        .logo-text { font-size: 1.75rem; font-weight: 700; margin: 0; color: #111827; }
         .article-wrap { max-width: 48rem; margin: 0 auto; padding: 3rem 0 4rem; }
         .article-wrap h1 { font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; line-height: 1.25; }
         .article-wrap .article-meta { font-size: 0.95rem; color: #6b7280; margin-bottom: 2rem; }
@@ -153,49 +112,6 @@
             margin-top: 60px;
             text-align: center;
             color: #64748b;
-        }
-        .blog-lang-nav {
-            margin: 0 auto 40px;
-            max-width: 36rem;
-            text-align: center;
-        }
-        .blog-lang-nav-label {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin: 0 0 12px;
-            font-weight: 500;
-        }
-        .blog-lang-nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 0.25rem 0.35rem;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        footer .blog-lang-nav a {
-            color: #3b82f6;
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 4px 8px;
-            border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
-        }
-        footer .blog-lang-nav a:hover {
-            background-color: #eff6ff;
-            text-decoration: underline;
-            color: #2563eb;
-            transform: none;
-        }
-        footer .blog-lang-nav a:focus-visible {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-        }
-        .blog-lang-sep {
-            color: #cbd5e1;
-            margin: 0 4px;
-            user-select: none;
         }
         .footer-secondary {
             margin: 0;
@@ -227,12 +143,6 @@
             font-weight: 600;
         }
         @media (max-width: 768px) {
-            .header-content { flex-wrap: wrap; }
-            .header-content > a { order: 1; margin-right: 0; }
-            header nav { order: 3; width: 100%; }
-            header nav ul { gap: 1rem; justify-content: center; flex-wrap: wrap; }
-            .header-cta { order: 2; margin-left: auto; padding: 0.55rem 1.2rem; font-size: 0.9rem; gap: 0.5rem; }
-            .header-cta svg { width: 18px; height: 18px; }
             .article-wrap { padding: 2rem 0 3rem; }
             .article-wrap h1 { font-size: 1.875rem; }
         }
@@ -310,24 +220,36 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="../index.html"><img src="../logo.png" alt="Phonetic Formatter Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';"></a>
-                <h1 class="logo-text" style="display: none;"><a href="../index.html">Phonetic Formatter</a></h1>
-                <nav>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../index.html#features">Features</a></li>
-                        <li><a href="../blogs.html">Blogs</a></li>
-                        <li><a href="../support.html">Support</a></li>
-                        <li><a href="../privacy.html">Privacy</a></li>
-                        <li><a href="../terms.html">Terms</a></li>
-                    </ul>
-                </nav>
-                <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" class="header-cta" target="_blank" rel="noopener noreferrer">
-                    Get App
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
-                    </svg>
+                <a href="../index.html">
+                    <picture>
+                        <source type="image/webp" srcset="../logo-256w.webp 256w" sizes="(max-width: 768px) 160px, 200px">
+                        <img src="../logo.png" alt="Phonetic Formatter - English to IPA Converter" width="512" height="512" class="logo"
+                         onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                    </picture>
                 </a>
+                <span class="logo-text" style="display: none;"><a href="../index.html">Phonetic Formatter</a></span>
+
+                <nav>
+                    <div class="nav-scroll-wrap">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../index.html#features">Features</a></li>
+                            <li><a href="../index.html#pricing">Pricing</a></li>
+                            <li><a href="../blogs.html">Blogs</a></li>
+                            <li><a href="../support.html">Support</a></li>
+                        </ul>
+                    </div>
+                    <span class="nav-swipe-hint" aria-hidden="true">Swipe →</span>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_nav" class="header-cta" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'nav'});">
+                        Get App
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -385,12 +307,6 @@
 
     <footer>
         <div class="container">
-            <nav class="blog-lang-nav" aria-label="Language Selector">
-                <p class="blog-lang-nav-label">Explore Phonetic Formatter in your language:</p>
-                <div class="blog-lang-nav-links">
-                    <a href="../index.html" title="English">English</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-fr.html" title="Français">Français</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-de.html" title="Deutsch">Deutsch</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-es.html" title="Español">Español</a><span class="blog-lang-sep" aria-hidden="true">•</span><a href="../index-zh.html" title="中文">中文</a>
-                </div>
-            </nav>
             <div class="footer-secondary">
                 <p class="footer-links">
                     <a href="../privacy.html">Privacy Policy</a>
