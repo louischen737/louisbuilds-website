@@ -403,6 +403,70 @@ body.site-header-i18n .lang-globe-icon {
     }
 }
 
+/* Blog posts: related reading (English blog pages) */
+.related-posts {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e5e4;
+}
+
+.related-posts h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #1c1c1a;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.related-card {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    background: #fdfdfc;
+    border: 1px solid #e5e5e4;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-card:hover {
+    border-color: #d1d1cf;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Inside blog .article-wrap, generic `a` hover color must not tint card copy */
+.article-wrap .related-card:hover,
+.article-wrap .related-card:hover h4 {
+    color: #1c1c1a;
+}
+
+.article-wrap .related-card:hover p {
+    color: #6b6b64;
+}
+
+.related-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: #1c1c1a;
+    line-height: 1.4;
+}
+
+.related-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #6b6b64;
+    line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .related-card {
+        transition: none;
+    }
+}
+
 .logo {
     height: 50px;
     width: auto;
