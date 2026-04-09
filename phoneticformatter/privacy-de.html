@@ -39,9 +39,9 @@
       gtag('config', 'G-2TMXET2TJN');
     </script>
 
-    <link rel="stylesheet" href="main.css?v=2">
+    <link rel="stylesheet" href="main.css?v=6">
 </head>
-<body>
+<body class="site-header-i18n">
     <header>
         <div class="container">
             <div class="header-content">
@@ -54,7 +54,7 @@
                 </a>
                 <span class="logo-text" style="display: none;"><a href="index-de.html">Phonetic Formatter</a></span>
 
-                <nav>
+                <nav id="site-navigation" class="primary-navigation" aria-label="Hauptnavigation">
                     <div class="nav-scroll-wrap">
                         <ul>
                             <li><a href="index-de.html">Start</a></li>
@@ -76,6 +76,10 @@
                     </a>
                     <div class="lang-dropdown">
                         <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Sprache wählen">
+                            <svg class="lang-globe-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.75"/>
+                                <path d="M2 12h20M12 2a15.5 15.5 0 0 0 0 20M12 2a15.5 15.5 0 0 1 0 20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                            </svg>
                             <span class="lang-current">Deutsch</span>
                             <span class="lang-chevron" aria-hidden="true">▼</span>
                         </button>
@@ -87,6 +91,11 @@
                             <a href="privacy-zh.html" hreflang="zh-CN" role="menuitem">中文</a>
                         </div>
                     </div>
+                    <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="site-navigation" aria-label="Menü öffnen" data-label-open="Menü öffnen" data-label-close="Menü schließen">
+                        <svg class="nav-menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -148,6 +157,50 @@ Mit der Nutzung der App stimmen Sie den in dieser Erklärung beschriebenen Prakt
                 dropdown.classList.remove('open');
                 trigger.setAttribute('aria-expanded', 'false');
                 trigger.blur();
+            });
+        })();
+        (function () {
+            var nav = document.getElementById('site-navigation');
+            var btn = document.querySelector('.nav-menu-btn');
+            if (!nav || !btn) return;
+
+            var labelOpen = btn.getAttribute('data-label-open') || 'Open menu';
+            var labelClose = btn.getAttribute('data-label-close') || 'Close menu';
+
+            function setOpen(open) {
+                if (open) {
+                    nav.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.setAttribute('aria-label', labelClose);
+                    document.body.classList.add('nav-menu-open');
+                } else {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.setAttribute('aria-label', labelOpen);
+                    document.body.classList.remove('nav-menu-open');
+                }
+            }
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                setOpen(!nav.classList.contains('is-open'));
+            });
+
+            document.addEventListener('click', function () {
+                setOpen(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+                    setOpen(false);
+                    btn.focus();
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.matchMedia('(min-width: 769px)').matches) {
+                    setOpen(false);
+                }
             });
         })();
     </script>

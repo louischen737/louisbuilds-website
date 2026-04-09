@@ -138,9 +138,9 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="main.css?v=1">
+    <link rel="stylesheet" href="main.css?v=5">
 </head>
-<body>
+<body class="site-home">
     <header>
         <div class="container">
             <div class="header-content">
@@ -153,14 +153,14 @@
                 </a>
                 <span class="logo-text" style="display: none;"><a href="index-fr.html">Phonetic Formatter</a></span>
     
-                <nav>
+                <nav id="site-navigation" class="primary-navigation" aria-label="Navigation principale">
                     <div class="nav-scroll-wrap">
                         <ul>
                             <li><a href="index-fr.html">Accueil</a></li>
                             <li><a href="#features">Fonctionnalités</a></li>
                             <li><a href="#pricing">Tarifs</a></li>
                             <li><a href="blogs.html">Blog</a></li>
-                            <li><a href="support.html">Assistance</a></li>
+                            <li><a href="support-fr.html">Assistance</a></li>
                         </ul>
                     </div>
                     <span class="nav-swipe-hint" aria-hidden="true">Swipe →</span>
@@ -175,6 +175,10 @@
                     </a>
                     <div class="lang-dropdown">
                         <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Choisir la langue">
+                            <svg class="lang-globe-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.75"/>
+                                <path d="M2 12h20M12 2a15.5 15.5 0 0 0 0 20M12 2a15.5 15.5 0 0 1 0 20" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                            </svg>
                             <span class="lang-current">Français</span>
                             <span class="lang-chevron" aria-hidden="true">▼</span>
                         </button>
@@ -186,6 +190,11 @@
                             <a href="index-zh.html" hreflang="zh-CN" role="menuitem">中文</a>
                         </div>
                     </div>
+                    <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="site-navigation" aria-label="Ouvrir le menu" data-label-open="Ouvrir le menu" data-label-close="Fermer le menu">
+                        <svg class="nav-menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -670,9 +679,9 @@
     <footer>
         <div class="container">
             <p class="footer-links">
-                <a href="privacy.html">Politique de confidentialité</a> |
-                <a href="terms.html">Conditions d’utilisation</a> |
-                <a href="support.html">Assistance technique</a>
+                <a href="privacy-fr.html">Politique de confidentialité</a> |
+                <a href="terms-fr.html">Conditions d’utilisation</a> |
+                <a href="support-fr.html">Assistance technique</a>
             </p>
             <p class="footer-copyright">© 2026 Phonetic Formatter<br>A product by Louis · <a href="https://louisbuilds.me">louisbuilds.me</a></p>
         </div>
@@ -716,6 +725,50 @@
                 dropdown.classList.remove('open');
                 trigger.setAttribute('aria-expanded', 'false');
                 trigger.blur();
+            });
+        })();
+        (function () {
+            var nav = document.getElementById('site-navigation');
+            var btn = document.querySelector('.nav-menu-btn');
+            if (!nav || !btn) return;
+
+            var labelOpen = btn.getAttribute('data-label-open') || 'Open menu';
+            var labelClose = btn.getAttribute('data-label-close') || 'Close menu';
+
+            function setOpen(open) {
+                if (open) {
+                    nav.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.setAttribute('aria-label', labelClose);
+                    document.body.classList.add('nav-menu-open');
+                } else {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.setAttribute('aria-label', labelOpen);
+                    document.body.classList.remove('nav-menu-open');
+                }
+            }
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                setOpen(!nav.classList.contains('is-open'));
+            });
+
+            document.addEventListener('click', function () {
+                setOpen(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+                    setOpen(false);
+                    btn.focus();
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.matchMedia('(min-width: 769px)').matches) {
+                    setOpen(false);
+                }
             });
         })();
         (function () {
