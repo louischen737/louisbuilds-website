@@ -56,7 +56,7 @@
       "name": "Phonetic Formatter",
       "operatingSystem": "iOS",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.1",
+      "softwareVersion": "1.2",
       "url": "https://louisbuilds.me/phoneticformatter/",
       "description": "Phonetic Formatter converts English text into accurate IPA transcription, with sentence-level and word-aligned output, fully on device.",
       "offers": {
@@ -74,7 +74,7 @@
       "operatingSystem": "iOS",
       "applicationCategory": "ProductivityApplication",
       "applicationSubCategory": "Utilities",
-      "softwareVersion": "2.4",
+      "softwareVersion": "2.5",
       "url": "https://louisbuilds.me/purrrrrfocus/",
       "description": "PurrrrrFocus is a focus timer app with gentle cat animations to reduce distraction and boost productivity.",
       "offers": {
@@ -400,6 +400,7 @@ body {
 
 .product-screenshot img {
     width: 100%;
+    min-width: 0;
     height: auto;
     display: block;
     align-self: start;
@@ -415,11 +416,11 @@ body {
 }
 
 .product-screenshot.ios {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .product-screenshot.macos {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* Pre-footer tagline — align column with Journal */
@@ -729,14 +730,39 @@ footer p {
 
 /* Responsive */
 @media (max-width: 968px) {
+    /* Column layout: default align-items:center shrinks children to content width on the
+       cross axis, so screenshot grids stay narrow with empty margins — use stretch. */
     .product {
         flex-direction: column !important;
+        align-items: stretch;
         text-align: center;
         gap: 60px;
     }
 
+    .product-info {
+        width: 100%;
+    }
+
+    .product-screenshot {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .product-info h2 {
+        justify-content: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
     .product-screenshot.ios {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Landscape macOS shots: single column on narrow viewports for readability */
+    .product-screenshot.macos {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -774,10 +800,10 @@ Documentation available in:
 </div>
 </div>
 <div class="product-screenshot ios">
-<img src="step1st/screenshot1.webp" srcset="step1st/screenshot1-400w.webp 400w, step1st/screenshot1-800w.webp 800w, step1st/screenshot1.webp 1260w" sizes="(max-width: 968px) 50vw, 25vw" alt="Step1st app screenshot - step goal and app unlocking dashboard" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot2.webp" srcset="step1st/screenshot2-400w.webp 400w, step1st/screenshot2-800w.webp 800w, step1st/screenshot2.webp 1260w" sizes="(max-width: 968px) 50vw, 25vw" alt="Step1st app screenshot - personalized step target setup" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot3.webp" srcset="step1st/screenshot3-400w.webp 400w, step1st/screenshot3-800w.webp 800w, step1st/screenshot3.webp 1260w" sizes="(max-width: 968px) 50vw, 25vw" alt="Step1st app screenshot - progress tracking and focus habit insights" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot4.webp" srcset="step1st/screenshot4-400w.webp 400w, step1st/screenshot4-800w.webp 800w, step1st/screenshot4.webp 1260w" sizes="(max-width: 968px) 50vw, 25vw" alt="Step1st app screenshot - streak and activity visualization" width="1260" height="2736" loading="lazy">
+<img src="step1st/screenshot1.webp" srcset="step1st/screenshot1-400w.webp 400w, step1st/screenshot1-800w.webp 800w, step1st/screenshot1.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - step goal and app unlocking dashboard" width="1260" height="2736" loading="lazy">
+<img src="step1st/screenshot2.webp" srcset="step1st/screenshot2-400w.webp 400w, step1st/screenshot2-800w.webp 800w, step1st/screenshot2.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - personalized step target setup" width="1260" height="2736" loading="lazy">
+<img src="step1st/screenshot3.webp" srcset="step1st/screenshot3-400w.webp 400w, step1st/screenshot3-800w.webp 800w, step1st/screenshot3.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - progress tracking and focus habit insights" width="1260" height="2736" loading="lazy">
+<img src="step1st/screenshot4.webp" srcset="step1st/screenshot4-400w.webp 400w, step1st/screenshot4-800w.webp 800w, step1st/screenshot4.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - streak and activity visualization" width="1260" height="2736" loading="lazy">
 </div>
 </div>
 
@@ -805,10 +831,10 @@ Documentation available in:
 </div>
 </div>
 <div class="product-screenshot ios">
-<img src="tappause/screenshot1.webp" srcset="tappause/screenshot1-400w.webp 400w, tappause/screenshot1-800w.webp 800w, tappause/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - duration selection" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot2.webp" srcset="tappause/screenshot2-400w.webp 400w, tappause/screenshot2-800w.webp 800w, tappause/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - pause timer" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot3.webp" srcset="tappause/screenshot3-400w.webp 400w, tappause/screenshot3-800w.webp 800w, tappause/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot4.webp" srcset="tappause/screenshot4-400w.webp 400w, tappause/screenshot4-800w.webp 800w, tappause/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="TapPause app screenshot - splash screen" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot1.webp" srcset="tappause/screenshot1-400w.webp 400w, tappause/screenshot1-800w.webp 800w, tappause/screenshot1.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - duration selection" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot2.webp" srcset="tappause/screenshot2-400w.webp 400w, tappause/screenshot2-800w.webp 800w, tappause/screenshot2.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - pause timer" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot3.webp" srcset="tappause/screenshot3-400w.webp 400w, tappause/screenshot3-800w.webp 800w, tappause/screenshot3.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot4.webp" srcset="tappause/screenshot4-400w.webp 400w, tappause/screenshot4-800w.webp 800w, tappause/screenshot4.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - splash screen" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
@@ -817,7 +843,7 @@ Documentation available in:
 <div class="product-info">
 <h2><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60"> PurrrrrFocus</h2>
 <p>Deep focus timers with progress tracking and your cat companion.</p>
-<div class="tags">iOS · iPhone &amp; iPad · v2.4 · Productivity · Utilities</div>
+<div class="tags">iOS · iPhone &amp; iPad · v2.5 · Productivity · Utilities</div>
 <div class="tags" style="margin-top: -20px;">
 Documentation available in:
 <a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
@@ -834,10 +860,10 @@ Documentation available in:
 </div>
 </div>
 <div class="product-screenshot ios">
-<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
@@ -860,10 +886,10 @@ Documentation available in:
 </div>
 </div>
 <div class="product-screenshot macos">
-<img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 968px) 50vw, 45vw" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
 </div>
 </div>
 
@@ -872,7 +898,7 @@ Documentation available in:
 <div class="product-info">
 <h2><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60"> Phonetic Formatter</h2>
 <p>Convert English text into accurate IPA transcription. Supports sentence-level and word-aligned formatting.</p>
-<div class="tags">iOS · Tools · v1.1 · English · IPA · Linguistics</div>
+<div class="tags">iOS · Tools · v1.2 · English · IPA · Linguistics</div>
 <div class="tags" style="margin-top: -20px;">
 Documentation available in:
 <a href="phoneticformatter/index-zh.html" style="color: inherit; text-decoration: underline;">中文</a> ·
@@ -888,10 +914,10 @@ Documentation available in:
 </div>
 </div>
 <div class="product-screenshot ios">
-<img src="phoneticformatter/screenshot1.webp" srcset="phoneticformatter/screenshot1-400w.webp 400w, phoneticformatter/screenshot1-800w.webp 800w, phoneticformatter/screenshot1.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - process full English texts, input and generate" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot2.webp" srcset="phoneticformatter/screenshot2-400w.webp 400w, phoneticformatter/screenshot2-800w.webp 800w, phoneticformatter/screenshot2.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - sentence-level alignment, original text with IPA transcription" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot3.webp" srcset="phoneticformatter/screenshot3-400w.webp 400w, phoneticformatter/screenshot3-800w.webp 800w, phoneticformatter/screenshot3.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - word-aligned transcription, each word with IPA form" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot4.webp" srcset="phoneticformatter/screenshot4-400w.webp 400w, phoneticformatter/screenshot4-800w.webp 800w, phoneticformatter/screenshot4.webp 1242w" sizes="(max-width: 968px) 50vw, 25vw" alt="Phonetic Formatter app screenshot - copy or export to TXT DOCX PDF" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot1.webp" srcset="phoneticformatter/screenshot1-400w.webp 400w, phoneticformatter/screenshot1-800w.webp 800w, phoneticformatter/screenshot1.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - process full English texts, input and generate" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot2.webp" srcset="phoneticformatter/screenshot2-400w.webp 400w, phoneticformatter/screenshot2-800w.webp 800w, phoneticformatter/screenshot2.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - sentence-level alignment, original text with IPA transcription" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot3.webp" srcset="phoneticformatter/screenshot3-400w.webp 400w, phoneticformatter/screenshot3-800w.webp 800w, phoneticformatter/screenshot3.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - word-aligned transcription, each word with IPA form" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot4.webp" srcset="phoneticformatter/screenshot4-400w.webp 400w, phoneticformatter/screenshot4-800w.webp 800w, phoneticformatter/screenshot4.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - copy or export to TXT DOCX PDF" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
