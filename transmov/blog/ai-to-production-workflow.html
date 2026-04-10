@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>From AI Prompt to Production Assets: A Modern Workflow | TransMov</title>
+    <meta name="title" content="From AI Prompt to Production Assets: A Modern Workflow | TransMov">
+    <meta name="description" content="Turn Runway, Luma, or Kling output into lightweight transparent UI assets. The AI-to-asset workflow, the 500MB crisis lesson, WebP vs GIF, and TransMov on Mac.">
+    <meta name="keywords" content="AI video to transparent asset, Runway Luma workflow, WebP alpha, TransMov, app UI motion, local AI matting">
+    <meta name="author" content="Louis">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://louisbuilds.me/transmov/blog/ai-to-production-workflow.html">
+    <meta property="og:title" content="From AI Prompt to Production Assets: A Modern Workflow | TransMov">
+    <meta property="og:description" content="Bridge AI-generated video and production-ready transparent assets. Background removal, compression, and edge refinement with TransMov.">
+    <meta property="og:image" content="https://louisbuilds.me/transmov/og-image.png">
+    <meta property="og:site_name" content="TransMov">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="From AI Prompt to Production Assets: A Modern Workflow | TransMov">
+    <meta name="twitter:description" content="Bridge AI-generated video and production-ready transparent assets with TransMov on Mac.">
+    <meta name="twitter:image" content="https://louisbuilds.me/transmov/og-image.png">
+
+    <link rel="canonical" href="https://louisbuilds.me/transmov/blog/ai-to-production-workflow.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "From AI Prompt to Production Assets: A Modern Workflow for App Creators",
+      "description": "How to turn cinematic AI video into lightweight transparent UI assets using TransMov: local AI matting, WebP optimization, and integration tips.",
+      "author": { "@type": "Person", "name": "Louis", "url": "https://louisbuilds.me" },
+      "publisher": { "@type": "Person", "name": "Louis", "url": "https://louisbuilds.me" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://louisbuilds.me/transmov/blog/ai-to-production-workflow.html" },
+      "isPartOf": { "@type": "WebSite", "name": "TransMov", "url": "https://louisbuilds.me/transmov/" },
+      "datePublished": "2026-04-09",
+      "dateModified": "2026-04-10"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "TransMov Home", "item": "https://louisbuilds.me/transmov/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://louisbuilds.me/transmov/#guides" },
+        { "@type": "ListItem", "position": 3, "name": "AI Prompt to Production Assets", "item": "https://louisbuilds.me/transmov/blog/ai-to-production-workflow.html" }
+      ]
+    }
+    </script>
+
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/blog/ai-to-production-workflow.html">
+    <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/blog/ai-to-production-workflow-zh.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/blog/ai-to-production-workflow.html">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+    </script>
+    <script defer src="../js/gtag-delayed.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.9;
+            color: #f5f5f5;
+            background: #0d0d0d;
+        }
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: rgba(13, 13, 13, 0.96);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .top-bar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .top-bar-icon { width: 32px; height: 32px; border-radius: 8px; display: block; }
+        .top-bar-name { font-size: 1.1rem; font-weight: 600; color: #f5f5f5; letter-spacing: -0.01em; }
+        .language-switcher { position: relative; z-index: 20; }
+        .language-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            min-height: 34px;
+            padding: 0 11px 0 9px;
+            background: rgba(255, 255, 255, 0.065);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: rgba(255, 255, 255, 0.92);
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+            font-family: inherit;
+        }
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+        .language-toggle-icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; opacity: 0.9; }
+        .language-toggle-icon svg { width: 15px; height: 15px; display: block; }
+        .language-toggle .chevron { font-size: 0.72rem; opacity: 0.85; }
+        .language-menu {
+            list-style: none;
+            margin: 8px 0 0;
+            padding: 6px;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            min-width: 150px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(7, 8, 13, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            display: none;
+        }
+        .language-switcher.open .language-menu { display: block; }
+        .language-menu a {
+            display: block;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 0.86rem;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.88);
+        }
+        .language-menu a:hover { background: rgba(255, 255, 255, 0.08); }
+        .language-menu a.active { background: rgba(255, 255, 255, 0.12); color: #fff; }
+        .blog-container { max-width: 860px; margin: 0 auto; padding: 6rem 1.5rem 4rem; }
+        h1 {
+            font-size: clamp(1.85rem, 4vw, 2.65rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .article-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.75rem 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .article-byline {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            margin: 0;
+        }
+        .article-byline .article-meta-sep {
+            margin: 0 0.4rem;
+            opacity: 0.55;
+        }
+        .article-pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.45rem 0.5rem;
+        }
+        .article-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.38rem 0.95rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(165, 180, 252, 0.28);
+            color: #c7d2fe;
+        }
+        .workflow-flowchart {
+            margin: 1.15rem 0 2.25rem;
+            padding: 1.35rem 1rem 1.45rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+        }
+        .workflow-flowchart-caption {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0 0 1rem;
+            text-align: center;
+        }
+        .wf-track {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem 0.2rem;
+        }
+        .wf-node {
+            flex: 1 1 132px;
+            min-width: 112px;
+            max-width: 168px;
+            padding: 1rem 0.65rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(20, 22, 32, 0.95) 0%, rgba(12, 14, 22, 0.98) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+        .wf-n {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #a5b4fc;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.4rem;
+        }
+        .wf-t {
+            display: block;
+            font-size: 0.8rem;
+            color: #f3f4f6;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+        .wf-arrow {
+            flex: 0 0 auto;
+            color: #6366f1;
+            font-size: 1.15rem;
+            line-height: 1;
+            padding: 0 0.1rem;
+            opacity: 0.9;
+            user-select: none;
+        }
+        .wf-sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        @media (max-width: 640px) {
+            .wf-track {
+                flex-direction: column;
+            }
+            .wf-arrow {
+                transform: rotate(90deg);
+                padding: 0.25rem 0;
+            }
+            .wf-node {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        h2 {
+            font-size: 1.45rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        h3 {
+            font-size: 1.15rem;
+            margin-top: 1.75rem;
+            margin-bottom: 0.65rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        p { color: rgba(255, 255, 255, 0.78); margin-bottom: 1.25rem; }
+        ul, ol { margin: 1rem 0 1.6rem 1.35rem; color: rgba(255, 255, 255, 0.75); }
+        li { margin-bottom: 0.5rem; }
+        strong { color: rgba(255, 255, 255, 0.95); }
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 2.5rem 0;
+        }
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.09);
+            border-left: 3px solid #818cf8;
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            margin: 1.4rem 0;
+            color: rgba(255, 255, 255, 0.88);
+        }
+        .back-home {
+            display: inline-block;
+            color: #a5b4fc;
+            text-decoration: none;
+            margin-top: 1.75rem;
+            font-weight: 500;
+        }
+        .back-home:hover { text-decoration: underline; }
+        .more-reading {
+            margin-top: 2.2rem;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .more-reading h3 { margin: 0 0 0.8rem; font-size: 1rem; color: rgba(255, 255, 255, 0.92); }
+        .more-reading-links { display: grid; gap: 0.6rem; }
+        .more-reading-links a {
+            color: rgba(199, 210, 254, 0.95);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .more-reading-links a:hover { text-decoration: underline; }
+        .conclusion-cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+        }
+        .conclusion-cta-box h3 { margin-top: 0; margin-bottom: 0.75rem; color: #fff; font-size: 1.25rem; }
+        .conclusion-cta-box p { color: #fff; margin-bottom: 1.25rem; max-width: 28rem; margin-left: auto; margin-right: auto; }
+        .cta-button { display: inline-block; transition: transform 0.2s; }
+        .cta-button:hover { transform: scale(1.05); }
+        .app-store-badge { height: 54px; display: block; margin: 0 auto; }
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: rgba(255, 255, 255, 0.42);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .footer a { color: rgba(255, 255, 255, 0.68); text-decoration: none; margin: 0 10px; }
+        a.inline-link { color: #a5b4fc; text-decoration: underline; text-underline-offset: 2px; }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <a href="../index.html" class="top-bar-brand">
+            <img src="../images/app-icon.png" alt="TransMov app icon" class="top-bar-icon" width="32" height="32">
+            <span class="top-bar-name">TransMov</span>
+        </a>
+        <div class="language-switcher" data-language-switcher>
+            <button class="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Language: English">
+                <span class="language-toggle-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M2 12h20"></path>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </span>
+                <span class="current-language">EN</span>
+                <span class="chevron" aria-hidden="true">▾</span>
+            </button>
+            <ul class="language-menu" role="menu" aria-label="Language options">
+                <li role="none"><a role="menuitem" href="ai-to-production-workflow.html" class="active" lang="en">English</a></li>
+                <li role="none"><a role="menuitem" href="ai-to-production-workflow-zh.html" lang="zh-CN">简体中文</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="blog-container">
+        <h1>From AI Prompt to Production Assets: A Modern Workflow for App Creators</h1>
+        <div class="article-meta-row" aria-label="Article metadata">
+            <p class="article-byline">
+                <span class="wf-sr-only">Author: </span>Louis
+                <span class="article-meta-sep" aria-hidden="true">·</span>
+                <time datetime="2026-04">April 2026</time>
+            </p>
+            <div class="article-pill-group">
+                <span class="article-pill">Guides</span>
+                <span class="article-pill">Workflow</span>
+                <span class="article-pill">Engineering</span>
+            </div>
+        </div>
+
+        <p>In the age of AI, the barrier between imagination and visual reality is dissolving. Tools like Runway, Luma, and Kling allow anyone to generate stunning video sequences from simple text prompts. However, for app developers and web designers, a massive gap remains: <strong>How do you turn a cinematic AI video into a lightweight, transparent, high-performance UI asset?</strong></p>
+        <p>In this guide, we&rsquo;ll explore the &ldquo;AI-to-Asset&rdquo; workflow and how TransMov helps solve the technical hurdles of background removal, file size optimization, and edge refinement.</p>
+
+        <h2>The &ldquo;500MB Crisis&rdquo;: A Real-World Lesson</h2>
+        <p>The creation of TransMov itself was born from a production crisis. While developing my focus app, <a class="inline-link" href="https://louisbuilds.me/purrrrrfocus/index-en.html" rel="noopener noreferrer"><em>PurrrrrFocus</em></a>, I used AI to generate traditional ink-wash cat animations.</p>
+        <p>The results were beautiful, but the technical debt was nearly fatal: to preserve the intricate textures and transparency required for a premium macOS/iOS experience, the initial asset bundle swelled to over <strong>500MB</strong>. For a minimalist utility app, this was a death sentence.</p>
+        <p>This crisis led to the development of TransMov—a dedicated tool designed to bridge the gap between heavy AI video output and high-performance production assets.</p>
+
+        <h2>The 4-Step AI-Native Workflow</h2>
+
+        <figure class="workflow-flowchart">
+            <figcaption class="workflow-flowchart-caption">Production pipeline</figcaption>
+            <div class="wf-track" role="presentation">
+                <div class="wf-node">
+                    <span class="wf-n">Step 1</span>
+                    <span class="wf-t">AI prompt &amp; video</span>
+                </div>
+                <span class="wf-arrow" aria-hidden="true">→</span>
+                <div class="wf-node">
+                    <span class="wf-n">Step 2</span>
+                    <span class="wf-t">TransMov local matting</span>
+                </div>
+                <span class="wf-arrow" aria-hidden="true">→</span>
+                <div class="wf-node">
+                    <span class="wf-n">Step 3</span>
+                    <span class="wf-t">WebP / APNG export</span>
+                </div>
+                <span class="wf-arrow" aria-hidden="true">→</span>
+                <div class="wf-node">
+                    <span class="wf-n">Step 4</span>
+                    <span class="wf-t">Integrate in app or web</span>
+                </div>
+            </div>
+        </figure>
+
+        <h3>1. Directing the AI</h3>
+        <p>When generating video for UI elements (like mascots, loading spinners, or background effects), the goal is <strong>consistent motion</strong>.</p>
+        <ul>
+            <li><strong>Tip:</strong> Use &ldquo;Green Screen&rdquo; or &ldquo;Solid Background&rdquo; prompts in your AI tool of choice. While AI background removal is powerful, starting with high contrast makes the final edge refinement much smoother.</li>
+        </ul>
+
+        <h3>2. Local AI Background Removal</h3>
+        <p>Mainstream video editors often struggle with alpha channels (transparency). TransMov uses on-device AI to process these videos locally.</p>
+        <ul>
+            <li><strong>Why local?</strong> Privacy aside, local processing allows for frame-by-frame inspection. For assets like the &ldquo;Opera Cat&rdquo; in <em>PurrrrrFocus</em>, which features shimmering silk and delicate costume details, ensuring that the AI doesn&rsquo;t &ldquo;eat&rdquo; the semi-transparent edges is crucial.</li>
+        </ul>
+
+        <h3>3. Solving the &ldquo;WebP vs. GIF&rdquo; Debate</h3>
+        <p>For modern apps, <strong>WebP is the clear winner</strong>.</p>
+        <ul>
+            <li><strong>The performance gap:</strong> In my testing, converting high-resolution AI sequences to transparent WebP via TransMov reduced file sizes by up to <strong>60%</strong> compared to traditional GIF, while supporting 24-bit color depth.</li>
+            <li><strong>TransMov&rsquo;s advantage:</strong> Our engine allows you to tune <strong>Feathering</strong> and <strong>Edge Scaling</strong>—essential for removing the &ldquo;white halo&rdquo; effect often found in AI-generated content.</li>
+        </ul>
+
+        <h3>4. Integration &amp; Implementation</h3>
+        <p>Once exported from TransMov, the final step is ensuring smooth playback. For iOS and macOS developers, I highly recommend using <strong>SDWebImageWebPCoder</strong>. This helps high-frame-rate WebP animations play smoothly without unnecessary CPU strain.</p>
+
+        <h2>Closing the Loop</h2>
+        <p>AI gives us the power to create, but professional tools give us the power to <em>deliver</em>. By shifting the heavy lifting of background removal and compression to a specialized local tool like TransMov, you can keep your app lean and your visuals stunning.</p>
+
+        <hr>
+
+        <p><em>Want the raw, personal story behind the &ldquo;500MB Crisis&rdquo;?</em> Read Louis&rsquo;s journal entry <a class="inline-link" href="https://louisbuilds.me/blog/500mb-crisis-ink-wash-cats-transmov.html" rel="noopener noreferrer">Ink-wash cats, a 500MB crisis, and TransMov</a>.</p>
+
+        <div class="conclusion-cta-box" role="region" aria-label="Download TransMov">
+            <h3>Ship transparent AI motion on the Mac</h3>
+            <p>Export WebP, APNG, or GIF with full alpha—fully local, no upload.</p>
+            <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&amp;ct=blog_ai_workflow&amp;mt=8" target="_blank" rel="noopener" class="cta-button" onclick="if(window.gtag)gtag('event','download_click',{page_version:'ai_workflow_blog'});">
+                <img src="../images/app-store-badge.svg" alt="Download TransMov on the Mac App Store" class="app-store-badge" width="180" height="54">
+            </a>
+        </div>
+
+        <section class="more-reading" aria-labelledby="more-reading-title">
+            <h3 id="more-reading-title">More to read</h3>
+            <div class="more-reading-links">
+                <a href="what-is-apng.html">What is APNG? Animated PNG vs GIF →</a>
+                <a href="transparent-animation-web-design-workflow.html">Transparent animation in web &amp; UI workflows →</a>
+                <a href="why-local-ai-matters-for-video-privacy.html">Why local AI matters for video privacy →</a>
+            </div>
+        </section>
+
+        <a href="../index.html" class="back-home">← Back to TransMov Home</a>
+    </div>
+
+    <div class="footer">
+        <p>
+            <a href="../privacy-policy.html?lang=en">Privacy Policy</a> |
+            <a href="../support.html?lang=en">Support</a> |
+            <a href="../terms-of-service.html?lang=en">Terms of Service</a> |
+            <a href="../index.html">Home</a>
+        </p>
+        <p style="margin-top: 10px;">© 2026 TransMov</p>
+        <p>A product by Louis · <a href="https://louisbuilds.me" style="color: #a5b4fc; text-decoration: none;">louisbuilds.me</a></p>
+    </div>
+    <script>
+        (function () {
+            var root = document.querySelector("[data-language-switcher]");
+            if (!root) return;
+            var toggle = root.querySelector(".language-toggle");
+            if (!toggle) return;
+            function closeMenu() {
+                root.classList.remove("open");
+                toggle.setAttribute("aria-expanded", "false");
+            }
+            function openMenu() {
+                root.classList.add("open");
+                toggle.setAttribute("aria-expanded", "true");
+            }
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                root.classList.contains("open") ? closeMenu() : openMenu();
+            });
+            document.addEventListener("click", function (e) {
+                if (!root.contains(e.target)) closeMenu();
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") closeMenu();
+            });
+        })();
+    </script>
+</body>
+</html>
