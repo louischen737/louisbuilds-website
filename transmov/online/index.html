@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransMov — Interactive Demo</title>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+    </script>
+    <script defer src="../js/gtag-delayed.js"></script>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../style.css?v=20260407b">
+    <style>
+        :root {
+            --bg: #07080d;
+            --card: #11131b;
+            --text: #f5f5f7;
+            --muted: #9aa1b2;
+            --line: rgba(255, 255, 255, 0.12);
+            --accent: #6366f1;
+            --accent-soft: #818cf8;
+            --content-max: 1160px;
+            --accent-link: #a5b4fc;
+            --accent-link-hover: #c7d2fe;
+        }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            padding-top: 5.6rem;
+            position: relative;
+        }
+        /* 与首页一致：光晕从视口最顶端铺开，全宽不截断 */
+        body::before {
+            content: '';
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            min-height: 100svh;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(ellipse 130% 82% at 50% 0%, rgba(99, 102, 241, 0.28) 0%, transparent 56%),
+                radial-gradient(ellipse 98% 58% at 50% 14%, rgba(59, 130, 246, 0.13) 0%, transparent 52%),
+                radial-gradient(ellipse 85% 48% at 50% 40%, rgba(37, 99, 235, 0.06) 0%, transparent 64%);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        /* --- 1. Header：与 transmov/index.html 顶栏字体与样式一致 --- */
+        .top-bar {
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: min(96vw, var(--content-max));
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.45rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(7, 8, 13, 0.54);
+            -webkit-backdrop-filter: blur(12px) saturate(1.1);
+            backdrop-filter: blur(12px) saturate(1.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 36px rgba(3, 6, 20, 0.35);
+            transition: width 0.28s ease, padding 0.28s ease, background 0.28s ease, border-color 0.28s ease,
+                -webkit-backdrop-filter 0.28s ease, backdrop-filter 0.28s ease;
+        }
+        .top-bar.top-bar--scrolled {
+            width: clamp(760px, 76vw, 940px);
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+            background: rgba(7, 8, 13, 0.64);
+            border-color: rgba(255, 255, 255, 0.14);
+            -webkit-backdrop-filter: blur(14px) saturate(1.14);
+            backdrop-filter: blur(14px) saturate(1.14);
+        }
+        .top-bar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            z-index: 2;
+        }
+        .top-bar-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: block;
+        }
+        .top-bar-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f5f5f5;
+            letter-spacing: -0.01em;
+        }
+        .top-bar-nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .top-bar-nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin: 0;
+            padding: 0;
+        }
+        .top-bar-nav a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.78);
+            font-weight: 550;
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease, background 0.2s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 32px;
+            padding: 0 0.7rem;
+            border-radius: 999px;
+        }
+        .top-bar-nav a:hover {
+            color: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .top-bar-nav a.top-bar-nav-cta {
+            font-size: 0.82rem;
+            color: #fff;
+            background: rgba(99, 102, 241, 0.9);
+            border: 1px solid rgba(199, 210, 254, 0.5);
+            min-height: 32px;
+            padding: 0 0.8rem;
+        }
+        .top-bar-nav a.top-bar-nav-cta:hover {
+            background: rgba(99, 102, 241, 1);
+        }
+        .top-bar-actions {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            position: relative;
+            z-index: 2;
+        }
+        .top-bar-menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 10px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 1.35rem;
+            line-height: 1;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .top-bar-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+        }
+        .top-bar-menu-toggle:focus-visible {
+            outline: 2px solid rgba(199, 210, 254, 0.85);
+            outline-offset: 2px;
+        }
+        .language-switcher { position: relative; z-index: 20; }
+        .language-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            min-height: 34px;
+            padding: 0 11px 0 9px;
+            background: rgba(255, 255, 255, 0.065);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: rgba(255, 255, 255, 0.92);
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .language-toggle:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+        .language-toggle-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: inherit;
+            opacity: 0.9;
+        }
+        .language-toggle-icon svg {
+            width: 15px;
+            height: 15px;
+            display: block;
+        }
+        .language-toggle .chevron {
+            font-size: 0.72rem;
+            line-height: 1;
+            opacity: 0.85;
+        }
+        .language-menu {
+            list-style: none;
+            margin: 8px 0 0;
+            padding: 6px;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            min-width: 150px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(7, 8, 13, 0.92);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            display: none;
+        }
+        .language-switcher.open .language-menu { display: block; }
+        .language-menu a {
+            display: block;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 0.86rem;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.88);
+            transition: background 0.2s ease;
+        }
+        .language-menu a:hover { background: rgba(255, 255, 255, 0.08); }
+        .language-menu a.active { background: rgba(255, 255, 255, 0.12); color: #fff; }
+        .top-bar-mobile-nav {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 0.4rem 0.9rem 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            background: rgba(7, 8, 13, 0.78);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 14px 34px rgba(1, 3, 12, 0.4);
+        }
+        .top-bar-mobile-nav[hidden] { display: none !important; }
+        .top-bar-mobile-nav ul { list-style: none; margin: 0; padding: 0; }
+        .top-bar-mobile-nav li { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .top-bar-mobile-nav li:last-child { border-bottom: none; }
+        .top-bar-mobile-nav a {
+            display: flex;
+            align-items: center;
+            min-height: 48px;
+            padding: 0.55rem 0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease;
+        }
+        .top-bar-mobile-nav a:hover,
+        .top-bar-mobile-nav a:focus-visible {
+            color: #fff;
+        }
+        .top-bar-mobile-nav a:focus-visible {
+            outline: none;
+            box-shadow: inset 3px 0 0 rgba(129, 140, 248, 0.9);
+        }
+        .top-bar-mobile-nav a.top-bar-mobile-nav-download {
+            font-weight: 600;
+            color: #c7d2fe;
+        }
+
+        /* --- 2. 布局容器 --- */
+        .section { position: relative; z-index: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 6rem 1.5rem; opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        
+        /* --- 3. Hero：场景选择（预渲染 Demo） --- */
+        .hero-screen { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: transparent; }
+        .hero-screen h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin: 0; letter-spacing: -0.03em; background: linear-gradient(to bottom, #fff, #a1a1a6); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-screen p { color: var(--muted); font-size: 1.2rem; margin-top: 1rem; max-width: 640px; line-height: 1.5; }
+        .demo-selector { width: 100%; max-width: 560px; margin-top: 2.75rem; }
+        .demo-selector-label { margin: 0 0 0.85rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+        .demo-selector-row { display: flex; flex-wrap: wrap; gap: 0.55rem; justify-content: center; }
+        .demo-scene-btn {
+            padding: 0.62rem 1.35rem;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text);
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .demo-scene-btn:hover {
+            background: rgba(99, 102, 241, 0.12);
+            border-color: rgba(129, 140, 248, 0.45);
+        }
+        .demo-scene-btn[aria-pressed="true"] {
+            background: rgba(99, 102, 241, 0.22);
+            border-color: rgba(129, 140, 248, 0.65);
+            box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.28);
+        }
+        .demo-scene-btn:focus-visible {
+            outline: 2px solid rgba(199, 210, 254, 0.9);
+            outline-offset: 2px;
+        }
+        .demo-badge-row { display: flex; gap: 8px; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+        .badge { font-size: 11px; padding: 4px 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 6px; color: var(--muted); }
+
+        /* --- 4. 预览：对比滑块 + 参数面板 --- */
+        .preview-screen { background: transparent; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .preview-screen.section { padding-top: 3.25rem; padding-bottom: 3.5rem; }
+        .preview-section-head { text-align: center; margin-bottom: 1.35rem; }
+        .preview-section-head h2 { font-size: 2rem; margin: 0; }
+        .preview-section-head .preview-sub { margin: 0.35rem 0 0; }
+        .demo-layout {
+            display: grid;
+            grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+            gap: 1.15rem;
+            align-items: start;
+            margin-top: 0;
+            justify-content: center;
+        }
+        .demo-side-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.15rem;
+            min-width: 0;
+        }
+        @media (max-width: 900px) {
+            .demo-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+        }
+        .demo-params-panel {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 1.25rem 1.35rem;
+        }
+        .demo-params-panel h3 {
+            margin: 0 0 0.4rem;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .demo-params-panel .lead { margin: 0 0 0.75rem; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+        .pro-params-kicker {
+            margin: 0 0 0.85rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: rgba(165, 180, 252, 0.85);
+        }
+        .pro-lock-wrap {
+            border-radius: 12px;
+            padding: 0.85rem 0.65rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            cursor: pointer;
+        }
+        .pro-sliders {
+            margin: 0;
+            padding: 0;
+        }
+        .slider-row:last-child { margin-bottom: 0; }
+        .slider-row input[type="range"] { width: 100%; cursor: not-allowed; accent-color: var(--accent); }
+
+        .compare-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 0.55rem 0.5rem 0.65rem;
+            width: 100%;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .compare-stage {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .compare-wrap {
+            position: relative;
+            width: min(100%, 420px, calc(min(78svh, 820px) * 9 / 16));
+            aspect-ratio: 9 / 16;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #05060a;
+            user-select: none;
+            touch-action: none;
+        }
+        .compare-wrap.checkerboard {
+            background-image: linear-gradient(45deg, #161822 25%, transparent 25%), linear-gradient(-45deg, #161822 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #161822 75%), linear-gradient(-45deg, transparent 75%, #161822 75%);
+            background-size: 20px 20px;
+            background-color: #0a0d14;
+        }
+        .compare-layer {
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .compare-layer.compare-processed {
+            display: block;
+        }
+        .compare-processed .compare-proc-fallback,
+        .compare-processed .compare-proc-canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .compare-processed .compare-proc-fallback {
+            z-index: 0;
+            object-fit: contain;
+            display: block;
+        }
+        .compare-processed .compare-proc-canvas {
+            z-index: 1;
+            display: block;
+            object-fit: contain;
+        }
+        .compare-layer:not(.compare-processed) video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+        }
+        .compare-proc-canvas.is-hidden { visibility: hidden; }
+        .compare-processed { z-index: 0; }
+        .compare-original {
+            z-index: 1;
+            clip-path: inset(0 calc(100% - var(--split, 50%)) 0 0);
+        }
+        .compare-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            margin-left: -1px;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: 3;
+            left: var(--split, 50%);
+            cursor: ew-resize;
+            touch-action: none;
+        }
+        @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+            .compare-handle {
+                background: rgba(255, 255, 255, 0.38);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                box-shadow: 0 0 1px rgba(255, 255, 255, 0.45);
+            }
+        }
+        .compare-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #818cf8, #6366f1);
+            border: none;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        }
+        .compare-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.45rem;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+        }
+        .compare-hint {
+            margin: 0.5rem 0 0;
+            font-size: 0.8rem;
+            line-height: 1.45;
+            color: var(--muted);
+            text-align: center;
+        }
+        .compare-bg-toggles {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            margin-top: 0.5rem;
+        }
+        .compare-bg-toggles .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .bg-dot {
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.22);
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+        }
+        .bg-dot:hover { transform: scale(1.12); }
+        .bg-dot[aria-pressed="true"] {
+            box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.85);
+            border-color: rgba(255, 255, 255, 0.55);
+        }
+        .bg-dot--checker {
+            background: repeating-conic-gradient(#1a1d28 0% 25%, #0e1018 0% 50%) 50% / 8px 8px;
+        }
+        .bg-dot--white { background: #f5f5f7; }
+        .bg-dot--black { background: #0a0a0c; }
+        .compare-wrap.bg-solid-white {
+            background: #f0f0f3 !important;
+            background-image: none !important;
+        }
+        .compare-wrap.bg-solid-black {
+            background: #08080a !important;
+            background-image: none !important;
+        }
+
+        .slider-row {
+            position: relative;
+            margin-bottom: 0.8rem;
+        }
+        .slider-row-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.4rem;
+        }
+        .param-label {
+            font-size: 0.8rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+        .param-val {
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+        }
+
+        .demo-export-aside.demo-params-panel {
+            padding: 1rem 1.1rem 1.05rem;
+        }
+        .demo-export-aside.demo-params-panel > h3 {
+            margin-bottom: 0.3rem;
+        }
+        .export-panel-lead {
+            margin: 0 0 0.5rem;
+            font-size: 0.82rem;
+            color: var(--muted);
+            line-height: 1.45;
+        }
+        .export-tier-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .export-tier {
+            padding: 0.4rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .export-tier:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+        .export-tier-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem 0.65rem;
+            flex-wrap: wrap;
+        }
+        .export-tier-label {
+            flex: 0 0 auto;
+            min-width: 2.25rem;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .export-tier--free .export-tier-label {
+            color: var(--muted);
+        }
+        .export-tier--pro .export-tier-label {
+            color: rgba(165, 180, 252, 0.92);
+        }
+        .export-format-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+        .export-format-chip {
+            appearance: none;
+            margin: 0;
+            font: inherit;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            line-height: 1.15;
+            padding: 0.28rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+            cursor: default;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .export-format-chip:disabled {
+            opacity: 1;
+        }
+        .export-format-chip--free {
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .export-format-chip--pro {
+            border-color: rgba(129, 140, 248, 0.4);
+            background: rgba(99, 102, 241, 0.14);
+            color: #e0e7ff;
+        }
+
+        .pro-toast {
+            position: fixed;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(140%);
+            max-width: min(92vw, 440px);
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            background: rgba(17, 19, 27, 0.97);
+            border: 1px solid rgba(129, 140, 248, 0.38);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .pro-toast.is-visible { transform: translateX(-50%) translateY(0); }
+        .pro-toast.is-visible.pro-toast--shake {
+            animation: pro-toast-shake 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        }
+        @keyframes pro-toast-shake {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            15% { transform: translateX(calc(-50% - 6px)) translateY(0); }
+            30% { transform: translateX(calc(-50% + 5px)) translateY(0); }
+            45% { transform: translateX(calc(-50% - 4px)) translateY(0); }
+            60% { transform: translateX(calc(-50% + 3px)) translateY(0); }
+        }
+        .pro-toast a { color: var(--accent-link); font-weight: 700; white-space: nowrap; }
+        .pro-toast.hidden { display: none !important; }
+
+        /* --- 5. Capabilities：去装饰，重排版 --- */
+        .capability-list-screen {
+            margin-top: 6rem;
+            max-width: min(52rem, 100%);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .capability-pro-head {
+            margin-bottom: 4rem;
+        }
+        .capability-pro-heading {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0;
+            line-height: 1.12;
+        }
+        .capability-item {
+            padding: 3rem 0;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        /* 限制正文列行宽，避免在宽视口下视线横向跨度太大 */
+        .capability-item > div:nth-child(2) {
+            max-width: 40rem;
+        }
+        @media (max-width: 720px) {
+            .capability-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 2.25rem 0;
+            }
+            .capability-item > div:nth-child(2) {
+                max-width: none;
+            }
+        }
+        .capability-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            line-height: 1.35;
+            color: var(--accent);
+        }
+        .capability-item .capability-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0 0 1rem;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+        .capability-text {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .capability-text strong {
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        /* --- 6. CTA：深色框 + 高对比按钮 --- */
+        .cta-screen {
+            padding-bottom: 8rem;
+        }
+        .cta-container {
+            background: #0f111a;
+            border: 1px solid var(--line);
+            border-radius: 48px;
+            padding: clamp(4rem, 10vw, 8rem) 2rem;
+            margin: 6rem auto;
+            text-align: center;
+            max-width: min(96vw, 56rem);
+        }
+        .cta-container h2 {
+            font-size: clamp(2rem, 5.5vw, 3.5rem);
+            font-weight: 800;
+            margin: 0 0 1.5rem;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            color: var(--text);
+        }
+        .cta-container-lead {
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+            margin: 0 auto 4rem;
+            max-width: 37.5rem;
+            line-height: 1.55;
+        }
+        .cta-pro-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .cta-trust-line {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.65rem 0.75rem;
+        }
+        .cta-trust-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.42rem 1rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            color: rgba(203, 213, 225, 0.88);
+            font-size: 0.72rem;
+            letter-spacing: 0.07em;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        /* 覆盖 .section a */
+        .section.cta-screen a.btn-primary-pro {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--accent);
+            color: #ffffff !important;
+            padding: 1.25rem 3.5rem;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: clamp(1.05rem, 2.2vw, 1.15rem);
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease;
+            border: none;
+        }
+        .section.cta-screen a.btn-primary-pro:hover {
+            background: var(--accent-soft);
+            transform: translateY(-2px);
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+        .section.cta-screen a.btn-primary-pro:focus-visible {
+            outline: 2px solid rgba(199, 210, 254, 0.95);
+            outline-offset: 3px;
+        }
+        .btn-primary-pro img {
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+        }
+
+        .muted { color: var(--muted); }
+        /* 与首页共用 style.css 的 .footer；无 footer-tagline 时收紧上内边距 */
+        .footer.footer--online {
+            padding-top: 4.5rem;
+            padding-bottom: 5rem;
+        }
+        .hidden { display: none !important; }
+        @media (max-width: 980px) {
+            body { padding-top: 4.9rem; }
+            .top-bar {
+                top: 10px; left: 12px; right: 12px; transform: none; width: auto; min-height: 52px;
+                border-radius: 18px; padding: 0.35rem 0.55rem 0.35rem 0.7rem;
+            }
+            .top-bar.top-bar--scrolled { width: auto; }
+            .top-bar-nav { display: none; }
+            .top-bar-menu-toggle { display: inline-flex; }
+            .top-bar-name { font-size: 1rem; }
+            .language-toggle {
+                min-height: 32px;
+                padding: 0 9px 0 7px;
+            }
+        }
+        @media (max-width: 768px) {
+            .preview-section-head h2 { font-size: clamp(1.35rem, 5vw, 1.75rem); }
+        }
+        @media (min-width: 981px) {
+            .top-bar-mobile-nav { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <a href="../" class="top-bar-brand">
+            <img src="../images/app-icon.png" alt="TransMov icon" class="top-bar-icon" width="32" height="32">
+            <span class="top-bar-name">TransMov</span>
+        </a>
+        <nav class="top-bar-nav" aria-label="Primary">
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../#features">Features</a></li>
+                <li><a href="../#use-cases">Use Cases</a></li>
+                <li><a href="../#pricing">Pricing</a></li>
+                <li><a href="../online/">Demo</a></li>
+                <li><a href="../#guides">Guides</a></li>
+                <li><a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_online&mt=8" class="top-bar-nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'online', 'position': 'top_nav'});">Download</a></li>
+            </ul>
+        </nav>
+        <div class="top-bar-actions">
+            <button type="button" class="top-bar-menu-toggle" aria-label="Menu" data-top-bar-menu-toggle>☰</button>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-toggle" type="button">
+                        <span class="language-toggle-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M2 12h20"></path>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                        </span>
+                        <span class="current-language">EN</span>
+                        <span class="chevron" aria-hidden="true">▾</span>
+                </button>
+                <ul class="language-menu">
+                    <li><a href="../online/" class="active">English</a></li>
+                    <li><a href="../zh/online/">简体中文</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="top-bar-mobile-nav" id="top-bar-mobile-nav" aria-label="Site" hidden>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../#features">Features</a></li>
+                <li><a href="../#use-cases">Use Cases</a></li>
+                <li><a href="../#pricing">Pricing</a></li>
+                <li><a href="../online/">demo</a></li>
+                <li><a href="../#guides">Guides</a></li>
+                <li><a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_online&mt=8" class="top-bar-mobile-nav-download" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'online', 'position': 'top_nav_mobile'});">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section hero-screen visible">
+        <h1>See TransMov in Action</h1>
+        <p>Explore our background removal precision. Download the app to process your own videos with full manual control.</p>
+
+        <div class="demo-selector">
+            <p class="demo-selector-label">Choose a scene</p>
+            <div class="demo-selector-row" role="group" aria-label="Demo scene">
+                <button type="button" class="demo-scene-btn" data-scene="portrait" aria-pressed="true">Portrait</button>
+                <button type="button" class="demo-scene-btn" data-scene="pet" aria-pressed="false">Pet</button>
+                <button type="button" class="demo-scene-btn" data-scene="motion" aria-pressed="false">Motion</button>
+            </div>
+        </div>
+        <div class="demo-badge-row">
+            <span class="badge">Pre-rendered</span>
+            <span class="badge">Interactive compare</span>
+            <span class="badge">Pro controls on Mac</span>
+        </div>
+    </section>
+
+    <section id="preview-section" class="section preview-screen">
+        <div class="preview-section-head">
+            <h2>Compare before &amp; after</h2>
+            <p class="muted preview-sub">Drag the handle to inspect edges and transparency</p>
+        </div>
+
+        <div class="demo-layout">
+            <div class="demo-side-column">
+                <aside class="demo-params-panel" aria-labelledby="params-heading">
+                    <h3 id="params-heading">Advanced edge refinement</h3>
+                    <p class="lead">Fine-tune hair, product edges, and motion blur—available in the desktop app.</p>
+                    <p class="pro-params-kicker">Pro · adjustable in the Mac app</p>
+                    <div class="pro-lock-wrap" id="pro-lock-wrap" role="button" tabindex="0" aria-label="Pro parameters (preview only, unlock in app)">
+                        <div class="pro-sliders">
+                            <div class="slider-row">
+                                <div class="slider-row-head">
+                                    <span class="param-label" title="Softens the edge between subject and transparency—useful for hair and fine detail.">Feathering</span>
+                                    <span class="param-val" id="param-feather">42%</span>
+                                </div>
+                                <input type="range" min="0" max="100" value="42" disabled data-pro-slider data-param-key="feather">
+                            </div>
+                            <div class="slider-row">
+                                <div class="slider-row-head">
+                                    <span class="param-label" title="Expands or contracts the matte edge to recover or trim semi-transparent pixels.">Edge scaling</span>
+                                    <span class="param-val" id="param-edge">58%</span>
+                                </div>
+                                <input type="range" min="0" max="100" value="58" disabled data-pro-slider data-param-key="edge">
+                            </div>
+                            <div class="slider-row">
+                                <div class="slider-row-head">
+                                    <span class="param-label" title="Increases edge contrast where the matte meets the background.">Edge sharpening</span>
+                                    <span class="param-val" id="param-sharp">35%</span>
+                                </div>
+                                <input type="range" min="0" max="100" value="35" disabled data-pro-slider data-param-key="sharp">
+                            </div>
+                            <div class="slider-row">
+                                <div class="slider-row-head">
+                                    <span class="param-label" title="Reduces noise in semi-transparent edge regions.">Denoising</span>
+                                    <span class="param-val" id="param-denoise">22%</span>
+                                </div>
+                                <input type="range" min="0" max="100" value="22" disabled data-pro-slider data-param-key="denoise">
+                            </div>
+                            <div class="slider-row">
+                                <div class="slider-row-head">
+                                    <span class="param-label" title="Smooths jagged or flickering matte edges over time.">Edge smoothing</span>
+                                    <span class="param-val" id="param-smooth">48%</span>
+                                </div>
+                                <input type="range" min="0" max="100" value="48" disabled data-pro-slider data-param-key="smooth">
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="demo-params-panel demo-export-aside" aria-labelledby="export-heading">
+                    <h3 id="export-heading">Export formats</h3>
+                    <p class="export-panel-lead">Ship transparent animations from the desktop app—free vs Pro.</p>
+                    <ul class="export-tier-list">
+                        <li class="export-tier export-tier--free">
+                            <div class="export-tier-row">
+                                <span class="export-tier-label">Free</span>
+                                <div class="export-format-row" role="group" aria-label="Formats in Free tier (preview only)">
+                                    <button type="button" class="export-format-chip export-format-chip--free" disabled aria-disabled="true" tabindex="-1" title="Transparent GIF — included in Free">GIF</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="export-tier export-tier--pro">
+                            <div class="export-tier-row">
+                                <span class="export-tier-label">Pro</span>
+                                <div class="export-format-row" role="group" aria-label="Formats in Pro tier (preview only)">
+                                    <button type="button" class="export-format-chip export-format-chip--pro" disabled aria-disabled="true" tabindex="-1" title="Transparent APNG — Pro">APNG</button>
+                                    <button type="button" class="export-format-chip export-format-chip--pro" disabled aria-disabled="true" tabindex="-1" title="Transparent WebP — Pro">WebP</button>
+                                    <button type="button" class="export-format-chip export-format-chip--pro" disabled aria-disabled="true" tabindex="-1" title="PNG sequence batches — Pro">PNG seq.</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="compare-card">
+                <div class="compare-stage">
+                    <div class="compare-wrap checkerboard" id="compare-wrap" style="--split: 50%;">
+                        <div class="compare-layer compare-processed">
+                            <img id="demo-processed" class="compare-proc-fallback" src="demo/portrait_trans.webp" alt="" decoding="async" aria-label="Processed result with transparency">
+                            <canvas id="demo-processed-canvas" class="compare-proc-canvas is-hidden" aria-hidden="true"></canvas>
+                        </div>
+                        <div class="compare-layer compare-original">
+                            <video id="demo-original" muted playsinline preload="metadata" aria-label="Original footage"></video>
+                        </div>
+                        <div class="compare-handle" id="compare-handle" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Before and after comparison"></div>
+                    </div>
+                    <div class="compare-labels">
+                        <span>Original</span>
+                        <span>TransMov result</span>
+                    </div>
+                    <div class="compare-bg-toggles" role="group" aria-label="Preview background">
+                        <span class="sr-only">Choose background behind transparency</span>
+                        <button type="button" class="bg-dot bg-dot--checker" data-bg="checker" aria-pressed="true" title="Checkerboard — standard way to preview transparency" aria-label="Checkerboard background"></button>
+                        <button type="button" class="bg-dot bg-dot--black" data-bg="black" aria-pressed="false" title="Black — preview edges and transparency on a dark backdrop" aria-label="Black background"></button>
+                        <button type="button" class="bg-dot bg-dot--white" data-bg="white" aria-pressed="false" title="White — preview edges and transparency on a light backdrop" aria-label="White background"></button>
+                    </div>
+                    <p class="compare-hint">Samples are pre-rendered for this page. Process your own footage with <strong>full</strong> control on macOS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section capability-list-screen" id="desktop-pro-capabilities" aria-labelledby="capability-heading">
+        <div class="capability-pro-head">
+            <h2 id="capability-heading" class="capability-pro-heading">Professional Control.</h2>
+        </div>
+
+        <div class="capability-item">
+            <div class="capability-label">Inspection</div>
+            <div>
+                <h3 class="capability-title">Precision Alpha Check</h3>
+                <p class="capability-text">
+                    Verify transparency with professional-grade inspection modes. Switch between Checkerboard, Black, White, and Alpha Grayscale to ensure your edges are production-ready for any background.
+                </p>
+            </div>
+        </div>
+
+        <div class="capability-item">
+            <div class="capability-label">Refinement</div>
+            <div>
+                <h3 class="capability-title">Advanced Edge Parameters</h3>
+                <p class="capability-text">
+                    Go beyond automated results. Fine-tune every clip with <strong>Feathering</strong>, <strong>Edge Scaling</strong>, <strong>Edge Sharpening</strong>, <strong>Denoising</strong>, and <strong>Edge Smoothing</strong>—the same controls as in the Mac app—to handle hair, motion blur, and intricate silhouettes that browser-only AI can&rsquo;t reliably fix.
+                </p>
+            </div>
+        </div>
+
+        <div class="capability-item">
+            <div class="capability-label">Production</div>
+            <div>
+                <h3 class="capability-title">Multi-Format Mastering</h3>
+                <p class="capability-text">
+                    The free tier includes transparent <strong>GIF</strong> for simple sharing and embeds. Pro unlocks transparent <strong>APNG</strong> and <strong>WebP</strong> for higher quality and smaller files on the web, and batch <strong>PNG sequences</strong> when you need per-frame alpha for compositing or finishing in apps like Final Cut Pro, Premiere Pro, and DaVinci Resolve—exported entirely on your Mac, with no upload step.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-screen">
+        <div class="cta-container">
+            <h2>Experience TransMov Pro.</h2>
+            <p class="cta-container-lead">The performance of a native macOS app. 100% private, fully offline, and built for your creative workflow.</p>
+            <div class="cta-pro-stack">
+                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&amp;ct=transmov_online&amp;mt=8" class="btn-primary-pro" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'online', 'position': 'cta_panel'});">
+                    <img src="../images/app-icon.png" width="24" height="24" alt="" decoding="async">
+                    Get the App for macOS
+                </a>
+                <div class="cta-trust-line">
+                    <span class="cta-trust-pill">Native M1/M2/M3 &amp; Intel</span>
+                    <span class="cta-trust-pill">Zero cloud uploads</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer footer--online">
+        <p>
+            <a href="../privacy-policy.html?lang=en">Privacy Policy</a> |
+            <a href="../support.html?lang=en">Support</a> |
+            <a href="../terms-of-service.html?lang=en">Terms of Service</a>
+        </p>
+        <p style="margin-top: 10px;">© 2026 TransMov</p>
+        <p>A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
+    </div>
+
+    <div class="sticky-footer is-hidden" data-sticky-footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <img src="../images/app-icon.png" alt="TransMov macOS AI background removal app icon" class="footer-icon" width="32" height="32">
+                <span><strong>TransMov</strong> — AI Video Background Remover for Mac</span>
+                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_online&mt=8" class="footer-inline-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'online', 'position': 'sticky_footer'});">Try it free →</a>
+            </div>
+            <button class="footer-close" type="button" aria-label="Close download bar" data-sticky-footer-close>×</button>
+        </div>
+    </div>
+
+    <div id="pro-toast" class="pro-toast hidden" role="status" aria-live="polite">
+        Want to fine-tune these edges? <strong>Unlock manual refinement</strong> with the macOS app.
+        <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_online_pro&mt=8" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'online', 'position': 'pro_toast'});">Download Now</a>
+    </div>
+
+    <script>
+
+        var DEMOS = {
+            portrait: { orig: "demo/portrait_orig.mp4", proc: "demo/portrait_trans.webp" },
+            pet: { orig: "demo/pet_orig.mp4", proc: "demo/pet_trans.webp" },
+            motion: { orig: "demo/motion_orig.mp4", proc: "demo/motion_trans.webp" }
+        };
+
+        /** Hints from ffprobe (MP4). procDurationSec is filled when ImageDecoder opens the WebP. */
+        var SCENE_MEDIA = {
+            portrait: { origDurationSec: 8.633625, origFps: 24000 / 1001, procDurationSec: null },
+            pet: { origDurationSec: 2.958333, origFps: 24, procDurationSec: null },
+            motion: { origDurationSec: 2.5, origFps: 30, procDurationSec: null }
+        };
+
+        var SCENE_PARAMS = {
+            portrait: { feather: 42, edge: 58, sharp: 35, denoise: 22, smooth: 48 },
+            pet: { feather: 38, edge: 64, sharp: 41, denoise: 30, smooth: 44 },
+            motion: { feather: 34, edge: 52, sharp: 28, denoise: 18, smooth: 36 }
+        };
+
+        var wrap = document.getElementById("compare-wrap");
+        var vOrig = document.getElementById("demo-original");
+        var imgProc = document.getElementById("demo-processed");
+        var procCanvas = document.getElementById("demo-processed-canvas");
+        var handle = document.getElementById("compare-handle");
+        var toast = document.getElementById("pro-toast");
+        var proWrap = document.getElementById("pro-lock-wrap");
+        var splitPct = 50;
+        var introSweepGen = 0;
+        var currentSceneId = "portrait";
+        var procDecoder = null;
+        var procUseCanvas = false;
+        var procSyncGen = 0;
+        var procRafId = 0;
+
+        function closeProcDecoder() {
+            if (procDecoder) {
+                try {
+                    procDecoder.close();
+                } catch (e) { /* ignore */ }
+                procDecoder = null;
+            }
+        }
+
+        function stopProcSyncLoop() {
+            if (procRafId) {
+                cancelAnimationFrame(procRafId);
+                procRafId = 0;
+            }
+        }
+
+        function resizeProcCanvasLayout() {
+            if (!procCanvas || !wrap) return null;
+            var rect = wrap.getBoundingClientRect();
+            var dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+            var w = Math.max(1, Math.round(rect.width * dpr));
+            var h = Math.max(1, Math.round(rect.height * dpr));
+            if (procCanvas.width !== w || procCanvas.height !== h) {
+                procCanvas.width = w;
+                procCanvas.height = h;
+            }
+            return { cw: w, ch: h };
+        }
+
+        function drawBitmapContain(ctx, bmp, cw, ch) {
+            var iw = bmp.width;
+            var ih = bmp.height;
+            if (!iw || !ih) return;
+            var scale = Math.min(cw / iw, ch / ih);
+            var dw = iw * scale;
+            var dh = ih * scale;
+            var ox = (cw - dw) * 0.5;
+            var oy = (ch - dh) * 0.5;
+            ctx.clearRect(0, 0, cw, ch);
+            ctx.drawImage(bmp, ox, oy, dw, dh);
+        }
+
+        function mapVideoToProcTime(t, videoDur, procDur) {
+            if (!(procDur > 0) || !(videoDur > 0)) return t;
+            if (Math.abs(videoDur - procDur) < 0.12) return t;
+            if (procDur < videoDur - 0.05) return t % procDur;
+            return Math.min((t / videoDur) * procDur, procDur - 1e-4);
+        }
+
+        function loopProcRaf() {
+            procRafId = 0;
+            syncProcToVideo();
+            if (!vOrig.paused && procUseCanvas && procDecoder) {
+                procRafId = requestAnimationFrame(loopProcRaf);
+            }
+        }
+
+        function startProcSyncLoop() {
+            stopProcSyncLoop();
+            if (!procUseCanvas || !procDecoder) return;
+            procRafId = requestAnimationFrame(loopProcRaf);
+        }
+
+        function syncProcToVideo() {
+            if (!procUseCanvas || !procDecoder || !procCanvas) return;
+            var gen = procSyncGen;
+            var ctx = procCanvas.getContext("2d", { alpha: true });
+            if (!ctx) return;
+            var lay = resizeProcCanvasLayout();
+            if (!lay) return;
+            var cw = lay.cw;
+            var ch = lay.ch;
+            var vDur = vOrig.duration || 0;
+            var media = SCENE_MEDIA[currentSceneId] || {};
+            var procDur = media.procDurationSec;
+            if (!(procDur > 0)) procDur = vDur;
+            var t = mapVideoToProcTime(vOrig.currentTime, vDur, procDur);
+            var ts = Math.round(t * 1e6);
+            procDecoder.decode({ timestamp: ts }).then(function (result) {
+                if (gen !== procSyncGen || !result || !result.image) return;
+                drawBitmapContain(ctx, result.image, cw, ch);
+                result.image.close();
+            }).catch(function () {
+                procDecoder.decode({ timestamp: 0 }).then(function (result2) {
+                    if (gen !== procSyncGen || !result2 || !result2.image) return;
+                    drawBitmapContain(ctx, result2.image, cw, ch);
+                    result2.image.close();
+                }).catch(function () { /* ignore */ });
+            });
+        }
+
+        function tryCreateWebpDecoder(ab, genToken, sceneKey) {
+            if (typeof ImageDecoder === "undefined") {
+                return Promise.resolve(null);
+            }
+            return new Promise(function (resolve) {
+                try {
+                    var dec = new ImageDecoder({
+                        data: new Blob([ab], { type: "image/webp" }).stream(),
+                        type: "image/webp"
+                    });
+                    var prep = dec.tracks && dec.tracks.ready ? dec.tracks.ready : Promise.resolve();
+                    prep.then(function () {
+                        return dec.decode({ timestamp: 0 });
+                    }).then(function (r0) {
+                        if (r0 && r0.image) r0.image.close();
+                        if (genToken !== procSyncGen) {
+                            try {
+                                dec.close();
+                            } catch (e0) { /* ignore */ }
+                            resolve(null);
+                            return;
+                        }
+                        try {
+                            var st = dec.tracks && dec.tracks.selectedTrack;
+                            if (sceneKey && SCENE_MEDIA[sceneKey]) {
+                                if (st && st.duration && st.duration > 0) {
+                                    SCENE_MEDIA[sceneKey].procDurationSec = st.duration / 1e6;
+                                } else if (SCENE_MEDIA[sceneKey].origDurationSec) {
+                                    SCENE_MEDIA[sceneKey].procDurationSec = SCENE_MEDIA[sceneKey].origDurationSec;
+                                }
+                            }
+                        } catch (e1) { /* ignore */ }
+                        resolve(dec);
+                    }).catch(function () {
+                        resolve(null);
+                    });
+                } catch (e) {
+                    resolve(null);
+                }
+            });
+        }
+
+        function setSplit(pct) {
+            splitPct = Math.max(0, Math.min(100, pct));
+            wrap.style.setProperty("--split", splitPct + "%");
+            handle.setAttribute("aria-valuenow", Math.round(splitPct));
+        }
+
+        function applySceneParams(sceneId) {
+            var p = SCENE_PARAMS[sceneId];
+            if (!p) return;
+            document.querySelectorAll("[data-param-key]").forEach(function (inp) {
+                var key = inp.getAttribute("data-param-key");
+                if (p[key] == null) return;
+                inp.value = p[key];
+                var valEl = document.getElementById("param-" + key);
+                if (valEl) valEl.textContent = p[key] + "%";
+            });
+        }
+
+        function applyBackgroundMode(mode) {
+            wrap.classList.remove("checkerboard", "bg-solid-white", "bg-solid-black");
+            if (mode === "checker") wrap.classList.add("checkerboard");
+            else if (mode === "white") wrap.classList.add("bg-solid-white");
+            else if (mode === "black") wrap.classList.add("bg-solid-black");
+            document.querySelectorAll(".compare-bg-toggles .bg-dot").forEach(function (btn) {
+                btn.setAttribute("aria-pressed", btn.getAttribute("data-bg") === mode ? "true" : "false");
+            });
+        }
+
+        function runIntroSweepIfNeeded(gen) {
+            try {
+                if (sessionStorage.getItem("tm_compare_intro_sweep")) return;
+            } catch (err) { /* ignore */ }
+            var start = performance.now();
+            var dur = 1000;
+            function tick(now) {
+                if (gen !== introSweepGen) return;
+                var t = Math.min(1, (now - start) / dur);
+                var pct;
+                if (t < 1 / 3) {
+                    pct = 50 + (30 - 50) * (t * 3);
+                } else if (t < 2 / 3) {
+                    pct = 30 + (70 - 30) * ((t - 1 / 3) * 3);
+                } else {
+                    pct = 70 + (50 - 70) * ((t - 2 / 3) * 3);
+                }
+                setSplit(pct);
+                if (t < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    setSplit(50);
+                    try {
+                        sessionStorage.setItem("tm_compare_intro_sweep", "1");
+                    } catch (err2) { /* ignore */ }
+                }
+            }
+            requestAnimationFrame(tick);
+        }
+
+        function loadDemo(sceneId) {
+            var d = DEMOS[sceneId];
+            if (!d) return;
+            currentSceneId = sceneId;
+            procSyncGen++;
+            var gen = procSyncGen;
+            introSweepGen++;
+            var sweepToken = introSweepGen;
+            stopProcSyncLoop();
+            closeProcDecoder();
+            procUseCanvas = false;
+            if (imgProc) {
+                if (imgProc.src && imgProc.src.indexOf("blob:") === 0) {
+                    try {
+                        URL.revokeObjectURL(imgProc.src);
+                    } catch (rev) { /* ignore */ }
+                }
+            }
+            if (procCanvas) {
+                procCanvas.classList.add("is-hidden");
+            }
+            vOrig.pause();
+            vOrig.src = d.orig;
+            vOrig.load();
+            applySceneParams(sceneId);
+
+            var videoReady = new Promise(function (res) {
+                vOrig.addEventListener("loadeddata", res, { once: true });
+            });
+
+            var procReady = fetch(d.proc)
+                .then(function (resp) {
+                    return resp.arrayBuffer();
+                })
+                .then(function (ab) {
+                    if (gen !== procSyncGen) return { decoder: null, ab: ab, stale: true };
+                    if (imgProc && ab && ab.byteLength) {
+                        var blobForImg = new Blob([ab], { type: "image/webp" });
+                        imgProc.src = URL.createObjectURL(blobForImg);
+                    }
+                    return tryCreateWebpDecoder(ab, gen, sceneId).then(function (decoder) {
+                        return { decoder: decoder, ab: ab, stale: false };
+                    });
+                });
+
+            Promise.all([videoReady, procReady])
+                .then(function (results) {
+                    if (gen !== procSyncGen) return Promise.reject("stale");
+                    var pack = results[1];
+                    if (!pack || pack.stale) return Promise.reject("stale");
+                    if (pack.decoder) {
+                        procDecoder = pack.decoder;
+                        procUseCanvas = true;
+                        if (procCanvas) procCanvas.classList.remove("is-hidden");
+                    } else {
+                        procUseCanvas = false;
+                    }
+                })
+                .then(function () {
+                    if (gen !== procSyncGen) return;
+                    vOrig.currentTime = 0;
+                    return vOrig.play().catch(function () {});
+                })
+                .then(function () {
+                    if (gen !== procSyncGen) return;
+                    if (procUseCanvas) {
+                        syncProcToVideo();
+                        startProcSyncLoop();
+                    }
+                    if (sceneId === "portrait") {
+                        requestAnimationFrame(function () {
+                            runIntroSweepIfNeeded(sweepToken);
+                        });
+                    }
+                })
+                .catch(function () {
+                    if (gen !== procSyncGen) return;
+                    procUseCanvas = false;
+                    closeProcDecoder();
+                    if (imgProc) {
+                        imgProc.src = d.proc;
+                    }
+                    if (procCanvas) procCanvas.classList.add("is-hidden");
+                    vOrig.currentTime = 0;
+                    vOrig.play().catch(function () {});
+                });
+        }
+
+        vOrig.addEventListener("play", function () {
+            if (procUseCanvas && procDecoder) startProcSyncLoop();
+        });
+        vOrig.addEventListener("pause", function () {
+            stopProcSyncLoop();
+            syncProcToVideo();
+        });
+        vOrig.addEventListener("seeked", function () {
+            syncProcToVideo();
+        });
+        /* 每轮播完再 seek 到 0 并对齐 WebP，然后重播，避免原生 loop 长时间运行后不同步 */
+        vOrig.addEventListener("ended", function () {
+            stopProcSyncLoop();
+            function afterSeekToHead() {
+                vOrig.removeEventListener("seeked", afterSeekToHead);
+                syncProcToVideo();
+                vOrig.play().catch(function () {});
+            }
+            vOrig.addEventListener("seeked", afterSeekToHead);
+            vOrig.currentTime = 0;
+        });
+        window.addEventListener(
+            "resize",
+            function () {
+                if (procUseCanvas) syncProcToVideo();
+            },
+            { passive: true }
+        );
+
+        var dragging = false;
+        function pointerMove(ev) {
+            if (!dragging) return;
+            var rect = wrap.getBoundingClientRect();
+            var x = (ev.clientX - rect.left) / rect.width;
+            setSplit(x * 100);
+        }
+        function endDrag() {
+            dragging = false;
+        }
+        handle.addEventListener("pointerdown", function (e) {
+            dragging = true;
+            e.preventDefault();
+            try {
+                handle.setPointerCapture(e.pointerId);
+            } catch (err) { /* ignore */ }
+        });
+        handle.addEventListener("pointermove", pointerMove);
+        handle.addEventListener("pointerup", endDrag);
+        handle.addEventListener("pointercancel", endDrag);
+        wrap.addEventListener("pointerdown", function (e) {
+            if (e.target === handle || handle.contains(e.target)) return;
+            var rect = wrap.getBoundingClientRect();
+            setSplit(((e.clientX - rect.left) / rect.width) * 100);
+        });
+        handle.addEventListener("keydown", function (e) {
+            var step = e.shiftKey ? 10 : 5;
+            if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                setSplit(splitPct - step);
+            }
+            if (e.key === "ArrowRight") {
+                e.preventDefault();
+                setSplit(splitPct + step);
+            }
+        });
+
+        document.querySelectorAll(".demo-scene-btn").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var id = btn.getAttribute("data-scene");
+                document.querySelectorAll(".demo-scene-btn").forEach(function (b) {
+                    b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+                });
+                loadDemo(id);
+            });
+        });
+
+        var toastTimer = null;
+        var toastShakeTimer = null;
+        function showProToast() {
+            toast.classList.remove("hidden");
+            toast.classList.remove("pro-toast--shake");
+            clearTimeout(toastShakeTimer);
+            requestAnimationFrame(function () {
+                toast.classList.add("is-visible");
+                toast.classList.add("pro-toast--shake");
+            });
+            toastShakeTimer = setTimeout(function () {
+                toast.classList.remove("pro-toast--shake");
+            }, 520);
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(function () {
+                toast.classList.remove("is-visible");
+                setTimeout(function () {
+                    toast.classList.add("hidden");
+                }, 400);
+            }, 4200);
+        }
+
+        document.querySelectorAll(".compare-bg-toggles .bg-dot").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                applyBackgroundMode(btn.getAttribute("data-bg"));
+            });
+        });
+
+        function preloadRange(url) {
+            if (!url || !window.fetch) return;
+            fetch(url, { headers: { Range: "bytes=0-1048575" } }).catch(function () {});
+        }
+
+        function schedulePreloadOtherDemos() {
+            function run() {
+                preloadRange(DEMOS.pet.orig);
+                preloadRange(DEMOS.pet.proc);
+                preloadRange(DEMOS.motion.orig);
+                preloadRange(DEMOS.motion.proc);
+            }
+            if (window.requestIdleCallback) {
+                requestIdleCallback(run, { timeout: 3500 });
+            } else {
+                setTimeout(run, 1800);
+            }
+        }
+        proWrap.addEventListener("click", showProToast);
+        proWrap.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                showProToast();
+            }
+        });
+        document.querySelectorAll("[data-pro-slider]").forEach(function (el) {
+            el.addEventListener("pointerdown", function (e) {
+                e.preventDefault();
+                showProToast();
+            });
+        });
+
+        loadDemo("portrait");
+        schedulePreloadOtherDemos();
+
+        (function initHeaderInteractions() {
+            var bar = document.querySelector(".top-bar");
+            var toggle = document.querySelector("[data-top-bar-menu-toggle]");
+            var nav = document.getElementById("top-bar-mobile-nav");
+            var langSwitcher = document.querySelector("[data-language-switcher]");
+
+            function updateTopBarAndSections() {
+                if (bar) {
+                    bar.classList.toggle("top-bar--scrolled", window.scrollY > 8);
+                }
+                document.querySelectorAll(".section").forEach(function (sec) {
+                    var top = sec.getBoundingClientRect().top;
+                    if (top < window.innerHeight * 0.8) sec.classList.add("visible");
+                });
+            }
+
+            window.addEventListener("scroll", updateTopBarAndSections, { passive: true });
+            window.addEventListener("resize", updateTopBarAndSections, { passive: true });
+            updateTopBarAndSections();
+
+            if (toggle && nav) {
+                toggle.onclick = function (e) {
+                    e.stopPropagation();
+                    nav.hidden = !nav.hidden;
+                };
+            }
+            if (langSwitcher) {
+                langSwitcher.onclick = function (e) {
+                    e.stopPropagation();
+                    langSwitcher.classList.toggle("open");
+                };
+            }
+            document.onclick = function () {
+                if (nav) nav.hidden = true;
+                if (langSwitcher) langSwitcher.classList.remove("open");
+            };
+        })();
+
+        (function initStickyFooter() {
+            var bar = document.querySelector("[data-sticky-footer]");
+            if (!bar) return;
+            var closeBtn = bar.querySelector("[data-sticky-footer-close]");
+            var isClosed = false;
+            var revealThreshold = 120;
+            function updateVisibility() {
+                if (isClosed) {
+                    bar.classList.add("is-hidden");
+                    return;
+                }
+                var y = window.scrollY || window.pageYOffset || 0;
+                bar.classList.toggle("is-hidden", y < revealThreshold);
+            }
+            if (closeBtn) {
+                closeBtn.addEventListener("click", function () {
+                    isClosed = true;
+                    bar.classList.add("is-hidden");
+                });
+            }
+            window.addEventListener("scroll", updateVisibility, { passive: true });
+            window.addEventListener("resize", updateVisibility, { passive: true });
+            updateVisibility();
+        })();
+    </script>
+</body>
+</html>
