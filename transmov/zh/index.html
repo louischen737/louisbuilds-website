@@ -187,7 +187,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="../style.css?v=20260407b" as="style">
+    <link rel="preload" href="../style.css?v=20260409j" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -934,7 +934,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="../style.css?v=20260407b">
+    <link rel="stylesheet" href="../style.css?v=20260409j">
 </head>
 <body>
     <header class="top-bar">
@@ -1179,6 +1179,71 @@
                 </figure>
             </section>
 
+            <section class="section section--use-cases" id="use-cases" aria-labelledby="use-cases-heading">
+                <div class="container">
+                    <h2 id="use-cases-heading" class="section-title">为真实交付流程而设计</h2>
+                    <p class="section-lead">打通 AI 创作到生产交付，一套工具全搞定</p>
+
+                    <div class="use-cases-grid">
+                        <div class="use-case-card use-case-card--featured">
+                            <div class="use-case-visual">
+                                <div class="featured-workflow-frame">
+                                    <img src="../online/demo/motion_trans.webp" alt="TransMov 网页演示「Motion」场景的透明动效导出示例" class="case-gif" width="720" height="1280" loading="lazy" decoding="async" sizes="(max-width: 768px) min(100vw - 3rem, 420px), min(45vw, 380px)" srcset="../online/demo/motion_trans.webp 720w">
+                                </div>
+                            </div>
+                            <div class="use-case-content">
+                                <div class="use-case-tag">行业领先</div>
+                                <h3>AI 动效的新标杆</h3>
+                                <p>Runway、Luma 等工具能做出惊艳画面，却往往带着杂乱背景。TransMov 补齐最后一环，把原始 AI 视频变成极轻量、带透明通道、可即刻部署的素材。</p>
+                                <div class="pipeline-steps">
+                                    <span class="pipeline-steps-prefix">工作流：</span>
+                                    <span>提示词</span>
+                                    <span class="pipeline-arrow" aria-hidden="true">→</span>
+                                    <span>AI 视频</span>
+                                    <span class="pipeline-arrow" aria-hidden="true">→</span>
+                                    <span class="highlight">TransMov</span>
+                                    <span class="pipeline-arrow" aria-hidden="true">→</span>
+                                    <span>产品交付</span>
+                                </div>
+                                <a href="../blog/ai-to-production-workflow-zh.html" class="learn-more-link">「500MB 危机」：如何把 AI 视频压缩到 1MB 内上线 <span aria-hidden="true">→</span></a>
+                            </div>
+                        </div>
+
+                        <div class="use-case-card use-case-card--media">
+                            <div class="use-case-card-thumb use-case-card-thumb--landscape">
+                                <img
+                                    src="../images/use-case-3.webp"
+                                    alt="TransMov 导出透明 WebP、GIF，用于网页与设计交付"
+                                    width="640"
+                                    height="360"
+                                    loading="lazy"
+                                    decoding="async"
+                                    sizes="(max-width: 768px) 100vw, min(100%, 560px)"
+                                    srcset="../images/use-case-3.webp 640w">
+                            </div>
+                            <h3>应用界面与交互</h3>
+                            <p>自带透明通道的动效，可直接叠加在真实界面上，轻松实现引导流程、悬停提示、交互反馈等效果，无需额外抠图。</p>
+                        </div>
+
+                        <div class="use-case-card use-case-card--media">
+                            <div class="use-case-card-thumb use-case-card-thumb--square">
+                                <img
+                                    src="../images/use-case-1.webp"
+                                    alt="TransMov 导出的吉祥物风格透明动图，用于界面与贴纸类素材（支持 APNG、GIF、WebP）"
+                                    width="280"
+                                    height="280"
+                                    loading="lazy"
+                                    decoding="async"
+                                    sizes="(max-width: 768px) min(88vw, 280px), 280px"
+                                    srcset="../images/use-case-1.webp 560w">
+                            </div>
+                            <h3>社媒与叠加素材</h3>
+                            <p>快速生成透明贴纸与叠加素材，支持短视频、社交内容创作，彻底告别 After Effects 复杂操作。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="technical-standards" class="section section--technical-standards" aria-labelledby="technical-standards-heading">
                 <h2 id="technical-standards-heading">技术标准</h2>
                 <p class="section-lead">
@@ -1277,40 +1342,6 @@
                     </div>
                 </div>
             </section>
-
-            <div class="section section--use-cases" id="use-cases">
-                <h2>为真实交付流程而设计</h2>
-                <p class="section-lead">从 UI 设计到活动交付，三种主流团队工作流</p>
-                <div class="use-cases">
-                    <div class="use-case use-case--square">
-                        <div class="use-case-text">
-                            <h3>为 UI 与原型制作透明动图</h3>
-                            <p>将短视频转换为轻量透明动图，用于应用界面、引导流程与交互原型。</p>
-                        </div>
-                        <div class="use-case-visual">
-                            <img src="../images/use-case-1.webp" alt="TransMov 导出的透明动图，用于 App UI（支持 APNG、GIF、WebP）" width="280" height="280" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                    <div class="use-case use-case--portrait use-case--reverse">
-                        <div class="use-case-text">
-                            <h3>将视频转为品牌内容素材</h3>
-                            <p>把视频与 AI 生成片段制作为可复用循环素材，全程本地处理，输出稳定可靠。</p>
-                        </div>
-                        <div class="use-case-visual">
-                            <img src="../images/use-case-2.webp" alt="TransMov 本地 AI 视频抠图生成透明动图示例" width="240" height="420" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                    <div class="use-case use-case--landscape">
-                        <div class="use-case-text">
-                            <h3>Web 与设计生产交付</h3>
-                            <p>导出 APNG、WebP、GIF，用于落地页、演示和设计协作交付。</p>
-                        </div>
-                        <div class="use-case-visual">
-                            <img src="../images/use-case-3.webp" alt="TransMov 导出透明 WebP、GIF，用于网页与设计交付" width="640" height="360" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="section pricing-section" id="pricing">
                 <h2>简单透明的原生定价</h2>
@@ -1435,6 +1466,22 @@
             <section id="guides" class="section guides-section" aria-labelledby="guides-heading">
                 <h2 id="guides-heading" class="guides-title">资源与指南</h2>
                 <div class="guides-grid">
+                    <a href="../blog/ai-to-production-workflow-zh.html" class="guide-card guide-card--featured-case">
+                        <span class="guide-card-tag guide-card-tag--case-study">案例研究</span>
+                        <h3>从 AI 生成到可上线资产</h3>
+                        <p class="cta-description">AI 可以生成惊艳的动态画面，但文件体积往往过大，直接撑爆应用包。TransMov 可一键完成背景抠除与边缘精修，将素材压缩至可直接交付的轻量化状态。</p>
+                        <div class="guide-card-pipeline" aria-hidden="true">
+                            <span>AI 提示词</span>
+                            <span class="guide-card-pipeline-arrow">→</span>
+                            <span class="guide-card-pipeline-highlight">TransMov</span>
+                            <span class="guide-card-pipeline-arrow">→</span>
+                            <span>&lt;1MB WebP</span>
+                        </div>
+                        <div class="featured-case-link">
+                            <span class="link-label">「500MB 危机」解决方案</span>
+                            <span class="link-action">一键将 AI 视频压缩至 1MB 以内 <span aria-hidden="true">→</span></span>
+                        </div>
+                    </a>
                     <a href="../blog/what-is-apng-zh.html" class="guide-card">
                         <span class="guide-card-tag">格式指南</span>
                         <h3>视频转透明 APNG 全攻略：从原理到制作详解</h3>
