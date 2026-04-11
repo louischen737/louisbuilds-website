@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J’ai perdu mon emploi, mais j’ai retrouvé ma concentration : L’histoire de Purrrrrfocus</title>
+    <meta name="description" content="Du chaos des notifications SaaS à une app de productivité : l’histoire fondatrice de Purrrrrfocus, sanctuaire Pomodoro pour le travail profond, la concentration et la gestion du temps.">
+    <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/blog/fr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/blog/zh/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/blog/en/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/purrrrrfocus/blog/fr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="tr" href="https://louisbuilds.me/purrrrrfocus/blog/tr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="da" href="https://louisbuilds.me/purrrrrfocus/blog/da/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/purrrrrfocus/blog/en/my-story-saas-to-indie.html">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F9F3E6">
+
+    <meta property="og:title" content="J’ai perdu mon emploi, mais j’ai retrouvé ma concentration : L’histoire de Purrrrrfocus">
+    <meta property="og:description" content="Du SaaS à une app de productivité et méthode Pomodoro : l’histoire fondatrice de Purrrrrfocus pour le travail profond.">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <style>
+        :root {
+            --bg-primary: #F9F3E6;
+            --text-primary: #3B241D;
+            --text-secondary: #5C3A21;
+            --accent: #7A1E1E;
+            --border: #DEBA86;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+        .blog-header { background: var(--bg-primary); border-bottom: 1px solid var(--border); padding: 16px 20px; position: sticky; top: 0; z-index: 100; }
+        .blog-header .container { padding: 0; display: flex; align-items: center; }
+        .blog-header a { color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+        .lang-dropdown { position: relative; margin-left: auto; }
+        .lang-dropdown-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+        .lang-dropdown-trigger:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .lang-dropdown-trigger:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .lang-chevron { font-size: 0.65em; opacity: 0.9; transition: transform 0.2s ease; }
+        .lang-dropdown.open .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 6px;
+            min-width: 160px;
+            padding: 6px 0;
+            background: rgba(249, 243, 230, 0.98);
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(59, 36, 29, 0.15);
+            border: 1px solid var(--border);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            z-index: 20;
+        }
+        .lang-dropdown.open .lang-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .lang-dropdown-menu a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
+        .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
+        .lang-note { padding: 8px 16px 10px; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid rgba(222, 186, 134, 0.35); }
+
+        .seo-hero { text-align: left; padding: 60px 20px 40px; }
+        .seo-hero h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); margin-bottom: 16px; color: var(--text-primary); line-height: 1.25; }
+        .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
+
+        .content h2 { margin-top: 48px; font-size: 1.7rem; color: var(--accent); line-height: 1.3; }
+        .content h3 { margin-top: 32px; font-size: 1.3rem; color: var(--text-primary); }
+        .content p, .content li { margin-top: 14px; color: var(--text-secondary); }
+        .content ul { margin: 16px 0 0 1.5em; }
+        .content strong { color: var(--text-primary); }
+        .content em { font-style: italic; }
+
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(59, 36, 29, 0.05); text-align: center; }
+        .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+
+        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px solid var(--border); }
+        .related-guides h4 { margin-bottom: 16px; }
+        .related-guides ul { list-style: none; padding: 0; margin: 0; }
+        .related-guides li { margin-bottom: 12px; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
+            .lang-dropdown { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <a href="../../index-fr.html">← Retour au site officiel de PurrrrrFocus</a>
+            <div class="lang-dropdown">
+                <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Français <span class="lang-chevron">▼</span></button>
+                <div class="lang-dropdown-menu" role="menu" aria-label="Options de langue">
+                    <a href="../en/my-story-saas-to-indie.html" hreflang="en">English</a>
+                    <a href="../zh/my-story-saas-to-indie.html" hreflang="zh-CN">中文</a>
+                    <a href="my-story-saas-to-indie.html" hreflang="fr" class="active">Français</a>
+                    <a href="../tr/my-story-saas-to-indie.html" hreflang="tr">Türkçe</a>
+                    <a href="../da/my-story-saas-to-indie.html" hreflang="da">Dansk</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="container">
+        <section class="seo-hero">
+            <h1>J’ai perdu mon emploi, mais j’ai retrouvé ma concentration : L’histoire de Purrrrrfocus</h1>
+            <p>Du chaos SaaS à un minuteur silencieux : pourquoi j’ai échangé la tempête de notifications contre une petite app — et un esprit plus calme.</p>
+        </section>
+
+        <section class="content">
+            <h2>La réalité du « 99+ » : Ma vie dans la chambre d’écho du SaaS</h2>
+            <p>Avant de devenir développeur indépendant, j’ai travaillé dans le secteur du SaaS. En apparence, c’était un monde défini par « l’efficacité » et la collaboration de pointe. En réalité, c’était un enfer de fragmentation numérique — une véritable pollution numérique au quotidien.</p>
+            <p>En tant que responsable de plusieurs grands comptes (KA), mes outils de communication — en particulier Lark/Feishu — ne cessaient de hurler pour attirer mon attention. Chaque client entraînait un réseau complexe de groupes externes, et pour chaque petite demande, une douzaine de « groupes d’alignement internes » surgissaient comme des mauvaises herbes.</p>
+            <ul>
+                <li><strong>Le coursier de l’information :</strong> J’ai réalisé que je n’étais pas un stratège, mais un coursier de luxe. Je passais mes journées à déplacer des informations du groupe A vers le groupe B, m’assurant que tout le monde était « sur la même page », alors que je n’avais même plus le temps de lire la page moi-même.</li>
+                <li><strong>Traqué par les algorithmes :</strong> Il n’y avait pas que les humains ; il y avait aussi les bots. Des rappels basés sur l’IA suivaient sans relâche chacun de mes mouvements : <em>« Avez-vous mis à jour le CRM ? », « Rapport hebdomadaire attendu dans 2 heures », « Dossier de suivi manquant ».</em></li>
+            </ul>
+            <p>J’étais un rouage tournant à toute vitesse dans une machine massive, mais je n’avançais nulle part. Ma capacité de réflexion profonde s’érodait. Le travail était devenu une série de réflexes pavloviens face à des points de notification rouges.</p>
+
+            <h2>Le départ imprévu : Un moment de clarté</h2>
+            <p>Puis, j’ai vécu un départ imprévu : j’ai été licencié.</p>
+            <p>Lorsque mes comptes d’entreprise ont été désactivés et que ces groupes de discussion incessants ont disparu instantanément, j’ai ressenti quelque chose de totalement inattendu. Parallèlement à l’incertitude du chômage, j’ai éprouvé un immense sentiment de <strong>soulagement</strong>.</p>
+            <p>Pour la première fois depuis longtemps, le bruit étouffant de la « collaboration instantanée » s’est arrêté. Dans ce silence, j’ai eu une prise de conscience : pourquoi, dans un environnement équipé des meilleurs outils de productivité au monde, étais-je moins productif que jamais ? Pourquoi se concentrer, ne serait-ce que 25 minutes, était devenu un luxe que je ne pouvais plus m’offrir ?</p>
+
+            <h2>Créer Purrrrrfocus : Un sanctuaire pour le Travail Profond (Deep Work)</h2>
+            <p>J’ai décidé de canaliser cet épuisement dans mon premier projet indépendant.</p>
+            <p>La naissance de <strong>Purrrrrfocus</strong> ne consistait pas seulement à créer une application de plus ; c’était un acte de reconstruction personnelle. J’avais l’impression de me noyer dans un océan de notifications, je voulais donc construire un canot de sauvetage — non seulement pour moi, mais pour tous ceux qui sont encore coincés dans cette tempête.</p>
+            <ul>
+                <li><strong>Plus qu’un minuteur, un rituel :</strong> Les minuteurs Pomodoro ne manquent pas. Ce qui manque, c’est un « sanctuaire ». Lorsque vous lancez une session sur Purrrrrfocus, l’apparition du chat est un signal envoyé au monde : <em>« Pour les 25 prochaines minutes, je n’appartiens ni à ma boîte mail, ni à mes clients, ni à mon patron. J’appartiens à mon travail. »</em></li>
+                <li><strong>La guérison plutôt que la pression :</strong> Dans le monde de l’entreprise, nous sommes poursuivis par des barres de progression froides et des bots exigeants. J’ai nommé l’application <strong>Purrrrrfocus</strong> parce que je voulais remplacer cette pression par la présence apaisante d’un chat. C’est une manière douce de se réapproprier son espace mental.</li>
+            </ul>
+
+            <h2>Conclusion : Reprendre le contrôle de votre productivité</h2>
+            <p>Quitter le monde du SaaS n’était pas mon choix, mais c’est devenu ma plus grande opportunité. Cela m’a appris une vérité fondamentale : <strong>À l’ère moderne, votre attention est votre actif le plus précieux — et tout le monde essaie de vous le voler.</strong></p>
+            <p>Je n’ai pas conçu cette application pour faire de vous une machine plus efficace. Je l’ai créée pour vous aider à reprendre votre souveraineté sur le futile — y compris si vous cherchez un rythme compatible avec un profil TDAH (Trouble du déficit de l’attention avec ou sans hyperactivité). Même s’il ne s’agit que de deux « sessions chat » de haute qualité par jour, ce sont des moments où vous êtes enfin de nouveau aux commandes.</p>
+
+            <div class="cta-box">
+                <h3>Essayer Purrrrrfocus</h3>
+                <p>Si ce récit vous parle, lancez une courte session de concentration et voyez si un rituel plus calme vous convient.</p>
+                <a href="../../index-fr.html" class="cta-button">Ouvrir la page de l’app</a>
+            </div>
+
+            <div class="related-guides">
+                <h4>Continuer la lecture</h4>
+                <ul>
+                    <li><a href="best-pomodoro-timer.html">Meilleurs minuteurs Pomodoro pour le travail profond (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">Meilleures apps de focus pour TDAH : Outils sans stress</a></li>
+                    <li><a href="study-focus-guide.html">Comment rester concentré pendant les études : Guide étudiant</a></li>
+                    <li><a href="how-to-build-focus-habit.html">Comment bâtir une habitude de focus (durable)</a></li>
+                </ul>
+            </div>
+        </section>
+    </article>
+
+    <footer style="text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 0.9em; background: rgba(222, 186, 134, 0.1);">
+        <div class="container">
+            <p>© 2026 PurrrrrFocus</p>
+            <p style="margin-top: 10px;"><a href="../../index-fr.html" style="color: var(--accent);">Retour à l’accueil</a></p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "J’ai perdu mon emploi, mais j’ai retrouvé ma concentration : L’histoire de Purrrrrfocus",
+        "description": "Du chaos des notifications SaaS à une app de productivité : l’histoire fondatrice de Purrrrrfocus pour le travail profond et la méthode Pomodoro.",
+        "inLanguage": "fr",
+        "datePublished": "2026-04-11",
+        "dateModified": "2026-04-11",
+        "author": {
+            "@type": "Person",
+            "name": "Louis"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PurrrrrFocus",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp"
+            }
+        },
+        "image": [
+            "https://louisbuilds.me/purrrrrfocus/og-image.png"
+        ],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://louisbuilds.me/purrrrrfocus/blog/fr/my-story-saas-to-indie.html"
+        }
+    }
+    </script>
+
+    <script>
+        (function () {
+            var dropdown = document.querySelector('.lang-dropdown');
+            var trigger = document.querySelector('.lang-dropdown-trigger');
+            if (!dropdown || !trigger) return;
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = dropdown.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function () {
+                dropdown.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+            });
+        })();
+    </script>
+</body>
+</html>
