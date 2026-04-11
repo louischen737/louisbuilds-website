@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我失去了工作，却找回了专注：为什么我开发了喵时计｜PurrrrrFocus</title>
+    <meta name="description" content="从 SaaS 消息轰炸到独立开发：一段关于裁员、专注与喵时计（英文名 Purrrrrfocus）的创始故事——用番茄钟与猫咪陪伴，夺回深度思考与注意力主权。">
+    <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/blog/zh/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/blog/zh/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/blog/en/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/purrrrrfocus/blog/fr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="tr" href="https://louisbuilds.me/purrrrrfocus/blog/tr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="da" href="https://louisbuilds.me/purrrrrfocus/blog/da/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/purrrrrfocus/blog/en/my-story-saas-to-indie.html">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F9F3E6">
+
+    <meta property="og:title" content="我失去了工作，却找回了专注：为什么我开发了喵时计">
+    <meta property="og:description" content="喵时计(Purrrrrfocus)创始故事：从 SaaS 消息轰炸到独立开发，我如何通过番茄钟与猫咪陪伴夺回专注力，摆脱裁员后的焦虑与通知压力。">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <style>
+        :root {
+            --bg-primary: #F9F3E6;
+            --text-primary: #3B241D;
+            --text-secondary: #5C3A21;
+            --accent: #7A1E1E;
+            --border: #DEBA86;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+        .blog-header { background: var(--bg-primary); border-bottom: 1px solid var(--border); padding: 16px 20px; position: sticky; top: 0; z-index: 100; }
+        .blog-header .container { padding: 0; display: flex; align-items: center; }
+        .blog-header a { color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+        .lang-dropdown { position: relative; margin-left: auto; }
+        .lang-dropdown-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+        .lang-dropdown-trigger:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .lang-dropdown-trigger:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .lang-chevron { font-size: 0.65em; opacity: 0.9; transition: transform 0.2s ease; }
+        .lang-dropdown.open .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 6px;
+            min-width: 160px;
+            padding: 6px 0;
+            background: rgba(249, 243, 230, 0.98);
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(59, 36, 29, 0.15);
+            border: 1px solid var(--border);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            z-index: 20;
+        }
+        .lang-dropdown.open .lang-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .lang-dropdown-menu a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
+        .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
+
+        .seo-hero { text-align: left; padding: 60px 20px 40px; }
+        .seo-hero h1 { font-size: clamp(1.35rem, 4vw, 2rem); margin-bottom: 16px; color: var(--text-primary); line-height: 1.35; }
+        .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
+
+        .content h2 { margin-top: 48px; font-size: 1.55rem; color: var(--accent); line-height: 1.35; }
+        .content h3 { margin-top: 32px; font-size: 1.25rem; color: var(--text-primary); }
+        .content p, .content li { margin-top: 14px; color: var(--text-secondary); }
+        .content ul { margin: 16px 0 0 1.5em; }
+        .content strong { color: var(--text-primary); }
+        .content em { font-style: italic; }
+
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(59, 36, 29, 0.05); text-align: center; }
+        .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+
+        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px dashed var(--border); }
+        .related-guides h4 { margin-bottom: 16px; }
+        .related-guides ul { list-style: none; padding: 0; margin: 0; }
+        .related-guides li { margin-bottom: 12px; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
+            .lang-dropdown { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <a href="../../index.html">← 返回喵时计官网</a>
+            <div class="lang-dropdown">
+                <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true">中文 <span class="lang-chevron">▼</span></button>
+                <div class="lang-dropdown-menu" role="menu" aria-label="语言">
+                    <a href="my-story-saas-to-indie.html" hreflang="zh-CN" class="active">中文</a>
+                    <a href="../en/my-story-saas-to-indie.html" hreflang="en">English</a>
+                    <a href="../fr/my-story-saas-to-indie.html" hreflang="fr">Français</a>
+                    <a href="../tr/my-story-saas-to-indie.html" hreflang="tr">Türkçe</a>
+                    <a href="../da/my-story-saas-to-indie.html" hreflang="da">Dansk</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="container">
+        <section class="seo-hero">
+            <h1>我失去了工作，却找回了专注：为什么我开发了喵时计</h1>
+            <p>从消息轰炸到一只猫与一枚番茄钟：把「通知焦虑」写成代码，也写成给自己的出口。</p>
+        </section>
+
+        <section class="content">
+            <h2>「99+」的真相：困在 SaaS 行业的消息旋涡里</h2>
+            <p>在成为独立开发者之前，我曾在互联网 SaaS 行业工作。在外人眼里，这是一个象征「高效」与「先进协作」的领域；可只有亲身经历过才知道，这里其实是一个被数字碎片彻底撕碎的深渊。</p>
+            <p>作为负责多家 KA（关键客户）的负责人，我的飞书（Lark）从来没有安静过。每个客户都对应着好几个复杂的外部沟通群，而仅仅是为了对齐客户的一个小需求，内部就会像杂草疯长一样，冒出十几个「专项同步群」。</p>
+            <ul>
+                <li><strong>信息的搬运工：</strong>我渐渐意识到，自己根本不是在做战略思考，反倒成了一名高级「信息搬运工」。每天的时间，全花在把信息从 A 群同步到 B 群，费力确保所有人都「同频」，可我自己，连完整读完那些信息的时间都没有。</li>
+                <li><strong>被算法「追着跑」：</strong>不光是人在找你，机器人也在时刻盯着你。AI 自动提醒像个无处不在的监工，监控着我的每一个动作：<em>「您好，检测到您尚未填写客户跟进记录」「周报还有 2 小时截止」「线索更新提醒」</em>……</li>
+            </ul>
+            <p>我就像一个高速运转的齿轮，拼尽全力转动，满头大汗，却始终在原地打转。我能清晰地感觉到，自己深度思考的能力正在一点点退化，工作也变成了对红色未读气泡的本能反应。</p>
+
+            <h2>计划外的离开：一次意外的觉醒</h2>
+            <p>后来，我遭遇了一次计划之外的变故——被公司裁员了。</p>
+            <p>当公司账号被注销、那些不停跳动的群组瞬间消失时，除了对未来的迷茫，我心底最真实的感受竟然是——如释重负。</p>
+            <p>那种被「即时消息」裹挟的窒息感，终于彻底消散了。在那段空白的日子里，我开始不断反思：为什么我们手握世界上最顶尖的协作工具，却连专注 25 分钟都成了一种奢望？为什么我们越「协作」，真正的产出反而越少？</p>
+
+            <h2>构建喵时计：为深度工作而生的番茄钟避风港</h2>
+            <p>我决定，把自己对「专注焦虑」的切身体会，融入到我第一个独立开发的产品中。</p>
+            <p><strong>喵时计</strong>（Purrrrrfocus）的诞生，从来不止是为了做一款 App，更是我的一种自我救赎。我曾在消息的洪流中濒临窒息，所以我写下的每一行代码，都是在为那些和我有同样困境的人，搭建一个可以安心专注的「避风港」。</p>
+            <ul>
+                <li><strong>不只是计时器，更是一种专注仪式：</strong>市面上从不缺番茄钟工具，但缺少的是那种「彻底屏蔽外界」的安全感。当你打开喵时计，那只猫咪的出现，就像是在郑重宣告：<em>「接下来的 25 分钟，我不属于消息列表，不属于客户，也不属于老板——我只属于我自己。」</em></li>
+                <li><strong>是治愈，而非施压：</strong>在职场中，我们每天面对的都是冰冷的进度条和催命似的机器人提醒。所以我给这款应用取名 <strong>喵时计</strong>，希望用猫咪的治愈感，化解专注时的紧绷与压力。它不是在监视你是否在工作，而是在安静地陪着你，一起沉淀、一起专注。</li>
+            </ul>
+
+            <h2>结语：夺回你的注意力主权</h2>
+            <p>离开 SaaS 行业，从来不是我的主动选择，但这次意外，却成了我人生中最珍贵的契机。它让我看清一个残酷的真相：<strong>在这个信息爆炸的时代，注意力是你唯一真正拥有的资产——而所有人，都在想方设法从你手中夺走它。</strong></p>
+            <p>我开发这款 App，不是为了把你变成一台更高效的工作机器。我想做的，是帮你从那些无意义的琐事中，夺回哪怕一点点属于自己的主权。哪怕每天只有两个高质量的「猫咪番茄时间」，那也是你重新掌控自己人生的开始。</p>
+
+            <div class="cta-box">
+                <h3>试试喵时计</h3>
+                <p>如果这篇文字说中了你的感受，不妨先开始一段短短的专注计时，看看这种仪式是否适合你。</p>
+                <a href="../../index.html" class="cta-button">打开应用介绍页</a>
+            </div>
+
+            <div class="related-guides">
+                <h4>更多深度阅读</h4>
+                <ul>
+                    <li><a href="best-pomodoro-timer.html">2026 年最佳番茄钟推荐：开启深度工作模式</a></li>
+                    <li><a href="focus-for-adhd.html">ADHD 专属专注指南：零压力的生产力工具</a></li>
+                    <li><a href="study-focus-guide.html">沉浸式学习：学生党如何长时间保持专注</a></li>
+                    <li><a href="how-to-build-focus-habit.html">如何建立持久的专注习惯（且不反弹）</a></li>
+                </ul>
+            </div>
+        </section>
+    </article>
+
+    <footer style="text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 0.9em; background: rgba(222, 186, 134, 0.1);">
+        <div class="container">
+            <p>© 2026 喵时计 PurrrrrFocus</p>
+            <p style="margin-top: 10px;"><a href="../../index.html" style="color: var(--accent);">返回首页</a></p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "我失去了工作，却找回了专注：为什么我开发了喵时计",
+        "description": "从 SaaS 消息旋涡到专注避风港：喵时计（Purrrrrfocus）的创始故事。",
+        "inLanguage": "zh-CN",
+        "datePublished": "2026-04-11",
+        "dateModified": "2026-04-11",
+        "author": {
+            "@type": "Person",
+            "name": "Louis"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PurrrrrFocus",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp"
+            }
+        },
+        "image": [
+            "https://louisbuilds.me/purrrrrfocus/og-image.png"
+        ],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://louisbuilds.me/purrrrrfocus/blog/zh/my-story-saas-to-indie.html"
+        }
+    }
+    </script>
+
+    <script>
+        (function () {
+            var dropdown = document.querySelector('.lang-dropdown');
+            var trigger = document.querySelector('.lang-dropdown-trigger');
+            if (!dropdown || !trigger) return;
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = dropdown.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function () {
+                dropdown.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+            });
+        })();
+    </script>
+</body>
+</html>
