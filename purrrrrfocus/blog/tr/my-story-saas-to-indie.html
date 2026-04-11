@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşimi Kaybettim, Odaklanmayı Geri Kazandım: Purrrrrfocus&apos;un Hikâyesi</title>
+    <meta name="description" content="Purrrrrfocus&apos;un hikâyesi: SaaS bildirim karmaşasından Pomodoro tekniği ve derin çalışmaya — zaman yönetimi ve odak için sakin bir uygulama.">
+    <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/blog/tr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/blog/zh/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/blog/en/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/purrrrrfocus/blog/fr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="tr" href="https://louisbuilds.me/purrrrrfocus/blog/tr/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="da" href="https://louisbuilds.me/purrrrrfocus/blog/da/my-story-saas-to-indie.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/purrrrrfocus/blog/en/my-story-saas-to-indie.html">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F9F3E6">
+
+    <meta property="og:title" content="İşimi Kaybettim, Odaklanmayı Geri Kazandım: Purrrrrfocus&apos;un Hikâyesi">
+    <meta property="og:description" content="Kurucu hikâyesi: Pomodoro, derin çalışma ve zaman yönetimi — SaaS dünyasından sakin bir odak uygulamasına.">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <style>
+        :root {
+            --bg-primary: #F9F3E6;
+            --text-primary: #3B241D;
+            --text-secondary: #5C3A21;
+            --accent: #7A1E1E;
+            --border: #DEBA86;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+        .blog-header { background: var(--bg-primary); border-bottom: 1px solid var(--border); padding: 16px 20px; position: sticky; top: 0; z-index: 100; }
+        .blog-header .container { padding: 0; display: flex; align-items: center; }
+        .blog-header a { color: var(--accent); text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+        .lang-dropdown { position: relative; margin-left: auto; }
+        .lang-dropdown-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+        .lang-dropdown-trigger:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .lang-dropdown-trigger:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .lang-chevron { font-size: 0.65em; opacity: 0.9; transition: transform 0.2s ease; }
+        .lang-dropdown.open .lang-chevron { transform: rotate(180deg); }
+        .lang-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 6px;
+            min-width: 160px;
+            padding: 6px 0;
+            background: rgba(249, 243, 230, 0.98);
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(59, 36, 29, 0.15);
+            border: 1px solid var(--border);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            z-index: 20;
+        }
+        .lang-dropdown.open .lang-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .lang-dropdown-menu a {
+            display: block;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
+        .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
+        .lang-note { padding: 8px 16px 10px; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid rgba(222, 186, 134, 0.35); }
+
+        .seo-hero { text-align: left; padding: 60px 20px 40px; }
+        .seo-hero h1 { font-size: clamp(1.35rem, 4vw, 2.1rem); margin-bottom: 16px; color: var(--text-primary); line-height: 1.25; }
+        .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
+
+        .content h2 { margin-top: 48px; font-size: 1.7rem; color: var(--accent); line-height: 1.3; }
+        .content h3 { margin-top: 32px; font-size: 1.3rem; color: var(--text-primary); }
+        .content p, .content li { margin-top: 14px; color: var(--text-secondary); }
+        .content ul { margin: 16px 0 0 1.5em; }
+        .content strong { color: var(--text-primary); }
+        .content em { font-style: italic; }
+
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(59, 36, 29, 0.05); text-align: center; }
+        .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+
+        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px solid var(--border); }
+        .related-guides h4 { margin-bottom: 16px; }
+        .related-guides ul { list-style: none; padding: 0; margin: 0; }
+        .related-guides li { margin-bottom: 12px; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
+            .lang-dropdown { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <a href="../../index-tr.html">← PurrrrrFocus resmi ana sayfasına dön</a>
+            <div class="lang-dropdown">
+                <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Türkçe <span class="lang-chevron">▼</span></button>
+                <div class="lang-dropdown-menu" role="menu" aria-label="Dil seçenekleri">
+                    <a href="../en/my-story-saas-to-indie.html" hreflang="en">English</a>
+                    <a href="../zh/my-story-saas-to-indie.html" hreflang="zh-CN">中文</a>
+                    <a href="../fr/my-story-saas-to-indie.html" hreflang="fr">Français</a>
+                    <a href="my-story-saas-to-indie.html" hreflang="tr" class="active">Türkçe</a>
+                    <a href="../da/my-story-saas-to-indie.html" hreflang="da">Dansk</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="container">
+        <section class="seo-hero">
+            <h1>İşimi Kaybettim, Odaklanmayı Geri Kazandım: Purrrrrfocus&apos;un Hikâyesi</h1>
+            <p>SaaS karmaşasından sessiz bir zamanlayıcıya: Bildirim fırtınasını küçük bir uygulama ve daha sakin bir zihinle değiştirdim.</p>
+        </section>
+
+        <section class="content">
+            <h2>&quot;99+&quot; Gerçeği: SaaS Dünyasının Mesaj Gürültüsü</h2>
+            <p>Bağımsız bir geliştirici olmadan önce, SaaS (yazılım hizmeti) sektöründe çalışıyordum. Dışarıdan bakıldığında bu dünya; &quot;verimlilik&quot; ve &quot;ileri teknoloji iş birliği&quot; ile tanımlanan bir yerdi. Ancak gerçekte, dijital bir parçalanmışlığın içindeydim.</p>
+            <p>Birçok önemli müşteriden (KA) sorumlu bir yönetici olarak, iletişim araçlarım —özellikle Lark/Feishu— dikkatimi çekmek için asla susmuyordu. Her bir müşteri, onlarca kişiden oluşan dış gruplar demekti ve her küçük müşteri talebi için içeride mantar gibi türeyen &quot;hizalama grupları&quot; kuruluyordu.</p>
+            <ul>
+                <li><strong>Bilgi Kuryeliği:</strong> Bir stratejist değil, aslında bir &quot;lüks kurye&quot; olduğumu fark ettim. Günlerimi, herkesin &quot;aynı sayfada&quot; olduğundan emin olmak için bilgiyi A grubundan B grubuna taşımakla geçiriyordum; ancak benim o sayfayı okuyacak vaktim bile kalmıyordu.</li>
+                <li><strong>Algoritmaların Avı:</strong> Sadece insanlar değil, botlar da peşimdeydi. Yapay zeka destekli hatırlatıcılar her hareketimi acımasızca takip ediyordu: <em>&quot;CRM&apos;i güncellediniz mi?&quot;, &quot;Haftalık raporun süresi 2 saat içinde doluyor&quot;, &quot;Eksik takip kaydı tespit edildi.&quot;</em></li>
+            </ul>
+            <p>Devasa bir makinede çok hızlı dönen ama hiçbir yere gitmeyen bir dişli gibiydim. Derinlemesine düşünme yeteneğim eriyordu. İş, kırmızı bildirim noktalarına verilen ani tepkiler silsilesine dönüşmüştü.</p>
+
+            <h2>Planlanmamış Ayrılık: Bir Aydınlanma Anı</h2>
+            <p>Sonra, planlanmamış bir ayrılık yaşadım; işten çıkarıldım.</p>
+            <p>Kurumsal hesaplarım devre dışı bırakıldığında ve o sürekli titreyen mesaj grupları bir anda yok olduğunda, hiç beklemediğim bir şey hissettim. İşsiz kalmanın getirdiği belirsizliğin yanı sıra, derin bir <strong>rahatlama</strong> duygusu içimi kapladı.</p>
+            <p>Nihayet, &quot;anlık iş birliğinin&quot; boğucu gürültüsü kesilmişti. Bu sessizlikte bir gerçeği fark ettim: Dünyanın en iyi verimlilik araçlarıyla donatılmış bir ortamda, neden her zamankinden daha verimsizdim? Neden sadece 25 dakika odaklanmak bile satın alamayacağım bir lüks haline gelmişti?</p>
+
+            <h2>Purrrrrfocus&apos;u İnşa Etmek: Derin Çalışma İçin Bir Sığınak</h2>
+            <p>Bu tükenmişliği ilk bağımsız projemde bir enerjiye dönüştürmeye karar verdim.</p>
+            <p><strong>Purrrrrfocus</strong>&apos;un doğuşu sadece bir uygulama daha yapmakla ilgili değildi; bu bir öz-iyileşme süreciydi. Bildirim denizinde boğuluyordum; bu yüzden sadece kendim için değil, hala o fırtınanın içinde mahsur kalan herkes için bir can simidi inşa etmek istedim.</p>
+            <ul>
+                <li><strong>Bir Zamanlayıcıdan Fazlası, Bir Ritüel:</strong> Piyasada Pomodoro zamanlayıcı sıkıntısı yok. Eksik olan şey bir &quot;sığınak&quot;. Purrrrrfocus&apos;ta bir oturum başlattığınızda, beliren kedi dünyaya bir mesaj verir: <em>&quot;Önümüzdeki 25 dakika boyunca ne gelen kutuma, ne müşterilerime ne de yöneticime aitim. Ben sadece işime aitim.&quot;</em></li>
+                <li><strong>Baskı Değil, Şifa:</strong> Kurumsal dünyada, soğuk ilerleme çubukları ve talepkar botlar tarafından kovalanıyoruz. Uygulamanın adını <strong>Purrrrrfocus</strong> koydum çünkü bu baskının yerine bir kedinin yatıştırıcı varlığını koymak istedim. Bu, zihinsel alanınızı geri kazanmanın nazik bir yoludur.</li>
+            </ul>
+
+            <h2>Sonuç: Zaman Yönetimi ve Odaklanma Kontrolünü Geri Almak</h2>
+            <p>SaaS dünyasından ayrılmak benim seçimim değildi ama bu, hayatımın en büyük fırsatına dönüştü. Bana şu zor gerçeği öğretti: <strong>Modern çağda, dikkatiniz sahip olduğunuz en değerli varlıktır ve herkes onu sizden çalmaya çalışır.</strong></p>
+            <p>Bu uygulamayı sizi daha verimli bir makine yapmak için geliştirmedim. Sizi önemsiz şeylerin esaretinden kurtarıp kendi egemenliğinizi ilan etmenize yardımcı olmak için yaptım. Günde sadece iki kaliteli &quot;kedi oturumu&quot; bile yapsanız, bunlar sonunda direksiyona tekrar sizin geçtiğiniz anlardır.</p>
+
+            <div class="cta-box">
+                <h3>Purrrrrfocus&apos;u Deneyin</h3>
+                <p>Bu hikâye size dokunuyorsa kısa bir odaklanma oturumu başlatın; daha sakin bir ritüelin size uyup uymadığını görün.</p>
+                <a href="../../index-tr.html" class="cta-button">Uygulama sayfasını aç</a>
+            </div>
+
+            <div class="related-guides">
+                <h4>Okumaya devam edin</h4>
+                <ul>
+                    <li><a href="best-pomodoro-timer.html">Derin Çalışma İçin En İyi Pomodoro Zamanlayıcıları (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">ADHD İçin En İyi Odaklanma Uygulamaları: Stressiz Araçlar</a></li>
+                    <li><a href="study-focus-guide.html">Ders Çalışırken Nasıl Odaklanılır: Öğrenci Rehberi</a></li>
+                    <li><a href="how-to-build-focus-habit.html">Kalıcı Bir Odaklanma Alışkanlığı Nasıl Oluşturulur?</a></li>
+                </ul>
+            </div>
+        </section>
+    </article>
+
+    <footer style="text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 0.9em; background: rgba(222, 186, 134, 0.1);">
+        <div class="container">
+            <p>© 2026 PurrrrrFocus</p>
+            <p style="margin-top: 10px;"><a href="../../index-tr.html" style="color: var(--accent);">Ana sayfaya dön</a></p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "İşimi Kaybettim, Odaklanmayı Geri Kazandım: Purrrrrfocus'un Hikâyesi",
+        "description": "Purrrrrfocus'un hikâyesi: Pomodoro tekniği, derin çalışma ve zaman yönetimi için bir odak uygulaması.",
+        "inLanguage": "tr",
+        "datePublished": "2026-04-11",
+        "dateModified": "2026-04-11",
+        "author": {
+            "@type": "Person",
+            "name": "Louis"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PurrrrrFocus",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://louisbuilds.me/purrrrrfocus/AppIcon-Preview.webp"
+            }
+        },
+        "image": [
+            "https://louisbuilds.me/purrrrrfocus/og-image.png"
+        ],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://louisbuilds.me/purrrrrfocus/blog/tr/my-story-saas-to-indie.html"
+        }
+    }
+    </script>
+
+    <script>
+        (function () {
+            var dropdown = document.querySelector('.lang-dropdown');
+            var trigger = document.querySelector('.lang-dropdown-trigger');
+            if (!dropdown || !trigger) return;
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = dropdown.classList.toggle('open');
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            document.addEventListener('click', function () {
+                dropdown.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+            });
+        })();
+    </script>
+</body>
+</html>
