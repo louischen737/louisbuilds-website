@@ -460,6 +460,53 @@
             transition: background 0.25s ease, backdrop-filter 0.25s ease;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-item {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            color: #FFFFFF;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-item:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .header-nav {
+                display: none;
+            }
+
+            .header-actions {
+                gap: 12px;
+            }
+        }
+
+        #guides {
+            scroll-margin-top: 80px;
+        }
+
         .site-header.scrolled {
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
@@ -508,8 +555,9 @@
         .lang-dropdown-trigger {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 12px;
             font-size: 0.95em;
             color: rgba(255, 255, 255, 0.95);
             background: transparent;
@@ -541,6 +589,45 @@
         /* 确保active状态也不显示outline */
         .lang-dropdown-trigger:active {
             outline: none;
+        }
+
+        .lang-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: inherit;
+        }
+
+        .lang-icon svg {
+            display: block;
+        }
+
+        .lang-code {
+            font-weight: 600;
+            font-size: 0.8125rem;
+            letter-spacing: 0.05em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .lang-dropdown-trigger {
+                border: none;
+                background: transparent;
+                padding: 10px;
+                gap: 0;
+            }
+
+            .lang-dropdown-trigger:hover {
+                border-color: transparent;
+                background: rgba(255, 255, 255, 0.08);
+            }
+
+            .lang-code,
+            .lang-dropdown-trigger .lang-chevron {
+                display: none;
+            }
         }
 
         .lang-chevron {
@@ -599,6 +686,89 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
+        .mobile-nav {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .mobile-nav {
+                display: block;
+                position: relative;
+                flex-shrink: 0;
+            }
+
+            .mobile-nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                margin: 0;
+                border: none;
+                background: transparent;
+                color: rgba(255, 255, 255, 0.95);
+                cursor: pointer;
+                border-radius: 8px;
+                transition: background 0.2s ease;
+            }
+
+            .mobile-nav-toggle:hover {
+                background: rgba(255, 255, 255, 0.08);
+            }
+
+            .mobile-nav-toggle:focus-visible {
+                outline: 2px solid var(--accent);
+                outline-offset: 2px;
+            }
+
+            .mobile-nav-toggle:focus:not(:focus-visible) {
+                outline: none;
+            }
+
+            .mobile-nav-icon svg {
+                display: block;
+            }
+
+            .mobile-nav-menu {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                margin-top: 6px;
+                min-width: 220px;
+                padding: 6px 0;
+                background: rgba(0, 0, 0, 0.88);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-radius: 10px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-6px);
+                transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+                z-index: 20;
+            }
+
+            .mobile-nav.open .mobile-nav-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .mobile-nav-menu a {
+                display: block;
+                padding: 10px 16px;
+                font-size: 0.95em;
+                color: rgba(255, 255, 255, 0.9);
+                text-decoration: none;
+                transition: background 0.15s ease, color 0.15s ease;
+            }
+
+            .mobile-nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.12);
+                color: #FFFFFF;
+            }
+        }
+
     </style>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -611,17 +781,37 @@
             </div>
             <span class="header-brand-name">PurrrrrFocus</span>
         </a>
-        <div class="lang-dropdown">
-            <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Sélectionner la langue">
-                <span class="lang-current">Français</span>
-                <span class="lang-chevron" aria-hidden="true">▼</span>
-            </button>
-            <div class="lang-dropdown-menu" role="menu" aria-label="Options de sélection de langue">
-                <a href="index.html" hreflang="zh-CN" role="menuitem">中文</a>
-                <a href="index-en.html" hreflang="en" role="menuitem">English</a>
-                <a href="index-da.html" hreflang="da" role="menuitem">Dansk</a>
-                <a href="index-tr.html" hreflang="tr" role="menuitem">Türkçe</a>
-                <a href="index-fr.html" hreflang="fr" class="active" role="menuitem">Français</a>
+        <div class="header-actions">
+            <nav class="header-nav" aria-label="Navigation principale">
+                <a href="wallpapers-fr.html" class="nav-item">Fonds d&apos;écran</a>
+                <a href="#guides" class="nav-item">Blog</a>
+            </nav>
+            <div class="lang-dropdown">
+                <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Sélectionner la langue">
+                    <span class="lang-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                    <span class="lang-code">FR</span>
+                    <span class="lang-chevron" aria-hidden="true">▼</span>
+                </button>
+                <div class="lang-dropdown-menu" role="menu" aria-label="Options de sélection de langue">
+                    <a href="index.html" hreflang="zh-CN" role="menuitem">中文</a>
+                    <a href="index-en.html" hreflang="en" role="menuitem">English</a>
+                    <a href="index-da.html" hreflang="da" role="menuitem">Dansk</a>
+                    <a href="index-tr.html" hreflang="tr" role="menuitem">Türkçe</a>
+                    <a href="index-fr.html" hreflang="fr" class="active" role="menuitem">Français</a>
+                </div>
+            </div>
+            <div class="mobile-nav">
+                <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="mobile-nav-menu" aria-label="Ouvrir le menu">
+                    <span class="mobile-nav-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+                </button>
+                <div id="mobile-nav-menu" class="mobile-nav-menu" role="menu" aria-label="Liens de la page">
+                    <a href="wallpapers-fr.html" role="menuitem">Fonds d&apos;écran</a>
+                    <a href="#guides" role="menuitem">Blog</a>
+                    <a href="privacy-policy-fr.html" role="menuitem">Politique de confidentialité</a>
+                    <a href="terms-of-service-fr.html" role="menuitem">Conditions d&apos;utilisation</a>
+                    <a href="support-fr.html" role="menuitem">Page de support</a>
+                    <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008?pt=128214084&amp;ct=web_purrrrrfocus_fr_footer" target="_blank" rel="noopener noreferrer" role="menuitem" onclick="gtag('event', 'download_click', {'app': 'purrrrrfocus', 'lang': 'fr', 'position': 'mobile_nav'});">Télécharger l&apos;app</a>
+                </div>
             </div>
         </div>
     </header>
@@ -849,9 +1039,9 @@ role="region"
         </div>
     </section>
 
-    <section class="learn-more">
+    <section class="learn-more" id="guides" aria-labelledby="guides-heading">
         <div class="container">
-            <h3 class="learn-more-title">Guides concentration et productivité</h3>
+            <h3 class="learn-more-title" id="guides-heading">Guides concentration et productivité</h3>
             <div class="learn-more-list">
                 <a href="blog/fr/best-pomodoro-timer.html" class="learn-item">
                     <span class="learn-text">Meilleurs minuteurs Pomodoro pour le travail en profondeur (2026)</span>
@@ -930,12 +1120,53 @@ role="region"
                 e.stopPropagation();
                 var open = dropdown.classList.toggle('open');
                 trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) {
+                    var mobileNav = document.querySelector('.mobile-nav');
+                    var mobileToggle = document.querySelector('.mobile-nav-toggle');
+                    if (mobileNav) mobileNav.classList.remove('open');
+                    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+                }
             });
             document.addEventListener('click', function () {
                 dropdown.classList.remove('open');
                 trigger.setAttribute('aria-expanded', 'false');
                 trigger.blur();
             });
+        })();
+        (function () {
+            var mobileNav = document.querySelector('.mobile-nav');
+            var mTrigger = document.querySelector('.mobile-nav-toggle');
+            if (!mobileNav || !mTrigger) return;
+            var mMenu = document.getElementById('mobile-nav-menu');
+            mTrigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = mobileNav.classList.toggle('open');
+                mTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) {
+                    var dropdown = document.querySelector('.lang-dropdown');
+                    var langTrigger = document.querySelector('.lang-dropdown-trigger');
+                    if (dropdown) dropdown.classList.remove('open');
+                    if (langTrigger) langTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+            document.addEventListener('click', function () {
+                mobileNav.classList.remove('open');
+                mTrigger.setAttribute('aria-expanded', 'false');
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+                    mobileNav.classList.remove('open');
+                    mTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+            if (mMenu) {
+                mMenu.querySelectorAll('a').forEach(function (a) {
+                    a.addEventListener('click', function () {
+                        mobileNav.classList.remove('open');
+                        mTrigger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
         })();
         (function () {
             if (!window.IntersectionObserver) return;
