@@ -18,6 +18,9 @@
     <meta property="og:title" content="我失去了工作，却找回了专注：为什么我开发了喵时计">
     <meta property="og:description" content="喵时计(Purrrrrfocus)创始故事：从 SaaS 消息轰炸到独立开发，我如何通过番茄钟与猫咪陪伴夺回专注力，摆脱裁员后的焦虑与通知压力。">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/blog/digitaldetox.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/blog/digitaldetox.jpg">
 
     <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
@@ -95,7 +98,37 @@
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
 
         .seo-hero { text-align: left; padding: 60px 0 40px; }
-        .seo-hero h1 { font-size: clamp(1.35rem, 4vw, 2rem); margin-bottom: 16px; color: var(--text-primary); line-height: 1.35; }
+        .seo-hero-image {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 14px;
+            margin: 0 0 24px;
+            box-shadow: 0 10px 32px rgba(59, 36, 29, 0.1);
+        }
+        .seo-hero h1 { font-size: clamp(1.35rem, 4vw, 2rem); margin-bottom: 0; color: var(--text-primary); line-height: 1.35; }
+        .post-meta {
+            margin-top: 12px;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            opacity: 0.85;
+            line-height: 1.45;
+        }
+        .meta-divider { color: var(--border); user-select: none; }
+        .meta-tags { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+        .tag {
+            background: rgba(222, 186, 134, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
 
         .content h2 { margin-top: 48px; font-size: 1.55rem; color: var(--accent); line-height: 1.35; }
@@ -105,8 +138,9 @@
         .content strong { color: var(--text-primary); }
         .content em { font-style: italic; }
 
-        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(59, 36, 29, 0.05); text-align: center; }
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+        .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
         .related-guides { margin-top: 60px; padding: 30px; border-top: 2px dashed var(--border); }
         .related-guides h4 { margin-bottom: 16px; }
@@ -139,7 +173,18 @@
 
     <article class="container">
         <section class="seo-hero">
+            <img src="../digitaldetox.jpg" alt="配图：数字减负、从消息轰炸回到专注与平静。" class="seo-hero-image" width="1200" height="835" decoding="async" fetchpriority="high">
             <h1>我失去了工作，却找回了专注：为什么我开发了喵时计</h1>
+            <div class="post-meta">
+                <span class="meta-item">作者 <strong>Louis</strong></span>
+                <span class="meta-divider" aria-hidden="true">•</span>
+                <time class="meta-item" datetime="2026-04-11">2026年4月11日</time>
+                <span class="meta-divider" aria-hidden="true">•</span>
+                <span class="meta-tags">
+                    <span class="tag">#创业故事</span>
+                    <span class="tag">#深度工作</span>
+                </span>
+            </div>
             <p>从消息轰炸到一只猫与一枚番茄钟：把「通知焦虑」写成代码，也写成给自己的出口。</p>
         </section>
 
@@ -201,6 +246,7 @@
         "@type": "BlogPosting",
         "headline": "我失去了工作，却找回了专注：为什么我开发了喵时计",
         "description": "从 SaaS 消息旋涡到专注避风港：喵时计（Purrrrrfocus）的创始故事。",
+        "keywords": "创业故事, 深度工作, 喵时计, Purrrrrfocus, 番茄钟",
         "inLanguage": "zh-CN",
         "datePublished": "2026-04-11",
         "dateModified": "2026-04-11",
@@ -217,6 +263,7 @@
             }
         },
         "image": [
+            "https://louisbuilds.me/purrrrrfocus/blog/digitaldetox.jpg",
             "https://louisbuilds.me/purrrrrfocus/og-image.png"
         ],
         "mainEntityOfPage": {
