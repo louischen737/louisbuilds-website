@@ -93,9 +93,9 @@
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
         
-        .seo-hero { text-align: center; padding: 60px 20px 40px; }
+        .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
-        .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
         
         .content h2 { margin-top: 48px; font-size: 1.7rem; color: var(--accent); }
         .content h3 { margin-top: 32px; font-size: 1.3rem; color: var(--text-primary); }
@@ -117,19 +117,14 @@
         .img-row .img-container img { max-width: 100%; margin: 0 auto; }
         @media (max-width: 768px) {
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
-            .lang-dropdown { margin-left: 0; }
+            .lang-dropdown { margin-left: 0; align-self: flex-end; }
             .img-row { flex-direction: column; align-items: center; gap: 24px; }
             .img-row .img-container { max-width: min(320px, 100%); }
+            .seo-hero h1 { font-size: 2rem; }
         }
 
         .related-guides { margin-top: 60px; padding: 30px; border-top: 2px solid var(--border); }
         .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
-
-        @media (max-width: 768px) {
-            .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
-            .lang-dropdown { margin-left: 0; }
-            .seo-hero h1 { font-size: 2rem; }
-        }
     </style>
 </head>
 <body>
@@ -197,6 +192,7 @@
                     <li><a href="best-pomodoro-timer.html">→ Best Pomodoro Timers for Deep Work (2026)</a></li>
                     <li><a href="focus-for-adhd.html">→ Best Focus Apps for ADHD: Stress-Free Tools</a></li>
                     <li><a href="study-focus-guide.html">→ How to Stay Focused While Studying: Student Guide</a></li>
+                    <li><a href="my-story-saas-to-indie.html">→ The Purrrrrfocus Founder Story</a></li>
                 </ul>
             </div>
         </section>
