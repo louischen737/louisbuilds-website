@@ -159,7 +159,9 @@
     --text-primary: #fff;
     --text-secondary: #a1a1a6;
     --text-muted: #6e6e73;
-    --accent: #007aff;
+    /* Lighter sky accent — reads softer on black than system #007aff */
+    --accent: #82c8ff;
+    --accent-rgb: 130, 200, 255;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -251,16 +253,71 @@ body {
     color: #000;
 }
 
+.hero-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+    margin-top: 2.5rem;
+    animation: fadeUp 1.5s var(--ease);
+}
+
+.hero-nav a {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.25s var(--ease);
+}
+
+.hero-nav a:hover {
+    color: var(--accent);
+}
+
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Shared section chrome (Products, Community, Journal) */
+.site-section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.65rem;
+}
+
+.site-section-title {
+    font-size: clamp(1.65rem, 4vw, 2.15rem);
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin: 0 0 0.65rem;
+}
+
+.site-section-lede {
+    margin: 0;
+    max-width: 40rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.products-section-head {
+    max-width: 720px;
+    margin: 0 auto 5rem;
+    text-align: center;
 }
 
 /* Products */
 .products {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 160px 24px;
+    padding: clamp(120px, 14vw, 168px) 24px clamp(200px, 24vw, 320px);
 }
 
 .product {
@@ -426,7 +483,7 @@ body {
 /* Pre-footer tagline — align column with Journal */
 .site-tagline {
     margin: 0 auto;
-    padding: clamp(40px, 6vw, 56px) 24px 32px;
+    padding: clamp(64px, 12vw, 104px) 24px clamp(40px, 8vw, 56px);
     max-width: 900px;
     text-align: center;
 }
@@ -461,9 +518,180 @@ footer p {
     font-size: 12px;
 }
 
+/* Community — full-width band, separate from product cards */
+.site-section--community {
+    padding: clamp(100px, 15vw, 168px) 24px clamp(100px, 15vw, 168px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.08) 0%, transparent 55%);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.site-section--community.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.site-section--community .site-section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.community-intro {
+    max-width: 44rem;
+    margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.community-intro .site-section-title {
+    margin-bottom: 0.75rem;
+}
+
+.community-lab-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.community-lab-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.community-lab-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.community-intro .site-section-lede + .site-section-lede {
+    margin-top: 1rem;
+}
+
+.community-intro strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+@media (max-width: 900px) {
+    .community-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.community-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding: 1.25rem 1.15rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.community-tile:hover {
+    background: rgba(var(--accent-rgb), 0.1);
+    border-color: rgba(var(--accent-rgb), 0.3);
+    transform: translateY(-4px);
+}
+
+.community-tile:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.community-tile-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.community-tile-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.community-tile-desc {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text-muted);
+}
+
+.community-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.community-actions-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: rgba(var(--accent-rgb), 0.18);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    transition: background 0.25s var(--ease), transform 0.2s var(--ease);
+}
+
+.community-actions-primary:hover {
+    background: rgba(var(--accent-rgb), 0.28);
+    transform: translateY(-1px);
+}
+
+.community-actions-lang {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.community-actions-lang:hover {
+    color: var(--accent);
+    border-bottom-color: rgba(var(--accent-rgb), 0.45);
+}
+
+.community-tagline {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
 /* Journal */
 .journal-section {
-    padding: clamp(56px, 8vw, 88px) 24px clamp(72px, 10vw, 112px);
+    padding: clamp(96px, 14vw, 160px) 24px clamp(112px, 16vw, 200px);
     max-width: 900px;
     margin: 0 auto;
     opacity: 0;
@@ -707,6 +935,16 @@ footer p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .site-section--community {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .community-tile:hover {
+        transform: none;
+    }
+
     .journal-section {
         opacity: 1;
         transform: none;
@@ -773,13 +1011,24 @@ footer p {
 <div class="progress-bar" id="progressBar"></div>
 
 <main>
-<section class="hero">
+<section class="hero" aria-label="Introduction">
     <h1>Louis Builds</h1>
     <p>Independent apps to reduce screen time, improve focus, and rethink how we use our phones.</p>
     <a href="#products" class="explore-btn">Explore Apps</a>
+    <nav class="hero-nav" aria-label="On this page">
+        <a href="#products">Apps</a>
+        <a href="#community">Community</a>
+        <a href="#journal">Journal</a>
+    </nav>
 </section>
 
-<section class="products" id="products">
+<section class="products" id="products" aria-labelledby="products-heading">
+
+<header class="products-section-head">
+    <p class="site-section-eyebrow">Software</p>
+    <h2 id="products-heading" class="site-section-title">Independent apps</h2>
+    <p class="site-section-lede">Screen time, focus, phonetics, and creative utilities—built offline-first where it matters.</p>
+</header>
 
 <!-- Step1st -->
 <div class="product">
@@ -923,9 +1172,60 @@ Documentation available in:
 
 </section>
 
+<section class="site-section--community" id="community" aria-labelledby="community-heading">
+    <div class="site-section-inner">
+        <div class="community-intro">
+            <p class="site-section-eyebrow">Content Lab</p>
+            <h2 id="community-heading" class="site-section-title community-lab-heading">
+                <span class="community-lab-logo" aria-hidden="true">
+                    <img src="borntospeak/assets/logo-64.webp" srcset="borntospeak/assets/logo-64.webp 64w, borntospeak/assets/logo-128.webp 128w" sizes="40px" alt="" width="64" height="64" decoding="async" />
+                </span>
+                <span>Born To Speak English Lab</span>
+            </h2>
+            <p class="site-section-lede">
+                <strong>Where software meets practice.</strong> I built the Born To Speak Lab as a content companion to my apps — a space for role-play scripts, board-game prompts, and real-world practice to help you move from "learning" to "speaking" with confidence.
+            </p>
+            <p class="site-section-lede">
+                Integrated with <strong>Phonetic Formatter</strong> to bridge the gap between accurate IPA symbols and natural spoken English. It's a complete loop: from clear tools to fluent conversations.
+            </p>
+        </div>
+
+        <div class="community-grid" role="navigation" aria-label="English Lab areas">
+            <a class="community-tile" href="borntospeak/work.html">
+                <span class="community-tile-icon" aria-hidden="true">💼</span>
+                <span class="community-tile-title">Workplace Scripts</span>
+                <span class="community-tile-desc">Curated business scripts for meetings, alignment, and professional storytelling.</span>
+            </a>
+            <a class="community-tile" href="borntospeak/board-games.html">
+                <span class="community-tile-icon" aria-hidden="true">🎲</span>
+                <span class="community-tile-title">Games</span>
+                <span class="community-tile-desc">Low-pressure table talk and board-game prompts to spark natural reactions.</span>
+            </a>
+            <a class="community-tile" href="borntospeak/topics.html">
+                <span class="community-tile-icon" aria-hidden="true">💬</span>
+                <span class="community-tile-title">Topics</span>
+                <span class="community-tile-desc">A growing archive of bilingual prompts for deep thinking and cultural exchange.</span>
+            </a>
+            <a class="community-tile" href="borntospeak/tools.html">
+                <span class="community-tile-icon" aria-hidden="true">🔊</span>
+                <span class="community-tile-title">Tools</span>
+                <span class="community-tile-desc">Quick access to IPA transcription, focus timers, and linguistic utilities.</span>
+            </a>
+        </div>
+
+        <div class="community-actions">
+            <a class="community-actions-primary" href="borntospeak/">Enter English Lab</a>
+            <a class="community-actions-lang" href="borntospeak/index-zh.html" hreflang="zh-Hans" lang="zh-Hans">查看中文版资源 →</a>
+        </div>
+
+        <p class="community-tagline">A content initiative by Louis Builds · Bridging tools and fluency · Since 2024</p>
+    </div>
+</section>
+
 <section class="journal-section" id="journal" aria-labelledby="journal-heading">
 
     <div class="section-header">
+        <p class="site-section-eyebrow" style="margin-bottom: 0.5rem;">Writing</p>
         <h2 id="journal-heading">Journal</h2>
         <p class="subtitle">Notes on craft, focus, and building independent apps.</p>
     </div>
@@ -1030,7 +1330,7 @@ entry.target.classList.add('visible');
 });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.product, .journal-section').forEach(el => observer.observe(el));
+document.querySelectorAll('.product, .site-section--community, .journal-section').forEach(el => observer.observe(el));
 
 window.addEventListener('scroll', () => {
 const scrollTop = window.scrollY;
