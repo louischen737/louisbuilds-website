@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" sizes="32x32" href="./assets/favicon-32x32.webp" />
+  <link rel="icon" type="image/webp" sizes="16x16" href="./assets/favicon-16x16.webp" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.webp" />
+  <title>Born To Speak · 自信开口说英语</title>
+  <meta name="description" content="Born To Speak 英语实验室：桌游、职场剧本、话题与音标工具，按自己的节奏自学口语。" />
+  <link rel="canonical" href="https://louisbuilds.me/borntospeak/index-zh.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Born To Speak · 自信开口说英语" />
+  <meta property="og:description" content="Born To Speak 英语实验室：桌游、职场剧本、话题与音标工具，按自己的节奏自学口语。" />
+  <meta property="og:url" content="https://louisbuilds.me/borntospeak/index-zh.html" />
+  <meta property="og:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Born To Speak · 自信开口说英语" />
+  <meta name="twitter:description" content="Born To Speak 英语实验室：桌游、职场剧本、话题与音标工具，按自己的节奏自学口语。" />
+  <meta name="twitter:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <link rel="alternate" hreflang="en" href="./index.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="./index-zh.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            duo: {
+              green: '#58CC02',
+              'green-dark': '#46A302',
+              blue: '#1CB0F6',
+              'blue-dark': '#1899D6',
+              gold: '#FFC800',
+              bg: '#F7F7F7',
+              soft: '#E5F9E0',
+            },
+          },
+          fontFamily: { sans: ['"Noto Sans SC"', 'Nunito', 'system-ui', 'sans-serif'] },
+          boxShadow: {
+            duo: '0 4px 0 0 #46A302',
+            'duo-sm': '0 2px 0 0 #46A302',
+            card: '0 2px 12px rgba(0,0,0,.08)',
+          },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: "Noto Sans SC", Nunito, system-ui, sans-serif; }
+    .pattern-dots {
+      background-color: #E5F9E0;
+      background-image: radial-gradient(#58CC02 0.45px, transparent 0.45px);
+      background-size: 14px 14px;
+    }
+    .btn-duo-primary {
+      box-shadow: 0 4px 0 #46A302;
+      transition: transform .06s ease, box-shadow .06s ease;
+    }
+    .btn-duo-primary:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #46A302;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-duo-bg text-slate-800 antialiased">
+
+  <div class="pointer-events-none fixed inset-0 -z-10 pattern-dots opacity-60"></div>
+  <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-duo-soft/40 via-transparent to-amber-50/30"></div>
+
+  <header class="sticky top-0 z-50 w-full border-b-2 border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <div class="flex w-full items-center justify-between gap-2 py-2.5 pl-3 pr-3 md:pl-5 md:pr-6">
+      <a href="./index-zh.html" class="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
+        <picture class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_14px_rgba(15,23,42,0.10)] sm:h-11 sm:w-11" aria-hidden="true">
+          <source type="image/webp" srcset="./assets/logo-64.webp 64w, ./assets/logo-128.webp 128w" sizes="(min-width: 640px) 44px, 40px" />
+          <img src="./assets/logo-64.webp" alt="" width="64" height="64" class="h-full w-full object-cover" decoding="async" />
+        </picture>
+        <div class="min-w-0 leading-tight">
+          <p class="text-base font-black text-slate-900 sm:text-lg">Born To Speak</p>
+          <p class="text-[10px] font-extrabold uppercase tracking-widest text-duo-green sm:text-[11px]">英语实验室</p>
+        </div>
+      </a>
+      <div class="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-3">
+        <nav class="hidden max-w-none flex-wrap items-center justify-end gap-1 md:flex md:gap-1.5 lg:gap-2" aria-label="站内导航">
+          <span class="rounded-lg border border-duo-green/40 bg-duo-soft px-2.5 py-1.5 text-[13px] font-bold text-duo-green-dark sm:px-3">首页</span>
+          <a href="./board-games-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">桌游</a>
+          <a href="./topics.html?lang=zh" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">话题</a>
+          <a href="./work-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">职场</a>
+          <a href="./tools-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">工具</a>
+        </nav>
+        <div class="flex shrink-0 items-center rounded-lg border border-slate-200 bg-slate-50/90 p-0.5 text-[12px] font-extrabold shadow-sm" role="navigation" aria-label="语言">
+          <a href="./index.html" class="rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900" hreflang="en" lang="en">EN</a>
+          <span class="rounded-md bg-white px-2.5 py-1 text-slate-900 shadow-sm" aria-current="true">中文</span>
+        </div>
+        <button
+          type="button"
+          id="index-menu-btn"
+          class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 md:hidden"
+          aria-expanded="false"
+          aria-controls="index-mobile-drawer"
+          aria-label="打开菜单"
+        >
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="index-mobile-drawer" class="hidden border-t border-slate-100 bg-white px-4 py-3 shadow-inner md:hidden">
+      <nav class="flex flex-col gap-2" aria-label="移动菜单">
+        <span class="rounded-xl border border-duo-green/40 bg-duo-soft px-4 py-3 text-sm font-bold text-duo-green-dark">首页</span>
+        <a href="./board-games-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">桌游</a>
+        <a href="./topics.html?lang=zh" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">话题</a>
+        <a href="./work-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">职场</a>
+        <a href="./tools-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">工具</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 pb-20 md:px-6">
+
+    <section class="pt-10 md:pt-14">
+      <div class="relative overflow-hidden rounded-[2rem] border-2 border-duo-green/35 bg-gradient-to-br from-duo-soft via-white to-sky-50 p-8 shadow-card md:p-12">
+        <div class="pointer-events-none absolute -right-10 top-0 h-40 w-40 rounded-full bg-duo-green/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -left-6 bottom-0 h-32 w-32 rounded-full bg-duo-blue/15 blur-2xl"></div>
+        <div class="relative max-w-2xl">
+          <p class="inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-duo-green shadow-sm ring-2 ring-duo-green/25">自主学习 · 公开资源</p>
+          <h1 class="mt-4 text-4xl font-black leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-6xl">
+            免费、好玩，帮你<br />
+            <span class="text-duo-green">自信开口</span>说英语
+          </h1>
+          <p class="mt-6 text-lg font-semibold leading-relaxed text-slate-600 md:text-xl">
+            桌游、职场剧本、话题存档，以及国际音标（IPA）应用——从符号到社交表达的一条练习链。
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href="./board-games-zh.html" class="btn-duo-primary inline-flex items-center justify-center rounded-2xl bg-duo-green px-8 py-4 text-base font-black text-white">
+              从桌游开始
+            </a>
+          </div>
+          <p class="mt-6 text-sm font-semibold text-slate-500">
+            发音工具（iOS）：
+            <a href="./tools-zh.html" class="font-extrabold text-duo-blue-dark underline decoration-2 underline-offset-2 hover:text-duo-green">Phonetic Formatter</a>
+            — 在 <a href="./tools-zh.html" class="font-bold text-slate-600 underline decoration-1 underline-offset-2 hover:text-duo-green">工具页</a> 查看链接与更多应用。
+          </p>
+        </div>
+      </div>
+
+      <h2 class="mb-6 mt-14 text-center text-sm font-black uppercase tracking-[0.2em] text-slate-400">选一条路径开始探索</h2>
+      <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <a href="./board-games-zh.html" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-duo-green/50 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-duo-soft text-2xl shadow-inner">🎲</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">英语角 · 桌游</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">低压力桌游对话，重在输出，不是刷题。</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-black text-duo-green group-hover:gap-2">前往 <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="./work-zh.html" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-violet-400/60 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-100 text-2xl">💼</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">职场剧本</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">角色扮演：会议、对齐与化解分歧。</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-black text-violet-600 group-hover:gap-2">打开 <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="./topics.html?lang=zh" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-amber-400/60 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-2xl">💬</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">话题与文化</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">话题存档 — 双语讨论题目，便于自练或小组使用。</p>
+          <span class="mt-4 text-sm font-black text-amber-700">浏览话题 <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="./tools-zh.html" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-duo-blue/50 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-2xl">🔊</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">工具与应用</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">国际音标（IPA） 转写、专注计时等同工作室小工具。</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-black text-duo-blue-dark group-hover:gap-2">查看 <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+
+      <aside class="mx-auto mt-12 max-w-3xl border-t border-slate-200/90 pt-10" aria-label="背景说明">
+        <p class="text-[11px] font-black uppercase tracking-[0.18em] text-slate-400">背景说明 · 英语实验室</p>
+        <p class="mt-3 text-sm font-semibold leading-relaxed text-slate-600 md:text-[15px]">
+          <strong class="font-extrabold text-slate-800">Born To Speak</strong> 于 2024 年春在上海以口语社群起步，口号为
+          <span lang="en" class="font-bold text-slate-700">“Born To Speak, Make Your Voice Heard”</span>，并强调
+          <span class="font-bold text-slate-700">尊重</span>、
+          <span class="font-bold text-slate-700">包容</span>与
+          <span class="font-bold text-slate-700">持续进步</span>。
+        </p>
+        <p class="mt-3 text-sm font-semibold leading-relaxed text-slate-600 md:text-[15px]">
+          导航中的<strong class="font-extrabold text-slate-800">英语实验室</strong>即本站：将沉淀的内容整理为<strong class="font-extrabold text-slate-700">上方四个模块</strong>（桌游、职场、话题、工具），便于随时查阅、按自己的节奏练习。
+        </p>
+      </aside>
+    </section>
+
+  </div>
+
+  <footer class="border-t-2 border-slate-200 bg-white py-10 text-center">
+    <p class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Born To Speak · 社区英语学习实验室</p>
+    <p class="mt-4 text-sm font-semibold text-slate-600">© 2026 Born To Speak</p>
+    <p class="mt-2 text-sm text-slate-600">社区项目 · 由 Louis 发起</p>
+    <p class="mt-2 text-sm text-slate-600">
+      更多应用与资源见
+      <a href="https://louisbuilds.me/" target="_blank" rel="noopener noreferrer" class="font-bold text-duo-green-dark underline decoration-slate-300 underline-offset-2 hover:text-duo-green hover:decoration-duo-green">louisbuilds.me</a>
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('index-menu-btn');
+      var drawer = document.getElementById('index-mobile-drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

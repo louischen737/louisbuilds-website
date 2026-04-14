@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" sizes="32x32" href="./assets/favicon-32x32.webp" />
+  <link rel="icon" type="image/webp" sizes="16x16" href="./assets/favicon-16x16.webp" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.webp" />
+  <title>Topic · Born To Speak</title>
+  <meta name="description" content="English corner discussion topic — discussion prompts." />
+  <link rel="canonical" href="https://louisbuilds.me/borntospeak/topic.html" />
+  <link rel="alternate" hreflang="en" href="https://louisbuilds.me/borntospeak/topic.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://louisbuilds.me/borntospeak/topic.html?lang=zh" />
+  <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/borntospeak/topic.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Topic · Born To Speak" />
+  <meta property="og:description" content="English corner discussion topic — discussion prompts." />
+  <meta property="og:url" content="https://louisbuilds.me/borntospeak/topic.html" />
+  <meta property="og:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Topic · Born To Speak" />
+  <meta name="twitter:description" content="English corner discussion topic — discussion prompts." />
+  <meta name="twitter:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <script>
+    (function normalizeTopicSeoUrl() {
+      var p = new URLSearchParams(window.location.search);
+      var id = p.get('id');
+      var zh = p.get('lang') === 'zh';
+      var q = new URLSearchParams();
+      if (id) q.set('id', id);
+      if (zh) q.set('lang', 'zh');
+      var query = q.toString();
+      var canonical = 'https://louisbuilds.me/borntospeak/topic.html' + (query ? '?' + query : '');
+      var abs = 'https://louisbuilds.me/borntospeak/topic.html' + (query ? '?' + query : '');
+      var c = document.querySelector('link[rel="canonical"]');
+      if (c) c.setAttribute('href', canonical);
+      var ogu = document.querySelector('meta[property="og:url"]');
+      if (ogu) ogu.setAttribute('content', abs);
+      var enAlt = document.querySelector('link[rel="alternate"][hreflang="en"]');
+      var zhAlt = document.querySelector('link[rel="alternate"][hreflang="zh-Hans"]');
+      var xdAlt = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+      var enQ = new URLSearchParams();
+      if (id) enQ.set('id', id);
+      var zhQ = new URLSearchParams();
+      if (id) zhQ.set('id', id);
+      zhQ.set('lang', 'zh');
+      if (enAlt) enAlt.setAttribute('href', 'https://louisbuilds.me/borntospeak/topic.html' + (enQ.toString() ? '?' + enQ.toString() : ''));
+      if (zhAlt) zhAlt.setAttribute('href', 'https://louisbuilds.me/borntospeak/topic.html?' + zhQ.toString());
+      if (xdAlt) xdAlt.setAttribute('href', 'https://louisbuilds.me/borntospeak/topic.html' + (enQ.toString() ? '?' + enQ.toString() : ''));
+    })();
+  </script>
+  <script>
+    (function () {
+      var p = new URLSearchParams(window.location.search);
+      document.documentElement.lang = p.get('lang') === 'zh' ? 'zh-Hans' : 'en';
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            duo: { green: '#58CC02', 'green-dark': '#46A302', blue: '#1CB0F6', bg: '#F7F7F7', soft: '#E5F9E0' },
+          },
+          fontFamily: { sans: ['Nunito', 'system-ui', 'sans-serif'] },
+          boxShadow: { 'duo-sm': '0 2px 0 0 #46A302' },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: Nunito, system-ui, sans-serif; }
+    .pattern-dots {
+      background-color: #E5F9E0;
+      background-image: radial-gradient(#58CC02 0.45px, transparent 0.45px);
+      background-size: 14px 14px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-duo-bg text-slate-800 antialiased">
+  <div class="pointer-events-none fixed inset-0 -z-10 pattern-dots opacity-50"></div>
+
+  <header class="sticky top-0 z-50 w-full border-b-2 border-slate-200/80 bg-white/95 backdrop-blur-md">
+    <div class="flex w-full items-center justify-between gap-2 py-2.5 pl-3 pr-3 md:pl-5 md:pr-6">
+      <a id="back-topics" href="./topics.html" data-i18n="nav-back" class="min-w-0 text-sm font-extrabold text-duo-green-dark hover:underline">← All topics</a>
+      <div class="hidden flex-shrink-0 items-center gap-2 md:flex">
+        <a id="header-home" data-i18n-nav="home" href="./index.html" data-i18n="nav-home" class="text-sm font-bold text-slate-500 hover:text-slate-800">Home</a>
+        <div class="flex shrink-0 items-center rounded-lg border border-slate-200 bg-slate-50/90 p-0.5 text-[12px] font-extrabold shadow-sm" role="navigation" aria-label="Language">
+          <a data-topic-lang="en" href="./topics.html?lang=en" class="topic-lang-pill rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900">EN</a>
+          <a data-topic-lang="zh" href="./topics.html?lang=zh" class="topic-lang-pill rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900">中文</a>
+        </div>
+      </div>
+      <div class="flex flex-shrink-0 items-center gap-2 md:hidden">
+        <div class="flex shrink-0 items-center rounded-lg border border-slate-200 bg-slate-50/90 p-0.5 text-[12px] font-extrabold shadow-sm" role="navigation" aria-label="Language">
+          <a data-topic-lang="en" href="./topics.html?lang=en" class="topic-lang-pill rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900">EN</a>
+          <a data-topic-lang="zh" href="./topics.html?lang=zh" class="topic-lang-pill rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900">中文</a>
+        </div>
+        <button type="button" id="topic-menu-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50" aria-label="Menu" aria-expanded="false" aria-controls="topic-mobile-drawer">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="topic-mobile-drawer" class="hidden border-t border-slate-100 bg-white px-4 py-3 shadow-inner md:hidden">
+      <nav class="flex flex-col gap-2" aria-label="Menu">
+        <a id="drawer-back-topics" href="./topics.html" data-i18n="drawer-topics" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">All topics</a>
+        <a data-i18n-nav="home" href="./index.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Home</a>
+        <a data-i18n-nav="practice" href="./board-games.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Games</a>
+        <a data-i18n-nav="thinking" href="./topics.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Topics</a>
+        <a data-i18n-nav="work" href="./work.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Work</a>
+        <a data-i18n-nav="tools" href="./tools.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-3xl px-4 pb-20 md:px-6">
+    <div id="loading" class="mt-10 rounded-2xl border-2 border-dashed border-slate-200 bg-white p-8 text-center font-bold text-slate-500">
+      Loading…
+    </div>
+    <div id="error" class="hidden mt-10 rounded-2xl border-2 border-red-200 bg-red-50 p-6 font-semibold text-red-800"></div>
+    <article id="content" class="hidden mt-10"></article>
+  </div>
+
+  <footer class="border-t-2 border-slate-200 bg-white py-8 text-center">
+    <p class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Born To Speak</p>
+  </footer>
+
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var id = parseInt(params.get('id'), 10);
+    var lang = params.get('lang') === 'zh' ? 'zh' : 'en';
+
+    var CAT_LABEL = {
+      life: { en: 'Life & daily', zh: '生活与日常' },
+      work: { en: 'Work & career', zh: '职场与成长' },
+      travel: { en: 'Travel & city', zh: '旅行与城市' },
+      tech: { en: 'Tech & life', zh: '科技与日常' },
+      culture: { en: 'Society & culture', zh: '社会与文化' },
+      self: { en: 'Mind & self', zh: '心理与自我' },
+      media: { en: 'Media & spend', zh: '内容与消费' }
+    };
+
+    function topicHref(topicId, lng) {
+      return './topic.html?id=' + encodeURIComponent(topicId) + '&lang=' + encodeURIComponent(lng);
+    }
+
+    function escapeHtml(s) {
+      if (s == null) return '';
+      var d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    function render(topic, prevId, nextId, lng) {
+      var en = topic.questions || [];
+      var zh = topic.questions_zh || [];
+      var n = lng === 'zh' ? Math.max(zh.length, en.length) : en.length;
+      var blocks = '';
+      var i;
+
+      if (lng === 'en') {
+        for (i = 0; i < n; i++) {
+          if (en[i]) {
+            blocks +=
+              '<li class="rounded-2xl border-2 border-slate-100 bg-white p-4 shadow-sm">' +
+              '<p class="text-[15px] font-medium leading-relaxed text-slate-800">' +
+              escapeHtml(en[i]) +
+              '</p></li>';
+          }
+        }
+      } else {
+        for (i = 0; i < n; i++) {
+          blocks +=
+            '<li class="rounded-2xl border-2 border-slate-100 bg-white p-4 shadow-sm">' +
+            (zh[i]
+              ? '<p class="text-[15px] font-semibold leading-relaxed text-slate-800">' + escapeHtml(zh[i]) + '</p>'
+              : '') +
+            (en[i]
+              ? '<p class="mt-3 border-t border-slate-100 pt-3 text-sm font-medium leading-relaxed text-slate-600">' +
+                escapeHtml(en[i]) +
+                '</p>'
+              : '') +
+            '</li>';
+        }
+      }
+
+      var nav = '<nav class="mt-10 flex flex-wrap justify-between gap-3 border-t-2 border-slate-200 pt-8">';
+      if (prevId != null) {
+        nav +=
+          '<a href="' +
+          topicHref(prevId, lng) +
+          '" class="rounded-2xl border-2 border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700 hover:border-duo-green/50">← ' +
+          (lng === 'zh' ? '上一则' : 'Previous') +
+          '</a>';
+      } else nav += '<span></span>';
+      if (nextId != null) {
+        nav +=
+          '<a href="' +
+          topicHref(nextId, lng) +
+          '" class="rounded-2xl border-2 border-slate-200 bg-white px-4 py-2 text-sm font-extrabold text-slate-700 hover:border-duo-green/50">' +
+          (lng === 'zh' ? '下一则' : 'Next') +
+          ' →</a>';
+      }
+      nav += '</nav>';
+
+      var catSlug = topic.category || 'life';
+      var catLab = CAT_LABEL[catSlug] ? CAT_LABEL[catSlug][lng === 'zh' ? 'zh' : 'en'] : catSlug;
+      var catPill =
+        '<p class="mb-3"><span class="inline-flex rounded-lg bg-amber-100 px-2.5 py-1 text-xs font-extrabold uppercase tracking-wide text-amber-900">' +
+        escapeHtml(catLab) +
+        '</span></p>';
+
+      var titleBlock;
+      var introBlock = '';
+      if (lng === 'en') {
+        titleBlock =
+          catPill +
+          '<h1 class="text-3xl font-black leading-tight text-slate-900 md:text-4xl">' +
+          escapeHtml(topic.en_title || '') +
+          '</h1>';
+        if (topic.intro_en) {
+          introBlock =
+            '<div class="mt-5 rounded-2xl border-2 border-duo-soft bg-duo-soft/40 p-4">' +
+            '<p class="text-[15px] font-medium leading-relaxed text-slate-800">' +
+            escapeHtml(topic.intro_en) +
+            '</p></div>';
+        }
+      } else {
+        titleBlock =
+          catPill +
+          '<h1 class="text-3xl font-black leading-tight text-slate-900 md:text-4xl">' +
+          escapeHtml(topic.zh_title || '') +
+          '</h1>' +
+          '<p class="mt-3 text-base font-semibold leading-relaxed text-slate-600">' +
+          escapeHtml(topic.en_title || '') +
+          '</p>';
+        if (topic.intro_zh || topic.intro_en) {
+          introBlock =
+            '<div class="mt-5 rounded-2xl border-2 border-duo-soft bg-duo-soft/40 p-4">' +
+            (topic.intro_zh
+              ? '<p class="font-semibold leading-relaxed text-slate-800">' + escapeHtml(topic.intro_zh) + '</p>'
+              : '') +
+            (topic.intro_en
+              ? '<p class="mt-2 text-sm font-medium leading-relaxed text-slate-600">' + escapeHtml(topic.intro_en) + '</p>'
+              : '') +
+            '</div>';
+        }
+      }
+
+      document.getElementById('content').innerHTML =
+        titleBlock +
+        introBlock +
+        '<h2 class="mt-10 text-sm font-black uppercase tracking-[0.15em] text-slate-400">' +
+        (lng === 'zh' ? '讨论问题' : 'Discussion questions') +
+        '</h2>' +
+        '<ol class="mt-4 list-none space-y-3 p-0">' +
+        blocks +
+        '</ol>' +
+        nav;
+
+      if (lng === 'en') {
+        document.title = (topic.en_title || 'Topic') + ' · Born To Speak';
+      } else {
+        document.title = (topic.zh_title || topic.en_title || 'Topic') + ' · Born To Speak';
+      }
+      var descEl = document.querySelector('meta[name="description"]');
+      if (descEl) {
+        var blurb =
+          lng === 'en'
+            ? topic.intro_en || topic.en_title || ''
+            : topic.intro_zh || topic.zh_title || topic.en_title || '';
+        descEl.setAttribute('content', blurb.slice(0, 160));
+      }
+    }
+
+    function applyTopicNavSiteLinks() {
+      var zh = lang === 'zh';
+      var home = zh ? './index-zh.html' : './index.html';
+      var games = zh ? './board-games-zh.html' : './board-games.html';
+      var topicsList = './topics.html?lang=' + encodeURIComponent(lang);
+      var work = zh ? './work-zh.html' : './work.html';
+      var tools = zh ? './tools-zh.html' : './tools.html';
+      document.querySelectorAll('[data-i18n-nav="home"]').forEach(function (el) {
+        if (el.tagName === 'A') el.setAttribute('href', home);
+      });
+      document.querySelectorAll('[data-i18n-nav="practice"]').forEach(function (el) {
+        if (el.tagName === 'A') el.setAttribute('href', games);
+      });
+      document.querySelectorAll('[data-i18n-nav="thinking"]').forEach(function (el) {
+        if (el.tagName === 'A') el.setAttribute('href', topicsList);
+      });
+      document.querySelectorAll('[data-i18n-nav="work"]').forEach(function (el) {
+        if (el.tagName === 'A') el.setAttribute('href', work);
+      });
+      document.querySelectorAll('[data-i18n-nav="tools"]').forEach(function (el) {
+        if (el.tagName === 'A') el.setAttribute('href', tools);
+      });
+    }
+
+    function updateTopicLangPill() {
+      var on = 'topic-lang-pill rounded-md bg-white px-2.5 py-1 text-slate-900 shadow-sm';
+      var off = 'topic-lang-pill rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900';
+      var enHref;
+      var zhHref;
+      if (id && !isNaN(id)) {
+        enHref = topicHref(id, 'en');
+        zhHref = topicHref(id, 'zh');
+      } else {
+        enHref = './topics.html?lang=en';
+        zhHref = './topics.html?lang=zh';
+      }
+      document.querySelectorAll('[data-topic-lang="en"]').forEach(function (el) {
+        el.setAttribute('href', enHref);
+        el.className = lang === 'en' ? on : off;
+        if (lang === 'en') el.setAttribute('aria-current', 'true');
+        else el.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('[data-topic-lang="zh"]').forEach(function (el) {
+        el.setAttribute('href', zhHref);
+        el.className = lang === 'zh' ? on : off;
+        if (lang === 'zh') el.setAttribute('aria-current', 'true');
+        else el.removeAttribute('aria-current');
+      });
+    }
+
+    var topicHeaderBound = false;
+    function bindTopicHeader() {
+      if (topicHeaderBound) return;
+      topicHeaderBound = true;
+      var drawer = document.getElementById('topic-mobile-drawer');
+      var menuBtn = document.getElementById('topic-menu-btn');
+      if (menuBtn && drawer) {
+        menuBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          drawer.classList.toggle('hidden');
+          menuBtn.setAttribute('aria-expanded', drawer.classList.contains('hidden') ? 'false' : 'true');
+        });
+        drawer.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            drawer.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    }
+
+    function setTopicNavLabels() {
+      var zh = {
+        home: '首页',
+        practice: '游戏',
+        thinking: '话题',
+        work: '职场',
+        tools: '工具'
+      };
+      var en = {
+        home: 'Home',
+        practice: 'Games',
+        thinking: 'Topics',
+        work: 'Work',
+        tools: 'Tools'
+      };
+      var map = lang === 'zh' ? zh : en;
+      ['home', 'practice', 'thinking', 'work', 'tools'].forEach(function (key) {
+        document.querySelectorAll('[data-i18n-nav="' + key + '"]').forEach(function (el) {
+          el.textContent = map[key];
+        });
+      });
+    }
+
+    function applyTopicChrome() {
+      applyTopicNavSiteLinks();
+      var back = document.getElementById('back-topics');
+      var hk = document.getElementById('header-home');
+      var dr = document.getElementById('drawer-back-topics');
+      if (lang === 'zh') {
+        if (back) back.textContent = '← 返回话题列表';
+        if (hk) hk.textContent = '首页';
+        if (dr) dr.textContent = '全部话题';
+      } else {
+        if (back) back.textContent = '← All topics';
+        if (hk) hk.textContent = 'Home';
+        if (dr) dr.textContent = 'All topics';
+      }
+      setTopicNavLabels();
+      var q = '?lang=' + encodeURIComponent(lang);
+      if (back) back.href = './topics.html' + q;
+      if (dr) dr.href = './topics.html' + q;
+      updateTopicLangPill();
+    }
+
+    function setupLangSwitch() {
+      updateTopicLangPill();
+    }
+
+    bindTopicHeader();
+    applyTopicChrome();
+
+    if (lang === 'zh') {
+      document.getElementById('loading').textContent = '加载中…';
+    }
+
+    if (!id || id < 1) {
+      document.getElementById('loading').classList.add('hidden');
+      var e = document.getElementById('error');
+      e.innerHTML =
+        (lang === 'zh' ? '无效的话题编号。' : 'Missing or invalid topic id. ') +
+        '<a href="./topics.html?lang=' +
+        encodeURIComponent(lang) +
+        '" class="font-extrabold text-duo-green-dark underline">' +
+        (lang === 'zh' ? '返回列表' : 'Back to all topics') +
+        '</a>.';
+      e.classList.remove('hidden');
+    } else {
+      fetch('./topics-archive.json')
+        .then(function (r) {
+          if (!r.ok) throw new Error('Could not load topics-archive.json');
+          return r.json();
+        })
+        .then(function (topics) {
+          topics.sort(function (a, b) {
+            return a.id - b.id;
+          });
+
+          var idx = topics.findIndex(function (t) {
+            return t.id === id;
+          });
+          if (idx === -1) throw new Error(lang === 'zh' ? '未找到该话题。' : 'Topic not found.');
+
+          var topic = topics[idx];
+          var prevId = idx < topics.length - 1 ? topics[idx + 1].id : null;
+          var nextId = idx > 0 ? topics[idx - 1].id : null;
+
+          document.getElementById('loading').classList.add('hidden');
+          document.getElementById('content').classList.remove('hidden');
+          setupLangSwitch();
+          render(topic, prevId, nextId, lang);
+        })
+        .catch(function (err) {
+          document.getElementById('loading').classList.add('hidden');
+          var er = document.getElementById('error');
+          er.textContent = err.message || (lang === 'zh' ? '加载失败。' : 'Something went wrong.');
+          er.classList.remove('hidden');
+        });
+    }
+  </script>
+</body>
+</html>

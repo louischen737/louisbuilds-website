@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" sizes="32x32" href="./assets/favicon-32x32.webp" />
+  <link rel="icon" type="image/webp" sizes="16x16" href="./assets/favicon-16x16.webp" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.webp" />
+  <title>桌游口语实验室 · Born To Speak</title>
+  <meta name="description" content="借助经典桌游练习英语口语，Born To Speak 精选趣味互动玩法，轻松提升口语表达能力。" />
+  <link rel="canonical" href="https://louisbuilds.me/borntospeak/board-games-zh.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="桌游口语实验室 · Born To Speak" />
+  <meta property="og:description" content="借助经典桌游练习英语口语，Born To Speak 精选趣味互动玩法，轻松提升口语表达能力。" />
+  <meta property="og:url" content="https://louisbuilds.me/borntospeak/board-games-zh.html" />
+  <meta property="og:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="桌游口语实验室 · Born To Speak" />
+  <meta name="twitter:description" content="借助经典桌游练习英语口语，Born To Speak 精选趣味互动玩法，轻松提升口语表达能力。" />
+  <meta name="twitter:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <link rel="alternate" hreflang="en" href="./board-games.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="./board-games-zh.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            duo: {
+              green: '#58CC02',
+              'green-dark': '#46A302',
+              blue: '#1CB0F6',
+              'blue-dark': '#1899D6',
+              gold: '#FFC800',
+              bg: '#F7F7F7',
+              soft: '#E5F9E0',
+            },
+          },
+          fontFamily: {
+            sans: ['"Noto Sans SC"', 'Nunito', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            duo: '0 4px 0 0 #46A302',
+            'duo-sm': '0 2px 0 0 #46A302',
+            card: '0 2px 8px rgba(0,0,0,.06), 0 1px 0 rgba(0,0,0,.04)',
+          },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: "Noto Sans SC", Nunito, system-ui, sans-serif; }
+    .pattern-dots {
+      background-color: #E5F9E0;
+      background-image: radial-gradient(#58CC02 0.5px, transparent 0.5px);
+      background-size: 12px 12px;
+    }
+    .btn-duo {
+      box-shadow: 0 4px 0 #46A302;
+      transition: transform .05s ease, box-shadow .05s ease;
+    }
+    .btn-duo:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #46A302;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-duo-bg text-slate-800 antialiased">
+  <div class="pointer-events-none fixed inset-0 -z-10 pattern-dots opacity-50"></div>
+
+  <header class="sticky top-0 z-50 w-full border-b-2 border-slate-200/80 bg-white/95 backdrop-blur-md">
+    <div class="flex w-full items-center justify-between gap-2 py-2.5 pl-3 pr-3 md:pl-5 md:pr-6">
+      <a href="./index-zh.html" class="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
+        <picture class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_14px_rgba(15,23,42,0.10)] sm:h-11 sm:w-11" aria-hidden="true">
+          <source type="image/webp" srcset="./assets/logo-64.webp 64w, ./assets/logo-128.webp 128w" sizes="(min-width: 640px) 44px, 40px" />
+          <img src="./assets/logo-64.webp" alt="" width="64" height="64" class="h-full w-full object-cover" decoding="async" />
+        </picture>
+        <div class="min-w-0 leading-tight">
+          <p class="text-base font-black text-slate-900 sm:text-lg">Born To Speak</p>
+          <p class="text-[10px] font-extrabold uppercase tracking-widest text-duo-green sm:text-[11px]">桌游实验室</p>
+        </div>
+      </a>
+      <div class="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-3">
+        <nav class="hidden flex-wrap items-center justify-end gap-1 md:flex md:gap-1.5 lg:gap-2" aria-label="站内导航">
+          <a href="./index-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">首页</a>
+          <span class="rounded-lg border border-duo-green/40 bg-duo-soft px-2.5 py-1.5 text-[13px] font-bold text-duo-green-dark sm:px-3">桌游</span>
+          <a href="./topics.html?lang=zh" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">话题</a>
+          <a href="./work-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">职场</a>
+          <a href="./tools-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">工具</a>
+        </nav>
+        <div class="flex shrink-0 items-center rounded-lg border border-slate-200 bg-slate-50/90 p-0.5 text-[12px] font-extrabold shadow-sm" role="navigation" aria-label="语言切换">
+          <a href="./board-games.html" class="rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900" hreflang="en" lang="en">EN</a>
+          <span class="rounded-md bg-white px-2.5 py-1 text-slate-900 shadow-sm" aria-current="true">中文</span>
+        </div>
+        <button type="button" id="bg-menu-btn" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 md:hidden" aria-label="打开侧边菜单" aria-expanded="false" aria-controls="bg-mobile-drawer">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="bg-mobile-drawer" class="hidden border-t border-slate-100 bg-white px-4 py-3 shadow-inner md:hidden">
+      <nav class="flex flex-col gap-2" aria-label="移动端导航菜单">
+        <a href="./index-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">首页</a>
+        <span class="rounded-xl border border-duo-green/40 bg-duo-soft px-4 py-3 text-sm font-bold text-duo-green-dark">桌游</span>
+        <a href="./topics.html?lang=zh" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">话题</a>
+        <a href="./work-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">职场</a>
+        <a href="./tools-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">工具</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-3xl px-4 pb-16 pt-8 md:px-6 md:pb-24 md:pt-10">
+
+    <section class="relative overflow-hidden rounded-3xl border-2 border-duo-green/30 bg-gradient-to-br from-duo-soft via-white to-amber-50/60 p-6 shadow-card md:p-10">
+      <div class="pointer-events-none absolute -right-6 -top-6 h-32 w-32 rounded-full bg-duo-green/15 blur-2xl" aria-hidden="true"></div>
+      <div class="relative flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+        <div class="flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl border-4 border-white bg-duo-green text-4xl shadow-duo-sm md:h-24 md:w-24" role="img" aria-hidden="true">🎲</div>
+        <div class="min-w-0 flex-1">
+          <p class="inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-duo-green shadow-sm ring-2 ring-duo-green/20">口语实验室</p>
+          <h1 class="mt-3 text-3xl font-black leading-tight tracking-tight text-slate-900 md:text-4xl">
+            轻松低压力桌游，<span class="text-duo-green">高效锻炼</span>口语
+          </h1>
+          <p class="mt-3 text-base font-semibold leading-relaxed text-slate-600 md:text-lg">
+            在 BTS 社区中，桌游就是沉浸式社交训练场。我们精选多款趣味桌游，帮你摆脱逐字翻译的固化思维，养成即时英文应答的表达习惯。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-10 space-y-5">
+
+      <article class="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-card">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 bg-slate-50/80 px-4 py-3 md:px-5">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-duo-green text-lg font-black text-white shadow-duo-sm">1</span>
+          <div class="min-w-0 flex-1">
+            <h2 class="text-xl font-black text-slate-900 md:text-2xl">Taboo</h2>
+            <p class="text-xs font-bold uppercase tracking-wide text-duo-green">委婉转述表达</p>
+          </div>
+        </div>
+        <div class="space-y-4 p-4 md:p-6">
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">👪 4–10 人</span>
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">⌛ 约 20 分钟</span>
+          </div>
+          <div>
+            <p class="text-xs font-extrabold uppercase tracking-wide text-slate-400">玩法简介</p>
+            <p class="mt-1.5 text-sm font-semibold leading-relaxed text-slate-700">
+              描述指定词汇时，禁止使用目标词及五个限定禁用词。在轻压力场景下，练习同义替换与迂回表达，灵活规避生词障碍。
+            </p>
+          </div>
+          <div class="rounded-2xl border-2 border-duo-green/25 bg-duo-soft px-4 py-3">
+            <p class="text-xs font-extrabold uppercase tracking-wide text-duo-green-dark">学习价值</p>
+            <p class="mt-1 text-sm font-bold text-slate-800">即便忘记精准词汇，也能用简单通俗的英文，完整清晰传递想法。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-card">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 bg-violet-50/80 px-4 py-3 md:px-5">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-violet-500 text-lg font-black text-white shadow-[0_2px_0_0_#6d28d9]">2</span>
+          <div class="min-w-0 flex-1">
+            <h2 class="text-xl font-black text-slate-900 md:text-2xl">Dixit</h2>
+            <p class="text-xs font-bold uppercase tracking-wide text-violet-600">意境抽象描述</p>
+          </div>
+        </div>
+        <div class="space-y-4 p-4 md:p-6">
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">👪 3–6 人</span>
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">⌛ 约 30 分钟</span>
+          </div>
+          <p class="text-sm font-semibold leading-relaxed text-slate-700">
+            凭借超现实插画卡牌，用一句短句设置谜题，由其他人猜测对应卡牌。鼓励运用比喻、修饰语句，打造生动地道的英文表达。
+          </p>
+          <div class="rounded-2xl border-2 border-violet-200 bg-violet-50 px-4 py-3">
+            <p class="text-xs font-extrabold uppercase tracking-wide text-violet-700">学习价值</p>
+            <p class="mt-1 text-sm font-bold text-violet-950/90">拓展形容词与情感表达，跳出课本固化词汇，丰富语言层次感。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-card">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 bg-sky-50/90 px-4 py-3 md:px-5">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-sky-500 text-lg font-black text-white shadow-[0_2px_0_0_#0369a1]">3</span>
+          <div class="min-w-0 flex-1">
+            <h2 class="text-xl font-black text-slate-900 md:text-2xl">Codenames</h2>
+            <p class="text-xs font-bold uppercase tracking-wide text-sky-600">语义联想归纳</p>
+          </div>
+        </div>
+        <div class="space-y-4 p-4 md:p-6">
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">👪 4–8 人</span>
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">⌛ 约 30 分钟</span>
+          </div>
+          <p class="text-sm font-semibold leading-relaxed text-slate-700">
+            队长用单个关键词串联多个目标词语，队员合理推理猜测，同时规避危险刺客卡牌。
+          </p>
+          <div class="rounded-2xl border-2 border-sky-200 bg-sky-50 px-4 py-3">
+            <p class="text-xs font-extrabold uppercase tracking-wide text-sky-700">学习价值</p>
+            <p class="mt-1 text-sm font-bold text-sky-950/90">锻炼词汇归类能力、词义辨析与高度概括的极简表达思维。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-card">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 bg-amber-50/90 px-4 py-3 md:px-5">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-amber-400 text-lg font-black text-amber-950 shadow-[0_2px_0_0_#d97706]">4</span>
+          <div class="min-w-0 flex-1">
+            <h2 class="text-xl font-black text-slate-900 md:text-2xl">Once Upon a Time</h2>
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700">故事连贯叙述</p>
+          </div>
+        </div>
+        <div class="space-y-4 p-4 md:p-6">
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">👪 2–6 人</span>
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">⌛ 约 45 分钟</span>
+          </div>
+          <p class="text-sm font-semibold leading-relaxed text-slate-700">
+            全员借助剧情卡牌接力共创故事，随时插话衔接剧情、抢夺讲述主动权，优先打出结局卡牌即可获胜。
+          </p>
+          <div class="rounded-2xl border-2 border-amber-200 bg-amber-50 px-4 py-3">
+            <p class="text-xs font-extrabold uppercase tracking-wide text-amber-800">学习价值</p>
+            <p class="mt-1 text-sm font-bold text-amber-950/90">熟练运用连接词，把控表达节奏，锻炼英文即兴连续发言能力。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="overflow-hidden rounded-3xl border-2 border-slate-200 bg-white shadow-card">
+        <div class="flex items-center gap-3 border-b-2 border-slate-100 bg-rose-50/90 px-4 py-3 md:px-5">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-rose-500 text-lg font-black text-white shadow-[0_2px_0_0_#be123c]">5</span>
+          <div class="min-w-0 flex-1">
+            <h2 class="text-xl font-black text-slate-900 md:text-2xl">Word on the Street</h2>
+            <p class="text-xs font-bold uppercase tracking-wide text-rose-600">限时词汇速记</p>
+          </div>
+        </div>
+        <div class="space-y-4 p-4 md:p-6">
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">👪 2–8 人</span>
+            <span class="rounded-xl border-2 border-slate-200 bg-white px-3 py-1.5 text-xs font-extrabold text-slate-600">⌛ 约 20 分钟</span>
+          </div>
+          <p class="text-sm font-semibold leading-relaxed text-slate-700">
+            趣味字母拔河对战：根据指定类别快速头脑风暴、抢答组词，限时抢夺字母优势赢得对局。
+          </p>
+          <div class="rounded-2xl border-2 border-rose-200 bg-rose-50 px-4 py-3">
+            <p class="text-xs font-extrabold uppercase tracking-wide text-rose-700">学习价值</p>
+            <p class="mt-1 text-sm font-bold text-rose-950/90">结合竞争与限时压力，加速词汇快速调取，强化瞬时记忆与反应速度。</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="mt-12 rounded-3xl border-2 border-duo-blue/40 bg-gradient-to-r from-sky-50 to-duo-soft p-6 text-center shadow-card">
+      <p class="text-sm font-extrabold text-slate-700">想要了解完整的英语学习方案？</p>
+      <a href="./index-zh.html" class="btn-duo mt-4 inline-flex min-w-[200px] items-center justify-center rounded-2xl bg-duo-green px-8 py-3.5 text-base font-black text-white">
+        回到首页
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-8 text-center">
+    <p class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Born To Speak · 桌游口语实验室</p>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('bg-menu-btn');
+      var drawer = document.getElementById('bg-mobile-drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        drawer.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', drawer.classList.contains('hidden') ? 'false' : 'true');
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

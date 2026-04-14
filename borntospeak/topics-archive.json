@@ -1,0 +1,1430 @@
+[
+  {
+    "id": 1,
+    "category": "life",
+    "zh_title": "最近读的一本书",
+    "en_title": "A book I recently read",
+    "intro_zh": "读书可深可浅：这一圈先交换「在读什么」，再落到一句让你停下来的文字或情节。",
+    "intro_en": "Keep it light at first—what you’re reading—then zoom in on one line or scene that stuck.",
+    "questions_zh": [
+      "最近在读或刚读完的一本是哪本？用一句话说类型即可（小说、纪实、漫画都算）。",
+      "读的时候，有没有一段描写或一句话让你停下来多看了一眼？尽量具体。",
+      "书里哪个人物或观点让你最有共鸣，或最不能理解？各用一句话说说原因。",
+      "书里的内容有没有渗进你这一周的生活——作息、购物、说话方式、对人态度，哪怕很小？",
+      "若要推荐给朋友，你会诚实提醒：这本书最难读的地方是什么、读完最可能赚到的收获是什么？"
+    ],
+    "questions": [
+      "What are you reading now? Or what did you just finish? Say the type in one short sentence.",
+      "Pick one line or short scene. Why did it stop you?",
+      "Who or what did you agree with? Who or what felt strange? Say why—in one sentence each.",
+      "Did the book touch your real life this week—even a small way?",
+      "For a friend: what is hard in this book? What is the gift after reading?"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "travel",
+    "zh_title": "小众目的地安利",
+    "en_title": "Hidden gems: trips off the beaten path",
+    "intro_zh": "小众不等于更好，往往只是更少人知道。这一圈先讲「你怎么发现它」，再说落地后与想象是同频还是翻车——细节越具体，讨论越好玩。",
+    "intro_en": "A hidden gem is not always “better”—often just less crowded. Share how you found the place, then what happened when you arrived—surprise or let-down.",
+    "questions_zh": [
+      "先说一个你去过、或躺在清单里的小众目的地：名字 + 大致在哪儿。",
+      "你是怎么知道它的？熟人、笔记、短视频、攻略、还是偶然路过？",
+      "落地之后，最出乎你意料的一点是什么——好的或糟的都可以。",
+      "和去大城市热门景点相比：你多付出了什么（时间、钱、体力、心理），又多得到了什么？",
+      "你会把它推荐给谁？顺便说一类「我反而不建议去」的人或情境。"
+    ],
+    "questions": [
+      "Name one small, quiet place you visited—or want to visit. Where is it?",
+      "How did you find this place?",
+      "After you arrived, what surprised you—good or bad?",
+      "Did this trip cost more time, money, or stress? What did you get back?",
+      "Who should go? Who should not go?"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "work",
+    "zh_title": "职场生存小技巧",
+    "en_title": "Small survival tips for work",
+    "intro_zh": "所谓「生存技」多半是小事：怎么回邮件、怎么开会不背锅、怎么拒绝还不得罪人。这一期欢迎半开玩笑，但一定要落到一个真实场景里，别停在口号。",
+    "intro_en": "“Survival tips” are often small—email, meetings, saying no without drama. Bring one real scene; jokes are OK, slogans are not.",
+    "questions_zh": [
+      "进职场后，你学到的第一条「不成文规则」是什么？可以很严肃，也可以半开玩笑。",
+      "讲一件和同事或上级的具体摩擦：当时你怎么回应的？如果现在重来，你会改哪一个细节？",
+      "哪些事你已经决定「不值得为它过夜生气」？你的底线或止损点在哪里？",
+      "有没有一个坚持很久的小习惯（写纪要、抄送、拒绝话术、复盘），实实在在地帮你省过麻烦？",
+      "若明天要带一位新人进组，你会最先提醒 Ta 听懂哪一条「潜规则」——以及你补充的一句「但也要防止……」？"
+    ],
+    "questions": [
+      "What is the first quiet rule you learned at work? It can be funny.",
+      "Tell a short story: trouble with a coworker or a boss. What did you do? What would you change today?",
+      "What is not worth your anger? Where do you say “stop”?",
+      "Name one small habit that saved you time or pain.",
+      "A new hire starts tomorrow. What do you tell them first? What do you warn them about next?"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "life",
+    "zh_title": "最近的生活碎片",
+    "en_title": "Small happy moments from daily life",
+    "intro_zh": "不必讲大事。电梯里一句对话、路口多等的一分钟、相册里一张旧截图，都可以是「碎片」。越具体，别人越好接话。",
+    "intro_en": "No big news needed—lift chat, a longer red light, an old screenshot. Small, clear beats vague and huge.",
+    "questions_zh": [
+      "这周有没有一件小事让你心里「软了一下」或轻轻笑出来？用两句话交代场景就够。",
+      "若选一个想再去一次的地点：是哪里？只讲一个让你记得的细节。",
+      "手机相册里你还留着的一张图，点开放大前你最先想到什么？",
+      "在家或上下班路上，最近一次觉得「也还行」的瞬间——长什么样？",
+      "把这些碎片串起来，你最近的生活更像偏暖、偏忙，还是有点空？一句话收束。"
+    ],
+    "questions": [
+      "This week, what small thing made you soften or smile a little? Two short sentences are enough.",
+      "One place you want to visit again—name one detail you still remember.",
+      "One photo you still keep. What hits you first when you open it?",
+      "At home or on your way to work, one moment that felt “okay.” What did you see or hear?",
+      "Zoom out: lately does life feel warm, busy, or a bit empty? One honest line."
+    ]
+  },
+  {
+    "id": 5,
+    "category": "life",
+    "zh_title": "我家的毛孩子",
+    "en_title": "Pets at home",
+    "intro_zh": "猫狗鸟鱼都算。先报物种和名字，再讲故事——好笑、好气、好心疼都行。没有养宠的人可以聊「如果养，你会怕什么」。",
+    "intro_en": "Cats, dogs, birds—name the pet first, then the story. If you have none, say what would scare you about owning one.",
+    "questions_zh": [
+      "家里现在有宠物吗？叫什么、几岁、什么物种？一句话介绍。",
+      "它做过最让你笑喷或最让你冒火的一件事是什么？尽量还原现场。",
+      "养它以来，你为自己改掉了哪一个生活习惯？（作息、购物、社交都算）",
+      "它不舒服或闹情绪时，你通常第一步做什么？有没有踩过坑？",
+      "如果下周不能带它，只能托付给一个人，你最担心对方搞不懂哪一点？"
+    ],
+    "questions": [
+      "Do you have a pet now? Name, age, and kind—in one short line.",
+      "What is the funniest or most annoying thing it has done? Set the scene.",
+      "What habit did you change because of this pet—sleep, money, or friends?",
+      "When it felt sick or upset, what did you do first? Any mistake you learned from?",
+      "If you had to leave it with someone for a week, what would you warn them about first?"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "tech",
+    "zh_title": "AI 伴侣与情感边界",
+    "en_title": "AI chatbots, feelings, and boundaries",
+    "intro_zh": "我们不追科技新闻标题，只谈你我手机里那个会说话的窗口：你把它当工具、树洞，还是某种「在场」？立场可以温和，但要诚实。",
+    "intro_en": "Skip the tech headlines—talk about the talking app on your phone: tool, diary, or company? Gentle views are fine; honest is better.",
+    "questions_zh": [
+      "你有没有固定聊天的 AI 或机器人？用它主要做什么：搜答案、改稿、闲聊、练外语？",
+      "有没有哪一次，它的回复让你突然觉得「像人」或「完全不像人」？复述一下那句话。",
+      "你会介意伴侣或好友高强度用 AI 做情感倾诉吗？你的底线在哪里？",
+      "当你线下感到孤单时，你会先找人还是先打开 AI？这让你安心还是更空？",
+      "如果给一年后的自己留一句关于「人和机器的感情」的提醒，你会写什么？"
+    ],
+    "questions": [
+      "Do you chat with an AI app often? What for—answers, edits, small talk, language practice?",
+      "Was there one reply that felt “almost human” or “very cold”? Quote it roughly.",
+      "Would you mind if a partner used AI for heavy emotional venting? Where is your line?",
+      "When you feel lonely offline, do you reach for people or the app first? What follows?",
+      "One note to your future self about feelings and machines—what would it say?"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "life",
+    "zh_title": "间隔年",
+    "en_title": "The gap year",
+    "intro_zh": "间隔年不一定是出国穷游：也可能是考研空档、换城市喘息、辞职留白。重点是你有没有一段「刻意放慢」的日子，以及你怎么向自己和家里交代。",
+    "intro_en": "A gap year isn’t only travel abroad—it can be exams, a move, or a quit-and-breathe year. Did you ever slow down on purpose? How did you explain it?",
+    "questions_zh": [
+      "你或你身边有人拖过「空档年」吗？那段时间主要在做什么，用三句话说清。",
+      "当初为什么敢停（或不得不停）？最怕听到的质疑是什么？",
+      "空档里最难受的是钱、孤独，还是被问「你干嘛呢」？怎么扛过来的？",
+      "回到轨道之后，你带走的一项硬技能或心态是什么？",
+      "若明年多出来一整年不能上班但生活费够用，你会怎么设计这十二个月？只答框架即可。"
+    ],
+    "questions": [
+      "Did you or someone close take a “gap”? Say in three short lines what it looked like.",
+      "Why stop—or why you had to? What question about it scared you most?",
+      "What hurt more—money, loneliness, or people asking “So what do you do?” How did you cope?",
+      "After you returned to work or school, what one skill or mindset stayed with you?",
+      "If next year paid your bills but you skipped a job, how would you shape those twelve months—outline only."
+    ]
+  },
+  {
+    "id": 8,
+    "category": "tech",
+    "zh_title": "“数字极简主义”与注意力争夺战",
+    "en_title": "Digital minimalism and your attention",
+    "intro_zh": "不必背书定义。可以谈你删过哪些 App、关过哪些推送，以及哪一刻发现自己「刷到麻木」——那就是讨论的起点。",
+    "intro_en": "Forget the book title—talk apps you deleted, alerts you killed, and the moment you felt numb from scrolling.",
+    "questions_zh": [
+      "本周哪个软件最偷你时间？诚实报一个时长或次数感也行。",
+      "你有没有一条「数字戒断」试过且有效的土办法？（灰度、黑白屏、不带手机进卧室都算）",
+      "当你专心做完一件线下的事，事后最清晰的感受是什么？",
+      "如果只能留三个手机用途，你会留哪三类？其余全部砍。",
+      "对还在熬夜刷短视频的朋友，你会劝一句什么——不居高临下的那种。"
+    ],
+    "questions": [
+      "Which app ate your time this week? A rough count is fine.",
+      "One “digital rule” that actually worked for you—gray mode, phone out of the bedroom, anything.",
+      "After one offline task, what feeling stayed clearest afterward?",
+      "If the phone could only do three jobs for you, which three? Cut the rest.",
+      "One kind line to a friend who scrolls till 2 a.m.—no lecturing tone."
+    ]
+  },
+  {
+    "id": 9,
+    "category": "culture",
+    "zh_title": "刻板印象",
+    "en_title": "Stereotypes and labels",
+    "intro_zh": "刻板印象不等于故意歧视，有时是懒得细想。可以先各人举一个「被误贴标签」的例子，再谈你愿意怎么解释或反击。",
+    "intro_en": "Stereotypes aren’t always mean—sometimes people are just lazy. Start with a label you got, then how you explain or push back.",
+    "questions_zh": [
+      "你本人被贴过最离谱的标签是什么？谁说的、在什么场景？",
+      "你有没有发现自己也曾快速给人下判断？后来有反转吗？",
+      "当别人一句话带偏见，你当场会怼、会解释，还是会先冷处理？为什么？",
+      "若向一个完全不了解中国的人解释你的城市/学校/职业，你会刻意躲开哪一句刻板话术？",
+      "小组里约定一条「接话规则」：听到偏见时用什么语气开口最不伤人？每人说一个模板。"
+    ],
+    "questions": [
+      "What is the weirdest label people put on you? Who said it, and where?",
+      "Have you rushed to judge someone and later changed your mind? What happened?",
+      "When bias shows up, do you argue, explain, or cool down first? Why?",
+      "Talking to a total stranger, what stereotype about your city, school, or job would you dodge?",
+      "Pick one polite sentence template your group can use when bias appears—keep it short."
+    ]
+  },
+  {
+    "id": 10,
+    "category": "self",
+    "zh_title": "自我认同危机",
+    "en_title": "When you feel lost about who you are",
+    "intro_zh": "「危机」可以很大，也可以只是连续几天觉得「我不像我自己」。不需要诊断术语，只要你愿意讲那段时间身体和情绪最先亮红灯的地方。",
+    "intro_en": "“Crisis” can be huge—or just days of “this isn’t me.” No diagnosis words needed; say where your body or mood flared first.",
+    "questions_zh": [
+      "有没有一段日子你强烈觉得「我跟以前不一样了」？用最直白的一句话描述。",
+      "那时最先出问题的是睡眠、食欲、社交还是工作专注？举一个细节。",
+      "谁或哪一句话曾无意中伤到你，又或谁拉了你一把？",
+      "你做过最小的一步调整是什么？（散步、离职、找咨询师、换发型都算）",
+      "现在回看，你会对当时的自己说一句什么——教训也行，感谢也行。"
+    ],
+    "questions": [
+      "Was there a stretch when you felt “not myself”? Say it in one plain sentence.",
+      "What broke first—sleep, food, friends, or focus? One detail.",
+      "Who hurt you by accident—or helped you without knowing it?",
+      "What was the smallest step you took—walk, quit, Therapy, haircut?",
+      "Looking back, what one line would you tell that past you—thanks or warning?"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "work",
+    "zh_title": "数字游民：巴厘岛还是北京996？",
+    "en_title": "Digital nomads vs. the 996 grind",
+    "intro_zh": "巴厘岛和北京只是符号：本质是「地点自由换不确定」对「稳定换长工时」。有你羡慕的，也有你不敢要的——都可以摊开说。",
+    "intro_en": "Bali vs. Beijing is a symbol—freedom with mess vs. stability with long hours. Say what you envy and what scares you.",
+    "questions_zh": [
+      "你觉得「数字游民」对你来说意味着什么：换城市、接海外单，还是只要有网就行？",
+      "你身边有真能远程养活自己的人吗？你观察到的最大代价是什么？",
+      "若工资不变，让你选一年住海岛或一年住老家省会，你选哪个？凭什么？",
+      "孤独、时差、社保断档、被偷电脑——你最怕哪一个？有预案吗？",
+      "十年后你还想在路上，还是想要一间固定工位？诚实表态即可。"
+    ],
+    "questions": [
+      "What does “digital nomad” mean to you—moving cities, global clients, or just Wi‑Fi?",
+      "Do you know anyone who really lives this way? What price do you see them pay?",
+      "Same pay: one year on an island or one year in your hometown’s main city—which one, and why?",
+      "Which fear is biggest—lonely hours, time zones, lost insurance, stolen laptop? Any plan?",
+      "Ten years ahead: still moving—or craving a fixed desk? Pick one and say why briefly."
+    ]
+  },
+  {
+    "id": 12,
+    "category": "culture",
+    "zh_title": "祛魅",
+    "en_title": "Seeing through the halo",
+    "intro_zh": "祛魅就是「滤镜碎了」：名校、大厂、网红、所谓标配人生。可以聊你摔过的一次跟头，也可以聊你反而更安心的瞬间。",
+    "intro_en": "Disenchantment is when the halo breaks—famous school, big logo, perfect life plan. Share a fall, or a calmer moment after.",
+    "questions_zh": [
+      "有没有一个人、一个地方或一份工作，见光后让你「原来也就这样」？简要还原前后。",
+      "那次祛魅之后，你是更轻了，还是更丧了？各用一句话。",
+      "你会把「祛魅经历」告诉晚辈吗？会强调「别神话」还是「别灰心」？",
+      "你还相信努力一定有用这种叙事吗？你的版本长什么样？",
+      "若要给「滤镜」打分，你目前给自己的工作/关系打几分？还能上调吗？"
+    ],
+    "questions": [
+      "Who or what lost its glow for you—school, boss, city? Before vs after in short lines.",
+      "After that, did you feel lighter or lower—one phrase each.",
+      "Would you tell a younger friend this story? Warn them not to worship—or not to give up?",
+      "Do you still buy “hard work always pays off”? What is your version now?",
+      "Rate your job or relationship’s “filter” today—could it go up next year?"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "self",
+    "zh_title": "边界感",
+    "en_title": "Healthy boundaries with others",
+    "intro_zh": "边界不是冷漠：是让别人知道「到哪里我会不舒服」。可以从一件小事谈起—父母、伴侣、同事、网友都算。",
+    "intro_en": "A boundary is not coldness—it tells people where you hurt. Start with a small story—parents, partner, coworker, online friend.",
+    "questions_zh": [
+      "最近一次别人说或做了什么，让你心里咯噔一下？用一两句还原场景。",
+      "那时你回应了吗？是当场说、之后说，还是忍过去？现在看哪个选择更合适？",
+      "对家人最难说「不」还是对同事？为什么？",
+      "亲密关系中，你最想守住的一条底线是什么？换你会怎么提前沟通？",
+      "若朋友总把情绪垃圾倒给你，你会怎么体面收场？试口播一句你的话术。"
+    ],
+    "questions": [
+      "Last time someone crossed a line—what did they do or say? Set the scene in two lines.",
+      "Did you answer then, later, or swallow it? Which choice fits you better now?",
+      "Is “no” harder with family or coworkers for you? Why?",
+      "In love or close friendship, one line you must protect—how would you say it early on?",
+      "If a friend dumps emotion on you daily, how do you close kindly—say your one-line script."
+    ]
+  },
+  {
+    "id": 14,
+    "category": "culture",
+    "zh_title": "社交货币与虚荣心",
+    "en_title": "Status symbols and keeping up appearances",
+    "intro_zh": "「社交货币」可以理解成：别人为什么愿意给你注意力。它可以是好内容，也可能是攀比。今天我们尽量谈钱和时间花在哪，而不是评判谁虚荣。",
+    "intro_en": "“Social currency” is why people give you attention—good work or status race. Talk time and money spent, not who is vain.",
+    "questions_zh": [
+      "去年花得最让你后悔的一笔「面子钱」是什么？数额不必说，说用途即可。",
+      "你在朋友圈或会议上，做过什么主要是为了「看起来不错」？",
+      "有没有一次虚荣心反而推你完成了一件事（考证、健身、做项目）？",
+      "当你发现朋友在硬撑面子，你会戳破、陪笑，还是私下提醒？",
+      "如果现在取消所有社交展示，你只能留一样证明自己的标签，会留什么？"
+    ],
+    "questions": [
+      "Last year, one “face” purchase you regret—use, not price.",
+      "One thing you did mainly to look good—online or at work.",
+      "Did vanity ever push you to finish something good—exam, gym, a project?",
+      "When a friend fakes wealth, do you joke along, stay silent, or warn them privately?",
+      "If all social display vanished, one label you would still keep—what is it?"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "culture",
+    "zh_title": "大女主剧与性别平等",
+    "en_title": "Strong female leads on TV",
+    "intro_zh": "剧集是镜子，也是童话：可以夸爽感，也可以挑刺「现实里女性还要做多少隐形劳动」。欢迎男性视角，但请先听完女生为什么爱看或不爱看。",
+    "intro_en": "Shows are mirrors and fairy tales—fun hits vs hidden labor in real life. Men’s views welcome after listening why women watch—or quit.",
+    "questions_zh": [
+      "最近一次看完仍记得剧名的女主戏是什么？用一句话说它爽在哪里。",
+      "剧里哪个情节你觉得「假」或「舒服得不真实」？",
+      "你更希望看到女主赢工作、赢爱情，还是赢自己？为什么不能都要？",
+      "现实中你身边女性承担的不便，哪一点是剧里很少拍的？",
+      "若写下一部女主戏，你会把第一集冲突放在职场、家庭还是自我怀疑上？"
+    ],
+    "questions": [
+      "Last heroine-led show you still remember—why was it fun in one line?",
+      "Which scene felt fake or too comfy to be true?",
+      "Do you want her to win work, love, or herself most—or why not all three?",
+      "What real-life load for women do shows skip?",
+      "If you wrote episode one, would the clash be job, family, or self-doubt first?"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "life",
+    "zh_title": "空巢青年与独居生活",
+    "en_title": "Young people living alone",
+    "intro_zh": "「空巢」在这里主要指离开父母、独自租住的年轻人，不限婚恋状态。可以聊自由，也可以聊下班进屋那一刻的安静。",
+    "intro_en": "Here “empty-nest” means young renters away from parents—not only singles. Talk freedom—or the hush when you open the door.",
+    "questions_zh": [
+      "你现在的住处是一个人吗？房型、租金敏感信息可跳过，只说「几居室、离公司多远的感觉」。",
+      "独居最爽的一点和最烦的一点各是什么？",
+      "你会把家里布置得很满，还是尽量空？反映你哪种心情？",
+      "感到孤单时，你前三位的求助顺序是谁／什么？（人、宠物、游戏、工作都算）",
+      "若父母突然要来长住两周，你最担心的生活细节是什么？"
+    ],
+    "questions": [
+      "Do you live alone now? Skip rent—just rooms and commute feel.",
+      "Best part and worst part of living alone—one line each.",
+      "Do you fill the space or keep it empty—what mood does that show?",
+      "When lonely, who or what do you reach for first—three stops.",
+      "If parents stayed two weeks, what daily detail would worry you most?"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "tech",
+    "zh_title": "人工智能 —— 变革工作还是抢走饭碗？",
+    "en_title": "AI at work: threat or tool?",
+    "intro_zh": "不预测十年后谁失业：只谈你本周有没有被 AI 省时间、或害你加过班。工具是中性的，糟的是不会说清责任归属。",
+    "intro_en": "Skip doom headlines—did AI save you time this week or add work? Tools are neutral; unclear blame is not.",
+    "questions_zh": [
+      "你日常工作中已经在用哪些 AI 或自动化？各举一例帮手和一次翻车。",
+      "有没有一项任务你乐意交给机器，一项死活不想交？理由各一句。",
+      "若明天公司明文允许用 AI 写周报，你会觉得公平吗？对不会用的人怎么办？",
+      "你更怕被机器取代，还是怕被会用机器的同事取代？",
+      "对你这个行业，补哪一项「人味能力」最保险？（审美、谈判、共情、伦理等）"
+    ],
+    "questions": [
+      "What AI or automation do you use at work—one win and one fail?",
+      "Which task would you hand to a bot—and which never? One reason each.",
+      "If AI reports became office policy tomorrow, is that fair—what about slow learners?",
+      "What scares you more—robots—or coworkers who use them well?",
+      "In your field, which human skill is safest to grow—taste, talk, care, ethics?"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "life",
+    "zh_title": "搭子文化",
+    "en_title": "The “buddy” culture (activity partners)",
+    "intro_zh": "搭子≈「只约一件事的关系」：饭搭子、球搭子、旅行拼团。聊清楚就好散伙，也谈你们会不会刻意不谈私事。",
+    "intro_en": "A “buddy” pairs for one thing—meal, sport, trip. Easy to start and stop. Say if you hide private life on purpose.",
+    "questions_zh": [
+      "你现在最稳定的一类搭子是什么？多久见一次、怎么约？",
+      "搭子和死党差别在哪里？你会跟搭子借钱或聊失恋吗？",
+      "有过搭子闹掰的经历吗？通常死在「鸽」还是「越界」？",
+      "你觉得搭子多了，会让人更省社交精力，还是更孤独？",
+      "如果规则只允许三件事可以和搭子共享，你会选哪三件？"
+    ],
+    "questions": [
+      "Your steadiest buddy type now—how often do you meet and how do you plan it?",
+      "Buddy vs best friend—would you borrow money or cry over love with a buddy?",
+      "Ever broke with a buddy—ghosting or crossing lines?",
+      "Do many buddies save social energy—or leave you lonely?",
+      "If buddies could share only three kinds of topics, which three?"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "media",
+    "zh_title": "知识付费的“钱途”",
+    "en_title": "Paid courses and subscriptions — still worth it?",
+    "intro_zh": "知识付费不限于网课：专栏、播客会员、考研资料包都算。我们聊「花过最值/最亏的一笔」，少谈宏观产业，多谈你自己的注意力账。",
+    "intro_en": "Paid knowledge isn’t only courses—columns, podcast subs, exam packs count. Swap best and worst buys; skip macro industry talk.",
+    "questions_zh": [
+      "你最近一次为「学东西」花的钱买了什么？一句话说清形式（课、社群、App 会员等）。",
+      "那笔钱的回报体现在哪：证书、加薪、纯开心、还是至今没用上？",
+      "你会因为讲师名气下单，还是因为大纲对症才买？举一个反例也行。",
+      "免费内容已经很多，你还在付费的核心理由是什么——省时间、督促、还是圈子？",
+      "若给朋友三条「知识付费避坑」清单，你会写什么？"
+    ],
+    "questions": [
+      "Last time you paid to learn—what form was it—course, club, app sub?",
+      "Where did the payback show—certificate, raise, joy—or still unused?",
+      "Do you buy for a famous teacher or a tight syllabus—give a counterexample.",
+      "Plenty is free—why do you still pay—time, push, or the crowd?",
+      "Three “don’t get scammed” tips you’d give a friend—what are they?"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "work",
+    "zh_title": "职场摸鱼文学",
+    "en_title": "Memes about slacking at work",
+    "intro_zh": "「摸鱼文学」多是玩笑：用段子消化无聊与不公。可以聊真实小憩，也可以聊你只敢在梗里说的怨气—注意别点名爆料前司真人真事，保护隐私。",
+    "intro_en": "Slacking memes joke off boredom and unfairness—share real micro-breaks or vent safely without naming old bosses.",
+    "questions_zh": [
+      "刷到过最戳你的一条「上班摸鱼」段子或图是什么？它戳中哪一点？",
+      "你实际上班时合法的放空方式是什么？喝水、散步、聊天算哪种？",
+      "你觉得「带薪如厕/划水」是反抗还是苦中作乐？",
+      "摸鱼后你有愧疚感吗？怎么收场把工作补上？",
+      "如果给新人一句不鸡汤的建议：积极工作与自我保护之间你怎么划线？"
+    ],
+    "questions": [
+      "One slacking-at-work meme that hit you—why did it land?",
+      "Your real, “ok” break at work—water, walk, chat—which is it?",
+      "Is paid bathroom time protest—or gallows humor?",
+      "After you slack, guilt or not—and how you catch up?",
+      "One non-sappy line for a newbie—where do you draw line between grit and self-care?"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "media",
+    "zh_title": "盲盒经济转型",
+    "en_title": "Blind boxes after the hype",
+    "intro_zh": "盲盒从潮玩到潮服、机票盲盒都有过。今天我们聊你抽过或坚决不抽的理由，也聊「二手回血」和「退坑」是不是常态。",
+    "intro_en": "Blind boxes jumped from toys to travel perks. Talk why you spin—or skip—reselling and “quitting the hobby.”",
+    "questions_zh": [
+      "你买过哪类盲盒（或类似随机商品）？第一次是跟风还是被包装吸引？",
+      "最欧或最非的一次开箱经历？后来那堆东西去哪了？",
+      "若规则改成「可预览再付款」，你还会买吗？随机感对你重要吗？",
+      "你觉得品牌该往收藏、实用，还是体验（展、课）转型？举一个你乐见的方向。",
+      "身边有人退坑吗？通常是因为贵、占地、还是热情冷却？"
+    ],
+    "questions": [
+      "Which blind-box style did you try—trend or pretty box pulled you in?",
+      "Luckiest or worst pull—and where did the stuff end up?",
+      "If you could preview before pay, would you still buy—does randomness matter?",
+      "Should brands pivot to collectibles, gear, or events—one direction you like?",
+      "Seen friends quit—price, space, or cold interest—what was the main reason?"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "life",
+    "zh_title": "“反断舍离”风潮渐起",
+    "en_title": "Pushing back on extreme decluttering",
+    "intro_zh": "前些年极简很热；现在有人腻了又往回囤—「先活着再美丽」。可以聊收纳崩坏、安全囤粮，也可以聊你只是舍不得好看的空瓶。",
+    "intro_en": "Minimalism was hot; some now refill—“survive first, pretty later.” Messy shelves, pantry stock, or keeping pretty empty jars all count.",
+    "questions_zh": [
+      "你家里有没有「本来想丢、最后又留」的东西？它为什么活下来？",
+      "断舍离最让你不适的一点是什么——扔书、丢礼物、还是数字化代替实物？",
+      "反断舍离对你来说是放松标准，还是理性囤货（比如药品、零食）？",
+      "物品变多后，你怎么分区才不乱—箱子、标签、还是「眼不见为净」？",
+      "若只能留一句家居原则，你选「少而精」还是「乱中有序」？为什么？"
+    ],
+    "questions": [
+      "One thing you almost tossed but kept—why did it survive?",
+      "What hurt most in decluttering—books, gifts, or swapping stuff for files?",
+      "“Anti-declutter” for you—lower standards or smart stock—meds or snacks?",
+      "When stuff grows, how do you zone it—boxes, labels, or out of sight?",
+      "One home rule—few and fine, or cozy mess—why?"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "travel",
+    "zh_title": "网红城市与反向旅游",
+    "en_title": "Hotspot cities vs quiet getaways",
+    "intro_zh": "网红城=打卡密度高；反向旅游常指淡季、小城、顺路乡县，只为躲开人潮。可以说一次排队绝望，也可以说一次意外清静。",
+    "intro_en": "Hotspots pack queues; “reverse” trips chase small towns or off-season quiet—share a crowd fail or a calm surprise.",
+    "questions_zh": [
+      "你为了什么去过一座「网上很红」的城市？实际体验比视频更好还是更累？",
+      "有没有刻意选择去人少的地方过周末？你是怎么发现那儿的？",
+      "打卡点排队时，你内心更想「拍一张走」还是「干脆不拍」？",
+      "你觉得滤镜宣传对当地人是机会多，还是打扰多？举一个你观察到的细节。",
+      "下一次长假，你会更倾向热门目的地还是冷门小城？各说一个理由。"
+    ],
+    "questions": [
+      "You hit a “viral” city for what—better or more tiring than the videos?",
+      "Ever chose a low-crowd weekend—how did you find the place?",
+      "In a long line—shoot one pic and go—or skip the shot?",
+      "Do glossy posts help or hurt locals—one detail you saw?",
+      "Next holiday—hot spot or quiet town—one reason each?"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "work",
+    "zh_title": "35岁现象",
+    "en_title": "The “age 35” hurdle in careers",
+    "intro_zh": "许多招聘把「35 岁以下」写进简章，常被讨论为中年危机前置。我们聊身边传闻与真实政策差异，也尊重不同行业体感不同，避免制造多余焦虑。",
+    "intro_en": "Many ads cap age at 35—talk hearsay vs real rules; industries differ—don’t pile extra fear.",
+    "questions_zh": [
+      "你是在哪儿第一次注意到「35 岁门槛」的—招聘广告、听朋友聊、还是新闻？",
+      "你所在行业或岗位，年龄带来的压力主要体现在裁员、晋升、还是转行？",
+      "若从现在开始做准备，你会优先存钱、攒证书、还是拓展人脉？各说一项。",
+      "你认为企业一刀切年龄限制合理吗？有没有你认可的例外情形？",
+      "对二十岁出头的听者，你会转述一句怎样的「不必恐慌」或「值得行动」的话？"
+    ],
+    "questions": [
+      "Where did you first spot an “age 35” line—ad, friend, news?",
+      "In your lane, does age bite on layoffs, promotion, or switching jobs?",
+      "If prepping now—save money, certs, or network—pick one each with a line.",
+      "Are hard age caps fair—any case where you’d allow an exception?",
+      "For someone in their twenties—one calm line: don’t panic—or do act—what would you say?"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "media",
+    "zh_title": "我的电子榨菜",
+    "en_title": "“Digital pickles” with your meal",
+    "intro_zh": "电子榨菜＝吃饭／通勤时伴嘴的短内容：综艺切片、解说、猫猫视频都算。可以报菜名式地分享，也聊聊是否离了就「吃不香」。",
+    "intro_en": "“Digital pickles” = bite-sized shows for meals or commute—clips, reacts, cats. Share go-tos—need a screen to taste lunch?",
+    "questions_zh": [
+      "你当下默认打开的「下饭」内容是什么类型？固定 up 主或随机刷？",
+      "试过为了某剧／某综专门下饭吗？和随便刷相比，感觉差在哪？",
+      "有没有被人吐槽「你怎么又看这个」的电子榨菜？你怎么回应？",
+      "你会控制时长吗—比如吃完就关，还是顺便刷两小时？",
+      "如果一周不能用视频下饭，你会换成播客、书，还是干脆专心吃？"
+    ],
+    "questions": [
+      "Your default meal buddy—clips or one creator you trust?",
+      "Ever built dinner around one show—how is that unlike random feed?",
+      "Someone mocks your pick—how do you answer back?",
+      "Do you cap time—stop when food ends—or scroll two hours?",
+      "No video for a week—podcast, book, or just chew in silence?"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "media",
+    "zh_title": "情绪价值消费",
+    "en_title": "Buying things to feel better",
+    "intro_zh": "情绪价值消费≈为心情下单：盲盒、奶茶、应援、可爱包装。承认「我值得开心」与承认「这周又冲动了」都可以同时成立。",
+    "intro_en": "Mood buys—blind boxes, bubble tea, fan merch, cute packs. “I deserve joy” and “I slipped again” can both be true.",
+    "questions_zh": [
+      "最近一次明显为了安慰自己或庆祝而买的东西是什么？价位不重要，说心情即可。",
+      "同样的钱，你会优先买实用品还是「看了就开心」的东西？举例各一。",
+      "有没有买完反而更空的经历？当时缺的是物还是陪伴？",
+      "你会给自己设「情绪预算」吗—比如每月一笔随便花？",
+      "若要把开销里「纯情绪」与「刚性需求」分开记账，你觉得难不难？"
+    ],
+    "questions": [
+      "Last buy clearly to comfort or celebrate you—price off, mood on.",
+      "Same cash—gear you need or joy you see—one example each.",
+      "Ever felt emptier after buying—was the hole thing or company?",
+      "Do you set a “mood budget”—cash to burn each month?",
+      "Splitting “pure mood” from “must pay”—hard for you or easy?"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "culture",
+    "zh_title": "如何看待内卷现象",
+    "en_title": "Involution: when extra effort yields little gain",
+    "intro_zh": "内卷常被说成「努力通货膨胀」：人人加班，平均线被抬高。可以从课业、健身、育儿攀比任举一例，讨论你是加入、退出，还是换赛道。",
+    "intro_en": "Involution = ratchet where extra grind lifts the bar—school, gym, parenting flex. Join, quit, or switch tracks—your call.",
+    "questions_zh": [
+      "你最近一次明确感到「被卷到」的场景是什么—学习、工作、还是爱好圈？",
+      "那种压力更像怕落后，还是怕让人失望？",
+      "你有主动「降速」或「不参与比较」的成功经验吗？别人怎么反应？",
+      "若规则短期变不了，你会优化方法、换圈子，还是直接接受「够用就好」？",
+      "一个词形容你对内卷的立场：战斗、躺平、润、佛系—为什么挑它？"
+    ],
+    "questions": [
+      "Last scene that truly ratcheted you—study, job, or hobby group?",
+      "Is the stress fear of falling behind—or letting people down?",
+      "Ever slowed down or quit the race on purpose—how did others react?",
+      "If rules won’t change soon—tactics, new crowd, or “good enough”?",
+      "One word for your stance—fight, lie flat, switch lanes, zen—why that word?"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "life",
+    "zh_title": "小众爱好大赏",
+    "en_title": "Unusual hobbies worth sharing",
+    "intro_zh": "小众≠高人一等：只是圈子小、器材怪、搜索关键词长。带一个名字很酷的爱好来，也欢迎纯围观提问。",
+    "intro_en": "Niche isn’t snob—small crowd, odd gear, long Google strings. Bring a cool hobby name; lurkers can ask.",
+    "questions_zh": [
+      "你自己或朋友有没有「一说别人要问三遍」的爱好？用一句话解释它在玩什么。",
+      "入坑时最让你上头的是技术、器物、社群，还是单纯解压？",
+      "维持这个爱好最贵的不是钱是时间吗？你怎么挤时间？",
+      "被质疑「这有意义吗」时你怎么回答—认真版与玩笑版各一句。",
+      "若这爱好明天突然全民流行，你会高兴还是略有失落？"
+    ],
+    "questions": [
+      "You or a friend with a hobby people ask three times—what is the play?",
+      "What hooked you—skill, gear, people, or pure calm?",
+      "Is time pricier than cash—how do you carve hours?",
+      "When someone says “pointless”—your serious line and your joke line.",
+      "If it went mainstream tomorrow—happy—or a touch sad?"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "work",
+    "zh_title": "斜杠青年",
+    "en_title": "Slash careers: more than one job title",
+    "intro_zh": "斜杠常写作 designer／teacher／播客主：主业之外的身份拼图。可以聊兼职、自由接案，也聊报税、社保、父母催婚式关心的现实面。",
+    "intro_en": "Slash = designer / teacher / host—side labels beyond the day job. Gigs, taxes, parents asking “when stable?” fair game.",
+    "questions_zh": [
+      "你现在的头衔如果写成「A／B」，会怎么填？哪一个是养活自己用的？",
+      "多线并行时，你怎么排优先级—钱、兴趣、还是曝光？",
+      "有没有一条副线试过以后决定砍掉或搁置？教训是什么？",
+      "身边人对你「不务正业」的担忧，你化解还是冷处理？",
+      "若只能保留一条斜杠五年，你会留哪一条？为什么？"
+    ],
+    "questions": [
+      "Your slash card—A / B—which pays the rent?",
+      "Many lines—rank them—cash, love, or clout?",
+      "Ever killed a side path—what lesson came?",
+      "Family fears you’re flaky—smooth talk or silence?",
+      "Only one slash for five years—which stays—and why?"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "self",
+    "zh_title": "故事重塑人生",
+    "en_title": "How stories change how we live",
+    "intro_zh": "人靠叙事理解自己：分手理由、职场挫折、移民选择，讲法不同，感受就不同。可以分享一本书、一部片，或你给自己写过的「新剧本」。",
+    "intro_en": "We narrate ourselves—breakups, job hits, moves sound different retold. Share a book, film, or a “new script” you wrote for yourself.",
+    "questions_zh": [
+      "你常用哪个故事向陌生人介绍自己—学生、北漂、二胎家长？换一个讲法会别扭吗？",
+      "有没有一本书或电影让你事后换了看世界的方式？一句话说它改了什么。",
+      "当你失败时，默认剧情是「我不行」还是「环境难」？各举一次。",
+      "若现实和自洽的故事冲突，你更愿改事实（换工作）还是改讲述（换角度）？",
+      "你会给五年前的自己补一句怎样的旁白—安慰、吐槽还是剧透？"
+    ],
+    "questions": [
+      "Which story do you tell strangers first—student, city hop, parent—does another version feel odd?",
+      "One book or film that shifted your lens—what changed in one line?",
+      "On failure—do you default to “I’m not enough” or “context was hard”—one each.",
+      "If truth and your tidy story clash—change facts or framing?",
+      "One voice-over you’d add for your younger self—comfort, roast, or spoiler?"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "self",
+    "zh_title": "活在当下",
+    "en_title": "Live in the present moment.",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道“活在当下”是什么意思吗？",
+      "在日常生活中，你有哪些“活在当下”的小瞬间呢？",
+      "“摆烂”看似与“活在当下”相悖，但却受到很多人的追捧，你觉得“摆烂”是不是也一种消极的“活在当下”呢？",
+      "当面对过去的遗憾和未来的不确定时，你是如何做到“活在当下”的？",
+      "“活在当下”是一种生活态度，也是一种人生哲学。你认为这两者之间有什么联系和区别？",
+      "如果人人都只“活在当下”，不考虑长远发展，对个人和社会会产生什么样的影响？我们该如何在两者之间找到平衡？"
+    ],
+    "questions": [
+      "Do you know what \"live in the moment\" means?",
+      "In daily life, what are some of your little moments of \"living in the moment\"?",
+      "\"Slacking off\" seems to be contrary to \"living in the moment\", but it is pursued by many people. Do you think \"slacking off\" is also a negative way of \"living in the moment\"?",
+      "When facing past regrets and future uncertainties, how do you manage to \"live in the moment\"?",
+      "\"Living in the moment\" is not only a lifestyle attitude but also a life philosophy. What do you think are the connections and differences between the two?",
+      "If everyone only \"lives in the moment\" without considering long - term development, what kind of impacts will it have on individuals and society? How can we strike a balance between the two?"
+    ]
+  },
+  {
+    "id": 32,
+    "category": "self",
+    "zh_title": "人设",
+    "en_title": "Character design",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道什么是“人设”吗？",
+      "在生活中，你有没有给自己设定过某种人设？为什么会选择这个人设呢？",
+      "当你设定的人设和真实的自己有冲突时，你会怎么做呢？",
+      "打造一个成功的人设，会给我们的生活和社交带来哪些积极影响？",
+      "维持一个人设需要付出很多努力，你认为值得吗？你是如何坚持的呢？",
+      "人设是否会限制我们的发展？我们应该如何在人设和自我成长之间找到平衡？"
+    ],
+    "questions": [
+      "Do you know what a \"persona\" is?",
+      "In life, have you ever set a certain persona for yourself? Why did you choose this persona?",
+      "When the persona you set conflicts with your true self, what will you do?",
+      "What positive impacts will building a successful persona bring to our lives and social interactions?",
+      "Maintaining a persona requires a lot of effort. Do you think it's worth it? How do you persevere?",
+      "Will a persona limit our development? How should we find a balance between the persona and self - growth?"
+    ]
+  },
+  {
+    "id": 33,
+    "category": "self",
+    "zh_title": "人生设计",
+    "en_title": "Life design",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道“人生设计”是什么意思吗？",
+      "你有没有给自己的人生做过一个初步的设计规划？",
+      "在人生设计中，你觉得设定目标有多重要，你是怎么设定目标的呢？",
+      "当人生设计与现实发生冲突时，你会怎么调整你的设计方案？",
+      "对于人生设计，你认为是应该更注重个人兴趣还是社会需求，如何平衡两者呢？",
+      "如果可以重新设计你的人生，你会做出哪些改变，为什么？"
+    ],
+    "questions": [
+      "Do you know what \"life design\" means?",
+      "Have you ever made a preliminary design and plan for your life?",
+      "In life design, how important do you think setting goals is, and how do you set your goals?",
+      "When there is a conflict between your life design and reality, how will you adjust your design plan?",
+      "Regarding life design, do you think one should focus more on personal interests or social needs, and how can one balance the two?",
+      "If you could redesign your life, what changes would you make and why?"
+    ]
+  },
+  {
+    "id": 34,
+    "category": "life",
+    "zh_title": "不期而遇",
+    "en_title": "Meet by chance",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你知道“不期而遇”是什么意思吗？",
+      "生活中你有过哪些美好的不期而遇呢？",
+      "当你和老友不期而遇时，心情是怎样的？",
+      "不期而遇的机会出现在面前，你会主动抓住它吗？",
+      "有时候不期而遇的挫折也会打乱我们的计划，你会怎样调整心态去应对？",
+      "从哲学的角度来看，不期而遇的事件对我们的人生有着怎样的意义和影响？"
+    ],
+    "questions": [
+      "Do you know what \"encounter by chance\" means?",
+      "What wonderful chance encounters have you had in life?",
+      "How do you feel when you unexpectedly meet an old friend?",
+      "When a chance encounter presents itself, will you take the initiative to seize it?",
+      "Sometimes, unexpected setbacks can disrupt our plans. How will you adjust your mindset to deal with them?",
+      "From a philosophical perspective, what significance and impact do unexpected events have on our lives?"
+    ]
+  },
+  {
+    "id": 35,
+    "category": "culture",
+    "zh_title": "新自由主义",
+    "en_title": "Neoliberalism",
+    "intro_zh": "欢迎不同立场：先让别人说完，再用「我理解你是说…」接话。",
+    "intro_en": "Different views welcome. Let people finish, then bridge with “So you mean…”",
+    "questions_zh": [
+      "你是否听说过“新自由主义”这个词？",
+      "新自由主义在当今社会有哪些常见的体现形式？",
+      "新自由主义对个体经济发展会产生怎样的影响？你身边是否有相关例子？",
+      "当新自由主义与本土经济政策碰撞时，会出现什么情况？该如何应对？",
+      "在国际经济格局中，新自由主义的优势和弊端分别是什么？我们该如何扬长补短？",
+      "从长远来看，新自由主义能否促进全球经济的可持续发展？我们能做些什么来推动更好的经济模式？"
+    ],
+    "questions": [
+      "Have you ever heard of the term \"neoliberalism\"?",
+      "What are the common manifestation forms of neoliberalism in today's society?",
+      "What kind of impact will neoliberalism have on the individual economic development? Are there any relevant examples around you?",
+      "What will happen when neoliberalism collides with local economic policies? How should we deal with it?",
+      "In the international economic pattern, what are the advantages and disadvantages of neoliberalism respectively? How can we make the most of the advantages and avoid the disadvantages?",
+      "In the long run, can neoliberalism promote the sustainable development of the global economy? What can we do to promote a better economic model?"
+    ]
+  },
+  {
+    "id": 36,
+    "category": "self",
+    "zh_title": "非暴力沟通",
+    "en_title": "Nonviolent Communication",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道“非暴力沟通”是什么吗？",
+      "在生活中，你有没有尝试运用过非暴力沟通的方式和他人交流？",
+      "当遇到他人情绪激动、言语不友好时，你怎样用非暴力沟通来化解矛盾？",
+      "在非暴力沟通中，倾听对方的感受和需要很关键，你有哪些倾听他人的小妙招？",
+      "如果非暴力沟通在实际运用中效果不佳，你觉得可能是哪个环节出了问题，如何改进？",
+      "如何将非暴力沟通的理念融入到更广泛的社会交往和群体协作中，从而营造更和谐的社会氛围？"
+    ],
+    "questions": [
+      "Do you know what \"nonviolent communication\" is?",
+      "In life, have you ever tried to communicate with others using nonviolent communication?",
+      "When encountering someone who is emotionally agitated and speaks rudely, how do you use nonviolent communication to resolve conflicts?",
+      "In nonviolent communication, it's crucial to listen to the other person's feelings and needs. What small tricks do you have for listening to others?",
+      "If nonviolent communication doesn't work well in practical application, which step do you think may have gone wrong and how can it be improved?",
+      "How can the concept of nonviolent communication be integrated into broader social interactions and group collaborations to create a more harmonious social atmosphere?"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "self",
+    "zh_title": "延迟满足",
+    "en_title": "Delayed gratification",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道“延迟满足”是什么意思吗？",
+      "生活中你有没有过延迟满足的小经历，比如忍住不立刻吃喜欢的零食？",
+      "当面对诱惑时，是什么让你决定选择延迟满足呢？",
+      "延迟满足在实现短期目标和长期目标中，分别起到怎样的作用呢？",
+      "如果一直坚持延迟满足，会不会错过一些及时的快乐，你怎么看待这个问题？",
+      "在快节奏的当下社会，倡导延迟满足是否还具有现实意义，谈谈你的看法。"
+    ],
+    "questions": [
+      "Do you know what \"delayed gratification\" means?",
+      "Have you ever had a small experience of delayed gratification in life, such as resisting the urge to eat your favorite snacks right away?",
+      "What makes you decide to choose delayed gratification when faced with temptations?",
+      "What roles does delayed gratification play in achieving short - term goals and long - term goals respectively?",
+      "If you always stick to delayed gratification, will you miss some immediate pleasures? What's your opinion on this issue?",
+      "In today's fast - paced society, does advocating delayed gratification still have practical significance? Share your thoughts."
+    ]
+  },
+  {
+    "id": 38,
+    "category": "life",
+    "zh_title": "人生清单",
+    "en_title": "Life list",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你知道“人生清单”是什么吗？",
+      "你是否已经有了自己的人生清单？清单上都有哪些小目标？",
+      "当你在制定人生清单时，是更倾向于短期目标还是长期规划呢？",
+      "在实现人生清单上的目标过程中，遇到困难你会怎么激励自己坚持下去？",
+      "如果人生清单里的目标与身边人的期望冲突了，你会如何抉择？",
+      "回顾自己的人生清单，你认为最大的意义是实现目标，还是在追求目标过程中的成长？"
+    ],
+    "questions": [
+      "Do you know what a \"life list\" is?",
+      "Do you already have your own life list? What small goals are on the list?",
+      "When you are making a life list, do you tend to set short - term goals or long - term plans?",
+      "In the process of achieving the goals on your life list, how will you motivate yourself to keep going when you encounter difficulties?",
+      "If the goals in your life list conflict with the expectations of the people around you, how will you make a choice?",
+      "Looking back on your life list, do you think the greatest significance lies in achieving the goals or the growth in the process of pursuing the goals?"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "self",
+    "zh_title": "付出型人格",
+    "en_title": "Giver personality",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你是否听说过“付出型人格”这个词？",
+      "你身边有付出型人格的人吗？他们有什么表现？",
+      "如果你是付出型人格，你在付出时是出于什么心理？",
+      "当付出没有得到预期的回报时，付出型人格的人应该如何调整心态？",
+      "在一段关系中，付出型人格怎样把握付出的度，避免过度消耗自己？",
+      "付出型人格能否在不断付出的过程中找到自我成长和实现个人价值的路径？"
+    ],
+    "questions": [
+      "Have you ever heard of the term \"giving personality\"?",
+      "Do you have people with a giving personality around you? What are their manifestations?",
+      "If you have a giving personality, what kind of psychology drives you to give?",
+      "When the efforts don't yield the expected returns, how should people with a giving personality adjust their mindset?",
+      "In a relationship, how can people with a giving personality control the degree of giving to avoid over - exhausting themselves?",
+      "Can people with a giving personality find a path for self - growth and personal value realization in the process of continuous giving?"
+    ]
+  },
+  {
+    "id": 40,
+    "category": "self",
+    "zh_title": "松弛感",
+    "en_title": "Sense of relaxation",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道“松弛感”是什么意思吗？",
+      "在生活中，你有没有体验过“松弛感”时刻呢？是什么样的场景？",
+      "当生活节奏快压力大时，你会用什么方法让自己拥有“松弛感”？",
+      "“松弛感”和躺平有什么本质区别呢？",
+      "想要长期保持“松弛感”，可能会面临哪些挑战，又该如何应对？",
+      "如果整个社会都倡导“松弛感”文化，会对我们的社会产生哪些积极和消极的影响？我们该如何平衡呢？"
+    ],
+    "questions": [
+      "Do you know what \"a sense of relaxation\" means?",
+      "In life, have you ever experienced moments of \"a sense of relaxation\"? What kind of scenarios were they?",
+      "When the pace of life is fast and the pressure is high, what methods do you use to give yourself \"a sense of relaxation\"?",
+      "What is the essential difference between \"a sense of relaxation\" and just lying flat?",
+      "What challenges might one face in order to maintain \"a sense of relaxation\" in the long - term, and how should one deal with them?",
+      "If the whole society advocates the culture of \"a sense of relaxation\", what positive and negative impacts will it have on our society? How should we balance them?"
+    ]
+  },
+  {
+    "id": 41,
+    "category": "life",
+    "zh_title": "大城床小城房",
+    "en_title": "A bed in a big city or a house in a small town.",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你知道“大城床小城房”这个说法吗？",
+      "你觉得在大城市租一张床和在小城市拥有一套房，哪个更吸引你？为什么？",
+      "如果有机会，你会选择放弃大城市的“床”，去小城市拥有“房”吗？",
+      "在追求“大城床小城房”的背后，承载着人们怎样的梦想和期待？",
+      "当面临“大城床小城房”的抉择时，如何权衡职业发展和生活舒适度？",
+      "从长远来看，“大城床小城房”这种选择模式对于个人的人生规划和社会发展会产生怎样的影响？"
+    ],
+    "questions": [
+      "Do you know the saying \"a bed in a big city, a house in a small city\"?",
+      "Do you think renting a bed in a big city or owning a house in a small city is more appealing to you? Why?",
+      "If given the chance, would you choose to give up the \"bed\" in the big city and own a \"house\" in a small city?",
+      "What kind of dreams and expectations do people carry behind the pursuit of \"a bed in a big city, a house in a small city\"?",
+      "How to weigh career development and life comfort when faced with the choice between \"a bed in a big city\" and \"a house in a small city\"?",
+      "In the long run, what kind of impact will the choice pattern of \"a bed in a big city, a house in a small city\" have on an individual's life planning and social development?"
+    ]
+  },
+  {
+    "id": 42,
+    "category": "life",
+    "zh_title": "高光时刻",
+    "en_title": "Highlights; Glorious moments; Shining moments",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你知道“高光时刻”这个词是什么意思吗？",
+      "你觉得生活中的哪些瞬间可以被称为高光时刻？",
+      "你自己有过哪些让你印象深刻的高光时刻呢？",
+      "当身边的人迎来高光时刻时，你是怎样的心情？你会如何为Ta庆祝？",
+      "为了未来能拥有更多高光时刻，你现在会做哪些努力和准备？",
+      "在追求高光时刻的道路上，遭遇挫折和低谷时，你会如何调整自己的心态继续前行？"
+    ],
+    "questions": [
+      "Do you know what the term \"highlight moment\" means?",
+      "What moments in life do you think can be called highlight moments?",
+      "What highlight moments of your own have left a deep impression on you?",
+      "How do you feel when the people around you reach their highlight moments? How will you celebrate it for them?",
+      "What efforts and preparations are you making now to have more highlight moments in the future?",
+      "When encountering setbacks and troughs on the way to pursuing highlight moments, how will you adjust your mindset to keep moving forward?"
+    ]
+  },
+  {
+    "id": 43,
+    "category": "life",
+    "zh_title": "我的大学时光",
+    "en_title": "My college years",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你是否知道大学时光被称为人生中“最自由的时光”，你觉得自由体现在哪些方面呢？",
+      "你是否有在大学参加过一些社团活动？这些活动给你带来了什么收获？",
+      "当你在大学面对学业和社团活动的冲突时，你是如何选择和处理的？",
+      "大学时光里，你有没有为了实现某个目标而拼命努力过？能和大家分享一下那段经历吗？",
+      "在大学，你如何看待“人脉就是钱脉”这种观点？你是怎样拓展自己的人脉的？",
+      "回顾整个大学时光，你认为对你个人成长影响最大的是什么？你从中获得了什么启示？"
+    ],
+    "questions": [
+      "Do you know that college time is called the \"freest time\" in life? In what aspects do you think the freedom is reflected?",
+      "Have you ever participated in some club activities in college? What benefits have these activities brought to you?",
+      "When you faced conflicts between academics and club activities in college, how did you make choices and handle them?",
+      "During your college years, have you ever worked desperately hard to achieve a certain goal? Can you share that experience with everyone?",
+      "In college, how do you view the idea that \"connections are money-making opportunities\"? How did you expand your network of contacts?",
+      "Looking back on your entire college time, what do you think had the greatest impact on your personal growth? What inspiration have you gained from it?"
+    ]
+  },
+  {
+    "id": 44,
+    "category": "life",
+    "zh_title": "搭子文化",
+    "en_title": "Buddy culture",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你是否了解“搭子文化”这个热词？",
+      "你有没有过搭子？和搭子一起做过哪些有趣的事？",
+      "搭子文化流行起来，你觉得背后的原因是什么？",
+      "在选择搭子时，你最看重对方的哪些方面？",
+      "搭子文化和传统友谊有什么区别和联系？",
+      "搭子文化对个人成长和社会发展会产生怎样的影响？"
+    ],
+    "questions": [
+      "Do you know the popular term \"buddy culture\"?",
+      "Have you ever had a buddy? What interesting things have you done with your buddy?",
+      "What do you think are the reasons behind the popularity of the buddy culture?",
+      "When choosing a buddy, what aspects of the other person do you value the most?",
+      "What are the differences and connections between the buddy culture and traditional friendship?",
+      "What kind of impact will the buddy culture have on personal growth and social development?"
+    ]
+  },
+  {
+    "id": 45,
+    "category": "culture",
+    "zh_title": "家乡文化",
+    "en_title": "Hometown culture",
+    "intro_zh": "欢迎不同立场：先让别人说完，再用「我理解你是说…」接话。",
+    "intro_en": "Different views welcome. Let people finish, then bridge with “So you mean…”",
+    "questions_zh": [
+      "你知道自己家乡有哪些知名的特色美食吗？",
+      "现在很多地方都在搞“文旅融合”，你觉得家乡的文化和旅游是如何结合的呢？",
+      "家乡的传统文化在现代社会中受到了一些冲击，你认为应该采取什么措施去保护它们呢？",
+      "当外来文化逐渐渗透，家乡的独特文化怎样才能做到既与时俱进又不失本色呢？",
+      "在经济发展的浪潮下，如何利用家乡文化的特色来推动家乡的可持续发展呢？",
+      "你认为家乡文化的传承与发展，我们这一代人肩负着怎样的使命和责任？"
+    ],
+    "questions": [
+      "Do you know what well - known special local delicacies there are in your hometown?",
+      "Now many places are promoting the \"integration of culture and tourism\". How do you think the culture and tourism in your hometown are combined?",
+      "The traditional culture in your hometown has been affected to some extent in modern society. What measures do you think should be taken to protect it?",
+      "As foreign cultures gradually penetrate, how can the unique culture of your hometown both keep up with the times and retain its essence?",
+      "In the wave of economic development, how can we leverage the unique features of hometown culture to promote the sustainable development of your hometown?",
+      "What missions and responsibilities do you think our generation shoulders in the inheritance and development of hometown culture?"
+    ]
+  },
+  {
+    "id": 46,
+    "category": "travel",
+    "zh_title": "人在旅途",
+    "en_title": "People on the journey",
+    "intro_zh": "可以分享去过或计划去的地方：怎么发现的、落地后与想象是否一致。",
+    "intro_en": "Share a place you went—or plan to. How you found it, and what surprised you on arrival.",
+    "questions_zh": [
+      "你是否向往一场“说走就走”的旅行？",
+      "在旅途中，你最喜欢打卡哪些“网红景点”？",
+      "当你独自踏上旅途时，遇到最难忘的事情是什么？你是如何应对的？",
+      "在不同的旅途体验中，怎样才能更好地“沉浸式”感受当地文化？",
+      "旅行中，你会选择“特种兵式”的快节奏游玩，还是“慵懒游”的慢生活？如何平衡旅行的节奏？",
+      "从多次的旅行经历中，你获得了怎样的人生感悟？这些感悟又如何影响你的生活和未来规划？"
+    ],
+    "questions": [
+      "Do you yearn for a \"spur-of-the-moment\" trip?",
+      "Which \"internet-famous scenic spots\" do you like to visit the most during your travels?",
+      "When you embark on a journey alone, what's the most unforgettable thing you've encountered? How did you deal with it?",
+      "How can you better have an \"immersive\" experience of the local culture during different travel experiences?",
+      "During your travels, do you prefer the fast-paced \"special forces-style\" sightseeing or the slow-paced \"lazy travel\"? How can you balance the rhythm of your trips?",
+      "What life insights have you gained from your multiple travel experiences? And how do these insights influence your life and future plans?"
+    ]
+  },
+  {
+    "id": 47,
+    "category": "life",
+    "zh_title": "如果我有超能力",
+    "en_title": "If I had superpowers.",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "如果你有超能力，你希望是什么超能力？",
+      "假如你拥有了瞬间移动的超能力，你最想第一时间去哪里？",
+      "当你拥有超能力后，你会选择公开还是隐藏这个秘密，为什么？",
+      "如果可以用超能力帮助解决一个全球性问题，你会选择解决哪个问题，怎么解决？",
+      "在利用超能力帮助他人的过程中，遇到别人不理解甚至误解，你会怎么做？",
+      "当超能力带来的责任和个人的自由生活产生冲突时，你会如何抉择，以实现更大的价值？"
+    ],
+    "questions": [
+      "If you had superpowers, what kind of superpower would you like to have?",
+      "If you had the superpower of teleportation, where would you most want to go first?",
+      "After you have superpowers, would you choose to make this secret public or keep it hidden? Why?",
+      "If you could use your superpowers to help solve a global problem, which problem would you choose to solve and how would you solve it?",
+      "In the process of using your superpowers to help others, if people don't understand or even misunderstand you, what would you do?",
+      "When the responsibilities brought by superpowers conflict with your personal free life, how would you make a choice to achieve greater value?"
+    ]
+  },
+  {
+    "id": 48,
+    "category": "culture",
+    "zh_title": "刻板印象",
+    "en_title": "Stereotype",
+    "intro_zh": "欢迎不同立场：先让别人说完，再用「我理解你是说…」接话。",
+    "intro_en": "Different views welcome. Let people finish, then bridge with “So you mean…”",
+    "questions_zh": [
+      "你知道什么是刻板印象吗？",
+      "生活中你遇到过哪些刻板印象的例子？",
+      "当别人用刻板印象看待你时，你会怎么做？",
+      "刻板印象会给我们带来哪些负面影响？又有哪些可能的积极作用呢？",
+      "我们应该如何打破自身和他人的刻板印象，从而实现多元化的自我和社会？",
+      "从长远来看，消除社会上的刻板印象，对人类文明的进步会产生怎样重大的推动作用？"
+    ],
+    "questions": [
+      "Do you know what a stereotype is?",
+      "What examples of stereotypes have you encountered in life?",
+      "What will you do when others view you with stereotypes?",
+      "What negative impacts can stereotypes bring to us? And what possible positive effects do they have?",
+      "How should we break the stereotypes of ourselves and others to achieve a diverse self and society?",
+      "In the long run, what significant impetus will the elimination of stereotypes in society have on the progress of human civilization?"
+    ]
+  },
+  {
+    "id": 49,
+    "category": "culture",
+    "zh_title": "世界是个草台班子",
+    "en_title": "The world is a makeshift organization.",
+    "intro_zh": "欢迎不同立场：先让别人说完，再用「我理解你是说…」接话。",
+    "intro_en": "Different views welcome. Let people finish, then bridge with “So you mean…”",
+    "questions_zh": [
+      "你知道“世界是个草台班子”这个说法吗？",
+      "“世界是个草台班子”让你想到生活中哪些混乱却有趣的瞬间？",
+      "当你觉得世界像个草台班子时，你会用什么积极的心态去面对？",
+      "在这样看似无序的“草台班子”世界里，我们如何找到自己的小确幸？",
+      "如果世界真的是个草台班子，我们怎样做能成为自己生活的“最佳导演”？",
+      "从“世界是个草台班子”这个观点出发，谈谈你对人类未来发展的乐观预期。"
+    ],
+    "questions": [
+      "Do you know the saying \"The world is a makeshift troupe\"?",
+      "What chaotic yet interesting moments in life does the phrase \"The world is a makeshift troupe\" make you think of?",
+      "When you feel that the world is like a makeshift troupe, what positive mindset will you adopt to face it?",
+      "In such a seemingly disordered \"makeshift troupe\" world, how can we find our little joys?",
+      "If the world is really a makeshift troupe, what can we do to become the \"best director\" of our own lives?",
+      "Starting from the view that \"The world is a makeshift troupe\", talk about your optimistic expectations for the future development of humanity."
+    ]
+  },
+  {
+    "id": 51,
+    "category": "travel",
+    "zh_title": "城市对话",
+    "en_title": "City dialogue",
+    "intro_zh": "可以分享去过或计划去的地方：怎么发现的、落地后与想象是否一致。",
+    "intro_en": "Share a place you went—or plan to. How you found it, and what surprised you on arrival.",
+    "questions_zh": [
+      "你是否知道“城市漫游”这个概念呀？",
+      "你有没有体验过城市漫游，都去了城市里的哪些有趣地方？",
+      "在城市漫游中，你发现了城市里哪些不为人知的宝藏角落？",
+      "当你深度探索城市时，是如何去挖掘城市的历史文化底蕴的？",
+      "对于城市的发展和建设，你认为应该如何在现代化进程中保留其独特的人文特色？",
+      "怎样通过我们每个人的行动，让城市变得更加宜居、更有温度，实现“城市让生活更美好”的愿景？"
+    ],
+    "questions": [
+      "Do you know the concept of \"urban exploration\"?",
+      "Have you ever experienced urban exploration? Which interesting places in the city have you visited?",
+      "During urban exploration, which hidden gem corners in the city have you discovered?",
+      "When you conduct in - depth exploration of the city, how do you dig into the city's historical and cultural heritage?",
+      "Regarding the city's development and construction, how do you think we should preserve its unique cultural characteristics in the process of modernization?",
+      "How can each of us contribute to making the city a more livable and warm - hearted place and realizing the vision of \"Better City, Better Life\"?"
+    ]
+  },
+  {
+    "id": 52,
+    "category": "work",
+    "zh_title": "45度青年",
+    "en_title": "45-degree youth",
+    "intro_zh": "尽量举真实情境：当时谁在场、你怎么做、结果如何。再聊如果重来会不会调整。",
+    "intro_en": "Use real scenes—who was there, what you did, what happened. Then whether you’d tweak it now.",
+    "questions_zh": [
+      "你知道“45度青年”是什么意思吗？",
+      "你身边有没有“45度青年”？他们有什么特点？",
+      "如果你成为“45度青年”，会选择发展哪些新技能或兴趣？",
+      "“45度青年”在追求多元发展时，如何避免精力分散？",
+      "当“45度青年”的新尝试遭遇失败，怎样快速调整心态重新出发？",
+      "从长远来看，“45度青年”的发展模式对个人综合竞争力的提升有哪些深层次的影响？"
+    ],
+    "questions": [
+      "Do you know what \"45-degree youths\" mean?",
+      "Are there any \"45-degree youths\" around you? What are their characteristics?",
+      "If you become a \"45-degree youth\", which new skills or interests will you choose to develop?",
+      "How can \"45-degree youths\" avoid spreading themselves too thin when pursuing diversified development?",
+      "When a \"45-degree youth\" encounters failure in a new attempt, how can they quickly adjust their mindset and start over?",
+      "In the long run, what profound impacts does the development model of \"45-degree youths\" have on the improvement of an individual's comprehensive competitiveness?"
+    ]
+  },
+  {
+    "id": 54,
+    "category": "life",
+    "zh_title": "提前规划养老",
+    "en_title": "Plan for retirement in advance",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你对“提前规划养老”这个话题有了解吗？",
+      "你身边有没有人已经开始提前规划养老啦？他们是怎么做的呢？",
+      "“养老自由”是当下很火的概念，你觉得提前规划养老能帮我们实现养老自由吗？",
+      "如果现在开始提前规划养老，你认为最基础的步骤是什么呢？",
+      "提前规划养老可能会面临一些经济方面的挑战，你如何看待和应对这些挑战呢？",
+      "从宏观角度看，提前规划养老对整个社会的可持续发展会有哪些积极影响呢？"
+    ],
+    "questions": [
+      "Do you have any knowledge about the topic of \"planning for retirement in advance\"?",
+      "Are there people around you who have started planning for retirement in advance? How do they do it?",
+      "\"Retirement freedom\" is a very popular concept nowadays. Do you think planning for retirement in advance can help us achieve retirement freedom?",
+      "If you start planning for retirement in advance now, what do you think are the most basic steps?",
+      "Planning for retirement in advance may face some economic challenges. How do you view and deal with these challenges?",
+      "From a macro perspective, what positive impacts will planning for retirement in advance have on the sustainable development of the whole society?"
+    ]
+  },
+  {
+    "id": 56,
+    "category": "culture",
+    "zh_title": "消费主义",
+    "en_title": "Consumerism",
+    "intro_zh": "欢迎不同立场：先让别人说完，再用「我理解你是说…」接话。",
+    "intro_en": "Different views welcome. Let people finish, then bridge with “So you mean…”",
+    "questions_zh": [
+      "你是否听说过“消费主义”这个词？",
+      "日常生活中，你能举例说说哪些行为体现了消费主义吗？",
+      "消费主义流行的当下，“省钱一族”是如何抵抗消费诱惑的？",
+      "消费主义在一定程度上刺激了经济发展，但也可能导致浪费，如何把握其中的度？",
+      "消费主义影响着大家的消费观念，你认为年轻人该如何树立正确的消费观？",
+      "当消费主义与个人理想、人生价值相冲突时，我们应如何抉择以实现自我成长和社会价值？"
+    ],
+    "questions": [
+      "Have you ever heard of the term \"consumerism\"?",
+      "In daily life, can you give examples of behaviors that reflect consumerism?",
+      "In the current era when consumerism is prevalent, how do the \"money - saving group\" resist the temptation of consumption?",
+      "Consumerism stimulates economic development to a certain extent, but it may also lead to waste. How can we strike the right balance?",
+      "Consumerism influences people's consumption concepts. How do you think young people should establish a correct consumption outlook?",
+      "When consumerism conflicts with personal ideals and life values, how should we make choices to achieve self - growth and social value?"
+    ]
+  },
+  {
+    "id": 59,
+    "category": "culture",
+    "zh_title": "祛魅",
+    "en_title": "Disenchantment",
+    "intro_zh": "欢迎不同立场：先让别人说完，再用「我理解你是说…」接话。",
+    "intro_en": "Different views welcome. Let people finish, then bridge with “So you mean…”",
+    "questions_zh": [
+      "你知道“祛魅”这个词是什么意思吗？",
+      "在日常生活中，你有没有经历过对某件事物“祛魅”的时刻？",
+      "“祛魅”之后，人们会更接近事物的本质，你怎么看待这种更接近本质的状态？",
+      "当你对一个曾经很向往的地方“祛魅”后，你还会选择再次前往吗？原因是什么？",
+      "如果要对传统文化进行“祛魅”，在保留其精髓的同时又剔除一些迷信元素，应该怎么做？",
+      "在社会发展过程中，“祛魅”现象普遍存在，这对社会的进步与人们的思想转变有着怎样的长期影响？"
+    ],
+    "questions": [
+      "Do you know what the word \"disenchantment\" means?",
+      "In daily life, have you ever experienced a moment of \"disenchantment\" with something?",
+      "After \"disenchantment\", people will get closer to the essence of things. How do you view this state of getting closer to the essence?",
+      "After you have \"disenchanted\" a place you once longed for, will you still choose to go there again? What's the reason?",
+      "If we want to \"disenchant\" traditional culture, how should we do it to retain its essence while eliminating some superstitious elements?",
+      "In the process of social development, the phenomenon of \"disenchantment\" is widespread. What long - term impacts does it have on social progress and people's ideological transformation?"
+    ]
+  },
+  {
+    "id": 61,
+    "category": "self",
+    "zh_title": "撕掉标签，拒绝被定义",
+    "en_title": "Tear off the labels and refuse to be defined.",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道“撕掉标签，拒绝被定义”是什么意思吗？",
+      "生活中你遇到过哪些被他人贴上的标签，你是如何回应的？",
+      "当你想要撕掉标签时，身边人的态度对你有什么影响呢？",
+      "拒绝被定义需要很大的勇气，你是从哪些事情上获取这份勇气的？",
+      "在追求自我、拒绝被定义的道路上，你是否有过迷茫，又是如何找到方向的？",
+      "如果每个人都能真正做到撕掉标签、拒绝被定义，对整个社会会产生怎样积极的影响呢？"
+    ],
+    "questions": [
+      "Do you know what \"tear off the labels and refuse to be defined\" means?",
+      "What labels have you been tagged with by others in life, and how did you respond?",
+      "When you want to tear off the labels, what kind of influence do the attitudes of people around you have on you?",
+      "It takes a lot of courage to refuse to be defined. From what things did you obtain this courage?",
+      "On the path of pursuing self and refusing to be defined, have you ever been confused, and how did you find your way?",
+      "If everyone can truly tear off the labels and refuse to be defined, what positive impacts will it have on the whole society?"
+    ]
+  },
+  {
+    "id": 63,
+    "category": "travel",
+    "zh_title": "特种兵式旅游",
+    "en_title": "Special forces-style tourism",
+    "intro_zh": "可以分享去过或计划去的地方：怎么发现的、落地后与想象是否一致。",
+    "intro_en": "Share a place you went—or plan to. How you found it, and what surprised you on arrival.",
+    "questions_zh": [
+      "你是否听说过“特种兵式旅游”这个词？",
+      "你身边有人尝试过特种兵式旅游吗？他们的体验如何？",
+      "当你打算开启特种兵式旅游时，你会优先选择哪些城市或景点？",
+      "在特种兵式旅游中，如何在有限的时间内打卡更多的景点，同时保证体验质量？",
+      "你认为特种兵式旅游对于个人成长和阅历增加有哪些积极影响？",
+      "在快节奏的特种兵式旅游和慢节奏的深度游之间，如何根据不同情况做出合理选择？"
+    ],
+    "questions": [
+      "Have you ever heard of the term \"special forces-style tourism\"?",
+      "Is there anyone around you who has tried special forces-style tourism? How was their experience?",
+      "When you plan to embark on special forces-style tourism, which cities or scenic spots would you prioritize?",
+      "In special forces-style tourism, how can you visit more scenic spots within a limited time while ensuring the quality of the experience?",
+      "What positive impacts do you think special forces-style tourism has on personal growth and the enrichment of experiences?",
+      "How can you make a reasonable choice between the fast-paced special forces-style tourism and the slow-paced in-depth tour according to different situations?"
+    ]
+  },
+  {
+    "id": 65,
+    "category": "self",
+    "zh_title": "脆皮青年",
+    "en_title": "Fragile youth",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道“脆皮青年”是什么意思吗？",
+      "你身边有没有“脆皮青年”？他们有哪些表现？",
+      "成为“脆皮青年”可能是由哪些原因造成的呢？",
+      "如果你是“脆皮青年”，打算采取什么措施改变这种状态？",
+      "从“脆皮青年”转变为“活力青年”，过程中最大的挑战是什么？如何应对？",
+      "当整个社会都关注“脆皮青年”现象时，这对青年群体的健康发展有什么积极意义？"
+    ],
+    "questions": [
+      "Do you know what \"frail youth\" means?",
+      "Are there any \"frail youth\" around you? What are their manifestations?",
+      "What possible reasons could lead to someone becoming a \"frail youth\"?",
+      "If you are a \"frail youth\", what measures do you plan to take to change this state?",
+      "What is the biggest challenge in the process of transforming from a \"frail youth\" to a \"vibrant youth\"? How to deal with it?",
+      "When the whole society pays attention to the phenomenon of \"frail youth\", what positive significance does it have for the healthy development of the youth group?"
+    ]
+  },
+  {
+    "id": 67,
+    "category": "self",
+    "zh_title": "PUA（学会拒绝）",
+    "en_title": "PUA (Learn to say no)",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你是否知道“PUA”这个词的含义？",
+      "生活中你有没有遇到过类似PUA的场景，当时感受如何？",
+      "当你意识到自己正在被PUA时，你会如何快速拒绝？",
+      "拒绝PUA需要很大的勇气，你是如何给自己积攒这份勇气的呢？",
+      "若身边的朋友遭遇PUA，你会用什么方式帮助Ta学会拒绝？",
+      "从个人到社会层面，怎样去营造一个抵制PUA、鼓励勇敢拒绝的良好环境？"
+    ],
+    "questions": [
+      "Do you know the meaning of the term \"PUA\"?",
+      "Have you ever encountered a scenario similar to PUA in your life? How did you feel at that time?",
+      "When you realize that you are being PUA'd, how will you quickly decline?",
+      "It takes a lot of courage to reject PUA. How did you muster up the courage?",
+      "If a friend around you encounters PUA, what ways will you use to help them learn to say no?",
+      "From an individual to a social level, how can we create a good environment that resists PUA and encourages people to bravely say no?"
+    ]
+  },
+  {
+    "id": 69,
+    "category": "self",
+    "zh_title": "同理心+社恐",
+    "en_title": "Empathy + Social anxiety",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你是否知道“同理心”这个概念呀？",
+      "你觉得社恐人士是否更需要同理心呢？",
+      "当你遇到社恐的朋友时，你会怎样用同理心去理解TA，让TA更自在呢？",
+      "对于社恐人群，怎样通过培养同理心去帮助他们打破社交壁垒呢？",
+      "如果在社交场合中，有人因社恐表现不佳，你如何用同理心去化解尴尬并给予鼓励？",
+      "从社会层面来看，怎样营造一个充满同理心，更包容社恐人群的社交环境呢？"
+    ],
+    "questions": [
+      "Do you know the concept of \"empathy\"?",
+      "Do you think people with social anxiety need more empathy?",
+      "When you meet a friend with social anxiety, how will you use empathy to understand them and make them feel more at ease?",
+      "How can we help people with social anxiety break down social barriers by cultivating empathy?",
+      "If someone performs poorly due to social anxiety in a social situation, how will you use empathy to defuse the awkwardness and give them encouragement?",
+      "From a social perspective, how can we create a social environment full of empathy that is more inclusive of people with social anxiety?"
+    ]
+  },
+  {
+    "id": 71,
+    "category": "self",
+    "zh_title": "MBTI",
+    "en_title": "MBTI",
+    "intro_zh": "情绪与选择都可以谈；若不想展开，允许Pass或只说一句。",
+    "intro_en": "Feelings and choices are both OK. Passing or one sentence is fine.",
+    "questions_zh": [
+      "你知道MBTI是什么吗？",
+      "MBTI的16种人格类型里，你觉得哪种最有趣？",
+      "你测出过自己的MBTI人格类型吗？感觉准不准呀？",
+      "在社交场合中，不同MBTI人格类型的人会有怎样不同的表现呢？",
+      "当MBTI人格类型不同的人一起合作时，可能会遇到哪些问题，又该如何解决？",
+      "MBTI人格类型会随着时间和经历发生改变吗？这对我们认识自己和他人有什么启示？"
+    ],
+    "questions": [
+      "Do you know what MBTI is?",
+      "Among the 16 personality types of MBTI, which one do you think is the most interesting?",
+      "Have you ever taken a test to find out your own MBTI personality type? Do you think it's accurate?",
+      "In social situations, how do people with different MBTI personality types behave differently?",
+      "When people with different MBTI personality types work together, what problems might they encounter and how should they be solved?",
+      "Can MBTI personality types change over time and with experiences? What insights does this offer for us to understand ourselves and others?"
+    ]
+  },
+  {
+    "id": 73,
+    "category": "life",
+    "zh_title": "财务自由",
+    "en_title": "Financial freedom",
+    "intro_zh": "每人先用一两句话说近况，再展开细节。没有标准答案，听完整比抢话更重要。",
+    "intro_en": "Start with a short update, then add detail. There’s no “model answer”—listening fully comes first.",
+    "questions_zh": [
+      "你知道“财务自由”是什么意思吗？",
+      "你认为实现财务自由需要赚到多少钱？有什么目标吗？",
+      "在当下，普通人可以通过哪些常见途径迈向财务自由呢？",
+      "为了实现财务自由，你愿意放弃一些当下的消费享受吗？比如不买奢侈品。",
+      "当面临风险投资和稳健储蓄两种选择时，怎样决策才更有利于实现财务自由？",
+      "实现财务自由后，你认为人生的下一个追求应该是什么呢？"
+    ],
+    "questions": [
+      "Do you know what \"financial freedom\" means?",
+      "How much money do you think one needs to earn to achieve financial freedom? Do you have any goals?",
+      "In the current situation, what common ways can ordinary people take to move towards financial freedom?",
+      "Are you willing to give up some current consumption enjoyment in order to achieve financial freedom? For example, not buying luxury goods.",
+      "When facing the choice between risky investments and stable savings, how should one make decisions to be more conducive to achieving financial freedom?",
+      "After achieving financial freedom, what do you think the next pursuit in life should be?"
+    ]
+  },
+  {
+    "id": 74,
+    "category": "culture",
+    "zh_title": "佛系",
+    "en_title": "Going with the flow: the fóxì mindset",
+    "intro_zh": "欢迎不同立场：先让别人说完，再用「我理解你是说…」接话。",
+    "intro_en": "Different views welcome. Let people finish, then bridge with “So you mean…”",
+    "questions_zh": [
+      "你知道“佛系”这个词是什么意思吗？",
+      "你身边有没有比较“佛系”的人？他们有哪些表现？",
+      "选择“佛系”生活方式，在面对竞争时会有什么心态变化？",
+      "当追求的目标和“佛系”心态产生冲突时，你会如何抉择？",
+      "“佛系”是否意味着没有追求？怎样在“佛系”中保持积极向上的动力？",
+      "从社会发展的角度看，“佛系”文化的盛行会带来怎样的影响？我们应该如何正确看待它？"
+    ],
+    "questions": [
+      "Do you know what the term \"Buddha-like\" means?",
+      "Are there any \"Buddha-like\" people around you? What are their characteristics?",
+      "What kind of psychological changes will occur when someone with a \"Buddha-like\" lifestyle faces competition?",
+      "When the goals you pursue conflict with the \"Buddha-like\" mindset, how will you make a choice?",
+      "Does \"Buddha-like\" imply having no pursuits? How can one maintain a positive and progressive motivation while being \"Buddha-like\"?",
+      "From the perspective of social development, what impacts will the prevalence of the \"Buddha-like\" culture bring? How should we view it correctly?"
+    ]
+  }
+]

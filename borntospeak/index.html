@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" sizes="32x32" href="./assets/favicon-32x32.webp" />
+  <link rel="icon" type="image/webp" sizes="16x16" href="./assets/favicon-16x16.webp" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.webp" />
+  <title>Born To Speak · Speak English with confidence</title>
+  <meta name="description" content="Born To Speak English Lab: games, workplace scripts, topic archives, and IPA tools—self-guided speaking practice at your own pace." />
+  <link rel="canonical" href="https://louisbuilds.me/borntospeak/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Born To Speak · Speak English with confidence" />
+  <meta property="og:description" content="Born To Speak English Lab: games, workplace scripts, topic archives, and IPA tools—self-guided speaking practice at your own pace." />
+  <meta property="og:url" content="https://louisbuilds.me/borntospeak/" />
+  <meta property="og:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Born To Speak · Speak English with confidence" />
+  <meta name="twitter:description" content="Born To Speak English Lab: games, workplace scripts, topic archives, and IPA tools—self-guided speaking practice at your own pace." />
+  <meta name="twitter:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <link rel="alternate" hreflang="en" href="./index.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="./index-zh.html" />
+  <script>
+    (function () {
+      var v = new URLSearchParams(window.location.search).get('view');
+      if (v === 'work') {
+        window.location.replace('work.html' + window.location.hash);
+      }
+      if (v === 'tools') {
+        window.location.replace('tools.html' + window.location.hash);
+      }
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            duo: {
+              green: '#58CC02',
+              'green-dark': '#46A302',
+              blue: '#1CB0F6',
+              'blue-dark': '#1899D6',
+              gold: '#FFC800',
+              bg: '#F7F7F7',
+              soft: '#E5F9E0',
+            },
+          },
+          fontFamily: { sans: ['Nunito', 'system-ui', 'sans-serif'] },
+          boxShadow: {
+            duo: '0 4px 0 0 #46A302',
+            'duo-sm': '0 2px 0 0 #46A302',
+            card: '0 2px 12px rgba(0,0,0,.08)',
+          },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: Nunito, system-ui, sans-serif; }
+    .pattern-dots {
+      background-color: #E5F9E0;
+      background-image: radial-gradient(#58CC02 0.45px, transparent 0.45px);
+      background-size: 14px 14px;
+    }
+    .btn-duo-primary {
+      box-shadow: 0 4px 0 #46A302;
+      transition: transform .06s ease, box-shadow .06s ease;
+    }
+    .btn-duo-primary:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #46A302;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-duo-bg text-slate-800 antialiased">
+
+  <!-- Ambient bg -->
+  <div class="pointer-events-none fixed inset-0 -z-10 pattern-dots opacity-60"></div>
+  <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-duo-soft/40 via-transparent to-amber-50/30"></div>
+
+  <!-- NAV: logo left; desktop pills; mobile hamburger → drawer -->
+  <header class="sticky top-0 z-50 w-full border-b-2 border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <div class="flex w-full items-center justify-between gap-2 py-2.5 pl-3 pr-3 md:pl-5 md:pr-6">
+      <a href="./index.html" class="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
+        <picture class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_14px_rgba(15,23,42,0.10)] sm:h-11 sm:w-11" aria-hidden="true">
+          <source type="image/webp" srcset="./assets/logo-64.webp 64w, ./assets/logo-128.webp 128w" sizes="(min-width: 640px) 44px, 40px" />
+          <img src="./assets/logo-64.webp" alt="" width="64" height="64" class="h-full w-full object-cover" decoding="async" />
+        </picture>
+        <div class="min-w-0 leading-tight">
+          <p class="text-base font-black text-slate-900 sm:text-lg">Born To Speak</p>
+          <p class="text-[10px] font-extrabold uppercase tracking-widest text-duo-green sm:text-[11px]">English Lab</p>
+        </div>
+      </a>
+      <div class="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-3">
+        <nav class="hidden max-w-none flex-wrap items-center justify-end gap-1 md:flex md:gap-1.5 lg:gap-2" aria-label="Site">
+          <span class="rounded-lg border border-duo-green/40 bg-duo-soft px-2.5 py-1.5 text-[13px] font-bold text-duo-green-dark sm:px-3">Home</span>
+          <a href="./board-games.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">Games</a>
+          <a href="./topics.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">Topics</a>
+          <a href="./work.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">Work</a>
+          <a href="./tools.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">Tools</a>
+        </nav>
+        <div class="flex shrink-0 items-center rounded-lg border border-slate-200 bg-slate-50/90 p-0.5 text-[12px] font-extrabold shadow-sm" role="navigation" aria-label="Language">
+          <span class="rounded-md bg-white px-2.5 py-1 text-slate-900 shadow-sm" aria-current="true">EN</span>
+          <a href="./index-zh.html" class="rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+        </div>
+        <button
+          type="button"
+          id="index-menu-btn"
+          class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 md:hidden"
+          aria-expanded="false"
+          aria-controls="index-mobile-drawer"
+          aria-label="Open menu"
+        >
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="index-mobile-drawer" class="hidden border-t border-slate-100 bg-white px-4 py-3 shadow-inner md:hidden">
+      <nav class="flex flex-col gap-2" aria-label="Mobile menu">
+        <span class="rounded-xl border border-duo-green/40 bg-duo-soft px-4 py-3 text-sm font-bold text-duo-green-dark">Home</span>
+        <a href="./board-games.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Games</a>
+        <a href="./topics.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Topics</a>
+        <a href="./work.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Work</a>
+        <a href="./tools.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-5xl px-4 pb-20 md:px-6">
+
+    <!-- HOME -->
+    <section class="pt-10 md:pt-14">
+      <div class="relative overflow-hidden rounded-[2rem] border-2 border-duo-green/35 bg-gradient-to-br from-duo-soft via-white to-sky-50 p-8 shadow-card md:p-12">
+        <div class="pointer-events-none absolute -right-10 top-0 h-40 w-40 rounded-full bg-duo-green/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -left-6 bottom-0 h-32 w-32 rounded-full bg-duo-blue/15 blur-2xl"></div>
+        <div class="relative max-w-2xl">
+          <p class="inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-duo-green shadow-sm ring-2 ring-duo-green/25">Self-guided · open resources</p>
+          <h1 class="mt-4 text-4xl font-black leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-6xl">
+            The free, fun way to<br />
+            <span class="text-duo-green">speak English</span> with confidence
+          </h1>
+          <p class="mt-6 text-lg font-semibold leading-relaxed text-slate-600 md:text-xl">
+            Games, scripts, discussion archives, and an International Phonetic Alphabet (IPA) app—one loop from clear symbols to social talk.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a href="./board-games.html" class="btn-duo-primary inline-flex items-center justify-center rounded-2xl bg-duo-green px-8 py-4 text-base font-black text-white">
+              Start with board games
+            </a>
+          </div>
+          <p class="mt-6 text-sm font-semibold text-slate-500">
+            Pronunciation app (iOS):
+            <a href="./tools.html" class="font-extrabold text-duo-blue-dark underline decoration-2 underline-offset-2 hover:text-duo-green">Phonetic Formatter</a>
+            — open <a href="./tools.html" class="font-bold text-slate-600 underline decoration-1 underline-offset-2 hover:text-duo-green">Tools</a> for links and more apps.
+          </p>
+        </div>
+      </div>
+
+      <h2 class="mb-6 mt-14 text-center text-sm font-black uppercase tracking-[0.2em] text-slate-400">Pick your path</h2>
+      <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <a href="./board-games.html" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-duo-green/50 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-duo-soft text-2xl shadow-inner">🎲</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">Corner &amp; games</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">Low-pressure table talk—built for output, not drills.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-black text-duo-green group-hover:gap-2">Go <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="./work.html" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-violet-400/60 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-100 text-2xl">💼</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">Workplace scripts</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">Short role-plays for meetings, alignment, and friction.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-black text-violet-600 group-hover:gap-2">Open <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="./topics.html" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-amber-400/60 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-2xl">💬</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">Topics &amp; culture</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">Discussion archive — bilingual prompts to spark real conversation.</p>
+          <span class="mt-4 text-sm font-black text-amber-700">Browse topics <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="./tools.html" class="group flex flex-col rounded-[1.75rem] border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-duo-blue/50 hover:shadow-lg">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-2xl">🔊</span>
+          <h3 class="mt-4 text-lg font-black text-slate-900">Tools &amp; apps</h3>
+          <p class="mt-2 flex-1 text-sm font-semibold leading-relaxed text-slate-600">IPA transcriptions, focus timers, and more from the same indie studio.</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-black text-duo-blue-dark group-hover:gap-2">Explore <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+
+      <aside class="mx-auto mt-12 max-w-3xl border-t border-slate-200/90 pt-10" aria-label="Background">
+        <p class="text-[11px] font-black uppercase tracking-[0.18em] text-slate-400">Background · English Lab</p>
+        <p class="mt-3 text-sm font-semibold leading-relaxed text-slate-600 md:text-[15px]">
+          <strong class="font-extrabold text-slate-800">Born To Speak</strong> began in Shanghai in spring 2024 as a spoken-English community, with the line
+          <span class="font-bold text-slate-700">“Born To Speak, Make Your Voice Heard”</span>
+          and shared values of
+          <span class="font-bold text-slate-700">respect</span>,
+          <span class="font-bold text-slate-700">inclusiveness</span>, and
+          <span class="font-bold text-slate-700">growth</span>.
+        </p>
+        <p class="mt-3 text-sm font-semibold leading-relaxed text-slate-600 md:text-[15px]">
+          <strong class="font-extrabold text-slate-800">English Lab</strong> is this site: the four modules above bring together games, workplace scripts, discussion prompts, and companion apps—open materials you can browse and use at your own pace.
+        </p>
+      </aside>
+    </section>
+
+  </div>
+
+  <footer class="border-t-2 border-slate-200 bg-white py-10 text-center">
+    <p class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Born To Speak · community learning lab</p>
+    <p class="mt-4 text-sm font-semibold text-slate-600">© 2026 Born To Speak</p>
+    <p class="mt-2 text-sm text-slate-600">Community project · founded by Louis</p>
+    <p class="mt-2 text-sm text-slate-600">
+      More apps &amp; resources:
+      <a href="https://louisbuilds.me/" target="_blank" rel="noopener noreferrer" class="font-bold text-duo-green-dark underline decoration-slate-300 underline-offset-2 hover:text-duo-green hover:decoration-duo-green">louisbuilds.me</a>
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('index-menu-btn');
+      var drawer = document.getElementById('index-mobile-drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" sizes="32x32" href="./assets/favicon-32x32.webp" />
+  <link rel="icon" type="image/webp" sizes="16x16" href="./assets/favicon-16x16.webp" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.webp" />
+  <title>工具与应用 · Born To Speak</title>
+  <meta name="description" content="语音学与国际音标工具、专注效率类应用，打造完整英语学习练习体系，包含 Phonetic Formatter 音标转换工具，以及同工作室出品的多款独立实用软件。" />
+  <link rel="canonical" href="https://louisbuilds.me/borntospeak/tools-zh.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="工具与应用 · Born To Speak" />
+  <meta property="og:description" content="语音学与国际音标工具、专注效率类应用，打造完整英语学习练习体系，包含 Phonetic Formatter 音标转换工具，以及同工作室出品的多款独立实用软件。" />
+  <meta property="og:url" content="https://louisbuilds.me/borntospeak/tools-zh.html" />
+  <meta property="og:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="工具与应用 · Born To Speak" />
+  <meta name="twitter:description" content="语音学与国际音标工具、专注效率类应用，打造完整英语学习练习体系，包含 Phonetic Formatter 音标转换工具，以及同工作室出品的多款独立实用软件。" />
+  <meta name="twitter:image" content="https://louisbuilds.me/borntospeak/og-image.png" />
+  <link rel="alternate" hreflang="en" href="./tools.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="./tools-zh.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            duo: {
+              green: '#58CC02',
+              'green-dark': '#46A302',
+              blue: '#1CB0F6',
+              'blue-dark': '#1899D6',
+              bg: '#F7F7F7',
+              soft: '#E5F9E0',
+            },
+          },
+          fontFamily: { sans: ['"Noto Sans SC"', 'Nunito', 'system-ui', 'sans-serif'] },
+          boxShadow: {
+            duo: '0 4px 0 #46A302',
+            'duo-sm': '0 2px 0 #46A302',
+            card: '0 2px 12px rgba(0,0,0,.08)',
+          },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: "Noto Sans SC", Nunito, system-ui, sans-serif; }
+    .pattern-dots {
+      background-color: #E5F9E0;
+      background-image: radial-gradient(#58CC02 0.45px, transparent 0.45px);
+      background-size: 14px 14px;
+    }
+    .btn-duo-blue {
+      box-shadow: 0 4px 0 #1899D6;
+      transition: transform .06s ease, box-shadow .06s ease;
+    }
+    .btn-duo-blue:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #1899D6;
+    }
+    /* 与网站根目录 index.html 应用图标样式一致 */
+    .app-tool-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 28px rgba(15, 23, 42, 0.14);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-duo-bg text-slate-800 antialiased flex flex-col">
+  <div class="pointer-events-none fixed inset-0 -z-10 pattern-dots opacity-60"></div>
+  <div class="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-sky-50/50 via-transparent to-amber-50/20"></div>
+
+  <header class="sticky top-0 z-50 w-full border-b-2 border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <div class="flex w-full items-center justify-between gap-2 py-2.5 pl-3 pr-3 md:pl-5 md:pr-6">
+      <a href="./index-zh.html" class="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
+        <picture class="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_14px_rgba(15,23,42,0.10)] sm:h-11 sm:w-11" aria-hidden="true">
+          <source type="image/webp" srcset="./assets/logo-64.webp 64w, ./assets/logo-128.webp 128w" sizes="(min-width: 640px) 44px, 40px" />
+          <img src="./assets/logo-64.webp" alt="" width="64" height="64" class="h-full w-full object-cover" decoding="async" />
+        </picture>
+        <div class="min-w-0 leading-tight">
+          <p class="text-base font-black text-slate-900 sm:text-lg">Born To Speak</p>
+          <p class="text-[10px] font-extrabold uppercase tracking-widest text-sky-600 sm:text-[11px]">工具与应用</p>
+        </div>
+      </a>
+      <div class="flex min-w-0 flex-1 items-center justify-end gap-2 sm:gap-3">
+        <nav class="hidden flex-wrap items-center justify-end gap-1 md:flex md:gap-1.5 lg:gap-2" aria-label="站内导航">
+          <a href="./index-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">首页</a>
+          <a href="./board-games-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">桌游</a>
+          <a href="./topics.html?lang=zh" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">话题</a>
+          <a href="./work-zh.html" class="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-[13px] font-bold text-slate-600 hover:bg-slate-50 sm:px-3">职场</a>
+          <span class="rounded-lg border border-sky-300/60 bg-sky-50 px-2.5 py-1.5 text-[13px] font-bold text-sky-900 sm:px-3">工具</span>
+        </nav>
+        <div class="flex shrink-0 items-center rounded-lg border border-slate-200 bg-slate-50/90 p-0.5 text-[12px] font-extrabold shadow-sm" role="navigation" aria-label="语言切换">
+          <a href="./tools.html" class="rounded-md px-2.5 py-1 text-slate-600 hover:bg-white hover:text-slate-900" hreflang="en" lang="en">EN</a>
+          <span class="rounded-md bg-white px-2.5 py-1 text-slate-900 shadow-sm" aria-current="true">中文</span>
+        </div>
+        <button type="button" id="tools-menu-btn" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 md:hidden" aria-label="打开侧边菜单" aria-expanded="false" aria-controls="tools-mobile-drawer">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="tools-mobile-drawer" class="hidden border-t border-slate-100 bg-white px-4 py-3 shadow-inner md:hidden">
+      <nav class="flex flex-col gap-2" aria-label="移动端导航菜单">
+        <a href="./index-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">首页</a>
+        <a href="./board-games-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">桌游</a>
+        <a href="./topics.html?lang=zh" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">话题</a>
+        <a href="./work-zh.html" class="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-800">职场</a>
+        <span class="rounded-xl border border-sky-300/60 bg-sky-50 px-4 py-3 text-sm font-bold text-sky-900">工具</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto w-full max-w-5xl flex-1 px-4 pb-20 pt-10 md:px-6 md:pt-12">
+    <header class="relative overflow-hidden rounded-[2rem] border-2 border-duo-blue/35 bg-gradient-to-br from-sky-50 via-white to-duo-soft/40 p-8 shadow-card md:p-10">
+      <div class="pointer-events-none absolute -right-8 top-0 h-36 w-36 rounded-full bg-duo-blue/15 blur-3xl" aria-hidden="true"></div>
+      <p class="text-xs font-black uppercase tracking-widest text-duo-blue-dark">语音学习 → 习惯养成 → 口语输出</p>
+      <h1 class="mt-3 text-3xl font-black leading-tight text-slate-900 md:text-4xl">适配英语学习的实用工具集</h1>
+      <p class="mt-4 max-w-2xl text-base font-semibold leading-relaxed text-slate-600">
+        Born To Speak 倡导轻松无压力的线下口语练习模式。<strong class="font-extrabold text-slate-800">Phonetic Formatter</strong> 支持<strong class="font-extrabold text-slate-800">标准化国际音标（IPA）转换与文件导出</strong>。本站其余工具主打专注管理与劳逸结合，让你将口语实战专注留在线下交流场景。
+      </p>
+    </header>
+
+    <section class="mt-12" aria-labelledby="pf-heading">
+      <div class="rounded-[2rem] border-2 border-duo-blue/40 bg-white p-8 shadow-card md:p-10">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+          <div class="min-w-0 flex-1">
+            <span class="inline-flex rounded-full bg-duo-blue/15 px-3 py-1 text-[11px] font-black uppercase tracking-wide text-duo-blue-dark">核心推荐 · iOS / iPadOS</span>
+            <h2 id="pf-heading" class="mt-4 flex flex-wrap items-center gap-3 text-2xl font-black text-slate-900 md:gap-4 md:text-3xl">
+              <img src="../phoneticformatter/icon.png" width="60" height="60" class="app-tool-icon" alt="Phonetic Formatter 应用图标" loading="lazy" decoding="async" />
+              Phonetic Formatter
+            </h2>
+            <p class="mt-3 text-base font-semibold leading-relaxed text-slate-600">
+              快速将英文内容转换为<strong class="font-extrabold text-slate-800">国际音标</strong>，支持整句展示与逐词对照排版，可按需导出文档用于备课与学习参考。软件基于 CMU 专业发音词典研发，<strong class="font-extrabold text-slate-800">纯本地设备运算</strong>，学习草稿与教学资料无需上传云端，保障数据安全。
+            </p>
+            <ul class="mt-6 space-y-2.5 text-sm font-semibold text-slate-700">
+              <li class="flex gap-2"><span class="text-duo-green" aria-hidden="true">✓</span><span>逐词/整句对照查看音标，适合课前预习与口语练习。</span></li>
+              <li class="flex gap-2"><span class="text-duo-green" aria-hidden="true">✓</span><span>完整离线使用，无网络也可随时查阅编辑。</span></li>
+              <li class="flex gap-2"><span class="text-duo-green" aria-hidden="true">✓</span><span>专业版解锁长文本解析、多样排版格式，支持 TXT / DOCX / PDF 多格式导出。</span></li>
+            </ul>
+          </div>
+          <div class="flex w-full shrink-0 flex-col gap-3 sm:flex-row lg:w-auto lg:flex-col lg:min-w-[220px]">
+            <a href="../phoneticformatter/index-zh.html" class="btn-duo-blue inline-flex items-center justify-center rounded-2xl bg-duo-blue px-8 py-4 text-center text-base font-black text-white">
+              查看产品详情
+            </a>
+            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&amp;ct=web_bts_lab_tools" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-2xl border-2 border-slate-300 bg-white px-6 py-4 text-base font-extrabold text-slate-800 hover:border-duo-green/50 hover:bg-duo-soft">
+              前往 App Store 下载
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-14" aria-labelledby="more-apps-heading">
+      <div class="flex flex-wrap items-end justify-between gap-3 border-b-2 border-slate-200 pb-4">
+        <div>
+          <h2 id="more-apps-heading" class="text-xl font-black text-slate-900 md:text-2xl">同工作室 更多独立应用</h2>
+          <p class="mt-1 text-sm font-semibold text-slate-600">原创小众实用工具，涵盖专注计时、习惯培养、休息管理与素材制作，无需复杂门槛，助力高效学习与生活，和英语口语学习相辅相成。</p>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-5 md:grid-cols-2">
+        <a href="../purrrrrfocus/index.html" class="group flex flex-col rounded-2xl border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-amber-300 hover:shadow-lg">
+          <div class="flex items-start gap-4">
+            <img src="../purrrrrfocus/icon.png" width="60" height="60" class="app-tool-icon" alt="PurrrrrFocus 应用图标" loading="lazy" decoding="async" />
+            <div class="min-w-0 flex-1">
+              <span class="text-xs font-black uppercase tracking-wide text-amber-700">专注效率</span>
+              <h3 class="mt-1 text-lg font-black text-slate-900 group-hover:text-amber-800">喵时计番茄钟（PurrrrrFocus）</h3>
+            </div>
+          </div>
+          <p class="mt-4 flex-1 text-sm font-semibold leading-relaxed text-slate-600">画风柔和的沉浸式专注计时器，借助番茄工作法规划时间，让你从容投入学习与线下交流。</p>
+          <span class="mt-4 text-sm font-black text-amber-700 group-hover:gap-2">访问官网 <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="../step1st/index.html" class="group flex flex-col rounded-2xl border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-duo-green/50 hover:shadow-lg">
+          <div class="flex items-start gap-4">
+            <img
+              src="../step1st/step1st-icon-120w.webp"
+              srcset="../step1st/step1st-icon-60w.webp 60w, ../step1st/step1st-icon-120w.webp 120w, ../step1st/step1st-icon-180w.webp 180w"
+              sizes="60px"
+              width="60"
+              height="60"
+              class="app-tool-icon"
+              alt="Step1st 应用图标"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="min-w-0 flex-1">
+              <span class="text-xs font-black uppercase tracking-wide text-duo-green-dark">习惯养成</span>
+              <h3 class="mt-1 text-lg font-black text-slate-900 group-hover:text-duo-green-dark">Step1st</h3>
+            </div>
+          </div>
+          <p class="mt-4 flex-1 text-sm font-semibold leading-relaxed text-slate-600">以步行打卡限制手机使用，出行途中减少无效刷手机，用轻量方式培养健康生活习惯。</p>
+          <span class="mt-4 text-sm font-black text-duo-green group-hover:gap-2">访问官网 <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="../tappause/index.html" class="group flex flex-col rounded-2xl border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-violet-300 hover:shadow-lg">
+          <div class="flex items-start gap-4">
+            <img src="../tappause/icon.png" width="60" height="60" class="app-tool-icon" alt="TapPause 应用图标" loading="lazy" decoding="async" />
+            <div class="min-w-0 flex-1">
+              <span class="text-xs font-black uppercase tracking-wide text-violet-700">休息管理</span>
+              <h3 class="mt-1 text-lg font-black text-slate-900 group-hover:text-violet-800">TapPause</h3>
+            </div>
+          </div>
+          <p class="mt-4 flex-1 text-sm font-semibold leading-relaxed text-slate-600">极简轻量暂停计时器，合理划分学习冲刺与口语练习的间歇时段，科学劳逸结合。</p>
+          <span class="mt-4 text-sm font-black text-violet-700 group-hover:gap-2">访问官网 <span aria-hidden="true">→</span></span>
+        </a>
+
+        <a href="../transmov/index.html" class="group flex flex-col rounded-2xl border-2 border-slate-200 bg-white p-6 shadow-card transition hover:border-sky-400/60 hover:shadow-lg">
+          <div class="flex items-start gap-4">
+            <img src="../transmov/icon.png" width="60" height="60" class="app-tool-icon" alt="TransMov 应用图标" loading="lazy" decoding="async" />
+            <div class="min-w-0 flex-1">
+              <span class="text-xs font-black uppercase tracking-wide text-sky-800">macOS 工具</span>
+              <h3 class="mt-1 text-lg font-black text-slate-900 group-hover:text-sky-900">TransMov</h3>
+            </div>
+          </div>
+          <p class="mt-4 flex-1 text-sm font-semibold leading-relaxed text-slate-600">本地一键制作透明背景 GIF、APNG、WebP 素材，适用于课件制作、社交媒体配图等多种场景。</p>
+          <span class="mt-4 text-sm font-black text-sky-800 group-hover:gap-2">访问官网 <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </section>
+
+    <p class="mt-12 text-center text-xs font-semibold text-slate-500">
+      本站所有应用名称及相关链接，均归属同一独立创作工作室；各产品具体功能、收费标准，请以对应产品官方页面说明为准。
+    </p>
+  </main>
+
+  <footer class="border-t-2 border-slate-200 bg-white py-10 text-center">
+    <p class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Born To Speak · 以社区为核心的轻量化英语练习平台</p>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('tools-menu-btn');
+      var drawer = document.getElementById('tools-mobile-drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', function () {
+        var open = drawer.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          drawer.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
