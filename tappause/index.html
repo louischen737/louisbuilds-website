@@ -138,7 +138,10 @@
     <header class="site-header">
         <a href="index.html" class="header-brand" id="header-brand-link" aria-label="TapPause home">
             <div class="header-app-icon">
-                <img src="icon.png" alt="" width="40" height="40" fetchpriority="high">
+                <picture>
+                    <source type="image/webp" srcset="icon.webp" />
+                    <img src="icon.png" alt="" width="40" height="40" fetchpriority="high" decoding="async" />
+                </picture>
             </div>
             <span class="header-brand-name">TapPause</span>
         </a>

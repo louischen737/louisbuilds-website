@@ -79,6 +79,12 @@ body.page-home .header-app-icon {
     overflow: hidden;
 }
 
+body.page-home .header-app-icon picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 body.page-home .header-app-icon img {
     width: 100%;
     height: 100%;
