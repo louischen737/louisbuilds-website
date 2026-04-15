@@ -137,6 +137,14 @@
             },
             {
                 "@type": "Question",
+                "name": "应该选在线 IPA 转换器还是离线 App？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "在线 IPA 工具适合快速查询与更灵活的音标选项；离线 App（如 Phonetic Formatter）更适合整篇文本、结构化排版与重视隐私的工作流。对比说明：https://louisbuilds.me/phoneticformatter/blog/phonetic-formatter-vs-online-ipa-tools.html"
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "这个应用支持美式音标还是英式音标？",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -154,7 +162,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="main.css?v=5">
+    <link rel="stylesheet" href="main.css?v=11">
 </head>
 <body class="site-home">
     <header>
@@ -298,6 +306,39 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <section class="home-summary scroll-reveal" aria-labelledby="home-summary-heading">
+        <div class="container home-summary-inner">
+            <p class="summary-lead" id="home-summary-heading">
+                <strong>Phonetic Formatter</strong> 是一款离线 iOS/iPadOS 应用，基于 CMU Pronouncing Dictionary 将整段英文转为结构化 IPA，支持按句或逐词排版，并可导出为 TXT、DOCX 或 PDF。
+            </p>
+
+            <div class="summary-grid">
+                <div class="summary-col">
+                    <h3 class="summary-col-title">更适合</h3>
+                    <ul class="summary-list">
+                        <li>准备发音练习单的老师</li>
+                        <li>需要分析整篇文本的语言学学生</li>
+                        <li>需要离线、本地处理的用户</li>
+                        <li>需要可打印 IPA 材料（PDF / DOCX 导出）</li>
+                    </ul>
+                </div>
+
+                <div class="summary-col">
+                    <h3 class="summary-col-title">不太适合</h3>
+                    <ul class="summary-list">
+                        <li>只需快速查单个词</li>
+                        <li>仅限英式音标体系的用户</li>
+                        <li>仅依赖浏览器即时 IPA 工具的用户</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="summary-note">
+                在 iPhone 与 iPad 上完全离线运行，数据不会离开您的设备。
+            </p>
         </div>
     </section>
 
@@ -462,47 +503,95 @@
             </div>
         </div>
 
-        <!-- 3. Core Capabilities (white) -->
-        <section class="section" id="core-capabilities">
-            <div class="container" style="max-width: 800px;">
+<!-- 3. Core Capabilities (white) -->
+<section class="section" id="core-capabilities">
+    <div class="container" style="max-width: 800px;">
 
-                <div class="section-header">
-                    <h2>详细的 IPA 转写能力</h2>
-                    <p>
-                        本英语转 IPA 工具专为真实文本处理设计，基于国际音标（IPA）生成精准、结构化的语音转写内容，满足专业使用需求。
-                    </p>
-                </div>
+        <div class="section-header">
+            <h2>核心IPA转写能力</h2>
+            <p>
+                清晰说明每一项功能的用途、价值，以及在实际教学、语言学习与语言学研究中的应用场景。
+            </p>
+        </div>
 
-                <!-- 1 -->
-                <h3 id="feature-sentence-ipa">整句级 IPA 转写</h3>
+        <!-- 1 -->
+        <h3 id="feature-sentence-ipa">句子级IPA转写</h3>
 
-                <p>
-                    可将完整的英文句子、段落转换为 IPA 音标，全程保留原文标点、空格与自然的分句结构。区别于仅支持孤立单词词典查询的基础工具，本工具对连续语篇做整体处理，保障转写内容的可读性与结构连贯性。完美支持缩写、数字、百分比、域名及混合标点等真实场景输入，无需手动预处理，即可实现整段文本的一键转写，适用于发音练习、课堂讲义制作及需全文转写的语言分析工作。
-                </p>
+        <p>
+            可将完整句子与段落转换为规范的国际音标（IPA），精准保留标点、空格与自然语句结构。
+        </p>
 
-                <!-- 2 -->
-                <h3 id="feature-word-alignment">逐词 IPA 对齐</h3>
+        <p>
+            区别于普通单词查询工具，本功能以整体文本为单位处理，完整还原自然语言的流畅性。
+        </p>
 
-                <p>
-                    原文中的每个词汇，都会与对应的 IPA 转写内容精准对齐，实现拼写形式与实际发音的一一对应。该对齐形式既保留整句的语境信息，又方便在单词维度单独查看发音细节，结构化的版面设计特别适配教学备课、习题制作与发音训练，能帮助学习者快速建立书写形式与音标的关联认知，也支持对句内重音模式、音节结构及语音差异展开精细化分析。
-                </p>
+        <p>
+            原生支持缩写、数字、百分比及混合标点等真实文本格式，无需手动预处理。
+        </p>
 
-                <!-- 3 -->
-                <h3 id="feature-formatting">清晰、结构化的 IPA 排版</h3>
+        <p>
+            完美适配课堂教材、阅读文本、语言学研究等整段分析场景，不局限于单一单词的处理。
+        </p>
 
-                <p>
-                    转写输出内容会排版为清晰、规整的板块，原文与 IPA 音标分行对应呈现，便于阅读和实际使用。音标中的重音标记、字符间距及原文标点均完整保留，即便处理长段落或复杂文本，仍能保持版面清晰易读。排版设计完全贴合学习笔记、教学材料、语言学文档等实际使用场景，拒绝杂乱无章的非结构化输出，让 IPA 转写不仅适配语言学者的专业需求，也能让普通学习者和教师轻松上手。
-                </p>
+        <!-- 2 -->
+        <h3 id="feature-word-alignment">逐词IPA对齐展示</h3>
 
-                <!-- 4 -->
-                <h3 id="feature-offline">离线 IPA 转写与隐私保护</h3>
+        <p>
+            单词原文与对应国际音标一一对应、并排展示，直观呈现拼写与发音的对应关系。
+        </p>
 
-                <p>
-                    所有转写工作均在设备本地完成，无需云端处理或调用外部接口，从根本上确保文本数据的私密性，不会向外传输或存储。离线处理模式带来更稳定的性能表现与即时的响应速度，即便在网络受限或无网络的环境下，也能可靠使用，尤其适合教室、研究场景，以及重视数据隐私、希望减少对在线服务依赖的专业工作流程。
-                </p>
+        <p>
+            兼顾单词级发音解析与完整句子语境，学习与分析更高效。
+        </p>
 
-            </div>
-        </section>
+        <p>
+            适用于课堂教学、习题编写，以及在语境中分析单词重音、音节结构等细节。
+        </p>
+
+        <p>
+            同时支持研究自然语流中单词间的连读、弱读等发音变化规律。
+        </p>
+
+        <!-- 3 -->
+        <h3 id="feature-formatting">高可读性结构化IPA输出</h3>
+
+        <p>
+            生成清晰规整的国际音标结果，可直接用于阅读、标注与教学材料制作。
+        </p>
+
+        <p>
+            统一规范间距、重音标记与标点格式，长文本依旧保持极佳可读性。
+        </p>
+
+        <p>
+            格式专为学习资料、课堂笔记、语言学文档优化，而非原生无格式输出。
+        </p>
+
+        <p>
+            既满足语言学专业需求，也适配教师、学习者的日常使用。
+        </p>
+
+        <!-- 4 -->
+        <h3 id="feature-offline">离线转写与数据隐私保护</h3>
+
+        <p>
+            全部音标转换工作在本地设备完成，不依赖云端服务器与外部接口。
+        </p>
+
+        <p>
+            输入内容全程不离开设备，高度适配隐私敏感场景与机构使用环境。
+        </p>
+
+        <p>
+            离线运行带来稳定流畅的响应速度，无网络环境下也可正常使用。
+        </p>
+
+        <p>
+            适合课堂教学、学术研究及追求高稳定性、数据独立性的专业工作流程。
+        </p>
+
+    </div>
+</section>
 
         <!-- 4. How It Works (light gray) -->
         <div class="section section-alt">
@@ -662,6 +751,10 @@
                     <p>是的，本工具基于 CMU 发音词典构建，该词典在北美英语自然语言处理领域被公认为权威标准。同时我们还加入了自研优化逻辑，以提升整句转写效果与重音标注精度。</p>
                 </div>
                 <div class="faq-item">
+                    <h3>应该选在线 IPA 转换器还是离线 App？</h3>
+                    <p>在线 IPA 工具适合快速查询与更灵活的音标选项；离线 App（如 Phonetic Formatter）更适合整篇文本、结构化排版与重视隐私的工作流。详见 <a href="blog/phonetic-formatter-vs-online-ipa-tools.html">Phonetic Formatter 与在线 IPA 工具对比</a>。</p>
+                </div>
+                <div class="faq-item">
                     <h3>这个应用支持美式音标还是英式音标？</h3>
                     <p>本应用目前基于 <strong>CMU 美式发音字典</strong>，非常适合学习通用美式英语（General American）的用户。我们会通过结构化排版，帮助您清晰地标注美式发音特点。</p>
                 </div>
@@ -676,26 +769,42 @@
 
     <section class="blog-highlights scroll-reveal" id="deep-dive">
         <div class="container blog-highlights-inner">
-            <h2>语言学见解与指南</h2>
+            <h2>学会将 IPA 用在真实场景里</h2>
+            <p class="blog-highlights-intro">
+                多数 IPA 工具侧重单词转写。了解如何用于<strong>完整句子</strong>、<strong>教学材料</strong>与<strong>真实学习场景</strong>。
+            </p>
             <div class="blog-highlights-grid">
                 <div class="blog-highlight-card">
-                    <h4>为何选择 <span lang="en">CMUdict</span>？</h4>
-                    <p>了解我们为何采用北美英语的黄金标准。</p>
-                    <a href="blog/why-cmu-pronouncing-dictionary.html">阅读更多 →</a>
+                    <h4>教师首选离线 IPA App（iPhone/iPad）</h4>
+                    <p>
+                        一篇实用指南：如何为 iPhone 与 iPad 教学场景选择最合适的离线 IPA 应用。
+                    </p>
+                    <a href="blog/best-offline-ipa-app-for-teachers-ios.html">阅读更多 →</a>
                 </div>
                 <div class="blog-highlight-card">
-                    <h4>面向教师</h4>
-                    <p>用 <span lang="en">Word</span> 对齐的 IPA 版式简化备课。</p>
+                    <h4>离线 vs 在线 IPA 工具</h4>
+                    <p>
+                        何时用离线 IPA App 处理整篇文本，何时用在线工具做快速查询更合适。
+                    </p>
+                    <a href="blog/phonetic-formatter-vs-online-ipa-tools.html">阅读更多 →</a>
+                </div>
+                <div class="blog-highlight-card">
+                    <h4>教学材料中的 IPA</h4>
+                    <p>
+                        用结构化 IPA 版式制作清晰的发音练习纸与课件。
+                    </p>
                     <a href="blog/from-screen-to-classroom.html">阅读更多 →</a>
                 </div>
                 <div class="blog-highlight-card">
-                    <h4>连读与语流</h4>
-                    <p>同化、省略，以及为何 IPA 不止于单词。</p>
+                    <h4>理解连读与语流</h4>
+                    <p>
+                        同化、省略，以及为何<strong>句子级 IPA</strong>不止于单词。
+                    </p>
                     <a href="blog/mastering-connected-speech.html">阅读更多 →</a>
                 </div>
             </div>
             <p class="blog-highlights-all">
-                <a href="blogs.html">查看全部文章</a>
+                <a href="blogs.html">查看全部 IPA 指南 →</a>
             </p>
         </div>
     </section>

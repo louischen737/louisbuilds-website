@@ -137,6 +137,14 @@
             },
             {
                 "@type": "Question",
+                "name": "Soll ich einen Online-IPA-Konverter oder eine Offline-App verwenden?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Online-IPA-Tools eignen sich gut für schnelle Nachschlagereien und flexible phonetische Optionen. Offline-Apps wie Phonetic Formatter sind besser für längere Texte, strukturierte Layouts und datenschutzorientierte Workflows geeignet. Vergleich: https://louisbuilds.me/phoneticformatter/blog/phonetic-formatter-vs-online-ipa-tools.html"
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "Unterstützt die App britisches oder amerikanisches Englisch?",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -154,7 +162,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="main.css?v=5">
+    <link rel="stylesheet" href="main.css?v=11">
 </head>
 <body class="site-home">
     <header>
@@ -298,6 +306,39 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <section class="home-summary scroll-reveal" aria-labelledby="home-summary-heading">
+        <div class="container home-summary-inner">
+            <p class="summary-lead" id="home-summary-heading">
+                <strong>Phonetic Formatter</strong> ist eine Offline-App für iOS/iPadOS, die vollständige englische Texte mithilfe des CMU Pronouncing Dictionary in strukturierte IPA überführt – satzweise oder wortweise – mit Export nach TXT, DOCX oder PDF.
+            </p>
+
+            <div class="summary-grid">
+                <div class="summary-col">
+                    <h3 class="summary-col-title">Am besten für</h3>
+                    <ul class="summary-list">
+                        <li>Lehrkräfte, die Arbeitsblätter zur Aussprache vorbereiten</li>
+                        <li>Linguistikstudierende, die ganze Texte analysieren</li>
+                        <li>Nutzer, die Offline-Verarbeitung und Datenschutz brauchen</li>
+                        <li>Druckbare IPA-Materialien (PDF- / DOCX-Export)</li>
+                    </ul>
+                </div>
+
+                <div class="summary-col">
+                    <h3 class="summary-col-title">Weniger geeignet für</h3>
+                    <ul class="summary-list">
+                        <li>Nur schnelle Einzelwort-Abfragen</li>
+                        <li>Nutzer, die ausschließlich britische phonetische Systeme benötigen</li>
+                        <li>Rein browserbasierte IPA-Tools</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="summary-note">
+                Vollständig offline auf iPhone und iPad. Keine Daten verlassen Ihr Gerät.
+            </p>
         </div>
     </section>
 
@@ -462,43 +503,95 @@
             </div>
         </div>
 
-        <!-- 3. Core Capabilities (white) -->
-        <section class="section" id="core-capabilities">
-            <div class="container" style="max-width: 800px;">
+<!-- 3. Core Capabilities (white) -->
+<section class="section" id="core-capabilities">
+    <div class="container" style="max-width: 800px;">
 
-                <div class="section-header">
-                    <h2>Detaillierte IPA-Transkriptionsfunktionen</h2>
-                    <p>
-                        Dieser Englisch-zu-IPA-Konverter wurde entwickelt, um reale Texte zu verarbeiten und präzise, strukturierte phonetische Transkriptionen im Internationalen Phonetischen Alphabet (IPA) zu erstellen.
-                    </p>
-                </div>
+        <div class="section-header">
+            <h2>Detaillierte IPA-Transkriptionsfunktionen</h2>
+            <p>
+                Dieser Abschnitt erklärt, was jede Funktion tut, warum sie wichtig ist und wie sie in realen Lehr-, Lern- und linguistischen Analyse-Workflows eingesetzt wird.
+            </p>
+        </div>
 
-                <h3 id="feature-sentence-ipa">Satzbasierte IPA-Transkription</h3>
-                <p>Das System wandelt vollständige englische Sätze und Absätze in IPA-Lautschrift um, wobei Satzzeichen, Abstände und natürliche Satzgrenzen erhalten bleiben.</p>
-                <p>Im Gegensatz zu einfachen Konvertern, die nur einzelne Wörter nachschlagen, verarbeitet dieses Tool Fließtext als Ganzes und bewahrt so Lesbarkeit und strukturelle Kohärenz.</p>
-                <p>Es unterstützt reale Eingaben wie Abkürzungen, Zahlen, Prozentsätze und Domains, sodass ganze Passagen ohne manuelle Vorbereitung transkribiert werden können.</p>
-                <p>Dies eignet sich hervorragend für Ausspracheübungen, Unterrichtsmaterialien und linguistische Analysen.</p>
+        <!-- 1 -->
+        <h3 id="feature-sentence-ipa">Satzbasierte IPA-Transkription</h3>
 
-                <h3 id="feature-word-alignment">Wortweise IPA-Ausrichtung</h3>
-                <p>Jedes Wort im Originaltext wird seiner entsprechenden IPA-Transkription zugeordnet, wodurch eine klare Verbindung zwischen Schreibweise und Aussprache entsteht.</p>
-                <p>Dieses Format ermöglicht es Benutzern, die Aussprache auf Wortebene zu untersuchen, während der Kontext des gesamten Satzes erhalten bleibt.</p>
-                <p>Das strukturierte Layout ist besonders nützlich für den Unterricht, die Erstellung von Arbeitsblättern und das Aussprachetraining.</p>
-                <p>Es unterstützt zudem die detaillierte Analyse von Betonungsmustern und phonetischen Variationen innerhalb eines Satzes.</p>
+        <p>
+            Wandelt vollständige Sätze und Absätze in strukturierte IPA-Transkription um und bewahrt dabei Interpunktion, Abstände und natürliche Satzgrenzen.
+        </p>
 
-                <h3 id="feature-formatting">Lesbare und strukturierte IPA-Formatierung</h3>
-                <p>Die Ausgabe ist in sauberen Blöcken formatiert, die den Originaltext mit den IPA-Zeilen paaren, was das Ergebnis leicht lesbar und nutzbar macht.</p>
-                <p>Betonungszeichen, Abstände und Satzzeichen bleiben klar erkennbar, auch bei längeren oder komplexen Textpassagen.</p>
-                <p>Die Formatierung ist für den praktischen Einsatz in Lernnotizen und Lehrmaterialien konzipiert, anstatt nur unstrukturierte Rohdaten auszugeben.</p>
-                <p>Dies stellt sicher, dass die IPA-Transkription nicht nur für Linguisten, sondern auch für Lernende und Lehrkräfte zugänglich bleibt.</p>
+        <p>
+            Im Gegensatz zu wortbasierten Nachschlagewerkzeugen verarbeitet diese Funktion zusammenhängenden Text als Ganzes und erhält so den natürlichen Sprachfluss in längeren Passagen.
+        </p>
 
-                <h3 id="feature-offline">Offline-Transkription und Datenschutz</h3>
-                <p>Alle Transkriptionen werden lokal auf Ihrem Gerät durchgeführt; es ist kein Cloud-Computing oder externe API-Aufrufe erforderlich.</p>
-                <p>Dies garantiert, dass Ihre Texte privat bleiben und niemals nach außen übertragen oder dort gespeichert werden.</p>
-                <p>Die Offline-Verarbeitung gewährleistet zudem eine gleichbleibende Leistung, sofortige Reaktionszeiten und Zuverlässigkeit in Umgebungen ohne Internetzugang.</p>
-                <p>Besonders geeignet für Klassenzimmer, Forschungseinrichtungen und professionelle Arbeitsabläufe mit hohen Datenschutzanforderungen.</p>
+        <p>
+            Abkürzungen, Zahlen, Prozentangaben und gemischte Satzzeichen werden unterstützt, ohne dass eine manuelle Vorverarbeitung erforderlich ist.
+        </p>
 
-            </div>
-        </section>
+        <p>
+            Dadurch eignet sich die Funktion für Unterrichtsmaterialien, Lesetexte und linguistische Datensätze statt nur für isolierte Wörter.
+        </p>
+
+        <!-- 2 -->
+        <h3 id="feature-word-alignment">Wort-für-Wort IPA-Ausrichtung</h3>
+
+        <p>
+            Jedes Wort wird direkt mit seiner IPA-Transkription nebeneinandergestellt, wodurch die Beziehung zwischen Schreibweise und Aussprache klar sichtbar wird.
+        </p>
+
+        <p>
+            Diese Ausrichtung hilft dabei, Aussprache auf Wortebene zu verstehen, während der vollständige Satzkontext erhalten bleibt.
+        </p>
+
+        <p>
+            Besonders nützlich für den Unterricht, die Erstellung von Arbeitsblättern sowie die Analyse von Betonung und Silbenstruktur im Kontext.
+        </p>
+
+        <p>
+            Zudem ermöglicht sie detaillierte Analysen der Aussprachevariation innerhalb natürlicher Sprache.
+        </p>
+
+        <!-- 3 -->
+        <h3 id="feature-formatting">Lesbare und strukturierte IPA-Formatierung</h3>
+
+        <p>
+            Liefert saubere, strukturierte IPA-Ausgaben, die sofort für Studium, Annotation und Unterricht genutzt werden können.
+        </p>
+
+        <p>
+            Einheitliche Abstände, Betonungszeichen und erhaltene Interpunktion sorgen auch bei langen Texten für klare Lesbarkeit.
+        </p>
+
+        <p>
+            Das Format ist für Lehrmaterialien, Vorlesungsnotizen und linguistische Dokumentation optimiert.
+        </p>
+
+        <p>
+            Dadurch bleibt IPA sowohl für Lehrende als auch Lernende gut zugänglich.
+        </p>
+
+        <!-- 4 -->
+        <h3 id="feature-offline">Offline-IPA-Transkription und Datenschutz</h3>
+
+        <p>
+            Die gesamte Transkription erfolgt lokal auf dem Gerät ohne Cloud-Verarbeitung oder externe API-Anfragen.
+        </p>
+
+        <p>
+            Dadurch bleiben alle Eingaben privat und verlassen das Gerät zu keinem Zeitpunkt.
+        </p>
+
+        <p>
+            Der Offline-Betrieb sorgt zudem für stabile Leistung und sofortige Ergebnisse, auch ohne Internetverbindung.
+        </p>
+
+        <p>
+            Ideal für Unterricht, Forschung und professionelle Arbeitsumgebungen mit hohen Datenschutzanforderungen.
+        </p>
+
+    </div>
+</section>
 
         <!-- 4. How It Works (light gray) -->
         <div class="section section-alt">
@@ -658,6 +751,10 @@
                     <p>Ja, unser Tool basiert auf dem CMU Pronunciation Dictionary, das weithin als Goldstandard für die Verarbeitung natürlicher Sprache (NLP) im nordamerikanischen Englisch gilt. Wir haben es jedoch durch eigene Logik optimiert, um die Transkription auf Satzebene und die Akzentuierung zu verbessern.</p>
                 </div>
                 <div class="faq-item">
+                    <h3>Soll ich einen Online-IPA-Konverter oder eine Offline-App verwenden?</h3>
+                    <p>Online-IPA-Tools eignen sich gut für schnelle Nachschlagereien und flexible phonetische Optionen. Offline-Apps wie Phonetic Formatter sind besser für längere Texte, strukturierte Layouts und datenschutzorientierte Workflows geeignet. Unser <a href="blog/phonetic-formatter-vs-online-ipa-tools.html">Vergleich: Phonetic Formatter vs. Online-IPA-Tools</a>.</p>
+                </div>
+                <div class="faq-item">
                     <h3>Unterstützt die App britisches oder amerikanisches Englisch?</h3>
                     <p>Die App nutzt das CMU Pronouncing Dictionary und konzentriert sich aktuell auf die amerikanische Aussprache (General American). Dies ist der am weitesten verbreitete Standard in den Medien, der Technologie und der internationalen Wirtschaft. Für Nutzer, die Wert auf präzise amerikanische Phonetik legen, bietet die App eine unübertroffene Genauigkeit.</p>
                 </div>
@@ -672,26 +769,43 @@
 
     <section class="blog-highlights scroll-reveal" id="deep-dive">
         <div class="container blog-highlights-inner">
-            <h2>Einblicke und Leitfäden</h2>
+            <h2>IPA für echte Anwendungsfälle nutzen</h2>
+            <p class="blog-highlights-intro">
+                Die meisten IPA-Tools konzentrieren sich auf Einzelwörter. Erfahren Sie, wie Sie mit ganzen Sätzen,
+                Unterrichtsmaterialien und realen Lernszenarien arbeiten.
+            </p>
             <div class="blog-highlights-grid">
                 <div class="blog-highlight-card">
-                    <h4>Warum <span lang="en">CMUdict</span>?</h4>
-                    <p>Warum wir den Goldstandard des nordamerikanischen Englischs wählten.</p>
-                    <a href="blog/why-cmu-pronouncing-dictionary.html">Weiterlesen →</a>
+                    <h4>Beste Offline-IPA-App für Lehrkräfte (iPhone/iPad)</h4>
+                    <p>
+                        Ein praxisnaher Leitfaden zur Auswahl der besten Offline-IPA-App für Unterricht und Aussprachtraining auf iPhone und iPad.
+                    </p>
+                    <a href="blog/best-offline-ipa-app-for-teachers-ios.html">Weiterlesen →</a>
                 </div>
                 <div class="blog-highlight-card">
-                    <h4>Für Lehrende</h4>
-                    <p>Unterrichtsvorbereitung mit <span lang="en">Word</span>-ausgerichteten IPA-Layouts rationalisieren.</p>
+                    <h4>Offline- vs. Online-IPA-Tools</h4>
+                    <p>
+                        Wann eine Offline-IPA-App für längere Texte passt—und wann Online-Tools für schnelle Nachschlagereien besser sind.
+                    </p>
+                    <a href="blog/phonetic-formatter-vs-online-ipa-tools.html">Weiterlesen →</a>
+                </div>
+                <div class="blog-highlight-card">
+                    <h4>IPA für Unterrichtsmaterialien</h4>
+                    <p>
+                        Saubere Aussprache-Übungsblätter und Lehrmaterialien mit strukturierten IPA-Layouts erstellen.
+                    </p>
                     <a href="blog/from-screen-to-classroom.html">Weiterlesen →</a>
                 </div>
                 <div class="blog-highlight-card">
-                    <h4>Verbundene Sprache</h4>
-                    <p>Assimilation, Elision und warum IPA über Einzelwörter hinaushilft.</p>
+                    <h4>Verbundene Sprache verstehen</h4>
+                    <p>
+                        Assimilation und Elision—und warum IPA auf Satzebene über Einzelwörter hinaus wichtig ist.
+                    </p>
                     <a href="blog/mastering-connected-speech.html">Weiterlesen →</a>
                 </div>
             </div>
             <p class="blog-highlights-all">
-                <a href="blogs.html">Alle Blogbeiträge</a>
+                <a href="blogs.html">Alle IPA-Leitfäden →</a>
             </p>
         </div>
     </section>

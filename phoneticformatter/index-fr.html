@@ -134,11 +134,19 @@
                     "@type": "Answer",
                     "text": "Oui, notre outil est basé sur le CMU Pronunciation Dictionary, largement considéré comme le « gold standard » du traitement du langage naturel (NLP) en anglais nord-américain. Nous l'avons toutefois enrichi d'une logique personnalisée pour améliorer la transcription au niveau de la phrase et le marquage de l'accentuation."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "Dois-je utiliser un convertisseur IPA en ligne ou une application hors ligne ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Les outils IPA en ligne conviennent bien aux recherches rapides et aux options phonétiques flexibles. Les applications hors ligne comme Phonetic Formatter sont plus adaptées aux passages longs, aux mises en page structurées et aux flux de travail axés sur la confidentialité. Comparaison : https://louisbuilds.me/phoneticformatter/blog/phonetic-formatter-vs-online-ipa-tools.html"
+                }
             }
         ]
     }
     </script>
-    <link rel="stylesheet" href="main.css?v=8">
+    <link rel="stylesheet" href="main.css?v=11">
 </head>
 <body class="site-home">
     <header>
@@ -282,6 +290,39 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <section class="home-summary scroll-reveal" aria-labelledby="home-summary-heading">
+        <div class="container home-summary-inner">
+            <p class="summary-lead" id="home-summary-heading">
+                <strong>Phonetic Formatter</strong> est une application iOS/iPadOS hors ligne qui transforme des passages entiers en anglais en IPA structurée gr&acirc;ce au CMU Pronouncing Dictionary, avec mise en page par phrase ou mot &agrave; mot et exportation vers TXT, DOCX ou PDF.
+            </p>
+
+            <div class="summary-grid">
+                <div class="summary-col">
+                    <h3 class="summary-col-title">Id&eacute;al pour</h3>
+                    <ul class="summary-list">
+                        <li>Les enseignants qui pr&eacute;parent des fiches de prononciation</li>
+                        <li>Les &eacute;tudiants en linguistique qui analysent des textes entiers</li>
+                        <li>Les utilisateurs qui ont besoin d&rsquo;un traitement hors ligne et priv&eacute;</li>
+                        <li>Les supports IPA imprimables (export PDF / DOCX)</li>
+                    </ul>
+                </div>
+
+                <div class="summary-col">
+                    <h3 class="summary-col-title">Moins adapt&eacute; si</h3>
+                    <ul class="summary-list">
+                        <li>Vous ne cherchez que des recherches rapides mot &agrave; mot</li>
+                        <li>Vous exigez exclusivement des syst&egrave;mes phon&eacute;tiques britanniques</li>
+                        <li>Vous pr&eacute;f&eacute;rez des outils IPA instantan&eacute;s dans le navigateur</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="summary-note">
+                Fonctionne enti&egrave;rement hors ligne sur iPhone et iPad. Aucune donn&eacute;e ne quitte votre appareil.
+            </p>
         </div>
     </section>
 
@@ -446,43 +487,95 @@
             </div>
         </div>
 
-        <!-- 3. Core Capabilities (white) -->
-        <section class="section" id="core-capabilities">
-            <div class="container" style="max-width: 800px;">
+ <!-- 3. Core Capabilities (white) -->
+<section class="section" id="core-capabilities">
+    <div class="container" style="max-width: 800px;">
 
-                <div class="section-header">
-                    <h2>Capacités détaillées de transcription IPA</h2>
-                    <p>
-                        Ce convertisseur anglais vers IPA est conçu pour traiter des textes réels et produire des transcriptions phonétiques précises en utilisant l’Alphabet Phonétique International (IPA).
-                    </p>
-                </div>
+        <div class="section-header">
+            <h2>Fonctionnalités détaillées de transcription IPA</h2>
+            <p>
+                Cette section explique ce que fait chaque fonctionnalité, pourquoi elle est importante et comment elle s’intègre dans des workflows réels d’enseignement, d’apprentissage et d’analyse linguistique.
+            </p>
+        </div>
 
-                <h3 id="feature-sentence-ipa">Transcription IPA au niveau de la phrase</h3>
-                <p>Le système convertit des phrases et paragraphes entiers en transcription phonétique IPA tout en préservant la ponctuation, les espaces et les structures de phrases.</p>
-                <p>Contrairement aux outils basiques limités aux mots isolés, il traite le texte continu dans son ensemble, tout en préservant la lisibilité et la cohérence structurelle.</p>
-                <p>Il prend en charge les abréviations, les nombres, les pourcentages et les noms de domaine, permettant de transcrire des passages complets sans traitement manuel préalable.</p>
-                <p>Idéal pour l’entraînement à la prononciation, les supports pédagogiques et l’analyse linguistique.</p>
+        <!-- 1 -->
+        <h3 id="feature-sentence-ipa">Transcription IPA au niveau des phrases</h3>
 
-                <h3 id="feature-word-alignment">Alignement IPA mot à mot</h3>
-                <p>Chaque mot du texte original est aligné avec sa transcription IPA correspondante, créant un lien clair entre l’orthographe et la prononciation.</p>
-                <p>Ce format permet d’examiner la prononciation au niveau du mot individuel tout en gardant le contexte global de la phrase.</p>
-                <p>La mise en page structurée est particulièrement utile pour l’enseignement et la création de fiches d’exercices.</p>
-                <p>Il facilite également l’analyse des schémas accentuels et des variations phonétiques au sein d’une phrase.</p>
+        <p>
+            Convertit des phrases et paragraphes complets en transcription IPA structurée tout en conservant la ponctuation, les espaces et les limites naturelles des phrases.
+        </p>
 
-                <h3 id="feature-formatting">Formatage IPA structuré et lisible</h3>
-                <p>Les résultats sont présentés sous forme de blocs cohérents associant texte original et lignes IPA pour une lecture fluide.</p>
-                <p>L’accentuation, l’espacement et la ponctuation sont conservés pour garantir la clarté, même sur des textes longs ou complexes.</p>
-                <p>Ce formatage est pensé pour une utilisation pratique dans les notes d’étude et les supports de cours, plutôt qu’un affichage brut sans structure.</p>
-                <p>Cela rend la transcription IPA accessible non seulement aux linguistes, mais aussi aux apprenants et aux enseignants.</p>
+        <p>
+            Contrairement aux outils basés sur des mots isolés, cette fonctionnalité traite le texte continu dans son ensemble, préservant ainsi le flux naturel du langage.
+        </p>
 
-                <h3 id="feature-offline">Transcription hors ligne et Confidentialité</h3>
-                <p>Toutes les transcriptions sont effectuées localement sur votre appareil, sans aucun traitement sur le cloud ni appel à des API externes.</p>
-                <p>Cela garantit que vos textes restent privés et ne sont jamais transmis ou stockés à l’extérieur.</p>
-                <p>Le traitement hors ligne assure également des performances constantes, une réponse instantanée et une fiabilité totale sans connexion internet.</p>
-                <p>Particulièrement adapté aux salles de classe et aux environnements de recherche exigeant la protection des données.</p>
+        <p>
+            Elle prend en charge les abréviations, nombres, pourcentages et ponctuation mixte sans prétraitement manuel.
+        </p>
 
-            </div>
-        </section>
+        <p>
+            Cela la rend adaptée aux supports pédagogiques, aux textes de lecture et à l’analyse linguistique complète.
+        </p>
+
+        <!-- 2 -->
+        <h3 id="feature-word-alignment">Alignement IPA mot par mot</h3>
+
+        <p>
+            Chaque mot est affiché avec sa transcription IPA correspondante, rendant la relation entre orthographe et prononciation immédiatement visible.
+        </p>
+
+        <p>
+            Cette vue alignée permet de comprendre la prononciation au niveau du mot tout en conservant le contexte complet de la phrase.
+        </p>
+
+        <p>
+            Elle est particulièrement utile pour l’enseignement, la création de fiches d’exercices et l’analyse de l’accent et de la structure syllabique.
+        </p>
+
+        <p>
+            Elle permet également d’analyser les variations de prononciation dans le langage naturel.
+        </p>
+
+        <!-- 3 -->
+        <h3 id="feature-formatting">Format IPA lisible et structuré</h3>
+
+        <p>
+            Produit des résultats IPA clairs et structurés, prêts à être lus, annotés et utilisés dans l’enseignement.
+        </p>
+
+        <p>
+            L’espacement cohérent, les marqueurs d’accent et la ponctuation conservée assurent une lisibilité claire même pour les textes longs.
+        </p>
+
+        <p>
+            Le format est optimisé pour les supports pédagogiques, les notes de cours et la documentation linguistique.
+        </p>
+
+        <p>
+            Cela garantit une accessibilité de l’IPA aussi bien pour les enseignants que pour les apprenants.
+        </p>
+
+        <!-- 4 -->
+        <h3 id="feature-offline">Transcription IPA hors ligne et confidentialité</h3>
+
+        <p>
+            Toute la transcription est effectuée localement sur l’appareil, sans traitement cloud ni appels API externes.
+        </p>
+
+        <p>
+            Cela garantit que les données de l’utilisateur ne quittent jamais l’appareil.
+        </p>
+
+        <p>
+            Le fonctionnement hors ligne offre des performances stables et des résultats instantanés même sans connexion Internet.
+        </p>
+
+        <p>
+            Idéal pour les salles de classe, la recherche et les environnements professionnels nécessitant confidentialité et fiabilité.
+        </p>
+
+    </div>
+</section>
 
         <!-- 4. How It Works (light gray) -->
         <div class="section section-alt">
@@ -641,39 +734,53 @@
                     <h3>Ce convertisseur utilise-t-il le dictionnaire de prononciation CMU ?</h3>
                     <p>Oui, notre outil est basé sur le CMU Pronunciation Dictionary, largement considéré comme le « gold standard » du traitement du langage naturel (NLP) en anglais nord-américain. Nous l'avons toutefois enrichi d'une logique personnalisée pour améliorer la transcription au niveau de la phrase et le marquage de l'accentuation.</p>
                 </div>
-                
+                <div class="faq-item">
+                    <h3>Dois-je utiliser un convertisseur IPA en ligne ou une application hors ligne ?</h3>
+                    <p>Les outils IPA en ligne conviennent bien aux recherches rapides et aux options phonétiques flexibles. Les applications hors ligne comme Phonetic Formatter sont plus adaptées aux passages longs, aux mises en page structurées et aux flux de travail axés sur la confidentialité. Voir notre <a href="blog/phonetic-formatter-vs-online-ipa-tools.html">comparatif Phonetic Formatter vs outils IPA en ligne</a>.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section class="blog-highlights scroll-reveal" id="deep-dive">
         <div class="container blog-highlights-inner">
-            <h2>Ressources et Insights Linguistiques</h2>
+            <h2>Apprenez l’IPA pour des usages réels</h2>
+            <p class="blog-highlights-intro">
+                La plupart des outils IPA se concentrent sur le mot à mot. Découvrez comment travailler sur des phrases entières,
+                des supports pédagogiques et des situations d’apprentissage concrètes.
+            </p>
             <div class="blog-highlights-grid">
                 <div class="blog-highlight-card">
-                    <h4>Guide Spécial : Maîtriser la Prononciation pour les Francophones</h4>
-                    <p>Apprenez à corriger les erreurs de prononciation typiques et à utiliser l'API pour structurer vos supports de cours.</p>
-                    <a href="blog/phonetique-anglais-pour-francophones.html">Lire le Guide →</a>
-                    <p class="blog-highlight-note" lang="fr">Optimisé pour les enseignants et professionnels en France et en Afrique francophone.</p>
+                    <h4>Meilleure app IPA hors ligne pour enseignants (iPhone/iPad)</h4>
+                    <p>
+                        Guide pratique pour choisir la meilleure app IPA hors ligne pour les enseignants sur iPhone et iPad.
+                    </p>
+                    <a href="blog/best-offline-ipa-app-for-teachers-ios.html">Lire la suite →</a>
                 </div>
                 <div class="blog-highlight-card">
-                    <h4>Pourquoi <span lang="en">CMUdict</span> ?</h4>
-                    <p>Pourquoi nous avons choisi la référence de l’anglais nord-américain pour notre application.</p>
-                    <a href="blog/why-cmu-pronouncing-dictionary.html">Lire la suite →</a>
+                    <h4>Outils IPA hors ligne vs en ligne</h4>
+                    <p>
+                        Quand une app IPA hors ligne est adaptée aux textes longs—et quand les outils en ligne sont préférables pour des recherches rapides.
+                    </p>
+                    <a href="blog/phonetic-formatter-vs-online-ipa-tools.html">Lire la suite →</a>
                 </div>
                 <div class="blog-highlight-card">
-                    <h4>Pour les enseignants</h4>
-                    <p>Rationalisez la préparation des cours avec des mises en page IPA alignées sur <span lang="en">Word</span>.</p>
-                    <a href="blog/from-screen-to-classroom.html">Lire la suite →</a>
-                </div>
-                <div class="blog-highlight-card">
-                    <h4>Parole connectée</h4>
-                    <p>Assimilation, élision et pourquoi l’IPA aide au-delà des mots isolés.</p>
+                    <h4>Comprendre la parole connectée</h4>
+                    <p>
+                        Assimilation, élision—et pourquoi l’IPA au niveau de la phrase compte au-delà des mots isolés.
+                    </p>
                     <a href="blog/mastering-connected-speech.html">Lire la suite →</a>
+                </div>
+                <div class="blog-highlight-card">
+                    <h4>Guide spécial : maîtriser la prononciation pour les francophones</h4>
+                    <p>Apprenez à corriger les erreurs de prononciation typiques et à utiliser l’API pour structurer vos supports de cours.</p>
+                    <a href="blog/phonetique-anglais-pour-francophones.html" hreflang="fr">Lire le guide →</a>
+                    <p class="blog-highlight-note" lang="fr">Optimisé pour les enseignants et professionnels en France et en Afrique francophone.</p>
                 </div>
             </div>
             <p class="blog-highlights-all">
-                <a href="blogs.html">Voir tous les articles</a>
+                <a href="blogs.html">Voir tous les guides IPA →</a>
             </p>
         </div>
     </section>
