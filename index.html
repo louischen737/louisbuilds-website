@@ -374,6 +374,11 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
+/* <picture> wrapper so .app-icon styles apply to the <img> fallback without breaking h2 layout */
+.product-info h2 .icon-picture {
+    display: contents;
+}
+
 .product-info p {
     font-size: 18px;
     color: var(--text-secondary);
@@ -1059,7 +1064,7 @@ Documentation available in:
 <!-- TapPause -->
 <div class="product">
 <div class="product-info">
-<h2><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60"> TapPause</h2>
+<h2><picture class="icon-picture"><source type="image/webp" srcset="tappause/icon.webp" /><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TapPause</h2>
 <p>A minimal pause timer to stop, pause, and rest. Designed for intentional breaks.</p>
 <div class="tags">iOS · Health &amp; Fitness · v1.1</div>
 <div class="tags doc-lang-links" style="margin-top: -20px;">
@@ -1090,7 +1095,7 @@ Documentation available in:
 <!-- PurrrrrFocus -->
 <div class="product">
 <div class="product-info">
-<h2><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60"> PurrrrrFocus</h2>
+<h2><picture class="icon-picture"><source type="image/webp" srcset="purrrrrfocus/icon.webp" /><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> PurrrrrFocus</h2>
 <p>Deep focus timers with progress tracking and your cat companion.</p>
 <div class="tags">iOS · iPhone &amp; iPad · v2.5 · Productivity · Utilities</div>
 <div class="tags" style="margin-top: -20px;">
@@ -1119,7 +1124,7 @@ Documentation available in:
 <!-- TransMov -->
 <div class="product">
 <div class="product-info">
-<h2><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60"> TransMov</h2>
+<h2><picture class="icon-picture"><source type="image/webp" srcset="transmov/icon.webp" /><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TransMov</h2>
 <p>Convert videos into transparent GIF, APNG, and WebP with AI-powered background removal — fully offline on your Mac.</p>
 <div class="tags">macOS · Graphics &amp; Design · Productivity · v2.0</div>
 <div class="tags" style="margin-top: -20px;">
@@ -1145,7 +1150,7 @@ Documentation available in:
 <!-- Phonetic Formatter -->
 <div class="product">
 <div class="product-info">
-<h2><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60"> Phonetic Formatter</h2>
+<h2><picture class="icon-picture"><source type="image/webp" srcset="phoneticformatter/icon.webp" /><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> Phonetic Formatter</h2>
 <p>Convert English text into accurate IPA transcription. Supports sentence-level and word-aligned formatting.</p>
 <div class="tags">iOS · Tools · v1.2 · English · IPA · Linguistics</div>
 <div class="tags" style="margin-top: -20px;">
