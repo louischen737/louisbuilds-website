@@ -96,6 +96,9 @@
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
+        .decision-box { margin-top: 24px; padding: 20px; border-radius: 14px; background: #fff; border: 1px solid var(--border); }
+        .decision-box h2 { margin: 0 0 10px; font-size: 1.2rem; color: var(--accent); }
+        .decision-box ul { margin: 0 0 0 1.2em; }
         
         .content h2 { margin-top: 48px; font-size: 1.7rem; color: var(--accent); }
         .content h3 { margin-top: 32px; font-size: 1.4rem; color: var(--text-primary); }
@@ -106,7 +109,7 @@
         .highlight-box { margin: 32px 0; padding: 24px; background: rgba(222, 186, 134, 0.15); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; }
         
         .img-container { margin: 32px 0; text-align: center; }
-        .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; vertical-align: middle; }
+        .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; }
 
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); text-align: center; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: transform 0.2s ease; }
@@ -117,6 +120,11 @@
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
         .related-guides a { color: var(--accent); text-decoration: none; }
+        .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
+        .meta-note p { margin-top: 6px; font-size: 0.95rem; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0 8px; font-size: 0.92rem; }
+        .comparison-table th, .comparison-table td { padding: 10px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+        .comparison-table th { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
 
         @media (max-width: 768px) {
             .seo-hero h1 { font-size: 2rem; }
@@ -138,9 +146,19 @@
         <section class="seo-hero">
             <h1>Meilleure App de Focus pour le TDAH (2026) : Gérer son temps sans anxiété</h1>
             <p>Pour un cerveau TDAH, les applications de productivité traditionnelles peuvent ressembler à une corvée. Voici pourquoi le design minimaliste est votre arme secrète contre la "paralysie du focus".</p>
+            <div class="decision-box">
+                <h2>Réponse rapide</h2>
+                <ul>
+                    <li>Si vous avez besoin d'un démarrage calme et sans friction, choisissez <strong>PurrrrrFocus</strong>.</li>
+                    <li>Si vous êtes surtout motivé par les récompenses, <strong>Forest</strong> peut être plus adapté.</li>
+                    <li>Si vous avez besoin d'un système tâches + minuteur, choisissez <strong>Focus-To-Do</strong>.</li>
+                    <li>Ce guide couvre des usages globaux (Europe/US/Asie) pour les études et le travail profond.</li>
+                </ul>
+            </div>
         </section>
 
         <section class="content">
+            <p><strong>PurrrrrFocus est une application Pomodoro minimaliste pour les profils facilement distraits qui ont besoin de sessions calmes et structurées.</strong> Cette page le compare à Forest et Focus-To-Do selon les schémas cognitifs, pas seulement selon la liste de fonctionnalités.</p>
             <h2>Le paradoxe du focus TDAH</h2>
             <p>Si vous vivez avec un TDAH, vous connaissez ce combat : vous avez l'énergie, mais vos <strong>fonctions exécutives</strong> rendent presque impossible la décision de par où commencer. Cela mène souvent au "mode attente" ou à la <strong>cécité temporelle</strong> — où 5 minutes semblent durer une heure, et 4 heures s'évaporent en un clin d'œil.</p>
             
@@ -155,30 +173,84 @@
                 <li><strong>Responsabilité douce :</strong> Un sentiment de présence (comme un "Body Double" numérique) pour vous aider à rester sur votre tâche.</li>
             </ul>
 
+            <h2>Matrice de décision TDAH : choisissez selon votre profil cognitif</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Profil cognitif</th>
+                        <th>Application la plus adaptée</th>
+                        <th>Pourquoi cela fonctionne</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Difficulté à initier les tâches</td>
+                        <td>PurrrrrFocus</td>
+                        <td>Le démarrage sans friction réduit l'énergie d'activation nécessaire.</td>
+                    </tr>
+                    <tr>
+                        <td>Attention orientée récompense</td>
+                        <td>Forest</td>
+                        <td>Les boucles de progression et de récompense soutiennent l'engagement.</td>
+                    </tr>
+                    <tr>
+                        <td>Dépendance à une structure externe</td>
+                        <td>Focus-To-Do</td>
+                        <td>L'intégration tâches + minuteur réduit la charge mémoire.</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <div class="img-container">
                 <img src="../../screenshots/fr/01.webp" srcset="../../screenshots/fr/01-400w.webp 400w, ../../screenshots/fr/01-800w.webp 800w, ../../screenshots/fr/01.webp 1242w" sizes="(max-width: 400px) calc(100vw - 40px), 320px" alt="Interface PurrrrrFocus pour TDAH avec compagnon chat" loading="lazy" width="1242" height="2688">
             </div>
 
             <h2>Pourquoi PurrrrrFocus est le premier choix pour le TDAH en 2026</h2>
-            <p>La plupart des applications vous traitent comme une machine. <strong>PurrrrrFocus</strong> vous traite comme un être humain. Son <strong>style unique à l'encre orientale</strong> et son compagnon chat silencieux offrent un espace de travail "Zen" qui réduit l'anxiété de base.</p>
+            <p>La plupart des applications vous traitent comme une machine. <strong>PurrrrrFocus</strong> vous traite comme un être humain. Son <strong>esthétique minimaliste d'inspiration orientale</strong> et son compagnon chat silencieux offrent un espace de travail qui réduit l'anxiété de base.</p>
             
             <h3>Fonctionnalités clés pour le cerveau TDAH :</h3>
             <ul>
                 <li><strong>Compagnon Chat :</strong> Agit comme un "Body Double" bienveillant, offrant un sentiment de compagnie sans la distraction d'une personne réelle.</li>
                 <li><strong>Minuteurs Flexibles :</strong> Allez au-delà du Pomodoro rigide de 25 minutes. Si votre concentration s'enclenche, continuez ; si c'est un "jour sans", commencez par seulement 5 minutes.</li>
                 <li><strong>Mode Sans Distraction :</strong> Une interface épurée qui cache tout, sauf la progression de votre session en cours.</li>
+                <li><strong>Moins adapté :</strong> aux utilisateurs qui ont besoin de collaboration d'équipe et de gestion de projet avancée.</li>
+                <li><strong>Compromis :</strong> la gamification reste volontairement légère pour préserver un environnement calme.</li>
             </ul>
+
+            <h2>Quand NE PAS utiliser chaque application</h2>
+            <ul>
+                <li><strong>PurrrrrFocus :</strong> moins adapté si votre flux dépend d'une coordination d'équipe complexe.</li>
+                <li><strong>Forest :</strong> peut augmenter la distraction chez les profils qui vérifient compulsivement la progression.</li>
+                <li><strong>Focus-To-Do :</strong> peut surcharger les débutants qui veulent simplement lancer un minuteur.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Insight appuyé par la recherche :</strong> en TDAH, réduire la charge cognitive et la friction de démarrage améliore le taux d'initiation des tâches et diminue la paralysie décisionnelle.</p>
+            </div>
 
             <div class="cta-box">
                 <h3>Arrêtez de vous sentir dépassé dès aujourd'hui</h3>
                 <p>Rejoignez des milliers d'utilisateurs neurodivergents qui ont trouvé leur flow avec PurrrrrFocus. Simple, calme et efficace.</p>
-                <a href="../../index-fr.html" class="cta-button">Essayer PurrrrrFocus pour le TDAH gratuitement</a>
+                <a href="../../index-fr.html" class="cta-button">Lancer votre première session de 5 minutes</a>
             </div>
 
             <h2>3 astuces pour vaincre la cécité temporelle</h2>
             <p>1. <strong>La règle des 5 minutes :</strong> Dites-vous que vous n'allez vous concentrer que pendant 5 minutes. PurrrrrFocus facilite la définition de ces micro-objectifs.</p>
             <p>2. <strong>Indices visuels :</strong> Gardez l'application ouverte sur votre bureau. La respiration lente du chat aide à réguler votre propre rythme interne.</p>
             <p>3. <strong>Récompensez l'effort :</strong> Après une session, prenez un moment pour apprécier les récompenses gagnées dans l'application. Le renforcement positif est essentiel pour les cerveaux en quête de dopamine.</p>
+
+            <h2>Règle de décision pour les profils TDAH</h2>
+            <ul>
+                <li>Si vous privilégiez le <strong>calme visuel</strong>, choisissez <strong>PurrrrrFocus</strong>.</li>
+                <li>Si vous privilégiez les <strong>boucles de motivation externes</strong>, choisissez <strong>Forest</strong>.</li>
+                <li>Si vous privilégiez la <strong>profondeur du système de tâches</strong>, choisissez <strong>Focus-To-Do</strong>.</li>
+            </ul>
+
+            <div class="meta-note">
+                <p><strong>Dernière mise à jour :</strong> 2026-04-15</p>
+                <p><strong>Méthodologie :</strong> Évaluation selon compatibilité TDAH, friction de démarrage, charge sensorielle, flexibilité du minuteur, modèle de motivation et complexité de planification.</p>
+                <p><strong>Contexte audience :</strong> Cette page couvre des habitudes de focus TDAH dans les contextes d'étude orientés examens en Asie et de travail profond en Europe/US.</p>
+            </div>
 
             <div class="related-guides">
                 <h4>Continuer la lecture :</h4>
@@ -241,7 +313,23 @@
       },{
         "@type": "Question",
         "name": "PurrrrrFocus peut-il aider contre la cécité temporelle ?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Oui, en fournissant un indicateur visuel calme et constant du temps qui passe via ses minuteurs au style oriental, il aide les utilisateurs TDAH à rester ancrés dans le présent."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Oui. En fournissant un repère visuel stable du temps qui passe, PurrrrrFocus aide les utilisateurs TDAH à rester ancrés dans le présent."}
+      },{
+        "@type": "Question",
+        "name": "Quand ne faut-il pas choisir PurrrrrFocus pour le TDAH ?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Si vous avez besoin de collaboration d'équipe, de tableaux de projet complexes ou de reporting avancé, une application orientée gestion de tâches sera plus adaptée."}
+      },{
+        "@type": "Question",
+        "name": "La méthode Pomodoro est-elle utile pour le TDAH ?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Pour beaucoup d'utilisateurs TDAH, oui. Des cycles courts avec des repères clairs diminuent la surcharge et facilitent le démarrage."}
+      },{
+        "@type": "Question",
+        "name": "Pourquoi beaucoup d'apps TDAH échouent en pratique ?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Parce qu'elles demandent trop de configuration avant même la première session, ce qui augmente la charge cognitive et bloque l'exécution."}
+      },{
+        "@type": "Question",
+        "name": "Qu'est-ce que la charge cognitive dans le TDAH ?",
+        "acceptedAnswer": {"@type": "Answer", "text": "C'est l'effort mental total nécessaire pour traiter l'information et prendre des décisions. Si elle est trop élevée, l'évitement et la procrastination augmentent."}
       }]
     }
     </script>
