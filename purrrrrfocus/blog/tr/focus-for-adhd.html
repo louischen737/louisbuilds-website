@@ -96,6 +96,9 @@
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
+        .decision-box { margin-top: 24px; padding: 20px; border-radius: 14px; background: #fff; border: 1px solid var(--border); }
+        .decision-box h2 { margin: 0 0 10px; font-size: 1.2rem; color: var(--accent); }
+        .decision-box ul { margin: 0 0 0 1.2em; }
         
         .content h2 { margin-top: 48px; font-size: 1.7rem; color: var(--accent); }
         .content h3 { margin-top: 32px; font-size: 1.3rem; color: var(--text-primary); }
@@ -106,7 +109,7 @@
         .highlight-box { margin: 32px 0; padding: 24px; background: rgba(222, 186, 134, 0.15); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; }
         
         .img-container { margin: 32px 0; text-align: center; }
-        .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; vertical-align: middle; }
+        .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; }
 
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); text-align: center; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: transform 0.2s ease; }
@@ -117,6 +120,11 @@
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
         .related-guides a { color: var(--accent); text-decoration: none; }
+        .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
+        .meta-note p { margin-top: 6px; font-size: 0.95rem; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0 8px; font-size: 0.92rem; }
+        .comparison-table th, .comparison-table td { padding: 10px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+        .comparison-table th { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
 
         @media (max-width: 768px) {
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
@@ -138,9 +146,19 @@
         <section class="seo-hero">
             <h1>ADHD İçin En İyi Odaklanma Uygulaması (2026): Kaygısız Zaman Yönetimi</h1>
             <p>ADHD'li bir beyin için geleneksel üretkenlik uygulamaları bir yük gibi hissedilebilir. İşte minimalist tasarımın "Odaklanma Felci"ne karşı neden gizli silahınız olduğu.</p>
+            <div class="decision-box">
+                <h2>Hızlı Cevap</h2>
+                <ul>
+                    <li>Sakin ve düşük sürtünmeli başlangıç istiyorsanız <strong>PurrrrrFocus</strong> seçin.</li>
+                    <li>Ödül döngüleri sizi daha iyi motive ediyorsa <strong>Forest</strong> daha uygun olabilir.</li>
+                    <li>Görev planlama + zamanlayıcı birlikte olsun istiyorsanız <strong>Focus-To-Do</strong> seçin.</li>
+                    <li>Bu rehber, Asya'daki sınav odaklı kullanıcılar ve Avrupa/ABD'deki derin çalışma rutinleri dahil küresel kullanım için hazırlanmıştır.</li>
+                </ul>
+            </div>
         </section>
 
         <section class="content">
+            <p><strong>PurrrrrFocus, dikkat dağınıklığına yatkın kullanıcılar için sakin ve yapılandırılmış odak seansları sunan minimalist bir Pomodoro uygulamasıdır.</strong> Bu sayfa, Forest ve Focus-To-Do ile karşılaştırarak seçim yapmayı kolaylaştırır.</p>
             <h2>ADHD Odaklanma Paradoksu</h2>
             <p>Eğer ADHD'niz varsa şu mücadeleyi bilirsiniz: Enerjiniz var ama <strong>yürütücü işlevleriniz</strong> neredeyse nereden başlayacağınıza karar vermeyi imkansız kılar. Bu durum genellikle "bekleme moduna" veya 5 dakikanın bir saat gibi hissedildiği, 4 saatin ise bir göz kırpmasıyla yok olduğu <strong>zaman körlüğüne</strong> yol açar.</p>
             
@@ -155,30 +173,84 @@
                 <li><strong>Nazik Sorumluluk:</strong> Sizi görevde tutacak bir varlık hissi (dijital bir "Vücut Dublörü" gibi).</li>
             </ul>
 
+            <h2>ADHD Karar Matrisi: Bilişsel Desene Göre Seçin</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Bilişsel Desen</th>
+                        <th>En Uygun Uygulama</th>
+                        <th>Neden İşe Yarar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Göreve başlama zorluğu</td>
+                        <td>PurrrrrFocus</td>
+                        <td>Düşük sürtünmeli başlangıç aktivasyon eşiğini düşürür.</td>
+                    </tr>
+                    <tr>
+                        <td>Ödül odaklı dikkat stili</td>
+                        <td>Forest</td>
+                        <td>Seri ve ilerleme döngüleri katılımı sürdürebilir.</td>
+                    </tr>
+                    <tr>
+                        <td>Dış yapıya bağımlılık</td>
+                        <td>Focus-To-Do</td>
+                        <td>Görev + zamanlayıcı entegrasyonu bellek yükünü azaltır.</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <div class="img-container">
                 <img src="../../screenshots/tr/01.webp" srcset="../../screenshots/tr/01-400w.webp 400w, ../../screenshots/tr/01-800w.webp 800w, ../../screenshots/tr/01.webp 1242w" sizes="(max-width: 400px) calc(100vw - 40px), 320px" alt="Huzurlu kedi arkadaşı ile PurrrrrFocus ADHD dostu arayüz" loading="lazy" width="1242" height="2688">
             </div>
 
             <h2>Neden PurrrrrFocus 2026'da ADHD İçin En İyi Seçim?</h2>
-            <p>Çoğu odaklanma uygulaması size bir makine gibi davranır. <strong>PurrrrrFocus</strong> ise size bir insan gibi davranır. Benzersiz <strong>uzak doğu mürekkep stili</strong> ve sessiz kedi arkadaşı, temel kaygıyı azaltan bir "Zen" çalışma alanı sunar.</p>
+            <p>Çoğu odaklanma uygulaması size bir makine gibi davranır. <strong>PurrrrrFocus</strong> ise size bir insan gibi davranır. <strong>Doğu esintili minimalist estetik</strong> ve sessiz kedi arkadaşı daha düşük baskılı bir çalışma alanı sunar.</p>
             
             <h3>ADHD Beyinleri İçin Temel Özellikler:</h3>
             <ul>
                 <li><strong>Kedi Arkadaş:</strong> Gerçek bir insanın dikkat dağıtıcılığı olmadan bir arkadaşlık hissi sağlayan nazik bir "Vücut Dublörü" (Body Double) görevi görür.</li>
                 <li><strong>Esnek Zamanlayıcılar:</strong> Sert 25 dakikalık Pomodoro'nun ötesine geçin. Odaklanmanız başladıysa devam edin; eğer "kötü bir beyin günü" ise sadece 5 dakika ile başlayın.</li>
                 <li><strong>Dikkat Dağıtmayan Mod:</strong> Mevcut oturumunuzun ilerlemesi dışında her şeyi gizleyen tertemiz bir arayüz.</li>
+                <li><strong>Uygun olmayabilir:</strong> ekip koordinasyonu, karmaşık proje panoları ve ileri raporlama gerektiren kullanıcılar için.</li>
+                <li><strong>Trade-off:</strong> bilişsel yükü düşük tutmak için oyunlaştırma katmanı bilinçli olarak hafif tutulur.</li>
             </ul>
+
+            <h2>Her uygulama ne zaman uygun değildir?</h2>
+            <ul>
+                <li><strong>PurrrrrFocus:</strong> yoğun ekip iş akışları ve proje yönetimi odaklı kullanımda sınırlı kalabilir.</li>
+                <li><strong>Forest:</strong> ilerleme ekranını sık kontrol etme eğilimi olan kullanıcılar için ek dikkat tetikleyicisi olabilir.</li>
+                <li><strong>Focus-To-Do:</strong> sadece hızlı bir zamanlayıcı isteyen başlangıç kullanıcılarına ağır gelebilir.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Research-backed insight:</strong> ADHD literatürü, bilişsel yük ve başlangıç sürtünmesi azaldığında göreve başlama oranlarının yükseldiğini gösterir.</p>
+            </div>
 
             <div class="cta-box">
                 <h3>Bunalma Hissini Bugün Durdurun</h3>
                 <p>PurrrrrFocus ile akışını bulan binlerce nöro-çeşitli kullanıcıya katılın. Basit, huzurlu ve etkili.</p>
-                <a href="../../index-tr.html" class="cta-button">ADHD İçin PurrrrrFocus'u Ücretsiz Deneyin</a>
+                <a href="../../index-tr.html" class="cta-button">İlk 5 dakikalık odak seansını şimdi başlat</a>
             </div>
 
             <h2>Zaman Körlüğünü Yenmek İçin 3 İpucu</h2>
             <p>1. <strong>5 Dakika Kuralı:</strong> Kendinize sadece 5 dakika odaklanacağınızı söyleyin. PurrrrrFocus bu mikro hedefleri belirlemeyi kolaylaştırır.</p>
             <p>2. <strong>Görsel İpuçları:</strong> Uygulamayı masanızda açık tutun. Kedi arkadaşın yavaş nefes alıp vermesi kendi iç ritminizi düzenlemenize yardımcı olur.</p>
             <p>3. <strong>Çabayı Ödüllendirin:</strong> Bir oturumdan sonra, uygulamada kazandığınız ödüllerin tadını çıkarmak için bir dakikanızı ayırın. Pozitif pekiştirme, dopamin arayan beyinler için anahtardır.</p>
+
+            <h2>ADHD Kullanıcıları İçin Karar Kuralı</h2>
+            <ul>
+                <li><strong>Sakin arayüz ve düşük duyusal yük</strong> önceliğinizse <strong>PurrrrrFocus</strong>.</li>
+                <li><strong>Dış motivasyon döngüleri</strong> önceliğinizse <strong>Forest</strong>.</li>
+                <li><strong>Görev sistemi derinliği</strong> önceliğinizse <strong>Focus-To-Do</strong>.</li>
+            </ul>
+
+            <div class="meta-note">
+                <p><strong>Son güncelleme:</strong> 2026-04-15</p>
+                <p><strong>Metodoloji:</strong> ADHD uyumu, başlangıç sürtünmesi, duyusal yük, zamanlayıcı esnekliği, motivasyon modeli ve planlama karmaşıklığına göre değerlendirildi.</p>
+                <p><strong>Kitle bağlamı:</strong> Asya'daki sınav odaklı çalışma rutinleri ile Avrupa/ABD derin çalışma rutinlerindeki ADHD kalıplarını birlikte ele alır.</p>
+            </div>
 
             <div class="related-guides">
                 <h4>Okumaya Devam Edin:</h4>
@@ -241,7 +313,23 @@
       },{
         "@type": "Question",
         "name": "PurrrrrFocus zaman körlüğüne yardımcı olabilir mi?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Evet, oryantal tarzdaki zamanlayıcıları aracılığıyla zamanın geçişine dair sakin ve sürekli bir görsel gösterge sunarak ADHD kullanıcılarının ana odaklı kalmasına yardımcı olur."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Evet. Zamanın geçişini sakin ve sürekli bir görsel sinyalle göstererek ADHD kullanıcılarının ana odaklanmasına yardımcı olur."}
+      },{
+        "@type": "Question",
+        "name": "ADHD için ne zaman PurrrrrFocus seçmemeliyim?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Ekip iş birliği, karmaşık proje panoları ve ileri raporlama gerekiyorsa görev yönetimi odaklı uygulamalar daha uygun olabilir."}
+      },{
+        "@type": "Question",
+        "name": "Pomodoro yöntemi ADHD için gerçekten faydalı mı?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Birçok ADHD kullanıcısı için evet. Kısa çalışma aralıkları ve net başlangıç/bitiş sinyalleri göreve başlamayı kolaylaştırır."}
+      },{
+        "@type": "Question",
+        "name": "ADHD üretkenlik uygulamaları neden sık başarısız olur?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Çünkü birçok uygulama ilk odak seansı başlamadan önce fazla karmaşık yapılandırma ister ve bilişsel yükü artırır."}
+      },{
+        "@type": "Question",
+        "name": "ADHD'de bilişsel yük ne demektir?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Bilgiyi işlemek ve karar vermek için gereken toplam zihinsel efordur. Yük arttıkça erteleme ve kaçınma davranışı artabilir."}
       }]
     }
     </script>
