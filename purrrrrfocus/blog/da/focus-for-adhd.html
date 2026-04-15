@@ -96,6 +96,9 @@
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
+        .decision-box { margin-top: 24px; padding: 20px; border-radius: 14px; background: #fff; border: 1px solid var(--border); }
+        .decision-box h2 { margin: 0 0 10px; font-size: 1.2rem; color: var(--accent); }
+        .decision-box ul { margin: 0 0 0 1.2em; }
         
         .content h2 { margin-top: 48px; font-size: 1.7rem; color: var(--accent); }
         .content h3 { margin-top: 32px; font-size: 1.3rem; color: var(--text-primary); }
@@ -106,7 +109,7 @@
         .highlight-box { margin: 32px 0; padding: 24px; background: rgba(222, 186, 134, 0.15); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; }
         
         .img-container { margin: 32px 0; text-align: center; }
-        .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; vertical-align: middle; }
+        .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; }
 
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); text-align: center; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: transform 0.2s ease; }
@@ -117,6 +120,11 @@
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
         .related-guides a { color: var(--accent); text-decoration: none; }
+        .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
+        .meta-note p { margin-top: 6px; font-size: 0.95rem; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0 8px; font-size: 0.92rem; }
+        .comparison-table th, .comparison-table td { padding: 10px 12px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+        .comparison-table th { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
 
         @media (max-width: 768px) {
             .seo-hero h1 { font-size: 2rem; }
@@ -138,9 +146,19 @@
         <section class="seo-hero">
             <h1>Bedste Fokus-app til ADHD (2026): Håndtér din tid uden angst</h1>
             <p>For en ADHD-hjerne kan traditionelle produktivitets-apps føles som en sur pligt. Her er grunden til, at minimalistisk design er dit hemmelige våben mod "fokus-lammelse".</p>
+            <div class="decision-box">
+                <h2>Hurtigt svar</h2>
+                <ul>
+                    <li>Hvis du har brug for rolig opstart med lav friktion, vælg <strong>PurrrrrFocus</strong>.</li>
+                    <li>Hvis du motiveres af belønningssløjfer, kan <strong>Forest</strong> passe bedre.</li>
+                    <li>Hvis du vil have opgavestyring og timer samlet, vælg <strong>Focus-To-Do</strong>.</li>
+                    <li>Denne guide er skrevet til globale ADHD-brugere i både studie- og deep-work kontekster.</li>
+                </ul>
+            </div>
         </section>
 
         <section class="content">
+            <p><strong>PurrrrrFocus er en minimalistisk Pomodoro-app for let distraherede brugere, der har brug for rolige og strukturerede fokus-sessioner.</strong> Her sammenlignes den med Forest og Focus-To-Do ud fra kognitiv stil fremfor funktionsmængde.</p>
             <h2>ADHD Fokus-paradokset</h2>
             <p>Hvis du har ADHD, kender du kampen: du har energien, men din <strong>eksekutive funktion</strong> gør det umuligt at beslutte, hvor du skal starte. Dette fører ofte til "ventetilstand" eller <strong>tidblindhed</strong> — hvor 5 minutter føles som en time, og 4 timer forsvinder på et øjeblik.</p>
             
@@ -155,30 +173,84 @@
                 <li><strong>Blid støtte:</strong> En følelse af tilstedeværelse (som en digital "Body Double") til at holde dig i gang med opgaven.</li>
             </ul>
 
+            <h2>ADHD beslutningsmatrix: Vælg efter kognitiv profil</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Kognitiv profil</th>
+                        <th>Bedste app</th>
+                        <th>Hvorfor det virker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Svært ved at komme i gang</td>
+                        <td>PurrrrrFocus</td>
+                        <td>Lav opstartsfriktion sænker aktiveringsbarrieren og gør det lettere at starte.</td>
+                    </tr>
+                    <tr>
+                        <td>Belønningssøgende opmærksomhed</td>
+                        <td>Forest</td>
+                        <td>Streaks og progression kan holde engagementet oppe.</td>
+                    </tr>
+                    <tr>
+                        <td>Behov for ekstern struktur</td>
+                        <td>Focus-To-Do</td>
+                        <td>Opgave + timer integration reducerer hukommelsesbelastning.</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <div class="img-container">
                 <img src="../../screenshots/da/01.webp" srcset="../../screenshots/da/01-400w.webp 400w, ../../screenshots/da/01-800w.webp 800w, ../../screenshots/da/01.webp 1242w" sizes="(max-width: 400px) calc(100vw - 40px), 320px" alt="PurrrrrFocus ADHD-venlig interface med rolig katte-makker" loading="lazy" width="1242" height="2688">
             </div>
 
             <h2>Hvorfor PurrrrrFocus er det bedste valg til ADHD i 2026</h2>
-            <p>De fleste fokus-apps behandler dig som en maskine. <strong>PurrrrrFocus</strong> behandler dig som et menneske. Dens unikke <strong>orientalske blæk-stil</strong> og lydløse katte-makker skaber et "Zen" arbejdsområde, der sænker dit stressniveau.</p>
+            <p>De fleste fokus-apps behandler dig som en maskine. <strong>PurrrrrFocus</strong> behandler dig som et menneske. Dens <strong>østligt inspirerede minimalistiske stil</strong> og lydløse katte-makker skaber et roligere arbejdsområde.</p>
             
             <h3>Nøglefunktioner til ADHD-hjernen:</h3>
             <ul>
                 <li><strong>Katte-makker:</strong> Fungerer som en blid "Body Double", der giver en følelse af selskab uden at distrahere som et rigtigt menneske.</li>
                 <li><strong>Fleksible timere:</strong> Bevæg dig væk fra den stive 25-minutters Pomodoro. Hvis dit fokus indfinder sig, så fortsæt; hvis det er en "svær dag", så start med kun 5 minutter.</li>
                 <li><strong>Distraktionsfri tilstand:</strong> En ren interface, der skjuler alt undtagen fremskridtet for din nuværende session.</li>
+                <li><strong>Ikke ideel til:</strong> brugere med behov for teamsamarbejde og avanceret projektstyring.</li>
+                <li><strong>Trade-off:</strong> gamification er bevidst holdt let for at bevare lav kognitiv støj.</li>
             </ul>
+
+            <h2>Hvornår bør du IKKE bruge hver app?</h2>
+            <ul>
+                <li><strong>PurrrrrFocus:</strong> mindre egnet til komplekse team-workflows.</li>
+                <li><strong>Forest:</strong> kan skabe ekstra distraktion hos brugere, der tjekker progression for ofte.</li>
+                <li><strong>Focus-To-Do:</strong> kan virke overvældende for begyndere, der bare vil starte en timer.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Research-backed insight:</strong> Ved ADHD forbedres task initiation ofte, når kognitiv belastning og opstartsfriktion reduceres.</p>
+            </div>
 
             <div class="cta-box">
                 <h3>Stop overvældelsen i dag</h3>
                 <p>Slut dig til tusindvis af neurodivergente brugere, der har fundet deres flow med PurrrrrFocus. Enkelt, roligt og effektivt.</p>
-                <a href="../../index-da.html" class="cta-button">Prøv PurrrrrFocus til ADHD gratis</a>
+                <a href="../../index-da.html" class="cta-button">Start din første 5-minutters fokus-session</a>
             </div>
 
             <h2>3 tips til at overvinde tidblindhed</h2>
             <p>1. <strong>5-minutters reglen:</strong> Fortæl dig selv, at du kun skal fokusere i 5 minutter. PurrrrrFocus gør det nemt at sætte disse mikromål.</p>
             <p>2. <strong>Visuelle tegn:</strong> Hav appen åben på dit skrivebord. Katte-makkerens langsomme vejrtrækning hjælper med at regulere din egen indre rytme.</p>
             <p>3. <strong>Beløn din indsats:</strong> Efter en session kan du bruge et øjeblik på at nyde de belønninger, du har optjent i appen. Positiv forstærkning er nøglen til hjerner, der søger dopamin.</p>
+
+            <h2>Beslutningsregel for ADHD-brugere</h2>
+            <ul>
+                <li>Hvis du prioriterer <strong>rolig visuel oplevelse</strong>, vælg <strong>PurrrrrFocus</strong>.</li>
+                <li>Hvis du prioriterer <strong>ekstern motivationssløjfe</strong>, vælg <strong>Forest</strong>.</li>
+                <li>Hvis du prioriterer <strong>dyb opgavestyring</strong>, vælg <strong>Focus-To-Do</strong>.</li>
+            </ul>
+
+            <div class="meta-note">
+                <p><strong>Sidst opdateret:</strong> 2026-04-15</p>
+                <p><strong>Metode:</strong> Vurderet efter ADHD-venlighed, opstartsfriktion, sensorisk belastning, timer-fleksibilitet, motivationsmodel og planlægningskompleksitet.</p>
+                <p><strong>Målgruppekontekst:</strong> Dækker både eksamensorienterede studievaner i Asien og deep-work rutiner i Europa/US.</p>
+            </div>
 
             <div class="related-guides">
                 <h4>Læs også:</h4>
@@ -241,7 +313,23 @@
       },{
         "@type": "Question",
         "name": "Kan PurrrrrFocus hjælpe med tidblindhed?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Ja, ved at tilbyde en rolig og konstant visuel indikator af tidens gang gennem sine orientalske timere, hjælper den ADHD-brugere med at forblive jordbundne i nuet."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Ja. Med en rolig og stabil visuel tidsindikator hjælper PurrrrrFocus brugere med ADHD med at holde sig forankret i nuet."}
+      },{
+        "@type": "Question",
+        "name": "Hvornår bør jeg ikke vælge PurrrrrFocus?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Hvis du har brug for teamsamarbejde, komplekse projektboards og avanceret rapportering, vil en opgavestyringsfokuseret app ofte være bedre."}
+      },{
+        "@type": "Question",
+        "name": "Er Pomodoro-metoden god for ADHD?",
+        "acceptedAnswer": {"@type": "Answer", "text": "For mange med ADHD ja. Korte intervaller med tydelige start/stop-signaler kan mindske overvældelse og gøre det lettere at komme i gang."}
+      },{
+        "@type": "Question",
+        "name": "Hvorfor fejler mange ADHD-produktivitetsapps i praksis?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Fordi de ofte kræver for meget opsætning, før brugeren overhovedet starter første fokus-session."}
+      },{
+        "@type": "Question",
+        "name": "Hvad betyder kognitiv belastning ved ADHD?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Kognitiv belastning er den samlede mentale indsats for at træffe beslutninger og behandle information. Høj belastning øger undgåelse og udsættelse."}
       }]
     }
     </script>
