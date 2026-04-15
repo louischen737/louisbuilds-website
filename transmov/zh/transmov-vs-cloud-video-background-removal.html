@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TransMov 与云端视频去背景：怎么选（Mac 选购指南）| TransMov</title>
+    <meta name="description" content="对比 TransMov Mac 本地方案与主流云端视频去背景工具，明确核心决策维度，告诉你该选本地 AI 还是云端工具。">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://louisbuilds.me/transmov/zh/transmov-vs-cloud-video-background-removal.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/transmov-vs-cloud-video-background-removal.html">
+    <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/zh/transmov-vs-cloud-video-background-removal.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/transmov-vs-cloud-video-background-removal.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://louisbuilds.me/transmov/zh/transmov-vs-cloud-video-background-removal.html">
+    <meta property="og:title" content="TransMov 与云端视频去背景：怎么选（Mac 选购指南）">
+    <meta property="og:description" content="专为 Mac 创作者打造：本地 TransMov 与云端去背景工具全维度对比，帮你快速做出选择。">
+    <meta property="og:image" content="https://louisbuilds.me/transmov/og-image.png">
+    <meta property="og:site_name" content="TransMov">
+    <meta property="og:locale" content="zh_CN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TransMov 与云端视频去背景：怎么选（Mac 选购指南）">
+    <meta name="twitter:description" content="清晰对比、取舍建议与选择规则，帮你快速选对视频去背景工具。">
+    <meta name="twitter:image" content="https://louisbuilds.me/transmov/og-image.png">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+    </script>
+    <script defer src="../js/gtag-delayed.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "TransMov 与云端视频去背景：怎么选（Mac 选购指南）",
+      "description": "专为 Mac 用户整理：本地与云端视频去背景工作流全维度对比。",
+      "inLanguage": "zh-CN",
+      "author": {
+        "@type": "Person",
+        "name": "Louis",
+        "url": "https://louisbuilds.me"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Louis",
+        "url": "https://louisbuilds.me"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "id": "https://louisbuilds.me/transmov/zh/transmov-vs-cloud-video-background-removal.html"
+      },
+      "datePublished": "2026-04-15",
+      "dateModified": "2026-04-15"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "zh-CN",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "什么时候该选 TransMov，而不是云端工具？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "注重隐私、需要本地处理，且需要在 Mac 上导出透明 APNG、GIF、WebP 素材，比团队云端协作更重要时，首选 TransMov。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "TransMov 适合重度云端评审的团队吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不太适合。如果团队需要云端共享评审、审批流程和纯浏览器工作流，云端工具会更合适。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "使用 TransMov 需要上传视频吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。TransMov 全程在 Mac 本地完成视频抠图处理，源文件无需上传到云端。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: #f5f5f5;
+            background: #07080d;
+            line-height: 1.8;
+        }
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 0.75rem 1.5rem;
+            background: rgba(7, 8, 13, 0.94);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        .top-bar-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .top-bar-icon { width: 32px; height: 32px; border-radius: 8px; display: block; }
+        .top-bar-name { font-size: 1.05rem; font-weight: 600; }
+        .top-bar-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .top-bar-link {
+            color: rgba(255, 255, 255, 0.86);
+            text-decoration: none;
+            font-size: 0.92rem;
+        }
+        .top-bar-link:hover { color: #c7d2fe; }
+        .hero {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 96px 24px 60px;
+            text-align: center;
+        }
+        .eyebrow {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            color: #a5b4fc;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .lead {
+            color: #a3a3a3;
+            max-width: 760px;
+            margin: 0 auto 26px;
+            font-size: 1.05rem;
+        }
+        .cta-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 11px 16px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-primary {
+            background: #f5f5f5;
+            color: #111827;
+        }
+        .btn-primary:hover { transform: translateY(-1px); }
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #d4d4d8;
+        }
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #fff;
+        }
+        .section {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 56px 24px;
+        }
+        .section h2 {
+            font-size: 1.65rem;
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+        .section-intro {
+            color: #a3a3a3;
+            max-width: 780px;
+            margin-bottom: 20px;
+        }
+        .quick-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .quick-list li {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: #d4d4d8;
+        }
+        .comparison {
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 760px;
+        }
+        th, td {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 14px 14px;
+            text-align: left;
+            vertical-align: top;
+            color: #d4d4d8;
+        }
+        th {
+            color: #f5f5f5;
+            background: rgba(255, 255, 255, 0.04);
+            font-weight: 600;
+        }
+        td:first-child, th:first-child {
+            width: 22%;
+            color: #f5f5f5;
+        }
+        .decision-box, .not-ideal {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 20px;
+        }
+        .decision-box ul, .not-ideal ul {
+            margin-left: 20px;
+            color: #d4d4d8;
+        }
+        .decision-box li, .not-ideal li { margin: 8px 0; }
+        .support-links {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .support-links a {
+            color: #c7d2fe;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(199, 210, 254, 0.35);
+            font-size: 0.95rem;
+        }
+        .support-links a:hover { border-color: rgba(199, 210, 254, 0.7); }
+        .cta-box {
+            text-align: center;
+            margin-top: 8px;
+        }
+        .cta-box .section-intro {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 30px 24px 48px;
+            text-align: center;
+            color: #9ca3af;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <a class="top-bar-brand" href="index.html">
+            <img class="top-bar-icon" src="../images/app-icon.png" alt="TransMov 应用图标">
+            <span class="top-bar-name">TransMov</span>
+        </a>
+        <div class="top-bar-actions">
+            <a class="top-bar-link" href="../transmov-vs-cloud-video-background-removal.html">English</a>
+            <a class="top-bar-link" href="index.html">返回首页</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="eyebrow">选购指南</div>
+            <h1>TransMov 与云端视频去背景工具</h1>
+            <p class="lead">
+                如果你正在 Mac 本地工作流与云端去背景方案之间纠结，可从隐私安全、画质效果、交付效率三个维度快速判断。
+            </p>
+            <div class="cta-row">
+                <a class="btn btn-primary" href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12">在 Mac 上试用 TransMov</a>
+                <a class="btn btn-secondary" href="online/index.html">在线体验 Demo</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>20 秒快速结论</h2>
+            <p class="section-intro">先明确使用场景，再对比功能细节。</p>
+            <ul class="quick-list">
+                <li><strong>选 TransMov</strong>：素材涉及隐私，必须在本地处理。</li>
+                <li><strong>选云端工具</strong>：团队需要频繁使用浏览器分享、远程评审。</li>
+                <li><strong>选专业合成工作流</strong>：需要节点化后期制作与复杂合成流程。</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>核心维度对比表</h2>
+            <p class="section-intro">统一对比标准，方便横向参考与决策。</p>
+            <div class="comparison">
+                <table>
+                    <tr>
+                        <th>对比维度</th>
+                        <th>TransMov（Mac 本地应用）</th>
+                        <th>主流云端去背景工具</th>
+                        <th>专业合成工作流</th>
+                    </tr>
+                    <tr>
+                        <td>处理位置</td>
+                        <td>Mac 本地（Apple Vision 本地处理）</td>
+                        <td>上传至云端服务器处理</td>
+                        <td>本地处理，但搭建和维护成本较高</td>
+                    </tr>
+                    <tr>
+                        <td>隐私安全性</td>
+                        <td>高，敏感素材专用（不上传源文件）</td>
+                        <td>受平台传输、存储政策限制</td>
+                        <td>通常可控，但工程协作流程复杂</td>
+                    </tr>
+                    <tr>
+                        <td>透明素材导出</td>
+                        <td>原生支持 APNG、GIF、WebP 导出</td>
+                        <td>根据平台和套餐决定</td>
+                        <td>支持，但导出设置更复杂</td>
+                    </tr>
+                    <tr>
+                        <td>上手难度</td>
+                        <td>简单易上手</td>
+                        <td>基础操作简单</td>
+                        <td>学习成本高</td>
+                    </tr>
+                    <tr>
+                        <td>适用人群</td>
+                        <td>独立开发者、设计师、小型 Mac 团队</td>
+                        <td>需要浏览器协作的远程团队</td>
+                        <td>需要高阶合成的专业工作室</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="decision-box">
+                <h2>选择建议：什么时候优先用 TransMov</h2>
+                <ul>
+                    <li>以 Mac 为主要工作设备，且对素材隐私有要求，本地处理更安全。</li>
+                    <li>需要快速制作 App、网页所需的透明素材，操作路径最简。</li>
+                    <li>如果团队重度依赖云端协作、审批，建议优先选择云端工具。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="not-ideal">
+                <h2>这些情况不建议选择 TransMov</h2>
+                <ul>
+                    <li>主要使用 Windows 系统，无法使用 Mac 工作流。</li>
+                    <li>每次修改都需要通过浏览器链接共享、团队评审。</li>
+                    <li>需要超出轻量导出的重度视频合成与节点编辑功能。</li>
+                </ul>
+            </div>
+            <div class="support-links">
+                <a href="../blog/what-is-apng-zh.html">APNG、GIF、WebP 格式选择指南</a>
+                <a href="../blog/why-local-ai-matters-for-video-privacy-zh.html">为什么本地 AI 更能保护隐私</a>
+                <a href="../support.html?lang=zh">使用帮助与导出常见问题</a>
+            </div>
+        </section>
+
+        <section class="section cta-box">
+            <h2>想先体验本地工作流？</h2>
+            <p class="section-intro">用一段短视频测试处理速度、画质和可控性，再确定长期方案。</p>
+            <div class="cta-row">
+                <a class="btn btn-primary" href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12">下载 TransMov</a>
+                <a class="btn btn-secondary" href="index.html#pricing">查看免费版与专业版</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 TransMov</p>
+    </footer>
+</body>
+</html>
