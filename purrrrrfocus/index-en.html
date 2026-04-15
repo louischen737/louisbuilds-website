@@ -63,6 +63,7 @@
       "alternateName": "喵时计",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "iOS, iPadOS",
+      "countriesSupported": ["US", "GB", "FR", "DE", "JP", "KR", "SG", "CA", "AU"],
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -145,6 +146,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The app offers core features for free, with optional premium features for advanced usage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PurrrrrFocus available worldwide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PurrrrrFocus is available in over 175 countries and regions, including the US, Europe, and Asia."
           }
         }
       ]
@@ -769,6 +778,143 @@
             }
         }
 
+        .intent-hub {
+            padding: 120px 0;
+            background: linear-gradient(to bottom, #F9F3E6, #FAF7F0);
+        }
+
+        .intent-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px auto;
+        }
+
+        .intent-header h2 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .intent-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            opacity: 0.8;
+        }
+
+        .intent-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .intent-card {
+            display: block;
+            padding: 28px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid rgba(222,186,134,0.35);
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .intent-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+            border-color: rgba(122,30,30,0.25);
+        }
+
+        .intent-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .intent-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .intent-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            opacity: 0.85;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .intent-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-preview {
+            padding: 90px 0;
+            background: linear-gradient(to bottom, #FAF7F0, #F9F3E6);
+        }
+
+        .feature-card {
+            display: block;
+            max-width: 900px;
+            margin: auto;
+            padding: 36px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(222,186,134,0.5);
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s ease;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+            border-color: rgba(122,30,30,0.3);
+        }
+
+        .feature-tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: rgba(59,36,29,0.75);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0;
+        }
+
+        .feature-arrow {
+            margin-top: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover .feature-arrow {
+            transform: translateX(6px);
+        }
+
     </style>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -783,6 +929,7 @@
         </a>
         <div class="header-actions">
             <nav class="header-nav" aria-label="Main navigation">
+                <a href="feature-en.html" class="nav-item">Features</a>
                 <a href="wallpapers-en.html" class="nav-item">Wallpapers</a>
                 <a href="#guides" class="nav-item">Blog</a>
             </nav>
@@ -908,6 +1055,22 @@
     </section>
     
     <!-- SEO Content Section -->
+    <section class="feature-preview">
+      <div class="container">
+        <a href="feature-en.html" class="feature-card">
+          <div class="feature-tag">SYSTEM OVERVIEW</div>
+          <h2>See the Full Focus System</h2>
+          <p>
+            Pomodoro engine, ADHD-friendly design, emotional cat companion,
+            distraction shield, and habit reinforcement - all working as one system.
+          </p>
+          <div class="feature-arrow">
+            Explore Features →
+          </div>
+        </a>
+      </div>
+    </section>
+
     <section class="seo-section">
         <div class="container">
             <div class="seo-content">
@@ -962,6 +1125,48 @@ role="region"
             </div>
             <p class="testimonials-hint" aria-hidden="true"></p>
         </div>
+    </section>
+
+    <!-- Intent Hub Section (NEW) -->
+    <section class="intent-hub">
+      <div class="container">
+        <div class="intent-header">
+          <h2>Find Your Focus Style</h2>
+          <p>Different people focus differently. Explore the guide that matches your goal.</p>
+        </div>
+
+        <div class="intent-grid">
+          <a class="intent-card" href="landing/best-adhd-focus-app-ios.html">
+            <span class="intent-tag">ADHD</span>
+            <h3>Best ADHD Focus Apps for iOS</h3>
+            <p>Simple tools designed for distraction-heavy minds.</p>
+          </a>
+
+          <a class="intent-card" href="landing/best-pomodoro-app-for-students.html">
+            <span class="intent-tag">STUDY</span>
+            <h3>Best Pomodoro Apps for Students</h3>
+            <p>Study longer with structured focus sessions.</p>
+          </a>
+
+          <a class="intent-card" href="landing/forest-alternative.html">
+            <span class="intent-tag">ALTERNATIVES</span>
+            <h3>Forest Alternatives</h3>
+            <p>Compare focus apps and find a calmer experience.</p>
+          </a>
+
+          <a class="intent-card" href="landing/purrrrrfocus-vs-forest.html">
+            <span class="intent-tag">COMPARE</span>
+            <h3>PurrrrrFocus vs Forest</h3>
+            <p>See which focus system fits you better.</p>
+          </a>
+
+          <a class="intent-card" href="landing/start-focus-in-30-seconds.html">
+            <span class="intent-tag">QUICK START</span>
+            <h3>Start Focus in 30 Seconds</h3>
+            <p>No setup. Just open and focus immediately.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Founder's Story -->
@@ -1049,7 +1254,7 @@ role="region"
                     <img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1141180&theme=light&size=medium" alt="Follow on Product Hunt" width="200" height="40" loading="lazy">
                 </a>
             </div>
-            <p class="cta-note">Trusted by users worldwide. Start your focus journey now!</p>
+            <p class="cta-note">Used by students, creators, and ADHD users across the US, Europe, and Asia.</p>
         </div>
     </section>
 

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PurrrrrFocus vs Forest (2026): Which Focus Style Fits You</title>
+
+  <meta name="description" content="A calm decision guide comparing PurrrrrFocus vs Forest. Choose based on stimulation level, ADHD sensitivity, and focus style—not features.">
+
+  <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/landing/purrrrrfocus-vs-forest.html">
+
+  <meta property="og:title" content="PurrrrrFocus vs Forest: Calm vs Gamified Focus">
+  <meta property="og:description" content="A simple way to decide which focus app fits your brain.">
+  <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png">
+
+  <style>
+    :root{
+      --text:#2f1d16;
+      --muted:#5a3b2e;
+      --accent:#7a1e1e;
+      --bg:#f7f2e8;
+    }
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
+    }
+
+    .wrap{
+      max-width:760px;
+      margin:0 auto;
+      padding:32px 18px 100px;
+    }
+
+    .topbar{
+      position: sticky;
+      top: 0;
+      background: rgba(249, 243, 230, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(222,186,134,0.3);
+      z-index: 10;
+    }
+
+    .topbar-inner{
+      max-width:760px;
+      margin:0 auto;
+      padding:10px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      font-weight:600;
+      color:#3b241d;
+    }
+
+    .brand-link,
+    .topbar-home{
+      color:#3b241d;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .brand-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .brand-logo{
+      width:22px;
+      height:22px;
+      border-radius:6px;
+      display:block;
+    }
+
+    a.back{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    h1{
+      font-size:2.4rem;
+      line-height:1.15;
+      margin:18px 0 10px;
+      letter-spacing:-0.02em;
+    }
+
+    h2{
+      font-size:1.4rem;
+      margin-top:48px;
+      color:var(--accent);
+      font-weight:650;
+    }
+
+    p,li{
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    ul{
+      padding-left:18px;
+    }
+
+    .hero{
+      margin-top:12px;
+      padding:28px;
+      border-radius:18px;
+      background: rgba(255,255,255,0.7);
+    }
+
+    .box{
+      margin-top:20px;
+      padding:0;
+      border-radius:0;
+      background: transparent;
+    }
+
+    .lead{
+      font-size:1.15rem;
+      color:var(--muted);
+      max-width:65ch;
+    }
+
+    .decision{
+      margin-top:28px;
+      font-size:1.1rem;
+      line-height:1.9;
+    }
+
+    .decision strong{
+      color:var(--text);
+    }
+
+    table{
+      width:100%;
+      margin-top:12px;
+      border-collapse:collapse;
+      border-radius:0;
+      overflow:visible;
+      background: transparent;
+      font-size:0.98rem;
+    }
+
+    th,td{
+      text-align:left;
+      padding:12px;
+      border:1px solid rgba(0,0,0,0.12);
+      vertical-align:top;
+    }
+
+    th{
+      color:var(--text);
+      font-weight:600;
+    }
+
+    .cta{
+      margin-top:72px;
+      padding:32px;
+      border-radius:20px;
+      background: rgba(255,255,255,0.75);
+    }
+
+    .cta p{
+      font-size:1.1rem;
+      color:var(--text);
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:14px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:var(--accent);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .note{
+      margin-top:10px;
+      font-size:0.95rem;
+      color:rgba(90,59,46,0.75);
+    }
+
+    .links{
+      margin-top:30px;
+      font-size:0.95rem;
+      color:var(--muted);
+    }
+
+    .links a{
+      color:var(--accent);
+      text-decoration:none;
+      margin-right:14px;
+      white-space:nowrap;
+    }
+
+    .footer{
+      margin-top:56px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.95rem;
+      border-top:1px solid rgba(222,186,134,0.7);
+      padding-top:20px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+
+    .footer-links a{
+      color:var(--accent);
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .screenshot{
+      margin-top:28px;
+      text-align:center;
+    }
+
+    .screenshot img{
+      width:100%;
+      max-width:320px;
+      height:auto;
+      border-radius:20px;
+      display:block;
+      margin:0 auto;
+    }
+
+    @media (max-width:768px){
+      h1{ font-size:2rem; }
+      h2{ margin-top:40px; }
+      .hero,.box,.cta{ padding:20px; }
+      .wrap{ padding:24px 16px 64px; }
+    }
+
+  </style>
+</head>
+
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-link" href="../index-en.html"><img class="brand-logo" src="../icon.webp" alt="PurrrrrFocus logo">PurrrrrFocus</a>
+    <a class="topbar-home" href="../index-en.html">Home</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+
+    <h1>PurrrrrFocus vs Forest</h1>
+
+    <p class="lead">
+      Most people don’t choose the wrong focus app because of features.
+      They choose based on how much stimulation their brain can handle.
+    </p>
+
+    <p class="decision">
+      If you are <strong>easily overstimulated</strong>, PurrrrrFocus will feel easier to start with.<br>
+      If you rely on <strong>gamified pressure and streak motivation</strong>, Forest may fit better.
+    </p>
+
+    <p class="decision">
+      The real question is not “which app is better”, but:
+      <strong>which environment lets you start focusing faster?</strong>
+    </p>
+
+  </div>
+
+  <div class="screenshot">
+    <img src="../screenshot1.webp" alt="PurrrrrFocus app main screen">
+  </div>
+
+  <section class="box">
+
+    <h2>Why this decision is harder than it looks</h2>
+
+    <p>
+      Most productivity apps look similar in screenshots, but they behave differently in practice.
+      The difference is not features—it is stimulation.
+    </p>
+
+    <ul>
+      <li>Too much visual feedback slows down task initiation</li>
+      <li>Gamification can help consistency, but also increase distraction</li>
+      <li>More features often increase cognitive load before starting</li>
+    </ul>
+
+  </section>
+
+  <section class="box">
+
+    <h2>Simple decision model</h2>
+
+    <p>
+      Ask yourself:
+    </p>
+
+    <ul>
+      <li>Do I get distracted by interface activity?</li>
+      <li>Do I need external rewards to stay consistent?</li>
+      <li>Is starting the hardest part of my workflow?</li>
+    </ul>
+
+  </section>
+
+  <section class="box">
+
+    <h2>Real differences</h2>
+
+    <table>
+      <tr>
+        <th>Aspect</th>
+        <th>PurrrrrFocus</th>
+        <th>Forest</th>
+      </tr>
+      <tr>
+        <td>Stimulation</td>
+        <td>Low, calm, minimal</td>
+        <td>High, gamified</td>
+      </tr>
+      <tr>
+        <td>ADHD fit</td>
+        <td>Better for reducing overwhelm</td>
+        <td>Depends on sensitivity</td>
+      </tr>
+      <tr>
+        <td>Starting effort</td>
+        <td>Very low</td>
+        <td>Medium</td>
+      </tr>
+      <tr>
+        <td>Motivation style</td>
+        <td>Internal calm structure</td>
+        <td>External reward loops</td>
+      </tr>
+    </table>
+
+  </section>
+
+  <section class="box">
+
+    <h2>When PurrrrrFocus is not ideal</h2>
+
+    <ul>
+      <li>If you depend on streak pressure to stay engaged</li>
+      <li>If you prefer game-like productivity systems</li>
+      <li>If you want heavy social or competitive mechanics</li>
+    </ul>
+
+  </section>
+
+  <section class="box">
+
+    <h2>When Forest is not ideal</h2>
+
+    <ul>
+      <li>If visual feedback distracts you</li>
+      <li>If reward pressure feels draining</li>
+      <li>If you prefer minimal decision environments</li>
+    </ul>
+
+  </section>
+
+  <section class="cta">
+
+    <h2>Final decision</h2>
+
+    <p>
+      Don’t overthink it. The best focus tool is the one you can start using immediately.
+    </p>
+
+    <a class="btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
+      Try PurrrrrFocus
+    </a>
+
+    <p class="note">
+      You can validate your choice in a single real focus session.
+    </p>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="../index-en.html">Back to Home</a>
+      <a href="../privacy-policy-en.html">Privacy Policy</a>
+      <a href="../terms-of-service-en.html">Terms of Service</a>
+    </div>
+    <p>© 2026 PurrrrrFocus</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
