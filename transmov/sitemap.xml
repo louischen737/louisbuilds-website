@@ -31,6 +31,11 @@
         <priority>0.86</priority>
     </url>
     <url>
+        <loc>https://louisbuilds.me/transmov/best-mac-video-background-removal-tools.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.78</priority>
+    </url>
+    <url>
         <loc>https://louisbuilds.me/transmov/zh/transmov-vs-cloud-video-background-removal.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.86</priority>
@@ -74,6 +79,31 @@
         <loc>https://louisbuilds.me/transmov/blog/transparent-animation-web-design-workflow-zh.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/gif-vs-apng-vs-webp-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.74</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/when-not-to-use-transmov.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.74</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/zh/best-mac-video-background-removal-tools.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.74</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/zh/gif-vs-apng-vs-webp-guide.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.74</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/zh/when-not-to-use-transmov.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.74</priority>
     </url>
     <url>
         <loc>https://louisbuilds.me/transmov/support.html</loc>
