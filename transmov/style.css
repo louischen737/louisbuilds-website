@@ -887,6 +887,24 @@ p {
     border: none;
     background: transparent;
 }
+.section--technical-standards .technical-standards-readmore {
+    margin: 1.25rem auto 0;
+    max-width: 960px;
+    text-align: center;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.66);
+}
+.section--technical-standards .technical-standards-readmore a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.section--technical-standards .technical-standards-readmore a:hover {
+    color: #c7d2fe;
+    border-bottom-color: rgba(199, 210, 254, 0.7);
+}
 .native-advantage-badge {
     display: inline-flex;
     align-items: center;
@@ -1268,6 +1286,22 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
 }
+.guides-grid--two-fixed {
+    grid-template-columns: repeat(2, minmax(260px, calc((100% - 2rem) / 3)));
+    justify-content: start;
+}
+.guides-grid--fixed-card {
+    grid-template-columns: minmax(260px, calc((100% - 2rem) / 3));
+    justify-content: start;
+}
+@media (max-width: 980px) {
+    .guides-grid--two-fixed {
+        grid-template-columns: minmax(260px, 1fr);
+    }
+    .guides-grid--fixed-card {
+        grid-template-columns: minmax(260px, 1fr);
+    }
+}
 .guide-card {
     text-decoration: none;
     color: inherit;
@@ -1290,6 +1324,9 @@ p {
 }
 .guide-card-tag--case-study {
     color: #c7d2fe;
+}
+.guide-card-tag--decision {
+    color: #fde68a;
 }
 .guide-card-tag {
     font-size: 0.7rem;

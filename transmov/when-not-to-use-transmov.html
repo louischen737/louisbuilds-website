@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>When NOT to Use TransMov (Honest Fit Guide) | TransMov</title>
+    <meta name="description" content="An honest guide to when TransMov is not the right tool. Learn fit boundaries, alternatives, and where TransMov works best.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://louisbuilds.me/transmov/when-not-to-use-transmov.html">
+    <meta property="og:title" content="When NOT to Use TransMov (And What You Should Use Instead)">
+    <meta property="og:description" content="Know when TransMov is not a good fit, what alternatives to use, and where TransMov fits in the workflow.">
+    <meta property="og:image" content="https://louisbuilds.me/transmov/og-image.png">
+    <meta property="og:site_name" content="TransMov">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="When NOT to Use TransMov (And What You Should Use Instead)">
+    <meta name="twitter:description" content="A clear fit guide: limits, alternatives, and best-use scenarios for TransMov.">
+    <meta name="twitter:image" content="https://louisbuilds.me/transmov/og-image.png">
+
+    <link rel="canonical" href="https://louisbuilds.me/transmov/when-not-to-use-transmov.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/when-not-to-use-transmov.html">
+    <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/zh/when-not-to-use-transmov.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/when-not-to-use-transmov.html">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "When NOT to Use TransMov (And What You Should Use Instead)",
+      "description": "A fit-boundary guide covering when TransMov is not the right choice and what alternatives to consider.",
+      "author": { "@type": "Person", "name": "Louis", "url": "https://louisbuilds.me" },
+      "publisher": { "@type": "Person", "name": "Louis", "url": "https://louisbuilds.me" },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://louisbuilds.me/transmov/when-not-to-use-transmov.html"
+      },
+      "datePublished": "2026-04-16",
+      "dateModified": "2026-04-16"
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.85;
+            color: #f5f5f5;
+            background: #0d0d0d;
+        }
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: rgba(13, 13, 13, 0.96);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .top-bar-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .top-bar-icon { width: 32px; height: 32px; border-radius: 8px; display: block; }
+        .top-bar-name { font-size: 1.1rem; font-weight: 600; color: #f5f5f5; }
+        .top-bar-actions { display: inline-flex; align-items: center; gap: 12px; }
+        .top-bar-link { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.92rem; }
+        .language-switcher { position: relative; z-index: 20; }
+        .language-toggle {
+            display: inline-flex; align-items: center; gap: 0.4rem; min-height: 34px; padding: 0 11px 0 9px;
+            background: rgba(255, 255, 255, 0.065); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px;
+            font-size: 0.78rem; font-weight: 600; letter-spacing: 0.03em; color: rgba(255, 255, 255, 0.92); cursor: pointer;
+        }
+        .language-menu {
+            list-style: none; margin: 8px 0 0; padding: 6px; position: absolute; right: 0; top: 100%; min-width: 128px;
+            border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(7, 8, 13, 0.92); backdrop-filter: blur(12px); display: none;
+        }
+        .language-switcher.open .language-menu { display: block; }
+        .language-menu a { display: block; padding: 7px 10px; border-radius: 6px; font-size: 0.84rem; text-decoration: none; color: rgba(255, 255, 255, 0.88); }
+        .language-menu a.active { background: rgba(255,255,255,0.12); color: #fff; }
+        @media (max-width: 980px) {
+            .top-bar { padding: 0.55rem 0.85rem; border-radius: 14px; margin: 10px 12px 0; }
+            .container { padding-top: 5.2rem; }
+            .language-toggle { min-height: 32px; padding: 0 9px 0 7px; }
+        }
+        .container { max-width: 920px; margin: 0 auto; padding: 5.8rem 1.5rem 4rem; }
+        h1 {
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        h2 {
+            margin-top: 2.4rem;
+            margin-bottom: 0.85rem;
+            font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+            line-height: 1.3;
+            color: #fff;
+        }
+        h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 1.08rem;
+            color: #f3f4f6;
+        }
+        p, li { color: #c7c7cc; }
+        ul, ol { margin: 0.5rem 0 0.9rem 1.2rem; }
+        .summary-box, .final-box, .query-box {
+            margin-top: 1.2rem;
+            padding: 1rem 1.1rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.03);
+        }
+        .summary-title {
+            color: #c7d2fe;
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.65rem;
+            font-weight: 700;
+        }
+        .summary-box a, .final-box a, .query-box a {
+            color: #c7d2fe;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(199, 210, 254, 0.35);
+        }
+        .summary-box a:hover, .final-box a:hover, .query-box a:hover {
+            border-bottom-color: rgba(199, 210, 254, 0.75);
+        }
+        .inline-link {
+            color: #c7d2fe;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(199, 210, 254, 0.35);
+        }
+        .inline-link:hover {
+            border-bottom-color: rgba(199, 210, 254, 0.75);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th, td {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 0.72rem 0.7rem;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+        th { color: #fff; background: rgba(255,255,255,0.05); }
+        blockquote {
+            margin: 0.8rem 0;
+            border-left: 3px solid rgba(165,180,252,0.8);
+            padding: 0.5rem 0.9rem;
+            color: #d9d9e0;
+            background: rgba(99,102,241,0.08);
+            border-radius: 8px;
+        }
+        pre {
+            margin-top: 0.7rem;
+            padding: 0.9rem;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #d4d4d8;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.6;
+        }
+        .section-anchor {
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 1.4rem;
+        }
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 2rem 1.5rem 3rem;
+            text-align: center;
+            color: rgba(255,255,255,0.55);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <a class="top-bar-brand" href="index.html">
+            <img class="top-bar-icon" src="images/app-icon.png" alt="TransMov icon">
+            <span class="top-bar-name">TransMov</span>
+        </a>
+        <div class="top-bar-actions">
+            <a class="top-bar-link" href="index.html#guides">Back to Guides</a>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Language: English">
+                    <span class="current-language">EN</span>
+                    <span class="chevron" aria-hidden="true">▾</span>
+                </button>
+                <ul class="language-menu" role="menu" aria-label="Language options">
+                    <li role="none"><a role="menuitem" href="when-not-to-use-transmov.html" class="active" lang="en">English</a></li>
+                    <li role="none"><a role="menuitem" href="zh/when-not-to-use-transmov.html" lang="zh-CN">中文</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>When NOT to Use TransMov (And What You Should Use Instead)</h1>
+
+        <div class="summary-box">
+            <div class="summary-title">Decision Summary</div>
+            <p>TransMov is not designed for every video or every workflow.</p>
+            <h3>You should NOT use TransMov if you need:</h3>
+            <ul>
+                <li><strong>Film / VFX-grade background removal (hair-level precision)</strong></li>
+                <li><strong>Real-time video processing or streaming pipelines</strong></li>
+                <li><strong>Cloud-based batch rendering at scale</strong></li>
+                <li><strong>Windows or non-macOS workflows</strong></li>
+                <li><strong>Full compositing or professional post-production systems</strong></li>
+            </ul>
+            <h3>You SHOULD use TransMov if you need:</h3>
+            <ul>
+                <li>Lightweight <strong>macOS local processing</strong></li>
+                <li>Fast conversion of video into <strong>animated assets</strong></li>
+                <li>Export to <strong>GIF / APNG / WebP</strong></li>
+                <li>Privacy-first workflows with <strong>no upload required</strong></li>
+            </ul>
+        </div>
+
+        <h2 class="section-anchor">1. Understanding What TransMov Is (and Is Not)</h2>
+        <p>Before comparing tools, it is important to clarify the category:</p>
+        <blockquote>
+            TransMov is a <strong>local-first macOS tool for generating lightweight animated assets from video</strong>, not a professional VFX compositor.
+        </blockquote>
+        <p>This means:</p>
+        <ul>
+            <li>It simplifies workflows</li>
+            <li>It prioritizes speed and privacy</li>
+            <li>It sacrifices extreme edge-case precision</li>
+        </ul>
+        <p>
+            See also ->
+            <a class="inline-link" href="best-mac-video-background-removal-tools.html">Where TransMov fits in the ecosystem</a>
+            ·
+            <a class="inline-link" href="gif-vs-apng-vs-webp-guide.html">What formats it supports and when to use them</a>
+        </p>
+
+        <h2 class="section-anchor">2. When TransMov Is NOT a Good Fit</h2>
+
+        <h3>2.1 You need VFX / Film-grade compositing</h3>
+        <p>If your goal is:</p>
+        <ul>
+            <li>hair strand-level masking</li>
+            <li>green screen replacement in films</li>
+            <li>cinematic post-production pipelines</li>
+        </ul>
+        <p>Then TransMov is not designed for this level of precision.</p>
+        <p><strong>Better alternatives:</strong></p>
+        <ul>
+            <li>DaVinci Resolve (Fusion)</li>
+            <li>Adobe After Effects</li>
+            <li>Nuke-style compositing tools</li>
+        </ul>
+        <p>
+            If you are evaluating tools ->
+            <a class="inline-link" href="best-mac-video-background-removal-tools.html">tool category comparison</a>
+        </p>
+
+        <h3>2.2 You need real-time or streaming processing</h3>
+        <p>If your system requires:</p>
+        <ul>
+            <li>live video processing</li>
+            <li>streaming background removal</li>
+            <li>real-time broadcast workflows</li>
+        </ul>
+        <p>TransMov is not built for low-latency pipelines.</p>
+        <p><strong>Better alternatives:</strong></p>
+        <ul>
+            <li>GPU-accelerated real-time CV systems</li>
+            <li>custom ML inference pipelines</li>
+            <li>WebRTC-based processing stacks</li>
+        </ul>
+        <p>
+            Related ->
+            <a class="inline-link" href="best-mac-video-background-removal-tools.html">workflow comparison</a>
+        </p>
+
+        <h3>2.3 You need large-scale batch processing (server-side)</h3>
+        <p>If you are:</p>
+        <ul>
+            <li>processing thousands of videos per day</li>
+            <li>building a backend rendering pipeline</li>
+            <li>automating media pipelines at scale</li>
+        </ul>
+        <p>TransMov is a desktop application, not a server system.</p>
+        <p><strong>Better alternatives:</strong></p>
+        <ul>
+            <li>cloud rendering pipelines</li>
+            <li>FFmpeg + ML inference services</li>
+            <li>batch processing APIs</li>
+        </ul>
+        <p>
+            Alternative approaches ->
+            <a class="inline-link" href="best-mac-video-background-removal-tools.html">cloud vs local comparison</a>
+        </p>
+
+        <h3>2.4 You are not using macOS</h3>
+        <p>TransMov is built specifically for macOS.</p>
+        <p>If you need:</p>
+        <ul>
+            <li>Windows support</li>
+            <li>cross-platform deployment</li>
+            <li>Linux server environments</li>
+        </ul>
+        <p>Then TransMov is not the right tool.</p>
+        <p>
+            See supported workflows ->
+            <a class="inline-link" href="best-mac-video-background-removal-tools.html">Mac-only tool positioning</a>
+        </p>
+
+        <h3>2.5 You need full creative compositing control</h3>
+        <p>If your workflow includes:</p>
+        <ul>
+            <li>multi-layer editing</li>
+            <li>keyframe animation control</li>
+            <li>node-based compositing systems</li>
+        </ul>
+        <p>TransMov does not replace professional editing tools.</p>
+        <p><strong>Better alternatives:</strong></p>
+        <ul>
+            <li>Adobe After Effects</li>
+            <li>Blender compositing</li>
+            <li>DaVinci Resolve Studio</li>
+        </ul>
+
+        <h2 class="section-anchor">3. When TransMov IS a Great Fit</h2>
+        <p>To balance expectations, here is where it performs well:</p>
+
+        <h3>3.1 UI / Product animation workflows</h3>
+        <p>Example:</p>
+        <ul>
+            <li>onboarding animations</li>
+            <li>product feature previews</li>
+            <li>website motion assets</li>
+        </ul>
+        <p>Why it fits:</p>
+        <ul>
+            <li>fast iteration</li>
+            <li>lightweight exports</li>
+            <li>transparent animation support</li>
+        </ul>
+
+        <h3>3.2 AI-generated video post-processing</h3>
+        <p>Example:</p>
+        <ul>
+            <li>Runway / Luma outputs</li>
+            <li>AI-generated clips that need cleanup</li>
+            <li>turning videos into reusable assets</li>
+        </ul>
+        <p>Why it fits:</p>
+        <ul>
+            <li>quick background removal</li>
+            <li>format conversion (GIF / APNG / WebP)</li>
+        </ul>
+        <p>
+            For output formats ->
+            <a class="inline-link" href="gif-vs-apng-vs-webp-guide.html">see format guide</a>
+        </p>
+
+        <h3>3.3 Privacy-sensitive workflows</h3>
+        <p>Example:</p>
+        <ul>
+            <li>internal company assets</li>
+            <li>unreleased product demos</li>
+            <li>sensitive content not suitable for upload</li>
+        </ul>
+        <p>Why it fits:</p>
+        <ul>
+            <li>all processing happens locally on macOS</li>
+            <li>no external upload required</li>
+        </ul>
+
+        <h2 class="section-anchor">4. Comparison: TransMov vs Other Approaches</h2>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>TransMov</th>
+                <th>Cloud AI Tools</th>
+                <th>VFX Software</th>
+            </tr>
+            <tr><td>Best for</td><td>Lightweight asset creation</td><td>High-quality segmentation</td><td>Full compositing</td></tr>
+            <tr><td>Processing</td><td>Local (macOS)</td><td>Cloud</td><td>Local / hybrid</td></tr>
+            <tr><td>Speed</td><td>Fast for small tasks</td><td>Depends on upload</td><td>Slow</td></tr>
+            <tr><td>Precision</td><td>Medium</td><td>High</td><td>Very High</td></tr>
+            <tr><td>Complexity</td><td>Low</td><td>Medium</td><td>High</td></tr>
+        </table>
+
+        <h2 class="section-anchor">5. The Most Important Mental Model</h2>
+        <p>Instead of asking:</p>
+        <blockquote>Which tool is best?</blockquote>
+        <p>Ask:</p>
+        <blockquote>Which layer of the workflow am I in?</blockquote>
+        <p><strong>TransMov sits here:</strong></p>
+        <pre>AI Video Generation
+        ↓
+Background Removal / Asset Extraction  ← YOU ARE HERE
+        ↓
+Format Optimization (GIF / APNG / WebP)
+        ↓
+Product / Web / UI Integration</pre>
+        <p>It is NOT:</p>
+        <ul>
+            <li>the generator</li>
+            <li>the compositor</li>
+            <li>the final editor</li>
+        </ul>
+        <p>It is the <strong>asset extraction layer</strong>.</p>
+
+        <h2 class="section-anchor">6. Final Recommendation</h2>
+        <p>TransMov is best understood as:</p>
+        <div class="final-box">
+            <p>a focused macOS tool for converting video into lightweight, transparent, reusable animated assets.</p>
+            <p style="margin-top:8px;">It is not trying to replace VFX suites, cloud AI studios, or enterprise rendering systems.</p>
+        </div>
+
+        <div class="final-box">
+            <p><strong>Still not sure if TransMov fits your workflow?</strong></p>
+            <p style="margin-top:8px;">
+                Compare it with other approaches or see what it is best used for.
+            </p>
+            <p style="margin-top:10px;">
+                -> <a href="best-mac-video-background-removal-tools.html">Where TransMov fits</a>
+                ·
+                <a href="gif-vs-apng-vs-webp-guide.html">Format selection guide</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 TransMov</p>
+    </footer>
+    <script>
+        (function () {
+            var switcher = document.querySelector('[data-language-switcher]');
+            if (!switcher) return;
+            var toggle = switcher.querySelector('.language-toggle');
+            function closeMenu() {
+                switcher.classList.remove('open');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            }
+            if (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    var isOpen = switcher.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+            document.addEventListener('click', function (event) {
+                if (!switcher.contains(event.target)) closeMenu();
+            });
+        })();
+    </script>
+</body>
+</html>
