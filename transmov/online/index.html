@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TransMov — Interactive Demo</title>
+    <meta name="description" content="Try the interactive TransMov demo to see local AI video background removal and transparent APNG, GIF, and WebP export workflows on Mac.">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -951,7 +952,7 @@
         </div>
     </section>
 
-    <section id="preview-section" class="section preview-screen">
+    <section id="demo-section" class="section preview-screen">
         <div class="preview-section-head">
             <h2>Compare before &amp; after</h2>
             <p class="muted preview-sub">Drag the handle to inspect edges and transparency</p>
@@ -1032,7 +1033,7 @@
                 <div class="compare-stage">
                     <div class="compare-wrap checkerboard" id="compare-wrap" style="--split: 50%;">
                         <div class="compare-layer compare-processed">
-                            <img id="demo-processed" class="compare-proc-fallback" src="demo/portrait_trans.webp" alt="" decoding="async" aria-label="Processed result with transparency">
+                            <img id="demo-processed" class="compare-proc-fallback" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" decoding="async" aria-label="Processed result with transparency">
                             <canvas id="demo-processed-canvas" class="compare-proc-canvas is-hidden" aria-hidden="true"></canvas>
                         </div>
                         <div class="compare-layer compare-original">
@@ -1145,7 +1146,7 @@
 
         /** Hints from ffprobe (MP4). procDurationSec is filled when ImageDecoder opens the WebP. */
         var SCENE_MEDIA = {
-            portrait: { origDurationSec: 8.633625, origFps: 24000 / 1001, procDurationSec: null },
+            portrait: { origDurationSec: 2.536458, origFps: 24000 / 1001, procDurationSec: null },
             pet: { origDurationSec: 2.958333, origFps: 24, procDurationSec: null },
             motion: { origDurationSec: 2.5, origFps: 30, procDurationSec: null }
         };
@@ -1516,16 +1517,6 @@
             }
         });
 
-        document.querySelectorAll(".demo-scene-btn").forEach(function (btn) {
-            btn.addEventListener("click", function () {
-                var id = btn.getAttribute("data-scene");
-                document.querySelectorAll(".demo-scene-btn").forEach(function (b) {
-                    b.setAttribute("aria-pressed", b === btn ? "true" : "false");
-                });
-                loadDemo(id);
-            });
-        });
-
         var toastTimer = null;
         var toastShakeTimer = null;
         function showProToast() {
@@ -1572,6 +1563,28 @@
                 setTimeout(run, 1800);
             }
         }
+
+        var demoEngaged = false;
+        function engageDemo() {
+            if (demoEngaged) return;
+            demoEngaged = true;
+            schedulePreloadOtherDemos();
+        }
+        function getSelectedSceneId() {
+            var pressed = document.querySelector('.demo-scene-btn[aria-pressed="true"]');
+            return (pressed && pressed.getAttribute("data-scene")) || "portrait";
+        }
+        document.querySelectorAll(".demo-scene-btn").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var id = btn.getAttribute("data-scene");
+                document.querySelectorAll(".demo-scene-btn").forEach(function (b) {
+                    b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+                });
+                engageDemo();
+                loadDemo(id);
+            });
+        });
+
         proWrap.addEventListener("click", showProToast);
         proWrap.addEventListener("keydown", function (e) {
             if (e.key === "Enter" || e.key === " ") {
@@ -1586,8 +1599,31 @@
             });
         });
 
-        loadDemo("portrait");
-        schedulePreloadOtherDemos();
+        (function initDemoLazyLoad() {
+            var demoSectionEl = document.getElementById("demo-section");
+            if (!demoSectionEl) {
+                engageDemo();
+                loadDemo(getSelectedSceneId());
+                return;
+            }
+            if (!("IntersectionObserver" in window)) {
+                engageDemo();
+                loadDemo(getSelectedSceneId());
+                return;
+            }
+            var io = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting || demoEngaged) return;
+                        engageDemo();
+                        loadDemo(getSelectedSceneId());
+                        io.disconnect();
+                    });
+                },
+                { root: null, rootMargin: "200px 0px", threshold: 0 }
+            );
+            io.observe(demoSectionEl);
+        })();
 
         (function initHeaderInteractions() {
             var bar = document.querySelector(".top-bar");
