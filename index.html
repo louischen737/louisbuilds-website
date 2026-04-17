@@ -26,12 +26,37 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://louisbuilds.me/#website",
+      "url": "https://louisbuilds.me/",
+      "name": "Louis Builds",
+      "description": "Official website of Louis Builds — independent apps for focus, mindfulness, and education.",
+      "publisher": { "@id": "https://louisbuilds.me/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://louisbuilds.me/#organization",
+      "name": "Louis Builds",
+      "url": "https://louisbuilds.me/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://louisbuilds.me/assets/louisbuilds-logo.png"
+      },
+      "founder": { "@id": "https://louisbuilds.me/#person" }
+    },
+    {
       "@type": "Person",
       "@id": "https://louisbuilds.me/#person",
       "name": "Louis",
       "url": "https://louisbuilds.me/",
       "jobTitle": "Independent App Developer",
-      "description": "Creator of independent apps focusing on minimalism, productivity, and education."
+      "description": "Creator of independent apps focusing on minimalism, productivity, and education.",
+      "sameAs": [
+        "https://github.com/louischen737",
+        "https://substack.com/@louisbuilds",
+        "https://apps.apple.com/us/developer/%E8%81%AA-%E9%99%88/id1845801851"
+      ]
     },
     {
       "@type": "SoftwareApplication",
