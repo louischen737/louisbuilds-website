@@ -31,6 +31,51 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/feature-zh.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/feature-da.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/feature-tr.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/feature-fr.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/blogs.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/blogs-zh.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/blogs-da.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/blogs-tr.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/blogs-fr.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/purrrrrfocus/landing/best-adhd-focus-app-ios.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
