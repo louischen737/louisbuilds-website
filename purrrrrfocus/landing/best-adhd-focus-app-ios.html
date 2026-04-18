@@ -11,32 +11,50 @@
 
   <style>
     :root {
-      --bg: #f9f3e6;
-      --text: #3b241d;
-      --muted: #5c3a21;
+      --bg-primary: #f9f3e6;
+      --text-primary: #3b241d;
+      --text-secondary: #5c3a21;
       --accent: #7a1e1e;
+      --border: #deba86;
     }
 
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.8;
     }
 
     .wrap {
       max-width: 760px;
       margin: auto;
-      padding: 28px 18px 80px;
+      padding: 12px 18px 80px;
+    }
+
+    /* In-content links only (exclude footer — avoids double underline + border) */
+    main.wrap section a:not(.cta-button),
+    main.wrap > p#pre-cta-links a:not(.cta-button) {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+    main.wrap section a:not(.cta-button):visited,
+    main.wrap > p#pre-cta-links a:not(.cta-button):visited {
+      color: var(--accent);
+    }
+    main.wrap section a:not(.cta-button):hover,
+    main.wrap > p#pre-cta-links a:not(.cta-button):hover {
+      text-decoration-color: var(--accent);
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      background: rgba(249, 243, 230, 0.85);
+      background: rgba(249, 243, 230, 0.92);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(222,186,134,0.3);
+      border-bottom: 1px solid rgba(222, 186, 134, 0.3);
       z-index: 10;
     }
 
@@ -49,12 +67,12 @@
       justify-content: space-between;
       gap: 12px;
       font-weight: 600;
-      color: #3b241d;
+      color: var(--text-primary);
     }
 
     .brand-link,
     .topbar-home {
-      color: #3b241d;
+      color: var(--text-primary);
       text-decoration: none;
       white-space: nowrap;
     }
@@ -76,6 +94,7 @@
       font-size: 2.5rem;
       line-height: 1.2;
       margin-bottom: 16px;
+      color: var(--text-primary);
     }
 
     h2 {
@@ -86,38 +105,69 @@
     }
 
     p {
-      color: var(--muted);
+      color: var(--text-secondary);
+      margin-top: 0;
+    }
+
+    p + p {
+      margin-top: 14px;
     }
 
     ul {
       padding-left: 1.2rem;
-      color: var(--muted);
+      color: var(--text-secondary);
+      margin: 12px 0 0;
     }
 
-    /* HERO */
+    /* HERO — match best-pomodoro-app-for-students (soft card, no stroke) */
     .hero {
       margin-top: 12px;
       padding: 28px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.7);
     }
 
-    .btn {
+    .hero h1 {
+      margin-top: 0;
+    }
+
+    .cta-button {
       display: inline-block;
-      margin-top: 16px;
-      padding: 12px 22px;
-      border-radius: 999px;
+      margin-top: 24px;
+      padding: 14px 36px;
+      border-radius: 30px;
       background: var(--accent);
-      color: white;
-      text-decoration: none;
+      color: white !important;
+      text-decoration: none !important;
       font-weight: 600;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
     }
 
     .subtle {
       margin-top: 10px;
       font-size: 0.9rem;
-      color: var(--muted);
-      opacity: 0.8;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Soft helper line above final CTA — no box border */
+    .pre-cta-links {
+      margin-top: 40px;
+      margin-bottom: 0;
+      padding: 0;
+      text-align: center;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      opacity: 0.88;
+      max-width: 34rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-shot {
@@ -134,41 +184,37 @@
       border-radius: 16px;
     }
 
-    .box {
-      margin-top: 20px;
-      padding: 0;
-      border-radius: 0;
-      background: transparent;
-    }
-
-    /* CTA */
-    .cta {
-      margin-top: 72px;
-      padding: 32px;
+    /* Bottom CTA block — match blog .cta-box */
+    .cta-box {
+      margin-top: 28px;
+      padding: 40px;
       text-align: center;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.75);
+      border-radius: 24px;
+      background: rgba(122, 30, 30, 0.05);
+      border: 1px solid var(--border);
     }
 
-    .links {
-      margin-top: 30px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .links a {
+    .cta-box h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
       color: var(--accent);
-      text-decoration: none;
-      margin-right: 14px;
-      white-space: nowrap;
+    }
+
+    .cta-box > p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    .cta-box .cta-button {
+      margin-top: 24px;
     }
 
     .footer {
       margin-top: 56px;
       text-align: center;
-      color: var(--muted);
+      color: var(--text-secondary);
       font-size: 0.95rem;
-      border-top: 1px solid rgba(222,186,134,0.7);
+      border-top: 1px solid var(--border);
       padding-top: 20px;
     }
 
@@ -186,10 +232,27 @@
       white-space: nowrap;
     }
 
+    .footer-links a:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .footer-byline {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       h2 { margin-top: 40px; }
-      .hero, .cta { padding: 20px; }
+      .hero, .cta-box { padding: 20px; }
     }
 
   </style>
@@ -207,12 +270,14 @@
     <!-- HERO -->
     <section class="hero">
       <h1>Can’t Start Tasks? Try a Calm ADHD Focus App</h1>
-      <p>
-        If productivity apps feel overwhelming, you're not alone.
+      <p id="adhd-anchor-hero">
+        If productivity apps feel overwhelming, you&apos;re not alone.
+        Many people struggle with
+        <a href="../blog/en/focus-for-adhd.html">ADHD-related focus issues and task initiation</a>.
         PurrrrrFocus helps you start in seconds — with a simple, calm focus timer designed for ADHD minds.
       </p>
 
-      <a class="btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
+      <a class="cta-button" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
         Start a 5-Minute Focus Session
       </a>
 
@@ -236,8 +301,13 @@
     <!-- PROBLEM -->
     <section>
       <h2>Why Most ADHD Apps Feel Hard to Use</h2>
+      <p id="adhd-problem-link">
+        Too many features before you even begin —
+        something often discussed in
+        <a href="../blog/en/focus-for-adhd.html">how ADHD affects focus and decision fatigue</a>.
+      </p>
       <ul>
-        <li>Too many features before you even begin</li>
+        <li>Feature overload before your first tap</li>
         <li>Too much stimulation and visual noise</li>
         <li>Too much setup before taking action</li>
       </ul>
@@ -253,6 +323,11 @@
         <li><strong>Calm interface:</strong> reduces overwhelm</li>
         <li><strong>Structured sessions:</strong> simple focus loops</li>
       </ul>
+      <p id="habit-link">
+        This approach is based on reducing friction and building small wins —
+        similar to how you can
+        <a href="../blog/en/how-to-build-focus-habit.html">build a lasting focus habit step by step</a>.
+      </p>
     </section>
 
 
@@ -262,6 +337,10 @@
       <p>
         Many apps rely on heavy gamification or complex systems.
         That works for some users, but can make it harder to start.
+      </p>
+      <p id="pomodoro-link">
+        If you&apos;re comparing tools, you can explore
+        <a href="../blog/en/best-pomodoro-timer.html">a breakdown of the best Pomodoro timers for deep work</a>.
       </p>
       <ul>
         <li>Gamified apps → motivating but distracting</li>
@@ -282,22 +361,30 @@
     </section>
 
 
+    <p id="pre-cta-links" class="pre-cta-links">
+      Not sure yet? Learn
+      <a href="../blog/en/how-to-build-focus-habit.html">how focus habits actually work</a>
+      or
+      <a href="../blog/en/focus-for-adhd.html">why ADHD brains struggle to start</a>.
+    </p>
+
     <!-- CTA -->
-    <section class="cta">
-      <h2>Start Small. Focus Better.</h2>
+    <section class="cta-box">
+      <h3>Start Small. Focus Better.</h3>
       <p>Try one 5-minute session and see how it feels.</p>
-      <a class="btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
-        Download & Start Now
+      <a class="cta-button" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
+        Download &amp; Start Now
       </a>
     </section>
 
     <footer class="footer">
       <div class="footer-links">
-        <a href="../index-en.html">Back to Home</a>
+        <a href="../index-en.html">PurrrrrFocus Home</a>
         <a href="../privacy-policy-en.html">Privacy Policy</a>
         <a href="../terms-of-service-en.html">Terms of Service</a>
       </div>
       <p>© 2026 PurrrrrFocus</p>
+      <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer" class="footer-link">louisbuilds.me</a></p>
     </footer>
 
 

@@ -23,6 +23,7 @@
       --text: #3b241d;
       --muted: #5c3a21;
       --accent: #7a1e1e;
+      --border: #deba86;
     }
 
     body {
@@ -83,6 +84,7 @@
     h1 {
       font-size: 2.4rem;
       line-height: 1.2;
+      margin-top: 0;
       margin-bottom: 14px;
     }
 
@@ -101,8 +103,8 @@
     }
 
     .hero {
-      margin-top: 12px;
-      padding: 28px;
+      margin-top: 0;
+      padding: 16px 22px 24px;
       border-radius: 18px;
       background: rgba(255,255,255,0.7);
     }
@@ -116,6 +118,12 @@
       color: #fff;
       text-decoration: none;
       font-weight: 600;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
     }
 
     .screenshot {
@@ -131,11 +139,12 @@
 
     /* Reset global h2 top margin inside card — it was stacking with padding and looked top-heavy */
     .cta {
-      margin-top: 80px;
-      padding: 36px 32px;
+      margin-top: 28px;
+      padding: 40px 32px;
       text-align: center;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.75);
+      border-radius: 24px;
+      background: rgba(122, 30, 30, 0.05);
+      border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -153,10 +162,18 @@
     .cta p {
       margin: 0;
       max-width: 26em;
+      color: var(--muted);
     }
 
     .cta .btn {
-      margin-top: 0;
+      margin-top: 8px;
+      padding: 14px 36px;
+      border-radius: 30px;
+    }
+
+    .cta .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
     }
 
     /* Secondary links: stay visually lighter than .cta (no white “second card”) */
@@ -166,7 +183,6 @@
       background: transparent;
       box-shadow: none;
       border: none;
-      border-top: 1px solid rgba(59, 36, 29, 0.1);
     }
 
     .learn-more-section .learn-more-title {
@@ -278,13 +294,93 @@
       opacity: 0.7;
     }
 
+    .subtle {
+      margin: 0 0 14px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--muted);
+      opacity: 0.88;
+    }
+
+    .subtle a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .subtle a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .bridge {
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .bridge a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .bridge a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    /* Contextual links in article sections (not hero .btn, not learn-more rows) */
+    .wrap > section:not(.learn-more-section) a:not(.btn) {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .wrap > section:not(.learn-more-section) a:not(.btn):hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .pre-cta-trust {
+      margin-top: 40px;
+      margin-bottom: 0;
+      text-align: center;
+      max-width: 34rem;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .pre-cta-trust a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .pre-cta-trust a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .learn-more-label {
+      font-weight: 600;
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       h2 { margin-top: 40px; }
       .cta h2 {
         margin-top: 0;
       }
-      .hero, .cta { padding: 24px 20px; }
+      .hero { padding: 14px 18px 22px; }
+      .cta { padding: 32px 20px; }
       .learn-more-section {
         padding: 18px 0 2px;
         margin-top: 36px;
@@ -305,6 +401,11 @@
     </div>
   </header>
   <main class="wrap">
+
+    <p class="subtle">
+      Also exploring ADHD focus tools?
+      <a href="best-adhd-focus-app-ios.html">See the ADHD-focused landing page</a>.
+    </p>
 
     <!-- HERO -->
     <section class="hero">
@@ -341,15 +442,23 @@
       </ul>
       <p>
         Most students don’t struggle with discipline—they struggle with starting.
+        If that sounds familiar, you may want to read this
+        <a href="../blog/en/study-focus-guide.html">study focus guide</a>.
       </p>
     </section>
+
+    <p class="bridge">
+      Want a deeper breakdown of study focus systems?
+      <a href="../blog/en/study-focus-guide.html">Read the full guide</a>.
+    </p>
 
     <!-- QUICK ANSWER -->
     <section>
       <h2>Quick Answer</h2>
       <ul>
         <li><strong>Can’t start studying →</strong> choose PurrrrrFocus</li>
-        <li><strong>Need motivation boosts →</strong> choose gamified apps</li>
+        <li><strong>Need motivation boosts →</strong> consider
+          <a href="purrrrrfocus-vs-forest.html">gamified focus apps like Forest</a></li>
         <li><strong>Need planning system →</strong> choose task apps</li>
       </ul>
     </section>
@@ -360,7 +469,9 @@
       <ul>
         <li><strong>Low friction:</strong> start a session in seconds</li>
         <li><strong>Calm design:</strong> reduces mental overload</li>
-        <li><strong>Structured focus:</strong> builds repeatable study blocks</li>
+        <li><strong>Structured focus:</strong> builds repeatable study blocks,
+          similar to the
+          <a href="../blog/en/how-to-build-focus-habit.html">focus habit system</a></li>
         <li><strong>No clutter:</strong> focus on studying, not managing tools</li>
       </ul>
     </section>
@@ -394,35 +505,10 @@
       </p>
     </section>
 
-    <section class="learn-more-section" aria-labelledby="learn-more-title">
-      <h2 id="learn-more-title" class="learn-more-title">Learn more</h2>
-      <ul class="learn-more-list" role="list">
-        <li>
-          <a class="learn-more-item" href="../index-en.html">
-            <span class="learn-more-text">Explore PurrrrrFocus</span>
-            <span class="learn-more-arrow" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li>
-          <a class="learn-more-item" href="../blog/en/best-pomodoro-timer.html">
-            <span class="learn-more-text">3 Pomodoro timer apps compared (2026 review)</span>
-            <span class="learn-more-arrow" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li>
-          <a class="learn-more-item" href="../blog/en/study-focus-guide.html">
-            <span class="learn-more-text">Study focus guide</span>
-            <span class="learn-more-arrow" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li>
-          <a class="learn-more-item" href="../landing/purrrrrfocus-vs-forest.html">
-            <span class="learn-more-text">PurrrrrFocus vs Forest</span>
-            <span class="learn-more-arrow" aria-hidden="true">→</span>
-          </a>
-        </li>
-      </ul>
-    </section>
+    <p class="pre-cta-trust">
+      Not sure if this is right for you?
+      Read the <a href="../blog/en/best-pomodoro-timer.html">full comparison guide</a>.
+    </p>
 
     <!-- CTA -->
     <section class="cta">
@@ -432,6 +518,36 @@
       <a class="btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
         Download on the App Store
       </a>
+    </section>
+
+    <section class="learn-more-section" aria-labelledby="learn-more-title">
+      <h2 id="learn-more-title" class="learn-more-title">Learn more</h2>
+      <ul class="learn-more-list" role="list">
+        <li>
+          <a class="learn-more-item" href="../blog/en/best-pomodoro-timer.html">
+            <span class="learn-more-text"><span class="learn-more-label">Compare:</span> Pomodoro apps (2026 review)</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="learn-more-item" href="purrrrrfocus-vs-forest.html">
+            <span class="learn-more-text"><span class="learn-more-label">Compare:</span> PurrrrrFocus vs Forest</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="learn-more-item" href="../blog/en/study-focus-guide.html">
+            <span class="learn-more-text"><span class="learn-more-label">Guide:</span> Study focus system</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="learn-more-item" href="../index-en.html">
+            <span class="learn-more-text"><span class="learn-more-label">Explore:</span> PurrrrrFocus app</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
     </section>
 
     <footer class="footer">

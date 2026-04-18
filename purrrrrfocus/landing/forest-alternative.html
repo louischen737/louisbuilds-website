@@ -19,18 +19,26 @@
   <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/landing/forest-alternative.html">
 
   <style>
+    :root {
+      --bg: #f9f3e6;
+      --text: #3b241d;
+      --muted: #5c3a21;
+      --accent: #7a1e1e;
+      --border: #deba86;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f9f3e6;
-      color: #3b241d;
-      line-height: 1.75;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     .wrap {
-      max-width: 780px;
+      max-width: 760px;
       margin: auto;
-      padding: 28px 18px 90px;
+      padding: 28px 18px 80px;
     }
 
     .topbar {
@@ -43,7 +51,7 @@
     }
 
     .topbar-inner {
-      max-width: 780px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 10px 18px;
       display: flex;
@@ -75,53 +83,163 @@
     }
 
     .toplink {
-      color: #7a1e1e;
+      color: var(--accent);
       font-weight: 600;
       text-decoration: none;
     }
 
     h1 {
-      font-size: 2.6rem;
-      line-height: 1.15;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 14px;
     }
 
     h2 {
       margin-top: 56px;
-      color: #7a1e1e;
       font-size: 1.5rem;
+      color: var(--accent);
     }
 
     p, li {
-      color: #5c3a21;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.2rem;
     }
 
     .hero {
-      background: rgba(255,255,255,0.78);
-      padding: 28px;
+      margin-top: 0;
+      padding: 16px 22px 24px;
       border-radius: 18px;
+      background: rgba(255,255,255,0.7);
     }
 
     .cta {
-      margin-top: 70px;
-      padding: 32px;
+      margin-top: 28px;
+      padding: 40px 32px;
       text-align: center;
-      background: rgba(255,255,255,0.82);
-      border-radius: 20px;
+      border-radius: 24px;
+      background: rgba(122, 30, 30, 0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .cta h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      color: var(--accent);
+    }
+
+    .cta p {
+      margin: 0;
+      max-width: 26em;
+      color: var(--muted);
     }
 
     .btn {
       display: inline-block;
-      margin-top: 14px;
-      padding: 12px 22px;
+      margin-top: 18px;
+      padding: 12px 24px;
       border-radius: 999px;
-      background: #7a1e1e;
-      color: white;
+      background: var(--accent);
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .cta .btn {
+      margin-top: 8px;
+      padding: 14px 36px;
+      border-radius: 30px;
+    }
+
+    .cta .btn:hover {
+      opacity: 0.9;
       transform: translateY(-2px);
+    }
+
+    .hero-cta-note {
+      margin: 14px 0 0;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--muted);
+      opacity: 0.88;
+    }
+
+    .wrap > section:not(.cta) a:not(.btn) {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .wrap > section:not(.cta) a:not(.btn):hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .table-follow a,
+    .faq-cross a,
+    .pre-cta-crosslinks a,
+    .post-cta-hub a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .table-follow a:hover,
+    .faq-cross a:hover,
+    .pre-cta-crosslinks a:hover,
+    .post-cta-hub a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .pre-cta-crosslinks,
+    .post-cta-hub {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .pre-cta-crosslinks {
+      margin-bottom: 8px;
+    }
+
+    .post-cta-hub {
+      margin-top: 28px;
+    }
+
+    .post-cta-hub a {
+      white-space: nowrap;
+    }
+
+    .table-follow {
+      margin: 16px 0 0;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .faq-cross {
+      margin: 0 0 10px;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: var(--muted);
     }
 
     table {
@@ -131,22 +249,13 @@
     }
 
     th, td {
-      border: 1px solid #deba86;
+      border: 1px solid var(--border);
       padding: 12px;
       vertical-align: top;
     }
 
     th {
       background: rgba(222,186,134,0.25);
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(122,30,30,0.1);
-      font-size: 0.85rem;
-      margin-top: 10px;
     }
 
     .screenshot {
@@ -198,6 +307,25 @@
       text-decoration: none;
       white-space: nowrap;
     }
+
+    .footer-byline {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { margin-top: 40px; }
+      .cta h2 { margin-top: 0; }
+      .hero { padding: 14px 18px 22px; }
+      .cta { padding: 32px 20px; }
+    }
   </style>
 </head>
 
@@ -231,8 +359,7 @@
       <a class="btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
         Start a Calm Focus Session (5 min)
       </a>
-
-      <div class="pill">Used in 175+ countries</div>
+      <p class="hero-cta-note">Used by global users across 175+ countries and regions.</p>
     </section>
 
     <div class="screenshot">
@@ -240,13 +367,24 @@
     </div>
 
     <section>
-      <h2>Search Intent Match</h2>
+      <h2>You might be looking for...</h2>
 
       <ul>
-        <li><strong>“forest alternative”</strong> → calm focus system without streak pressure</li>
-        <li><strong>“apps like forest”</strong> → simpler Pomodoro experience</li>
-        <li><strong>“focus app for ADHD”</strong> → low-friction start + low cognitive load</li>
-        <li><strong>“pomodoro timer without distraction”</strong> → minimal UI focus sessions</li>
+        <li>
+          A <strong>calm alternative to Forest</strong>—same job, less pressure and fewer streak mechanics.
+          See <a href="../blog/en/best-pomodoro-timer.html">how different focus apps compare</a>.
+        </li>
+        <li>
+          If you’re weighing <strong>apps like Forest</strong>, you may want a simpler rhythm with less visual noise.
+          Read <a href="purrrrrfocus-vs-forest.html">PurrrrrFocus vs Forest</a> for a side-by-side take.
+        </li>
+        <li>
+          A <strong>focus app that works better for ADHD</strong>—quick to start, gentle on attention.
+          <a href="best-adhd-focus-app-ios.html">Explore ADHD-friendly focus tools on iOS</a>.
+        </li>
+        <li>
+          A <strong>distraction-free Pomodoro timer</strong>: minimal UI, start in seconds, and no reward overload—just time to work.
+        </li>
       </ul>
     </section>
 
@@ -257,7 +395,9 @@
         <li>Focus shifts into maintaining streaks instead of doing real work</li>
         <li>Missing one session causes motivation drop</li>
         <li>Visual reward system becomes distracting over time</li>
-        <li>Productivity turns into pressure instead of calm consistency</li>
+        <li>Productivity turns into pressure instead of calm consistency.
+          Read more in our
+          <a href="../blog/en/how-to-build-focus-habit.html">focus habit guide</a>.</li>
       </ul>
     </section>
 
@@ -295,6 +435,10 @@
           <td>Potential burnout from pressure loops</td>
         </tr>
       </table>
+      <p class="table-follow">
+        Want a deeper breakdown? See the full
+        <a href="../blog/en/best-pomodoro-timer.html">Pomodoro comparison guide</a>.
+      </p>
     </section>
 
     <section>
@@ -322,6 +466,8 @@
       <h2>Frequently Asked Questions</h2>
 
       <h3>Is PurrrrrFocus a good Forest alternative?</h3>
+      <p class="faq-cross">You can also read our
+        <a href="../blog/en/study-focus-guide.html">student focus guide</a> for deeper context.</p>
       <p>Yes. It is designed for users who want a calmer, lower-pressure focus experience.</p>
 
       <h3>Is this similar to apps like Forest?</h3>
@@ -333,6 +479,13 @@
       <h3>Is it available worldwide?</h3>
       <p>Yes, in over 175 countries and regions.</p>
     </section>
+
+    <p class="pre-cta-crosslinks">
+      Explore other comparisons:
+      <a href="../landing/best-pomodoro-app-for-students.html">Pomodoro for students</a>
+      ·
+      <a href="../landing/best-adhd-focus-app-ios.html">ADHD focus apps</a>
+    </p>
 
     <section class="cta">
       <h2>Try a Calmer Way to Focus</h2>
@@ -346,6 +499,11 @@
       </a>
     </section>
 
+    <p class="post-cta-hub">
+      Not sure which app is right for you?
+      <a href="../blog/en/study-focus-guide.html">Start with our study focus system guide</a>.
+    </p>
+
     <footer class="footer">
       <div class="footer-links">
         <a href="../index-en.html">Back to Home</a>
@@ -353,6 +511,7 @@
         <a href="../terms-of-service-en.html">Terms of Service</a>
       </div>
       <p>© 2026 PurrrrrFocus</p>
+      <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer" class="footer-link">louisbuilds.me</a></p>
     </footer>
 
   </main>

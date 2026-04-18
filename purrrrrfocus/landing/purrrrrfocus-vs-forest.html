@@ -15,25 +15,26 @@
   <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png">
 
   <style>
-    :root{
-      --text:#2f1d16;
-      --muted:#5a3b2e;
-      --accent:#7a1e1e;
-      --bg:#f7f2e8;
+    :root {
+      --text: #3b241d;
+      --muted: #5c3a21;
+      --accent: #7a1e1e;
+      --bg: #f9f3e6;
+      --border: #deba86;
     }
 
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.8;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
-    .wrap{
-      max-width:760px;
-      margin:0 auto;
-      padding:32px 18px 100px;
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 18px 80px;
     }
 
     .topbar{
@@ -84,34 +85,35 @@
       font-size:14px;
     }
 
-    h1{
-      font-size:2.4rem;
-      line-height:1.15;
-      margin:18px 0 10px;
-      letter-spacing:-0.02em;
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
     }
 
-    h2{
-      font-size:1.4rem;
-      margin-top:48px;
-      color:var(--accent);
-      font-weight:650;
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 56px;
+      color: var(--accent);
+      font-weight: 600;
     }
 
-    p,li{
-      color:var(--muted);
-      font-size:1.05rem;
+    p, li {
+      color: var(--muted);
+      font-size: 1.05rem;
     }
 
-    ul{
-      padding-left:18px;
+    ul {
+      padding-left: 1.2rem;
     }
 
-    .hero{
-      margin-top:12px;
-      padding:28px;
-      border-radius:18px;
-      background: rgba(255,255,255,0.7);
+    .hero {
+      margin-top: 0;
+      padding: 16px 22px 24px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.7);
     }
 
     .box{
@@ -147,45 +149,137 @@
       font-size:0.98rem;
     }
 
-    th,td{
-      text-align:left;
-      padding:12px;
-      border:1px solid rgba(0,0,0,0.12);
-      vertical-align:top;
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border: 1px solid var(--border);
+      vertical-align: top;
     }
 
-    th{
-      color:var(--text);
-      font-weight:600;
+    th {
+      color: var(--text);
+      font-weight: 600;
+      background: rgba(222, 186, 134, 0.25);
     }
 
-    .cta{
-      margin-top:72px;
-      padding:32px;
-      border-radius:20px;
-      background: rgba(255,255,255,0.75);
+    .cta {
+      margin-top: 28px;
+      padding: 40px 32px;
+      text-align: center;
+      border-radius: 24px;
+      background: rgba(122, 30, 30, 0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
     }
 
-    .cta p{
-      font-size:1.1rem;
-      color:var(--text);
+    .cta h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      color: var(--accent);
     }
 
-    .btn{
-      display:inline-block;
-      margin-top:14px;
-      padding:12px 18px;
-      border-radius:999px;
-      background:var(--accent);
-      color:white;
-      text-decoration:none;
-      font-weight:600;
+    .cta > p:not(.note) {
+      margin: 0;
+      max-width: 26em;
+      font-size: 1.05rem;
+      color: var(--muted);
     }
 
-    .note{
-      margin-top:10px;
-      font-size:0.95rem;
-      color:rgba(90,59,46,0.75);
+    .btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .cta .btn {
+      margin-top: 0;
+      padding: 14px 36px;
+      border-radius: 30px;
+    }
+
+    .cta .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .note {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--muted);
+      opacity: 0.88;
+      max-width: 28em;
+    }
+
+    .hero a,
+    .box a:not(.btn) {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .hero a:hover,
+    .box a:not(.btn):hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .table-follow,
+    .split-cross,
+    .pre-cta-crosslinks,
+    .post-cta-hub {
+      margin: 16px 0 0;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .split-cross {
+      margin-top: 20px;
+    }
+
+    .pre-cta-crosslinks {
+      margin: 48px 0 12px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .post-cta-hub {
+      margin: 28px 0 0;
+      text-align: center;
+    }
+
+    .table-follow a,
+    .split-cross a,
+    .pre-cta-crosslinks a,
+    .post-cta-hub a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .table-follow a:hover,
+    .split-cross a:hover,
+    .pre-cta-crosslinks a:hover,
+    .post-cta-hub a:hover {
+      text-decoration-color: var(--accent);
     }
 
     .links{
@@ -224,6 +318,17 @@
       white-space:nowrap;
     }
 
+    .footer-byline {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     .screenshot{
       margin-top:28px;
       text-align:center;
@@ -238,11 +343,13 @@
       margin:0 auto;
     }
 
-    @media (max-width:768px){
-      h1{ font-size:2rem; }
-      h2{ margin-top:40px; }
-      .hero,.box,.cta{ padding:20px; }
-      .wrap{ padding:24px 16px 64px; }
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { margin-top: 40px; }
+      .cta h2 { margin-top: 0; }
+      .hero { padding: 14px 18px 22px; }
+      .cta { padding: 32px 20px; }
+      .wrap { padding: 24px 16px 64px; }
     }
 
   </style>
@@ -258,7 +365,7 @@
 
 <div class="wrap">
 
-  <div class="hero">
+  <section class="hero">
 
     <h1>PurrrrrFocus vs Forest</h1>
 
@@ -277,7 +384,14 @@
       <strong>which environment lets you start focusing faster?</strong>
     </p>
 
-  </div>
+    <p>
+      Still deciding? You can also explore
+      <a href="forest-alternative.html">a simpler Forest alternative</a>
+      or see which setup works best for
+      <a href="best-adhd-focus-app-ios.html">ADHD-friendly focus</a>.
+    </p>
+
+  </section>
 
   <div class="screenshot">
     <img src="../screenshot1.webp" alt="PurrrrrFocus app main screen">
@@ -294,7 +408,9 @@
 
     <ul>
       <li>Too much visual feedback slows down task initiation</li>
-      <li>Gamification can help consistency, but also increase distraction</li>
+      <li>Gamification can help consistency, but can also increase distraction over time.
+        Learn more in our
+        <a href="../blog/en/how-to-build-focus-habit.html">focus habit guide</a>.</li>
       <li>More features often increase cognitive load before starting</li>
     </ul>
 
@@ -313,6 +429,13 @@
       <li>Do I need external rewards to stay consistent?</li>
       <li>Is starting the hardest part of my workflow?</li>
     </ul>
+
+    <p class="split-cross">
+      If your main struggle is starting tasks, see our
+      <a href="best-adhd-focus-app-ios.html">ADHD-focused approach</a>.
+      If you’re studying regularly, check our
+      <a href="best-pomodoro-app-for-students.html">student focus guide</a>.
+    </p>
 
   </section>
 
@@ -348,6 +471,13 @@
       </tr>
     </table>
 
+    <p class="table-follow">
+      If you’re exploring alternatives, you might also want to read:
+      <a href="forest-alternative.html">Best Forest alternative</a> or
+      see a broader comparison in our
+      <a href="../blog/en/best-pomodoro-timer.html">Pomodoro apps guide</a>.
+    </p>
+
   </section>
 
   <section class="box">
@@ -374,6 +504,14 @@
 
   </section>
 
+  <p class="pre-cta-crosslinks">
+    Not sure yet?
+    Compare different use cases:
+    <a href="forest-alternative.html">Forest alternatives</a> ·
+    <a href="best-pomodoro-app-for-students.html">For students</a> ·
+    <a href="best-adhd-focus-app-ios.html">For ADHD</a>
+  </p>
+
   <section class="cta">
 
     <h2>Final decision</h2>
@@ -392,6 +530,12 @@
 
   </section>
 
+  <p class="post-cta-hub">
+    Still exploring?
+    Start with our
+    <a href="../blog/en/study-focus-guide.html">complete focus system guide</a>.
+  </p>
+
   <footer class="footer">
     <div class="footer-links">
       <a href="../index-en.html">Back to Home</a>
@@ -399,6 +543,7 @@
       <a href="../terms-of-service-en.html">Terms of Service</a>
     </div>
     <p>© 2026 PurrrrrFocus</p>
+    <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer" class="footer-link">louisbuilds.me</a></p>
   </footer>
 
 </div>

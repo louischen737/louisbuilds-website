@@ -19,7 +19,7 @@
       --text: #3b241d;
       --muted: #5c3a21;
       --accent: #7a1e1e;
-      --soft: rgba(255,255,255,0.7);
+      --border: #deba86;
     }
 
     body {
@@ -27,11 +27,11 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     .wrap {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 28px 18px 80px;
     }
@@ -46,7 +46,7 @@
     }
 
     .topbar-inner {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 10px 18px;
       display: flex;
@@ -77,25 +77,19 @@
       display: block;
     }
 
-    .toplink {
-      display: inline-block;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
     h1 {
       font-size: 2.4rem;
-      line-height: 1.15;
-      margin: 18px 0 12px;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 14px;
     }
 
     h2 {
-      margin-top: 44px;
-      margin-bottom: 10px;
+      margin-top: 56px;
+      margin-bottom: 0;
       color: var(--accent);
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      font-weight: 600;
     }
 
     p, li {
@@ -103,27 +97,35 @@
     }
 
     .hero {
-      margin-top: 10px;
-      padding: 28px;
+      margin-top: 0;
+      padding: 16px 22px 24px;
       border-radius: 18px;
-      background: var(--soft);
+      background: rgba(255, 255, 255, 0.7);
     }
 
-    .cta-btn {
+    .btn {
       display: inline-block;
-      margin-top: 14px;
-      padding: 14px 26px;
+      margin-top: 18px;
+      padding: 12px 24px;
       border-radius: 999px;
       background: var(--accent);
-      color: white;
+      color: #fff;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
-    .micro {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      opacity: 0.9;
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .hero-cta-note {
+      margin: 14px 0 0;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: var(--muted);
+      opacity: 0.88;
     }
 
     .section {
@@ -143,13 +145,13 @@
 
     .screenshot {
       text-align: center;
-      margin: 26px 0;
+      margin-top: 28px;
     }
 
     .screenshot img {
       width: 100%;
       max-width: 320px;
-      border-radius: 18px;
+      border-radius: 20px;
     }
 
     ol {
@@ -160,12 +162,73 @@
       padding-left: 1.2rem;
     }
 
-    .final {
-      margin-top: 48px;
-      padding: 26px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.75);
+    .cta {
+      margin-top: 28px;
+      padding: 40px 32px;
       text-align: center;
+      border-radius: 24px;
+      background: rgba(122, 30, 30, 0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .cta h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      color: var(--accent);
+    }
+
+    .cta > p {
+      margin: 0;
+      max-width: 26em;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .cta .btn {
+      margin-top: 0;
+      padding: 14px 36px;
+      border-radius: 30px;
+    }
+
+    .cta .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .wrap .section a:not(.btn) {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .wrap .section a:not(.btn):hover {
+      text-decoration-color: var(--accent);
+    }
+
+    .post-cta-hub {
+      margin: 28px 0 0;
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .post-cta-hub a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 30, 30, 0.4);
+      text-underline-offset: 3px;
+    }
+
+    .post-cta-hub a:hover {
+      text-decoration-color: var(--accent);
     }
 
     .links {
@@ -204,6 +267,26 @@
       white-space: nowrap;
     }
 
+    .footer-byline {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { margin-top: 40px; }
+      .cta h2 { margin-top: 0; }
+      .hero { padding: 14px 18px 22px; }
+      .cta { padding: 32px 20px; }
+      .wrap { padding: 24px 16px 64px; }
+    }
+
   </style>
 </head>
 
@@ -222,13 +305,13 @@
       <p>You don’t need a system. You don’t need motivation.</p>
       <p>You only need <strong>one calm start</strong>.</p>
 
-      <a class="cta-btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
+      <a class="btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
         Start in 30 Seconds
       </a>
 
-      <div class="micro">
+      <p class="hero-cta-note">
         Used in 175+ countries by students, creators, and ADHD-sensitive users.
-      </div>
+      </p>
     </section>
 
     <div class="screenshot">
@@ -254,9 +337,11 @@
     <section class="section">
       <h2>Why this works</h2>
 
-      <div class="block">
+      <p class="block">
         Most overwhelm is not lack of ability — it is too many open loops.
-      </div>
+        If you want to understand this deeper, see our
+        <a href="../blog/en/how-to-build-focus-habit.html">focus habit guide</a>.
+      </p>
 
       <div class="block">
         A short timer removes decision pressure and creates momentum before resistance builds.
@@ -270,9 +355,18 @@
       <h2>Who this is for</h2>
 
       <ul>
-        <li>Students stuck before starting study</li>
-        <li>Creators avoiding deep work tasks</li>
-        <li>People with ADHD-like overwhelm or task paralysis</li>
+        <li>
+          Students stuck before starting study —
+          <a href="best-pomodoro-app-for-students.html">see how students use this</a>
+        </li>
+        <li>
+          Creators avoiding deep work tasks —
+          <a href="../blog/en/study-focus-guide.html">learn a simple focus system</a>
+        </li>
+        <li>
+          People with ADHD-like overwhelm —
+          <a href="best-adhd-focus-app-ios.html">ADHD-friendly approach</a>
+        </li>
       </ul>
     </section>
 
@@ -285,18 +379,28 @@
       <p>
         If your work requires complex team coordination or multi-project planning,
         you may also need a project management system.
+        Or start with a simpler structure from our
+        <a href="../blog/en/study-focus-guide.html">focus system guide</a>.
       </p>
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final">
+    <section class="cta">
       <h2>Start now, not later</h2>
       <p>One small focus session is enough to change your next hour.</p>
 
-      <a class="cta-btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
+      <a class="btn" href="https://apps.apple.com/app/purrrrrfocus/id6753966008">
         Open Focus Session
       </a>
     </section>
+
+    <p class="post-cta-hub">
+      Not sure if this is the right approach?
+      Explore:
+      <a href="best-pomodoro-app-for-students.html">for students</a> ·
+      <a href="best-adhd-focus-app-ios.html">for ADHD</a> ·
+      <a href="forest-alternative.html">Forest alternative</a>
+    </p>
 
     <footer class="footer">
       <div class="footer-links">
@@ -305,6 +409,7 @@
         <a href="../terms-of-service-en.html">Terms of Service</a>
       </div>
       <p>© 2026 PurrrrrFocus</p>
+      <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer" class="footer-link">louisbuilds.me</a></p>
     </footer>
 
   </main>
