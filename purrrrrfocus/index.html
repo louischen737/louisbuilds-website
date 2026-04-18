@@ -778,6 +778,66 @@
             }
         }
 
+        .feature-preview {
+            padding: 90px 0;
+            background: linear-gradient(to bottom, #FAF7F0, #F9F3E6);
+        }
+
+        .feature-card {
+            display: block;
+            max-width: 900px;
+            margin: auto;
+            padding: 36px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(222,186,134,0.5);
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s ease;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+            border-color: rgba(122,30,30,0.3);
+        }
+
+        .feature-tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: rgba(59,36,29,0.75);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0;
+        }
+
+        .feature-arrow {
+            margin-top: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover .feature-arrow {
+            transform: translateX(6px);
+        }
+
     </style>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -792,6 +852,7 @@
         </a>
         <div class="header-actions">
             <nav class="header-nav" aria-label="主导航">
+                <a href="feature-zh.html" class="nav-item">功能</a>
                 <a href="wallpapers.html" class="nav-item">壁纸</a>
                 <a href="blogs-zh.html" class="nav-item">资源</a>
             </nav>
@@ -814,6 +875,7 @@
                     <span class="mobile-nav-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span>
                 </button>
                 <div id="mobile-nav-menu" class="mobile-nav-menu" role="menu" aria-label="页面链接">
+                    <a href="feature-zh.html" role="menuitem">功能</a>
                     <a href="wallpapers.html" role="menuitem">壁纸</a>
                     <a href="blogs-zh.html" role="menuitem">资源</a>
                     <a href="privacy-policy-zh.html" role="menuitem">隐私政策</a>
@@ -914,6 +976,21 @@
                 </div>
             </article>
         </div>
+    </section>
+
+    <section class="feature-preview">
+      <div class="container">
+        <a href="feature-zh.html" class="feature-card">
+          <div class="feature-tag">系统概览</div>
+          <h2>一套完整的轻松专注方案</h2>
+          <p>
+            科学番茄节奏、ADHD 低负担适配、暖心猫咪陪伴、深度防干扰 + 习惯养成，多模块默契配合，专注不再费力。
+          </p>
+          <div class="feature-arrow">
+            查看完整功能 →
+          </div>
+        </a>
+      </div>
     </section>
     
     <!-- SEO Content Section -->

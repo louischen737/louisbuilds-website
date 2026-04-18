@@ -176,20 +176,6 @@
       opacity: 1;
       transform: translateX(3px);
     }
-    .back {
-      text-align: center;
-      margin-top: 64px;
-      padding-top: 8px;
-    }
-    .back a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .back a:hover {
-      text-decoration: underline;
-    }
-
     /* Light header (matches index-en structure; styles from index-en inline are not in main.css) */
     body.page-blogs .site-header {
       position: fixed;
@@ -419,6 +405,8 @@
     </a>
     <div class="header-actions">
       <nav class="header-nav" aria-label="主导航">
+        <a href="index.html" class="nav-item">首页</a>
+        <a href="feature-zh.html" class="nav-item">功能</a>
         <a href="wallpapers.html" class="nav-item">壁纸</a>
         <a href="blogs-zh.html" class="nav-item" aria-current="page">资源</a>
       </nav>
@@ -441,6 +429,8 @@
           <span class="mobile-nav-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span>
         </button>
         <div id="mobile-nav-menu" class="mobile-nav-menu" role="menu" aria-label="页面链接">
+          <a href="index.html" role="menuitem">首页</a>
+          <a href="feature-zh.html" role="menuitem">功能</a>
           <a href="wallpapers.html" role="menuitem">壁纸</a>
           <a href="blogs-zh.html" role="menuitem">资源</a>
           <a href="privacy-policy-zh.html" role="menuitem">隐私政策</a>
@@ -461,7 +451,7 @@
       <p class="blogs-meta">
         不想看长文，想要一套即用型专注方案？
         <a href="landing/best-pomodoro-app-for-students.html">试试专为学生打造的番茄钟应用</a>
-        · <a href="feature.html">功能介绍</a>
+        · <a href="feature-zh.html">功能介绍</a>
         · <a href="index.html">返回首页</a>
       </p>
 
@@ -519,15 +509,13 @@
         </ul>
       </section>
 
-      <div class="back">
-        <a href="index.html">← 返回喵时计首页</a>
-      </div>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-links">
+        <a href="index.html">首页</a>
         <a href="support.html">帮助与支持</a>
         <a href="privacy-policy-zh.html">隐私政策</a>
         <a href="terms-of-service-zh.html">服务条款</a>
