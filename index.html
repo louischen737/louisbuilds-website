@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Independent freemium apps to boost focus, reduce screen time, and build healthy habits. Discover Step1st, PurrrrrFocus, TapPause, and more." />
+<meta name="description" content="Independent, offline-first apps for digital wellness and creative efficiency. Discover minimal, no-account tools like Step1st, PurrrrrFocus, and TransMov." />
 <link rel="canonical" href="https://louisbuilds.me/" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -13,12 +13,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://louisbuilds.me/" />
 <meta property="og:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
-<meta property="og:description" content="Independent freemium apps to boost focus, reduce screen time, and build healthy habits. Discover Step1st, PurrrrrFocus, TapPause, and more." />
+<meta property="og:description" content="Independent, offline-first apps for digital wellness and creative efficiency. Discover minimal, no-account tools like Step1st, PurrrrrFocus, and TransMov." />
 <meta property="og:image" content="https://louisbuilds.me/assets/og-image.png" />
 <meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Louis Builds — Independent Apps for Focus & Mindfulness" />
-<meta name="twitter:description" content="Independent freemium apps to boost focus, reduce screen time, and build healthy habits. Discover Step1st, PurrrrrFocus, TapPause, and more." />
+<meta name="twitter:description" content="Independent, offline-first apps for digital wellness and creative efficiency. Discover minimal, no-account tools like Step1st, PurrrrrFocus, and TransMov." />
 
 <!-- 结构化数据 (Schema.org) — applicationCategory 与站点应用页、App Store 分类对齐 -->
 <script type="application/ld+json">
@@ -332,28 +332,34 @@ body {
     color: var(--text-secondary);
 }
 
+/* Products — section chrome left-aligned (like Community), app blocks stay centered below */
 .products-section-head {
-    max-width: 720px;
-    margin: 0 auto 5rem;
-    text-align: center;
+    max-width: 44rem;
+    margin: 0 0 clamp(4.75rem, 11vw, 7.5rem);
+    text-align: left;
 }
 
-/* Products */
-.products {
-    max-width: 1200px;
+/* Full-bleed band under Hero — same language as .site-section--community */
+.products.products--band {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.08) 0%, transparent 55%);
+}
+
+.products-apps-v4 {
+    max-width: min(1040px, 92vw);
     margin: 0 auto;
-    padding: clamp(120px, 14vw, 168px) 24px clamp(200px, 24vw, 320px);
+    padding: clamp(100px, 12vw, 160px) 24px clamp(160px, 18vw, 240px);
 }
 
+.product.app-section,
 .product {
-    display: flex;
-    gap: 80px;
-    align-items: center;
-    margin-bottom: 240px;
+    max-width: 960px;
+    margin: 0 auto clamp(140px, 16vw, 210px);
+    padding: 0;
     opacity: 0;
-    transform: translateY(60px);
-    filter: blur(8px);
-    transition: all 1s var(--ease);
+    transform: translateY(40px);
+    filter: blur(6px);
+    transition: opacity 0.85s var(--ease), transform 0.85s var(--ease), filter 0.85s var(--ease);
 }
 
 .product.visible {
@@ -362,34 +368,64 @@ body {
     filter: blur(0);
 }
 
-.product:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-/* Tighter gap before Journal (between rows stays 240px; last row shorter) */
 .products .product:last-child {
     margin-bottom: 0;
 }
 
-.product-info {
-    flex: 1;
+/* Top band: name → tags → what → [status] → CTA — uneven spacing = rhythm */
+.app-head {
+    text-align: center;
+    margin-bottom: clamp(2.35rem, 5.2vw, 3.65rem);
 }
 
-.product-info h2 {
-    font-size: 48px;
+.app-head h2,
+.app-head .product-title {
+    font-size: clamp(1.85rem, 4.2vw, 2.65rem);
     font-weight: 600;
-    margin-bottom: 20px;
     letter-spacing: -0.02em;
+    margin: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 16px;
-    white-space: nowrap;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
-@media (max-width: 1200px) {
-    .product-info h2 {
-        white-space: normal;
-    }
+.app-head .product-title .icon-picture {
+    display: contents;
+}
+
+/* Breathing room between icon+name row and metadata line */
+.app-head .tags {
+    margin: clamp(0.75rem, 1.8vw, 1.15rem) auto 0;
+    max-width: min(42rem, 92vw);
+    text-wrap: balance;
+}
+
+/* Clear step down: “what it is” — same voice as .site-section-lede (Community intro) */
+.app-head .app-what {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 40rem;
+    margin: clamp(1.05rem, 2.3vw, 1.65rem) auto 0;
+}
+
+/* Emotional hook: lives under screenshots as first line of .app-description (see .app-description .app-tagline) */
+
+/* Largest inhale before actions (read → decide → click) */
+.app-head .app-actions {
+    margin-top: clamp(1.65rem, 3.2vw, 2.35rem);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 20px;
+}
+
+/* Step1st: status already bridges copy → CTA; slightly tighter */
+.app-head .product-status + .app-actions {
+    margin-top: clamp(1.1rem, 2.1vw, 1.6rem);
 }
 
 .app-icon {
@@ -399,16 +435,145 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* <picture> wrapper so .app-icon styles apply to the <img> fallback without breaking h2 layout */
-.product-info h2 .icon-picture {
-    display: contents;
+/* Gallery — equal tiles (no hero), visual centerpiece */
+.app-gallery {
+    display: grid;
+    gap: clamp(14px, 2vw, 20px);
+    margin-bottom: clamp(2.75rem, 6vw, 4rem);
+    width: 100%;
 }
 
-.product-info p {
-    font-size: 18px;
+.app-gallery.ios {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.app-gallery.macos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.app-gallery img {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.48);
+    transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+    cursor: pointer;
+}
+
+.app-gallery img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 32px 72px rgba(0, 0, 0, 0.58);
+}
+
+/* Lower band: split scan (left narrative, right bullets) + full-width meta */
+.app-body {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.app-body-split {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.app-description {
+    min-width: 0;
+}
+
+/* Lead line after gallery: bridge from visuals → long copy (stronger than former muted head placement) */
+.app-description .app-tagline {
+    font-size: clamp(1.05rem, 2.1vw, 1.2rem);
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.45;
+    margin: 0 0 1rem;
+    letter-spacing: -0.015em;
+    max-width: min(40rem, 100%);
+    padding: 0.15rem 0 0.15rem 1rem;
+    border-left: 3px solid var(--accent);
+    border-radius: 2px 0 0 2px;
+    box-shadow: -1px 0 12px rgba(var(--accent-rgb), 0.22);
+}
+
+.app-description .app-marketing {
+    font-size: 0.95rem;
+    line-height: 1.65;
     color: var(--text-secondary);
-    margin-bottom: 28px;
-    max-width: 400px;
+    margin: 0;
+    text-align: left;
+    opacity: 0.92;
+}
+
+.app-description .app-marketing strong {
+    color: var(--text-primary);
+    font-weight: 600;
+    opacity: 1;
+}
+
+.app-body .product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.app-body .product-features li {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    padding-left: 0.65rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.08);
+    opacity: 0.9;
+}
+
+.app-body .product-features li:last-child {
+    margin-bottom: 0;
+}
+
+.app-body .product-features li span {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-right: 0.35rem;
+}
+
+/* TestFlight / availability — light pause after “what”, before CTA cluster */
+.app-head .product-status {
+    font-size: 13px;
+    color: var(--accent);
+    text-align: center;
+    margin: clamp(0.65rem, 1.35vw, 0.95rem) auto 0;
+    max-width: 40rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+}
+
+/* Documentation — last row of each app, centered */
+.app-doc-footer {
+    margin-top: clamp(1.5rem, 3.5vw, 2rem);
+    padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+}
+
+.app-doc-footer .tags {
+    margin-bottom: 0;
+}
+
+.app-doc-footer .tags.doc-lang-links {
+    margin: 0 auto;
+    max-width: min(52rem, 94vw);
+    line-height: 1.7;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    display: inline-block;
+    text-align: center;
 }
 
 .tags {
@@ -419,13 +584,14 @@ body {
     margin-bottom: 32px;
 }
 
-.product-info .tags + .tags {
-    text-transform: none;
-    letter-spacing: 0.04em;
-}
-
 .doc-lang-links a {
     white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+    .app-doc-footer .doc-lang-links a {
+        white-space: normal;
+    }
 }
 
 .buttons {
@@ -476,38 +642,6 @@ body {
 .btn-learn:hover {
     opacity: 1;
     transform: translateX(4px);
-}
-
-/* Screenshots */
-.product-screenshot {
-    flex: 1.4;
-    display: grid;
-    gap: 24px;
-}
-
-.product-screenshot img {
-    width: 100%;
-    min-width: 0;
-    height: auto;
-    display: block;
-    align-self: start;
-    border-radius: 18px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-    transition: all 0.5s var(--ease);
-    cursor: pointer;
-}
-
-.product-screenshot img:hover {
-    transform: scale(1.03) rotateX(2deg) rotateY(-2deg);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.7);
-}
-
-.product-screenshot.ios {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.product-screenshot.macos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* Pre-footer tagline — align column with Journal */
@@ -719,14 +853,19 @@ footer p {
     color: var(--text-muted);
 }
 
-/* Journal */
+/* Journal — full-bleed band (same treatment as products / community) */
 .journal-section {
-    padding: clamp(96px, 14vw, 160px) 24px clamp(112px, 16vw, 200px);
-    max-width: 900px;
-    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.08) 0%, transparent 55%);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+.journal-section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: clamp(96px, 14vw, 160px) 24px clamp(112px, 16vw, 200px);
 }
 
 .journal-section.visible {
@@ -954,7 +1093,7 @@ footer p {
         margin-top: 0;
     }
 
-    .journal-section {
+    .journal-section-inner {
         padding-left: max(20px, env(safe-area-inset-left, 0px));
         padding-right: max(20px, env(safe-area-inset-right, 0px));
     }
@@ -994,43 +1133,56 @@ footer p {
         transition: none;
         transform: none;
     }
+
+    .product,
+    .product.visible {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: none;
+    }
+
+    .app-gallery img:hover {
+        transform: none;
+    }
 }
 
 /* Responsive */
-@media (max-width: 968px) {
-    /* Column layout: default align-items:center shrinks children to content width on the
-       cross axis, so screenshot grids stay narrow with empty margins — use stretch. */
-    .product {
-        flex-direction: column !important;
-        align-items: stretch;
-        text-align: center;
-        gap: 60px;
+@media (max-width: 768px) {
+    .products-apps-v4 {
+        padding-left: max(20px, env(safe-area-inset-left, 0px));
+        padding-right: max(20px, env(safe-area-inset-right, 0px));
     }
 
-    .product-info {
-        width: 100%;
-    }
-
-    .product-screenshot {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .product-info h2 {
-        justify-content: center;
-    }
-
-    .buttons {
-        justify-content: center;
-    }
-
-    .product-screenshot.ios {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    /* Landscape macOS shots: single column on narrow viewports for readability */
-    .product-screenshot.macos {
+    .app-body-split {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .app-gallery {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        padding-bottom: 12px;
+        margin-left: calc(-1 * max(0px, env(safe-area-inset-left, 0px)));
+        margin-right: calc(-1 * max(0px, env(safe-area-inset-right, 0px)));
+        padding-left: max(20px, env(safe-area-inset-left, 0px));
+        padding-right: max(20px, env(safe-area-inset-right, 0px));
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .app-gallery.ios img {
+        flex: 0 0 min(240px, 78vw);
+        width: min(240px, 78vw);
+        scroll-snap-align: start;
+    }
+
+    /* Landscape macOS shots: slightly wider cards when horizontal-scrolling */
+    .app-gallery.macos img {
+        flex: 0 0 min(88vw, 400px);
+        width: min(88vw, 400px);
+        scroll-snap-align: start;
     }
 }
 </style>
@@ -1043,7 +1195,7 @@ footer p {
 <main>
 <section class="hero" aria-label="Introduction">
     <h1>Louis Builds</h1>
-    <p>Independent apps to reduce screen time, improve focus, and rethink how we use our phones.</p>
+    <p>Independent apps built for focus, creative flow, and a quieter digital life.</p>
     <a href="#products" class="explore-btn">Explore Apps</a>
     <nav class="hero-nav" aria-label="On this page">
         <a href="#products">Apps</a>
@@ -1052,7 +1204,8 @@ footer p {
     </nav>
 </section>
 
-<section class="products" id="products" aria-labelledby="products-heading">
+<section class="products products--band" id="products" aria-labelledby="products-heading">
+<div class="products-apps-v4">
 
 <header class="products-section-head">
     <p class="site-section-eyebrow">Software</p>
@@ -1061,38 +1214,79 @@ footer p {
 </header>
 
 <!-- Step1st -->
-<div class="product">
-<div class="product-info">
-<h2><img src="step1st/step1st-icon-120w.webp" srcset="step1st/step1st-icon-60w.webp 60w, step1st/step1st-icon-120w.webp 120w, step1st/step1st-icon-180w.webp 180w" sizes="60px" class="app-icon" alt="Step1st app icon" width="60" height="60"> Step1st</h2>
-<p>Unlock your apps with step goals. Reduce screen time and build healthier habits through movement.</p>
-<p style="font-size:14px; color:var(--accent); margin-top:-10px;">
-Currently in TestFlight — early access available
-</p>
+<div class="product app-section">
+<div class="app-head">
+<h2 class="product-title"><img src="step1st/step1st-icon-120w.webp" srcset="step1st/step1st-icon-60w.webp 60w, step1st/step1st-icon-120w.webp 120w, step1st/step1st-icon-180w.webp 180w" sizes="60px" class="app-icon" alt="Step1st app icon" width="60" height="60" loading="lazy" decoding="async"> Step1st</h2>
 <div class="tags">iOS · Health &amp; Fitness · Productivity · v1.0</div>
-<div class="tags" style="margin-top: -20px;">
-Documentation available in:
-<a href="step1st/" style="color: inherit; text-decoration: underline;">English</a>
-</div>
-<div class="buttons">
+<p class="app-what">A movement-driven iOS app blocker that links screen time to physical activity—using step goals before you scroll.</p>
+<p class="product-status">Currently in TestFlight — early access available</p>
+<div class="app-actions buttons product-links">
 <a href="https://substack.com/@louisbuilds/p-193051902" class="btn-early-access" target="_blank" rel="noopener noreferrer" aria-label="Get early access to Step1st via Substack">Get Early Access</a>
 <a href="step1st/" class="btn-learn">Learn More →</a>
 </div>
 </div>
-<div class="product-screenshot ios">
-<img src="step1st/screenshot1.webp" srcset="step1st/screenshot1-400w.webp 400w, step1st/screenshot1-800w.webp 800w, step1st/screenshot1.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - step goal and app unlocking dashboard" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot2.webp" srcset="step1st/screenshot2-400w.webp 400w, step1st/screenshot2-800w.webp 800w, step1st/screenshot2.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - personalized step target setup" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot3.webp" srcset="step1st/screenshot3-400w.webp 400w, step1st/screenshot3-800w.webp 800w, step1st/screenshot3.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - progress tracking and focus habit insights" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot4.webp" srcset="step1st/screenshot4-400w.webp 400w, step1st/screenshot4-800w.webp 800w, step1st/screenshot4.webp 1260w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Step1st app screenshot - streak and activity visualization" width="1260" height="2736" loading="lazy">
+<div class="app-gallery ios" role="region" aria-label="Step1st screenshots">
+<img src="step1st/screenshot1.webp" srcset="step1st/screenshot1-400w.webp 400w, step1st/screenshot1-800w.webp 800w, step1st/screenshot1.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - step goal and app unlocking dashboard" width="1260" height="2736" loading="lazy">
+<img src="step1st/screenshot2.webp" srcset="step1st/screenshot2-400w.webp 400w, step1st/screenshot2-800w.webp 800w, step1st/screenshot2.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - personalized step target setup" width="1260" height="2736" loading="lazy">
+<img src="step1st/screenshot3.webp" srcset="step1st/screenshot3-400w.webp 400w, step1st/screenshot3-800w.webp 800w, step1st/screenshot3.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - progress tracking and focus habit insights" width="1260" height="2736" loading="lazy">
+<img src="step1st/screenshot4.webp" srcset="step1st/screenshot4-400w.webp 400w, step1st/screenshot4-800w.webp 800w, step1st/screenshot4.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - streak and activity visualization" width="1260" height="2736" loading="lazy">
+</div>
+<div class="app-body">
+<div class="app-body-split">
+<div class="app-description">
+<p class="app-tagline">Unlock your apps, one step at a time.</p>
+<p class="app-marketing">Designed for <strong>desk-bound professionals and chronic doom-scrollers</strong>, Step1st uses physical step goals to break sedentary loops and enforce a &quot;Move-to-Unlock&quot; daily ritual. Step1st solves the modern dilemma of digital addiction coupled with physical inactivity. By linking screen time to movement, it ensures you hit your activity targets before surrendering to distractions. It’s not just an app locker; it’s a self-discipline engine for those who want to reclaim their health by making movement the prerequisite for entertainment.</p>
+</div>
+<ul class="product-features">
+<li><span>Integrity-Based Locking:</span> Uses Apple’s Screen Time API to keep distracting apps inaccessible until your steps are logged—eliminating the &quot;Ignore Limit&quot; loophole common in basic timers.</li>
+<li><span>Frictionless Tracking:</span> Leverages native motion co-processors for high-precision step counting with zero location tracking, protecting your privacy and your battery.</li>
+<li><span>HealthKit Empowerment:</span> Seamlessly syncs with Apple Health to provide a &quot;Read-Only&quot; experience, keeping your data local and under your total control.</li>
+<li><span>Native Efficiency:</span> Designed with a &quot;Zero-Impact&quot; philosophy—running ultra-lightweight in the background to ensure your iPhone stays fast and responsive.</li>
+</ul>
+</div>
+</div>
+<div class="app-doc-footer">
+<div class="tags doc-lang-links">
+Documentation available in:
+<a href="step1st/" style="color: inherit; text-decoration: underline;">English</a>
+</div>
 </div>
 </div>
 
 <!-- TapPause -->
-<div class="product">
-<div class="product-info">
-<h2><picture class="icon-picture"><source type="image/webp" srcset="tappause/icon.webp" /><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TapPause</h2>
-<p>A minimal pause timer to stop, pause, and rest. Designed for intentional breaks.</p>
+<div class="product app-section">
+<div class="app-head">
+<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="tappause/icon.webp" /><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TapPause</h2>
 <div class="tags">iOS · Health &amp; Fitness · v1.1</div>
-<div class="tags doc-lang-links" style="margin-top: -20px;">
+<p class="app-what">A minimalist breath and pause timer for seekers of digital peace—a gentle space to reset awareness amidst daily noise.</p>
+<div class="app-actions buttons product-links">
+<a href="https://apps.apple.com/us/app/tappause-pause-timer/id6758304453" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download TapPause on the App Store" width="120" height="40">
+</a>
+<a href="tappause/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="app-gallery ios" role="region" aria-label="TapPause screenshots">
+<img src="tappause/screenshot1.webp" srcset="tappause/screenshot1-400w.webp 400w, tappause/screenshot1-800w.webp 800w, tappause/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - duration selection" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot2.webp" srcset="tappause/screenshot2-400w.webp 400w, tappause/screenshot2-800w.webp 800w, tappause/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - pause timer" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot3.webp" srcset="tappause/screenshot3-400w.webp 400w, tappause/screenshot3-800w.webp 800w, tappause/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
+<img src="tappause/screenshot4.webp" srcset="tappause/screenshot4-400w.webp 400w, tappause/screenshot4-800w.webp 800w, tappause/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - splash screen" width="1242" height="2688" loading="lazy">
+</div>
+<div class="app-body">
+<div class="app-body-split">
+<div class="app-description">
+<p class="app-tagline">The most productive thing you can do is just be.</p>
+<p class="app-marketing">TapPause is an intentional ritual of non-doing—a quiet invitation to step out of the frantic stream of tasks and return to the present moment, fully offline.</p>
+</div>
+<ul class="product-features">
+<li><span>Gentle ritual:</span> One-tap to start; zero cognitive load.</li>
+<li><span>Radical simplicity:</span> No streaks, no rewards—rest is the goal.</li>
+<li><span>Pure presence:</span> 100% offline; your peace is yours alone.</li>
+</ul>
+</div>
+</div>
+<div class="app-doc-footer">
+<div class="tags doc-lang-links">
 Documentation available in:
 <a href="tappause/" style="color: inherit; text-decoration: underline;">English</a> ·
 <a href="tappause/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
@@ -1102,28 +1296,44 @@ Documentation available in:
 <a href="tappause/index-ko.html" style="color: inherit; text-decoration: underline;">한국어</a> ·
 <a href="tappause/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
 </div>
-<div class="buttons">
-<a href="https://apps.apple.com/us/app/tappause-pause-timer/id6758304453" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download TapPause on the App Store" width="120" height="40">
-</a>
-<a href="tappause/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="product-screenshot ios">
-<img src="tappause/screenshot1.webp" srcset="tappause/screenshot1-400w.webp 400w, tappause/screenshot1-800w.webp 800w, tappause/screenshot1.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - duration selection" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot2.webp" srcset="tappause/screenshot2-400w.webp 400w, tappause/screenshot2-800w.webp 800w, tappause/screenshot2.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - pause timer" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot3.webp" srcset="tappause/screenshot3-400w.webp 400w, tappause/screenshot3-800w.webp 800w, tappause/screenshot3.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot4.webp" srcset="tappause/screenshot4-400w.webp 400w, tappause/screenshot4-800w.webp 800w, tappause/screenshot4.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="TapPause app screenshot - splash screen" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
 <!-- PurrrrrFocus -->
-<div class="product">
-<div class="product-info">
-<h2><picture class="icon-picture"><source type="image/webp" srcset="purrrrrfocus/icon.webp" /><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> PurrrrrFocus</h2>
-<p>Deep focus timers with progress tracking and your cat companion.</p>
-<div class="tags">iOS · iPhone &amp; iPad · v2.5 · Productivity · Utilities</div>
-<div class="tags" style="margin-top: -20px;">
+<div class="product app-section">
+<div class="app-head">
+<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="purrrrrfocus/icon.webp" /><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> PurrrrrFocus</h2>
+<div class="tags">iOS · iPhone &amp; iPad · Productivity · Utilities · v2.5</div>
+<p class="app-what">A minimalist iOS Pomodoro timer with classical Chinese aesthetics and a cat companion—for deep work and ADHD-friendly focus.</p>
+<div class="app-actions buttons product-links">
+<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40" loading="lazy" decoding="async">
+</a>
+<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="app-gallery ios" role="region" aria-label="PurrrrrFocus screenshots">
+<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
+</div>
+<div class="app-body">
+<div class="app-body-split">
+<div class="app-description">
+<p class="app-tagline">Focus enhancement, wrapped in calmness.</p>
+<p class="app-marketing">PurrrrrFocus pairs a <strong>minimalist iOS Pomodoro timer</strong> with classical Chinese aesthetics and a <strong>cat companion system</strong> for ADHD users, students, and anyone chasing flow. Beyond the standard Pomodoro technique, it offers <strong>Elite Focus</strong> and <strong>Count-Up</strong> modes designed to reduce overwhelm—making it a perfect companion for deep work or ADHD support. It’s more than a utility; it’s a calm, user-friendly courtyard where your virtual cat grows alongside your focus habits.</p>
+</div>
+<ul class="product-features">
+<li><span>Diverse Timer System:</span> Includes Pomodoro, Count-Up, and Elite Focus modes to adapt to different task types and cognitive needs.</li>
+<li><span>Classical Feline Companion:</span> Features an adorable cat companion system and 6 classical themes inspired by traditional Chinese aesthetics.</li>
+<li><span>ADHD-Friendly Design:</span> Built with simplicity and tranquility in mind, focusing on reducing distraction and building consistent work habits without pressure.</li>
+<li><span>Native Performance:</span> A lightweight iOS/iPadOS experience with statistics, achievements, and beautiful widgets—100% focused on privacy.</li>
+</ul>
+</div>
+</div>
+<div class="app-doc-footer">
+<div class="tags doc-lang-links">
 Documentation available in:
 <a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
 <a href="purrrrrfocus/index-en.html" style="color: inherit; text-decoration: underline;">English</a> ·
@@ -1131,75 +1341,95 @@ Documentation available in:
 <a href="purrrrrfocus/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
 <a href="purrrrrfocus/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
 </div>
-<div class="buttons">
-<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40">
-</a>
-<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="product-screenshot ios">
-<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
 <!-- TransMov -->
-<div class="product">
-<div class="product-info">
-<h2><picture class="icon-picture"><source type="image/webp" srcset="transmov/icon.webp" /><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TransMov</h2>
-<p>Convert videos into transparent GIF, APNG, and WebP with AI-powered background removal — fully offline on your Mac.</p>
+<div class="product app-section">
+<div class="app-head">
+<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="transmov/icon.webp" /><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TransMov</h2>
 <div class="tags">macOS · Graphics &amp; Design · Productivity · v2.0</div>
-<div class="tags" style="margin-top: -20px;">
-Documentation available in:
-<a href="transmov/" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="transmov/zh/" style="color: inherit; text-decoration: underline;">中文</a>
-</div>
-<div class="buttons">
+<p class="app-what">A local-first macOS utility that extracts transparent animated assets from video—for UI designers and web developers.</p>
+<div class="app-actions buttons product-links">
 <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TransMov on the Mac App Store">
-<img src="assets/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40">
+<img src="assets/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40" loading="lazy" decoding="async">
 </a>
 <a href="transmov/" class="btn-learn">Learn More →</a>
 </div>
 </div>
-<div class="product-screenshot macos">
-<img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 968px) calc(100vw - 48px), 45vw" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
+<div class="app-gallery macos" role="region" aria-label="TransMov screenshots">
+<img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
+<img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
+</div>
+<div class="app-body">
+<div class="app-body-split">
+<div class="app-description">
+<p class="app-tagline">A specialized layer for UI asset extraction.</p>
+<p class="app-marketing">TransMov is a <strong>local-first macOS utility</strong> for <strong>UI designers and web developers</strong> who need transparent animated assets from video—without cloud uploads. It sits between your source footage and production code, converting clips into <strong>transparent APNG or WebP</strong> locally on your Mac so sensitive brand assets stay on-device.</p>
+</div>
+<ul class="product-features">
+<li><span>UI-Ready Transparency:</span> Specialized in generating 8-bit alpha-blended assets to prevent the jagged edges common in traditional GIFs.</li>
+<li><span>Local-Only Processing:</span> Uses on-device AI via Apple Vision. Your source video stays 100% private, processed entirely on your machine.</li>
+<li><span>Focused on Web Formats:</span> Prioritizes modern web-native formats like APNG and WebP over cinematic video containers.</li>
+<li><span>Fit for UI Workflows:</span> Ideal for onboarding animations and product demos where privacy and web compatibility matter more than cinematic precision.</li>
+</ul>
+</div>
+</div>
+<div class="app-doc-footer">
+<div class="tags doc-lang-links">
+Documentation available in:
+<a href="transmov/" style="color: inherit; text-decoration: underline;">English</a> ·
+<a href="transmov/zh/" style="color: inherit; text-decoration: underline;">中文</a>
+</div>
 </div>
 </div>
 
 <!-- Phonetic Formatter -->
-<div class="product">
-<div class="product-info">
-<h2><picture class="icon-picture"><source type="image/webp" srcset="phoneticformatter/icon.webp" /><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> Phonetic Formatter</h2>
-<p>Convert English text into accurate IPA transcription. Supports sentence-level and word-aligned formatting.</p>
-<div class="tags">iOS · Tools · v1.2 · English · IPA · Linguistics</div>
-<div class="tags" style="margin-top: -20px;">
+<div class="product app-section">
+<div class="app-head">
+<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="phoneticformatter/icon.webp" /><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> Phonetic Formatter</h2>
+<div class="tags">iOS · Tools · English · IPA · Linguistics · v1.2</div>
+<p class="app-what">An offline IPA transcription tool that turns English passages into structured, printable phonetic worksheets—100% on-device.</p>
+<div class="app-actions buttons product-links">
+<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Phonetic Formatter on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download Phonetic Formatter on the App Store" width="120" height="40" loading="lazy" decoding="async">
+</a>
+<a href="phoneticformatter/" class="btn-learn">Learn More →</a>
+</div>
+</div>
+<div class="app-gallery ios" role="region" aria-label="Phonetic Formatter screenshots">
+<img src="phoneticformatter/screenshot1.webp" srcset="phoneticformatter/screenshot1-400w.webp 400w, phoneticformatter/screenshot1-800w.webp 800w, phoneticformatter/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - process full English texts, input and generate" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot2.webp" srcset="phoneticformatter/screenshot2-400w.webp 400w, phoneticformatter/screenshot2-800w.webp 800w, phoneticformatter/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - sentence-level alignment, original text with IPA transcription" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot3.webp" srcset="phoneticformatter/screenshot3-400w.webp 400w, phoneticformatter/screenshot3-800w.webp 800w, phoneticformatter/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - word-aligned transcription, each word with IPA form" width="1242" height="2688" loading="lazy">
+<img src="phoneticformatter/screenshot4.webp" srcset="phoneticformatter/screenshot4-400w.webp 400w, phoneticformatter/screenshot4-800w.webp 800w, phoneticformatter/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - copy or export to TXT DOCX PDF" width="1242" height="2688" loading="lazy">
+</div>
+<div class="app-body">
+<div class="app-body-split">
+<div class="app-description">
+<p class="app-tagline">Stop fighting with flaky online converters and broken formatting.</p>
+<p class="app-marketing">Built for <strong>teachers, linguistics students, and serious learners</strong>, Phonetic Formatter turns full English passages into structured, printable phonetic worksheets. Paste a passage, generate word-aligned IPA in seconds, and export to PDF or Word—all 100% on-device. It’s the gold-standard CMU dictionary reimagined for educators who need to ship materials, not just look up single words.</p>
+</div>
+<ul class="product-features">
+<li><span>Built for Educators:</span> Optimized for full-text processing and structured handouts.</li>
+<li><span>Production Ready:</span> Export to PDF, Word (DOCX), and TXT for immediate teaching use.</li>
+<li><span>Local &amp; Reliable:</span> 100% on-device processing; no internet or account required.</li>
+</ul>
+</div>
+</div>
+<div class="app-doc-footer">
+<div class="tags doc-lang-links">
 Documentation available in:
 <a href="phoneticformatter/index-zh.html" style="color: inherit; text-decoration: underline;">中文</a> ·
 <a href="phoneticformatter/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
 <a href="phoneticformatter/index-es.html" style="color: inherit; text-decoration: underline;">Español</a> ·
 <a href="phoneticformatter/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a>
 </div>
-<div class="buttons">
-<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Phonetic Formatter on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download Phonetic Formatter on the App Store" width="120" height="40">
-</a>
-<a href="phoneticformatter/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="product-screenshot ios">
-<img src="phoneticformatter/screenshot1.webp" srcset="phoneticformatter/screenshot1-400w.webp 400w, phoneticformatter/screenshot1-800w.webp 800w, phoneticformatter/screenshot1.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - process full English texts, input and generate" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot2.webp" srcset="phoneticformatter/screenshot2-400w.webp 400w, phoneticformatter/screenshot2-800w.webp 800w, phoneticformatter/screenshot2.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - sentence-level alignment, original text with IPA transcription" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot3.webp" srcset="phoneticformatter/screenshot3-400w.webp 400w, phoneticformatter/screenshot3-800w.webp 800w, phoneticformatter/screenshot3.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - word-aligned transcription, each word with IPA form" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot4.webp" srcset="phoneticformatter/screenshot4-400w.webp 400w, phoneticformatter/screenshot4-800w.webp 800w, phoneticformatter/screenshot4.webp 1242w" sizes="(max-width: 968px) calc((100vw - 72px) / 2), 25vw" alt="Phonetic Formatter app screenshot - copy or export to TXT DOCX PDF" width="1242" height="2688" loading="lazy">
 </div>
 </div>
 
+</div>
 </section>
 
 <section class="site-section--community" id="community" aria-labelledby="community-heading">
@@ -1253,6 +1483,8 @@ Documentation available in:
 </section>
 
 <section class="journal-section" id="journal" aria-labelledby="journal-heading">
+
+<div class="journal-section-inner">
 
     <div class="section-header">
         <p class="site-section-eyebrow" style="margin-bottom: 0.5rem;">Writing</p>
@@ -1335,6 +1567,8 @@ Documentation available in:
         </div>
 
     </div>
+
+</div>
 </section>
 
 </main>
