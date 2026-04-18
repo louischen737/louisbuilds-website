@@ -1019,6 +1019,18 @@ html[lang="fr"] .immersive-inner h2 span {
     top: 16px;
 }
 
+body.page-blogs .lang-icon,
+body.page-feature .lang-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+body.page-blogs .lang-icon svg,
+body.page-feature .lang-icon svg {
+    display: block;
+}
+
 body.page-feature .site-header {
     position: fixed;
     top: 0;
