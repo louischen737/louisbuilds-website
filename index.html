@@ -419,6 +419,7 @@ body {
     margin-top: clamp(1.65rem, 3.2vw, 2.35rem);
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 14px 20px;
 }
@@ -642,6 +643,43 @@ body {
 .btn-learn:hover {
     opacity: 1;
     transform: translateX(4px);
+}
+
+/* Tertiary: decision / compare / “understand before download” — stays visually quiet vs primary CTAs */
+.btn-tertiary {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 6px 2px;
+    line-height: 1.3;
+    transition: color 0.25s var(--ease);
+}
+
+.btn-tertiary:hover {
+    color: var(--text-secondary);
+}
+
+.btn-tertiary::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s var(--ease);
+}
+
+.btn-tertiary:hover::after {
+    width: 100%;
+}
+
+.btn-tertiary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
 }
 
 /* Pre-footer tagline — align column with Journal */
@@ -1145,6 +1183,10 @@ footer p {
     .app-gallery img:hover {
         transform: none;
     }
+
+    .btn-tertiary::after {
+        transition: none;
+    }
 }
 
 /* Responsive */
@@ -1183,6 +1225,15 @@ footer p {
         flex: 0 0 min(88vw, 400px);
         width: min(88vw, 400px);
         scroll-snap-align: start;
+    }
+
+    .app-head .app-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-tertiary {
+        font-size: 13px;
     }
 }
 </style>
@@ -1277,6 +1328,12 @@ Documentation available in:
 <div class="app-description">
 <p class="app-tagline">The most productive thing you can do is just be.</p>
 <p class="app-marketing">TapPause is an intentional ritual of non-doing—a quiet invitation to step out of the frantic stream of tasks and return to the present moment, fully offline.</p>
+<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+See how to take a real break from your phone in a packed day:
+</p>
+<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
+<a href="tappause/how-to-take-a-break-from-your-phone.html" class="btn-tertiary" aria-label="How to take a break from your phone — TapPause">Take a Break →</a>
+</div>
 </div>
 <ul class="product-features">
 <li><span>Gentle ritual:</span> One-tap to start; zero cognitive load.</li>
@@ -1323,6 +1380,12 @@ Documentation available in:
 <div class="app-description">
 <p class="app-tagline">Focus enhancement, wrapped in calmness.</p>
 <p class="app-marketing">PurrrrrFocus pairs a <strong>minimalist iOS Pomodoro timer</strong> with classical Chinese aesthetics and a <strong>cat companion system</strong> for ADHD users, students, and anyone chasing flow. Beyond the standard Pomodoro technique, it offers <strong>Elite Focus</strong> and <strong>Count-Up</strong> modes designed to reduce overwhelm—making it a perfect companion for deep work or ADHD support. It’s more than a utility; it’s a calm, user-friendly courtyard where your virtual cat grows alongside your focus habits.</p>
+<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+See how PurrrrrFocus is used in real study routines:
+</p>
+<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
+<a href="purrrrrfocus/landing/best-pomodoro-app-for-students.html" class="btn-tertiary" aria-label="Best Pomodoro app for students — PurrrrrFocus">For Students →</a>
+</div>
 </div>
 <ul class="product-features">
 <li><span>Diverse Timer System:</span> Includes Pomodoro, Count-Up, and Elite Focus modes to adapt to different task types and cognitive needs.</li>
@@ -1346,45 +1409,90 @@ Documentation available in:
 
 <!-- TransMov -->
 <div class="product app-section">
-<div class="app-head">
-<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="transmov/icon.webp" /><img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TransMov</h2>
-<div class="tags">macOS · Graphics &amp; Design · Productivity · v2.0</div>
-<p class="app-what">A local-first macOS utility that extracts transparent animated assets from video—for UI designers and web developers.</p>
-<div class="app-actions buttons product-links">
-<a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TransMov on the Mac App Store">
-<img src="assets/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40" loading="lazy" decoding="async">
-</a>
-<a href="transmov/" class="btn-learn">Learn More →</a>
-</div>
-</div>
-<div class="app-gallery macos" role="region" aria-label="TransMov screenshots">
-<img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
-<img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
-</div>
-<div class="app-body">
-<div class="app-body-split">
-<div class="app-description">
-<p class="app-tagline">A specialized layer for UI asset extraction.</p>
-<p class="app-marketing">TransMov is a <strong>local-first macOS utility</strong> for <strong>UI designers and web developers</strong> who need transparent animated assets from video—without cloud uploads. It sits between your source footage and production code, converting clips into <strong>transparent APNG or WebP</strong> locally on your Mac so sensitive brand assets stay on-device.</p>
-</div>
-<ul class="product-features">
-<li><span>UI-Ready Transparency:</span> Specialized in generating 8-bit alpha-blended assets to prevent the jagged edges common in traditional GIFs.</li>
-<li><span>Local-Only Processing:</span> Uses on-device AI via Apple Vision. Your source video stays 100% private, processed entirely on your machine.</li>
-<li><span>Focused on Web Formats:</span> Prioritizes modern web-native formats like APNG and WebP over cinematic video containers.</li>
-<li><span>Fit for UI Workflows:</span> Ideal for onboarding animations and product demos where privacy and web compatibility matter more than cinematic precision.</li>
-</ul>
-</div>
-</div>
-<div class="app-doc-footer">
-<div class="tags doc-lang-links">
-Documentation available in:
-<a href="transmov/" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="transmov/zh/" style="color: inherit; text-decoration: underline;">中文</a>
-</div>
-</div>
-</div>
+
+    <div class="app-head">
+    <h2 class="product-title">
+    <picture class="icon-picture">
+    <source type="image/webp" srcset="transmov/icon.webp" />
+    <img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60" loading="lazy" decoding="async" />
+    </picture>
+    TransMov
+    </h2>
+    
+    <div class="tags">macOS · Graphics &amp; Design · Productivity · v2.0</div>
+    
+    <p class="app-what">
+    A local-first macOS utility that extracts transparent animated assets from video—for UI designers and web developers.
+    </p>
+    
+    <!-- CTA（纯净，只保留决策行为） -->
+    <div class="app-actions buttons product-links">
+    <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12"
+    target="_blank" rel="noopener noreferrer"
+    class="app-store-badge"
+    aria-label="Download TransMov on the Mac App Store">
+    <img src="assets/app-store-badge.svg"
+    alt="Download TransMov on the Mac App Store"
+    width="120" height="40" loading="lazy" decoding="async">
+    </a>
+    
+    <a href="transmov/" class="btn-learn">Learn More →</a>
+    </div>
+    </div>
+    
+    <div class="app-gallery macos" role="region" aria-label="TransMov screenshots">
+    <img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
+    
+    <img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
+    
+    <img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
+    
+    <img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
+    </div>
+    
+    <div class="app-body">
+    <div class="app-body-split">
+    
+    <div class="app-description">
+    <p class="app-tagline">A specialized layer for UI asset extraction.</p>
+    
+    <p class="app-marketing">
+    TransMov is a <strong>local-first macOS utility</strong> for <strong>UI designers and web developers</strong> who need transparent animated assets from video—without cloud uploads. It sits between your source footage and production code, converting clips into <strong>transparent APNG or WebP</strong> locally on your Mac so sensitive brand assets stay on-device.
+    </p>
+    
+    <!-- ✅ 新增：context 引导（关键） -->
+    <p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+    Understand different use cases and tradeoffs:
+    </p>
+    
+    <!-- ✅ contextual links 移到这里 -->
+    <div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
+    <a href="transmov/transmov-vs-cloud-video-background-removal.html" class="btn-tertiary">
+    Local vs Cloud →
+    </a>
+    </div>
+    
+    </div>
+    
+    <ul class="product-features">
+    <li><span>UI-Ready Transparency:</span> Specialized in generating 8-bit alpha-blended assets to prevent the jagged edges common in traditional GIFs.</li>
+    <li><span>Local-Only Processing:</span> Uses on-device AI via Apple Vision. Your source video stays 100% private, processed entirely on your machine.</li>
+    <li><span>Focused on Web Formats:</span> Prioritizes modern web-native formats like APNG and WebP over cinematic video containers.</li>
+    <li><span>Fit for UI Workflows:</span> Ideal for onboarding animations and product demos where privacy and web compatibility matter more than cinematic precision.</li>
+    </ul>
+    
+    </div>
+    </div>
+    
+    <div class="app-doc-footer">
+    <div class="tags doc-lang-links">
+    Documentation available in:
+    <a href="transmov/" style="color: inherit; text-decoration: underline;">English</a> ·
+    <a href="transmov/zh/" style="color: inherit; text-decoration: underline;">中文</a>
+    </div>
+    </div>
+    
+    </div>
 
 <!-- Phonetic Formatter -->
 <div class="product app-section">
@@ -1410,6 +1518,12 @@ Documentation available in:
 <div class="app-description">
 <p class="app-tagline">Stop fighting with flaky online converters and broken formatting.</p>
 <p class="app-marketing">Built for <strong>teachers, linguistics students, and serious learners</strong>, Phonetic Formatter turns full English passages into structured, printable phonetic worksheets. Paste a passage, generate word-aligned IPA in seconds, and export to PDF or Word—all 100% on-device. It’s the gold-standard CMU dictionary reimagined for educators who need to ship materials, not just look up single words.</p>
+<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+See how teachers use offline IPA for classroom-ready handouts:
+</p>
+<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
+<a href="phoneticformatter/blog/best-offline-ipa-app-for-teachers-ios.html" class="btn-tertiary" aria-label="Offline IPA app for teachers on iOS — Phonetic Formatter">For Teachers →</a>
+</div>
 </div>
 <ul class="product-features">
 <li><span>Built for Educators:</span> Optimized for full-text processing and structured handouts.</li>
