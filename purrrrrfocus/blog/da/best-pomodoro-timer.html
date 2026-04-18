@@ -92,26 +92,96 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
         .decision-box { margin-top: 24px; padding: 20px; border-radius: 14px; background: #fff; border: 1px solid var(--border); }
         .decision-box h2 { margin: 0 0 10px; font-size: 1.2rem; color: var(--accent); border: 0; padding: 0; }
         .decision-box ul { margin: 0 0 0 1.2em; }
-        
+        .decision-box li { margin-top: 8px; }
+
         .content h2 { margin-top: 48px; font-size: 1.8rem; color: var(--accent); border-bottom: 1px solid rgba(122, 30, 30, 0.1); padding-bottom: 8px; }
         .content h3 { margin-top: 32px; font-size: 1.4rem; color: var(--text-primary); }
         .content p, .content li { margin-top: 12px; color: var(--text-secondary); }
         .content ul { margin: 16px 0 0 1.5em; }
-        
+
+        .decision-box a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .decision-box a:visited { color: var(--accent); }
+        .decision-box a:hover { text-decoration-color: var(--accent); }
+
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+        }
+        .content h3 a:not(.cta-button) {
+            color: var(--text-primary);
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.35);
+            font-weight: 600;
+        }
+        .content h3 a:not(.cta-button):hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .content h3 a:not(.cta-button):visited { color: var(--text-primary); }
+
+        .cta-box .cta-subline {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .cta-box .cta-subline a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.35);
+        }
+        .cta-box .cta-subline a:hover { border-bottom-color: var(--accent); }
+
         .img-container { margin: 32px 0; text-align: center; }
         .img-container img { width: min(320px, 100%); max-width: 100%; height: auto; display: block; margin: 0 auto; }
         .img-caption { text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; font-style: italic; }
 
-        .cta-box { margin: 48px 0; padding: 32px; border-radius: 20px; background: #fff; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(59, 36, 29, 0.05); text-align: center; }
-        .cta-button { display: inline-block; margin-top: 20px; padding: 14px 32px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(122, 30, 30, 0.3); }
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p:not(.cta-subline) { margin-top: 0; }
+        .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+        .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
         .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9rem; }
         .comparison-table th, .comparison-table td { padding: 12px; border: 1px solid var(--border); text-align: left; }
@@ -121,8 +191,22 @@
         .related-guides h4 { color: var(--text-primary); margin-bottom: 16px; }
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 10px; }
-        .related-guides a { color: var(--accent); text-decoration: none; border-bottom: 1px transparent; }
-        .related-guides a:hover { border-bottom: 1px solid var(--accent); }
+        .related-guides a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
+        .hub-inline { margin-top: 20px; font-size: 0.95rem; color: var(--text-secondary); }
+        .hub-inline a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(122, 30, 30, 0.35); }
+        .hub-inline a:visited { color: var(--accent); }
+        .hub-inline a:hover { border-bottom-color: var(--accent); }
+        footer .footer-back { margin-top: 10px; }
+        footer .footer-back a {
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.35);
+        }
+        footer .footer-back a:hover { border-bottom-color: var(--accent); }
+        footer .footer-back a:visited { color: var(--accent); }
         .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
         .meta-note p { margin-top: 6px; font-size: 0.95rem; }
 
@@ -144,25 +228,31 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Brødkrumme">
+                <a href="../../blogs-da.html">Guide</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-da.html#cat-study">Studiefokus &amp; teknikker</a>
+            </nav>
             <h1>De 3 Bedste Pomodoro Apps til Fordybelse (2026)</h1>
             <p>Få styr på din tid, find ind i "flow state" og bekæmp digitale forstyrrelser med de rette produktivitetsværktøjer.</p>
             <div class="decision-box">
                 <h2>Hurtigt svar</h2>
                 <ul>
-                    <li>Hvis du let bliver distraheret eller er ADHD-sensitiv: vælg <strong>PurrrrrFocus</strong>.</li>
-                    <li>Hvis du motiveres af gamification: vælg <strong>Forest</strong>.</li>
-                    <li>Hvis du vil have opgaver + timer i ét system: vælg <strong>Focus-To-Do</strong>.</li>
+                    <li>Vil du have en rolig, lav-friktion Pomodoro til deep work og ADHD-venlige sessioner, så start med <strong>PurrrrrFocus</strong>.</li>
+                    <li>Kommer motivation fra spilmekanik og streak-pres, så vælg <strong>Forest</strong>.</li>
+                    <li>Har du brug for indbyggede opgavelister og projekt-lignende planlægning, så vælg <strong>Focus-To-Do</strong>.</li>
+                    <li>Bliver du let overvældet af komplekse interfaces, så undgå tunge produktivitetssystemer med masser af opsætning.</li>
                     <li>Denne guide er lavet til globale brugere i bl.a. USA, EU og Asien, som bruger Pomodoro til studie og deep work.</li>
                 </ul>
             </div>
         </section>
 
         <section class="content">
-            <p><strong>PurrrrrFocus er en minimalistisk Pomodoro-app til let distraherede studerende og skabere, der har brug for rolige, strukturerede fokus-sessioner.</strong> Her sammenligner vi den med Forest og Focus-To-Do ud fra arbejdsstil.</p>
-            <p>Uanset om du er studerende i Asien eller remote worker i Europa, har det stor betydning for fokus-konsistensen at vælge den rigtige Pomodoro-app.</p>
+            <p><strong>PurrrrrFocus er en minimalistisk Pomodoro-app til let distraherede studerende og skabere, der har brug for rolige, strukturerede fokus-sessioner.</strong> Her sammenligner vi den med Forest og Focus-To-Do ud fra arbejdsstil — ikke hype.</p>
+            <p>Uanset om du er studerende i Asien eller remote worker i Europa, har det stor betydning for fokus-konsistensen at vælge den rigtige Pomodoro-app. Til studievaner og miljø, start med <a href="study-focus-guide.html">sådan holder du fokus under studiet (2026-guide til studerende)</a>.</p>
 
             <h2>Hvorfor dit valg af timer betyder noget</h2>
-            <p>En god Pomodoro app skal reducere friktion, ikke tilføje den. For brugere med <strong>ADHD</strong> eller dem i højtryks-studiemiljøer, kan den forkerte app selv blive en forstyrrelse med kompleks statistik og rod.</p>
+            <p>En god Pomodoro app skal reducere friktion, ikke tilføje den. For brugere med <strong>ADHD</strong> betyder valget ekstra meget — har du brug for ADHD-venlige timere og rolige flows, så læs <a href="focus-for-adhd.html">vores guide til fokus-apps for studerende med ADHD</a>. I højtryks-studiemiljøer kan den forkerte app også blive en forstyrrelse med kompleks statistik og rod.</p>
 
             <div class="img-container">
                 <img src="../../screenshots/da/01.webp" srcset="../../screenshots/da/01-400w.webp 400w, ../../screenshots/da/01-800w.webp 800w, ../../screenshots/da/01.webp 1242w" sizes="(max-width: 400px) calc(100vw - 40px), 320px" alt="PurrrrrFocus minimalistisk pomodoro timer med orientalsk æstetik" loading="lazy" width="1242" height="2688">
@@ -191,9 +281,10 @@
                 <h3>Klar til at finde dit flow?</h3>
                 <p>Oplev verdens mest fredfyldte Pomodoro timer. Ingen reklamer, intet rod, kun dig og din fokus-kat.</p>
                 <a href="../../index-da.html" class="cta-button">Hent PurrrrrFocus Gratis</a>
+                <p class="cta-subline">Eller se hvordan det fungerer: <a href="../../feature-da.html">Se funktioner</a></p>
             </div>
 
-            <h3>2. Forest (Bedst til Gamificering)</h3>
+            <h3>2. <a href="https://www.forestapp.cc/" rel="nofollow noopener noreferrer" target="_blank">Forest</a> (Bedst til Gamificering)</h3>
             <p>Et klassisk valg, hvor du dyrker digitale træer. Godt til visuelle brugere, selvom mobilversionen til tider kan friste dig til at tjekke appen lidt for ofte.</p>
             <ul>
                 <li><strong>Bedst til:</strong> brugere, der drives af belønninger, streaks og synlig progression.</li>
@@ -201,7 +292,7 @@
                 <li><strong>Trade-off:</strong> Gamification kan både motivere og samtidig skabe ekstra opmærksomhedstriggere.</li>
             </ul>
 
-            <h3>3. Focus-To-Do (Bedst til Opgavestyring)</h3>
+            <h3>3. <a href="https://www.focustodo.cn/?lang=en_US" rel="nofollow noopener noreferrer" target="_blank">Focus-To-Do</a> (Bedst til Opgavestyring)</h3>
             <p>Hvis du har brug for, at din Pomodoro timer er synkroniseret med en komplet To-Do liste, er dette en robust (men mere travl) løsning.</p>
             <ul>
                 <li><strong>Bedst til:</strong> brugere, der vil samle opgaver, prioritering og tidssporing i ét værktøj.</li>
@@ -259,6 +350,8 @@
                 </tbody>
             </table>
 
+            <p class="hub-inline">Vil du have flere strategier? <a href="../../blogs-da.html">Gennemse alle guides</a></p>
+
             <h2>Beslutningsregel: Vælg efter arbejdsstil</h2>
             <ul>
                 <li>Hvis du prioriterer <strong>roligt interface</strong>, vælg <strong>PurrrrrFocus</strong>.</li>
@@ -270,7 +363,7 @@
             <p>Mange vælger ud fra antal funktioner frem for kognitiv belastning. Resultatet er ofte flere funktioner, men lavere reel fokuskvalitet.</p>
 
             <h2>Sådan opbygger du en 2-timers Flow-vane</h2>
-            <p>Hemmeligheden er ikke kun appen; det er <strong>miljøet</strong>. Start din session, læg telefonen med skærmen nedad, og lad PurrrrrFocus' katte-makker signalere til din hjerne, at det er tid til at arbejde. Kombiner dette med <em>timeboxing</em> for maksimal effektivitet.</p>
+            <p>Hemmeligheden er ikke kun appen; det er <strong>miljøet</strong>. Start din session, læg telefonen med skærmen nedad, og lad PurrrrrFocus' katte-makker signalere til din hjerne, at det er tid til at arbejde. Kombiner dette med <em>timeboxing</em> for maksimal effektivitet. Har du svært ved at holde vanen, så læs <a href="how-to-build-focus-habit.html">sådan bygger du en fokus-vane der holder</a>.</p>
             <div class="meta-note">
                 <p><strong>Sidst opdateret:</strong> 2026-04-15</p>
                 <p><strong>Metode:</strong> Vi vurderede apps på distraktionsmodstand, ADHD-venlighed, læringskurve, gamification, tilpasning og visuel ro.</p>
@@ -292,7 +385,7 @@
     <footer style="text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 0.9em; background: rgba(222, 186, 134, 0.1);">
         <div class="container">
             <p>© 2026 PurrrrrFocus. Skabt til dem, der tænker dybt.</p>
-            <p style="margin-top: 10px;"><a href="../../index-da.html" style="color: var(--accent);">Tilbage til forsiden</a></p>
+            <p class="footer-back"><a href="../../index-da.html">Tilbage til forsiden</a></p>
         </div>
     </footer>
 

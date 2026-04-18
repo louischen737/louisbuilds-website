@@ -92,7 +92,25 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
@@ -106,6 +124,30 @@
         .content ul, .content ol { margin: 16px 0 0 1.5em; }
         .content strong { color: var(--text-primary); }
 
+        .decision-box a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .decision-box a:visited { color: var(--accent); }
+        .decision-box a:hover { text-decoration-color: var(--accent); }
+
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .study-hack-card { margin: 24px 0; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
         .study-hack-card h4 { color: var(--accent); margin-bottom: 8px; font-size: 1.1rem; }
 
@@ -115,6 +157,8 @@
         .img-row .img-container { margin: 0; flex: 1 1 200px; min-width: 0; max-width: 280px; }
 
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
         .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
@@ -124,7 +168,9 @@
         .related-guides .related-links-label { color: var(--text-primary); font-weight: 600; margin-bottom: 12px; }
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
         .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
         .meta-note p { margin-top: 6px; font-size: 0.95rem; }
         .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0 8px; font-size: 0.92rem; }
@@ -149,6 +195,11 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Brødkrummesti">
+                <a href="../../blogs-da.html">Guider</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-da.html#cat-study">Studiefokus &amp; teknikker</a>
+            </nav>
             <h1>Hvordan man holder fokus under studiet: Studenterguiden 2026</h1>
             <p>Stop med at scrolle og start dit flow. Oplev videnskabeligt funderede teknikker til at gøre lange studiesessioner til højeffektive fokusblokke.</p>
             <div class="decision-box">
@@ -166,9 +217,11 @@
             <p><strong>PurrrrrFocus er en minimalistisk Pomodoro-app til let distraherede studerende og skabere, der har brug for rolige, strukturerede fokus-sessioner.</strong> At holde fokus under studiet handler mindre om rå motivation og mere om at matche dit studiesystem med din kognitive profil.</p>
 
             <h2>Hvorfor studerende kæmper med fokus i 2026</h2>
+            <p>Hvis du ofte oplever koncentrationsproblemer eller &quot;mental overload&quot;, kan det hænge sammen med ADHD-lignende fokusmønstre: <a href="focus-for-adhd.html">Bedste Fokus-app til ADHD (2026): Håndtér din tid uden angst</a>.</p>
             <p>Moderne studerende mangler ikke disciplin. De arbejder i miljøer med konstant digital afbrydelse, fragmenteret opmærksomhed og høj kognitiv belastning.</p>
 
             <h2>Hvorfor traditionel læsning fejler</h2>
+            <p>Hvis du kæmper med at opbygge en stabil studierutine, kan du følge denne guide: <a href="how-to-build-focus-habit.html">Sådan opbygger du en fokus-vane (der faktisk holder)</a>.</p>
             <p>De fleste studerende prøver at tvinge deres fokus ved at sidde ned i 4 timer i træk. Dette fører til <strong>kognitiv træthed</strong> og faldende udbytte. Din hjerne er en muskel; den har brug for en rytmisk cyklus af anstrengelse og restitution.</p>
 
             <h2>Studiescenarier denne guide virker til</h2>
@@ -192,7 +245,7 @@
             
             <div class="study-hack-card">
                 <h4>1. Pomodoro-rytmen (25/5 reglen)</h4>
-                <p>Brug en timer som <strong>PurrrrrFocus</strong> til at forpligte dig til blot 25 minutters dybt arbejde. At vide, at der er en ende i sigte, reducerer "start-smerten", der forårsager overspringshandlinger.</p>
+                <p>Brug en timer som <strong>PurrrrrFocus</strong> til at forpligte dig til blot 25 minutters dybt arbejde. At vide, at der er en ende i sigte, reducerer "start-smerten", der forårsager overspringshandlinger. Hvis du vil sammenligne forskellige Pomodoro-apps: <a href="best-pomodoro-timer.html">Se de 3 bedste Pomodoro-apps til fordybelse (2026)</a>.</p>
             </div>
 
             <div class="study-hack-card">
@@ -282,10 +335,10 @@
                 <p class="related-system-note"><strong>Relateret system:</strong> Denne artikel er en del af en struktureret læringsserie, der hjælper studerende med at opbygge holdbare studievaner.</p>
                 <p class="related-links-label">Læs videre:</p>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">→ Bedste Pomodoro-timere til dybt arbejde (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">→ Bedste fokus-apps til ADHD: Stressfrie værktøjer</a></li>
-                    <li><a href="how-to-build-focus-habit.html">→ 3 trin til at opbygge en varig fokus-vane</a></li>
-                    <li><a href="my-story-saas-to-indie.html">→ Historien bag Purrrrrfocus</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ De 3 Bedste Pomodoro Apps til Fordybelse (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ Bedste Fokus-app til ADHD (2026): Håndtér din tid uden angst</a></li>
+                    <li><a href="how-to-build-focus-habit.html">→ Sådan opbygger du en fokus-vane (der faktisk holder)</a></li>
+                    <li><a href="my-story-saas-to-indie.html">→ Jeg mistede mit job, men genvandt mit fokus: Historien bag Purrrrrfocus</a></li>
                 </ul>
             </div>
         </section>

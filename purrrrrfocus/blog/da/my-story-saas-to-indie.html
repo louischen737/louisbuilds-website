@@ -98,6 +98,24 @@
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
         .lang-note { padding: 8px 16px 10px; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid rgba(222, 186, 134, 0.35); }
 
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero-image {
             display: block;
@@ -139,19 +157,40 @@
         .content strong { color: var(--text-primary); }
         .content em { font-style: italic; }
 
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
         .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px solid var(--border); }
-        .related-guides h4 { margin-bottom: 16px; }
+        .related-guides { margin-top: 60px; padding: 30px; background: #fff; border-radius: 16px; border: 1px solid var(--border); }
+        .related-guides h4 { color: var(--text-primary); margin-bottom: 10px; }
+        .related-guides .related-path-intro { color: var(--text-secondary); margin: 0 0 14px; font-size: 1rem; line-height: 1.6; }
         .related-guides ul { list-style: none; padding: 0; margin: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
 
         @media (max-width: 768px) {
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
             .lang-dropdown { margin-left: 0; align-self: flex-end; }
+            .content h2 { font-size: 1.45rem; }
         }
     </style>
 </head>
@@ -174,6 +213,11 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Brødkrummesti">
+                <a href="../../blogs-da.html">Guider</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-da.html#cat-story">Bag produktet</a>
+            </nav>
             <img src="../digitaldetox.jpg" alt="Illustration: digital detox og ro til fordybelse." class="seo-hero-image" width="1200" height="835" decoding="async" fetchpriority="high">
             <h1>Jeg mistede mit job, men genvandt mit fokus: Historien bag Purrrrrfocus</h1>
             <div class="post-meta">
@@ -197,24 +241,30 @@
                 <li><strong>Informationskureren:</strong> Det gik op for mig, at jeg ikke var en strateg, men en glorificeret kurer. Jeg brugte mine dage på at flytte information fra gruppe A til gruppe B for at sikre, at alle var &quot;på samme side&quot;, mens jeg ikke selv havde tid til at læse siden.</li>
                 <li><strong>Jaget af algoritmer:</strong> Det var ikke kun mennesker; det var robotterne. AI-drevne påmindelser fulgte nådesløst hvert af mine skridt: <em>&quot;Har du opdateret CRM?&quot; &quot;Ugerapport skal afleveres om 2 timer.&quot; &quot;Opfølgningsregistrering mangler.&quot;</em></li>
             </ul>
-            <p>Jeg var et tandhjul, der drejede med høj fart i en massiv maskine, men jeg kom ingen vegne. Min evne til at tænke dybt forsvandt. Arbejdet var blevet til en række knæfaldsreaktioner på røde notifikationsprikker.</p>
+            <p>Jeg var et tandhjul, der drejede med høj fart i en massiv maskine, men jeg kom ingen vegne. Min evne til at tænke dybt forsvandt. Senere indså jeg, at mønsteret ligner det, mange oplever som <a href="focus-for-adhd.html">opmærksomhedsfragmentering og ADHD-lignende fokusproblemer</a>. Arbejdet var blevet til en række knæfaldsreaktioner på røde notifikationsprikker.</p>
 
             <h2>Den uplanlagte afsked: Et øjebliks klarhed</h2>
             <p>Så oplevede jeg en uplanlagt afsked — jeg blev afskediget.</p>
             <p>Da mine firmakonti blev deaktiveret, og de konstant pulserende chatgrupper forsvandt øjeblikkeligt, følte jeg noget, jeg ikke havde forventet. Ved siden af usikkerheden ved at være arbejdsløs følte jeg en overvældende følelse af <strong>lettelse</strong>.</p>
-            <p>For første gang i lang tid stoppede den kvælende støj fra &quot;øjeblikkeligt samarbejde&quot;. I den stilhed fik jeg en erkendelse: Hvorfor var jeg, i et miljø udstyret med verdens bedste produktivitetsværktøjer, mindre produktiv end nogensinde? Hvorfor var fokusering i selv 25 minutter blevet en luksus, jeg ikke havde råd til?</p>
+            <p>For første gang i lang tid stoppede den kvælende støj fra &quot;øjeblikkeligt samarbejde&quot;. I den stilhed fik jeg en erkendelse: Hvorfor var jeg, i et miljø udstyret med verdens bedste produktivitetsværktøjer, mindre produktiv end nogensinde? Hvorfor var fokusering i selv 25 minutter blevet en luksus, jeg ikke havde råd til? Senere brød jeg det ned i et enkelt system: <a href="how-to-build-focus-habit.html">at opbygge en bæredygtig fokus-vane skridt for skridt</a>.</p>
 
             <h2>At bygge Purrrrrfocus: Et fristed til dyb fordybelse</h2>
             <p>Jeg besluttede at kanalisere den udmattelse ind i mit første selvstændige projekt.</p>
             <p>Fødslen af <strong>Purrrrrfocus</strong> handlede ikke kun om at bygge endnu en app; det var en handling af selvhelbredelse. Jeg havde følt mig druknet i et hav af notifikationer, så jeg ville bygge en redningsbåd — ikke kun til mig selv, men til alle, der stadig sidder fast i den storm.</p>
             <ul>
-                <li><strong>Mere end en timer, det er et ritual:</strong> Der mangler ikke Pomodoro-timere. Det, der mangler, er et &quot;fristed&quot;. Når du starter en session i Purrrrrfocus, er kattens tilstedeværelse et signal til verden: <em>&quot;I de næste 25 minutter tilhører jeg ikke min indbakke, mine kunder eller min chef. Jeg tilhører mit arbejde.&quot;</em></li>
+                <li><strong>Mere end en timer, det er et ritual:</strong> Der mangler ikke Pomodoro-timere, men de fleste rammer ved siden af pointen. Hvis du sammenligner muligheder, har jeg skrevet det ned i <a href="best-pomodoro-timer.html">denne guide til de bedste Pomodoro-apps til fordybelse</a>. Det, der mangler, er et &quot;fristed&quot;. Når du starter en session i Purrrrrfocus, er kattens tilstedeværelse et signal til verden: <em>&quot;I de næste 25 minutter tilhører jeg ikke min indbakke, mine kunder eller min chef. Jeg tilhører mit arbejde.&quot;</em></li>
                 <li><strong>Healing frem for pres:</strong> I erhvervslivet bliver vi jagtet af kolde fremskridtsbjælker og krævende robotter. Jeg kaldte den <strong>Purrrrrfocus</strong>, fordi jeg ville erstatte det pres med den beroligende tilstedeværelse af en kat. Det er en blid måde at genvinde sit mentale frirum på.</li>
             </ul>
 
+            <div class="cta-box">
+                <h3>Prøv fokussystemet, jeg byggede til mig selv</h3>
+                <p>Start med en simpel 5-minutters session og genopbyg din opmærksomhed fra nul.</p>
+                <a href="../../index-da.html" class="cta-button">Start en fokussession</a>
+            </div>
+
             <h2>Konklusion: Tag kontrollen over din arbejdsro tilbage</h2>
             <p>At forlade SaaS-verdenen var ikke mit valg, men det blev min største mulighed. Det lærte mig én sandhed: <strong>I den moderne tidsalder er din opmærksomhed dit mest værdifulde aktiv — og alle prøver at stjæle det.</strong></p>
-            <p>Jeg byggede ikke denne app for at gøre dig til en mere effektiv maskine. Jeg byggede den for at hjælpe dig med at genvinde din suverænitet over det ligegyldige. Selvom det kun er to &quot;kattesessioner&quot; af høj kvalitet om dagen, er det øjeblikke, hvor du endelig sidder i førersædet igen.</p>
+            <p>Jeg byggede ikke denne app for at gøre dig til en mere effektiv maskine. Jeg byggede den for at hjælpe dig med at genvinde din suverænitet over det ligegyldige. Selvom det kun er to &quot;kattesessioner&quot; af høj kvalitet om dagen, er det øjeblikke, hvor du endelig tager kontrollen tilbage. Studerer du eller forbereder du eksamen, kan <a href="study-focus-guide.html">Hvordan man holder fokus under studiet: Studenterguiden 2026</a> hjælpe dig med at bruge samme system.</p>
 
             <div class="cta-box">
                 <h3>Genvand din opmærksomhed</h3>
@@ -223,12 +273,13 @@
             </div>
 
             <div class="related-guides">
-                <h4>Læs videre</h4>
+                <h4>Byg dit fokussystem</h4>
+                <p class="related-path-intro">Start med historien, og byg derefter dit system trin for trin:</p>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">Bedste Pomodoro timere til fordybelse (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">Bedste fokus-apps til ADHD: Stressfrie værktøjer</a></li>
-                    <li><a href="study-focus-guide.html">Hvordan du holder fokus under studiet: Studenterguide</a></li>
-                    <li><a href="how-to-build-focus-habit.html">Sådan opbygger du en fokus-vane (der faktisk holder)</a></li>
+                    <li><a href="how-to-build-focus-habit.html">→ Sådan opbygger du en fokus-vane (der faktisk holder)</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ De 3 Bedste Pomodoro Apps til Fordybelse (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ Bedste Fokus-app til ADHD (2026): Håndtér din tid uden angst</a></li>
+                    <li><a href="study-focus-guide.html">→ Hvordan man holder fokus under studiet: Studenterguiden 2026</a></li>
                 </ul>
             </div>
         </section>
