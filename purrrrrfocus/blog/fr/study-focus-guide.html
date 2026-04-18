@@ -92,7 +92,25 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
@@ -106,6 +124,30 @@
         .content ul, .content ol { margin: 16px 0 0 1.5em; }
         .content strong { color: var(--text-primary); }
 
+        .decision-box a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .decision-box a:visited { color: var(--accent); }
+        .decision-box a:hover { text-decoration-color: var(--accent); }
+
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .study-hack-card { margin: 24px 0; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
         .study-hack-card h4 { color: var(--accent); margin-bottom: 8px; font-size: 1.1rem; }
 
@@ -113,8 +155,11 @@
         .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; border-radius: 12px; }
         .img-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 32px 0; }
         .img-row .img-container { margin: 0; flex: 1 1 200px; min-width: 0; max-width: 280px; }
+        .img-row .img-container img { max-width: 100%; margin: 0 auto; }
 
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
         .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
@@ -124,7 +169,9 @@
         .related-guides .related-links-label { color: var(--text-primary); font-weight: 600; margin-bottom: 12px; }
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
         .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
         .meta-note p { margin-top: 6px; font-size: 0.95rem; }
         .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0 8px; font-size: 0.92rem; }
@@ -133,7 +180,9 @@
 
         @media (max-width: 768px) {
             .seo-hero h1 { font-size: 2rem; }
-            .content h2 { font-size: 1.5rem; }
+            .content h2 { font-size: 1.45rem; }
+            .img-row { flex-direction: column; align-items: center; gap: 24px; }
+            .img-row .img-container { max-width: min(320px, 100%); }
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
             .lang-dropdown { margin-left: 0; align-self: flex-end; }
         }
@@ -149,6 +198,11 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Fil d&apos;Ariane">
+                <a href="../../blogs-fr.html">Guides</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-fr.html#cat-study">Concentration aux études &amp; méthodes</a>
+            </nav>
             <h1>Comment rester concentré pour réviser : Le guide étudiant 2026</h1>
             <p>Arrêtez de scroller et entrez dans le flow. Découvrez des techniques scientifiques pour transformer vos révisions en blocs de focus ultra-productifs.</p>
             <div class="decision-box">
@@ -166,9 +220,11 @@
             <p><strong>PurrrrrFocus est une app Pomodoro minimaliste pensée pour les étudiants et créateurs facilement distraits qui ont besoin de sessions calmes et structurées.</strong> Rester concentré en étudiant dépend moins de la motivation brute que de l'alignement entre votre système de travail et votre profil cognitif.</p>
 
             <h2>Pourquoi les étudiants ont plus de mal à se concentrer en 2026</h2>
+            <p>Si vous avez souvent du mal à vous concentrer ou ressentez une « surcharge cognitive », cela peut être lié à des schémas proches du TDAH : voir <a href="focus-for-adhd.html">Meilleure App de Focus pour le TDAH (2026) : Gérer son temps sans anxiété</a>.</p>
             <p>Le problème n'est pas un manque de discipline, mais l'accumulation d'interruptions numériques, d'attention fragmentée et d'environnements à forte charge cognitive.</p>
 
             <h2>Pourquoi la méthode traditionnelle échoue</h2>
+            <p>Pour construire une routine d'étude plus stable, commencez par le guide <a href="how-to-build-focus-habit.html">Comment bâtir une habitude de focus (durable)</a>.</p>
             <p>La plupart des étudiants essaient de forcer le focus en restant assis pendant 4 heures d'affilée. Cela mène à la <strong>fatigue cognitive</strong> et à une baisse de rendement. Votre cerveau est un muscle ; il a besoin d'un cycle rythmique d'effort et de récupération.</p>
 
             <h2>Scénarios d'étude couverts par ce guide</h2>
@@ -192,7 +248,7 @@
             
             <div class="study-hack-card">
                 <h4>1. Le Rythme Pomodoro (Règle du 25/5)</h4>
-                <p>Utilisez un minuteur comme <strong>PurrrrrFocus</strong> pour vous engager sur seulement 25 minutes de travail profond. Savoir qu'une fin est proche réduit la "douleur du démarrage" qui cause la procrastination.</p>
+                <p>Utilisez un minuteur comme <strong>PurrrrrFocus</strong> pour vous engager sur seulement 25 minutes de travail profond. Savoir qu'une fin est proche réduit la "douleur du démarrage" qui cause la procrastination. Pour comparer les apps Pomodoro, voyez aussi <a href="best-pomodoro-timer.html">Les 3 Meilleures Applications Pomodoro pour le Travail Profond (2026)</a>.</p>
             </div>
 
             <div class="study-hack-card">
@@ -282,10 +338,10 @@
                 <p class="related-system-note"><strong>Système lié :</strong> Cet article fait partie d'une série structurée pour aider les étudiants à construire des habitudes d'étude durables.</p>
                 <p class="related-links-label">Continuer la lecture :</p>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">→ Meilleurs minuteurs Pomodoro pour le travail profond (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">→ Meilleures apps de focus pour TDAH : Outils sans stress</a></li>
-                    <li><a href="how-to-build-focus-habit.html">→ 3 Étapes pour bâtir une habitude de focus durable</a></li>
-                    <li><a href="my-story-saas-to-indie.html">→ L&apos;histoire de Purrrrrfocus</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ Les 3 Meilleures Applications Pomodoro pour le Travail Profond (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ Meilleure App de Focus pour le TDAH (2026) : Gérer son temps sans anxiété</a></li>
+                    <li><a href="how-to-build-focus-habit.html">→ Comment bâtir une habitude de focus (durable)</a></li>
+                    <li><a href="my-story-saas-to-indie.html">→ J’ai perdu mon emploi, mais j’ai retrouvé ma concentration : L’histoire de Purrrrrfocus</a></li>
                 </ul>
             </div>
         </section>

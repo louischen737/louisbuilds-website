@@ -92,7 +92,25 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
@@ -103,27 +121,53 @@
         .content ul { margin: 16px 0 0 1.5em; }
         .content strong { color: var(--text-primary); }
 
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .habit-step { margin: 32px 0; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 16px; }
         .habit-step span { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
         .habit-step h3 { margin-top: 8px; }
 
-        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); text-align: center; }
+        .funnel-inline { margin-top: 16px; font-size: 0.98rem; color: var(--text-secondary); }
+        .cta-lead { margin-bottom: 20px; font-size: 0.98rem; color: var(--text-secondary); }
+
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
-        .cta-button:hover { transform: scale(1.05); }
-        
+        .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
+
         .img-container { margin: 32px 0; text-align: center; }
         .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; vertical-align: middle; border-radius: 12px; }
         .img-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 32px 0; }
         .img-row .img-container { margin: 0; flex: 1 1 200px; min-width: 0; max-width: 280px; }
+        .img-row .img-container img { max-width: 100%; margin: 0 auto; }
 
-        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px dashed var(--border); }
-        .related-guides h4 { margin-bottom: 16px; }
-        .related-guides ul { list-style: none; padding: 0; }
+        .related-guides { margin-top: 60px; padding-top: 30px; border-top: 2px dashed var(--border); }
+        .related-guides h4 { color: var(--text-primary); margin-bottom: 16px; }
+        .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
 
         @media (max-width: 768px) {
             .seo-hero h1 { font-size: 2rem; }
+            .content h2 { font-size: 1.45rem; }
+            .img-row { flex-direction: column; align-items: center; gap: 24px; }
+            .img-row .img-container { max-width: min(320px, 100%); }
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
             .lang-dropdown { margin-left: 0; align-self: flex-end; }
         }
@@ -139,12 +183,17 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                <a href="../../blogs-fr.html">Guides</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-fr.html#cat-habit">Créer des habitudes de concentration</a>
+            </nav>
             <h1>Comment bâtir une habitude de focus (durable)</h1>
             <p>Oubliez la volonté. Apprenez à hacker votre environnement et votre biologie pour faire de la concentration votre état par défaut.</p>
         </section>
 
         <section class="content">
-            <p>La plupart des gens échouent à bâtir une habitude de focus car ils traitent la concentration comme un sprint. En réalité, le focus est un muscle. Si vous essayez de soulever 50kg le premier jour, vous allez vous blesser. Le secret d'une <strong>productivité à long terme</strong> est de commencer ridiculement petit.</p>
+            <p>La plupart des gens échouent à bâtir une habitude de focus car ils traitent la concentration comme un sprint. En réalité, le focus est un muscle. Si vous essayez de soulever 50kg le premier jour, vous allez vous blesser. Le secret d'une <strong>productivité à long terme</strong> est de commencer ridiculement petit—et lorsque vous êtes prêt à <strong>bâtir une habitude de focus avec un minuteur Pomodoro</strong> et à choisir parmi les <strong>meilleurs outils pour ancrer des habitudes de focus</strong>, l'outil compte autant que la discipline : commencez par <a href="best-pomodoro-timer.html">Les 3 Meilleures Applications Pomodoro pour le Travail Profond (2026)</a>. Si vous avez besoin d'<strong>applications de focus minimalistes</strong> à faible charge sensorielle, beaucoup des mêmes règles apparaissent dans <a href="focus-for-adhd.html">Meilleure App de Focus pour le TDAH (2026) : Gérer son temps sans anxiété</a>—même sans diagnostic TDAH.</p>
 
             <h2>La psychologie de la "Boucle de l'Habitude"</h2>
             <p>Chaque habitude se compose d'un Signal, d'une Envie, d'une Réponse et d'une Récompense. Pour bâtir une habitude de focus, vous devez rendre le <strong>Signal évident</strong> et la <strong>Récompense satisfaisante</strong>.</p>
@@ -152,19 +201,19 @@
             <div class="habit-step">
                 <span>Étape 1</span>
                 <h3>Créez une ancre visuelle</h3>
-                <p>Ouvrir une application spécifique comme <strong>PurrrrrFocus</strong> agit comme un "déclencheur" visuel. Quand votre cerveau voit l'interface à l'encre calme et votre compagnon chat, il commence à associer cet environnement au travail profond.</p>
+                <p>Ouvrir une application spécifique comme <a href="../../index-fr.html">PurrrrrFocus</a> agit comme un déclencheur visuel. Quand votre cerveau voit l'interface à l'encre calme et votre compagnon chat, il commence à associer cet environnement au travail profond.</p>
             </div>
 
             <div class="habit-step">
                 <span>Étape 2</span>
                 <h3>Le point d'entrée de 5 minutes</h3>
-                <p>Utilisez la méthode des <strong>Mini Habitudes</strong>. Ne vous engagez pas pour une heure. Engagez-vous pour 5 minutes de travail concentré. PurrrrrFocus permet de régler des micro-sessions qui abaissent la barrière à l'entrée.</p>
+                <p>Utilisez la méthode des <strong>Mini Habitudes</strong>. Ne vous engagez pas pour une heure. Engagez-vous pour 5 minutes de travail concentré. <a href="../../index-fr.html">PurrrrrFocus</a> permet de régler des micro-sessions qui abaissent la barrière à l'entrée.</p>
             </div>
 
             <div class="habit-step">
                 <span>Étape 3</span>
                 <h3>Suivez et récompensez la régularité</h3>
-                <p>Ne visez pas la perfection. Utilisez PurrrrrFocus pour suivre vos séries quotidiennes. Chaque session terminée est une petite victoire qui reprogramme votre cerveau pour réclamer le focus.</p>
+                <p>Ne visez pas la perfection. Utilisez <a href="../../index-fr.html">PurrrrrFocus</a> pour suivre vos séries quotidiennes. Chaque session terminée est une petite victoire qui reprogramme votre cerveau pour réclamer le focus.</p>
             </div>
 
             <div class="img-row">
@@ -176,9 +225,12 @@
                 </div>
             </div>
 
-            <h2>Pourquoi la volonté est votre ennemie</h2>
-            <p>La volonté est une ressource finie. Si vous comptez sur elle pour rester concentré, vous finirez par vous épuiser. Utilisez plutôt le <strong>Design d'Environnement</strong>. En utilisant un minuteur minimaliste, vous supprimez le besoin de "décider" d'être productif — le système le fait pour vous.</p>
+            <p class="funnel-inline">Si vous choisissez un outil de focus pour soutenir cette habitude, lisez la comparaison complète : <a href="best-pomodoro-timer.html">Les 3 Meilleures Applications Pomodoro pour le Travail Profond (2026)</a>.</p>
 
+            <h2>Pourquoi la volonté est votre ennemie</h2>
+            <p>La volonté est une ressource finie. Si vous comptez sur elle pour rester concentré, vous finirez par vous épuiser. Utilisez plutôt le <strong>Design d'Environnement</strong>. En utilisant un minuteur minimaliste—vous verrez des exemples concrets parmi les <a href="best-pomodoro-timer.html">meilleures applications Pomodoro pour le travail profond</a>—vous supprimez le besoin de "décider" d'être productif — le système le fait pour vous.</p>
+
+            <p class="cta-lead">Vous luttez contre le focus à cause du TDAH ou de la distraction ? Consultez <a href="focus-for-adhd.html">Meilleure App de Focus pour le TDAH (2026) : Gérer son temps sans anxiété</a> pour des outils peu exigeants et des règles de choix avant d'ancrer une habitude quotidienne.</p>
             <div class="cta-box">
                 <h3>Commencez votre voyage de focus de 21 jours</h3>
                 <p>Bâtir une habitude prend du temps, mais commencer est facile. Téléchargez PurrrrrFocus et laissez notre compagnon chat vous guider vers votre première session.</p>
@@ -186,15 +238,15 @@
             </div>
 
             <h2>Récompensez votre effort</h2>
-            <p>Votre cerveau a besoin d'une dose de dopamine pour renforcer une habitude. Dans <strong>PurrrrrFocus</strong>, la satisfaction de terminer une session et de voir vos statistiques croître fournit cette boucle de rétroaction positive immédiate nécessaire à la formation d'habitudes.</p>
+            <p>Votre cerveau a besoin d'une dose de dopamine pour renforcer une habitude. Dans <a href="../../index-fr.html">PurrrrrFocus</a>, la satisfaction de terminer une session et de voir vos statistiques croître fournit cette boucle de rétroaction positive immédiate nécessaire à la formation d'habitudes.</p>
 
             <div class="related-guides">
                 <h4>Continuer la lecture :</h4>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">→ Meilleurs minuteurs Pomodoro pour le travail profond (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">→ Meilleures apps de focus pour TDAH : Outils sans stress</a></li>
-                    <li><a href="study-focus-guide.html">→ Comment rester concentré pendant les études : Guide étudiant</a></li>
-                    <li><a href="my-story-saas-to-indie.html">→ L&apos;histoire de Purrrrrfocus</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ Les 3 Meilleures Applications Pomodoro pour le Travail Profond (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ Meilleure App de Focus pour le TDAH (2026) : Gérer son temps sans anxiété</a></li>
+                    <li><a href="study-focus-guide.html">→ Comment rester concentré pour réviser : Le guide étudiant 2026</a></li>
+                    <li><a href="my-story-saas-to-indie.html">→ J'ai perdu mon emploi, mais j'ai retrouvé ma concentration : L'histoire de Purrrrrfocus</a></li>
                 </ul>
             </div>
         </section>

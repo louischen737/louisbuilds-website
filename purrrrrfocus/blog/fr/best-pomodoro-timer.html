@@ -92,26 +92,96 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
         .decision-box { margin-top: 24px; padding: 20px; border-radius: 14px; background: #fff; border: 1px solid var(--border); }
         .decision-box h2 { margin: 0 0 10px; font-size: 1.2rem; color: var(--accent); border: 0; padding: 0; }
         .decision-box ul { margin: 0 0 0 1.2em; }
-        
+        .decision-box li { margin-top: 8px; }
+
         .content h2 { margin-top: 48px; font-size: 1.8rem; color: var(--accent); border-bottom: 1px solid rgba(122, 30, 30, 0.1); padding-bottom: 8px; }
         .content h3 { margin-top: 32px; font-size: 1.4rem; color: var(--text-primary); }
         .content p, .content li { margin-top: 12px; color: var(--text-secondary); }
         .content ul { margin: 16px 0 0 1.5em; }
-        
+
+        .decision-box a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .decision-box a:visited { color: var(--accent); }
+        .decision-box a:hover { text-decoration-color: var(--accent); }
+
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+        }
+        .content h3 a:not(.cta-button) {
+            color: var(--text-primary);
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.35);
+            font-weight: 600;
+        }
+        .content h3 a:not(.cta-button):hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .content h3 a:not(.cta-button):visited { color: var(--text-primary); }
+
+        .cta-box .cta-subline {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .cta-box .cta-subline a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.35);
+        }
+        .cta-box .cta-subline a:hover { border-bottom-color: var(--accent); }
+
         .img-container { margin: 32px 0; text-align: center; }
         .img-container img { width: min(320px, 100%); max-width: 100%; height: auto; display: block; margin: 0 auto; }
         .img-caption { text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px; font-style: italic; }
 
-        .cta-box { margin: 48px 0; padding: 32px; border-radius: 20px; background: #fff; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(59, 36, 29, 0.05); text-align: center; }
-        .cta-button { display: inline-block; margin-top: 20px; padding: 14px 32px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(122, 30, 30, 0.3); }
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p:not(.cta-subline) { margin-top: 0; }
+        .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+        .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
         .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9rem; }
         .comparison-table th, .comparison-table td { padding: 12px; border: 1px solid var(--border); text-align: left; }
@@ -121,8 +191,22 @@
         .related-guides h4 { color: var(--text-primary); margin-bottom: 16px; }
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 10px; }
-        .related-guides a { color: var(--accent); text-decoration: none; border-bottom: 1px transparent; }
-        .related-guides a:hover { border-bottom: 1px solid var(--accent); }
+        .related-guides a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
+        .hub-inline { margin-top: 20px; font-size: 0.95rem; color: var(--text-secondary); }
+        .hub-inline a { color: var(--accent); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(122, 30, 30, 0.35); }
+        .hub-inline a:visited { color: var(--accent); }
+        .hub-inline a:hover { border-bottom-color: var(--accent); }
+        footer .footer-back { margin-top: 10px; }
+        footer .footer-back a {
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.35);
+        }
+        footer .footer-back a:hover { border-bottom-color: var(--accent); }
+        footer .footer-back a:visited { color: var(--accent); }
         .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
         .meta-note p { margin-top: 6px; font-size: 0.95rem; }
 
@@ -144,25 +228,31 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                <a href="../../blogs-fr.html">Guide</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-fr.html#cat-study">Concentration aux études &amp; méthodes</a>
+            </nav>
             <h1>Les 3 Meilleures Applications Pomodoro pour le Travail Profond (2026)</h1>
             <p>Maîtrisez votre temps, entrez en état de flow et éliminez les distractions numériques avec les bons outils de productivité.</p>
             <div class="decision-box">
                 <h2>Réponse rapide</h2>
                 <ul>
-                    <li>Sensible aux distractions ou au TDAH : choisissez <strong>PurrrrrFocus</strong>.</li>
-                    <li>Besoin de motivation par récompenses : choisissez <strong>Forest</strong>.</li>
-                    <li>Besoin d'un système tâches + minuteur : choisissez <strong>Focus-To-Do</strong>.</li>
-                    <li>Ce guide s'adresse à des utilisateurs globaux (US, Europe, Asie) utilisant Pomodoro pour étudier et travailler en profondeur.</li>
+                    <li>Si vous voulez un minuteur calme et à faible friction pour le deep work et des sessions adaptées au TDAH, commencez par <strong>PurrrrrFocus</strong>.</li>
+                    <li>Si la motivation vient des mécaniques de jeu et de la pression des séries, choisissez <strong>Forest</strong>.</li>
+                    <li>Si vous avez besoin de listes de tâches intégrées et d'une planification type projet, choisissez <strong>Focus-To-Do</strong>.</li>
+                    <li>Si vous êtes facilement submergé par des interfaces complexes, évitez les suites « productivité » avec une configuration lourde.</li>
+                    <li>Ce guide s'adresse à des utilisateurs globaux (US, Europe, Asie) qui s'appuient sur Pomodoro pour étudier et travailler en profondeur.</li>
                 </ul>
             </div>
         </section>
 
         <section class="content">
-            <p><strong>PurrrrrFocus est une application Pomodoro minimaliste pour les étudiants et créateurs facilement distraits qui ont besoin de sessions calmes et structurées.</strong> Ce guide le compare à Forest et Focus-To-Do pour vous aider à choisir selon votre style cognitif.</p>
-            <p>Que vous soyez étudiant en Asie en période d'examens ou télétravailleur en Europe, le bon outil Pomodoro influence directement la régularité de votre concentration.</p>
+            <p><strong>PurrrrrFocus est une application Pomodoro minimaliste pour les étudiants et créateurs facilement distraits qui ont besoin de sessions calmes et structurées.</strong> Ce guide le compare à Forest et Focus-To-Do pour vous aider à choisir selon votre style de travail — pas selon le buzz.</p>
+            <p>Que vous soyez étudiant en Asie en période d'examens ou télétravailleur en Europe, le bon outil Pomodoro influence directement la régularité de votre concentration. Pour les routines d'étude et l'environnement, commencez par <a href="study-focus-guide.html">comment rester concentré pendant les révisions (guide étudiant 2026)</a>.</p>
 
             <h2>Pourquoi le choix de votre minuteur est crucial</h2>
-            <p>Une bonne application Pomodoro doit réduire les frictions, pas en ajouter. Pour les utilisateurs souffrant de <strong>TDAH</strong> ou ceux dans des environnements d'étude intenses, une mauvaise application peut devenir une distraction en soi avec des analyses complexes et une interface encombrée.</p>
+            <p>Une bonne application Pomodoro doit réduire les frictions, pas en ajouter. Pour les utilisateurs avec <strong>TDAH</strong>, le choix compte d'autant plus — si vous avez besoin de minuteurs adaptés au TDAH et de flux calmes, lisez <a href="focus-for-adhd.html">notre guide sur les apps de focus pour étudiants TDAH</a>. Dans des environnements d'étude intenses, une mauvaise application peut aussi devenir une distraction avec analyses complexes et interface encombrée.</p>
 
             <div class="img-container">
                 <img src="../../screenshots/fr/01.webp" srcset="../../screenshots/fr/01-400w.webp 400w, ../../screenshots/fr/01-800w.webp 800w, ../../screenshots/fr/01.webp 1242w" sizes="(max-width: 400px) calc(100vw - 40px), 320px" alt="Minuteur pomodoro minimaliste PurrrrrFocus avec esthétique orientale" loading="lazy" width="1242" height="2688">
@@ -191,9 +281,10 @@
                 <h3>Prêt à entrer dans votre état de flow ?</h3>
                 <p>Découvrez le minuteur Pomodoro le plus paisible au monde. Pas de publicité, pas d'encombrement, juste vous et votre chat de focus.</p>
                 <a href="../../index-fr.html" class="cta-button">Télécharger PurrrrrFocus Gratuitement</a>
+                <p class="cta-subline">Ou découvrez le fonctionnement : <a href="../../feature-fr.html">Voir les fonctionnalités</a></p>
             </div>
 
-            <h3>2. Forest (Idéal pour la Gamification)</h3>
+            <h3>2. <a href="https://www.forestapp.cc/" rel="nofollow noopener noreferrer" target="_blank">Forest</a> (Idéal pour la Gamification)</h3>
             <p>Un choix classique où vous faites pousser des arbres virtuels. Idéal pour les apprenants visuels, bien que la version mobile puisse parfois vous tenter de vérifier l'application trop souvent.</p>
             <ul>
                 <li><strong>Idéal pour :</strong> les utilisateurs motivés par les récompenses et les signaux de progression.</li>
@@ -201,7 +292,7 @@
                 <li><strong>Compromis :</strong> la boucle gamifiée peut aussi devenir un déclencheur d'attention supplémentaire.</li>
             </ul>
 
-            <h3>3. Focus-To-Do (Idéal pour la Gestion de Tâches)</h3>
+            <h3>3. <a href="https://www.focustodo.cn/?lang=en_US" rel="nofollow noopener noreferrer" target="_blank">Focus-To-Do</a> (Idéal pour la Gestion de Tâches)</h3>
             <p>Si vous avez besoin que votre minuteur Pomodoro soit synchronisé avec une liste de tâches complète, c'est une option robuste (bien que plus chargée).</p>
             <ul>
                 <li><strong>Idéal pour :</strong> les utilisateurs qui veulent combiner priorités, tâches et suivi du temps.</li>
@@ -259,6 +350,8 @@
                 </tbody>
             </table>
 
+            <p class="hub-inline">Envie d'autres stratégies de concentration ? <a href="../../blogs-fr.html">Parcourir tous les guides</a></p>
+
             <h2>Règle de décision : choisissez selon votre style de travail</h2>
             <ul>
                 <li>Si vous privilégiez une <strong>interface calme</strong>, choisissez <strong>PurrrrrFocus</strong>.</li>
@@ -270,7 +363,7 @@
             <p>La plupart choisissent selon le nombre de fonctionnalités, pas selon la charge cognitive. Résultat : plus d'options, mais moins de concentration réelle.</p>
 
             <h2>Comment créer une habitude de Flow de 2 heures</h2>
-            <p>Le secret ne réside pas seulement dans l'application, mais dans <strong>l'environnement</strong>. Lancez votre session, posez votre téléphone face contre table, et laissez le compagnon félin de PurrrrrFocus signaler à votre cerveau qu'il est temps de travailler. Combinez cela avec le <em>timeboxing</em> pour une efficacité maximale.</p>
+            <p>Le secret ne réside pas seulement dans l'application, mais dans <strong>l'environnement</strong>. Lancez votre session, posez votre téléphone face contre table, et laissez le compagnon félin de PurrrrrFocus signaler à votre cerveau qu'il est temps de travailler. Combinez cela avec le <em>timeboxing</em> pour une efficacité maximale. Si vous peinez à rester régulier, lisez <a href="how-to-build-focus-habit.html">comment construire une habitude de focus qui dure vraiment</a>.</p>
             <div class="meta-note">
                 <p><strong>Dernière mise à jour :</strong> 2026-04-15</p>
                 <p><strong>Méthodologie :</strong> Évaluation selon résistance aux distractions, compatibilité TDAH, courbe d'apprentissage, gamification, personnalisation et niveau de calme visuel.</p>
@@ -292,7 +385,7 @@
     <footer style="text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 0.9em; background: rgba(222, 186, 134, 0.1);">
         <div class="container">
             <p>© 2026 PurrrrrFocus. Conçu pour les penseurs profonds.</p>
-            <p style="margin-top: 10px;"><a href="../../index-fr.html" style="color: var(--accent);">Retour à l'accueil</a></p>
+            <p class="footer-back"><a href="../../index-fr.html">Retour à l'accueil</a></p>
         </div>
     </footer>
 
