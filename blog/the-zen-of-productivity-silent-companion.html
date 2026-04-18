@@ -34,6 +34,27 @@
 }
 </script>
 
+<!-- Google Analytics: 延迟到 load 后加载，避免影响 LCP/FCP（减少未使用 JS 约 61 KiB） -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN';
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+    };
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(loadGtag, 0);
+  } else {
+    window.addEventListener('load', function() { setTimeout(loadGtag, 0); });
+  }
+</script>
+
 <style>
 :root {
     --bg: #000;
@@ -157,6 +178,84 @@ article li::marker { color: var(--faint); }
     font-weight: 500;
     color: #fff;
 }
+/* Related Products */
+.related-products {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+}
+.related-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+    margin-bottom: 1.5rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+@media (max-width: 640px) {
+    .product-grid { grid-template-columns: 1fr; }
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.product-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.product-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #1c1c1e;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.product-card h4 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+.product-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 0 !important;
+}
+.related-products .product-bullets {
+    margin: 0 0 1.25rem 1.1rem !important;
+    font-size: 0.8rem;
+    color: var(--faint);
+    flex-grow: 1;
+}
+.related-products .product-bullets li { margin-bottom: 0.2rem; }
+.product-cta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none !important;
+}
+.product-cta:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+}
 footer {
     padding: 2rem 1.5rem 3rem;
     text-align: center;
@@ -221,6 +320,43 @@ footer a { color: var(--muted); }
     <p>Productivity shouldn’t feel like a chore, nor should it feel like a frantic video game. It should feel like a ritual.</p>
     <p>PurrrrrFocus is my attempt to blend the elegance of <strong>China-Chic</strong> with the reliable comfort of a feline companion. It’s a tool that respects your attention while celebrating your small wins.</p>
     <p class="closing">Find your favorite cat, start the ritual, and grow together in silence.</p>
+
+    <div class="related-products">
+        <h3 class="related-title">Featured in this story</h3>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-info">
+                    <img src="../purrrrrfocus/icon.webp" alt="PurrrrrFocus app icon" width="48" height="48" class="product-icon" loading="lazy" decoding="async" />
+                    <div>
+                        <h4>PurrrrrFocus</h4>
+                        <p class="product-desc">Zen Pomodoro timer with &quot;China-Chic&quot; aesthetics. A warm, silent sanctuary for deep work without the noise of social feeds.</p>
+                    </div>
+                </div>
+                <ul class="product-bullets">
+                    <li>Eight unique cat companions to grow with</li>
+                    <li>Offline-first rewards &amp; intimacy tracking</li>
+                    <li>Minimalist UI designed for visual calm</li>
+                </ul>
+                <a href="../purrrrrfocus/" class="product-cta">View Product →</a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-info">
+                    <img src="../tappause/icon.webp" alt="TapPause app icon" width="48" height="48" class="product-icon" loading="lazy" decoding="async" />
+                    <div>
+                        <h4>TapPause</h4>
+                        <p class="product-desc">The perfect companion for your breaks. A single-tap ritual to breathe and reset between deep-work sessions.</p>
+                    </div>
+                </div>
+                <ul class="product-bullets">
+                    <li>Simple, friction-free pause timer</li>
+                    <li>Zero-data tracking for mental clarity</li>
+                    <li>Bridges the gap between focus blocks</li>
+                </ul>
+                <a href="../tappause/" class="product-cta">View Product →</a>
+            </div>
+        </div>
+    </div>
 </article>
 
 <footer>

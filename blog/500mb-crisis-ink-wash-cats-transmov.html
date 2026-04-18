@@ -35,6 +35,27 @@
 }
 </script>
 
+<!-- Google Analytics: 延迟到 load 后加载，避免影响 LCP/FCP（减少未使用 JS 约 61 KiB） -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN';
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+    };
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(loadGtag, 0);
+  } else {
+    window.addEventListener('load', function() { setTimeout(loadGtag, 0); });
+  }
+</script>
+
 <style>
 :root {
     --bg: #000;
@@ -119,6 +140,84 @@ article li::marker { color: var(--faint); }
     border-top: 1px solid var(--line);
     color: #fff;
 }
+/* Related Products */
+.related-products {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+}
+.related-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+    margin-bottom: 1.5rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+@media (max-width: 640px) {
+    .product-grid { grid-template-columns: 1fr; }
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.product-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.product-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #1c1c1e;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.product-card h4 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+.product-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 0 !important;
+}
+.related-products .product-bullets {
+    margin: 0 0 1.25rem 1.1rem !important;
+    font-size: 0.8rem;
+    color: var(--faint);
+    flex-grow: 1;
+}
+.related-products .product-bullets li { margin-bottom: 0.2rem; }
+.product-cta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none !important;
+}
+.product-cta:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+}
 footer {
     padding: 2rem 1.5rem 3rem;
     text-align: center;
@@ -178,6 +277,43 @@ footer a { color: var(--muted); }
     <h2 id="closing-thoughts">Closing Thoughts</h2>
     <p>From a solitary ink-wash cat to a 500MB crisis, and finally to the birth of TransMov.</p>
     <p class="closing">Indie development is rarely a straight line. Sometimes, you set out to build a house, and you end up inventing a better shovel just to dig the foundation. Those moments of obsessive troubleshooting are what give independent apps their soul.</p>
+
+    <div class="related-products">
+        <h3 class="related-title">Featured in this story</h3>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-info">
+                    <img src="../transmov/icon.webp" alt="TransMov app icon" width="48" height="48" class="product-icon" loading="lazy" decoding="async" />
+                    <div>
+                        <h4>TransMov</h4>
+                        <p class="product-desc">AI Video Background Remover for macOS. Create transparent APNG/WebP/GIF locally.</p>
+                    </div>
+                </div>
+                <ul class="product-bullets">
+                    <li>Offline AI processing for privacy</li>
+                    <li>Convert video to transparent animations</li>
+                    <li>Built for high-fidelity textures</li>
+                </ul>
+                <a href="../transmov/" class="product-cta">View Product →</a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-info">
+                    <img src="../purrrrrfocus/icon.webp" alt="PurrrrrFocus app icon" width="48" height="48" class="product-icon" loading="lazy" decoding="async" />
+                    <div>
+                        <h4>PurrrrrFocus</h4>
+                        <p class="product-desc">Focus timer with adorable cat friends. Built for digital minimalism.</p>
+                    </div>
+                </div>
+                <ul class="product-bullets">
+                    <li>Adorable cat friends to keep you company</li>
+                    <li>Smooth, high-res transparent animations</li>
+                    <li>Privacy-first, no account required</li>
+                </ul>
+                <a href="../purrrrrfocus/" class="product-cta">View Product →</a>
+            </div>
+        </div>
+    </div>
 </article>
 
 <footer>
