@@ -389,6 +389,39 @@
             }
         }
 
+        .hero-secondary {
+            margin-top: 14px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .hero-secondary:hover {
+            color: #fff;
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-secondary:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.7);
+            outline-offset: 4px;
+            border-bottom-color: transparent;
+        }
+
+        .story-item:first-of-type .story-content h3 a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.28);
+            transition: border-color 0.2s ease;
+        }
+
+        .story-item:first-of-type .story-content h3 a:hover {
+            border-bottom-color: var(--accent);
+        }
+
         .app-store-badge {
             display: inline-flex;
             align-items: center;
@@ -778,6 +811,83 @@
             }
         }
 
+        .intent-hub {
+            padding: 120px 0;
+            background: linear-gradient(to bottom, #F9F3E6, #FAF7F0);
+        }
+
+        .intent-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px auto;
+        }
+
+        .intent-header h2 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .intent-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            opacity: 0.8;
+        }
+
+        .intent-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .intent-card {
+            display: block;
+            padding: 28px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid rgba(222,186,134,0.35);
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .intent-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+            border-color: rgba(122,30,30,0.25);
+        }
+
+        .intent-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .intent-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .intent-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            opacity: 0.85;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .intent-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .feature-preview {
             padding: 90px 0;
             background: linear-gradient(to bottom, #FAF7F0, #F9F3E6);
@@ -858,7 +968,7 @@
             </nav>
             <div class="lang-dropdown">
                 <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Sélectionner la langue">
-                    <span class="lang-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                    <span class="lang-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><ellipse cx="12" cy="12" rx="4" ry="10"/></svg></span>
                     <span class="lang-code">FR</span>
                     <span class="lang-chevron" aria-hidden="true">▼</span>
                 </button>
@@ -906,6 +1016,7 @@
                 </a>
             </div>
             <p class="hero-cta-note">Commencez votre parcours de concentration</p>
+            <a href="feature-fr.html" class="hero-secondary">Voir comment ça marche →</a>
         </div>
     </div>
 </section>
@@ -931,7 +1042,7 @@
                     <img src="screenshots/fr/01.webp" srcset="screenshots/fr/01-400w.webp 400w, screenshots/fr/01-800w.webp 800w, screenshots/fr/01.webp 1242w" sizes="(max-width: 992px) min(100vw - 40px, 320px), 320px" alt="Écran principal du minuteur PurrrrrFocus montrant le mode de concentration profonde avec une interface épurée" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
-                    <h3>Un espace pour une concentration profonde</h3>
+                    <h3><a href="feature-fr.html#deep-focus">Un espace pour une concentration profonde</a></h3>
                     <p>Interface épurée conçue pour une concentration ininterrompue. Pomodoro ou concentration libre — minimaliste, apaisant et efficace.</p>
                 </div>
             </article>
@@ -1000,16 +1111,16 @@
                 <div class="seo-block">
                     <h2>Pourquoi utiliser un minuteur Pomodoro ?</h2>
                     <p>
-                        Un minuteur Pomodoro vous aide à rester concentré en découpant le travail en sessions structurées avec de courtes pauses.
-                        Cette méthode améliore la productivité, réduit la fatigue mentale et facilite le démarrage et le maintien d'un travail en profondeur.
+                        Un <a href="blog/fr/best-pomodoro-timer.html">minuteur Pomodoro</a> vous aide à rester concentré en découpant le travail en sessions structurées avec de courtes pauses.
+                        Cette approche est très utilisée pour le <a href="blog/fr/study-focus-guide.html">travail profond et les sessions d’étude</a>, afin de renforcer vos habitudes, votre productivité et de limiter la fatigue mentale.
                     </p>
                 </div>
                 <div class="seo-block">
                     <h2>Conçu pour la concentration, l'étude et le TDAH</h2>
                     <p>
                         PurrrrrFocus est conçu pour les étudiants, les créateurs et tous ceux qui luttent contre les distractions.
-                        Avec une interface apaisante, des modes de minuterie flexibles et un retour visuel doux,
-                        il favorise la concentration profonde, la construction d'habitudes et des flux de travail adaptés au TDAH.
+                        Si vous perdez souvent le fil en pleine tâche, explorer des <a href="blog/fr/focus-for-adhd.html">techniques de concentration pour le TDAH</a> peut améliorer votre façon de travailler sans ajouter de complexité.
+                        L’app associe cette intention à une interface apaisante, des modes flexibles et un retour visuel doux—de la structure sans surcharge.
                     </p>
                 </div>
                 <div class="seo-block">
@@ -1017,6 +1128,7 @@
                     <p>
                         Contrairement aux applications de productivité complexes, PurrrrrFocus reste simple.
                         Pas d'encombrement, pas de pression—juste un espace épuré pour se concentrer, avec des thèmes optionnels et une présence de compagnon douce.
+                        Vous hésitez encore ? Notre <a href="blog/fr/best-pomodoro-timer.html">comparatif des minuteurs Pomodoro (2026)</a> détaille les critères utiles avant de choisir une app.
                     </p>
                 </div>
             </div>
@@ -1048,6 +1160,47 @@ role="region"
             </div>
             <p class="testimonials-hint" aria-hidden="true"></p>
         </div>
+    </section>
+
+    <section class="intent-hub">
+      <div class="container">
+        <div class="intent-header">
+          <h2>Trouvez votre style de concentration</h2>
+          <p>Chacun se concentre à sa façon. Explorez le guide qui correspond à votre objectif.</p>
+        </div>
+
+        <div class="intent-grid">
+          <a class="intent-card" href="landing/best-adhd-focus-app-ios.html">
+            <span class="intent-tag">TDAH</span>
+            <h3>Meilleures apps de concentration TDAH sur iOS</h3>
+            <p>Des outils simples pour les esprits facilement distraits.</p>
+          </a>
+
+          <a class="intent-card" href="landing/purrrrrfocus-vs-forest.html">
+            <span class="intent-tag">COMPARER</span>
+            <h3>PurrrrrFocus vs Forest</h3>
+            <p>Découvrez quel système de concentration vous convient.</p>
+          </a>
+
+          <a class="intent-card" href="landing/best-pomodoro-app-for-students.html">
+            <span class="intent-tag">ÉTUDE</span>
+            <h3>Meilleures apps Pomodoro pour étudiants</h3>
+            <p>Étudiez plus longtemps avec des sessions structurées.</p>
+          </a>
+
+          <a class="intent-card" href="landing/forest-alternative.html">
+            <span class="intent-tag">ALTERNATIVES</span>
+            <h3>Alternatives à Forest</h3>
+            <p>Comparez les apps de concentration et trouvez plus de calme.</p>
+          </a>
+
+          <a class="intent-card" href="landing/start-focus-in-30-seconds.html">
+            <span class="intent-tag">DÉMARRAGE</span>
+            <h3>Concentration en 30 secondes</h3>
+            <p>Pas de configuration. Ouvrez et concentrez-vous.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Founder's Story -->

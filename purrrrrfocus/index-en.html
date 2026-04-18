@@ -389,6 +389,39 @@
             }
         }
 
+        .hero-secondary {
+            margin-top: 14px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .hero-secondary:hover {
+            color: #fff;
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-secondary:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.7);
+            outline-offset: 4px;
+            border-bottom-color: transparent;
+        }
+
+        .story-item:first-of-type .story-content h3 a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.28);
+            transition: border-color 0.2s ease;
+        }
+
+        .story-item:first-of-type .story-content h3 a:hover {
+            border-bottom-color: var(--accent);
+        }
+
         .app-store-badge {
             display: inline-flex;
             align-items: center;
@@ -935,7 +968,7 @@
             </nav>
             <div class="lang-dropdown">
                 <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
-                    <span class="lang-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                    <span class="lang-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><ellipse cx="12" cy="12" rx="4" ry="10"/></svg></span>
                     <span class="lang-code">EN</span>
                     <span class="lang-chevron" aria-hidden="true">▼</span>
                 </button>
@@ -983,6 +1016,7 @@
                 </a>
             </div>
             <p class="hero-cta-note">Start Your Focus Journey</p>
+            <a href="feature-en.html" class="hero-secondary">See how it works →</a>
         </div>
     </div>
 </section>
@@ -1008,7 +1042,7 @@
                     <img src="screenshots/en/01.webp" srcset="screenshots/en/01-400w.webp 400w, screenshots/en/01-800w.webp 800w, screenshots/en/01.webp 1242w" sizes="(max-width: 992px) min(100vw - 40px, 320px), 320px" alt="PurrrrrFocus Timer main screen showing Deep Focus mode with clean interface" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
-                    <h3>A Space for Deep Focus</h3>
+                    <h3><a href="feature-en.html#deep-focus">A Space for Deep Focus</a></h3>
                     <p>Clean interface designed for uninterrupted focus. Pomodoro or free focus — minimal, calm, and effective.</p>
                 </div>
             </article>
@@ -1078,16 +1112,19 @@
                 <div class="seo-block">
                     <h2>Why Use a Pomodoro Timer?</h2>
                     <p>
-                        A Pomodoro timer helps you stay focused by breaking work into structured sessions with short breaks.
-                        This method improves productivity, reduces mental fatigue, and makes it easier to start and sustain deep work.
+                        A <a href="blog/en/best-pomodoro-timer.html">Pomodoro timer</a> helps you stay focused by breaking work into structured sessions with short breaks.
+                        This technique is widely used for <a href="blog/en/study-focus-guide.html">deep work and study sessions</a>,
+                        making it easier to build consistent focus habits, improve productivity, and reduce mental fatigue over time.
                     </p>
                 </div>
                 <div class="seo-block">
                     <h2>Designed for Focus, Study, and ADHD</h2>
                     <p>
                         PurrrrrFocus is built for students, creators, and anyone who struggles with distractions.
-                        With a calm interface, flexible timing modes, and gentle visual feedback,
-                        it supports deep focus, habit building, and ADHD-friendly workflows.
+                        If you often lose focus mid-task, learning
+                        <a href="blog/en/focus-for-adhd.html">focus techniques for ADHD users</a>
+                        can improve how you work without piling on more complexity.
+                        The app pairs that intent with a calm interface, flexible timing modes, and gentle visual feedback—structure without overwhelm.
                     </p>
                 </div>
                 <div class="seo-block">
@@ -1095,6 +1132,7 @@
                     <p>
                         Unlike complex productivity apps, PurrrrrFocus keeps things simple.
                         No clutter, no pressure—just a clean space to focus, with optional themes and a soft companion presence.
+                        Still weighing options? Our <a href="blog/en/best-pomodoro-timer.html">Pomodoro timer comparison for 2026</a> walks through what matters before you commit to any app.
                     </p>
                 </div>
             </div>
@@ -1143,6 +1181,12 @@ role="region"
             <p>Simple tools designed for distraction-heavy minds.</p>
           </a>
 
+          <a class="intent-card" href="landing/purrrrrfocus-vs-forest.html">
+            <span class="intent-tag">COMPARE</span>
+            <h3>PurrrrrFocus vs Forest</h3>
+            <p>See which focus system fits you better.</p>
+          </a>
+
           <a class="intent-card" href="landing/best-pomodoro-app-for-students.html">
             <span class="intent-tag">STUDY</span>
             <h3>Best Pomodoro Apps for Students</h3>
@@ -1153,12 +1197,6 @@ role="region"
             <span class="intent-tag">ALTERNATIVES</span>
             <h3>Forest Alternatives</h3>
             <p>Compare focus apps and find a calmer experience.</p>
-          </a>
-
-          <a class="intent-card" href="landing/purrrrrfocus-vs-forest.html">
-            <span class="intent-tag">COMPARE</span>
-            <h3>PurrrrrFocus vs Forest</h3>
-            <p>See which focus system fits you better.</p>
           </a>
 
           <a class="intent-card" href="landing/start-focus-in-30-seconds.html">

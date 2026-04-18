@@ -389,6 +389,39 @@
             }
         }
 
+        .hero-secondary {
+            margin-top: 14px;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .hero-secondary:hover {
+            color: #fff;
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-secondary:focus-visible {
+            outline: 2px solid rgba(255, 255, 255, 0.7);
+            outline-offset: 4px;
+            border-bottom-color: transparent;
+        }
+
+        .story-item:first-of-type .story-content h3 a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.28);
+            transition: border-color 0.2s ease;
+        }
+
+        .story-item:first-of-type .story-content h3 a:hover {
+            border-bottom-color: var(--accent);
+        }
+
         .app-store-badge {
             display: inline-flex;
             align-items: center;
@@ -778,6 +811,83 @@
             }
         }
 
+        .intent-hub {
+            padding: 120px 0;
+            background: linear-gradient(to bottom, #F9F3E6, #FAF7F0);
+        }
+
+        .intent-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px auto;
+        }
+
+        .intent-header h2 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .intent-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            opacity: 0.8;
+        }
+
+        .intent-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .intent-card {
+            display: block;
+            padding: 28px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid rgba(222,186,134,0.35);
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .intent-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+            border-color: rgba(122,30,30,0.25);
+        }
+
+        .intent-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .intent-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .intent-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            opacity: 0.85;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .intent-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .feature-preview {
             padding: 90px 0;
             background: linear-gradient(to bottom, #FAF7F0, #F9F3E6);
@@ -858,7 +968,7 @@
             </nav>
             <div class="lang-dropdown">
                 <button type="button" class="lang-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-label="选择语言">
-                    <span class="lang-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                    <span class="lang-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><ellipse cx="12" cy="12" rx="4" ry="10"/></svg></span>
                     <span class="lang-code">ZH</span>
                     <span class="lang-chevron" aria-hidden="true">▼</span>
                 </button>
@@ -906,6 +1016,7 @@
                 </a>
             </div>
             <p class="hero-cta-note">从此告别分心，开启专注之旅</p>
+            <a href="feature-zh.html" class="hero-secondary">了解工作原理 →</a>
         </div>
     </div>
 </section>
@@ -931,7 +1042,7 @@
                     <img src="screenshots/zh/01.webp" srcset="screenshots/zh/01-400w.webp 400w, screenshots/zh/01-800w.webp 800w, screenshots/zh/01.webp 1242w" sizes="(max-width: 992px) min(100vw - 40px, 320px), 320px" alt="喵时计计时器主界面，显示学霸模式与简洁界面" loading="lazy" width="1242" height="2688">
                 </div>
                 <div class="story-content">
-                    <h3>沉浸式专注空间</h3>
+                    <h3><a href="feature-zh.html#deep-focus">沉浸式专注空间</a></h3>
                     <p>专为无干扰专注设计的极简界面，无论是番茄钟计时还是自由专注，都温和又高效。</p>
                 </div>
             </article>
@@ -993,26 +1104,30 @@
       </div>
     </section>
     
-    <!-- SEO Content Section -->
-    <section class="seo-section">
+     <!-- SEO Content Section -->
+     <section class="seo-section">
         <div class="container">
             <div class="seo-content">
                 <div class="seo-block">
-                    <h2>为什么用番茄钟？</h2>
+                    <h2>为什么要用番茄钟？</h2>
                     <p>
-                        番茄钟通过「专注段 + 短休息」的结构化节奏帮你保持专注，提升效率、减轻用脑疲劳，更容易进入并维持深度工作状态。
+                        <a href="blog/zh/best-pomodoro-timer.html">番茄钟</a>通过「专注时段+短暂休息」的科学节奏帮你保持专注；
+                        这套方法也常被用于<a href="blog/zh/study-focus-guide.html">深度学习与备考场景</a>，帮你养成稳定节奏、提升效率，同时缓解大脑疲劳。
                     </p>
                 </div>
                 <div class="seo-block">
-                    <h2>为专注、学习与 ADHD 设计</h2>
+                    <h2>为专注、学习与 ADHD 友好设计</h2>
                     <p>
-                        喵时计面向学生、创作者和容易分心的用户，以简洁界面、灵活计时和温和反馈，支持深度专注、习惯养成和 ADHD 友好式工作流。
+                        喵时计专为学生、创作者和注意力易分散人群打造。
+                        如果你经常做事中途分心，可以了解<a href="blog/zh/focus-for-adhd.html">ADHD 友好的专注技巧</a>，在不增加压力的前提下改善工作状态。
+                        应用凭借简洁界面、灵活计时和温和反馈，带来「有章法、不紧绷」的专注体验。
                     </p>
                 </div>
                 <div class="seo-block">
                     <h2>极简专注计时，氛围更安心</h2>
                     <p>
-                        不堆功能、不制造压力。喵时计只保留必要功能，提供清爽的专注空间，可选主题与软萌伙伴陪伴，让专注更轻松。
+                        不堆砌功能，不制造焦虑。喵时计只保留核心功能，打造清爽无扰的专注空间，搭配治愈主题与软萌伙伴陪伴。
+                        还在挑选工具？不妨先看看我们的<a href="blog/zh/best-pomodoro-timer.html">2026 番茄钟应用对比</a>，再判断自己是否需要更复杂的软件。
                     </p>
                 </div>
             </div>
@@ -1044,6 +1159,47 @@
             </div>
             <p class="testimonials-hint" aria-hidden="true"></p>
         </div>
+    </section>
+
+    <section class="intent-hub">
+      <div class="container">
+        <div class="intent-header">
+          <h2>找到适合你的专注方式</h2>
+          <p>不同的人专注方式不同，选择与目标匹配的指南。</p>
+        </div>
+
+        <div class="intent-grid">
+          <a class="intent-card" href="landing/best-adhd-focus-app-ios.html">
+            <span class="intent-tag">ADHD</span>
+            <h3>适用于 ADHD 的 iOS 专注应用</h3>
+            <p>为易分心大脑设计的轻量工具。</p>
+          </a>
+
+          <a class="intent-card" href="landing/purrrrrfocus-vs-forest.html">
+            <span class="intent-tag">对比</span>
+            <h3>PurrrrrFocus 与 Forest</h3>
+            <p>看哪种专注体系更适合你。</p>
+          </a>
+
+          <a class="intent-card" href="landing/best-pomodoro-app-for-students.html">
+            <span class="intent-tag">学习</span>
+            <h3>学生适用的番茄钟应用</h3>
+            <p>用结构化专注时段学得更久。</p>
+          </a>
+
+          <a class="intent-card" href="landing/forest-alternative.html">
+            <span class="intent-tag">替代</span>
+            <h3>Forest 替代方案</h3>
+            <p>比较应用，找到更克制的体验。</p>
+          </a>
+
+          <a class="intent-card" href="landing/start-focus-in-30-seconds.html">
+            <span class="intent-tag">快速</span>
+            <h3>30 秒开始专注</h3>
+            <p>无需折腾，打开就能专注。</p>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Founder's Story -->
