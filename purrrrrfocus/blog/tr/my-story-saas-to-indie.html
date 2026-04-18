@@ -98,6 +98,24 @@
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
         .lang-note { padding: 8px 16px 10px; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid rgba(222, 186, 134, 0.35); }
 
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero-image {
             display: block;
@@ -139,19 +157,40 @@
         .content strong { color: var(--text-primary); }
         .content em { font-style: italic; }
 
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
         .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px solid var(--border); }
-        .related-guides h4 { margin-bottom: 16px; }
+        .related-guides { margin-top: 60px; padding: 30px; background: #fff; border-radius: 16px; border: 1px solid var(--border); }
+        .related-guides h4 { color: var(--text-primary); margin-bottom: 10px; }
+        .related-guides .related-path-intro { color: var(--text-secondary); margin: 0 0 14px; font-size: 1rem; line-height: 1.6; }
         .related-guides ul { list-style: none; padding: 0; margin: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
 
         @media (max-width: 768px) {
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
             .lang-dropdown { margin-left: 0; align-self: flex-end; }
+            .content h2 { font-size: 1.45rem; }
         }
     </style>
 </head>
@@ -174,6 +213,11 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Gezinti yolu">
+                <a href="../../blogs-tr.html">Rehberler</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-tr.html#cat-story">Ürünün perde arkası</a>
+            </nav>
             <img src="../digitaldetox.jpg" alt="Dijital detoks ve sakin odak — kurucu hikâyesi görseli." class="seo-hero-image" width="1200" height="835" decoding="async" fetchpriority="high">
             <h1>İşimi Kaybettim, Odaklanmayı Geri Kazandım: Purrrrrfocus&apos;un Hikâyesi</h1>
             <div class="post-meta">
@@ -197,24 +241,30 @@
                 <li><strong>Bilgi Kuryeliği:</strong> Bir stratejist değil, aslında bir &quot;lüks kurye&quot; olduğumu fark ettim. Günlerimi, herkesin &quot;aynı sayfada&quot; olduğundan emin olmak için bilgiyi A grubundan B grubuna taşımakla geçiriyordum; ancak benim o sayfayı okuyacak vaktim bile kalmıyordu.</li>
                 <li><strong>Algoritmaların Avı:</strong> Sadece insanlar değil, botlar da peşimdeydi. Yapay zeka destekli hatırlatıcılar her hareketimi acımasızca takip ediyordu: <em>&quot;CRM&apos;i güncellediniz mi?&quot;, &quot;Haftalık raporun süresi 2 saat içinde doluyor&quot;, &quot;Eksik takip kaydı tespit edildi.&quot;</em></li>
             </ul>
-            <p>Devasa bir makinede çok hızlı dönen ama hiçbir yere gitmeyen bir dişli gibiydim. Derinlemesine düşünme yeteneğim eriyordu. İş, kırmızı bildirim noktalarına verilen ani tepkiler silsilesine dönüşmüştü.</p>
+            <p>Devasa bir makinede çok hızlı dönen ama hiçbir yere gitmeyen bir dişli gibiydim. Derinlemesine düşünme yeteneğim eriyordu. Sonradan fark ettim: Bu örüntü, pek çok kişide gördüğümüz <a href="focus-for-adhd.html">dikkat parçalanması ve ADHD benzeri odak sorunlarıyla</a> aynı hatta çok benziyordu. İş, kırmızı bildirim noktalarına verilen ani tepkiler silsilesine dönüşmüştü.</p>
 
             <h2>Planlanmamış Ayrılık: Bir Aydınlanma Anı</h2>
             <p>Sonra, planlanmamış bir ayrılık yaşadım; işten çıkarıldım.</p>
             <p>Kurumsal hesaplarım devre dışı bırakıldığında ve o sürekli titreyen mesaj grupları bir anda yok olduğunda, hiç beklemediğim bir şey hissettim. İşsiz kalmanın getirdiği belirsizliğin yanı sıra, derin bir <strong>rahatlama</strong> duygusu içimi kapladı.</p>
-            <p>Nihayet, &quot;anlık iş birliğinin&quot; boğucu gürültüsü kesilmişti. Bu sessizlikte bir gerçeği fark ettim: Dünyanın en iyi verimlilik araçlarıyla donatılmış bir ortamda, neden her zamankinden daha verimsizdim? Neden sadece 25 dakika odaklanmak bile satın alamayacağım bir lüks haline gelmişti?</p>
+            <p>Nihayet, &quot;anlık iş birliğinin&quot; boğucu gürültüsü kesilmişti. Bu sessizlikte bir gerçeği fark ettim: Dünyanın en iyi verimlilik araçlarıyla donatılmış bir ortamda, neden her zamankinden daha verimsizdim? Neden sadece 25 dakika odaklanmak bile satın alamayacağım bir lüks haline gelmişti? Bunu daha sonra <a href="how-to-build-focus-habit.html">adım adım sürdürülebilir bir odak alışkanlığı oluşturma</a> üzerinden basit bir sisteme ayırdım.</p>
 
             <h2>Purrrrrfocus&apos;u İnşa Etmek: Derin Çalışma İçin Bir Sığınak</h2>
             <p>Bu tükenmişliği ilk bağımsız projemde bir enerjiye dönüştürmeye karar verdim.</p>
             <p><strong>Purrrrrfocus</strong>&apos;un doğuşu sadece bir uygulama daha yapmakla ilgili değildi; bu bir öz-iyileşme süreciydi. Bildirim denizinde boğuluyordum; bu yüzden sadece kendim için değil, hala o fırtınanın içinde mahsur kalan herkes için bir can simidi inşa etmek istedim.</p>
             <ul>
-                <li><strong>Bir Zamanlayıcıdan Fazlası, Bir Ritüel:</strong> Piyasada Pomodoro zamanlayıcı sıkıntısı yok. Eksik olan şey bir &quot;sığınak&quot;. Purrrrrfocus&apos;ta bir oturum başlattığınızda, beliren kedi dünyaya bir mesaj verir: <em>&quot;Önümüzdeki 25 dakika boyunca ne gelen kutuma, ne müşterilerime ne de yöneticime aitim. Ben sadece işime aitim.&quot;</em></li>
+                <li><strong>Bir Zamanlayıcıdan Fazlası, Bir Ritüel:</strong> Piyasada Pomodoro zamanlayıcı sıkıntısı yok; çoğu asıl noktayı kaçırıyor. Seçenekleri karşılaştırıyorsanız, bunu <a href="best-pomodoro-timer.html">derin odaklanma için en iyi Pomodoro zamanlayıcıları rehberinde</a> detaylandırdım. Eksik olan şey bir &quot;sığınak&quot;. Purrrrrfocus&apos;ta bir oturum başlattığınızda, beliren kedi dünyaya bir mesaj verir: <em>&quot;Önümüzdeki 25 dakika boyunca ne gelen kutuma, ne müşterilerime ne de yöneticime aitim. Ben sadece işime aitim.&quot;</em></li>
                 <li><strong>Baskı Değil, Şifa:</strong> Kurumsal dünyada, soğuk ilerleme çubukları ve talepkar botlar tarafından kovalanıyoruz. Uygulamanın adını <strong>Purrrrrfocus</strong> koydum çünkü bu baskının yerine bir kedinin yatıştırıcı varlığını koymak istedim. Bu, zihinsel alanınızı geri kazanmanın nazik bir yoludur.</li>
             </ul>
 
+            <div class="cta-box">
+                <h3>Kendim için kurduğum odak sistemini deneyin</h3>
+                <p>Basit bir 5 dakikalık seansla başlayın ve dikkatinizi sıfırdan yeniden inşa edin.</p>
+                <a href="../../index-tr.html" class="cta-button">Odak seansı başlat</a>
+            </div>
+
             <h2>Sonuç: Zaman Yönetimi ve Odaklanma Kontrolünü Geri Almak</h2>
             <p>SaaS dünyasından ayrılmak benim seçimim değildi ama bu, hayatımın en büyük fırsatına dönüştü. Bana şu zor gerçeği öğretti: <strong>Modern çağda, dikkatiniz sahip olduğunuz en değerli varlıktır ve herkes onu sizden çalmaya çalışır.</strong></p>
-            <p>Bu uygulamayı sizi daha verimli bir makine yapmak için geliştirmedim. Sizi önemsiz şeylerin esaretinden kurtarıp kendi egemenliğinizi ilan etmenize yardımcı olmak için yaptım. Günde sadece iki kaliteli &quot;kedi oturumu&quot; bile yapsanız, bunlar sonunda direksiyona tekrar sizin geçtiğiniz anlardır.</p>
+            <p>Bu uygulamayı sizi daha verimli bir makine yapmak için geliştirmedim. Sizi önemsiz şeylerin esaretinden kurtarıp kendi egemenliğinizi ilan etmenize yardımcı olmak için yaptım. Günde sadece iki kaliteli &quot;kedi oturumu&quot; bile yapsanız, bunlar kontrolü sonunda yeniden ele aldığınız anlardır. Ders çalışıyor veya sınava hazırlanıyorsanız, aynı sistemi uygulamanız için <a href="study-focus-guide.html">Ders Çalışırken Nasıl Odaklanılır: 2026 Öğrenci Rehberi</a> yardımcı olabilir.</p>
 
             <div class="cta-box">
                 <h3>Dikkat Egemenliğinizi Geri Alın</h3>
@@ -223,12 +273,13 @@
             </div>
 
             <div class="related-guides">
-                <h4>Okumaya devam edin</h4>
+                <h4>Odak sisteminizi inşa edin</h4>
+                <p class="related-path-intro">Hikâyeden başlayın, ardından adım adım sisteminizi kurun:</p>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">Derin Çalışma İçin En İyi Pomodoro Zamanlayıcıları (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">ADHD İçin En İyi Odaklanma Uygulamaları: Stressiz Araçlar</a></li>
-                    <li><a href="study-focus-guide.html">Ders Çalışırken Nasıl Odaklanılır: Öğrenci Rehberi</a></li>
-                    <li><a href="how-to-build-focus-habit.html">Kalıcı Bir Odaklanma Alışkanlığı Nasıl Oluşturulur?</a></li>
+                    <li><a href="how-to-build-focus-habit.html">→ Kalıcı Bir Odaklanma Alışkanlığı Nasıl Oluşturulur?</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ Derin Odaklanma İçin En İyi 3 Pomodoro Zamanlayıcısı (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ ADHD İçin En İyi Odaklanma Uygulaması (2026): Kaygısız Zaman Yönetimi</a></li>
+                    <li><a href="study-focus-guide.html">→ Ders Çalışırken Nasıl Odaklanılır: 2026 Öğrenci Rehberi</a></li>
                 </ul>
             </div>
         </section>

@@ -92,7 +92,25 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
@@ -103,27 +121,53 @@
         .content ul { margin: 16px 0 0 1.5em; }
         .content strong { color: var(--text-primary); }
 
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .habit-step { margin: 32px 0; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 16px; }
         .habit-step span { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
         .habit-step h3 { margin-top: 8px; }
 
-        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); text-align: center; }
+        .funnel-inline { margin-top: 16px; font-size: 0.98rem; color: var(--text-secondary); }
+        .cta-lead { margin-bottom: 20px; font-size: 0.98rem; color: var(--text-secondary); }
+
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
-        .cta-button:hover { transform: scale(1.05); }
-        
+        .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
+
         .img-container { margin: 32px 0; text-align: center; }
         .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; vertical-align: middle; border-radius: 12px; }
         .img-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 32px 0; }
         .img-row .img-container { margin: 0; flex: 1 1 200px; min-width: 0; max-width: 280px; }
+        .img-row .img-container img { max-width: 100%; margin: 0 auto; }
 
-        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px dashed var(--border); }
-        .related-guides h4 { margin-bottom: 16px; }
-        .related-guides ul { list-style: none; padding: 0; }
+        .related-guides { margin-top: 60px; padding-top: 30px; border-top: 2px dashed var(--border); }
+        .related-guides h4 { color: var(--text-primary); margin-bottom: 16px; }
+        .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
 
         @media (max-width: 768px) {
             .seo-hero h1 { font-size: 2rem; }
+            .content h2 { font-size: 1.45rem; }
+            .img-row { flex-direction: column; align-items: center; gap: 24px; }
+            .img-row .img-container { max-width: min(320px, 100%); }
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
             .lang-dropdown { margin-left: 0; align-self: flex-end; }
         }
@@ -139,12 +183,17 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Yer imi">
+                <a href="../../blogs-tr.html">Rehberler</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-tr.html#cat-habit">Odaklanma alışkanlıkları oluşturma</a>
+            </nav>
             <h1>Kalıcı Bir Odaklanma Alışkanlığı Nasıl Oluşturulur?</h1>
             <p>İrade gücünü unutun. Odaklanmayı varsayılan durumunuz haline getirmek için çevrenizi ve biyolojinizi nasıl optimize edeceğinizi öğrenin.</p>
         </section>
 
         <section class="content">
-            <p>Çoğu insan odaklanma alışkanlığı oluşturmakta başarısız olur çünkü odaklanmayı bir "sprint" gibi görürler. Gerçekte odaklanma bir kastır. İlk günden 50 kilo kaldırmaya çalışırsanız sakatlanırsınız. <strong>Uzun vadeli üretkenliğin</strong> sırrı, gülünç derecede küçük başlamaktır.</p>
+            <p>Çoğu insan odaklanma alışkanlığı oluşturmakta başarısız olur çünkü odaklanmayı bir "sprint" gibi görürler. Gerçekte odaklanma bir kastır. İlk günden 50 kilo kaldırmaya çalışırsanız sakatlanırsınız. <strong>Uzun vadeli üretkenliğin</strong> sırrı gülünç derecede küçük başlamaktır—ve bir <strong>Pomodoro zamanlayıcısıyla odaklanma alışkanlığı oluşturmaya</strong> ile <strong>odak alışkanlıkları için en iyi araçlar</strong> arasında seçim yapmaya hazır olduğunuzda, disiplin kadar araç da önemlidir: önce şunu okuyun: <a href="best-pomodoro-timer.html">Derin Odaklanma İçin En İyi 3 Pomodoro Zamanlayıcısı (2026)</a>. Duyusal gürültüyü düşük tutan <strong>minimalist odak uygulamalarına</strong> ihtiyacınız varsa, aynı tasarım kurallarının çoğu <a href="focus-for-adhd.html">ADHD İçin En İyi Odaklanma Uygulaması (2026): Kaygısız Zaman Yönetimi</a> içinde de geçerli—ADHD tanınız olmasa bile.</p>
 
             <h2>"Alışkanlık Döngüsü" Psikolojisi</h2>
             <p>Her alışkanlık dört aşamadan oluşur: İşaret, İstek, Tepki ve Ödül. Bir odaklanma alışkanlığı oluşturmak için <strong>İşareti belirgin</strong>, <strong>Ödülü ise tatmin edici</strong> hale getirmelisiniz.</p>
@@ -152,19 +201,19 @@
             <div class="habit-step">
                 <span>1. ADIM</span>
                 <h3>Görsel Bir Çapa Oluşturun</h3>
-                <p><strong>PurrrrrFocus</strong> gibi belirli bir uygulamayı açmak, görsel bir "tetikleyici" görevi görür. Beyniniz sakin mürekkep tarzı arayüzü ve kedi arkadaşınızı gördüğünde, bu ortamı derin çalışma ile ilişkilendirmeye başlar.</p>
+                <p><a href="../../index-tr.html">PurrrrrFocus</a> gibi belirli bir uygulamayı açmak görsel bir tetikleyici görevi görür. Beyniniz sakin mürekkep tarzı arayüzü ve kedi arkadaşınızı gördüğünde, bu ortamı derin çalışma ile ilişkilendirmeye başlar.</p>
             </div>
 
             <div class="habit-step">
                 <span>2. ADIM</span>
                 <h3>5 Dakika Giriş Noktası</h3>
-                <p><strong>Mini Alışkanlıklar</strong> yöntemini kullanın. Bir saate değil, sadece 5 dakikalık odaklanmış çalışmaya söz verin. PurrrrrFocus, başlangıç bariyerini düşüren mikro seanslar ayarlamanıza olanak tanır.</p>
+                <p><strong>Mini Alışkanlıklar</strong> yöntemini kullanın. Bir saate değil, sadece 5 dakikalık odaklanmış çalışmaya söz verin. <a href="../../index-tr.html">PurrrrrFocus</a>, başlangıç bariyerini düşüren mikro seanslar ayarlamanıza olanak tanır.</p>
             </div>
 
             <div class="habit-step">
                 <span>3. ADIM</span>
                 <h3>İstikrarı Takip Edin ve Ödüllendirin</h3>
-                <p>Mükemmelliğe odaklanmayın. Günlük serilerinizi takip etmek için PurrrrrFocus'u kullanın. Tamamlanan her seans, beyninizi odaklanmaya yönlendiren küçük bir zaferdir.</p>
+                <p>Mükemmelliğe odaklanmayın. Günlük serilerinizi takip etmek için <a href="../../index-tr.html">PurrrrrFocus</a>'u kullanın. Tamamlanan her seans, beyninizi odaklanmaya yönlendiren küçük bir zaferdir.</p>
             </div>
 
             <div class="img-row">
@@ -176,9 +225,12 @@
                 </div>
             </div>
 
-            <h2>İrade Gücü Neden Düşmanınızdır?</h2>
-            <p>İrade gücü sınırlı bir kaynaktır. Odaklanmak için sadece ona güvenirseniz, sonunda tükenirsiniz. Bunun yerine <strong>Çevre Tasarımı</strong> kullanın. Minimalist bir zamanlayıcı kullanarak, üretken olma "kararı" verme ihtiyacını ortadan kaldırırsınız; sistem bunu sizin yerinize yapar.</p>
+            <p class="funnel-inline">Bu alışkanlığı destekleyecek bir odak aracı seçiyorsanız tam karşılaştırmayı okuyun: <a href="best-pomodoro-timer.html">Derin Odaklanma İçin En İyi 3 Pomodoro Zamanlayıcısı (2026)</a>.</p>
 
+            <h2>İrade Gücü Neden Düşmanınızdır?</h2>
+            <p>İrade gücü sınırlı bir kaynaktır. Odaklanmak için sadece ona güvenirseniz, sonunda tükenirsiniz. Bunun yerine <strong>Çevre Tasarımı</strong> kullanın. Minimalist bir zamanlayıcı kullanarak—örnekleri <a href="best-pomodoro-timer.html">derin çalışma için en iyi Pomodoro zamanlayıcıları</a> arasında bulabilirsiniz—üretken olma "kararı" verme ihtiyacını ortadan kaldırırsınız; sistem bunu sizin yerinize yapar.</p>
+
+            <p class="cta-lead">ADHD veya dikkat dağınıklığı yüzünden odakta zorlanıyor musunuz? Günlük alışkanlığı kilitlemeden önce düşük sürtünmeli araçlar ve karar kuralları için <a href="focus-for-adhd.html">ADHD İçin En İyi Odaklanma Uygulaması (2026): Kaygısız Zaman Yönetimi</a> sayfasına bakın.</p>
             <div class="cta-box">
                 <h3>21 Günlük Odaklanma Yolculuğunuza Başlayın</h3>
                 <p>Bir alışkanlık oluşturmak zaman alır, ancak başlamak kolaydır. PurrrrrFocus'u indirin ve kedi arkadaşımızın ilk seansınızda size rehberlik etmesine izin verin.</p>
@@ -186,15 +238,15 @@
             </div>
 
             <h2>Çabanızı Ödüllendirin</h2>
-            <p>Beyninizin bir alışkanlığı pekiştirmek için dopamin salgılamaya ihtiyacı vardır. <strong>PurrrrrFocus</strong>'ta bir seansı tamamlamanın verdiği tatmin ve istatistiklerinizin büyümesini görmek, alışkanlık oluşumu için gerekli olan o anlık pozitif geri bildirim döngüsünü sağlar.</p>
+            <p>Beyninizin bir alışkanlığı pekiştirmek için dopamin salgılamaya ihtiyacı vardır. <a href="../../index-tr.html">PurrrrrFocus</a>'ta bir seansı tamamlamanın verdiği tatmin ve istatistiklerinizin büyümesini görmek, alışkanlık oluşumu için gerekli olan o anlık pozitif geri bildirim döngüsünü sağlar.</p>
 
             <div class="related-guides">
                 <h4>Okumaya Devam Edin:</h4>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">→ Derin Çalışma İçin En İyi Pomodoro Zamanlayıcıları (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">→ ADHD İçin En İyi Odaklanma Uygulamaları: Stressiz Araçlar</a></li>
-                    <li><a href="study-focus-guide.html">→ Ders Çalışırken Nasıl Odaklanılır: Öğrenci Rehberi</a></li>
-                    <li><a href="my-story-saas-to-indie.html">→ Purrrrrfocus&apos;un Hikâyesi</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ Derin Odaklanma İçin En İyi 3 Pomodoro Zamanlayıcısı (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ ADHD İçin En İyi Odaklanma Uygulaması (2026): Kaygısız Zaman Yönetimi</a></li>
+                    <li><a href="study-focus-guide.html">→ Ders Çalışırken Nasıl Odaklanılır: 2026 Öğrenci Rehberi</a></li>
+                    <li><a href="my-story-saas-to-indie.html">→ İşimi Kaybettim, Odaklanmayı Geri Kazandım: Purrrrrfocus&apos;un Hikâyesi</a></li>
                 </ul>
             </div>
         </section>
