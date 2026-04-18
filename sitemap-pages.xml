@@ -35,6 +35,27 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Homepage secondary CTAs: decision / consideration URLs -->
+  <url>
+    <loc>https://louisbuilds.me/tappause/how-to-take-a-break-from-your-phone.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/purrrrrfocus/landing/best-pomodoro-app-for-students.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/transmov/transmov-vs-cloud-video-background-removal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/blog/best-offline-ipa-app-for-teachers-ios.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://louisbuilds.me/blog/building-offline-first-apps.html</loc>
     <changefreq>monthly</changefreq>
