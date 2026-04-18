@@ -129,25 +129,113 @@
       border-radius: 20px;
     }
 
+    /* Reset global h2 top margin inside card — it was stacking with padding and looked top-heavy */
     .cta {
       margin-top: 80px;
-      padding: 32px;
+      padding: 36px 32px;
       text-align: center;
       border-radius: 20px;
       background: rgba(255,255,255,0.75);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
     }
 
-    .links {
-      margin-top: 30px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .links a {
+    .cta h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.25;
       color: var(--accent);
+    }
+
+    .cta p {
+      margin: 0;
+      max-width: 26em;
+    }
+
+    .cta .btn {
+      margin-top: 0;
+    }
+
+    /* Secondary links: stay visually lighter than .cta (no white “second card”) */
+    .learn-more-section {
+      margin-top: 48px;
+      padding: 20px 0 4px;
+      background: transparent;
+      box-shadow: none;
+      border: none;
+      border-top: 1px solid rgba(59, 36, 29, 0.1);
+    }
+
+    .learn-more-section .learn-more-title {
+      margin: 0 0 4px;
+      padding-bottom: 12px;
+      border-bottom: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.65;
+    }
+
+    .learn-more-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .learn-more-list li {
+      border-bottom: 1px solid rgba(59, 36, 29, 0.06);
+    }
+
+    .learn-more-list li:last-child {
+      border-bottom: none;
+    }
+
+    .learn-more-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 11px 2px;
+      color: var(--muted);
       text-decoration: none;
-      margin-right: 14px;
-      white-space: nowrap;
+      font-size: 0.92rem;
+      font-weight: 400;
+      line-height: 1.45;
+      transition: color 0.2s ease, background 0.2s ease;
+      border-radius: 8px;
+    }
+
+    .learn-more-item:hover {
+      color: var(--accent);
+    }
+
+    .learn-more-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .learn-more-arrow {
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      opacity: 0.28;
+      transform: translateX(0);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .learn-more-item:hover {
+        background: rgba(59, 36, 29, 0.03);
+      }
+
+      .learn-more-item:hover .learn-more-arrow {
+        opacity: 0.55;
+        transform: translateX(3px);
+      }
     }
 
     .footer {
@@ -173,6 +261,17 @@
       white-space: nowrap;
     }
 
+    .footer-byline {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .footer-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     .note {
       margin-top: 16px;
       font-size: 0.9rem;
@@ -182,7 +281,18 @@
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       h2 { margin-top: 40px; }
-      .hero, .cta { padding: 20px; }
+      .cta h2 {
+        margin-top: 0;
+      }
+      .hero, .cta { padding: 24px 20px; }
+      .learn-more-section {
+        padding: 18px 0 2px;
+        margin-top: 36px;
+      }
+      .learn-more-item {
+        padding: 10px 0;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -191,7 +301,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand-link" href="../index-en.html"><img class="brand-logo" src="../icon.webp" alt="PurrrrrFocus logo">PurrrrrFocus</a>
-      <a class="topbar-home" href="../index-en.html">Home</a>
+      <a class="topbar-home" href="../feature-en.html">All Features</a>
     </div>
   </header>
   <main class="wrap">
@@ -284,6 +394,36 @@
       </p>
     </section>
 
+    <section class="learn-more-section" aria-labelledby="learn-more-title">
+      <h2 id="learn-more-title" class="learn-more-title">Learn more</h2>
+      <ul class="learn-more-list" role="list">
+        <li>
+          <a class="learn-more-item" href="../index-en.html">
+            <span class="learn-more-text">Explore PurrrrrFocus</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="learn-more-item" href="../blog/en/best-pomodoro-timer.html">
+            <span class="learn-more-text">3 Pomodoro timer apps compared (2026 review)</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="learn-more-item" href="../blog/en/study-focus-guide.html">
+            <span class="learn-more-text">Study focus guide</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="learn-more-item" href="../landing/purrrrrfocus-vs-forest.html">
+            <span class="learn-more-text">PurrrrrFocus vs Forest</span>
+            <span class="learn-more-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
     <!-- CTA -->
     <section class="cta">
       <h2>Start Studying in Seconds</h2>
@@ -296,11 +436,12 @@
 
     <footer class="footer">
       <div class="footer-links">
-        <a href="../index-en.html">Back to Home</a>
+        <a href="../index-en.html">PurrrrrFocus Home</a>
         <a href="../privacy-policy-en.html">Privacy Policy</a>
         <a href="../terms-of-service-en.html">Terms of Service</a>
       </div>
       <p>© 2026 PurrrrrFocus</p>
+      <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer" class="footer-link">louisbuilds.me</a></p>
     </footer>
 
   </main>
