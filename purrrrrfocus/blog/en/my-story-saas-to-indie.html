@@ -98,6 +98,24 @@
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
         .lang-note { padding: 8px 16px 10px; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid rgba(222, 186, 134, 0.35); }
 
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero-image {
             display: block;
@@ -139,19 +157,40 @@
         .content strong { color: var(--text-primary); }
         .content em { font-style: italic; }
 
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
         .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px solid var(--border); }
-        .related-guides h4 { margin-bottom: 16px; }
+        .related-guides { margin-top: 60px; padding: 30px; background: #fff; border-radius: 16px; border: 1px solid var(--border); }
+        .related-guides h4 { color: var(--text-primary); margin-bottom: 10px; }
+        .related-guides .related-path-intro { color: var(--text-secondary); margin: 0 0 14px; font-size: 1rem; line-height: 1.6; }
         .related-guides ul { list-style: none; padding: 0; margin: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
 
         @media (max-width: 768px) {
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
             .lang-dropdown { margin-left: 0; align-self: flex-end; }
+            .content h2 { font-size: 1.45rem; }
         }
     </style>
 </head>
@@ -174,6 +213,11 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../blogs.html">Guides</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs.html#cat-story">Behind the Product</a>
+            </nav>
             <img src="../digitaldetox.jpg" alt="Illustration: stepping back from notification overload toward calm, focused work." class="seo-hero-image" width="1200" height="835" decoding="async" fetchpriority="high">
             <h1>I Lost My Job, But I Regained My Focus: The Purrrrrfocus Founder Story</h1>
             <div class="post-meta">
@@ -197,24 +241,30 @@
                 <li><strong>The Information Courier:</strong> I realized I wasn&apos;t a strategist; I was a glorified courier. My day was spent moving information from Group A to Group B, ensuring everyone was &quot;on the same page&quot; while I had no time to read the page myself.</li>
                 <li><strong>Hunted by Algorithms:</strong> It wasn&apos;t just humans; it was the bots. AI-driven reminders relentlessly tracked my every move: <em>&quot;Have you updated the CRM?&quot; &quot;Weekly report due in 2 hours.&quot; &quot;Follow-up record missing.&quot;</em></li>
             </ul>
-            <p>I was a high-speed gear in a massive machine, spinning faster and faster but going nowhere. My ability to think deeply was eroding. Work had become a series of knee-jerk reactions to red notification dots.</p>
+            <p>I was a high-speed gear in a massive machine, spinning faster and faster but going nowhere. My ability to think deeply was eroding. I later realized this pattern is very similar to what many people experience with <a href="focus-for-adhd.html">attention fragmentation and ADHD-like focus struggles</a>. Work had become a series of knee-jerk reactions to red notification dots.</p>
 
             <h2>Leaving SaaS: How I Found a Better Way to Focus</h2>
             <p>Then, I experienced an unplanned exit—I was laid off.</p>
             <p>When my corporate accounts were deactivated and those pulsating group chats vanished instantly, I felt something I didn&apos;t expect. Alongside the uncertainty of being unemployed, I felt an overwhelming sense of <strong>relief</strong>.</p>
-            <p>For the first time in a long while, the suffocating noise of &quot;instant collaboration&quot; stopped. In that silence, I had a realization: Why, in an environment equipped with the world&apos;s best productivity tools, was I less productive than ever? Why had focusing for even 25 minutes become a luxury I couldn&apos;t afford?</p>
+            <p>For the first time in a long while, the suffocating noise of &quot;instant collaboration&quot; stopped. In that silence, I had a realization: Why, in an environment equipped with the world&apos;s best productivity tools, was I less productive than ever? Why had focusing for even 25 minutes become a luxury I couldn&apos;t afford? I later broke this down into a simple system of <a href="how-to-build-focus-habit.html">building a sustainable focus habit step by step</a>.</p>
 
             <h2>Building Purrrrrfocus: A Sanctuary for Deep Work</h2>
             <p>I decided to channel that exhaustion into my first independent project.</p>
             <p>The birth of <strong>Purrrrrfocus</strong> wasn&apos;t just about building another app; it was an act of self-recovery. I had felt myself drowning in a sea of notifications, so I wanted to build a lifeboat—not just for me, but for anyone still stuck in that storm.</p>
             <ul>
-                <li><strong>More Than a Timer, It&apos;s a Ritual:</strong> There is no shortage of Pomodoro timers. What&apos;s missing is a &quot;sanctuary.&quot; When you start a session in Purrrrrfocus, the appearance of the cat is a signal to the world: <em>&quot;For the next 25 minutes, I do not belong to my inbox, my clients, or my boss. I belong to my work.&quot;</em></li>
+                <li><strong>More Than a Timer, It&apos;s a Ritual:</strong> There is no shortage of Pomodoro timers, but most of them miss the point. If you&apos;re comparing options, I broke this down in <a href="best-pomodoro-timer.html">this guide to the best Pomodoro timers for deep work</a>. What&apos;s missing is a &quot;sanctuary.&quot; When you start a session in Purrrrrfocus, the appearance of the cat is a signal to the world: <em>&quot;For the next 25 minutes, I do not belong to my inbox, my clients, or my boss. I belong to my work.&quot;</em></li>
                 <li><strong>Healing Over Pressure:</strong> In the corporate world, we are chased by cold progress bars and demanding bots. I named it <strong>Purrrrrfocus</strong> because I wanted to replace that pressure with the soothing presence of a cat. It&apos;s a gentle way to reclaim your headspace.</li>
             </ul>
 
+            <div class="cta-box">
+                <h3>Try the focus system I built for myself</h3>
+                <p>Start with a simple 5-minute session and rebuild your attention from zero.</p>
+                <a href="../../index-en.html" class="cta-button">Start a Focus Session</a>
+            </div>
+
             <h2>Final Thoughts: Taking Back Control</h2>
             <p>Leaving the SaaS world wasn&apos;t my choice, but it became my greatest opportunity. It taught me one hard truth: <strong>In the modern age, your attention is your most valuable asset—and everyone is trying to steal it.</strong></p>
-            <p>I didn&apos;t build this app to make you a more efficient machine. I built it to help you reclaim your sovereignty from the trivial. Even if it&apos;s just two high-quality &quot;cat sessions&quot; a day, those are moments where you are finally back in the driver&apos;s seat.</p>
+            <p>I didn&apos;t build this app to make you a more efficient machine. I built it to help you reclaim your sovereignty from the trivial. Even if it&apos;s just two high-quality &quot;cat sessions&quot; a day, those are moments where you are finally back in control. If you&apos;re studying or preparing for exams, this <a href="study-focus-guide.html">student-focused guide to staying concentrated</a> can help you apply the same system.</p>
 
             <div class="cta-box">
                 <h3>Reclaim Your Sovereignty</h3>
@@ -223,12 +273,13 @@
             </div>
 
             <div class="related-guides">
-                <h4>Continue reading</h4>
+                <h4>Build Your Focus System</h4>
+                <p class="related-path-intro">Start from the story, then build your system step by step:</p>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">Best Pomodoro Timers for Deep Work (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">Best Focus Apps for ADHD: Stress-Free Tools</a></li>
-                    <li><a href="study-focus-guide.html">How to Stay Focused While Studying: Student Guide</a></li>
-                    <li><a href="how-to-build-focus-habit.html">How to Build a Focus Habit (That Actually Lasts)</a></li>
+                    <li><a href="how-to-build-focus-habit.html">→ How to Build a Focus Habit (That Actually Lasts)</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ The 3 Best Pomodoro Timer Apps for Deep Work (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ Best Focus App for ADHD (2026): Managing Time Without the Anxiety</a></li>
+                    <li><a href="study-focus-guide.html">→ How to Stay Focused While Studying: The 2026 Student Guide</a></li>
                 </ul>
             </div>
         </section>

@@ -92,7 +92,25 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
@@ -106,20 +124,55 @@
         .content ul { margin: 16px 0 0 1.5em; }
         .content strong { color: var(--text-primary); }
 
+        /* In-content links: brand accent, not system blue (match best-pomodoro-timer) */
+        .decision-box a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .decision-box a:visited { color: var(--accent); }
+        .decision-box a:hover { text-decoration-color: var(--accent); }
+
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .highlight-box { margin: 32px 0; padding: 24px; background: rgba(222, 186, 134, 0.15); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; }
+        .highlight-box p { margin-top: 0; }
+        .highlight-box p + p { margin-top: 12px; }
+
+        .funnel-inline { margin-top: 16px; font-size: 0.98rem; color: var(--text-secondary); }
+        .cta-lead { margin-bottom: 20px; font-size: 0.98rem; color: var(--text-secondary); }
         
         .img-container { margin: 32px 0; text-align: center; }
         .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; }
 
-        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); text-align: center; }
-        .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: transform 0.2s ease; }
-        .cta-button:hover { transform: scale(1.05); }
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        /* .content h3 { margin-top: 32px } stacks with padding — reset inside CTA */
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
+        .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+        .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
         .related-guides { margin-top: 60px; padding-top: 30px; border-top: 2px dashed var(--border); }
         .related-guides h4 { color: var(--text-primary); margin-bottom: 16px; }
         .related-guides ul { list-style: none; margin: 0; padding: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
         .meta-note { margin-top: 28px; padding: 16px; border: 1px dashed var(--border); border-radius: 12px; background: rgba(255, 255, 255, 0.6); }
         .meta-note p { margin-top: 6px; font-size: 0.95rem; }
         .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0 8px; font-size: 0.92rem; }
@@ -144,6 +197,11 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../blogs.html">Guides</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs.html#cat-adhd">ADHD &amp; Focus Help</a>
+            </nav>
             <h1>Best Focus App for ADHD (2026): Managing Time Without the Anxiety</h1>
             <p>For the ADHD brain, traditional productivity apps can feel like a chore. Here is why minimalist design is your secret weapon against "Focus Paralysis."</p>
             <div class="decision-box">
@@ -158,15 +216,16 @@
         </section>
 
         <section class="content">
-            <p><strong>PurrrrrFocus is a minimalist Pomodoro app for distraction-prone students and creators who need calm, structured focus sessions.</strong> This ADHD guide compares it with common alternatives so you can choose by cognitive style, not feature overload.</p>
+            <p><strong>PurrrrrFocus is a minimalist Pomodoro app for distraction-prone students and creators who need calm, structured focus sessions.</strong> This ADHD guide compares it with common alternatives so you can choose by cognitive style, not feature overload. If you are already comparing timers, our roundup of the <a href="best-pomodoro-timer.html">best Pomodoro timer for ADHD</a> sits alongside other deep-work picks.</p>
             <h2>The ADHD Focus Paradox</h2>
             <p>If you have ADHD, you know the struggle: you have the energy, but your <strong>executive function</strong> makes it impossible to decide where to start. This often leads to "waiting mode" or <strong>time blindness</strong>—where 5 minutes feels like an hour, and 4 hours disappear in a blink.</p>
             
             <div class="highlight-box">
-                <p><strong>Did you know?</strong> ADHD brains often seek high stimulation, but high-stim productivity apps with too many buttons actually increase "Cognitive Load," causing us to shut down.</p>
+                <p><strong>Did you know?</strong> ADHD brains often seek high stimulation, but high-stim productivity apps with too many buttons actually increase "Cognitive Load," causing us to shut down. That is why we emphasize <a href="best-pomodoro-timer.html">minimalist Pomodoro tools</a> when sensory overwhelm is the bottleneck.</p>
             </div>
 
             <h2>What Makes an App ADHD-Friendly?</h2>
+            <p>Not all <a href="best-pomodoro-timer.html">ADHD-friendly focus apps</a> are equal—some add dashboards and alerts that spike sensory load. The list below is what we optimize for when we say “ADHD-friendly” in this guide.</p>
             <ul>
                 <li><strong>Zero Friction:</strong> The fewer taps to start a timer, the better.</li>
                 <li><strong>Calm Visuals:</strong> No flashing colors or aggressive alarms that trigger sensory overload.</li>
@@ -201,6 +260,7 @@
                     </tr>
                 </tbody>
             </table>
+            <p class="funnel-inline">If you are still deciding between tools, read our full comparison: <a href="best-pomodoro-timer.html">The 3 Best Pomodoro Timer Apps for Deep Work (2026)</a>.</p>
 
             <div class="img-container">
                 <img src="../../screenshots/en/01.webp" srcset="../../screenshots/en/01-400w.webp 400w, ../../screenshots/en/01-800w.webp 800w, ../../screenshots/en/01.webp 1242w" sizes="(max-width: 400px) calc(100vw - 40px), 320px" alt="PurrrrrFocus ADHD friendly interface with calm cat companion" loading="lazy" width="1242" height="2688">
@@ -217,6 +277,7 @@
                 <li><strong>Not ideal for:</strong> Users who need team collaboration, complex project boards, or advanced KPI reporting.</li>
                 <li><strong>Trade-off:</strong> PurrrrrFocus keeps gamification intentionally light to protect a low-noise ADHD-friendly environment.</li>
             </ul>
+            <p>Want to understand how to actually build a focus routine after you pick a tool? Read <a href="how-to-build-focus-habit.html">How to Build a Focus Habit (That Actually Lasts)</a>—including how to stack 2-hour deep-work blocks—so you upgrade behavior, not just the app.</p>
 
             <h2>When NOT to Use Each App</h2>
             <ul>
@@ -229,6 +290,7 @@
                 <p><strong>Research-backed insight:</strong> ADHD literature consistently shows that reducing cognitive load and startup friction improves task initiation by lowering decision paralysis and avoidance loops.</p>
             </div>
 
+            <p class="cta-lead">Not sure if this approach fits your workflow? <a href="study-focus-guide.html">See how students stay focused while studying</a>—a lower-pressure entry before you commit to a daily app habit.</p>
             <div class="cta-box">
                 <h3>Stop the Overwhelm Today</h3>
                 <p>Join neurodivergent users who reduce overwhelm by starting with a single low-friction focus sprint.</p>
@@ -256,9 +318,9 @@
             <div class="related-guides">
                 <h4>Continue Reading:</h4>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">→ Best Pomodoro Timers for Deep Work (2026)</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ The 3 Best Pomodoro Timer Apps for Deep Work (2026)</a></li>
                     <li><a href="study-focus-guide.html">→ How to Stay Focused While Studying: Student Guide</a></li>
-                    <li><a href="how-to-build-focus-habit.html">→ 3 Steps to Build a Lasting Focus Habit</a></li>
+                    <li><a href="how-to-build-focus-habit.html">→ How to Build a Focus Habit (That Actually Lasts)</a></li>
                     <li><a href="my-story-saas-to-indie.html">→ The Purrrrrfocus Founder Story</a></li>
                 </ul>
             </div>

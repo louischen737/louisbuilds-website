@@ -92,7 +92,25 @@
         }
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
-        
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero h1 { font-size: 2.4rem; margin-bottom: 16px; color: var(--text-primary); line-height: 1.2; }
         .seo-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: none; margin: 0; }
@@ -103,12 +121,33 @@
         .content ul { margin: 16px 0 0 1.5em; }
         .content strong { color: var(--text-primary); }
 
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .habit-step { margin: 32px 0; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 16px; }
         .habit-step span { font-weight: bold; color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
         .habit-step h3 { margin-top: 8px; }
 
-        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: #fff; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(59, 36, 29, 0.05); text-align: center; }
+        .funnel-inline { margin-top: 16px; font-size: 0.98rem; color: var(--text-secondary); }
+        .cta-lead { margin-bottom: 20px; font-size: 0.98rem; color: var(--text-secondary); }
+
+        .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
+        .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
         
         .img-container { margin: 32px 0; text-align: center; }
         .img-container img { max-width: min(320px, 100%); height: auto; display: block; margin: 0 auto; vertical-align: middle; }
@@ -121,10 +160,16 @@
             .img-row { flex-direction: column; align-items: center; gap: 24px; }
             .img-row .img-container { max-width: min(320px, 100%); }
             .seo-hero h1 { font-size: 2rem; }
+            .content h2 { font-size: 1.45rem; }
         }
 
-        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px solid var(--border); }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides { margin-top: 60px; padding-top: 30px; border-top: 2px dashed var(--border); }
+        .related-guides h4 { color: var(--text-primary); margin-bottom: 16px; }
+        .related-guides ul { list-style: none; margin: 0; padding: 0; }
+        .related-guides li { margin-bottom: 12px; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
     </style>
 </head>
 <body>
@@ -137,12 +182,17 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../../blogs.html">Guides</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs.html#cat-habit">Building Focus Habits</a>
+            </nav>
             <h1>How to Build a Focus Habit (That Actually Lasts)</h1>
             <p>Forget willpower. Learn how to hack your environment and biology to make concentration your default state.</p>
         </section>
 
         <section class="content">
-            <p>Most people fail to build a focus habit because they treat focus like a sprint. In reality, focus is a muscle. If you try to lift 100lbs on day one, you’ll get hurt. The secret to <strong>long-term productivity</strong> is starting ridiculously small.</p>
+            <p>Most people fail to build a focus habit because they treat focus like a sprint. In reality, focus is a muscle. If you try to lift 100lbs on day one, you’ll get hurt. The secret to <strong>long-term productivity</strong> is starting ridiculously small—and when you are ready to <strong>build a focus habit with a Pomodoro timer</strong>, picking among the <strong>best tools for building focus habits</strong> matters as much as discipline: start with <a href="best-pomodoro-timer.html">The 3 Best Pomodoro Timer Apps for Deep Work (2026)</a>. If you need <strong>minimalist focus apps</strong> that keep sensory noise low, many of the same design rules appear in <a href="focus-for-adhd.html">Best Focus App for ADHD (2026): Managing Time Without the Anxiety</a>—even if ADHD is not your diagnosis.</p>
 
             <h2>The Psychology of "The Habit Loop"</h2>
             <p>Every habit consists of a Cue, a Craving, a Response, and a Reward. To build a focus habit, you must make the <strong>Cue obvious</strong> and the <strong>Reward satisfying</strong>.</p>
@@ -150,19 +200,19 @@
             <div class="habit-step">
                 <span>Step 1</span>
                 <h3>Create a Visual Anchor</h3>
-                <p>Opening a specific app like <strong>PurrrrrFocus</strong> acts as a visual "trigger." When your brain sees the calm ink-wash interface and your cat companion, it starts to associate this environment with deep work.</p>
+                <p>Opening a specific app like <a href="../../index-en.html">PurrrrrFocus</a> acts as a visual trigger. When your brain sees the calm ink-wash interface and your cat companion, it starts to associate this environment with deep work.</p>
             </div>
 
             <div class="habit-step">
                 <span>Step 2</span>
                 <h3>The 5-Minute Entry Point</h3>
-                <p>Use the <strong>Tiny Habits</strong> method. Don’t commit to an hour. Commit to 5 minutes of focused work. PurrrrrFocus allows you to set micro-sessions that lower the barrier to entry.</p>
+                <p>Use the <strong>Tiny Habits</strong> method. Don’t commit to an hour. Commit to 5 minutes of focused work. <a href="../../index-en.html">PurrrrrFocus</a> allows you to set micro-sessions that lower the barrier to entry.</p>
             </div>
 
             <div class="habit-step">
                 <span>Step 3</span>
                 <h3>Track & Reward Consistency</h3>
-                <p>Don't focus on perfection. Use PurrrrrFocus to track your daily streaks. Each completed session is a small win that rewires your brain to crave focus.</p>
+                <p>Don't focus on perfection. Use <a href="../../index-en.html">PurrrrrFocus</a> to track your daily streaks. Each completed session is a small win that rewires your brain to crave focus.</p>
             </div>
 
             <div class="img-row">
@@ -174,9 +224,12 @@
                 </div>
             </div>
 
-            <h2>Why Willpower is Your Enemy</h2>
-            <p>Willpower is a finite resource. If you rely on it to stay focused, you will eventually burn out. Instead, use <strong>Environment Design</strong>. By using a minimalist timer, you remove the need to "decide" to be productive—the system does it for you.</p>
+            <p class="funnel-inline">If you are choosing a focus tool to support this habit, read our full comparison: <a href="best-pomodoro-timer.html">The 3 Best Pomodoro Timer Apps for Deep Work (2026)</a>.</p>
 
+            <h2>Why Willpower is Your Enemy</h2>
+            <p>Willpower is a finite resource. If you rely on it to stay focused, you will eventually burn out. Instead, use <strong>Environment Design</strong>. By using a minimalist timer—you’ll see practical examples among the <a href="best-pomodoro-timer.html">best Pomodoro timer apps for deep work</a>—you remove the need to "decide" to be productive—the system does it for you.</p>
+
+            <p class="cta-lead">Struggling with focus due to ADHD or distraction patterns? See <a href="focus-for-adhd.html">Best Focus App for ADHD (2026): Managing Time Without the Anxiety</a> for low-friction tools and decision rules before you lock in a daily habit.</p>
             <div class="cta-box">
                 <h3>Start Your 21-Day Focus Journey</h3>
                 <p>Building a habit takes time, but starting is easy. Download PurrrrrFocus and let our cat companion guide you to your first session.</p>
@@ -184,15 +237,15 @@
             </div>
 
             <h2>Reward Your Effort</h2>
-            <p>Your brain needs a dopamine hit to reinforce a habit. In <strong>PurrrrrFocus</strong>, the satisfaction of completing a session and seeing your focus stats grow provides that immediate positive feedback loop necessary for habit formation.</p>
+            <p>Your brain needs a dopamine hit to reinforce a habit. In <a href="../../index-en.html">PurrrrrFocus</a>, the satisfaction of completing a session and seeing your focus stats grow provides that immediate positive feedback loop necessary for habit formation.</p>
 
             <div class="related-guides">
                 <h4>Continue Reading:</h4>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">→ Best Pomodoro Timers for Deep Work (2026)</a></li>
-                    <li><a href="focus-for-adhd.html">→ Best Focus Apps for ADHD: Stress-Free Tools</a></li>
-                    <li><a href="study-focus-guide.html">→ How to Stay Focused While Studying: Student Guide</a></li>
-                    <li><a href="my-story-saas-to-indie.html">→ The Purrrrrfocus Founder Story</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ The 3 Best Pomodoro Timer Apps for Deep Work (2026)</a></li>
+                    <li><a href="focus-for-adhd.html">→ Best Focus App for ADHD (2026): Managing Time Without the Anxiety</a></li>
+                    <li><a href="study-focus-guide.html">→ How to Stay Focused While Studying: The 2026 Student Guide</a></li>
+                    <li><a href="my-story-saas-to-indie.html">→ I Lost My Job, But I Regained My Focus: The Purrrrrfocus Founder Story</a></li>
                 </ul>
             </div>
         </section>
