@@ -97,6 +97,24 @@
         .lang-dropdown-menu a:hover { background: rgba(222, 186, 134, 0.2); color: var(--text-primary); }
         .lang-dropdown-menu a.active { color: var(--text-primary); font-weight: 600; background: rgba(222, 186, 134, 0.16); }
 
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; text-underline-offset: 2px; }
+        .breadcrumb a:visited { color: var(--accent); }
+        .breadcrumb span[aria-hidden="true"] { opacity: 0.55; user-select: none; }
+
         .seo-hero { text-align: left; padding: 60px 0 40px; }
         .seo-hero-image {
             display: block;
@@ -138,19 +156,40 @@
         .content strong { color: var(--text-primary); }
         .content em { font-style: italic; }
 
+        .content a:not(.cta-button) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(122, 30, 30, 0.4);
+            text-underline-offset: 3px;
+        }
+        .content a:not(.cta-button):visited { color: var(--accent); }
+        .content a:not(.cta-button):hover { text-decoration-color: var(--accent); }
+
+        .content .related-guides a:not(.cta-button) {
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(122, 30, 30, 0.25);
+        }
+        .content .related-guides a:not(.cta-button):hover { border-bottom-color: var(--accent); }
+
         .cta-box { margin: 48px 0; padding: 40px; border-radius: 24px; background: rgba(122, 30, 30, 0.05); border: 1px solid var(--border); text-align: center; }
+        .cta-box h3 { margin-top: 0; margin-bottom: 10px; color: var(--accent); }
+        .cta-box > p { margin-top: 0; }
         .cta-button { display: inline-block; margin-top: 24px; padding: 14px 36px; border-radius: 30px; background: var(--accent); color: white !important; text-decoration: none; font-weight: 600; transition: all 0.2s ease; }
         .cta-button:hover { opacity: 0.9; transform: translateY(-2px); }
 
-        .related-guides { margin-top: 60px; padding: 30px; border-top: 2px dashed var(--border); }
-        .related-guides h4 { margin-bottom: 16px; }
+        .related-guides { margin-top: 60px; padding: 30px; background: #fff; border-radius: 16px; border: 1px solid var(--border); }
+        .related-guides h4 { color: var(--text-primary); margin-bottom: 10px; }
+        .related-guides .related-path-intro { color: var(--text-secondary); margin: 0 0 14px; font-size: 1rem; line-height: 1.6; }
         .related-guides ul { list-style: none; padding: 0; margin: 0; }
         .related-guides li { margin-bottom: 12px; }
-        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-guides a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(122, 30, 30, 0.25); }
+        .related-guides a:visited { color: var(--accent); }
+        .related-guides a:hover { border-bottom-color: var(--accent); }
 
         @media (max-width: 768px) {
             .blog-header .container { gap: 10px; align-items: flex-start; flex-direction: column; }
             .lang-dropdown { margin-left: 0; align-self: flex-end; }
+            .content h2 { font-size: 1.45rem; }
         }
     </style>
 </head>
@@ -173,6 +212,11 @@
 
     <article class="container">
         <section class="seo-hero">
+            <nav class="breadcrumb" aria-label="面包屑导航">
+                <a href="../../blogs-zh.html">资源</a>
+                <span aria-hidden="true">›</span>
+                <a href="../../blogs-zh.html#cat-story">产品故事</a>
+            </nav>
             <img src="../digitaldetox.jpg" alt="配图：数字减负、从消息轰炸回到专注与平静。" class="seo-hero-image" width="1200" height="835" decoding="async" fetchpriority="high">
             <h1>我失去了工作，却找回了专注：为什么我开发了喵时计</h1>
             <div class="post-meta">
@@ -196,12 +240,12 @@
                 <li><strong>信息的搬运工：</strong>我渐渐意识到，自己根本不是在做战略思考，反倒成了一名高级「信息搬运工」。每天的时间，全花在把信息从 A 群同步到 B 群，费力确保所有人都「同频」，可我自己，连完整读完那些信息的时间都没有。</li>
                 <li><strong>被算法「追着跑」：</strong>不光是人在找你，机器人也在时刻盯着你。AI 自动提醒像个无处不在的监工，监控着我的每一个动作：<em>「您好，检测到您尚未填写客户跟进记录」「周报还有 2 小时截止」「线索更新提醒」</em>……</li>
             </ul>
-            <p>我就像一个高速运转的齿轮，拼尽全力转动，满头大汗，却始终在原地打转。我能清晰地感觉到，自己深度思考的能力正在一点点退化，工作也变成了对红色未读气泡的本能反应。</p>
+            <p>我就像一个高速运转的齿轮，拼尽全力转动，满头大汗，却始终在原地打转。我能清晰地感觉到，自己深度思考的能力正在一点点退化。后来我意识到，这与许多人经历的<a href="focus-for-adhd.html">注意力碎片化与类 ADHD 专注困境</a>非常相似。工作也变成了对红色未读气泡的本能反应。</p>
 
             <h2>计划外的离开：一次意外的觉醒</h2>
             <p>后来，我遭遇了一次计划之外的变故——被公司裁员了。</p>
             <p>当公司账号被注销、那些不停跳动的群组瞬间消失时，除了对未来的迷茫，我心底最真实的感受竟然是——如释重负。</p>
-            <p>那种被「即时消息」裹挟的窒息感，终于彻底消散了。在那段空白的日子里，我开始不断反思：为什么我们手握世界上最顶尖的协作工具，却连专注 25 分钟都成了一种奢望？为什么我们越「协作」，真正的产出反而越少？</p>
+            <p>那种被「即时消息」裹挟的窒息感，终于彻底消散了。在那段空白的日子里，我开始不断反思：为什么我们手握世界上最顶尖的协作工具，却连专注 25 分钟都成了一种奢望？为什么我们越「协作」，真正的产出反而越少？我后来把它拆解成一套可循序实践的方法，也就是这篇《<a href="how-to-build-focus-habit.html">如何建立持久的专注习惯（且不反弹）</a>》里写的那样。</p>
 
             <h2>构建喵时计：为深度工作而生的番茄钟避风港</h2>
             <p>我决定，把自己对「专注焦虑」的切身体会，融入到我第一个独立开发的产品中。</p>
@@ -211,9 +255,15 @@
                 <li><strong>是治愈，而非施压：</strong>在职场中，我们每天面对的都是冰冷的进度条和催命似的机器人提醒。所以我给这款应用取名 <strong>喵时计</strong>，希望用猫咪的治愈感，化解专注时的紧绷与压力。它不是在监视你是否在工作，而是在安静地陪着你，一起沉淀、一起专注。</li>
             </ul>
 
+            <div class="cta-box">
+                <h3>试试我为自己搭建的专注系统</h3>
+                <p>从一次简单的 5 分钟专注开始，从零重建注意力。</p>
+                <a href="../../index.html" class="cta-button">开始专注一刻</a>
+            </div>
+
             <h2>结语：夺回你的注意力主权</h2>
             <p>离开 SaaS 行业，从来不是我的主动选择，但这次意外，却成了我人生中最珍贵的契机。它让我看清一个残酷的真相：<strong>在这个信息爆炸的时代，注意力是你唯一真正拥有的资产——而所有人，都在想方设法从你手中夺走它。</strong></p>
-            <p>我开发这款 App，不是为了把你变成一台更高效的工作机器。我想做的，是帮你从那些无意义的琐事中，夺回哪怕一点点属于自己的主权。哪怕每天只有两个高质量的「猫咪番茄时间」，那也是你重新掌控自己人生的开始。</p>
+            <p>我开发这款 App，不是为了把你变成一台更高效的工作机器。我想做的，是帮你从那些无意义的琐事中，夺回哪怕一点点属于自己的主权。哪怕每天只有两个高质量的「猫咪番茄时间」，那也是你终于重新掌控节奏的时刻。若你正在学习或备考，这篇《<a href="study-focus-guide.html">学习时如何保持专注：2026学生高效备考全指南</a>》能帮你把同一套方法落地。</p>
 
             <div class="cta-box">
                 <h3>夺回你的注意力主权</h3>
@@ -222,12 +272,13 @@
             </div>
 
             <div class="related-guides">
-                <h4>更多深度阅读</h4>
+                <h4>搭建你的专注系统</h4>
+                <p class="related-path-intro">从这篇故事出发，再按步骤搭好你的方法：</p>
                 <ul>
-                    <li><a href="best-pomodoro-timer.html">2026 年最佳番茄钟推荐：开启深度工作模式</a></li>
-                    <li><a href="focus-for-adhd.html">ADHD 专属专注指南：零压力的生产力工具</a></li>
-                    <li><a href="study-focus-guide.html">沉浸式学习：学生党如何长时间保持专注</a></li>
-                    <li><a href="how-to-build-focus-habit.html">如何建立持久的专注习惯（且不反弹）</a></li>
+                    <li><a href="how-to-build-focus-habit.html">→ 如何建立持久的专注习惯（且不反弹）</a></li>
+                    <li><a href="best-pomodoro-timer.html">→ 2026优质番茄钟精选3款：轻松开启沉浸式专注，高效提升行动力</a></li>
+                    <li><a href="focus-for-adhd.html">→ 2026优质ADHD专注APP：舒缓无压的时间管理方案</a></li>
+                    <li><a href="study-focus-guide.html">→ 学习时如何保持专注：2026学生高效备考全指南</a></li>
                 </ul>
             </div>
         </section>
