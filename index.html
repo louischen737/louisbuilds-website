@@ -278,6 +278,27 @@ body {
     color: #000;
 }
 
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.hero-btn-secondary {
+    font-size: 16px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s var(--ease);
+}
+
+.hero-btn-secondary:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.5);
+}
+
 .hero-nav {
     display: flex;
     flex-wrap: wrap;
@@ -1236,6 +1257,92 @@ footer p {
         font-size: 13px;
     }
 }
+
+/* Work With Me Section */
+.site-section--work {
+  padding: clamp(100px, 15vw, 160px) 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.06) 0%, transparent 60%);
+}
+
+.site-section--work .site-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.work-intro {
+  max-width: 44rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work-card {
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s var(--ease);
+}
+
+.work-card:hover {
+  background: rgba(var(--accent-rgb), 0.1);
+  border-color: rgba(var(--accent-rgb), 0.3);
+  transform: translateY(-4px);
+}
+
+.work-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.work-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.work-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.work-btn-primary {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: rgba(var(--accent-rgb), 0.2);
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.25s var(--ease);
+}
+
+.work-btn-primary:hover {
+  background: rgba(var(--accent-rgb), 0.3);
+  transform: translateY(-1px);
+}
+
+.work-btn-secondary {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.work-btn-secondary:hover {
+  color: var(--accent);
+}
 </style>
 </head>
 
@@ -1246,10 +1353,23 @@ footer p {
 <main>
 <section class="hero" aria-label="Introduction">
     <h1>Louis Builds</h1>
-    <p>Independent apps built for focus, creative flow, and a quieter digital life.</p>
-    <a href="#products" class="explore-btn">Explore Apps</a>
+    <p style="margin-top: -20px; font-size: 14px; color: var(--text-muted);">
+        Former consultant → independent builder.
+    </p>
+    <p>
+        I build simple, high-impact apps—and help teams turn ideas into working products.
+        <br>
+        <span style="color: var(--text-muted); font-size: 0.9em;">
+            From offline-first tools to AI-powered workflows.
+        </span>
+    </p>
+    <div class="hero-actions">
+        <a href="#products" class="explore-btn">Explore Apps</a>
+        <a href="#work" class="hero-btn-secondary">Work With Me</a>
+    </div>
     <nav class="hero-nav" aria-label="On this page">
         <a href="#products">Apps</a>
+        <a href="#work">Work</a>
         <a href="#community">Community</a>
         <a href="#journal">Journal</a>
     </nav>
@@ -1546,6 +1666,51 @@ Documentation available in:
 </div>
 </section>
 
+<section class="site-section--work" id="work" aria-labelledby="work-heading">
+  <div class="site-section-inner">
+
+    <div class="work-intro">
+      <p class="site-section-eyebrow">Work With Me</p>
+      <h2 id="work-heading" class="site-section-title">
+        Build fast. Ship real.
+      </h2>
+      <p class="site-section-lede">
+        I help small teams and founders turn ideas into working products—
+        from MVP apps to lightweight AI-powered tools.
+      </p>
+    </div>
+
+    <div class="work-grid">
+
+      <div class="work-card">
+        <h3>⚡ MVP Development</h3>
+        <p>iOS, macOS, or internal tools built in 2–4 weeks. No fluff, just working software.</p>
+      </div>
+
+      <div class="work-card">
+        <h3>🤖 AI Workflows</h3>
+        <p>Apply AI where it actually matters—automation, content pipelines, internal tools.</p>
+      </div>
+
+      <div class="work-card">
+        <h3>🧪 Rapid Prototyping</h3>
+        <p>Validate ideas fast with real users instead of slides and speculation.</p>
+      </div>
+
+    </div>
+
+    <div class="work-actions">
+      <a href="mailto:support@louisbuilds.me" class="work-btn-primary">
+        Start a Project
+      </a>
+      <a href="#products" class="work-btn-secondary">
+        View My Work →
+      </a>
+    </div>
+
+  </div>
+</section>
+
 <section class="site-section--community" id="community" aria-labelledby="community-heading">
     <div class="site-section-inner">
         <div class="community-intro">
@@ -1688,7 +1853,7 @@ Documentation available in:
 </main>
 
 <div class="site-tagline">
-    <p>Built by Louis — independent developer exploring digital minimalism and offline-first apps.</p>
+    <p>Built by Louis — independent builder of thoughtful apps and practical digital tools.</p>
 </div>
 
 <footer>
@@ -1696,7 +1861,7 @@ Documentation available in:
 <a href="mailto:support@louisbuilds.me">Contact</a>
 <a href="https://github.com/louischen737" target="_blank" rel="noopener noreferrer">GitHub</a>
 </div>
-<p>Independent apps, thoughtfully built. © 2026 Louis Builds.</p>
+<p>Independent apps & digital tools, thoughtfully built. © 2026 Louis Builds.</p>
 </footer>
 
 <script>
