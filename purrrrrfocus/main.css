@@ -328,6 +328,15 @@
     line-height: 1.7;
     color: var(--text-secondary);
 }
+.seo-block a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(122, 30, 30, 0.35);
+    text-underline-offset: 3px;
+}
+.seo-block a:hover {
+    text-decoration-color: var(--accent);
+}
 /* FAQ Section */
 .faq-section {
     padding: 80px 20px;
