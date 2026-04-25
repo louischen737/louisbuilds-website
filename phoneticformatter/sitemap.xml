@@ -31,6 +31,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/phoneticformatter/landing/ipa-for-teachers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/phoneticformatter/blog/why-cmu-pronouncing-dictionary.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
