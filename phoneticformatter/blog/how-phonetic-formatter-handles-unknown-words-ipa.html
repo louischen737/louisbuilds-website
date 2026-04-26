@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Phonetic Formatter Handles Unknown Words in IPA Conversion</title>
+    <meta name="description" content="Learn how Phonetic Formatter handles unknown words, names, numbers, abbreviations, and OOV tokens in offline English-to-IPA conversion for teachers.">
+    <meta name="keywords" content="unknown words IPA converter, OOV IPA transcription, English to IPA unknown words, offline IPA converter, Phonetic Formatter">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html">
+    <meta property="og:title" content="How Phonetic Formatter Handles Unknown Words in IPA Conversion">
+    <meta property="og:description" content="Unknown words should not break an IPA workflow. See how Phonetic Formatter handles OOV tokens, abbreviations, numbers, and classroom text offline.">
+    <meta property="og:image" content="https://louisbuilds.me/phoneticformatter/og-image.png">
+    <meta property="article:published_time" content="2026-04-26">
+    <meta property="article:modified_time" content="2026-04-26">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="How Phonetic Formatter Handles Unknown Words in IPA Conversion">
+    <meta property="twitter:description" content="Unknown words should not break an IPA workflow. See how Phonetic Formatter handles OOV tokens, abbreviations, numbers, and classroom text offline.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "How Phonetic Formatter Handles Unknown Words in IPA Conversion",
+      "description": "Learn how Phonetic Formatter handles unknown words, names, numbers, abbreviations, and OOV tokens in offline English-to-IPA conversion for teachers.",
+      "inLanguage": "en-US",
+      "image": "https://louisbuilds.me/phoneticformatter/og-image.png",
+      "datePublished": "2026-04-26",
+      "dateModified": "2026-04-26",
+      "author": {
+        "@type": "Person",
+        "name": "Louis",
+        "url": "https://louisbuilds.me/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Phonetic Formatter",
+        "url": "https://louisbuilds.me/phoneticformatter/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html"
+      },
+      "url": "https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://louisbuilds.me/phoneticformatter/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blogs",
+          "item": "https://louisbuilds.me/phoneticformatter/blogs.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How Phonetic Formatter Handles Unknown Words in IPA Conversion",
+          "item": "https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "en-US",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does OOV mean in IPA conversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OOV means out of vocabulary. In an IPA converter, it usually refers to a word that is not found in the pronunciation dictionary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Phonetic Formatter stop when it finds an unknown word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Phonetic Formatter keeps the passage structure intact and marks unknown words clearly so teachers and learners can continue editing or exporting the result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Phonetic Formatter handle numbers and abbreviations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phonetic Formatter includes rules for common non-word tokens such as numbers, times, list markers, and common English abbreviations, so they are not treated as ordinary unknown words."
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN');
+    </script>
+    <link rel="stylesheet" href="../main.css?v=11">
+    <link rel="canonical" href="https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #111827;
+            background: #fafaf9;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .article-wrap { max-width: 48rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+        .article-wrap h1 { font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; line-height: 1.25; }
+        .article-wrap .article-meta { font-size: 0.95rem; color: #6b7280; margin-bottom: 2rem; }
+        .article-wrap .article-meta a { color: #2563eb; text-decoration: none; }
+        .article-wrap .article-meta a:hover { color: #1d4ed8; }
+        .article-wrap h2 { font-size: 1.375rem; font-weight: 600; color: #111827; margin-top: 2.25rem; margin-bottom: 0.75rem; }
+        .article-wrap h3 { font-size: 1.05rem; font-weight: 600; color: #111827; margin-top: 1.35rem; margin-bottom: 0.35rem; }
+        .article-wrap p { color: #374151; margin-bottom: 1.25rem; }
+        .article-wrap ul, .article-wrap ol { margin: 0 0 1.25rem 1.5rem; color: #374151; }
+        .article-wrap li { margin-bottom: 0.5rem; }
+        .article-wrap strong { color: #111827; }
+        .article-wrap a { color: #2563eb; text-decoration: none; }
+        .article-wrap a:hover { color: #1d4ed8; }
+        .article-lead { font-size: 1.05rem; color: #1f2937; font-weight: 600; margin-bottom: 1rem; line-height: 1.55; }
+        .example-box {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            margin: 1.25rem 0 1.5rem;
+        }
+        .example-box pre {
+            white-space: pre-wrap;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+            color: #111827;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .table-wrap { overflow-x: auto; margin: 1.25rem 0 1.5rem; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; min-width: 540px; border-collapse: collapse; font-size: 0.92rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.55rem 0.75rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; color: #111827; }
+        .cta-section {
+            background-color: #f3f4f6;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+        .cta-title { font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 10px; }
+        .cta-description { font-size: 0.95rem; color: #4b5563; margin-bottom: 20px; max-width: 520px; margin-left: auto; margin-right: auto; }
+        .cta-section .app-store-badge { height: 40px; transition: transform 0.2s ease; display: inline-block; }
+        .cta-section .app-store-badge:hover { transform: scale(1.05); }
+        .cta-features { display: flex; justify-content: center; gap: 15px; margin-top: 15px; font-size: 0.8rem; color: #9ca3af; list-style: none; padding: 0; flex-wrap: wrap; }
+        .cta-features li::before { content: "✓ "; color: #10b981; }
+        .related-posts { margin-top: 2.5rem; }
+        .related-posts h3 { font-size: 1.125rem; margin-bottom: 1rem; }
+        .related-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+        @media (min-width: 640px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+        .related-card {
+            display: block;
+            padding: 1rem 1.25rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            background: #fff;
+            text-decoration: none;
+            color: inherit;
+        }
+        .related-card h4 { font-size: 1rem; margin-bottom: 0.35rem; color: #111827; }
+        .related-card p { font-size: 0.9rem; color: #6b7280; margin: 0; }
+        .related-card:hover { border-color: #cbd5e1; }
+        .article-faq { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
+        .article-faq h2 { margin-top: 0; }
+        .article-faq-item { margin-bottom: 1.25rem; }
+        .article-faq-item h3 { margin-top: 0; }
+        .article-faq-item p { margin-bottom: 0; font-size: 0.95rem; }
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid #edf2f7;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            text-align: center;
+            color: #64748b;
+        }
+        .footer-secondary { margin: 0; }
+        .footer-links { margin: 0; padding-top: 20px; border-top: 1px solid #f1f5f9; font-size: 0.8rem; color: #94a3b8; }
+        .footer-links a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+        .footer-links a:hover { color: #1e293b; }
+        .footer-copyright { margin: 15px 0 0; font-size: 0.75rem; color: #94a3b8; line-height: 1.5; }
+        .footer-copyright strong { color: #475569; font-weight: 600; }
+        @media (max-width: 768px) {
+            .article-wrap { padding: 2rem 1.25rem 3rem; }
+            .article-wrap h1 { font-size: 1.875rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .cta-section .app-store-badge { transition: none; }
+            .cta-section .app-store-badge:hover { transform: none; }
+        }
+    </style>
+</head>
+<body class="site-blog-en">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html">
+                    <picture>
+                        <source type="image/webp" srcset="../logo-256w.webp 256w" sizes="(max-width: 768px) 160px, 200px">
+                        <img src="../logo.png" alt="Phonetic Formatter - English to IPA Converter" width="512" height="512" class="logo"
+                         onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block';">
+                    </picture>
+                </a>
+                <span class="logo-text" style="display: none;"><a href="../index.html">Phonetic Formatter</a></span>
+
+                <nav id="site-navigation" class="primary-navigation" aria-label="Main">
+                    <div class="nav-scroll-wrap">
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../index.html#features">Features</a></li>
+                            <li><a href="../index.html#pricing">Pricing</a></li>
+                            <li><a href="../blogs.html">Blogs</a></li>
+                            <li><a href="../support.html">Support</a></li>
+                        </ul>
+                    </div>
+                    <span class="nav-swipe-hint" aria-hidden="true">Swipe →</span>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_nav" class="header-cta" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'download_click', {'app': 'phonetic_formatter', 'position': 'nav'});">
+                        Get App
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M11 3L10 4l6 6-6 6 1 1 7-7-7-7z"/>
+                        </svg>
+                    </a>
+                    <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="site-navigation" aria-label="Open menu" data-label-open="Open menu" data-label-close="Close menu">
+                        <svg class="nav-menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="article-wrap">
+        <h1>How Phonetic Formatter Handles Unknown Words in IPA Conversion</h1>
+        <p class="article-meta"><time datetime="2026-04-26">April 26, 2026</time> · Louis · <a href="../blogs.html">&larr; Blogs</a></p>
+
+        <p class="article-lead">
+            Unknown words are normal in real classroom text. A useful IPA converter should not collapse when it meets a student name, a list marker, a time, or a word outside the dictionary.
+        </p>
+        <p>
+            When teachers prepare pronunciation materials, they rarely paste a clean list of dictionary words. They paste reading passages, lesson notes, presentation scripts, homework examples, and sometimes student writing. That text can include proper names, numbers, abbreviations, brand names, timestamps, and mixed tokens such as <strong>5G</strong>.
+        </p>
+        <p>
+            Phonetic Formatter is built around offline English-to-IPA conversion using the CMU Pronouncing Dictionary. That gives the app a strong pronunciation base, but a dictionary alone cannot decide what to do with every token in real text. The product needs rules for what should be transcribed, what should be skipped, and what should be shown clearly as unknown.
+        </p>
+
+        <h2>Short Answer</h2>
+        <p>
+            Phonetic Formatter treats unknown words as a visible editing state, not as a fatal error. If a token cannot be found in the dictionary and is not covered by special handling rules, the app keeps it in context so the user can review the result instead of losing the whole passage.
+        </p>
+        <p>
+            This matters for teachers because a single unknown word should not block a full worksheet, reading activity, or pronunciation handout.
+        </p>
+
+        <h2>What Counts as an Unknown Word?</h2>
+        <p>
+            In pronunciation tools, unknown words are often called <strong>OOV</strong>, or <strong>out of vocabulary</strong>. In simple terms, an OOV word is a word that the pronunciation dictionary does not recognize.
+        </p>
+        <p>
+            But not every unmatched token should be treated as a true unknown word. Consider a short classroom passage:
+        </p>
+        <div class="example-box" aria-label="Example classroom text">
+            <pre>Dr. Smith arrived at 12:30.
+1. Read the passage aloud.
+The iPhone supports 5G.
+Ask Maya to repeat mother-in-law.</pre>
+        </div>
+        <p>
+            A naive IPA converter might try to look up every token as if it were a normal word. That creates noisy results. <strong>12:30</strong> is a time, <strong>1.</strong> is a list marker, <strong>5G</strong> is a mixed alphanumeric token, and <strong>mother-in-law</strong> can be more useful when handled as a compound.
+        </p>
+
+        <h2>Why OOV Handling Matters for Teachers</h2>
+        <p>
+            In a classroom workflow, the goal is not just to get a technically correct lookup. The goal is to create material that can be read, copied, explained, and exported.
+        </p>
+        <p>
+            If an IPA app simply fails on unknown words, the teacher has to restart the task, delete names, or manually clean every passage before conversion. If the app silently removes unknown words, the result becomes dangerous because the output no longer matches the original text. If every number or abbreviation is marked as an error, the worksheet becomes visually noisy.
+        </p>
+        <p>
+            A better approach is to keep the full text structure intact, mark real unknowns clearly, and avoid treating obvious special tokens as pronunciation failures.
+        </p>
+
+        <h2>How Phonetic Formatter Thinks About Special Tokens</h2>
+        <p>
+            Phonetic Formatter separates common non-word tokens from real OOV cases. The exact behavior depends on the token type, display mode, and current formatting settings, but the general principle is simple: do not call something unknown if it was never meant to be looked up as a normal English word.
+        </p>
+        <div class="table-wrap" role="region" aria-label="Special token handling table">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Text pattern</th>
+                        <th scope="col">Why it needs care</th>
+                        <th scope="col">Product intent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Numbers and times</td>
+                        <td>Items like 12:30 or 1.2.3 are not normal dictionary words.</td>
+                        <td>Keep the text readable without treating every number as a missing word.</td>
+                    </tr>
+                    <tr>
+                        <td>List markers</td>
+                        <td>A period in 1. should not break sentence grouping.</td>
+                        <td>Preserve worksheet and outline structure.</td>
+                    </tr>
+                    <tr>
+                        <td>Common abbreviations</td>
+                        <td>Dr., Mr., e.g., and Ph.D. contain periods that can confuse sentence splitting.</td>
+                        <td>Respect common English abbreviations and avoid false sentence breaks.</td>
+                    </tr>
+                    <tr>
+                        <td>Compound words</td>
+                        <td>A hyphenated word may be made of smaller recognizable parts.</td>
+                        <td>Use component pronunciations when that gives a more useful result.</td>
+                    </tr>
+                    <tr>
+                        <td>True OOV words</td>
+                        <td>Names, brands, rare terms, or typos may not exist in CMUdict.</td>
+                        <td>Show the gap clearly while keeping the surrounding text usable.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Sentence Mode: Keep the Passage Usable</h2>
+        <p>
+            In sentence mode, Phonetic Formatter groups text into sentence-level output. The original sentence remains visible, and the IPA line follows below it. This makes the result easy to copy into notes, slides, or reading exercises.
+        </p>
+        <p>
+            When a word is not found, the app should not erase it or stop the whole conversion. The user still needs the sentence and the nearby pronunciation information. The unknown word becomes something to review, not a reason to abandon the entire passage.
+        </p>
+        <p>
+            This is especially useful for names and classroom-specific vocabulary. A teacher may decide to keep the word as written, replace it with a simpler example, or explain it manually.
+        </p>
+
+        <h2>Word-by-Word Mode: Make Review Easier</h2>
+        <p>
+            Word-by-word mode is designed for structured study and teaching materials. Each sentence is grouped, and individual words are paired with their IPA results.
+        </p>
+        <p>
+            In this layout, unknown words need a clear placeholder because the learner is looking at one word at a time. The goal is not to hide uncertainty. The goal is to make the gap easy to notice and easy to fix before the teacher shares or exports the material.
+        </p>
+        <p>
+            For a deeper look at this layout, read our guide:
+            <a href="why-word-by-word-ipa-layout-helps-teachers.html">Why Word-by-Word IPA Layout Helps Teachers Prepare Pronunciation Materials</a>.
+        </p>
+
+        <h2>Offline-First Makes Rules More Important</h2>
+        <p>
+            Because Phonetic Formatter works offline, the app cannot rely on a server to clean up every edge case. That is a feature, not a weakness.
+        </p>
+        <p>
+            Offline conversion means teachers can process classroom text on-device, without uploading worksheets, student writing, or lesson materials to a web service. It also means the app's behavior should be predictable: the same input should produce the same kind of output, even without internet access.
+        </p>
+        <p>
+            If privacy and classroom reliability are part of your workflow, see the
+            <a href="../landing/offline-ipa-app.html">offline IPA app guide</a>
+            and the broader comparison of
+            <a href="phonetic-formatter-vs-online-ipa-tools.html">offline vs online IPA converters</a>.
+        </p>
+
+        <h2>What This Means in Practice</h2>
+        <p>
+            Good OOV handling is not about pretending every word can be converted perfectly. It is about being honest and useful.
+        </p>
+        <ul>
+            <li>The original text remains understandable.</li>
+            <li>Known words still receive IPA output.</li>
+            <li>Special tokens avoid unnecessary error-like treatment.</li>
+            <li>True unknown words stay visible for teacher review.</li>
+            <li>Copy and export workflows remain usable.</li>
+        </ul>
+        <p>
+            That balance is what makes an IPA tool practical for full passages instead of only single-word lookup.
+        </p>
+
+        <section class="cta-section" aria-labelledby="cta-oov-heading">
+            <h3 id="cta-oov-heading" class="cta-title">Convert Real Classroom Text to IPA Offline</h3>
+            <p class="cta-description">
+                Use Phonetic Formatter to turn passages, examples, and worksheet text into readable IPA output on iPhone and iPad.
+            </p>
+            <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&ct=web_phoneticformatter_blog_oov" target="_blank" rel="noopener noreferrer">
+                <img src="../app-store-badge.svg" alt="Download on the App Store" class="app-store-badge" width="120" height="40">
+            </a>
+            <ul class="cta-features">
+                <li>Offline IPA conversion</li>
+                <li>Teacher-friendly layouts</li>
+                <li>Copy and export workflows</li>
+            </ul>
+        </section>
+
+        <section class="related-posts" aria-labelledby="related-oov-heading">
+            <h3 id="related-oov-heading">Related Reading</h3>
+            <div class="related-grid">
+                <a href="why-word-by-word-ipa-layout-helps-teachers.html" class="related-card">
+                    <h4>Word-by-Word IPA Layout</h4>
+                    <p>See why word-level alignment helps teachers explain pronunciation clearly.</p>
+                </a>
+                <a href="why-cmu-pronouncing-dictionary.html" class="related-card">
+                    <h4>Why CMU Pronouncing Dictionary?</h4>
+                    <p>Understand the pronunciation data behind Phonetic Formatter.</p>
+                </a>
+                <a href="../landing/ipa-worksheet-generator.html" class="related-card">
+                    <h4>IPA Worksheet Generator</h4>
+                    <p>Create printable pronunciation materials from full English passages.</p>
+                </a>
+                <a href="best-offline-ipa-app-for-teachers-ios.html" class="related-card">
+                    <h4>Best Offline IPA App for Teachers</h4>
+                    <p>Compare what matters when choosing an IPA app for classroom use.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="article-faq" id="faq" aria-labelledby="article-faq-heading">
+            <h2 id="article-faq-heading">FAQ</h2>
+            <div class="article-faq-item">
+                <h3>What does OOV mean in IPA conversion?</h3>
+                <p>OOV means out of vocabulary. In an IPA converter, it usually refers to a word that is not found in the pronunciation dictionary.</p>
+            </div>
+            <div class="article-faq-item">
+                <h3>Does Phonetic Formatter stop when it finds an unknown word?</h3>
+                <p>No. Phonetic Formatter keeps the passage structure intact and marks unknown words clearly so teachers and learners can continue editing or exporting the result.</p>
+            </div>
+            <div class="article-faq-item">
+                <h3>Can Phonetic Formatter handle numbers and abbreviations?</h3>
+                <p>Phonetic Formatter includes rules for common non-word tokens such as numbers, times, list markers, and common English abbreviations, so they are not treated as ordinary unknown words.</p>
+            </div>
+        </section>
+    </article>
+
+    <footer>
+        <div class="container">
+            <div class="footer-secondary">
+                <p class="footer-links">
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="../terms.html">Terms of Service</a>
+                    <a href="../support.html">Support</a>
+                </p>
+                <p class="footer-copyright">
+                    © 2026 Phonetic Formatter · Designed by <strong>Louis</strong><br>
+                    Precision IPA tools for educators and linguists worldwide.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (function () {
+            var nav = document.getElementById('site-navigation');
+            var btn = document.querySelector('.nav-menu-btn');
+            if (!nav || !btn) return;
+            var labelOpen = btn.getAttribute('data-label-open') || 'Open menu';
+            var labelClose = btn.getAttribute('data-label-close') || 'Close menu';
+            function setOpen(open) {
+                if (open) {
+                    nav.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.setAttribute('aria-label', labelClose);
+                    document.body.classList.add('nav-menu-open');
+                } else {
+                    nav.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.setAttribute('aria-label', labelOpen);
+                    document.body.classList.remove('nav-menu-open');
+                }
+            }
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                setOpen(!nav.classList.contains('is-open'));
+            });
+            document.addEventListener('click', function () { setOpen(false); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+                    setOpen(false);
+                    btn.focus();
+                }
+            });
+            window.addEventListener('resize', function () {
+                if (window.matchMedia('(min-width: 769px)').matches) setOpen(false);
+            });
+        })();
+    </script>
+</body>
+</html>
