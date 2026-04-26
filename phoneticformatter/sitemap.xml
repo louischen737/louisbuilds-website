@@ -86,6 +86,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://louisbuilds.me/phoneticformatter/blog/how-phonetic-formatter-handles-unknown-words-ipa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://louisbuilds.me/phoneticformatter/blog/why-word-by-word-ipa-layout-helps-teachers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://louisbuilds.me/phoneticformatter/support.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
