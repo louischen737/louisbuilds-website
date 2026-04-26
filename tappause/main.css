@@ -825,6 +825,14 @@ body.page-article .article-date {
     margin-bottom: 24px;
 }
 
+body.page-article .article-summary {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 0 0 14px;
+    max-width: 62ch;
+}
+
 body.page-article h2 {
     margin-top: 48px;
     margin-bottom: 16px;
@@ -938,11 +946,31 @@ body.page-article .related-card {
     text-decoration: none;
     padding: 20px;
     background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 12px;
-    transition: background 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 body.page-article .related-card:hover {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(165, 180, 252, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+body.page-article .related-card:focus-visible {
+    outline: 2px solid #a5b4fc;
+    outline-offset: 2px;
+    border-color: rgba(165, 180, 252, 0.55);
+}
+body.page-article .related-card::after {
+    content: "→";
+    position: absolute;
+    right: 16px;
+    bottom: 14px;
+    color: var(--text-muted);
+    font-size: 14px;
+    opacity: 0.85;
 }
 body.page-article .related-card h5 {
     color: var(--text-primary);
@@ -965,16 +993,36 @@ body.page-article .divider {
 
 body.page-article .cta {
     text-align: center;
-    padding: 40px 0;
+    padding: 28px 24px 26px;
+    margin: 0 auto;
+    max-width: 560px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--divider-light);
+    border-radius: 14px;
 }
 
 body.page-article .cta a {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 14px;
+    line-height: 0;
+}
+
+body.page-article .cta .cta-micro-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 10px 0 0;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    opacity: 0.9;
 }
 
 body.page-article .cta img {
     height: 50px;
+}
+
+body.page-article .cta > p:first-child {
+    margin: 0;
+    color: var(--text-primary);
 }
 
 body.page-article footer {
