@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "QYGR5P66D8.com.PurrrrrFocus.iOS"
+        ],
+        "components": [
+          {
+            "/": "/purrrrrfocus/events/one-breath-ritual",
+            "comment": "Open One Breath Ritual in PurrrrrFocus"
+          },
+          {
+            "/": "/purrrrrfocus/events/one-breath-ritual/",
+            "comment": "Open One Breath Ritual in PurrrrrFocus"
+          }
+        ]
+      }
+    ]
+  }
+}

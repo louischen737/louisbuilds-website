@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/">
+    <title>One Breath Ritual | PurrrrrFocus</title>
+    <meta name="description" content="Begin your next focus session with One Breath Ritual, a quiet seasonal moment in PurrrrrFocus. Hold, breathe, settle your mind, then start focusing.">
+    <meta name="keywords" content="PurrrrrFocus,One Breath Ritual,focus ritual,pomodoro timer,focus app,cat companion">
+    <meta name="author" content="PurrrrrFocus Team">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#F5F1E8">
+    <meta name="apple-itunes-app" content="app-id=6753966008, app-argument=https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="One Breath Ritual | PurrrrrFocus">
+    <meta property="og:description" content="A calm seasonal ritual before focus: hold, breathe, settle your mind, then begin.">
+    <meta property="og:url" content="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/">
+    <meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="PurrrrrFocus">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="One Breath Ritual | PurrrrrFocus">
+    <meta name="twitter:description" content="A quiet seasonal moment before your next focus session.">
+    <meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/og-image.png">
+    <link rel="alternate" hreflang="zh-CN" href="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/?lang=zh">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/?lang=en">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/?lang=fr">
+    <link rel="alternate" hreflang="tr" href="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/?lang=tr">
+    <link rel="alternate" hreflang="da" href="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/?lang=da">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/">
+
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" href="../../AppIcon-Preview.webp">
+    <link rel="preload" href="season-one-breath-idle.png" as="image">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "One Breath Ritual",
+      "description": "A calm seasonal ritual in PurrrrrFocus before starting a focus session.",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "organizer": {
+        "@type": "Organization",
+        "name": "PurrrrrFocus",
+        "url": "https://louisbuilds.me/purrrrrfocus/"
+      },
+      "url": "https://louisbuilds.me/purrrrrfocus/events/one-breath-ritual/"
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-primary: #f7f0e3;
+            --bg-secondary: #eadfce;
+            --ink: #3b241d;
+            --muted-ink: rgba(59, 36, 29, 0.7);
+            --gold: #9b6b2f;
+            --accent: #7a1e1e;
+            --accent-dark: #5c1717;
+            --paper: rgba(255, 251, 243, 0.84);
+            --border: rgba(131, 94, 30, 0.18);
+            --shadow: rgba(59, 36, 29, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--ink);
+            background:
+                linear-gradient(rgba(247, 240, 227, 0.9), rgba(234, 223, 206, 0.9)),
+                url("../../ink-texture.jpg"),
+                radial-gradient(circle at 18% 12%, rgba(189, 151, 108, 0.18), transparent 32%),
+                radial-gradient(circle at 84% 18%, rgba(122, 30, 30, 0.1), transparent 34%),
+                radial-gradient(circle at 72% 86%, rgba(141, 105, 59, 0.18), transparent 40%),
+                linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            background-size: auto, 560px auto, auto, auto, auto, auto;
+            min-height: 100vh;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            padding: clamp(20px, 4vw, 56px);
+            position: relative;
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 18px;
+            right: 20px;
+            z-index: 2;
+            display: flex;
+            gap: 6px;
+            padding: 6px;
+            border: 1px solid rgba(131, 94, 30, 0.18);
+            border-radius: 999px;
+            background: rgba(255, 251, 243, 0.72);
+            box-shadow: 0 10px 28px rgba(59, 36, 29, 0.1);
+            backdrop-filter: blur(16px);
+        }
+
+        .language-switcher button {
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: rgba(59, 36, 29, 0.66);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.82rem;
+            font-weight: 700;
+            min-width: 38px;
+            padding: 8px 10px;
+        }
+
+        .language-switcher button.active {
+            background: rgba(122, 30, 30, 0.1);
+            color: var(--accent-dark);
+        }
+
+        .ritual-card {
+            width: min(1120px, 100%);
+            background: var(--paper);
+            border: 1px solid var(--border);
+            border-radius: 34px;
+            box-shadow: 0 28px 90px var(--shadow);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+            min-height: min(760px, calc(100vh - 80px));
+            backdrop-filter: blur(20px);
+        }
+
+        .content {
+            padding: clamp(32px, 5vw, 64px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 0.86rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.04;
+            margin: 0 0 20px;
+            font-weight: 750;
+            color: var(--accent-dark);
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            line-height: 1.7;
+            color: var(--muted-ink);
+            max-width: 560px;
+            margin: 0 0 34px;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .primary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .primary-button img {
+            height: 56px;
+            width: auto;
+            display: block;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-2px);
+            filter: drop-shadow(0 10px 20px rgba(59, 36, 29, 0.18));
+        }
+
+        .secondary-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(155, 107, 47, 0.25);
+        }
+
+        .visual {
+            position: relative;
+            min-height: 560px;
+            background:
+                linear-gradient(180deg, rgba(247, 240, 227, 0.18) 0%, rgba(207, 191, 176, 0.58) 100%),
+                radial-gradient(circle at 50% 36%, rgba(255, 252, 246, 0.82), transparent 46%),
+                #f2eadc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(28px, 5vw, 70px);
+            overflow: hidden;
+        }
+
+        .visual::before {
+            content: "";
+            position: absolute;
+            inset: auto -10% -18% -10%;
+            height: 42%;
+            background: linear-gradient(180deg, rgba(235, 224, 210, 0) 0%, rgba(170, 143, 123, 0.52) 100%);
+        }
+
+        .visual::after {
+            content: attr(data-symbol);
+            position: absolute;
+            right: 9%;
+            top: 8%;
+            font-size: clamp(6rem, 16vw, 12rem);
+            font-family: Georgia, "Times New Roman", serif;
+            color: rgba(131, 94, 30, 0.07);
+            line-height: 1;
+        }
+
+        .ritual-preview {
+            position: relative;
+            z-index: 1;
+            width: min(520px, 100%);
+            display: grid;
+            gap: 22px;
+            text-align: center;
+        }
+
+        .art-card {
+            position: relative;
+            background: rgba(255, 251, 243, 0.48);
+            border: 1px solid rgba(131, 94, 30, 0.14);
+            border-radius: 30px;
+            padding: clamp(18px, 4vw, 36px);
+            box-shadow: 0 24px 64px rgba(59, 36, 29, 0.16);
+            overflow: hidden;
+        }
+
+        .art-card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 38%;
+            background: linear-gradient(180deg, rgba(245, 241, 232, 0) 0%, rgba(188, 168, 151, 0.46) 100%);
+            pointer-events: none;
+        }
+
+        .ritual-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 18px 26px rgba(59, 36, 29, 0.13));
+        }
+
+        .preview-title {
+            color: var(--accent-dark);
+            font-weight: 750;
+            font-size: clamp(1.25rem, 2vw, 1.65rem);
+            margin: 0;
+        }
+
+        .preview-caption {
+            color: rgba(59, 36, 29, 0.64);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .note {
+            margin-top: 28px;
+            color: rgba(59, 36, 29, 0.58);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 780px) {
+            .page {
+                padding: 76px 16px 24px;
+            }
+
+            .language-switcher {
+                left: 50%;
+                right: auto;
+                transform: translateX(-50%);
+                top: 16px;
+            }
+
+            .ritual-card {
+                grid-template-columns: 1fr;
+                border-radius: 24px;
+                min-height: auto;
+            }
+
+            .visual {
+                min-height: auto;
+                order: -1;
+            }
+
+            .primary-button img {
+                height: 50px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="language-switcher" aria-label="Language selector">
+        <button type="button" data-lang-option="zh">中文</button>
+        <button type="button" data-lang-option="en">EN</button>
+        <button type="button" data-lang-option="fr">FR</button>
+        <button type="button" data-lang-option="tr">TR</button>
+        <button type="button" data-lang-option="da">DA</button>
+    </nav>
+    <main class="page">
+        <section class="ritual-card" aria-labelledby="ritual-title">
+            <div class="content">
+                <div class="eyebrow" data-i18n="eyebrow">Seasonal In-App Event</div>
+                <h1 id="ritual-title" data-i18n="title">One Breath Ritual</h1>
+                <p class="subtitle" data-i18n="subtitle">
+                    Before your next focus session, pause for one quiet breath. Hold the ritual image, watch the calm rise from the bottom of the screen, and begin when your mind feels settled.
+                </p>
+                <div class="actions">
+                    <a class="primary-button" href="https://apps.apple.com/app/purrrrrfocus/id6753966008" aria-label="Download PurrrrrFocus on the App Store" data-i18n-attr="aria-label:appStoreAria">
+                        <img src="../../app-store-badge-en.svg" alt="Download on the App Store" data-i18n-attr="alt:appStoreAlt">
+                    </a>
+                    <a class="secondary-link" href="/purrrrrfocus/" data-i18n="backLink">Back to PurrrrrFocus</a>
+                </div>
+                <p class="note" data-i18n="note">
+                    If PurrrrrFocus is installed, opening this link on iPhone or iPad takes you directly to the ritual inside the app.
+                </p>
+            </div>
+            <div class="visual" aria-hidden="true" data-symbol="静">
+                <div class="ritual-preview">
+                    <div class="art-card">
+                        <img class="ritual-image" src="season-one-breath-idle.png" alt="">
+                    </div>
+                    <h2 class="preview-title" data-i18n="previewTitle">Hold to settle your mind</h2>
+                    <p class="preview-caption" data-i18n="previewCaption">The same calm ritual artwork opens inside PurrrrrFocus when the app is installed.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const translations = {
+            zh: {
+                htmlLang: "zh-CN",
+                titleTag: "点香定心 | 喵时计 PurrrrrFocus",
+                metaDescription: "开启专注前，与猫咪共度五秒点香仪式。静观静气自方寸间缓缓升起，收敛杂念、平稳呼吸，从容进入沉浸式专注时刻。",
+                ogTitle: "点香定心 | 喵时计 PurrrrrFocus",
+                ogDescription: "按住香炉，轻敛心神。",
+                twitterTitle: "点香定心 | 喵时计 PurrrrrFocus",
+                twitterDescription: "按住香炉，轻敛心神。",
+                eventName: "点香定心",
+                eventDescription: "开启专注前，与猫咪共度五秒点香仪式。",
+                eyebrow: "季节 App 内活动",
+                title: "点香定心",
+                subtitle: "开启专注前，与猫咪共度五秒点香仪式。静观静气自方寸间缓缓升起，收敛杂念、平稳呼吸，从容进入沉浸式专注时刻。",
+                appStoreAria: "在 App Store 下载喵时计",
+                appStoreAlt: "在 App Store 下载",
+                badge: "../../app-store-badge-zh.svg",
+                backLink: "返回喵时计主页",
+                backHref: "/purrrrrfocus/",
+                note: "如果已安装喵时计，在 iPhone 或 iPad 上打开此链接会直接进入 App 内的点香定心活动。",
+                symbol: "静",
+                previewTitle: "按住，让心安定下来",
+                previewCaption: "安装 PurrrrrFocus 后，会直接打开 App 内同款季节活动图片。"
+            },
+            en: {
+                htmlLang: "en",
+                titleTag: "One Breath Ritual | PurrrrrFocus",
+                metaDescription: "Begin your next focus session with One Breath Ritual, a quiet seasonal moment in PurrrrrFocus. Hold, breathe, settle your mind, then start focusing.",
+                ogTitle: "One Breath Ritual | PurrrrrFocus",
+                ogDescription: "A calm seasonal ritual before focus: hold, breathe, settle your mind, then begin.",
+                twitterTitle: "One Breath Ritual | PurrrrrFocus",
+                twitterDescription: "A quiet seasonal moment before your next focus session.",
+                eventName: "One Breath Ritual",
+                eventDescription: "A calm seasonal ritual in PurrrrrFocus before starting a focus session.",
+                eyebrow: "Seasonal In-App Event",
+                title: "One Breath Ritual",
+                subtitle: "Before your next focus session, pause for one quiet breath. Hold the ritual image, watch the calm rise from the bottom of the screen, and begin when your mind feels settled.",
+                appStoreAria: "Download PurrrrrFocus on the App Store",
+                appStoreAlt: "Download on the App Store",
+                badge: "../../app-store-badge-en.svg",
+                backLink: "Back to PurrrrrFocus",
+                backHref: "/purrrrrfocus/index-en.html",
+                note: "If PurrrrrFocus is installed, opening this link on iPhone or iPad takes you directly to the ritual inside the app.",
+                symbol: "静",
+                previewTitle: "Hold to settle your mind",
+                previewCaption: "The same calm ritual artwork opens inside PurrrrrFocus when the app is installed."
+            },
+            fr: {
+                htmlLang: "fr",
+                titleTag: "Rituel d’un souffle | PurrrrrFocus",
+                metaDescription: "Avant votre prochaine session de concentration, prenez un instant calme dans PurrrrrFocus. Maintenez l’image, respirez, puis commencez.",
+                ogTitle: "Rituel d’un souffle | PurrrrrFocus",
+                ogDescription: "Un rituel saisonnier calme avant de vous concentrer.",
+                twitterTitle: "Rituel d’un souffle | PurrrrrFocus",
+                twitterDescription: "Un moment calme avant votre prochaine session de concentration.",
+                eventName: "Rituel d’un souffle",
+                eventDescription: "Un rituel saisonnier calme dans PurrrrrFocus avant de commencer à se concentrer.",
+                eyebrow: "Événement saisonnier dans l’app",
+                title: "Rituel d’un souffle",
+                subtitle: "Avant votre prochaine session de concentration, prenez un instant pour respirer. Maintenez l’image du rituel, regardez le calme monter depuis le bas de l’écran, puis commencez lorsque votre esprit est apaisé.",
+                appStoreAria: "Télécharger PurrrrrFocus sur l’App Store",
+                appStoreAlt: "Télécharger dans l’App Store",
+                badge: "../../app-store-badge-fr.svg",
+                backLink: "Retour à PurrrrrFocus",
+                backHref: "/purrrrrfocus/index-fr.html",
+                note: "Si PurrrrrFocus est installé, ce lien ouvre directement le rituel dans l’app sur iPhone ou iPad.",
+                symbol: "静",
+                previewTitle: "Maintenez pour apaiser votre esprit",
+                previewCaption: "La même illustration saisonnière s’ouvre dans PurrrrrFocus lorsque l’app est installée."
+            },
+            tr: {
+                htmlLang: "tr",
+                titleTag: "Tek Nefes Ritüeli | PurrrrrFocus",
+                metaDescription: "PurrrrrFocus’ta bir sonraki odak oturumundan önce sakin bir ritüel yapın. Basılı tutun, nefes alın ve başlayın.",
+                ogTitle: "Tek Nefes Ritüeli | PurrrrrFocus",
+                ogDescription: "Odaklanmadan önce sakin bir sezonluk ritüel.",
+                twitterTitle: "Tek Nefes Ritüeli | PurrrrrFocus",
+                twitterDescription: "Bir sonraki odak oturumundan önce sakin bir an.",
+                eventName: "Tek Nefes Ritüeli",
+                eventDescription: "PurrrrrFocus’ta odaklanmaya başlamadan önce yapılan sakin bir sezonluk ritüel.",
+                eyebrow: "Sezonluk uygulama içi etkinlik",
+                title: "Tek Nefes Ritüeli",
+                subtitle: "Bir sonraki odak oturumundan önce kısa ve sakin bir nefes molası ver. Ritüel görseline basılı tut, sakinliğin ekranın altından yükselişini izle ve zihnin hazır olduğunda başla.",
+                appStoreAria: "PurrrrrFocus’u App Store’dan indir",
+                appStoreAlt: "App Store’dan indir",
+                badge: "../../app-store-badge-tr.svg",
+                backLink: "PurrrrrFocus’a dön",
+                backHref: "/purrrrrfocus/index-tr.html",
+                note: "PurrrrrFocus yüklüyse, bu bağlantı iPhone veya iPad’de doğrudan uygulama içindeki ritüeli açar.",
+                symbol: "静",
+                previewTitle: "Zihnini sakinleştirmek için basılı tut",
+                previewCaption: "Uygulama yüklüyken aynı sakin sezonluk görsel PurrrrrFocus içinde açılır."
+            },
+            da: {
+                htmlLang: "da",
+                titleTag: "Et Åndedragsritual | PurrrrrFocus",
+                metaDescription: "Begynd din næste fokussession med et roligt sæsonritual i PurrrrrFocus. Hold, træk vejret, find roen, og begynd.",
+                ogTitle: "Et Åndedragsritual | PurrrrrFocus",
+                ogDescription: "Et roligt sæsonritual før fokus.",
+                twitterTitle: "Et Åndedragsritual | PurrrrrFocus",
+                twitterDescription: "Et stille øjeblik før din næste fokussession.",
+                eventName: "Et Åndedragsritual",
+                eventDescription: "Et roligt sæsonritual i PurrrrrFocus før en fokussession.",
+                eyebrow: "Sæsonbegivenhed i appen",
+                title: "Et Åndedragsritual",
+                subtitle: "Før din næste fokussession kan du tage et stille åndedrag. Hold ritualbilledet, se roen stige fra bunden af skærmen, og begynd, når sindet føles klart.",
+                appStoreAria: "Download PurrrrrFocus i App Store",
+                appStoreAlt: "Download i App Store",
+                badge: "../../app-store-badge-da.svg",
+                backLink: "Tilbage til PurrrrrFocus",
+                backHref: "/purrrrrfocus/index-da.html",
+                note: "Hvis PurrrrrFocus er installeret, åbner dette link ritualet direkte i appen på iPhone eller iPad.",
+                symbol: "静",
+                previewTitle: "Hold for at finde ro",
+                previewCaption: "Det samme rolige sæsonbillede åbnes i PurrrrrFocus, når appen er installeret."
+            }
+        };
+
+        function normalizeLanguage(value) {
+            const language = (value || "").toLowerCase();
+            if (language.startsWith("zh")) return "zh";
+            if (language.startsWith("fr")) return "fr";
+            if (language.startsWith("tr")) return "tr";
+            if (language.startsWith("da")) return "da";
+            return "en";
+        }
+
+        function updateMeta(selector, value) {
+            const element = document.querySelector(selector);
+            if (element) {
+                element.setAttribute("content", value);
+            }
+        }
+
+        function applyLanguage(language, shouldUpdateUrl = true) {
+            const lang = translations[language] ? language : "en";
+            const copy = translations[lang];
+
+            document.documentElement.lang = copy.htmlLang;
+            document.title = copy.titleTag;
+
+            updateMeta("meta[name='description']", copy.metaDescription);
+            updateMeta("meta[property='og:title']", copy.ogTitle);
+            updateMeta("meta[property='og:description']", copy.ogDescription);
+            updateMeta("meta[name='twitter:title']", copy.twitterTitle);
+            updateMeta("meta[name='twitter:description']", copy.twitterDescription);
+
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.getAttribute("data-i18n");
+                element.textContent = copy[key];
+            });
+
+            document.querySelectorAll("[data-i18n-attr]").forEach((element) => {
+                element.getAttribute("data-i18n-attr").split(",").forEach((pair) => {
+                    const [attribute, key] = pair.split(":");
+                    element.setAttribute(attribute.trim(), copy[key.trim()]);
+                });
+            });
+
+            const appStoreBadge = document.querySelector(".primary-button img");
+            if (appStoreBadge) {
+                appStoreBadge.setAttribute("src", copy.badge);
+            }
+
+            const backLink = document.querySelector(".secondary-link");
+            if (backLink) {
+                backLink.setAttribute("href", copy.backHref);
+            }
+
+            const visual = document.querySelector(".visual");
+            if (visual) {
+                visual.setAttribute("data-symbol", copy.symbol);
+            }
+
+            document.querySelectorAll("[data-lang-option]").forEach((button) => {
+                const isActive = button.getAttribute("data-lang-option") === lang;
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+
+            const eventJson = document.querySelector("script[type='application/ld+json']");
+            if (eventJson) {
+                try {
+                    const data = JSON.parse(eventJson.textContent);
+                    data.name = copy.eventName;
+                    data.description = copy.eventDescription;
+                    eventJson.textContent = JSON.stringify(data, null, 2);
+                } catch (error) {
+                    // Keep the static JSON-LD if parsing fails.
+                }
+            }
+
+            if (shouldUpdateUrl) {
+                const url = new URL(window.location.href);
+                url.searchParams.set("lang", lang);
+                window.history.replaceState({}, "", url);
+            }
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const initialLanguage = params.get("lang")
+            ? normalizeLanguage(params.get("lang"))
+            : normalizeLanguage(navigator.language);
+
+        applyLanguage(initialLanguage, Boolean(params.get("lang")));
+
+        document.querySelectorAll("[data-lang-option]").forEach((button) => {
+            button.addEventListener("click", () => {
+                applyLanguage(button.getAttribute("data-lang-option"));
+            });
+        });
+    </script>
+</body>
+</html>
