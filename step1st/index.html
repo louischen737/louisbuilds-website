@@ -326,6 +326,31 @@
             max-width: 100%;
             gap: 12px;
         }
+        .hero-cta-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px 20px;
+            max-width: 100%;
+        }
+        .hero-cta-primary .hero-ph-embed {
+            margin: 0;
+            line-height: 0;
+        }
+        .hero-cta-primary .hero-ph-embed a {
+            display: inline-block;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+        .hero-cta-primary .hero-ph-embed a:hover {
+            transform: scale(1.03);
+            opacity: 0.96;
+        }
+        .hero-cta-primary .hero-ph-embed img {
+            display: block;
+            width: min(220px, 100%);
+            max-width: 250px;
+            height: auto;
+        }
         .hero-cta-primary .cta-appstore-link {
             line-height: 0;
             display: inline-block;
@@ -436,6 +461,27 @@
         }
         .cta-appstore-link:active {
             transform: scale(0.97);
+        }
+
+        .ph-embed-wrap {
+            margin: 22px auto 0;
+            line-height: 0;
+            text-align: center;
+        }
+        .ph-embed-wrap a {
+            display: inline-block;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+        .ph-embed-wrap a:hover {
+            transform: scale(1.03);
+            opacity: 0.96;
+        }
+        .ph-embed-wrap img {
+            max-width: min(100%, 250px);
+            height: auto;
+            width: 250px;
+            display: block;
+            margin: 0 auto;
         }
 
         .mockup-container {
@@ -1103,6 +1149,8 @@
         .nav-brand-icon,
         .nav-brand-logo,
         .cta-appstore-badge,
+        .ph-embed-wrap img,
+        .hero-cta-badges .hero-ph-embed img,
         .olo-mascot,
         .olo-trust,
         .trust-item img[src*="olo-full"],
@@ -1310,6 +1358,7 @@
             .hero-content { width: 100%; }
             .hero-cta-stack { align-items: center; }
             .hero-cta-primary { align-self: center; align-items: center; }
+            .hero-cta-badges { justify-content: center; }
             .hero-cta-subline { text-align: center; margin-inline: auto; padding: 0 8px; }
             .hero-human-proof { text-align: center; margin-inline: auto; max-width: 26rem; }
             .hero-tech-badges { justify-content: center; }
@@ -1428,9 +1477,16 @@
                 <!-- CTA -->
                 <div class="hero-cta-stack">
                   <div class="hero-cta-primary">
-                    <a href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" class="cta-appstore-link" aria-label="Download Step1st on the App Store">
-                      <img class="cta-appstore-badge" src="../assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="186" height="62" decoding="async" fetchpriority="high">
-                    </a>
+                    <div class="hero-cta-badges">
+                      <a href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" class="cta-appstore-link" aria-label="Download Step1st on the App Store">
+                        <img class="cta-appstore-badge" src="../assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="186" height="62" decoding="async" fetchpriority="high">
+                      </a>
+                      <p class="hero-ph-embed">
+                        <a href="https://www.producthunt.com/products/step1st?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-step1st" target="_blank" rel="noopener noreferrer" aria-label="Step1st on Product Hunt — vote and support">
+                          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1133936&amp;theme=light&amp;t=1777350618753" alt="Step1st - Put doomscrolling behind a step goal | Product Hunt" width="250" height="54" decoding="async" fetchpriority="low" loading="eager">
+                        </a>
+                      </p>
+                    </div>
                     <p class="hero-cta-subline">Free · In‑App Purchases</p>
                   </div>
           
@@ -1813,6 +1869,11 @@
                 <a href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" class="cta-appstore-link" aria-label="Download Step1st on the App Store">
                     <img class="cta-appstore-badge" src="../assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="120" height="40" loading="lazy" decoding="async">
                 </a>
+                <p class="ph-embed-wrap">
+                    <a href="https://www.producthunt.com/products/step1st?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-step1st" target="_blank" rel="noopener noreferrer" aria-label="Step1st on Product Hunt — vote and support">
+                        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1133936&amp;theme=light&amp;t=1777350618753" alt="Step1st - Put doomscrolling behind a step goal | Product Hunt" width="250" height="54" loading="lazy" decoding="async">
+                    </a>
+                </p>
                 <p class="hero-cta-subline" style="text-align: center; max-width: 28rem; margin: 14px auto 0;">Optional: follow build notes on <a href="https://substack.com/@louisbuilds/p-193051902" class="faq-inline-link" target="_blank" rel="noopener noreferrer">Substack<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></p>
             </div>
 </section>
