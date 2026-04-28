@@ -101,6 +101,7 @@
             right: 20px;
             z-index: 2;
             display: flex;
+            flex-wrap: nowrap;
             gap: 6px;
             padding: 6px;
             border: 1px solid rgba(131, 94, 30, 0.18);
@@ -121,6 +122,9 @@
             font-weight: 700;
             min-width: 38px;
             padding: 8px 10px;
+            white-space: nowrap;
+            word-break: keep-all;
+            line-height: 1;
         }
 
         .language-switcher button.active {
@@ -305,6 +309,14 @@
                 right: auto;
                 transform: translateX(-50%);
                 top: 16px;
+                gap: 4px;
+                padding: 5px;
+            }
+
+            .language-switcher button {
+                min-width: 44px;
+                padding: 7px 8px;
+                font-size: 0.78rem;
             }
 
             .ritual-card {
@@ -366,11 +378,11 @@
         const translations = {
             zh: {
                 htmlLang: "zh-CN",
-                titleTag: "点香定心 | 喵时计 PurrrrrFocus",
+                titleTag: "点香定心 | 喵时计（PurrrrrFocus）",
                 metaDescription: "开启专注前，与猫咪共度五秒点香仪式。静观静气自方寸间缓缓升起，收敛杂念、平稳呼吸，从容进入沉浸式专注时刻。",
-                ogTitle: "点香定心 | 喵时计 PurrrrrFocus",
+                ogTitle: "点香定心 | 喵时计（PurrrrrFocus）",
                 ogDescription: "按住香炉，轻敛心神。",
-                twitterTitle: "点香定心 | 喵时计 PurrrrrFocus",
+                twitterTitle: "点香定心 | 喵时计（PurrrrrFocus）",
                 twitterDescription: "按住香炉，轻敛心神。",
                 eventName: "点香定心",
                 eventDescription: "开启专注前，与猫咪共度五秒点香仪式。",
@@ -385,7 +397,7 @@
                 note: "如果已安装喵时计，在 iPhone 或 iPad 上打开此链接会直接进入 App 内的点香定心活动。",
                 symbol: "静",
                 previewTitle: "按住，让心安定下来",
-                previewCaption: "安装 PurrrrrFocus 后，会直接打开 App 内同款季节活动图片。"
+                previewCaption: "安装喵时计（PurrrrrFocus）后，会直接打开 App 内同款季节活动图片。"
             },
             en: {
                 htmlLang: "en",
