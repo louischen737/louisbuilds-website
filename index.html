@@ -69,7 +69,7 @@
       "description": "Step1st helps you reduce screen time and build walking habits with simple daily step goals before you unlock chosen apps.",
       "offers": {
         "@type": "Offer",
-        "url": "https://apps.apple.com/app/id6760578956",
+        "url": "https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956",
         "price": "0",
         "priceCurrency": "USD",
         "description": "Free to download. Optional monthly subscription with a 3-day free trial and annual subscription with a 7-day free trial."
@@ -445,11 +445,6 @@ body {
     gap: 14px 20px;
 }
 
-/* Step1st: status already bridges copy → CTA; slightly tighter */
-.app-head .product-status + .app-actions {
-    margin-top: clamp(1.1rem, 2.1vw, 1.6rem);
-}
-
 .app-icon {
     width: 60px;
     height: 60px;
@@ -565,17 +560,6 @@ body {
     margin-right: 0.35rem;
 }
 
-/* TestFlight / availability — light pause after “what”, before CTA cluster */
-.app-head .product-status {
-    font-size: 13px;
-    color: var(--accent);
-    text-align: center;
-    margin: clamp(0.65rem, 1.35vw, 0.95rem) auto 0;
-    max-width: 40rem;
-    line-height: 1.45;
-    letter-spacing: 0.02em;
-}
-
 /* Documentation — last row of each app, centered */
 .app-doc-footer {
     margin-top: clamp(1.5rem, 3.5vw, 2rem);
@@ -629,28 +613,6 @@ body {
 
 .app-store-badge:hover {
     transform: scale(1.05);
-}
-
-.btn-early-access {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 0 18px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 8px;
-    text-decoration: none;
-    transition: transform 0.4s var(--ease), background 0.25s var(--ease), border-color 0.25s var(--ease);
-}
-
-.btn-early-access:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.45);
 }
 
 .btn-learn {
@@ -1390,9 +1352,10 @@ footer p {
 <h2 class="product-title"><img src="step1st/step1st-icon-120w.webp" srcset="step1st/step1st-icon-60w.webp 60w, step1st/step1st-icon-120w.webp 120w, step1st/step1st-icon-180w.webp 180w" sizes="60px" class="app-icon" alt="Step1st app icon" width="60" height="60" loading="lazy" decoding="async"> Step1st</h2>
 <div class="tags">iOS · Health &amp; Fitness · Productivity · v1.0</div>
 <p class="app-what">A movement-driven iOS app blocker that links screen time to physical activity—using step goals before you scroll.</p>
-<p class="product-status">Currently in TestFlight — early access available</p>
 <div class="app-actions buttons product-links">
-<a href="https://substack.com/@louisbuilds/p-193051902" class="btn-early-access" target="_blank" rel="noopener noreferrer" aria-label="Get early access to Step1st via Substack">Get Early Access</a>
+<a href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Step1st on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="120" height="40" loading="lazy" decoding="async">
+</a>
 <a href="step1st/" class="btn-learn">Learn More →</a>
 </div>
 </div>
