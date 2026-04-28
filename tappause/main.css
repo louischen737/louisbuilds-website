@@ -409,7 +409,7 @@ body.page-home .blog-card p {
     max-width: 600px;
 }
 
-/* Step1st — Substack promo */
+/* Step1st — cross-promo (sister app, App Store) */
 body.page-home .step1st-promo {
     padding: 60px 24px;
     max-width: 760px;
@@ -469,6 +469,21 @@ body.page-home .step1st-btn {
 body.page-home .step1st-btn:hover {
     text-decoration: underline;
     gap: 12px;
+}
+body.page-home .step1st-sublink-wrap {
+    margin: 14px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+body.page-home .step1st-sublink {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+body.page-home .step1st-sublink:hover {
+    color: var(--accent);
 }
 
 body.page-home .cta {
