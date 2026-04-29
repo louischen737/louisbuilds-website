@@ -67,6 +67,22 @@
     },
     {
       "@type": "Question",
+      "name": "How is Step1st different from Apple Screen Time limits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Apple Screen Time limits are timer-based and can be easy to override. Step1st uses a step goal as the unlock condition, so opening distracting apps requires movement first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Step1st good for doomscrolling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Step1st is designed for doomscrolling loops where you open social or short video apps automatically. It adds a physical pause by asking you to walk before those apps unlock."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Does Step1st track location?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -404,6 +420,55 @@ h1 {
     border-radius: 999px;
     background: var(--accent-gradient);
 }
+.comparison-card {
+    border: 1px solid rgba(255, 201, 71, 0.16);
+    border-radius: 28px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.024)),
+        rgba(255, 255, 255, 0.025);
+    overflow: hidden;
+}
+.comparison-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.comparison-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+.comparison-table th,
+.comparison-table td {
+    padding: 22px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.comparison-table th {
+    color: #fff;
+    font-family: var(--heading-font);
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    background: rgba(255, 255, 255, 0.045);
+}
+.comparison-table td {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+}
+.comparison-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+.comparison-table strong {
+    display: block;
+    color: #fff;
+    font-family: var(--heading-font);
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+.comparison-table .highlight {
+    color: #ffd477;
+}
 .cta-panel {
     text-align: center;
     border: 1px solid rgba(255, 201, 71, 0.2);
@@ -736,6 +801,49 @@ footer {
         </div>
     </section>
 
+    <section class="section" id="compare" aria-labelledby="compare-title">
+        <div class="container">
+            <div class="section-head">
+                <h2 id="compare-title">How Step1st compares with common screen time tools</h2>
+                <p>If ordinary limits are too easy to ignore, the difference is not motivation. It is the type of friction placed between the urge and the app.</p>
+            </div>
+            <div class="comparison-card">
+                <div class="comparison-scroll" role="region" aria-label="Comparison of Step1st, Apple Screen Time, and traditional app blockers" tabindex="0">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Approach</th>
+                                <th scope="col">How it works</th>
+                                <th scope="col">What often happens</th>
+                                <th scope="col">Best for</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Apple Screen Time</strong>Built into iPhone</td>
+                                <td>Sets time limits for apps and categories.</td>
+                                <td>Useful for awareness, but one-tap overrides can turn limits into suggestions.</td>
+                                <td>People who mainly need reminders and usage reports.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Traditional app blockers</strong>Harder lockouts</td>
+                                <td>Blocks selected apps during schedules or focus sessions.</td>
+                                <td>Can feel punitive, especially when real life requires flexibility.</td>
+                                <td>Deep work sessions, strict routines, or temporary detox periods.</td>
+                            </tr>
+                            <tr>
+                                <td><strong class="highlight">Step1st</strong>Walk to unlock</td>
+                                <td>Selected apps stay blocked until you reach a daily step goal.</td>
+                                <td>The pause becomes physical: move first, then open the app with more intention.</td>
+                                <td>Doomscrolling loops, short-video habits, and people who want screen time tied to movement.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="privacy" aria-labelledby="privacy-title">
         <div class="container">
             <div class="section-head">
@@ -768,6 +876,14 @@ footer {
                 <details>
                     <summary>Can I use it as an iPhone screen time app?</summary>
                     <p>Yes. Step1st is a screen time control app with a movement-based twist: selected apps stay behind your step goal until you move enough.</p>
+                </details>
+                <details>
+                    <summary>How is Step1st different from Apple Screen Time limits?</summary>
+                    <p>Apple Screen Time limits are timer-based and can be easy to override. Step1st uses a step goal as the unlock condition, so opening distracting apps requires movement first.</p>
+                </details>
+                <details>
+                    <summary>Is Step1st good for doomscrolling?</summary>
+                    <p>Yes. Step1st is designed for doomscrolling loops where you open social or short video apps automatically. It adds a physical pause by asking you to walk before those apps unlock.</p>
                 </details>
                 <details>
                     <summary>Does Step1st work without an account?</summary>
