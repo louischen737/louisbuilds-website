@@ -78,6 +78,16 @@ body {
 }
 a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
 a:hover { opacity: 0.85; text-decoration: underline; text-underline-offset: 0.2em; }
+article p a,
+article li a {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-color: rgba(90, 168, 255, 0.42);
+}
+article p a:hover,
+article li a:hover {
+    text-decoration-color: currentColor;
+}
 .site-header {
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--line);
@@ -244,7 +254,7 @@ footer a { color: var(--muted); }
     <p class="article-meta">April 2026 · Digital Wellness / Screen Time</p>
 
     <p class="lede">If you’ve ever tried to stop doomscrolling, you know how hard it is.</p>
-    <p>Screen Time limits don’t work. App blockers don’t work.</p>
+    <p><a href="../step1st/why-screen-time-limits-dont-work.html">Screen Time limits don’t work</a>. App blockers don’t work.</p>
     <p>Because at the end of the day, you can always tap <strong>“Ignore.”</strong></p>
     <p>I saw this problem up close at home — and it pushed me to build something different.</p>
 
@@ -265,6 +275,7 @@ footer a { color: var(--muted); }
     <p>None of it really worked.</p>
     <p>Because all of them rely on one thing:</p>
     <blockquote><strong>Self-control, exactly when you don’t have it.</strong></blockquote>
+    <p>That is why I started thinking less about discipline and more about <a href="../step1st/how-to-stop-doomscrolling-without-willpower.html">how to stop doomscrolling without relying on willpower alone</a>.</p>
 
     <hr>
 
@@ -287,7 +298,7 @@ footer a { color: var(--muted); }
     <hr>
 
     <h2 id="move-first">A Simpler System: Move First, Then Scroll</h2>
-    <p>I’m a developer, so I turned that idea into something simple:</p>
+    <p>I’m a developer, so I turned that idea into something simple — an <a href="../step1st/iphone-app-blocker-with-steps.html">iPhone app blocker with steps</a>:</p>
     <p>You set a daily step goal.</p>
     <p>Until you reach it, the apps you choose stay locked.</p>
     <p>Once you’ve moved enough for the day, everything unlocks.</p>
