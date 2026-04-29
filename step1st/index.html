@@ -1135,6 +1135,66 @@
             vertical-align: 0.08em;
         }
 
+        /* --- Guides --- */
+        .guides-section {
+            background: rgba(255, 255, 255, 0.018);
+        }
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        .guide-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 250px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 28px;
+            background:
+                radial-gradient(circle at 18% 0%, rgba(255, 138, 0, 0.12), transparent 18rem),
+                rgba(255, 255, 255, 0.03);
+            text-decoration: none;
+            transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+        }
+        .guide-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 201, 71, 0.32);
+            background:
+                radial-gradient(circle at 18% 0%, rgba(255, 138, 0, 0.16), transparent 18rem),
+                rgba(255, 255, 255, 0.045);
+        }
+        .guide-card-kicker {
+            color: var(--brand-yellow);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        .guide-card h3 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.18;
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+        }
+        .guide-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.65;
+            margin: 0 0 22px;
+        }
+        .guide-card-cta {
+            margin-top: auto;
+            color: var(--brand-yellow);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -1401,6 +1461,11 @@
             .benefit-list li { text-align: left; }
             .section-header { margin-bottom: 42px; }
             .how-grid { grid-template-columns: 1fr; }
+            .guides-grid { grid-template-columns: 1fr; }
+            .guide-card {
+                min-height: 0;
+                padding: 26px;
+            }
 
             .nav-inner {
                 display: grid;
@@ -1416,10 +1481,7 @@
             .nav-brand { grid-area: brand; justify-self: start; min-width: 0; }
             .nav-links {
                 grid-area: links;
-                justify-self: stretch;
-                justify-content: center;
-                gap: 6px;
-                flex-wrap: wrap;
+                display: none;
             }
             .nav-end { grid-area: cta; justify-self: end; flex-shrink: 0; }
             .nav-link { padding: 6px 10px; font-size: 13px; }
@@ -1449,6 +1511,7 @@
                     <div class="nav-links">
                         <a href="#path-to-balance-title" class="nav-link">How it works</a>
                         <a href="#challenge-built-title" class="nav-link">Features</a>
+                        <a href="#guides" class="nav-link">Guides</a>
                         <a href="#faq" class="nav-link">FAQ</a>
                     </div>
                 </div>
@@ -1759,6 +1822,7 @@
                         <summary>Can Step1st block apps on iPhone?</summary>
                         <div class="faq-answer">
                             Yes. Step1st works as an app blocker using Apple’s Screen Time API. You can select apps to lock, and they will only unlock after you reach your daily step goal. Unlike traditional app blockers, there’s no easy override—your movement becomes the key.
+                            <a href="iphone-app-blocker-with-steps.html" class="faq-inline-link">Learn how the step-based app blocker works</a>.
                         </div>
                     </details>
 
@@ -1775,6 +1839,8 @@
                         <summary>Is Step1st a screen time control app?</summary>
                         <div class="faq-answer">
                             Yes—but with a different approach. Instead of relying on limits or willpower, Step1st helps reduce screen time by linking it to physical activity. You earn your screen time by moving.
+                            If Screen Time has not worked for you, read why
+                            <a href="why-screen-time-limits-dont-work.html" class="faq-inline-link">Screen Time limits are so easy to ignore</a>.
                         </div>
                     </details>
 
@@ -1809,6 +1875,35 @@
                 </p>
             </div>
 </section>
+
+        <section class="section guides-section" id="guides" aria-labelledby="guides-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="guides-title">Guides for Better Screen Time</h2>
+                    <p>Understand why app limits fail, how to stop doomscrolling without relying on willpower, and how Step1st makes opening distracting apps a more conscious choice.</p>
+                </div>
+                <div class="guides-grid">
+                    <a href="why-screen-time-limits-dont-work.html" class="guide-card">
+                        <span class="guide-card-kicker">Screen Time</span>
+                        <h3>Why Screen Time Limits Don’t Work</h3>
+                        <p>If a limit can be bypassed in one tap, it starts to feel like a suggestion. Learn why one-tap overrides break boundaries.</p>
+                        <span class="guide-card-cta">Read the guide →</span>
+                    </a>
+                    <a href="how-to-stop-doomscrolling-without-willpower.html" class="guide-card">
+                        <span class="guide-card-kicker">Doomscrolling</span>
+                        <h3>How to Stop Doomscrolling Without Willpower</h3>
+                        <p>The goal is not perfect discipline. Learn how helpful friction makes the next scroll less automatic.</p>
+                        <span class="guide-card-cta">Read the guide →</span>
+                    </a>
+                    <a href="iphone-app-blocker-with-steps.html" class="guide-card">
+                        <span class="guide-card-kicker">App blocker</span>
+                        <h3>iPhone App Blocker With Steps</h3>
+                        <p>See how Step1st puts selected apps behind a daily step goal, creating helpful friction without feeling like punishment.</p>
+                        <span class="guide-card-cta">See how it works →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section class="section" aria-labelledby="trust-section-title">
             <div class="container">

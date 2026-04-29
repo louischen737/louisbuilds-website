@@ -6,7 +6,17 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://louisbuilds.me/step1st/how-it-works.html</loc>
+        <loc>https://louisbuilds.me/step1st/iphone-app-blocker-with-steps.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/step1st/why-screen-time-limits-dont-work.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/step1st/how-to-stop-doomscrolling-without-willpower.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

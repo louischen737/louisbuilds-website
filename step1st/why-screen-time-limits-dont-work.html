@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="canonical" href="https://louisbuilds.me/step1st/why-screen-time-limits-dont-work.html">
+<link rel="preload" href="Outfit/static/Outfit-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="Outfit/static/Outfit-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="Outfit/static/Outfit-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
+<title>Why Screen Time Limits Don’t Work | Step1st</title>
+<meta name="description" content="Screen Time limits often fail because they rely on willpower when the urge to scroll is strongest. Learn why one-tap overrides break boundaries and what to try instead.">
+<meta name="keywords" content="Screen Time limits don't work, ignore screen time limit, iPhone screen time not working, screen time alternative, app blocker for iPhone">
+
+<meta property="og:title" content="Why Screen Time Limits Don’t Work">
+<meta property="og:description" content="If a limit can be bypassed in one tap, it starts to feel like a suggestion. Step1st offers a softer way to interrupt doomscrolling.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://louisbuilds.me/step1st/why-screen-time-limits-dont-work.html">
+<meta property="og:image" content="https://louisbuilds.me/step1st/og-image.jpg">
+<meta property="article:published_time" content="2026-04-29T00:00:00+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Screen Time Limits Don’t Work">
+<meta name="twitter:description" content="The problem is not just access. It is how easy access is.">
+<meta name="twitter:image" content="https://louisbuilds.me/step1st/og-image.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Screen Time Limits Don’t Work",
+  "description": "Screen Time limits often fail because they rely on willpower when the urge to scroll is strongest.",
+  "datePublished": "2026-04-29",
+  "author": { "@type": "Person", "name": "Louis", "url": "https://louisbuilds.me" },
+  "publisher": { "@type": "Organization", "name": "Louis Builds", "url": "https://louisbuilds.me" },
+  "image": "https://louisbuilds.me/step1st/og-image.jpg",
+  "mainEntityOfPage": "https://louisbuilds.me/step1st/why-screen-time-limits-dont-work.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do Screen Time limits stop working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They often depend on willpower when the urge to keep scrolling is already strong. If a limit can be bypassed in one tap, many people experience it as a suggestion rather than a real boundary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a hard app blocker better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. Hard blockers can feel punishing and may cause people to fight the tool or delete it. A softer layer of friction can be easier to live with."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Step1st different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Step1st puts selected apps behind a daily step goal. The goal is adjustable, so it is not an unbreakable lock. The point is to interrupt autopilot and make opening distracting apps a conscious choice."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+@font-face {
+    font-family: "OutfitCustom";
+    src: url("Outfit/static/Outfit-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "OutfitCustom";
+    src: url("Outfit/static/Outfit-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "OutfitCustom";
+    src: url("Outfit/static/Outfit-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    --bg: #000;
+    --panel: rgba(255, 255, 255, 0.035);
+    --text-primary: #fff;
+    --text-secondary: #c9c9d1;
+    --text-muted: #8e8e93;
+    --brand-orange: #ff8a00;
+    --brand-yellow: #ffc947;
+    --accent-gradient: linear-gradient(135deg, #ff8a00 0%, #ffc947 100%);
+    --border: rgba(255, 255, 255, 0.1);
+    --glass: rgba(18, 18, 19, 0.78);
+    --heading-font: "OutfitCustom", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 320px;
+    background:
+        radial-gradient(circle at 72% 8%, rgba(255, 138, 0, 0.16), transparent 32rem),
+        radial-gradient(circle at 16% 28%, rgba(255, 201, 71, 0.08), transparent 28rem),
+        var(--bg);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+a {
+    color: var(--brand-yellow);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    width: min(1060px, calc(100% - 48px));
+    margin: 0 auto;
+}
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--glass);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+}
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 14px 0;
+}
+.nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+.nav-brand:hover {
+    text-decoration: none;
+}
+.nav-brand-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 18px rgba(255, 138, 0, 0.32);
+}
+.nav-brand-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+.btn-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: var(--accent-gradient);
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 10px 24px rgba(255, 138, 0, 0.25);
+}
+.btn-nav:hover {
+    text-decoration: none;
+}
+.hero {
+    padding: clamp(58px, 9vw, 112px) 0 clamp(42px, 7vw, 82px);
+    text-align: center;
+}
+.eyebrow {
+    display: inline-flex;
+    margin-bottom: 18px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 201, 71, 0.24);
+    border-radius: 999px;
+    background: rgba(255, 201, 71, 0.08);
+    color: var(--brand-yellow);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    letter-spacing: -0.03em;
+}
+h1 {
+    max-width: 820px;
+    margin: 0 auto 20px;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.02;
+    font-weight: 700;
+}
+.gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.lede {
+    max-width: 720px;
+    margin: 0 auto 26px;
+    color: var(--text-secondary);
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.6;
+}
+.hero-meta {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.article-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 700px) 280px;
+    gap: 48px;
+    align-items: start;
+    padding-bottom: clamp(68px, 9vw, 110px);
+}
+article {
+    min-width: 0;
+}
+article section {
+    padding: 34px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+article h2 {
+    font-size: clamp(27px, 4vw, 40px);
+    line-height: 1.12;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+article h3 {
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin: 28px 0 10px;
+}
+article p,
+article li {
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1.75;
+}
+article p + p {
+    margin-top: 16px;
+}
+article ul {
+    margin: 18px 0 0 1.25rem;
+}
+article li {
+    margin-bottom: 10px;
+}
+blockquote {
+    margin: 24px 0;
+    padding: 20px 22px;
+    border-left: 3px solid var(--brand-yellow);
+    border-radius: 0 18px 18px 0;
+    background: rgba(255, 201, 71, 0.07);
+    color: #fff;
+    font-family: var(--heading-font);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+.story-card,
+.cta-card,
+.toc {
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    background: var(--panel);
+}
+.toc .related-card {
+    display: block;
+    margin: 18px 0 0;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.24s ease, border-color 0.24s ease;
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    background: var(--panel);
+}
+.toc .related-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 201, 71, 0.32);
+    text-decoration: none;
+}
+.toc .related-card span {
+    display: block;
+    color: var(--brand-yellow);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+.toc .related-card strong {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 20px;
+    line-height: 1.18;
+    margin-bottom: 8px;
+}
+.toc .related-card small {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+}
+.story-card {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin: 28px 0;
+    padding: 22px;
+}
+.story-card img {
+    width: 92px;
+    border-radius: 999px;
+    filter: drop-shadow(0 14px 24px rgba(255, 138, 0, 0.2));
+}
+.story-card p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+}
+.toc {
+    position: sticky;
+    top: 86px;
+    padding: 22px;
+}
+.toc-title {
+    color: var(--text-primary);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.toc a {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.35;
+    padding: 9px 0;
+}
+.cta-card {
+    margin-top: 22px;
+    padding: 24px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255, 138, 0, 0.14), transparent 18rem),
+        rgba(255, 255, 255, 0.035);
+}
+.cta-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+.cta-card p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+.app-store-link {
+    display: inline-flex;
+    line-height: 0;
+    transition: transform 0.24s ease, filter 0.24s ease;
+}
+.app-store-link:hover {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+}
+.app-store-link img {
+    width: 168px;
+    height: auto;
+}
+.inline-card {
+    margin: 30px 0;
+    padding: 24px;
+    border: 1px solid rgba(255, 201, 71, 0.2);
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 138, 0, 0.09), rgba(255, 255, 255, 0.025));
+}
+.inline-card h3 {
+    margin-top: 0;
+}
+.inline-card p {
+    font-size: 17px;
+}
+footer {
+    padding: 56px 0 70px;
+    color: var(--text-muted);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 28px;
+    margin-bottom: 20px;
+}
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer-links a:hover {
+    color: #fff;
+}
+.footer-meta {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+@media (max-width: 920px) {
+    .article-shell {
+        grid-template-columns: 1fr;
+    }
+    .toc {
+        display: contents;
+        position: static;
+    }
+    article {
+        order: 1;
+    }
+    .toc-nav-group {
+        order: 0;
+        padding: 22px;
+        border: 1px solid var(--border);
+        border-radius: 26px;
+        background: var(--panel);
+    }
+    .toc-after-group {
+        order: 2;
+        padding: 22px;
+        border: 1px solid var(--border);
+        border-radius: 26px;
+        background: var(--panel);
+    }
+    .toc .cta-card {
+        margin-top: 0;
+    }
+    .article-inline-cta {
+        display: none;
+    }
+}
+@media (max-width: 680px) {
+    .container {
+        width: min(100% - 32px, 1060px);
+    }
+    .nav-brand-logo {
+        width: 96px;
+    }
+    h1 {
+        font-size: clamp(36px, 11.4vw, 48px);
+    }
+    .lede {
+        font-size: 17px;
+    }
+    article p,
+    article li {
+        font-size: 16.5px;
+    }
+    .story-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .story-card img {
+        margin: 0 auto;
+    }
+}
+</style>
+</head>
+
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+        <a class="nav-brand" href="./" aria-label="Step1st home">
+            <img src="step1st-icon-84w.webp" srcset="step1st-icon-28w.webp 28w, step1st-icon-56w.webp 56w, step1st-icon-84w.webp 84w" sizes="30px" class="nav-brand-icon" alt="Step1st app icon" width="30" height="30" decoding="async" fetchpriority="high">
+            <img src="Step1st_logo.png" class="nav-brand-logo" alt="Step1st logo" width="120" height="24" decoding="async" fetchpriority="high">
+        </a>
+        <a class="btn-nav" href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" target="_blank" rel="noopener noreferrer">Download</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container">
+        <p class="eyebrow">Screen Time / iPhone habits</p>
+        <h1>Why <span class="gradient-text">Screen Time limits</span> don’t work</h1>
+        <p class="lede">If a limit can be bypassed in one tap, it starts to feel less like a boundary and more like a suggestion.</p>
+        <p class="hero-meta">April 2026 · Digital wellbeing · Step1st</p>
+    </div>
+</header>
+
+<main class="container article-shell">
+    <article>
+        <section id="intro">
+            <p>You set a Screen Time limit. You mean it this time.</p>
+            <p>Then the limit appears at exactly the wrong moment: when you are already tired, bored, stressed, or deep in a scroll loop.</p>
+            <p>And there it is: <strong>Ignore Limit</strong>.</p>
+            <p>One tap later, the boundary is gone.</p>
+            <blockquote>The problem is not that you need another reminder. The problem is that access is still too easy.</blockquote>
+        </section>
+
+        <section id="willpower">
+            <h2>Screen Time asks for willpower when willpower is already low</h2>
+            <p>Most screen time tools are built around a reasonable idea: set a limit, get a reminder, stop when the reminder appears.</p>
+            <p>That works when you are calm and intentional. It breaks down when the app has already pulled you in.</p>
+            <p>By the time a short-video feed, game, or social app has your attention, the limit is competing with a very simple escape route. You do not need a plan. You do not need to move. You only need to tap.</p>
+            <p>That is why many people do not experience Screen Time as a true boundary. They experience it as a negotiation.</p>
+        </section>
+
+        <section id="one-tap">
+            <h2>One tap turns a boundary into a suggestion</h2>
+            <p>This is not a moral failure. It is a product design problem.</p>
+            <p>When the cost of bypassing a limit is almost zero, the limit has to be defended by self-control. That means the tool is strongest when you need it least, and weakest when you need it most.</p>
+            <p>For doomscrolling, the hard part is rarely deciding in the morning that you want less screen time. The hard part is catching yourself before “just one more video” becomes another hour.</p>
+            <div class="story-card">
+                <img src="olo-thinking.png" alt="Olo thinking about a better screen time boundary" width="120" height="120" loading="lazy" decoding="async">
+                <p>Step1st was built around this exact moment: the tiny gap between opening an app on autopilot and realizing you meant to do something else.</p>
+            </div>
+        </section>
+
+        <section id="hard-blockers">
+            <h2>Hard blockers can feel too punishing</h2>
+            <p>The opposite approach is to make the block impossible to bypass. That can help some people, but it can also make the phone feel hostile.</p>
+            <p>Real life is messy. Some days you walk more. Some days you are sick, traveling, busy, or caring for someone else. If a tool treats every day the same, people often end up fighting the tool instead of changing the habit.</p>
+            <p>A useful boundary should be strong enough to interrupt autopilot, but flexible enough to live with.</p>
+        </section>
+
+        <section id="friction">
+            <h2>A better pattern: helpful friction</h2>
+            <p>Helpful friction does not try to remove the reward. It changes the path to it.</p>
+            <p>Instead of saying “you can never open this,” the question becomes: “Do you still want to open this after doing one real-world action first?”</p>
+            <p>That tiny shift matters. It creates a pause. It makes the next action conscious. It gives your body a chance to interrupt what your thumb was about to do automatically.</p>
+            <blockquote>Keep the reward. Change the path to it.</blockquote>
+        </section>
+
+        <section id="step1st">
+            <h2>What Step1st does differently</h2>
+            <p><a href="iphone-app-blocker-with-steps.html">Step1st</a> puts selected iPhone apps behind a daily step goal.</p>
+            <ul>
+                <li>You choose the apps that pull you into scrolling.</li>
+                <li>You set a daily step goal that fits your routine.</li>
+                <li>Those apps stay behind that goal until you move enough.</li>
+                <li>Once you reach the goal, they unlock for the rest of the day.</li>
+            </ul>
+            <p>The goal is adjustable by design. Step1st is not meant to be an unbreakable lock or a punishment tool. The point is to make the choice visible before the scroll loop starts again.</p>
+            <div class="inline-card">
+                <h3>Built for families, not productivity maximalists</h3>
+                <p>Step1st includes Olo, a small orange-yellow mascot, to make the experience feel less like a cold blocker and more like a walking companion. When you move, Olo celebrates the win.</p>
+            </div>
+        </section>
+
+        <section id="privacy">
+            <h2>Privacy matters when the tool lives on your phone</h2>
+            <p>Step1st works with Apple Screen Time and Apple Health. It requires no account and does not use location tracking.</p>
+            <p>The goal is simple: add a useful pause before distracting apps, without turning the app itself into another thing that demands attention.</p>
+        </section>
+
+        <section id="try">
+            <h2>Try a step-based alternative</h2>
+            <p>If Screen Time limits are too easy to ignore, try adding one real-world step before the apps that pull you in.</p>
+            <p>Step1st is free to download on the App Store, with optional monthly and yearly Pro subscriptions.</p>
+            <p class="article-inline-cta">
+                <a class="app-store-link" href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" target="_blank" rel="noopener noreferrer" aria-label="Download Step1st on the App Store">
+                    <img src="../assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="168" height="56" loading="lazy" decoding="async">
+                </a>
+            </p>
+        </section>
+    </article>
+
+    <aside class="toc" aria-label="Article navigation">
+        <div class="toc-nav-group">
+            <p class="toc-title">In this article</p>
+            <a href="#willpower">Why limits rely on willpower</a>
+            <a href="#one-tap">The one-tap escape hatch</a>
+            <a href="#hard-blockers">Why hard blockers feel harsh</a>
+            <a href="#friction">Helpful friction</a>
+            <a href="#step1st">Step1st’s approach</a>
+        </div>
+        <div class="toc-after-group">
+            <div class="cta-card">
+                <h3>Put apps behind steps</h3>
+                <p>Use movement as the pause before the scroll loop.</p>
+                <a class="app-store-link" href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" target="_blank" rel="noopener noreferrer" aria-label="Download Step1st on the App Store">
+                    <img src="../assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="168" height="56" loading="lazy" decoding="async">
+                </a>
+            </div>
+            <a class="related-card" href="how-to-stop-doomscrolling-without-willpower.html">
+                <span>Related guide</span>
+                <strong>How to Stop Doomscrolling Without Willpower</strong>
+                <small>Use helpful friction to make the next scroll less automatic.</small>
+            </a>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="./">Home</a>
+            <a href="iphone-app-blocker-with-steps.html">iPhone app blocker with steps</a>
+            <a href="how-to-stop-doomscrolling-without-willpower.html">Stop doomscrolling</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-of-service.html">Terms</a>
+            <a href="support.html">Support</a>
+        </div>
+        <p class="footer-meta">© 2026 Step1st</p>
+        <p class="footer-meta">A product by Louis · <a href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
+    </div>
+</footer>
+</body>
+</html>
