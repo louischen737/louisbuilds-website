@@ -886,7 +886,7 @@ footer p {
 .journal-section-inner {
     max-width: 900px;
     margin: 0 auto;
-    padding: clamp(96px, 14vw, 160px) 24px clamp(112px, 16vw, 200px);
+    padding: clamp(112px, 15vw, 188px) 24px clamp(136px, 18vw, 232px);
 }
 
 .journal-section.visible {
@@ -896,7 +896,7 @@ footer p {
 
 .journal-section .section-header {
     margin-bottom: 0;
-    padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+    padding-bottom: clamp(1.5rem, 3.5vw, 2.1rem);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -913,13 +913,14 @@ footer p {
     font-size: 0.95rem;
     line-height: 1.5;
     max-width: 36rem;
+    margin-top: 0.35rem;
 }
 
 .journal-body {
     display: flex;
     flex-direction: column;
-    gap: clamp(1.25rem, 3vw, 1.85rem);
-    margin-top: clamp(1.35rem, 2.8vw, 1.85rem);
+    gap: 0;
+    margin-top: clamp(1.85rem, 3.6vw, 2.5rem);
 }
 
 /* Featured — stronger visual weight */
@@ -928,20 +929,18 @@ footer p {
 }
 
 .journal-featured-link {
-    display: block;
-    padding: 28px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: clamp(20px, 2.8vw, 26px) 0;
     text-decoration: none;
     color: inherit;
-    transition: background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    transition: color 0.25s var(--ease);
 }
 
 .journal-featured-link:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
 }
 
 .journal-featured-link:focus-visible {
@@ -949,18 +948,64 @@ footer p {
     outline-offset: 3px;
 }
 
+.journal-featured-media {
+    flex-shrink: 0;
+    width: clamp(96px, 18vw, 120px);
+    aspect-ratio: 16 / 10;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journal-featured-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.35s var(--ease), opacity 0.25s var(--ease);
+    opacity: 0.95;
+}
+
+.journal-featured-content {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+}
+
 .journal-featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.journal-featured-tag {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
+    background: rgba(var(--accent-rgb), 0.12);
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
 }
 
+.journal-featured-tag--star::before {
+    content: "★";
+    margin-right: 0.4em;
+    font-size: 0.85em;
+    line-height: 1;
+    opacity: 0.92;
+}
+
 .journal-featured-title {
-    font-size: 1.35rem;
-    font-weight: 500;
-    line-height: 1.35;
-    margin: 10px 0 0;
+    font-size: 1.18rem;
+    font-weight: 450;
+    line-height: 1.4;
+    margin: clamp(0.35rem, 1vw, 0.55rem) 0 0;
     color: var(--text-primary);
     transition: color 0.2s var(--ease);
 }
@@ -969,8 +1014,13 @@ footer p {
     color: #fff;
 }
 
+.journal-featured-link:hover .journal-featured-media img {
+    transform: scale(1.02);
+    opacity: 1;
+}
+
 .journal-featured-excerpt {
-    margin: 10px 0 0;
+    margin: clamp(0.65rem, 1.9vw, 1rem) 0 0;
     font-size: 14px;
     line-height: 1.5;
     color: var(--text-secondary);
@@ -978,10 +1028,10 @@ footer p {
 
 .journal-featured-arrow {
     display: inline-block;
-    margin-top: 14px;
-    font-size: 15px;
+    margin-top: clamp(0.45rem, 1.25vw, 0.7rem);
+    font-size: 14px;
     color: var(--accent);
-    opacity: 0.9;
+    opacity: 0.88;
     transition: transform 0.25s var(--ease), opacity 0.2s;
 }
 
@@ -993,7 +1043,7 @@ footer p {
 /* List — lighter rows */
 .journal-list {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 2px;
+    padding-top: clamp(10px, 1.8vw, 16px);
 }
 
 .journal-item {
@@ -1004,11 +1054,30 @@ footer p {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 16px;
-    padding: 18px 0;
+    gap: 14px;
+    padding: clamp(20px, 2.8vw, 26px) 0;
     text-decoration: none;
     color: var(--text-primary);
     transition: color 0.25s var(--ease);
+}
+
+.journal-thumb {
+    flex-shrink: 0;
+    width: clamp(96px, 18vw, 120px);
+    aspect-ratio: 16 / 10;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journal-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.35s var(--ease), opacity 0.25s var(--ease);
+    opacity: 0.95;
 }
 
 .journal-text {
@@ -1019,9 +1088,27 @@ footer p {
 }
 
 .journal-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 0.8rem;
     color: var(--text-muted);
-    margin-bottom: 4px;
+    margin-bottom: clamp(0.3rem, 0.85vw, 0.45rem);
+}
+
+.journal-date {
+    color: var(--text-muted);
+}
+
+.journal-tag {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
 }
 
 .journal-title {
@@ -1035,7 +1122,7 @@ footer p {
 .journal-excerpt {
     font-size: 0.9rem;
     color: #888;
-    margin-top: 4px;
+    margin-top: clamp(0.5rem, 1.45vw, 0.8rem);
     line-height: 1.45;
 }
 
@@ -1052,6 +1139,11 @@ footer p {
     color: #fff;
 }
 
+.journal-link:hover .journal-thumb img {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
 .journal-link:hover .journal-arrow {
     opacity: 1;
     transform: translateX(0);
@@ -1063,7 +1155,7 @@ footer p {
 
 /* CTA — soft footer to section */
 .journal-follow-cta {
-    margin-top: 20px;
+    margin-top: clamp(28px, 4.5vw, 44px);
     text-align: center;
     opacity: 0.85;
     max-width: 32rem;
@@ -1104,14 +1196,25 @@ footer p {
 
 @media (max-width: 600px) {
     .journal-link {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        align-items: start;
+        gap: 10px 12px;
+    }
+
+    .journal-thumb {
+        width: 92px;
+        border-radius: 9px;
+    }
+
+    .journal-text {
+        min-width: 0;
     }
 
     .journal-arrow {
-        align-self: flex-end;
-        margin-top: 0;
+        grid-column: 2;
+        justify-self: end;
+        margin-top: -2px;
     }
 
     .journal-section-inner {
@@ -1120,7 +1223,19 @@ footer p {
     }
 
     .journal-featured-link {
-        padding: 22px 20px;
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        align-items: start;
+        gap: 10px 12px;
+    }
+
+    .journal-featured-media {
+        width: 92px;
+        border-radius: 9px;
+    }
+
+    .journal-featured-content {
+        padding: 0;
     }
 }
 
@@ -1738,12 +1853,20 @@ Documentation available in:
 
         <div class="journal-featured">
             <a href="/blog/how-to-stop-doomscrolling-what-worked-for-my-mom.html" class="journal-featured-link" aria-label="Featured: How to Stop Doomscrolling (What Actually Worked for My Mom)">
-                <div class="journal-featured-meta">Featured · Behavior</div>
-                <h3 class="journal-featured-title">How to Stop Doomscrolling (What Actually Worked for My Mom)</h3>
-                <p class="journal-featured-excerpt">
-                    Why traditional screen time limits fail—and how a simple daily step goal changed my mom’s habits.
-                </p>
-                <span class="journal-featured-arrow" aria-hidden="true">Read article →</span>
+                <div class="journal-featured-media" aria-hidden="true">
+                    <img src="/step1st/og-image.jpg" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="journal-featured-content">
+                    <div class="journal-featured-meta">
+                        <span class="journal-featured-tag journal-featured-tag--star">Featured</span>
+                        <span class="journal-featured-tag">Behavior</span>
+                    </div>
+                    <h3 class="journal-featured-title">How to Stop Doomscrolling (What Actually Worked for My Mom)</h3>
+                    <p class="journal-featured-excerpt">
+                        Why traditional screen time limits fail—and how a simple daily step goal changed my mom’s habits.
+                    </p>
+                    <span class="journal-featured-arrow" aria-hidden="true">Read article →</span>
+                </div>
             </a>
         </div>
 
@@ -1751,8 +1874,14 @@ Documentation available in:
 
             <article class="journal-item">
                 <a href="/blog/500mb-crisis-ink-wash-cats-transmov.html" class="journal-link">
+                    <div class="journal-thumb" aria-hidden="true">
+                        <img src="/transmov/og-image.png" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="journal-text">
-                        <div class="journal-meta">Apr 2026 · Engineering / Story</div>
+                        <div class="journal-meta">
+                            <span class="journal-date">Apr 2026</span>
+                            <span class="journal-tag">Engineering / Story</span>
+                        </div>
                         <h3 class="journal-title">The 500MB Crisis: From Ink-Wash Cats to an AI-Powered Breakthrough</h3>
                         <p class="journal-excerpt">
                             How a struggle with high-quality animations led to the creation of TransMov and a leaner, smoother PurrrrrFocus.
@@ -1764,8 +1893,14 @@ Documentation available in:
 
             <article class="journal-item">
                 <a href="/blog/from-text-to-ipa-word-aligned-phonetics-for-teachers.html" class="journal-link">
+                    <div class="journal-thumb" aria-hidden="true">
+                        <img src="/phoneticformatter/og-image.png" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="journal-text">
-                        <div class="journal-meta">Mar 2026 · Engineering</div>
+                        <div class="journal-meta">
+                            <span class="journal-date">Mar 2026</span>
+                            <span class="journal-tag">Engineering</span>
+                        </div>
                         <h3 class="journal-title">The Technical Challenge of Aligning English Sentences with IPA</h3>
                         <p class="journal-excerpt">
                             Building a word-aligned transcription engine that works 100% offline.
@@ -1777,8 +1912,14 @@ Documentation available in:
 
             <article class="journal-item">
                 <a href="/blog/the-zen-of-productivity-silent-companion.html" class="journal-link">
+                    <div class="journal-thumb" aria-hidden="true">
+                        <img src="/purrrrrfocus/og-image.png" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="journal-text">
-                        <div class="journal-meta">Feb 2026 · Design</div>
+                        <div class="journal-meta">
+                            <span class="journal-date">Feb 2026</span>
+                            <span class="journal-tag">Design</span>
+                        </div>
                         <h3 class="journal-title">Digital Minimalism &amp; China-Chic: The Zen of a Cat-Themed Pomodoro Timer</h3>
                         <p class="journal-excerpt">
                             Exploring the balance between Guochao aesthetics and deep work rituals.
@@ -1790,8 +1931,14 @@ Documentation available in:
 
             <article class="journal-item">
                 <a href="/blog/building-offline-first-apps.html" class="journal-link">
+                    <div class="journal-thumb" aria-hidden="true">
+                        <img src="/assets/og-image.png" alt="" loading="lazy" decoding="async">
+                    </div>
                     <div class="journal-text">
-                        <div class="journal-meta">Jan 2026 · Philosophy</div>
+                        <div class="journal-meta">
+                            <span class="journal-date">Jan 2026</span>
+                            <span class="journal-tag">Philosophy</span>
+                        </div>
                         <h3 class="journal-title">Building Offline-First Apps: Why Your Deep Focus Doesn’t Need the Cloud</h3>
                         <p class="journal-excerpt">
                             My commitment to privacy: why none of my apps require an account.
