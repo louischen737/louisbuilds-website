@@ -556,6 +556,12 @@
         }
         .bg-dot--white { background: #f5f5f7; }
         .bg-dot--black { background: #0a0a0c; }
+        .bg-dot--accent { background: #6366f1; }
+        .bg-dot--studio-bg {
+            background-image: url("demo/outdoor-bg.jpg");
+            background-size: cover;
+            background-position: center;
+        }
         .compare-wrap.bg-solid-white {
             background: #f0f0f3 !important;
             background-image: none !important;
@@ -563,6 +569,17 @@
         .compare-wrap.bg-solid-black {
             background: #08080a !important;
             background-image: none !important;
+        }
+        .compare-wrap.bg-solid-accent {
+            background: #6366f1 !important;
+            background-image: none !important;
+        }
+        .compare-wrap.bg-custom-image {
+            background-color: #141527 !important;
+            background-image: url("demo/outdoor-bg.jpg") !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
         }
 
         .slider-row {
@@ -1050,6 +1067,8 @@
                         <button type="button" class="bg-dot bg-dot--checker" data-bg="checker" aria-pressed="true" title="Checkerboard — standard way to preview transparency" aria-label="Checkerboard background"></button>
                         <button type="button" class="bg-dot bg-dot--black" data-bg="black" aria-pressed="false" title="Black — preview edges and transparency on a dark backdrop" aria-label="Black background"></button>
                         <button type="button" class="bg-dot bg-dot--white" data-bg="white" aria-pressed="false" title="White — preview edges and transparency on a light backdrop" aria-label="White background"></button>
+                        <button type="button" class="bg-dot bg-dot--accent" data-bg="solid-accent" aria-pressed="false" title="Solid indigo — Free preset background colors" aria-label="Solid indigo background"></button>
+                        <button type="button" class="bg-dot bg-dot--studio-bg" data-bg="custom-image" aria-pressed="false" title="Outdoor scene — Pro custom image backgrounds" aria-label="Outdoor custom image background"></button>
                     </div>
                     <p class="compare-hint">Samples are pre-rendered for this page. Process your own footage with <strong>full</strong> control on macOS.</p>
                 </div>
@@ -1324,10 +1343,12 @@
         }
 
         function applyBackgroundMode(mode) {
-            wrap.classList.remove("checkerboard", "bg-solid-white", "bg-solid-black");
+            wrap.classList.remove("checkerboard", "bg-solid-white", "bg-solid-black", "bg-solid-accent", "bg-custom-image");
             if (mode === "checker") wrap.classList.add("checkerboard");
             else if (mode === "white") wrap.classList.add("bg-solid-white");
             else if (mode === "black") wrap.classList.add("bg-solid-black");
+            else if (mode === "solid-accent") wrap.classList.add("bg-solid-accent");
+            else if (mode === "custom-image") wrap.classList.add("bg-custom-image");
             document.querySelectorAll(".compare-bg-toggles .bg-dot").forEach(function (btn) {
                 btn.setAttribute("aria-pressed", btn.getAttribute("data-bg") === mode ? "true" : "false");
             });
