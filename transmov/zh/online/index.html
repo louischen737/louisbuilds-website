@@ -571,6 +571,12 @@
         }
         .bg-dot--white { background: #f5f5f7; }
         .bg-dot--black { background: #0a0a0c; }
+        .bg-dot--accent { background: #6366f1; }
+        .bg-dot--studio-bg {
+            background-image: url("../../online/demo/outdoor-bg.jpg");
+            background-size: cover;
+            background-position: center;
+        }
         .compare-wrap.bg-solid-white {
             background: #f0f0f3 !important;
             background-image: none !important;
@@ -578,6 +584,17 @@
         .compare-wrap.bg-solid-black {
             background: #08080a !important;
             background-image: none !important;
+        }
+        .compare-wrap.bg-solid-accent {
+            background: #6366f1 !important;
+            background-image: none !important;
+        }
+        .compare-wrap.bg-custom-image {
+            background-color: #141527 !important;
+            background-image: url("../../online/demo/outdoor-bg.jpg") !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
         }
 
         .slider-row {
@@ -1065,6 +1082,8 @@
                         <button type="button" class="bg-dot bg-dot--checker" data-bg="checker" aria-pressed="true" title="棋盘格 — 预览透明度标准模式" aria-label="棋盘格背景"></button>
                         <button type="button" class="bg-dot bg-dot--black" data-bg="black" aria-pressed="false" title="黑色 — 在深色背景下查看边缘与透明度" aria-label="黑色背景"></button>
                         <button type="button" class="bg-dot bg-dot--white" data-bg="white" aria-pressed="false" title="白色 — 在浅色背景下查看边缘与透明度" aria-label="白色背景"></button>
+                        <button type="button" class="bg-dot bg-dot--accent" data-bg="solid-accent" aria-pressed="false" title="靛蓝纯色 — 免费版预设背景色" aria-label="靛蓝纯色背景"></button>
+                        <button type="button" class="bg-dot bg-dot--studio-bg" data-bg="custom-image" aria-pressed="false" title="户外场景 — 专业版自定义图片背景" aria-label="户外自定义图片背景"></button>
                     </div>
                     <p class="compare-hint">本页面示例为预渲染效果。在 macOS 上可对您的视频进行<strong>完整</strong>控制处理。</p>
                 </div>
@@ -1339,10 +1358,12 @@
         }
 
         function applyBackgroundMode(mode) {
-            wrap.classList.remove("checkerboard", "bg-solid-white", "bg-solid-black");
+            wrap.classList.remove("checkerboard", "bg-solid-white", "bg-solid-black", "bg-solid-accent", "bg-custom-image");
             if (mode === "checker") wrap.classList.add("checkerboard");
             else if (mode === "white") wrap.classList.add("bg-solid-white");
             else if (mode === "black") wrap.classList.add("bg-solid-black");
+            else if (mode === "solid-accent") wrap.classList.add("bg-solid-accent");
+            else if (mode === "custom-image") wrap.classList.add("bg-custom-image");
             document.querySelectorAll(".compare-bg-toggles .bg-dot").forEach(function (btn) {
                 btn.setAttribute("aria-pressed", btn.getAttribute("data-bg") === mode ? "true" : "false");
             });
