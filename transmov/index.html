@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>TransMov — Offline AI Video Background Removal for Mac</title>
-    <meta name="title" content="TransMov — Offline AI Video Background Removal for Mac">
-    <meta name="description" content="Convert videos to transparent APNG, GIF, and WebP with AI background removal. Fully local on macOS, fast and privacy-focused for apps or web.">
-    <meta name="keywords" content="AI video processing, transparent animated images, APNG, GIF, WebP, video to animated image, background removal, macOS app, local processing, privacy-focused">
+    <title>TransMov — Offline Animated Image Studio for Mac (100% Local)</title>
+    <meta name="title" content="TransMov — Offline Animated Image Studio for Mac (100% Local)">
+    <meta name="description" content="Preview, convert, and create high-quality GIF, APNG, and WebP animations. Remove video backgrounds instantly with local AI — no cloud uploads required.">
+    <meta name="keywords" content="animated image studio, macos native animation tool, gif creator, apng converter, webp animation, local ai video cutout, video to gif, frame-by-frame previewer, privacy-focused mac app">
     <meta name="author" content="TransMov">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -16,12 +16,12 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louisbuilds.me/transmov/">
-    <meta property="og:title" content="TransMov — Professional AI Video Background Removal for Mac">
-    <meta property="og:description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.">
+    <meta property="og:title" content="TransMov — Offline Animated Image Studio for Mac (100% Local)">
+    <meta property="og:description" content="Preview, convert, and create high-quality GIF, APNG, and WebP animations. Remove video backgrounds instantly with local AI — no cloud uploads required.">
     <meta property="og:image" content="https://louisbuilds.me/transmov/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="TransMov app — transparent video export to APNG, GIF, and WebP on Mac">
+    <meta property="og:image:alt" content="TransMov App — Native macOS Studio for high-quality GIF, APNG, and WebP animations via local AI">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="zh_CN">
     <meta property="og:site_name" content="TransMov">
@@ -29,14 +29,14 @@
     <!-- Twitter / X (name= is what Twitter’s docs specify; property= kept for parsers that expect OG-style tags) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://louisbuilds.me/transmov/">
-    <meta name="twitter:title" content="TransMov — Professional AI Video Background Removal for Mac">
-    <meta name="twitter:description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.">
+    <meta name="twitter:title" content="TransMov — Offline Animated Image Studio for Mac (100% Local)">
+    <meta name="twitter:description" content="Preview, convert, and create high-quality GIF, APNG, and WebP animations. Remove video backgrounds instantly with local AI — no cloud uploads required.">
     <meta name="twitter:image" content="https://louisbuilds.me/transmov/og-image.png">
-    <meta name="twitter:image:alt" content="TransMov app — transparent video export to APNG, GIF, and WebP on Mac">
+    <meta name="twitter:image:alt" content="TransMov App — Native macOS Studio for high-quality GIF, APNG, and WebP animations via local AI">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://louisbuilds.me/transmov/">
-    <meta property="twitter:title" content="TransMov — Professional AI Video Background Removal for Mac">
-    <meta property="twitter:description" content="Convert videos into transparent APNG, GIF, and WebP animated images with AI-powered background removal — fully local on macOS.">
+    <meta property="twitter:title" content="TransMov — Offline Animated Image Studio for Mac (100% Local)">
+    <meta property="twitter:description" content="Preview, convert, and create high-quality GIF, APNG, and WebP animations. Remove video backgrounds instantly with local AI — no cloud uploads required.">
     <meta property="twitter:image" content="https://louisbuilds.me/transmov/og-image.png">
     
     <!-- Canonical URL -->
@@ -79,9 +79,9 @@
             "priceCurrency": "USD",
             "description": "Free to download with premium subscription and lifetime options."
         },
-        "description": "A native, 3.3MB micro-app for macOS. Convert videos to transparent GIF, APNG, and WebP using local AI background removal. Professional precision with maximum privacy.",
+        "description": "A native, 3.3MB professional animation studio for macOS. Preview, convert, and create high-quality GIF, APNG, and WebP animations with local AI background removal and frame-level precision.",
         "screenshot": "https://louisbuilds.me/transmov/og-image.png",
-        "softwareVersion": "2.0",
+        "softwareVersion": "2.2",
         "releaseNotes": "Optimized AI background removal engine and native Swift performance.",
         "downloadUrl": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12",
         "author": {
@@ -113,6 +113,14 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How can a ~3MB app deliver high-quality animations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A small download doesn't mean compromised quality. TransMov is built natively for macOS, so it doesn't need to pack a large cross-platform runtime. That keeps the app light, while still letting you preview animations smoothly and export to APNG, GIF, and WebP—all on your Mac."
+                }
+            },
             {
                 "@type": "Question",
                 "name": "How do I convert a video to APNG on macOS?",
@@ -194,7 +202,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="style.css?v=20260416a" as="style">
+    <link rel="preload" href="style.css?v=20260606a" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -266,6 +274,14 @@
             line-height: 1.3;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
+        }
+        .hero-headline .highlight-text {
+            color: var(--accent-link-hover);
+            font-weight: 700;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            -webkit-text-fill-color: unset;
         }
         .hero-break-desktop {
             display: none;
@@ -940,8 +956,20 @@
                 display: none !important;
             }
         }
+
+        /* App modules — icon size must live in critical CSS (SVGs lack width/height attrs) */
+        .section--features .module-icon {
+            width: 32px;
+            height: 32px;
+            max-width: 32px;
+            max-height: 32px;
+            flex-shrink: 0;
+            color: #6366f1;
+            display: block;
+            margin-bottom: 1.1rem;
+        }
     </style>
-    <link rel="stylesheet" href="style.css?v=20260416a">
+    <link rel="stylesheet" href="style.css?v=20260606a">
 </head>
 <body>
     <header class="top-bar">
@@ -998,8 +1026,10 @@
             <div class="hero-inner">
                 <div class="hero-layout">
                     <div class="hero-content">
-                        <h1 class="hero-headline">Remove Video Background Instantly with AI —<span class="hero-break-desktop"></span>100% Local on Mac</h1>
-                        <p class="hero-subheadline">Convert video to transparent APNG, GIF, WebP — fully local on Mac, no upload, no cloud, no&nbsp;risk.</p>
+                        <h1 class="hero-headline">
+                            Offline Animated Image Studio for Mac — <span class="hero-break-desktop"></span><span class="highlight-text">100% Local</span>
+                        </h1>
+                        <p class="hero-subheadline">Preview, convert, and create high-quality GIF, APNG, and WebP animations. Remove video backgrounds instantly with local AI — no cloud uploads.</p>
                         <div class="hero-cta badges-container">
                             <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" target="_blank" rel="noopener" class="badge-link" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'hero'});">
                                 <img src="images/app-store-badge.svg" alt="Download TransMov on the Mac App Store" width="120" height="40" onerror="this.src='images/app-store-badge.png'; this.onerror=null;">
@@ -1070,10 +1100,9 @@
         
         <div class="container">
             <div class="section section--privacy">
-                <h2>Your Videos Never Leave Your Mac</h2>
+                <h2>Professional Privacy — Your Assets Never Leave Your Mac</h2>
                 <p class="section-lead">
-                    <strong>No uploads. No servers. No risk.</strong><br>
-                    Unlike online tools, everything runs locally — so your files stay private, even for NDA or client work.
+                    No servers, no cloud exposure. Preview, convert, and render high-resolution animations fully offline. Your source assets, client deliverables, and NDA projects stay completely secure on your Mac.
                 </p>
                 <div class="faq-grid">
                     <div class="faq-card privacy-pillar">
@@ -1102,7 +1131,7 @@
             </div>
 
             <div class="section section--why" id="features">
-                <h2>Why Choose TransMov for Video Background Removal on Mac</h2>
+                <h2>Why Choose TransMov as Your Mac Animated Image Studio</h2>
                 <div class="features-grid">
                     <div class="feature-item">
                         <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -1111,7 +1140,7 @@
                             <circle cx="12" cy="15" r="1.2" fill="currentColor" stroke="none"></circle>
                         </svg>
                         <h3>100% Local Processing — No Upload Required</h3>
-                        <p>No upload, no server exposure. Sensitive assets stay fully on your Mac from import to export.</p>
+                        <p>No servers, no cloud exposure. Preview, convert, and create high-quality animated images fully offline. Your sensitive client or NDA assets stay secure on your Mac.</p>
                     </div>
                     <div class="feature-item">
                         <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -1120,7 +1149,7 @@
                             <path d="M10 10h4M10 14h4M12 10v4"></path>
                         </svg>
                         <h3>Optimized for Apple Silicon — Fast, Real-Time Processing</h3>
-                        <p>Powered by the <a href="https://developer.apple.com/documentation/vision" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Vision framework</a> and <a href="https://support.apple.com/116943" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Silicon</a> Neural Engine acceleration for instant, production-ready results.</p>
+                        <p>Powered by the native <a href="https://developer.apple.com/documentation/vision" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Vision</a> framework and <a href="https://support.apple.com/116943" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Silicon</a> Neural Engine acceleration for instant, production-ready results.</p>
                     </div>
                     <div class="feature-item">
                         <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -1129,8 +1158,52 @@
                             <path d="M5 15.5v2.3A2.2 2.2 0 0 0 7.2 20h9.6a2.2 2.2 0 0 0 2.2-2.2v-2.3"></path>
                             <rect x="4.2" y="3.8" width="15.6" height="16.4" rx="2.4" opacity="0.18"></rect>
                         </svg>
-                        <h3>True Transparency Export (APNG, WebP, GIF)</h3>
-                        <p>Export 8-bit alpha APNG and WebP for seamless design integration, plus GIF for compatibility.</p>
+                        <h3>True Alpha Transparency &amp; Export Control</h3>
+                        <p>Generate 8-bit alpha channels for APNG and WebP to integrate flawlessly into web or app UIs, plus optimize GIF color palettes to easily reduce file sizes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section--features" id="app-modules">
+                <h2>An All-in-One Native Animated Image Studio</h2>
+                <p class="section-lead">
+                    TransMov combines four essential animation tools into a single native workflow, covering your entire creation, conversion, and preview needs locally on macOS.
+                </p>
+                <div class="features-grid">
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="3.5" y="6.5" width="17" height="11" rx="2"></rect>
+                            <path d="M10 9.5v5l4.5-2.5L10 9.5z" fill="currentColor" stroke="none"></path>
+                        </svg>
+                        <h3>Video to Animation</h3>
+                        <p>Convert MP4 and MOV videos straight to GIF, APNG, or WebP. Trim time ranges, crop frame areas, and customize output dimensions to fit your exact specifications without any background removal.</p>
+                    </div>
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <path d="M12 3.5l1.4 4.3h4.5l-3.6 2.6 1.4 4.3L12 12.1 8.3 14.7l1.4-4.3-3.6-2.6h4.5L12 3.5z"></path>
+                            <rect x="4" y="17" width="16" height="3.5" rx="1"></rect>
+                        </svg>
+                        <h3>AI Background Removal</h3>
+                        <p>Erase video backgrounds offline using local AI or chroma keying. Inspect results frame-by-frame, swap background colors or custom images, and export with true alpha transparency.</p>
+                    </div>
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <path d="M7 8h10M7 12h10M7 16h6"></path>
+                            <path d="M16.5 11.5 19 14l-2.5 2.5"></path>
+                            <rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect>
+                        </svg>
+                        <h3>Format Converter</h3>
+                        <p>Convert existing files among GIF, APNG, and WebP formats. Check playback details in real time while adjusting export sizes, GIF color palettes, or WebP quality to optimize your files.</p>
+                    </div>
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="4" y="4" width="7" height="7" rx="1.2"></rect>
+                            <rect x="13" y="4" width="7" height="7" rx="1.2"></rect>
+                            <rect x="4" y="13" width="7" height="7" rx="1.2"></rect>
+                            <rect x="13" y="13" width="7" height="7" rx="1.2" opacity="0.45"></rect>
+                        </svg>
+                        <h3>Frame Previewer</h3>
+                        <p>Open any animated file to inspect file sizes, color modes, exact frame counts, and transparent boundaries using checkerboard previews—fully optimized for viewing without making edits.</p>
                     </div>
                 </div>
             </div>
@@ -1428,6 +1501,11 @@
                                 <td>AI / Chroma Key</td>
                                 <td>AI / Chroma Key</td>
                             </tr>
+                            <tr>
+                                <td>Background Replacement</td>
+                                <td>20 Solid Colors</td>
+                                <td><span class="highlight-pro">20 Solid Colors / Custom Images</span></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1567,6 +1645,10 @@
                 <h2 class="faq-title">Frequently Asked Questions</h2>
                 <div class="faq-grid">
                     <div class="faq-card">
+                        <h3>How can a ~3MB app deliver high-quality animations?</h3>
+                        <p>A small download doesn't mean compromised quality. TransMov is built natively for macOS, so it doesn't need to pack a large cross-platform runtime. That keeps the app light, while still letting you preview animations smoothly and export to APNG, GIF, and WebP—all on your Mac.</p>
+                    </div>
+                    <div class="faq-card">
                         <h3>How do I convert a video to APNG on macOS?</h3>
                         <p>You can convert a video to APNG by importing your video into TransMov, selecting APNG as the output format, and exporting the animation. Everything is processed locally on macOS.</p>
                     </div>
@@ -1593,8 +1675,8 @@
                 <div class="cta-container">
                     <div class="cta-glow" aria-hidden="true"></div>
 
-                    <h2 id="cta-heading" class="cta-title">Start Removing Video Backgrounds<span class="workflow-break-desktop"></span> in Seconds</h2>
-                    <p class="cta-lead">Download TransMov and create transparent assets locally on your Mac.</p>
+                    <h2 id="cta-heading" class="cta-title">All the Tools You Need for Animated Images</h2>
+                    <p class="cta-lead">Download TransMov to preview, convert, and create high-quality animations seamlessly and fully locally on your Mac.</p>
 
                     <div class="cta-actions">
                         <a
@@ -1605,14 +1687,13 @@
                             onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'cta'});">
                             <span class="btn-text">Download on the Mac App Store</span>
                         </a>
-                        <p class="cta-note">Version 2.0 · macOS 14 or later</p>
+                        <p class="cta-note">Version 2.2 · macOS 14 or later</p>
                     </div>
                 </div>
             </section>
         </div>
         
         <div class="footer">
-            <p class="footer-tagline">TransMov is a lightweight macOS utility for designers to remove video backgrounds locally.</p>
             <p>
                 <a href="privacy-policy.html?lang=en">Privacy Policy</a> |
                 <a href="support.html?lang=en">Support</a> |
@@ -1626,8 +1707,8 @@
     <div class="sticky-footer is-hidden" data-sticky-footer>
         <div class="footer-content">
             <div class="footer-text">
-                <img src="images/app-icon.png" alt="TransMov macOS AI background removal app icon" class="footer-icon" width="32" height="32">
-                <span><strong>TransMov</strong> — AI Video Background Remover for Mac</span>
+                <img src="images/app-icon.png" alt="TransMov — Offline Animated Image Studio for Mac" class="footer-icon" width="32" height="32">
+                <span><strong>TransMov</strong> — Offline Animated Image Studio for Mac</span>
                 <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" class="footer-inline-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'sticky_footer'});">Try it free →</a>
             </div>
             <button class="footer-close" type="button" aria-label="Close download bar" data-sticky-footer-close>×</button>
