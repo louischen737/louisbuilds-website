@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>TransMov —— Mac 本地 AI 视频抠图与透明动图导出工具</title>
-    <meta name="title" content="TransMov —— Mac 本地 AI 视频抠图｜透明动图导出工具">
-    <meta name="description" content="TransMov 在 Mac 本地完成 AI 视频抠图与视频去背景，导出透明 APNG、GIF、WebP。无需上传，处理更快，隐私安全。">
-    <meta name="keywords" content="AI 视频处理，视频抠图，视频去背景，透明动图，APNG，GIF，WebP，macOS 应用，本地处理，隐私安全">
+    <title>TransMov — macOS原生动图创作平台 (100%本地处理)</title>
+    <meta name="title" content="TransMov — macOS原生动图创作平台 (100%本地处理)">
+    <meta name="description" content="TransMov 是一款轻量高效的 macOS 原生动图创作平台。用于预览、转换与创建高质量 GIF、APNG、WebP 动图，依托端侧 AI 一键去除视频背景，所有处理均在本地完成，无需上传云端。">
+    <meta name="keywords" content="macOS原生动图创作平台, 视频转GIF, APNG转换器, WebP动图制作, 本地AI视频抠图, 视频去背景, 动图逐帧预览, 动图压缩优化, 透明动图导出, Mac视频处理工具">
     <meta name="author" content="TransMov">
     <meta name="robots" content="index, follow">
     <meta name="language" content="Chinese">
@@ -16,8 +16,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://louisbuilds.me/transmov/zh/">
-    <meta property="og:title" content="TransMov —— Mac 本地 AI 视频抠图与透明动图导出工具">
-    <meta property="og:description" content="在 macOS 本地将视频转换为透明 APNG、GIF、WebP，AI 抠图无需上传。">
+    <meta property="og:title" content="TransMov — macOS原生动图创作平台 (100%本地处理)">
+    <meta property="og:description" content="TransMov 是一款轻量高效的 macOS 原生动图创作平台。用于预览、转换与创建高质量 GIF、APNG、WebP 动图，依托端侧 AI 一键去除视频背景，所有处理均在本地完成，无需上传云端。">
     <meta property="og:image" content="https://louisbuilds.me/transmov/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -25,11 +25,16 @@
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="TransMov">
     
-    <!-- Twitter -->
+    <!-- Twitter / X (name= is what Twitter’s docs specify; property= kept for parsers that expect OG-style tags) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://louisbuilds.me/transmov/zh/">
+    <meta name="twitter:title" content="TransMov — macOS原生动图创作平台 (100%本地处理)">
+    <meta name="twitter:description" content="TransMov 是一款轻量高效的 macOS 原生动图创作平台。用于预览、转换与创建高质量 GIF、APNG、WebP 动图，依托端侧 AI 一键去除视频背景，所有处理均在本地完成，无需上传云端。">
+    <meta name="twitter:image" content="https://louisbuilds.me/transmov/og-image.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://louisbuilds.me/transmov/zh/">
-    <meta property="twitter:title" content="TransMov —— Mac 本地 AI 视频抠图与透明动图导出工具">
-    <meta property="twitter:description" content="本地 AI 视频抠图，透明 APNG、GIF、WebP 导出，无需上传。">
+    <meta property="twitter:title" content="TransMov — macOS原生动图创作平台 (100%本地处理)">
+    <meta property="twitter:description" content="TransMov 是一款轻量高效的 macOS 原生动图创作平台。用于预览、转换与创建高质量 GIF、APNG、WebP 动图，依托端侧 AI 一键去除视频背景，所有处理均在本地完成，无需上传云端。">
     <meta property="twitter:image" content="https://louisbuilds.me/transmov/og-image.png">
     
     <!-- Canonical URL -->
@@ -72,9 +77,9 @@
             "priceCurrency": "USD",
             "description": "可免费下载，提供高级订阅与终身买断方案。"
         },
-        "description": "TransMov 是一款面向 macOS 的 3.3MB 原生轻应用，可在本地使用 AI 移除视频背景并导出透明 GIF、APNG 与 WebP，兼顾专业质量与隐私安全。",
+        "description": "macOS 原生动图软件，体积仅 3.3MB。本地 AI 一键去除视频背景，支持帧级精细编辑，轻松预览、转换、制作高质量 GIF/APNG/WebP 动图。",
         "screenshot": "https://louisbuilds.me/transmov/og-image.png",
-        "softwareVersion": "2.0",
+        "softwareVersion": "2.2",
         "releaseNotes": "优化 AI 视频抠图引擎与原生 Swift 性能表现。",
         "downloadUrl": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12",
         "inLanguage": "zh-CN",
@@ -108,6 +113,14 @@
         "@type": "FAQPage",
         "inLanguage": "zh-CN",
         "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "一款仅约 3MB 的应用，为什么能生成高质量动图？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "安装包体积小巧，并不代表输出画质会打折扣。TransMov 为 macOS 原生开发，无需内置庞大的跨平台运行时环境，因此软件得以轻量化；同时可流畅预览动图，并在本机完成 APNG、GIF、WebP 格式导出。"
+                }
+            },
             {
                 "@type": "Question",
                 "name": "在 macOS 上如何把视频转成 APNG？",
@@ -190,7 +203,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="../style.css?v=20260416a" as="style">
+    <link rel="preload" href="../style.css?v=20260606a" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -262,6 +275,14 @@
             line-height: 1.3;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
+        }
+        .hero-headline .highlight-text {
+            color: var(--accent-link-hover);
+            font-weight: 700;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            -webkit-text-fill-color: unset;
         }
         .hero-break-desktop {
             display: none;
@@ -936,8 +957,20 @@
                 display: none !important;
             }
         }
+
+        /* App modules — icon size must live in critical CSS (SVGs lack width/height attrs) */
+        .section--features .module-icon {
+            width: 32px;
+            height: 32px;
+            max-width: 32px;
+            max-height: 32px;
+            flex-shrink: 0;
+            color: #6366f1;
+            display: block;
+            margin-bottom: 1.1rem;
+        }
     </style>
-    <link rel="stylesheet" href="../style.css?v=20260416a">
+    <link rel="stylesheet" href="../style.css?v=20260606a">
 </head>
 <body>
     <header class="top-bar">
@@ -994,8 +1027,8 @@
             <div class="hero-inner">
                 <div class="hero-layout">
                     <div class="hero-content">
-                        <h1 class="hero-headline">AI 视频抠图<span class="hero-break-desktop"></span>100% 在 Mac 本地完成</h1>
-                        <p class="hero-subheadline">一键将视频转为透明 APNG / GIF / WebP 动图，Mac 本地全程处理，不上传、不依赖云端，安全无忧。</p>
+                        <h1 class="hero-headline">Mac原生动图创作平台——<span class="hero-break-desktop"></span><span class="highlight-text">100%本地处理</span></h1>
+                        <p class="hero-subheadline">预览、转换与创建高质量GIF、APNG和WebP动图。依托端侧AI一键去除视频背景 — 无云端上传。</p>
                         <div class="hero-cta badges-container">
                             <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home_zh&mt=8" target="_blank" rel="noopener" class="badge-link" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'hero'});">
                                 <img src="../images/app-store-badge.svg" alt="在 Mac App Store 下载 TransMov" width="120" height="40" onerror="this.src='../images/app-store-badge.png'; this.onerror=null;">
@@ -1066,10 +1099,9 @@
         
         <div class="container">
             <div class="section section--privacy">
-                <h2>你的视频不会离开你的 Mac</h2>
+                <h2>专业级隐私防护 — 您的素材绝不离开您的 Mac</h2>
                 <p class="section-lead">
-                    <strong>不上传、不经过任何服务器，彻底杜绝数据泄露。</strong><br>
-                    与在线工具不同，所有处理都在本地完成，特别适合客户项目与保密素材。
+                    无服务器中转、无云端泄漏风险。全程离线预览、转换并渲染高清动图。您的原始素材、客户交付物以及保密项目（NDA）均安全保存在您的本地 Mac 设备中。
                 </p>
                 <div class="faq-grid">
                     <div class="faq-card privacy-pillar">
@@ -1098,7 +1130,7 @@
             </div>
 
             <div class="section section--why" id="features">
-                <h2>为什么选择 TransMov 做 Mac 视频抠图</h2>
+                <h2>为什么选择 TransMov 作为你的 Mac 动图制作工具</h2>
                 <div class="features-grid">
                     <div class="feature-item">
                         <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -1106,8 +1138,8 @@
                             <path d="M8 10V7.6a4 4 0 0 1 8 0V10"></path>
                             <circle cx="12" cy="15" r="1.2" fill="currentColor" stroke="none"></circle>
                         </svg>
-                        <h3>全程本地处理，绝不上传文件</h3>
-                        <p>从导入到导出都在你的 Mac 上完成，敏感素材不离开设备。</p>
+                        <h3>全程本地处理・绝不上传文件</h3>
+                        <p>全程不接入云端服务器，杜绝素材外泄风险。预览、格式转换、复杂动图创作均可离线完成，涉密素材与保密项目文件始终保存在本机，安全可控。</p>
                     </div>
                     <div class="feature-item">
                         <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -1115,7 +1147,7 @@
                             <path d="M12 3.6v2.2M12 18.2v2.2M3.6 12h2.2M18.2 12h2.2"></path>
                             <path d="M10 10h4M10 14h4M12 10v4"></path>
                         </svg>
-                        <h3>专为 Apple Silicon 优化，处理速度大幅提升</h3>
+                        <h3>专为苹果芯片优化・处理速度大幅提升</h3>
                         <p>基于 <a href="https://developer.apple.com/documentation/vision" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Vision</a> 与 <a href="https://support.apple.com/116943" target="_blank" rel="noopener noreferrer" class="authority-link">Apple Silicon</a> 神经引擎加速，输出结果可直接用于生产。</p>
                     </div>
                     <div class="feature-item">
@@ -1125,8 +1157,52 @@
                             <path d="M5 15.5v2.3A2.2 2.2 0 0 0 7.2 20h9.6a2.2 2.2 0 0 0 2.2-2.2v-2.3"></path>
                             <rect x="4.2" y="3.8" width="15.6" height="16.4" rx="2.4" opacity="0.18"></rect>
                         </svg>
-                        <h3>支持高质量透明导出（APNG、WebP、GIF）</h3>
-                        <p>支持 8 位 Alpha 通道的 APNG 与 WebP，并保留 GIF 兼容导出。</p>
+                        <h3>完整透明通道 + 精细化导出设置</h3>
+                        <p>可生成带 8 位 Alpha 通道的 APNG、WebP 素材，适配网页与应用开发；同时支持 GIF 调色板优化，高效压缩文件体积。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section--features" id="app-modules">
+                <h2>一站式 macOS 原生动图制作工具</h2>
+                <p class="section-lead">
+                    TransMov 整合四大核心动图功能，依托原生一体化工作流，在 Mac 本地完成动图制作、格式转换与预览全流程操作。
+                </p>
+                <div class="features-grid">
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="3.5" y="6.5" width="17" height="11" rx="2"></rect>
+                            <path d="M10 9.5v5l4.5-2.5L10 9.5z" fill="currentColor" stroke="none"></path>
+                        </svg>
+                        <h3>视频转动图</h3>
+                        <p>无视频背景抠除，直接将 MP4、MOV 视频文件转换为高质量的 GIF、APNG、WebP 动图，支持灵活修剪时长与画面裁切。</p>
+                    </div>
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <path d="M12 3.5l1.4 4.3h4.5l-3.6 2.6 1.4 4.3L12 12.1 8.3 14.7l1.4-4.3-3.6-2.6h4.5L12 3.5z"></path>
+                            <rect x="4" y="17" width="16" height="3.5" rx="1"></rect>
+                        </svg>
+                        <h3>本地 AI 视频去背景</h3>
+                        <p>离线完成智能抠图、色度键抠图（绿幕抠图），支持逐帧微调、替换纯色或自定义图片背景，输出带有完整 Alpha 透明通道的动图文件。</p>
+                    </div>
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <path d="M7 8h10M7 12h10M7 16h6"></path>
+                            <path d="M16.5 11.5 19 14l-2.5 2.5"></path>
+                            <rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect>
+                        </svg>
+                        <h3>多格式动图互转</h3>
+                        <p>GIF、APNG、WebP等三种动图格式互相转换，实时预览播放效果的同时，可自由调整导出尺寸、GIF调色板与WebP画质，精细优化文件体积。</p>
+                    </div>
+                    <div class="app-module-card">
+                        <svg class="module-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <rect x="4" y="4" width="7" height="7" rx="1.2"></rect>
+                            <rect x="13" y="4" width="7" height="7" rx="1.2"></rect>
+                            <rect x="4" y="13" width="7" height="7" rx="1.2"></rect>
+                            <rect x="13" y="13" width="7" height="7" rx="1.2" opacity="0.45"></rect>
+                        </svg>
+                        <h3>精细化逐帧预览</h3>
+                        <p>一键载入动图，查看文件大小、色彩配置与帧数详情；切换棋盘格背景进行预览，高效校验透明边缘。</p>
                     </div>
                 </div>
             </div>
@@ -1431,6 +1507,11 @@
                                 <td>AI、色度阈值</td>
                                 <td>AI、色度阈值</td>
                             </tr>
+                            <tr>
+                                <td>背景替换</td>
+                                <td>20 种纯色</td>
+                                <td><span class="highlight-pro">20 种纯色、自定义图片</span></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1568,6 +1649,10 @@
                 <h2 class="faq-title">常见问题</h2>
                 <div class="faq-grid">
                     <div class="faq-card">
+                        <h3>一款仅约 3MB 的应用，为什么能生成高质量动图？</h3>
+                        <p>安装包体积小巧，并不代表输出画质会打折扣。TransMov 为 macOS 原生开发，无需内置庞大的跨平台运行时环境，因此软件得以轻量化；同时可流畅预览动图，并在本机完成 APNG、GIF、WebP 格式导出。</p>
+                    </div>
+                    <div class="faq-card">
                         <h3>在 macOS 上如何把视频转成 APNG？</h3>
                         <p>导入视频，选择 APNG 输出并导出即可。整个过程都在 macOS 本地完成。</p>
                     </div>
@@ -1594,8 +1679,8 @@
                 <div class="cta-container">
                     <div class="cta-glow" aria-hidden="true"></div>
 
-                    <h2 id="cta-heading" class="cta-title">立即开始视频抠图<span class="workflow-break-desktop"></span></h2>
-                    <p class="cta-lead">下载 TransMov，在你的 Mac 本地生成透明素动图</p>
+                    <h2 id="cta-heading" class="cta-title">一站式动图创作平台</h2>
+                    <p class="cta-lead">下载 TransMov，在 Mac 本地完成高质量动图预览、转换与制作</p>
 
                     <div class="cta-actions">
                         <a
@@ -1606,14 +1691,13 @@
                             onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'cta'});">
                             <span class="btn-text">在 Mac App Store 下载</span>
                         </a>
-                        <p class="cta-note">版本 2.0，需 macOS 14 及以上</p>
+                        <p class="cta-note">版本 2.2，需 macOS 14 及以上</p>
                     </div>
                 </div>
             </section>
         </div>
         
         <div class="footer">
-            <p class="footer-tagline">TransMov 是一款轻量 macOS 工具，帮助设计师在本地完成视频抠图与视频去背景</p>
             <p>
                 <a href="../privacy-policy.html?lang=zh">隐私政策</a> ｜
                 <a href="../support.html?lang=zh">技术支持</a> ｜
@@ -1627,8 +1711,8 @@
     <div class="sticky-footer is-hidden" data-sticky-footer>
         <div class="footer-content">
             <div class="footer-text">
-                <img src="../images/app-icon.png" alt="TransMov macOS 本地 AI 视频抠图应用图标" class="footer-icon" width="32" height="32">
-                <span><strong>TransMov</strong> —— Mac 本地 AI 视频抠图工具</span>
+                <img src="../images/app-icon.png" alt="TransMov — Mac 原生动图创作平台" class="footer-icon" width="32" height="32">
+                <span><strong>TransMov</strong> — Mac 原生动图创作平台</span>
                 <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home_zh&mt=8" class="footer-inline-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'sticky_footer'});">免费试用 →</a>
             </div>
             <button class="footer-close" type="button" aria-label="关闭下载条" data-sticky-footer-close>×</button>
