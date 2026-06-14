@@ -17,3 +17,20 @@
   font-size: 1.375rem;
   line-height: 1.1;
 }
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.45),
+    0 0 10px rgba(255, 255, 255, 0.32),
+    0 0 18px rgba(255, 255, 255, 0.14);
+}

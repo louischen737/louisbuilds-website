@@ -31,8 +31,10 @@
   "applicationSubCategory": "Meditation",
   "description": "A quiet sanctuary for your mind beyond the horizon. Explore fictional islands through spatial ambient soundscapes.",
   "url": "https://louisbuilds.me/lonelyisle/",
+  "downloadUrl": "https://apps.apple.com/app/id6779457751",
   "offers": {
     "@type": "Offer",
+    "url": "https://apps.apple.com/app/id6779457751",
     "price": "0",
     "priceCurrency": "USD"
   }
@@ -63,6 +65,18 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+    }
+
+    .hero-app-icon {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 20px;
+        display: block;
+        border-radius: 16px;
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.45),
+            0 0 10px rgba(255, 255, 255, 0.32),
+            0 0 18px rgba(255, 255, 255, 0.14);
     }
 
     .brand {
@@ -251,6 +265,13 @@
             font-size: 40px;
         }
 
+        .hero-app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            margin-bottom: 16px;
+        }
+
         section {
             padding: 80px 0;
         }
@@ -272,12 +293,16 @@
 <!-- HERO -->
 <div class="hero">
     <div class="container">
+        <picture>
+            <source type="image/webp" srcset="icon.webp">
+            <img src="icon.png" class="hero-app-icon" alt="LonelyIsle app icon" width="72" height="72" decoding="async" fetchpriority="high">
+        </picture>
         <div class="brand product-title">LonelyIsle</div>
         <div class="tagline">
             A quiet sanctuary for your mind beyond the horizon.<br>
             Explore fictional islands through spatial ambient soundscapes.
         </div>
-        <a class="cta" href="#">Download on App Store</a>
+        <a class="cta" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">Download on App Store</a>
     </div>
 </div>
 
@@ -387,7 +412,7 @@
         <h2>Step onto the island</h2>
         <p style="margin: 0 auto;">A quiet sanctuary for your mind beyond the horizon.</p>
         <br>
-        <a class="cta" href="#">Get LonelyIsle</a>
+        <a class="cta" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">Get LonelyIsle</a>
     </div>
 </section>
 
