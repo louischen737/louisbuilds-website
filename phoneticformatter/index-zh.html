@@ -58,7 +58,7 @@
       "@type": "SoftwareApplication",
       "name": "Phonetic Formatter",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.2",
+      "softwareVersion": "1.5",
       "operatingSystem": "iOS, iPadOS",
       "downloadUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
       "installUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
@@ -73,22 +73,34 @@
         },
         {
           "@type": "Offer",
-          "name": "Pro upgrade (one-time in-app purchase)",
+          "name": "Pro monthly subscription",
+          "price": "2.99",
+          "priceCurrency": "USD",
+          "description": "Auto-renewing monthly Pro access with OCR import, unlimited generations, word-by-word layout, and TXT/DOCX/PDF export.",
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "purchaseType",
+            "value": "Subscription"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro lifetime purchase",
           "price": "19.99",
           "priceCurrency": "USD",
-          "description": "Optional one-time unlock for unlimited daily generations, longer text, word-by-word layout, and TXT/DOCX/PDF export.",
+          "description": "One-time lifetime Pro unlock with OCR import, unlimited generations, word-by-word layout, and TXT/DOCX/PDF export.",
           "additionalProperty": {
             "@type": "PropertyValue",
             "name": "purchaseType",
             "value": "InAppPurchase"
           }
-        }
-      ],
+        }],
       "description": "专为教师、学生设计的英语转IPA音标工具，支持自动排版、可导出PDF/Word文档，全程离线使用，数据本地处理，安全无需登录。支持导出 TXT、DOCX、PDF，基于 CMU 美式发音词典，本地处理。",
       "screenshot": "https://louisbuilds.me/phoneticformatter/og-image.png",
       "featureList": [
         "将整段英文一键转为 IPA 国际音标",
         "按句与逐词对齐排版（Pro）",
+        "扫描与导入文本（OCR）",
         "基于 CMU 美式发音词典",
         "导出 TXT、DOCX、PDF",
         "离线可用",
@@ -108,7 +120,7 @@
                 "name": "如何把整段英文段落转成 IPA？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "打开 Phonetic Formatter，将段落粘贴到文本框并点击转换。应用会基于 CMU 发音词典一次性转写整段。可选择按句输出，或使用 Pro 的逐词对齐。支持复制或导出为 TXT、DOCX、PDF。"
+                    "text": "打开 Phonetic Formatter，粘贴、扫描或输入文本后点击转换。应用会基于 CMU 发音词典一次性转写整段。可选择按句输出，或使用 Pro 的逐词对齐。支持复制或导出为 TXT、DOCX、PDF。"
                 }
             },
             {
@@ -312,7 +324,7 @@
     <section class="home-summary scroll-reveal" aria-labelledby="home-summary-heading">
         <div class="container home-summary-inner">
             <p class="summary-lead" id="home-summary-heading">
-                <strong>Phonetic Formatter</strong> 是一款离线 iOS/iPadOS 应用，基于 CMU Pronouncing Dictionary 将整段英文转为结构化 IPA，支持按句或逐词排版，并可导出为 TXT、DOCX 或 PDF。
+                <strong>Phonetic Formatter</strong> 是一款离线 iOS/iPadOS 应用，基于 CMU Pronouncing Dictionary 将整段英文转为结构化 IPA，支持按句或逐词排版，可在设备本地扫描文档或导入照片进行 OCR，并可导出为 TXT、DOCX 或 PDF。
             </p>
 
             <div class="summary-grid">
@@ -491,6 +503,15 @@
                         </div>
                         <div class="feature-card">
                             <h3>
+                                <a href="#feature-ocr">文档扫描与 OCR 导入</a>
+                            </h3>
+                            <p>扫描纸质材料或导入照片，在设备本地提取英文文本。</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-ocr" class="feature-link">了解更多 →</a>
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
                                 <a href="#feature-offline">离线式 IPA 转写</a>
                             </h3>
                             <p>全程本地完成转写，数据隐私有保障。</p>
@@ -575,6 +596,23 @@
         </p>
 
         <!-- 4 -->
+        <h3 id="feature-ocr">文档扫描与 OCR 文本导入</h3>
+
+        <p>
+            点击相机按钮扫描文档，或从相册选择照片。
+            系统使用 Apple Vision 框架在设备本地识别英文文本。
+        </p>
+
+        <p>
+            识别结果会填入输入框，可在生成音标前自由编辑。
+            图片与文本均不会上传至外部服务器。
+        </p>
+
+        <p>
+            适合将纸质练习、教材页面或笔记数字化，无需手动重打长段文字。
+        </p>
+
+        <!-- 5 -->
         <h3 id="feature-offline">离线转写与数据隐私保护</h3>
 
         <p>
@@ -605,7 +643,7 @@
                 </div>
                 <div class="section-content how-it-works">
                     <ol class="how-it-works-steps">
-                        <li><strong>粘贴或输入英文</strong>：在转换器中输入一句或整段。</li>
+                        <li><strong>粘贴、输入或扫描英文</strong>：直接输入，或扫描文档 / 导入照片进行设备本地 OCR（仅英文）。</li>
                         <li><strong>生成 IPA</strong>：应用基于 CMU 发音词典处理文本并输出结构化音标。</li>
                         <li><strong>复制或导出结果</strong>：复制转写，或导出为 TXT、DOCX、PDF 供学习或课堂使用。</li>
                     </ol>
@@ -661,57 +699,66 @@
             <div class="pricing-table-wrapper">
                 <p class="pricing-swipe-hint" aria-hidden="true">左右滑动比较方案</p>
                 <div class="pricing-table-container">
-                <table class="pricing-table">
-                    <colgroup>
-                        <col style="width: 42%;">
-                        <col style="width: 29%;">
-                        <col style="width: 29%;">
+                                <table class="pricing-table">
+                                        <colgroup>
+                        <col style="width: 28%;">
+                        <col style="width: 24%;">
+                        <col style="width: 24%;">
+                        <col style="width: 24%;">
                     </colgroup>
-                    <thead>
+                                        <thead>
                         <tr>
                             <th class="plan-label">方案详情</th>
                             <th class="free-col">免费版</th>
-                            <th class="pro-col">Pro<span class="pro-col-subtitle">专业版</span></th>
+                            <th class="pro-col pro-monthly-col">Pro<span class="pro-col-subtitle">专业版</span><br><span class="pro-col-plan">月度订阅</span></th>
+                            <th class="pro-col pro-lifetime-col">Pro<span class="pro-col-subtitle">专业版</span><br><span class="pro-col-plan">终身购买</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="feature-name">每日生成次数</td>
                             <td class="value free-col">每日 1 次</td>
-                            <td class="value pro-col">不限</td>
+                            <td class="value pro-col pro-monthly-col">不限</td>
+                            <td class="value pro-col pro-lifetime-col">不限</td>
                         </tr>
                         <tr>
                             <td class="feature-name">最大文本长度</td>
                             <td class="value free-col">最多 400 词</td>
-                            <td class="value pro-col">最多 6,000 词</td>
+                            <td class="value pro-col pro-monthly-col">最多 6,000 词</td>
+                            <td class="value pro-col pro-lifetime-col">最多 6,000 词</td>
                         </tr>
                         <tr>
                             <td class="feature-name">显示版式</td>
                             <td class="value free-col">按句</td>
-                            <td class="value pro-col">按句 + 逐词</td>
+                            <td class="value pro-col pro-monthly-col">按句 + 逐词</td>
+                            <td class="value pro-col pro-lifetime-col">按句 + 逐词</td>
                         </tr>
                         <tr>
                             <td class="feature-name">复制结果</td>
                             <td class="value free-col">包含</td>
-                            <td class="value pro-col">包含</td>
+                            <td class="value pro-col pro-monthly-col">包含</td>
+                            <td class="value pro-col pro-lifetime-col">包含</td>
                         </tr>
                         <tr>
                             <td class="feature-name">导出<br>(TXT / DOCX / PDF)</td>
                             <td class="value free-col">—</td>
-                            <td class="value pro-col">包含</td>
+                            <td class="value pro-col pro-monthly-col">包含</td>
+                            <td class="value pro-col pro-lifetime-col">包含</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">终身使用权</td>
+                            <td class="feature-name">扫描与 OCR 导入</td>
                             <td class="value free-col">—</td>
-                            <td class="value pro-col">包含</td>
+                            <td class="value pro-col pro-monthly-col">包含</td>
+                            <td class="value pro-col pro-lifetime-col">包含</td>
                         </tr>
-                        <tr class="price-row">
+                                                <tr class="price-row">
                             <td class="feature-name price-label">价格</td>
                             <td class="value free-col price-value">免费</td>
-                            <td class="value pro-col price-value">
+                            <td class="value pro-col pro-monthly-col price-value">$2.99/月</td>
+                            <td class="value pro-col pro-lifetime-col price-value">
                                 <div class="pricing-footer-price pro-price">
                                     <span class="pricing-footer-price-value">$19.99</span>
-                                    <span class="pricing-footer-price-note">一次性购买</span>
+                                    <span class="pricing-footer-price-note">终身购买</span>
                                 </div>
                             </td>
                         </tr>
@@ -721,7 +768,7 @@
             </div>
 
             <div class="universal-footer">
-                <p>📱 <strong>通用应用</strong>：您的购买与 Apple ID 绑定。只需购买一次，即可在 <strong>iPhone</strong> 和 <strong>iPad</strong> 上同时使用 Pro 功能。</p>
+                <p>📱 <strong>通用应用</strong>：您的购买与 Apple ID 绑定。订阅或终身购买后，可在 <strong>iPhone</strong> 和 <strong>iPad</strong> 上同时使用 Pro 功能。</p>
             </div>
 
             <div class="pricing-cta">
@@ -738,7 +785,7 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <h3>如何把整段英文段落转成 IPA？</h3>
-                    <p>打开 Phonetic Formatter，将段落粘贴到文本框并点击转换。应用会基于 CMU 发音词典一次性转写整段。可选择按句输出，或使用 Pro 的逐词对齐。支持复制或导出为 TXT、DOCX、PDF。</p>
+                    <p>打开 Phonetic Formatter，粘贴、扫描或输入文本后点击转换。应用会基于 CMU 发音词典一次性转写整段。可选择按句输出，或使用 Pro 的逐词对齐。支持复制或导出为 TXT、DOCX、PDF。</p>
                 </div>
                 <div class="faq-item">
                     <h3>iOS 上有离线 IPA 转写工具吗？</h3>
@@ -766,6 +813,10 @@
                     <p>可以。您可以直接点击复制，或通过导出功能生成 Word / PDF 文件，格式将完整保留。</p>
                 </div>
 
+                <div class="faq-item">
+                    <h3>扫描 / OCR 导入如何使用？</h3>
+                    <p>点击相机按钮扫描文档或选择照片。系统在设备上识别英文文本（仅支持英文）并填入输入框，可在转换前编辑。文本不会上传至我们的服务器。</p>
+                </div>
             </div>
         </div>
     </section>

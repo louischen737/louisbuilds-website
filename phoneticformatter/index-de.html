@@ -58,7 +58,7 @@
       "@type": "SoftwareApplication",
       "name": "Phonetic Formatter",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.2",
+      "softwareVersion": "1.5",
       "operatingSystem": "iOS, iPadOS",
       "downloadUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
       "installUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
@@ -73,22 +73,34 @@
         },
         {
           "@type": "Offer",
-          "name": "Pro upgrade (one-time in-app purchase)",
+          "name": "Pro monthly subscription",
+          "price": "2.99",
+          "priceCurrency": "USD",
+          "description": "Auto-renewing monthly Pro access with OCR import, unlimited generations, word-by-word layout, and TXT/DOCX/PDF export.",
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "purchaseType",
+            "value": "Subscription"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro lifetime purchase",
           "price": "19.99",
           "priceCurrency": "USD",
-          "description": "Optional one-time unlock for unlimited daily generations, longer text, word-by-word layout, and TXT/DOCX/PDF export.",
+          "description": "One-time lifetime Pro unlock with OCR import, unlimited generations, word-by-word layout, and TXT/DOCX/PDF export.",
           "additionalProperty": {
             "@type": "PropertyValue",
             "name": "purchaseType",
             "value": "InAppPurchase"
           }
-        }
-      ],
+        }],
       "description": "Konvertiere englischen Text in IPA mit dem CMU-Wörterbuch. Erstelle phonetische Transkriptionen und exportiere sie als PDF oder Word. Offline, kein Konto erforderlich. Strukturierte Layouts, Export als TXT, DOCX und PDF; Verarbeitung lokal auf dem Gerät.",
       "screenshot": "https://louisbuilds.me/phoneticformatter/og-image.png",
       "featureList": [
         "Gesamten englischen Text in IPA-Lautschrift umwandeln",
         "Satz- und Wort-für-Wort-Layout (Pro)",
+        "Scannen & Text importieren (OCR)",
         "Basierend auf dem CMU Pronouncing Dictionary",
         "Export als TXT, DOCX, PDF",
         "Funktioniert offline",
@@ -108,7 +120,7 @@
                 "name": "Wie wandle ich einen ganzen englischen Absatz in IPA um?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Öffnen Sie Phonetic Formatter, fügen Sie den Absatz ein und tippen Sie auf Konvertieren. Die App transkribiert die gesamte Passage mit dem CMU Pronouncing Dictionary. Wählen Sie Satzausgabe oder mit Pro Wort-für-Wort-Ausrichtung. Kopieren oder exportieren Sie als TXT, DOCX oder PDF."
+                    "text": "Öffnen Sie Phonetic Formatter, Text einfügen, scannen oder tippen und auf Konvertieren tippen. Die App transkribiert die gesamte Passage mit dem CMU Pronouncing Dictionary. Wählen Sie Satzausgabe oder mit Pro Wort-für-Wort-Ausrichtung. Kopieren oder exportieren Sie als TXT, DOCX oder PDF."
                 }
             },
             {
@@ -312,7 +324,7 @@
     <section class="home-summary scroll-reveal" aria-labelledby="home-summary-heading">
         <div class="container home-summary-inner">
             <p class="summary-lead" id="home-summary-heading">
-                <strong>Phonetic Formatter</strong> ist eine Offline-App für iOS/iPadOS, die vollständige englische Texte mithilfe des CMU Pronouncing Dictionary in strukturierte IPA überführt – satzweise oder wortweise – mit Export nach TXT, DOCX oder PDF.
+                <strong>Phonetic Formatter</strong> ist eine Offline-App für iOS/iPadOS, die vollständige englische Texte mithilfe des CMU Pronouncing Dictionary in strukturierte IPA überführt – satzweise oder wortweise – mit Dokumentenscan und OCR-Import auf dem Gerät sowie Export nach TXT, DOCX oder PDF.
             </p>
 
             <div class="summary-grid">
@@ -491,6 +503,15 @@
                         </div>
                         <div class="feature-card">
                             <h3>
+                                <a href="#feature-ocr">Dokumentenscan &amp; OCR-Import</a>
+                            </h3>
+                            <p>Arbeitsblätter scannen oder Fotos importieren—Texterkennung vollständig auf dem Gerät.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-ocr" class="feature-link">Mehr erfahren →</a>
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
                                 <a href="#feature-offline">Offline IPA-Transkription</a>
                             </h3>
                             <p>Konvertieren Sie Texte vollständig offline und mit maximalem Datenschutz.</p>
@@ -575,6 +596,23 @@
         </p>
 
         <!-- 4 -->
+        <h3 id="feature-ocr">Dokumentenscan &amp; OCR-Textimport</h3>
+
+        <p>
+            Tippen Sie auf die Kamera zum Scannen oder wählen Sie ein Foto aus der Mediathek.
+            Englischer Text wird vollständig auf dem Gerät mit Apples Vision-Framework erkannt.
+        </p>
+
+        <p>
+            Der erkannte Text wird ins Eingabefeld eingefügt und kann vor der IPA-Transkription bearbeitet werden.
+            Weder Bilder noch Text werden an externe Server gesendet.
+        </p>
+
+        <p>
+            Ideal zum Digitalisieren gedruckter Arbeitsblätter, Lehrbuchseiten oder Notizen ohne mühsames Abtippen.
+        </p>
+
+        <!-- 5 -->
         <h3 id="feature-offline">Offline-IPA-Transkription und Datenschutz</h3>
 
         <p>
@@ -605,7 +643,7 @@
                 </div>
                 <div class="section-content how-it-works">
                     <ol class="how-it-works-steps">
-                        <li><strong>Englischen Text einfügen oder tippen</strong> — einen Satz oder ganzen Absatz direkt im Formatter.</li>
+                        <li><strong>Text einfügen, tippen oder scannen</strong> — direkt eingeben, Dokument scannen oder Foto für OCR auf dem Gerät importieren (nur Englisch).</li>
                         <li><strong>IPA erzeugen</strong> — die App verarbeitet den Text und erstellt strukturierte Transkription mit dem CMU-Aussprachewörterbuch.</li>
                         <li><strong>Ergebnis kopieren oder exportieren</strong> — Transkription kopieren oder als TXT, DOCX oder PDF exportieren.</li>
                     </ol>
@@ -661,57 +699,66 @@
             <div class="pricing-table-wrapper">
                 <p class="pricing-swipe-hint" aria-hidden="true">Wischen, um Pläne zu vergleichen</p>
                 <div class="pricing-table-container">
-                <table class="pricing-table">
-                    <colgroup>
-                        <col style="width: 42%;">
-                        <col style="width: 29%;">
-                        <col style="width: 29%;">
+                                <table class="pricing-table">
+                                        <colgroup>
+                        <col style="width: 28%;">
+                        <col style="width: 24%;">
+                        <col style="width: 24%;">
+                        <col style="width: 24%;">
                     </colgroup>
-                    <thead>
+                                        <thead>
                         <tr>
                             <th class="plan-label">Plandetails</th>
                             <th class="free-col">Kostenlos</th>
-                            <th class="pro-col">Pro</th>
+                            <th class="pro-col pro-monthly-col">Pro<br><span class="pro-col-plan">Monatsabo</span></th>
+                            <th class="pro-col pro-lifetime-col">Pro<br><span class="pro-col-plan">Lebenslang</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="feature-name">Tägliche Generierungen</td>
                             <td class="value free-col">1 pro Tag</td>
-                            <td class="value pro-col">Unbegrenzt</td>
+                            <td class="value pro-col pro-monthly-col">Unbegrenzt</td>
+                            <td class="value pro-col pro-lifetime-col">Unbegrenzt</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Maximale Textlänge</td>
                             <td class="value free-col">Bis zu 400 Wörter</td>
-                            <td class="value pro-col">Bis zu 6.000 Wörter</td>
+                            <td class="value pro-col pro-monthly-col">Bis zu 6.000 Wörter</td>
+                            <td class="value pro-col pro-lifetime-col">Bis zu 6.000 Wörter</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Anzeigeformate</td>
                             <td class="value free-col">Satzbasiert</td>
-                            <td class="value pro-col">Satz + Wort-für-Wort</td>
+                            <td class="value pro-col pro-monthly-col">Satz + Wort-für-Wort</td>
+                            <td class="value pro-col pro-lifetime-col">Satz + Wort-für-Wort</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Ergebnisse kopieren</td>
                             <td class="value free-col">Enthalten</td>
-                            <td class="value pro-col">Enthalten</td>
+                            <td class="value pro-col pro-monthly-col">Enthalten</td>
+                            <td class="value pro-col pro-lifetime-col">Enthalten</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Export<br>(TXT / DOCX / PDF)</td>
                             <td class="value free-col">—</td>
-                            <td class="value pro-col">Enthalten</td>
+                            <td class="value pro-col pro-monthly-col">Enthalten</td>
+                            <td class="value pro-col pro-lifetime-col">Enthalten</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Lebenslanger Zugang</td>
+                            <td class="feature-name">Scannen &amp; OCR-Import</td>
                             <td class="value free-col">—</td>
-                            <td class="value pro-col">Enthalten</td>
+                            <td class="value pro-col pro-monthly-col">Enthalten</td>
+                            <td class="value pro-col pro-lifetime-col">Enthalten</td>
                         </tr>
-                        <tr class="price-row">
+                                                <tr class="price-row">
                             <td class="feature-name price-label">Preis</td>
                             <td class="value free-col price-value">Kostenlos</td>
-                            <td class="value pro-col price-value">
+                            <td class="value pro-col pro-monthly-col price-value">$2.99/Mo.</td>
+                            <td class="value pro-col pro-lifetime-col price-value">
                                 <div class="pricing-footer-price pro-price">
                                     <span class="pricing-footer-price-value">$19.99</span>
-                                    <span class="pricing-footer-price-note">Einmaliger Kauf</span>
+                                    <span class="pricing-footer-price-note">Lebenslang-Kauf</span>
                                 </div>
                             </td>
                         </tr>
@@ -721,7 +768,7 @@
             </div>
 
             <div class="universal-footer">
-                <p>📱 <strong>Universal-App</strong>: Ihr Kauf ist an Ihre Apple-ID gebunden. Einmal kaufen, Pro-Funktionen auf <strong>iPhone</strong> und <strong>iPad</strong> nutzen.</p>
+                <p>📱 <strong>Universal-App</strong>: Ihr Kauf ist an Ihre Apple-ID gebunden. Abo oder Lebenslang-Kauf—Pro-Funktionen auf <strong>iPhone</strong> und <strong>iPad</strong> nutzen.</p>
             </div>
 
             <div class="pricing-cta">
@@ -738,7 +785,7 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <h3>Wie wandle ich einen ganzen englischen Absatz in IPA um?</h3>
-                    <p>Öffnen Sie Phonetic Formatter, fügen Sie den Absatz ein und tippen Sie auf Konvertieren. Die App transkribiert die gesamte Passage mit dem CMU Pronouncing Dictionary. Wählen Sie Satzausgabe oder mit Pro Wort-für-Wort-Ausrichtung. Kopieren oder exportieren Sie als TXT, DOCX oder PDF.</p>
+                    <p>Öffnen Sie Phonetic Formatter, Text einfügen, scannen oder tippen und auf Konvertieren tippen. Die App transkribiert die gesamte Passage mit dem CMU Pronouncing Dictionary. Wählen Sie Satzausgabe oder mit Pro Wort-für-Wort-Ausrichtung. Kopieren oder exportieren Sie als TXT, DOCX oder PDF.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Gibt es einen Offline-IPA-Transkriptor für iOS?</h3>
@@ -766,6 +813,10 @@
                     <p>Absolut. Viele Lehrkräfte nutzen die App, um Schülern die Unterschiede zwischen Dialekten zu verdeutlichen oder um amerikanische Texte (wie Literatur oder Reden) zu transkribieren. Dank der Exportfunktion in Word oder PDF können Lehrer die Transkriptionen leicht anpassen oder als Grundlage für den Vergleich von Aussprachevarianten im Unterricht verwenden.</p>
                 </div>
 
+                <div class="faq-item">
+                    <h3>Wie funktioniert Scannen / OCR-Import?</h3>
+                    <p>Tippen Sie auf die Kamera, um ein Dokument zu scannen oder ein Foto auszuwählen. Text wird auf dem Gerät erkannt (nur Englisch) und ins Eingabefeld eingefügt. Sie können ihn vor der Transkription bearbeiten. Es wird nichts an unsere Server gesendet.</p>
+                </div>
             </div>
         </div>
     </section>

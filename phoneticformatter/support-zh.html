@@ -125,14 +125,16 @@
         <div class="content">
             <section id="getting-started" class="section">
                 <h2>入门</h2>
-                <p>基本步骤：</p>
+                <p>Phonetic Formatter 在设备本地将英文转换为 IPA 音标，无需联网。</p>
                 <ol>
-                    <li>输入或粘贴英文。</li>
+                    <li>输入或粘贴英文，<em>或</em>点击相机按钮扫描文档 / 选择照片，通过设备本地 OCR 导入英文文本。</li>
                     <li>选择显示方式（按句；逐词为专业版功能）。</li>
+                    <li>（可选）设置 IPA 左右分隔符。</li>
                     <li>点击生成音标。</li>
-                    <li>复制或导出（专业版）。</li>
+                    <li>复制结果，或（专业版）导出 TXT / DOCX / PDF。</li>
                 </ol>
-                <p>免费版：按句、单次最多 400 词、每日 1 次。专业版：逐词、单次最多 6000 词、不限次数、可导出。</p>
+                <p><strong>免费版：</strong>按句显示、单次最多 400 词、每日 1 次转换（含手动输入与 OCR）、无导出。</p>
+                <p><strong>专业版（月度订阅或终身购买）：</strong>逐词显示、文档扫描与 OCR、单次最多 6000 词、无限次转换、完整导出。</p>
             </section>
 
             <section id="technical" class="section">
@@ -141,6 +143,7 @@
                 <ul>
                     <li>面向真实英文文本的断句与分词</li>
                     <li>离线使用内置 CMU 发音词典</li>
+                    <li>设备本地文档扫描与 OCR 文本提取（Apple Vision 框架，仅英文）</li>
                     <li>输出 IPA 音标；不传输您的输入内容</li>
                 </ul>
             </section>
@@ -152,27 +155,42 @@
 
             <section id="faq" class="section">
                 <h2>常见问题</h2>
-                <h3 onclick="toggleFAQ(this)">蓝色单词是什么意思？<span class="toggle-icon">▼</span></h3><div class="faq-answer">显示为<strong>蓝色</strong>的单词有多种发音。点击蓝色单词可查看并选择其他发音。</div>
-<h3 onclick="toggleFAQ(this)">如果词典中找不到某个单词会怎样？<span class="toggle-icon">▼</span></h3><div class="faq-answer">在按句显示模式（所有用户可用）下，CMU 词典中没有的单词会原样显示。<br/>在逐词显示模式（仅专业版）下，未找到的单词会显示为占位符。</div>
-<h3 onclick="toggleFAQ(this)">免费版和专业版有什么区别？<span class="toggle-icon">▼</span></h3><div class="faq-answer">免费版：<br/>• 每日 1 次转换（复制结果不消耗次数）<br/>• 单次最多 400 词<br/>• 仅按句显示音标<br/>• 无导出功能<br/><br/>专业版：<br/>• 无限次转换<br/>• 单次最多 6000 词<br/>• 支持逐词显示与按句显示音标<br/>• 支持导出 TXT / DOCX / PDF</div>
-<h3 onclick="toggleFAQ(this)">如何升级到专业版？<span class="toggle-icon">▼</span></h3><div class="faq-answer">在「设置 → 解锁专业版」中升级。一次性购买即可解锁全部专业版功能。</div>
-<h3 onclick="toggleFAQ(this)">可以在其他设备上恢复专业版吗？<span class="toggle-icon">▼</span></h3><div class="faq-answer">可以。在购买页面使用「恢复购买」，或通过你的 Apple ID 管理。请确保使用购买时的同一 Apple ID 登录。</div>
-<h3 onclick="toggleFAQ(this)">应用需要联网吗？<span class="toggle-icon">▼</span></h3><div class="faq-answer">不需要。所有音标转换完全在设备本地完成，文本不会上传到我们的服务器。</div>
-<h3 onclick="toggleFAQ(this)">应用会收集用户数据吗？<span class="toggle-icon">▼</span></h3><div class="faq-answer">应用不会收集或上传你的输入文本。所有处理均在本地离线完成。详情请参阅<a href="privacy-zh.html">隐私政策</a>。</div>
-<h3 onclick="toggleFAQ(this)">应用使用什么词典？<span class="toggle-icon">▼</span></h3><div class="faq-answer">应用使用 CMU Pronouncing Dictionary，这是北美英语的标准参考词典。我们额外增加了语句流畅度与重音标记的自定义逻辑。</div>
-<h3 onclick="toggleFAQ(this)">应用支持英式发音吗？<span class="toggle-icon">▼</span></h3><div class="faq-answer">当前版本仅支持美式英语，暂不支持英式发音。</div>
-<h3 onclick="toggleFAQ(this)">什么是逐词显示音标？<span class="toggle-icon">▼</span></h3><div class="faq-answer">逐词显示模式会在按句分组下，为每个单词单独列出对应音标——非常适合教学、标注与学习资料。仅专业版可用。</div>
-<h3 onclick="toggleFAQ(this)">L 和 R 输入框有什么用？<span class="toggle-icon">▼</span></h3><div class="faq-answer">L（左）与 R（右）用于填写可选的 IPA 分隔符，会显示在音标两侧。每个框最多 2 个字符；两处均留空则只输出纯 IPA，不添加分隔符。</div>
+                <h3 onclick="toggleFAQ(this)">蓝色单词是什么意思？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">显示为<strong>蓝色</strong>的单词有多种发音。点击蓝色单词可查看并选择其他发音。</div>
+                <h3 onclick="toggleFAQ(this)">如果词典中找不到某个单词会怎样？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">在按句显示模式（所有用户可用）下，CMU 词典中没有的单词会原样显示。<br/>在逐词显示模式（仅专业版）下，未找到的单词会显示为占位符。</div>
+                <h3 onclick="toggleFAQ(this)">免费版和专业版有什么区别？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">免费版：<br/>• 每日 1 次转换（复制结果不消耗次数）<br/>• 单次最多 400 词<br/>• 仅按句显示音标<br/>• 无导出功能<br/><br/>专业版：<br/>• 无限次转换<br/>• 单次最多 6000 词<br/>• 支持逐词显示与按句显示音标<br/>• 扫描与导入文本（OCR）<br/>• 支持导出 TXT / DOCX / PDF</div>
+                <h3 onclick="toggleFAQ(this)">如何升级到专业版？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">在「设置 → 解锁专业版」中选择方案：月度订阅（自动续费，可在 Apple 订阅设置中随时取消）或一次性终身购买。订阅在到期前取消仍可使用至当前计费周期结束；退款后权益将按 Apple 政策收回。</div>
+                <h3 onclick="toggleFAQ(this)">可以在其他设备上恢复专业版吗？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">可以。在购买页面使用「恢复购买」，或通过你的 Apple ID 管理。请确保使用购买时的同一 Apple ID 登录。</div>
+                <h3 onclick="toggleFAQ(this)">应用需要联网吗？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">不需要。所有音标转换完全在设备本地完成，文本不会上传到我们的服务器。</div>
+                <h3 onclick="toggleFAQ(this)">应用会收集用户数据吗？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">应用不会收集或上传你的输入文本。所有处理均在本地离线完成。详情请参阅<a href="privacy-zh.html">隐私政策</a>。</div>
+                <h3 onclick="toggleFAQ(this)">应用使用什么词典？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">应用使用 CMU Pronouncing Dictionary，这是北美英语的标准参考词典。我们额外增加了语句流畅度与重音标记的自定义逻辑。</div>
+                <h3 onclick="toggleFAQ(this)">应用支持英式发音吗？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">当前版本仅支持美式英语，暂不支持英式发音。</div>
+                <h3 onclick="toggleFAQ(this)">什么是逐词显示音标？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">逐词显示模式会在按句分组下，为每个单词单独列出对应音标——非常适合教学、标注与学习资料。仅专业版可用。</div>
+                <h3 onclick="toggleFAQ(this)">L 和 R 输入框有什么用？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">L（左）与 R（右）用于填写可选的 IPA 分隔符，会显示在音标两侧。每个框最多 2 个字符；两处均留空则只输出纯 IPA，不添加分隔符。</div>
+                <h3 onclick="toggleFAQ(this)">扫描 / OCR 导入如何使用？<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">点击相机按钮扫描文档或选择照片。系统在设备上识别英文文本（仅支持英文）并填入输入框，可在转换前编辑。文本不会上传至我们的服务器。</div>
             </section>
 
             <section id="troubleshooting" class="section">
                 <h2>故障排除</h2>
                 <h3 onclick="toggleFAQ(this)">没有生成结果<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>请检查输入与额度；必要时重启应用。</p></div>
+                <div class="faq-answer"><ul><li>确认已输入英文文本。</li><li>检查免费版每日额度是否已用完。</li><li>必要时重启应用。</li></ul></div>
+                <h3 onclick="toggleFAQ(this)">扫描 / OCR 未导入文本<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>请允许相机或相册访问权限。</li><li>仅支持英文；可换更清晰的照片重试。</li><li>可在转换前编辑识别结果。</li></ul></div>
                 <h3 onclick="toggleFAQ(this)">无法导出<span class="toggle-icon">▼</span></h3>
                 <div class="faq-answer"><p>导出需专业版且已生成结果。</p></div>
-                <h3 onclick="toggleFAQ(this)">购买与恢复<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>在设置中使用「恢复购买」并保持同一 Apple ID。</p></div>
+                <h3 onclick="toggleFAQ(this)">购买与订阅<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>在「设置 → 解锁专业版」选择月度订阅或终身购买。</li><li>月度订阅需在当前计费周期结束前至少 24 小时在 Apple ID 订阅设置中取消，否则自动续费。</li><li>使用「恢复购买」并保持同一 Apple ID 登录。</li><li>退款与订阅变更由 Apple 处理。</li></ul></div>
             </section>
 
             <section id="contact" class="section">

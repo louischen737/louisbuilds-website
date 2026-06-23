@@ -125,23 +125,26 @@
         <div class="content">
             <section id="getting-started" class="section">
                 <h2>Primeros pasos</h2>
-                <p>Pasos:</p>
+                <p>Uso:</p>
                 <ol>
-                    <li>Introduce o pega texto en inglés.</li>
-                    <li>Elige el formato (por frase; palabra a palabra en Pro).</li>
+                    <li>Introduce o pega texto en inglés, <em>o</em> pulsa la cámara para escanear o importar una foto con OCR en el dispositivo (solo inglés).</li>
+                    <li>Elige el formato (oración; palabra a palabra en Pro).</li>
+                    <li>(Opcional) Configura delimitadores AFI izquierdo/derecho.</li>
                     <li>Pulsa Generar.</li>
                     <li>Copia o exporta (Pro) si lo necesitas.</li>
                 </ol>
-                <p>Gratis: por frase, hasta 400 palabras, 1 al día. Pro: palabra a palabra, hasta 6.000 palabras, ilimitado, exportación.</p>
+                <p><strong>Gratis:</strong> por oraciones, hasta 400 palabras, 1 generación/día (entrada y OCR), sin exportación.</p>
+                <p><strong>Pro (suscripción mensual o compra de por vida):</strong> palabra a palabra, escaneo y OCR, hasta 6.000 palabras, ilimitado, exportación TXT/DOCX/PDF.</p>
             </section>
 
             <section id="technical" class="section">
-                <h2>Resumen técnico</h2>
-                <p>Phonetic Formatter procesa el texto en tu dispositivo, sin subirlo a servidores.</p>
+                <h2>Información técnica</h2>
+                <p>Phonetic Formatter funciona sin conexión en tu dispositivo.</p>
                 <ul>
-                    <li>Segmentación y tokenización para inglés real</li>
-                    <li>Offline: CMU Pronouncing Dictionary incluido</li>
-                    <li>Salida AFI; no se transmiten tus textos</li>
+                    <li>Detección de frases y tokenización para texto inglés real</li>
+                    <li>Diccionario CMU integrado, sin conexión</li>
+                    <li>Escaneo de documentos y OCR en el dispositivo (framework Vision de Apple, solo inglés)</li>
+                    <li>Salida AFI; no se envía tu texto</li>
                 </ul>
             </section>
 
@@ -151,28 +154,43 @@
             </section>
 
             <section id="faq" class="section">
-                <h2>FAQ</h2>
-                <h3 onclick="toggleFAQ(this)">¿Qué significa una palabra azul?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Las palabras que aparecen en <strong>azul</strong> tienen varias pronunciaciones. Pulsa una palabra azul para ver y seleccionar pronunciaciones alternativas.</div>
-<h3 onclick="toggleFAQ(this)">¿Qué pasa si una palabra no está en el diccionario?<span class="toggle-icon">▼</span></h3><div class="faq-answer">En el modo oración (disponible para todos los usuarios), las palabras que no están en el diccionario CMU se muestran tal cual.<br/>En el modo alineado por palabra (solo Pro), las palabras faltantes aparecen como símbolos de marcador.</div>
-<h3 onclick="toggleFAQ(this)">¿Cuál es la diferencia entre Free y Pro?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Gratuito:<br/>• 1 transcripción por día (copiar resultados no usa esta cuota)<br/>• Hasta 400 palabras por transcripción<br/>• Transcripción a nivel de oración<br/>• Sin exportación<br/><br/>Pro:<br/>• Transcripciones ilimitadas<br/>• Hasta 6,000 palabras por transcripción<br/>• Transcripción alineada por palabra y por oración<br/>• Exporta TXT / DOCX / PDF</div>
-<h3 onclick="toggleFAQ(this)">¿Cómo desbloqueo Pro?<span class="toggle-icon">▼</span></h3><div class="faq-answer">En Ajustes → Desbloquear Pro. Una compra única otorga acceso de por vida a todas las funciones.</div>
-<h3 onclick="toggleFAQ(this)">¿Puedo restaurar mi compra Pro en otro dispositivo?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Sí. Usa «Restaurar compras» en el flujo de compra o gestiona a través de tu Apple ID. Asegúrate de iniciar sesión con el mismo Apple ID que usaste en la compra original.</div>
-<h3 onclick="toggleFAQ(this)">¿La app requiere conexión a internet?<span class="toggle-icon">▼</span></h3><div class="faq-answer">No. Toda la transcripción se realiza completamente en el dispositivo. Ningún texto se envía a nuestros servidores.</div>
-<h3 onclick="toggleFAQ(this)">¿Se recopilan datos del usuario?<span class="toggle-icon">▼</span></h3><div class="faq-answer">La app no recopila ni transmite tu texto de entrada. El procesamiento se mantiene sin conexión en tu dispositivo.</div>
-<h3 onclick="toggleFAQ(this)">¿Qué diccionario usa la app?<span class="toggle-icon">▼</span></h3><div class="faq-answer">La app usa el CMU Pronouncing Dictionary, referencia estándar del inglés norteamericano. Añadimos lógica personalizada para el flujo de oraciones y el marcado de acentos.</div>
-<h3 onclick="toggleFAQ(this)">¿La app admite pronunciación británica?<span class="toggle-icon">▼</span></h3><div class="faq-answer">La versión actual solo admite inglés americano. Las variantes británicas aún no están soportadas.</div>
-<h3 onclick="toggleFAQ(this)">¿Qué es la transcripción alineada por palabra?<span class="toggle-icon">▼</span></h3><div class="faq-answer">El modo alineado por palabra lista cada palabra con su AFI bajo grupos de oraciones — útil para enseñanza, anotaciones y materiales de estudio. Solo Pro.</div>
-<h3 onclick="toggleFAQ(this)">¿Para qué sirven los campos L y R?<span class="toggle-icon">▼</span></h3><div class="faq-answer">L (izquierda) y R (derecha) actúan como delimitadores de la salida AFI (p. ej., / / o [ ]). Cada campo acepta hasta dos caracteres. Déjalos vacíos para obtener AFI sin delimitadores.</div>
+                <h2>Preguntas frecuentes</h2>
+                <h3 onclick="toggleFAQ(this)">¿Qué significa una palabra azul?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Las palabras que aparecen en <strong>azul</strong> tienen varias pronunciaciones. Pulsa una palabra azul para ver y seleccionar pronunciaciones alternativas.</div>
+                <h3 onclick="toggleFAQ(this)">¿Qué pasa si una palabra no está en el diccionario?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">En el modo oración (disponible para todos los usuarios), las palabras que no están en el diccionario CMU se muestran tal cual.<br/>En el modo alineado por palabra (solo Pro), las palabras faltantes aparecen como símbolos de marcador.</div>
+                <h3 onclick="toggleFAQ(this)">¿Cuál es la diferencia entre Free y Pro?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Gratuito:<br/>• 1 transcripción por día (copiar resultados no usa esta cuota)<br/>• Hasta 400 palabras por transcripción<br/>• Transcripción a nivel de oración<br/>• Sin exportación<br/><br/>Pro:<br/>• Transcripciones ilimitadas<br/>• Hasta 6,000 palabras por transcripción<br/>• Transcripción alineada por palabra y por oración<br/>• Escanear e importar texto (OCR)<br/>• Exporta TXT / DOCX / PDF</div>
+                <h3 onclick="toggleFAQ(this)">¿Cómo desbloqueo Pro?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">En Ajustes → Desbloquear Pro, elige suscripción mensual (renovación automática, cancelable en los ajustes de Apple) o compra única de por vida. Pro permanece activo hasta que expire tras cancelación o reembolso.</div>
+                <h3 onclick="toggleFAQ(this)">¿Puedo restaurar mi compra Pro en otro dispositivo?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Sí. Usa «Restaurar compras» en el flujo de compra o gestiona a través de tu Apple ID. Asegúrate de iniciar sesión con el mismo Apple ID que usaste en la compra original.</div>
+                <h3 onclick="toggleFAQ(this)">¿La app requiere conexión a internet?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">No. Toda la transcripción se realiza completamente en el dispositivo. Ningún texto se envía a nuestros servidores.</div>
+                <h3 onclick="toggleFAQ(this)">¿Se recopilan datos del usuario?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">La app no recopila ni transmite tu texto de entrada. El procesamiento se mantiene sin conexión en tu dispositivo. Consulte la <a href="privacy-es.html">política de privacidad</a>.</div>
+                <h3 onclick="toggleFAQ(this)">¿Qué diccionario usa la app?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">La app usa el CMU Pronouncing Dictionary, referencia estándar del inglés norteamericano. Añadimos lógica personalizada para el flujo de oraciones y el marcado de acentos.</div>
+                <h3 onclick="toggleFAQ(this)">¿La app admite pronunciación británica?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">La versión actual solo admite inglés americano. Las variantes británicas aún no están soportadas.</div>
+                <h3 onclick="toggleFAQ(this)">¿Qué es la transcripción alineada por palabra?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">El modo alineado por palabra lista cada palabra con su AFI bajo grupos de oraciones — útil para enseñanza, anotaciones y materiales de estudio. Solo Pro.</div>
+                <h3 onclick="toggleFAQ(this)">¿Para qué sirven los campos L y R?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">L (izquierda) y R (derecha) actúan como delimitadores de la salida AFI (p. ej., / / o [ ]). Cada campo acepta hasta dos caracteres. Déjalos vacíos para obtener AFI sin delimitadores.</div>
+                <h3 onclick="toggleFAQ(this)">¿Cómo funciona el escaneo / importación OCR?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Toca la cámara para escanear un documento o elegir una foto. El texto se reconoce en el dispositivo (solo inglés) y se inserta en el campo de entrada. Puedes editarlo antes de transcribir. No se envía texto a nuestros servidores.</div>
             </section>
 
             <section id="troubleshooting" class="section">
                 <h2>Solución de problemas</h2>
-                <h3 onclick="toggleFAQ(this)">Sin resultado<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>Comprueba el texto y los límites; reinicia la app.</p></div>
-                <h3 onclick="toggleFAQ(this)">Sin exportación<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>La exportación requiere Pro y salida generada.</p></div>
-                <h3 onclick="toggleFAQ(this)">Compras<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>Usa Restaurar compras con el mismo Apple ID.</p></div>
+                <h3 onclick="toggleFAQ(this)">No se genera la transcripción<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>Comprueba la entrada y el límite diario.</li><li>Reinicia la app.</li></ul></div>
+                <h3 onclick="toggleFAQ(this)">El escaneo / OCR no inserta texto<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>Concede permisos de cámara o fotos.</li><li>Solo inglés; prueba otra foto más clara.</li><li>Edita el texto reconocido antes de transcribir.</li></ul></div>
+                <h3 onclick="toggleFAQ(this)">Exportación no disponible<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><p>La exportación requiere Pro y una salida generada.</p></div>
+                <h3 onclick="toggleFAQ(this)">Compras y suscripciones<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>Ajustes → Desbloquear Pro: suscripción mensual o compra de por vida.</li><li>Cancela la suscripción al menos 24 h antes del fin del periodo (ajustes del Apple ID).</li><li>Usa Restaurar compras con el mismo Apple ID.</li></ul></div>
             </section>
 
             <section id="contact" class="section">

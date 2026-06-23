@@ -127,12 +127,14 @@
                 <h2>Premiers pas</h2>
                 <p>Utilisation :</p>
                 <ol>
-                    <li>Saisir ou coller du texte anglais.</li>
+                    <li>Saisir ou coller du texte anglais, <em>ou</em> toucher l’appareil photo pour numériser ou importer une photo via OCR sur l’appareil (anglais uniquement).</li>
                     <li>Choisir le format (phrase ; mot à mot en Pro).</li>
+                    <li>(Optionnel) Définir les délimiteurs API gauche/droite.</li>
                     <li>Appuyer sur Générer.</li>
                     <li>Copier ou exporter (Pro) si besoin.</li>
                 </ol>
-                <p>Gratuit : par phrase, 400 mots max, 1 génération/jour. Pro : mot à mot, 6 000 mots max, illimité, export.</p>
+                <p><strong>Gratuit :</strong> par phrase, 400 mots max, 1 génération/jour (saisie &amp; OCR), pas d’export.</p>
+                <p><strong>Pro (abonnement mensuel ou achat à vie) :</strong> mot à mot, numérisation &amp; OCR, 6 000 mots max, illimité, export TXT/DOCX/PDF.</p>
             </section>
 
             <section id="technical" class="section">
@@ -141,6 +143,7 @@
                 <ul>
                     <li>Découpage de phrases et tokenisation pour du texte anglais réel</li>
                     <li>Dictionnaire CMU intégré, hors ligne</li>
+                    <li>Numérisation et OCR sur l’appareil (framework Vision d’Apple, anglais uniquement)</li>
                     <li>Sortie IPA ; aucun texte n’est envoyé</li>
                 </ul>
             </section>
@@ -152,27 +155,42 @@
 
             <section id="faq" class="section">
                 <h2>FAQ</h2>
-                <h3 onclick="toggleFAQ(this)">Que signifie un mot en bleu?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Les mots affichés en <strong>bleu</strong> ont plusieurs prononciations. Appuyez sur un mot bleu pour voir et sélectionner des prononciations alternatives.</div>
-<h3 onclick="toggleFAQ(this)">Que se passe-t-il si un mot n’est pas dans le dictionnaire?<span class="toggle-icon">▼</span></h3><div class="faq-answer">En mode phrase (pour tous les utilisateurs), les mots absents du dictionnaire CMU sont affichés tels quels.<br/>En mode aligné par mot (Pro uniquement), les mots manquants apparaissent comme des symboles de remplacement.</div>
-<h3 onclick="toggleFAQ(this)">Quelle est la différence entre Free et Pro?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Gratuit:<br/>• 1 transcription par jour (la copie des résultats n’utilise pas ce quota)<br/>• Jusqu’à 400 mots par transcription<br/>• Transcription au niveau phrase<br/>• Pas d’export<br/><br/>Pro:<br/>• Transcriptions illimitées<br/>• Jusqu’à 6 000 mots par transcription<br/>• Transcription alignée mot &amp; phrase<br/>• Export TXT / DOCX / PDF</div>
-<h3 onclick="toggleFAQ(this)">Comment débloquer la version Pro ?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Dans Réglages → Débloquer la version Pro. Un achat unique donne un accès permanent à toutes les fonctionnalités.</div>
-<h3 onclick="toggleFAQ(this)">Puis-je restaurer mon achat Pro sur un autre appareil?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Oui. Utilisez « Restaurer les achats » dans le flux d’achat ou gérez via votre Apple ID. Assurez-vous d’être connecté avec le même Apple ID que pour l’achat initial.</div>
-<h3 onclick="toggleFAQ(this)">L’app nécessite-t-elle une connexion Internet?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Non. Toute la transcription se fait entièrement sur l’appareil. Aucun texte n’est envoyé à nos serveurs.</div>
-<h3 onclick="toggleFAQ(this)">Des données utilisateur sont-elles collectées?<span class="toggle-icon">▼</span></h3><div class="faq-answer">L’app ne collecte ni ne transmet votre texte saisi. Le traitement reste hors ligne sur votre appareil.</div>
-<h3 onclick="toggleFAQ(this)">Quel dictionnaire utilise l’app?<span class="toggle-icon">▼</span></h3><div class="faq-answer">L’app utilise le CMU Pronouncing Dictionary, référence standard pour l’anglais nord-américain. Nous ajoutons une logique personnalisée pour le flux des phrases et le marquage des accents.</div>
-<h3 onclick="toggleFAQ(this)">L’app prend-elle en charge la prononciation britannique?<span class="toggle-icon">▼</span></h3><div class="faq-answer">La version actuelle ne prend en charge que l’anglais américain. Les variantes britanniques ne sont pas encore supportées.</div>
-<h3 onclick="toggleFAQ(this)">Qu’est-ce que la transcription alignée par mot ?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Le mode mot par mot affiche chaque mot avec son API sous la phrase correspondante – idéal pour l’enseignement et les supports d’étude. Version Pro uniquement.</div>
-<h3 onclick="toggleFAQ(this)">À quoi servent les champs L et R ?<span class="toggle-icon">▼</span></h3><div class="faq-answer">L (gauche) et R (droite) servent de délimiteurs pour l’API (p. ex. / / ou [ ]). Chaque champ accepte jusqu’à deux caractères. Laissez les deux vides pour une sortie sans délimiteurs.</div>
+                <h3 onclick="toggleFAQ(this)">Que signifie un mot en bleu?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Les mots affichés en <strong>bleu</strong> ont plusieurs prononciations. Appuyez sur un mot bleu pour voir et sélectionner des prononciations alternatives.</div>
+                <h3 onclick="toggleFAQ(this)">Que se passe-t-il si un mot n’est pas dans le dictionnaire?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">En mode phrase (pour tous les utilisateurs), les mots absents du dictionnaire CMU sont affichés tels quels.<br/>En mode aligné par mot (Pro uniquement), les mots manquants apparaissent comme des symboles de remplacement.</div>
+                <h3 onclick="toggleFAQ(this)">Quelle est la différence entre Free et Pro?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Gratuit:<br/>• 1 transcription par jour (la copie des résultats n’utilise pas ce quota)<br/>• Jusqu’à 400 mots par transcription<br/>• Transcription au niveau phrase<br/>• Pas d’export<br/><br/>Pro:<br/>• Transcriptions illimitées<br/>• Jusqu’à 6 000 mots par transcription<br/>• Transcription alignée mot & phrase<br/>• Numériser et importer du texte (OCR)<br/>• Export TXT / DOCX / PDF</div>
+                <h3 onclick="toggleFAQ(this)">Comment débloquer la version Pro ?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Dans Réglages → Débloquer Pro, choisissez un abonnement mensuel (renouvellement auto, annulable dans les réglages Apple) ou un achat unique à vie. Pro reste actif jusqu'à expiration après annulation ou remboursement.</div>
+                <h3 onclick="toggleFAQ(this)">Puis-je restaurer mon achat Pro sur un autre appareil?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Oui. Utilisez « Restaurer les achats » dans le flux d’achat ou gérez via votre Apple ID. Assurez-vous d’être connecté avec le même Apple ID que pour l’achat initial.</div>
+                <h3 onclick="toggleFAQ(this)">L’app nécessite-t-elle une connexion Internet?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Non. Toute la transcription se fait entièrement sur l’appareil. Aucun texte n’est envoyé à nos serveurs.</div>
+                <h3 onclick="toggleFAQ(this)">Des données utilisateur sont-elles collectées?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">L’app ne collecte ni ne transmet votre texte saisi. Le traitement reste hors ligne sur votre appareil. Voir la <a href="privacy-fr.html">politique de confidentialité</a>.</div>
+                <h3 onclick="toggleFAQ(this)">Quel dictionnaire utilise l’app?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">L’app utilise le CMU Pronouncing Dictionary, référence standard pour l’anglais nord-américain. Nous ajoutons une logique personnalisée pour le flux des phrases et le marquage des accents.</div>
+                <h3 onclick="toggleFAQ(this)">L’app prend-elle en charge la prononciation britannique?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">La version actuelle ne prend en charge que l’anglais américain. Les variantes britanniques ne sont pas encore supportées.</div>
+                <h3 onclick="toggleFAQ(this)">Qu’est-ce que la transcription alignée par mot ?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Le mode mot par mot affiche chaque mot avec son API sous la phrase correspondante – idéal pour l’enseignement et les supports d’étude. Version Pro uniquement.</div>
+                <h3 onclick="toggleFAQ(this)">À quoi servent les champs L et R ?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">L (gauche) et R (droite) servent de délimiteurs pour l’API (p. ex. / / ou [ ]). Chaque champ accepte jusqu’à deux caractères. Laissez les deux vides pour une sortie sans délimiteurs.</div>
+                <h3 onclick="toggleFAQ(this)">Comment fonctionne la numérisation / l’import OCR ?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Touchez l’appareil photo pour numériser un document ou choisir une photo. Le texte est reconnu sur l’appareil (anglais uniquement) et inséré dans le champ de saisie. Vous pouvez le modifier avant de transcrire. Aucun texte n’est envoyé à nos serveurs.</div>
             </section>
 
             <section id="troubleshooting" class="section">
                 <h2>Dépannage</h2>
                 <h3 onclick="toggleFAQ(this)">Pas de résultat<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>Vérifiez la saisie et les limites ; redémarrez l’app.</p></div>
+                <div class="faq-answer"><ul><li>Vérifier la saisie et le quota quotidien.</li><li>Redémarrer l’app.</li></ul></div>
+                <h3 onclick="toggleFAQ(this)">Numérisation / OCR sans texte importé<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>Autoriser caméra ou photothèque.</li><li>Anglais uniquement ; photo plus nette.</li><li>Modifier le texte reconnu avant de transcrire.</li></ul></div>
                 <h3 onclick="toggleFAQ(this)">Export indisponible<span class="toggle-icon">▼</span></h3>
                 <div class="faq-answer"><p>L’export nécessite Pro et une sortie générée.</p></div>
-                <h3 onclick="toggleFAQ(this)">Achats<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>Utilisez Restaurer les achats avec le même Apple ID.</p></div>
+                <h3 onclick="toggleFAQ(this)">Achats &amp; abonnements<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>Réglages → Débloquer Pro : abonnement mensuel ou achat à vie.</li><li>Annuler l’abonnement au moins 24 h avant la fin de la période (réglages Apple ID).</li><li>Restaurer les achats avec le même Apple ID.</li></ul></div>
             </section>
 
             <section id="contact" class="section">

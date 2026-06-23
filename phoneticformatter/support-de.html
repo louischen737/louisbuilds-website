@@ -127,12 +127,14 @@
                 <h2>Erste Schritte</h2>
                 <p>Ablauf:</p>
                 <ol>
-                    <li>Englischen Text eingeben oder einfügen.</li>
+                    <li>Englischen Text eingeben oder einfügen, <em>oder</em> Kamera tippen zum Scannen oder Foto wählen für OCR-Import auf dem Gerät (nur Englisch).</li>
                     <li>Darstellung wählen (satzweise; wortweise nur Pro).</li>
+                    <li>(Optional) IPA-Trennzeichen links/rechts setzen.</li>
                     <li>Auf Generieren tippen.</li>
                     <li>Kopieren oder bei Bedarf exportieren (Pro).</li>
                 </ol>
-                <p>Limits: Free — satzweise, bis 400 Wörter, 1×/Tag. Pro — wortweise, bis 6.000 Wörter, unbegrenzt, Export.</p>
+                <p><strong>Kostenlos:</strong> satzweise, bis 400 Wörter, 1×/Tag (Eingabe &amp; OCR), kein Export.</p>
+                <p><strong>Pro (Monatsabo oder Lebenslang-Kauf):</strong> wortweise, Scannen &amp; OCR, bis 6.000 Wörter, unbegrenzt, Export TXT/DOCX/PDF.</p>
             </section>
 
             <section id="technical" class="section">
@@ -141,6 +143,7 @@
                 <ul>
                     <li>Satzgrenzen und Tokenisierung für realen englischen Text</li>
                     <li>Offline: CMU Pronouncing Dictionary (gebündelt)</li>
+                    <li>Dokumentenscan und OCR-Texterkennung auf dem Gerät (Apple Vision, nur Englisch)</li>
                     <li>IPA-Ausgabe; keine Übertragung deiner Texte</li>
                 </ul>
             </section>
@@ -152,27 +155,42 @@
 
             <section id="faq" class="section">
                 <h2>FAQ</h2>
-                <h3 onclick="toggleFAQ(this)">Was bedeutet ein blaues Wort?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Wörter in <strong>blau</strong> haben mehrere Aussprachen. Tippe auf ein blaues Wort, um alternative Aussprachen anzusehen und auszuwählen.</div>
-<h3 onclick="toggleFAQ(this)">Was passiert, wenn ein Wort nicht im Wörterbuch gefunden wird?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Im Satzmodus (für alle Nutzer) werden Wörter, die nicht im CMU-Wörterbuch gefunden werden, unverändert angezeigt.<br/>Im wortausgerichteten Modus (nur Pro) werden fehlende Wörter als Platzhalter angezeigt.</div>
-<h3 onclick="toggleFAQ(this)">Was ist der Unterschied zwischen Free und Pro?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Kostenlos:<br/>• 1 Transkription pro Tag (Kopieren von Ergebnissen verbraucht kein Kontingent)<br/>• Bis zu 400 Wörter pro Transkription<br/>• Satztranskription<br/>• Kein Export<br/><br/>Pro:<br/>• Unbegrenzte Transkriptionen<br/>• Bis zu 6.000 Wörter pro Transkription<br/>• Wort- &amp; satzausgerichtete Transkription<br/>• Export TXT / DOCX / PDF</div>
-<h3 onclick="toggleFAQ(this)">Wie schalte ich Pro frei?<span class="toggle-icon">▼</span></h3><div class="faq-answer">In Einstellungen → Pro freischalten. Ein einmaliger Kauf gewährt lebenslangen Zugang zu allen Funktionen.</div>
-<h3 onclick="toggleFAQ(this)">Kann ich meinen Pro-Kauf auf einem anderen Gerät wiederherstellen?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Ja. Nutze „Käufe wiederherstellen“ im Kaufbereich oder verwalte über deine Apple-ID. Stelle sicher, dass du mit derselben Apple-ID angemeldet bist wie beim Originalkauf.</div>
-<h3 onclick="toggleFAQ(this)">Benötigt die App eine Internetverbindung?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Nein. Alle Transkriptionen laufen vollständig auf dem Gerät. Kein Text wird an unsere Server gesendet.</div>
-<h3 onclick="toggleFAQ(this)">Werden Nutzerdaten gesammelt?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Die App sammelt und überträgt keine Eingabetexte. Die Verarbeitung erfolgt offline auf deinem Gerät.</div>
-<h3 onclick="toggleFAQ(this)">Welches Wörterbuch verwendet die App?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Die App verwendet das CMU Pronouncing Dictionary, ein Standardreferenzwerk für nordamerikanisches Englisch. Wir fügen benutzerdefinierte Logik für Satzfluss und Betonungsmarkierung hinzu.</div>
-<h3 onclick="toggleFAQ(this)">Unterstützt die App britische Aussprache?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Die aktuelle Version unterstützt nur amerikanisches Englisch. Britische Varianten werden noch nicht unterstützt.</div>
-<h3 onclick="toggleFAQ(this)">Was ist wortweise Transkription?<span class="toggle-icon">▼</span></h3><div class="faq-answer">Der wortweise Modus listet jedes Wort mit seiner IPA unter Satzgruppen auf – nützlich für Unterricht, Anmerkungen und Lernmaterialien. Nur Pro.</div>
-<h3 onclick="toggleFAQ(this)">Wofür sind die Felder L und R?<span class="toggle-icon">▼</span></h3><div class="faq-answer">L (links) und R (rechts) dienen optional als Trennzeichen für die IPA-Ausgabe (z. B. / / oder [ ]). Jedes Feld akzeptiert bis zu zwei Zeichen. Lasse beide leer für reine IPA ohne Trennzeichen.</div>
+                <h3 onclick="toggleFAQ(this)">Was bedeutet ein blaues Wort?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Wörter in <strong>blau</strong> haben mehrere Aussprachen. Tippe auf ein blaues Wort, um alternative Aussprachen anzusehen und auszuwählen.</div>
+                <h3 onclick="toggleFAQ(this)">Was passiert, wenn ein Wort nicht im Wörterbuch gefunden wird?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Im Satzmodus (für alle Nutzer) werden Wörter, die nicht im CMU-Wörterbuch gefunden werden, unverändert angezeigt.<br/>Im wortausgerichteten Modus (nur Pro) werden fehlende Wörter als Platzhalter angezeigt.</div>
+                <h3 onclick="toggleFAQ(this)">Was ist der Unterschied zwischen Free und Pro?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Kostenlos:<br/>• 1 Transkription pro Tag (Kopieren von Ergebnissen verbraucht kein Kontingent)<br/>• Bis zu 400 Wörter pro Transkription<br/>• Satztranskription<br/>• Kein Export<br/><br/>Pro:<br/>• Unbegrenzte Transkriptionen<br/>• Bis zu 6.000 Wörter pro Transkription<br/>• Wort- & satzausgerichtete Transkription<br/>• Scannen & Text importieren (OCR)<br/>• Export TXT / DOCX / PDF</div>
+                <h3 onclick="toggleFAQ(this)">Wie schalte ich Pro frei?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Unter Einstellungen → Pro freischalten wählen Sie einen Monatsplan (automatische Verlängerung, jederzeit in den Apple-Aboeinstellungen kündbar) oder einen einmaligen Lebenslang-Kauf. Pro bleibt bis zum Ablauf nach Kündigung oder bei Rückerstattung aktiv.</div>
+                <h3 onclick="toggleFAQ(this)">Kann ich meinen Pro-Kauf auf einem anderen Gerät wiederherstellen?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Ja. Nutze „Käufe wiederherstellen“ im Kaufbereich oder verwalte über deine Apple-ID. Stelle sicher, dass du mit derselben Apple-ID angemeldet bist wie beim Originalkauf.</div>
+                <h3 onclick="toggleFAQ(this)">Benötigt die App eine Internetverbindung?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Nein. Alle Transkriptionen laufen vollständig auf dem Gerät. Kein Text wird an unsere Server gesendet.</div>
+                <h3 onclick="toggleFAQ(this)">Werden Nutzerdaten gesammelt?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Die App sammelt und überträgt keine Eingabetexte. Die Verarbeitung erfolgt offline auf deinem Gerät. Details in der <a href="privacy-de.html">Datenschutzerklärung</a>.</div>
+                <h3 onclick="toggleFAQ(this)">Welches Wörterbuch verwendet die App?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Die App verwendet das CMU Pronouncing Dictionary, ein Standardreferenzwerk für nordamerikanisches Englisch. Wir fügen benutzerdefinierte Logik für Satzfluss und Betonungsmarkierung hinzu.</div>
+                <h3 onclick="toggleFAQ(this)">Unterstützt die App britische Aussprache?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Die aktuelle Version unterstützt nur amerikanisches Englisch. Britische Varianten werden noch nicht unterstützt.</div>
+                <h3 onclick="toggleFAQ(this)">Was ist wortweise Transkription?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Der wortweise Modus listet jedes Wort mit seiner IPA unter Satzgruppen auf – nützlich für Unterricht, Anmerkungen und Lernmaterialien. Nur Pro.</div>
+                <h3 onclick="toggleFAQ(this)">Wofür sind die Felder L und R?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">L (links) und R (rechts) dienen optional als Trennzeichen für die IPA-Ausgabe (z. B. / / oder [ ]). Jedes Feld akzeptiert bis zu zwei Zeichen. Lasse beide leer für reine IPA ohne Trennzeichen.</div>
+                <h3 onclick="toggleFAQ(this)">Wie funktioniert Scannen / OCR-Import?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Tippen Sie auf die Kamera, um ein Dokument zu scannen oder ein Foto auszuwählen. Text wird auf dem Gerät erkannt (nur Englisch) und ins Eingabefeld eingefügt. Sie können ihn vor der Transkription bearbeiten. Es wird nichts an unsere Server gesendet.</div>
             </section>
 
             <section id="troubleshooting" class="section">
                 <h2>Fehlerbehebung</h2>
                 <h3 onclick="toggleFAQ(this)">Keine Ausgabe<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>Eingabe und Limits prüfen; App neu starten.</p></div>
+                <div class="faq-answer"><ul><li>Eingabe und Tageslimit prüfen.</li><li>App neu starten.</li></ul></div>
+                <h3 onclick="toggleFAQ(this)">Scannen / OCR importiert keinen Text<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>Kamera-/Fotoberechtigung erteilen.</li><li>Nur Englisch; klareres Foto versuchen.</li><li>Erkannten Text vor der Transkription bearbeiten.</li></ul></div>
                 <h3 onclick="toggleFAQ(this)">Kein Export<span class="toggle-icon">▼</span></h3>
                 <div class="faq-answer"><p>Export erfordert Pro und erzeugte Ausgabe.</p></div>
-                <h3 onclick="toggleFAQ(this)">Käufe<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer"><p>„Käufe wiederherstellen“ mit derselben Apple-ID.</p></div>
+                <h3 onclick="toggleFAQ(this)">Käufe &amp; Abos<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer"><ul><li>Unter Einstellungen → Pro freischalten Monatsabo oder Lebenslang-Kauf wählen.</li><li>Monatsabo mindestens 24 h vor Periodenende in Apple-ID-Einstellungen kündigen.</li><li>„Käufe wiederherstellen“ mit derselben Apple-ID.</li></ul></div>
             </section>
 
             <section id="contact" class="section">

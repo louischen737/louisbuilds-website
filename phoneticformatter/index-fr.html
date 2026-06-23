@@ -58,7 +58,7 @@
       "@type": "SoftwareApplication",
       "name": "Phonetic Formatter",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.2",
+      "softwareVersion": "1.5",
       "operatingSystem": "iOS, iPadOS",
       "downloadUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
       "installUrl": "https://apps.apple.com/us/app/phonetic-formatter/id6757941187",
@@ -73,22 +73,34 @@
         },
         {
           "@type": "Offer",
-          "name": "Pro upgrade (one-time in-app purchase)",
+          "name": "Pro monthly subscription",
+          "price": "2.99",
+          "priceCurrency": "USD",
+          "description": "Auto-renewing monthly Pro access with OCR import, unlimited generations, word-by-word layout, and TXT/DOCX/PDF export.",
+          "additionalProperty": {
+            "@type": "PropertyValue",
+            "name": "purchaseType",
+            "value": "Subscription"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro lifetime purchase",
           "price": "19.99",
           "priceCurrency": "USD",
-          "description": "Optional one-time unlock for unlimited daily generations, longer text, word-by-word layout, and TXT/DOCX/PDF export.",
+          "description": "One-time lifetime Pro unlock with OCR import, unlimited generations, word-by-word layout, and TXT/DOCX/PDF export.",
           "additionalProperty": {
             "@type": "PropertyValue",
             "name": "purchaseType",
             "value": "InAppPurchase"
           }
-        }
-      ],
+        }],
       "description": "Convertissez le texte anglais en fiches IPA sur iPhone et iPad. Générez des supports imprimables instantanément. Hors ligne, sans compte. Mises en page structurées, export TXT, DOCX et PDF, basé sur le CMU Pronouncing Dictionary ; traitement entièrement local.",
       "screenshot": "https://louisbuilds.me/phoneticformatter/og-image.png",
       "featureList": [
         "Convertir tout un texte anglais en transcription phonétique IPA",
         "Mise en page par phrase et mot à mot (Pro)",
+        "Numériser et importer du texte (OCR)",
         "Propulsé par le CMU Pronouncing Dictionary",
         "Export TXT, DOCX, PDF",
         "Fonctionne hors ligne",
@@ -108,7 +120,7 @@
                 "name": "Comment convertir tout un paragraphe anglais en IPA ?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Ouvrez Phonetic Formatter, collez votre paragraphe dans le champ de texte et appuyez sur Convertir. L’app transcrit tout le passage avec le CMU Pronouncing Dictionary. Choisissez une sortie par phrase ou, avec Pro, un alignement mot à mot. Copiez ou exportez en TXT, DOCX ou PDF."
+                    "text": "Ouvrez Phonetic Formatter, collez, numérisez ou saisissez votre texte, puis appuyez sur Convertir. L’app transcrit tout le passage avec le CMU Pronouncing Dictionary. Choisissez une sortie par phrase ou, avec Pro, un alignement mot à mot. Copiez ou exportez en TXT, DOCX ou PDF."
                 }
             },
             {
@@ -296,7 +308,7 @@
     <section class="home-summary scroll-reveal" aria-labelledby="home-summary-heading">
         <div class="container home-summary-inner">
             <p class="summary-lead" id="home-summary-heading">
-                <strong>Phonetic Formatter</strong> est une application iOS/iPadOS hors ligne qui transforme des passages entiers en anglais en IPA structurée gr&acirc;ce au CMU Pronouncing Dictionary, avec mise en page par phrase ou mot &agrave; mot et exportation vers TXT, DOCX ou PDF.
+                <strong>Phonetic Formatter</strong> est une application iOS/iPadOS hors ligne qui transforme des passages entiers en anglais en IPA structurée gr&acirc;ce au CMU Pronouncing Dictionary, avec mise en page par phrase ou mot &agrave; mot, num&eacute;risation de documents et import OCR sur l'appareil, et exportation vers TXT, DOCX ou PDF.
             </p>
 
             <div class="summary-grid">
@@ -475,6 +487,15 @@
                         </div>
                         <div class="feature-card">
                             <h3>
+                                <a href="#feature-ocr">Numérisation &amp; import OCR</a>
+                            </h3>
+                            <p>Numérisez des documents ou importez des photos pour extraire du texte anglais sur l'appareil.</p>
+                            <p class="feature-card-more">
+                                <a href="#feature-ocr" class="feature-link">En savoir plus →</a>
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
                                 <a href="#feature-offline">Transcription IPA hors ligne</a>
                             </h3>
                             <p>Transcrivez vos textes en IPA localement avec une confidentialité totale.</p>
@@ -559,6 +580,23 @@
         </p>
 
         <!-- 4 -->
+        <h3 id="feature-ocr">Numérisation &amp; import OCR</h3>
+
+        <p>
+            Touchez l'appareil photo pour numériser un document ou choisir une photo dans la bibliothèque.
+            Le texte anglais est reconnu entièrement sur l'appareil via le framework Vision d'Apple.
+        </p>
+
+        <p>
+            Le texte reconnu est inséré dans le champ de saisie, modifiable avant la transcription IPA.
+            Aucune image ni texte n'est envoyé à des serveurs externes.
+        </p>
+
+        <p>
+            Idéal pour numériser des feuilles imprimées, pages de manuel ou notes sans retaper de longs passages.
+        </p>
+
+        <!-- 5 -->
         <h3 id="feature-offline">Transcription IPA hors ligne et confidentialité</h3>
 
         <p>
@@ -589,7 +627,7 @@
                 </div>
                 <div class="section-content how-it-works">
                     <ol class="how-it-works-steps">
-                        <li><strong>Collez ou saisissez du texte anglais</strong> — une phrase ou un paragraphe entier dans le formateur.</li>
+                        <li><strong>Collez, saisissez ou numérisez du texte anglais</strong> — saisie directe, numérisation ou photo pour OCR sur l'appareil (anglais uniquement).</li>
                         <li><strong>Générez la transcription IPA</strong> — l’app traite le texte et produit une sortie structurée à partir du dictionnaire de prononciation CMU.</li>
                         <li><strong>Copiez ou exportez le résultat</strong> — copiez la transcription ou exportez en TXT, DOCX ou PDF pour vos cours ou révisions.</li>
                     </ol>
@@ -645,57 +683,66 @@
             <div class="pricing-table-wrapper">
                 <p class="pricing-swipe-hint" aria-hidden="true">Glissez pour comparer les offres</p>
                 <div class="pricing-table-container">
-                <table class="pricing-table">
-                    <colgroup>
-                        <col style="width: 42%;">
-                        <col style="width: 29%;">
-                        <col style="width: 29%;">
+                                <table class="pricing-table">
+                                        <colgroup>
+                        <col style="width: 28%;">
+                        <col style="width: 24%;">
+                        <col style="width: 24%;">
+                        <col style="width: 24%;">
                     </colgroup>
-                    <thead>
+                                        <thead>
                         <tr>
                             <th class="plan-label">Détails du forfait</th>
                             <th class="free-col">Gratuit</th>
-                            <th class="pro-col">Pro</th>
+                            <th class="pro-col pro-monthly-col">Pro<br><span class="pro-col-plan">Mensuel</span></th>
+                            <th class="pro-col pro-lifetime-col">Pro<br><span class="pro-col-plan">À vie</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="feature-name">Générations quotidiennes</td>
                             <td class="value free-col">1 par jour</td>
-                            <td class="value pro-col">Illimité</td>
+                            <td class="value pro-col pro-monthly-col">Illimité</td>
+                            <td class="value pro-col pro-lifetime-col">Illimité</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Longueur max. du texte</td>
                             <td class="value free-col">Jusqu’à 400 mots</td>
-                            <td class="value pro-col">Jusqu’à 6 000 mots</td>
+                            <td class="value pro-col pro-monthly-col">Jusqu’à 6 000 mots</td>
+                            <td class="value pro-col pro-lifetime-col">Jusqu’à 6 000 mots</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Formats d’affichage</td>
                             <td class="value free-col">Par phrase</td>
-                            <td class="value pro-col">Phrase + mot à mot</td>
+                            <td class="value pro-col pro-monthly-col">Phrase + mot à mot</td>
+                            <td class="value pro-col pro-lifetime-col">Phrase + mot à mot</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Copier les résultats</td>
                             <td class="value free-col">Inclus</td>
-                            <td class="value pro-col">Inclus</td>
+                            <td class="value pro-col pro-monthly-col">Inclus</td>
+                            <td class="value pro-col pro-lifetime-col">Inclus</td>
                         </tr>
                         <tr>
                             <td class="feature-name">Export<br>(TXT / DOCX / PDF)</td>
                             <td class="value free-col">—</td>
-                            <td class="value pro-col">Inclus</td>
+                            <td class="value pro-col pro-monthly-col">Inclus</td>
+                            <td class="value pro-col pro-lifetime-col">Inclus</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Accès à vie</td>
+                            <td class="feature-name">Numérisation &amp; OCR</td>
                             <td class="value free-col">—</td>
-                            <td class="value pro-col">Inclus</td>
+                            <td class="value pro-col pro-monthly-col">Inclus</td>
+                            <td class="value pro-col pro-lifetime-col">Inclus</td>
                         </tr>
-                        <tr class="price-row">
+                                                <tr class="price-row">
                             <td class="feature-name price-label">Prix</td>
                             <td class="value free-col price-value">Gratuit</td>
-                            <td class="value pro-col price-value">
+                            <td class="value pro-col pro-monthly-col price-value">$2.99/mois</td>
+                            <td class="value pro-col pro-lifetime-col price-value">
                                 <div class="pricing-footer-price pro-price">
                                     <span class="pricing-footer-price-value">$19.99</span>
-                                    <span class="pricing-footer-price-note">Achat unique</span>
+                                    <span class="pricing-footer-price-note">Achat à vie</span>
                                 </div>
                             </td>
                         </tr>
@@ -705,7 +752,7 @@
             </div>
 
             <div class="universal-footer">
-                <p>📱 <strong>Application Universelle</strong> : votre achat est lié à votre identifiant Apple. Achetez une seule fois et profitez des fonctionnalités Pro sur <strong>iPhone</strong> et <strong>iPad</strong>.</p>
+                <p>📱 <strong>Application Universelle</strong> : votre achat est lié à votre identifiant Apple. Abonnez-vous ou achetez à vie—les fonctionnalités Pro sur <strong>iPhone</strong> et <strong>iPad</strong>.</p>
             </div>
 
             <div class="pricing-cta">
@@ -722,7 +769,7 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <h3>Comment convertir tout un paragraphe anglais en IPA ?</h3>
-                    <p>Ouvrez Phonetic Formatter, collez votre paragraphe dans le champ de texte et appuyez sur Convertir. L’app transcrit tout le passage avec le CMU Pronouncing Dictionary. Choisissez une sortie par phrase ou, avec Pro, un alignement mot à mot. Copiez ou exportez en TXT, DOCX ou PDF.</p>
+                    <p>Ouvrez Phonetic Formatter, collez, numérisez ou saisissez votre texte, puis appuyez sur Convertir. L’app transcrit tout le passage avec le CMU Pronouncing Dictionary. Choisissez une sortie par phrase ou, avec Pro, un alignement mot à mot. Copiez ou exportez en TXT, DOCX ou PDF.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Existe-t-il un transcripteur IPA hors ligne pour iOS ?</h3>
@@ -742,6 +789,10 @@
                     <p>Les outils IPA en ligne conviennent bien aux recherches rapides et aux options phonétiques flexibles. Les applications hors ligne comme Phonetic Formatter sont plus adaptées aux passages longs, aux mises en page structurées et aux flux de travail axés sur la confidentialité. Voir notre <a href="blog/phonetic-formatter-vs-online-ipa-tools.html">comparatif Phonetic Formatter vs outils IPA en ligne</a>.</p>
                 </div>
 
+                <div class="faq-item">
+                    <h3>Comment fonctionne la numérisation / l'import OCR ?</h3>
+                    <p>Touchez l'appareil photo pour numériser un document ou choisir une photo. Le texte est reconnu sur l'appareil (anglais uniquement) et inséré dans le champ de saisie. Vous pouvez le modifier avant de transcrire. Aucun texte n'est envoyé à nos serveurs.</p>
+                </div>
             </div>
         </div>
     </section>

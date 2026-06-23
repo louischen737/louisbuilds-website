@@ -1547,7 +1547,7 @@ html[lang="zh-CN"] .device-label {
 }
 
 .pricing-table-wrapper {
-    max-width: 900px;
+    max-width: 1040px;
     margin: 3rem auto;
 }
 .pricing-swipe-hint {
@@ -1558,7 +1558,7 @@ html[lang="zh-CN"] .device-label {
     margin: 0 0 0.5rem 0;
 }
 .pricing-table-container {
-    max-width: 900px;
+    max-width: 1040px;
     margin: 0 auto;
     background: #fff;
     border-radius: 8px;
@@ -1637,6 +1637,47 @@ html[lang="zh-CN"] .device-label {
     letter-spacing: 0.05em;
 }
 
+.pricing-footer-price-secondary {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.pro-col-plan {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2563eb;
+    margin-top: 0.15rem;
+}
+
+html[lang="zh-CN"] .pro-col-plan {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.78rem;
+}
+
+.pricing-table th.pro-col {
+    font-size: 1.15rem;
+    vertical-align: middle;
+}
+
+html[lang="zh-CN"] .pricing-table th.pro-col {
+    white-space: normal;
+}
+
+html[lang="zh-CN"] .pricing-table th.pro-col .pro-col-subtitle {
+    display: block;
+    font-size: 0.85em;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    margin-top: 0.05rem;
+}
+
 .pricing-table {
     width: 100%;
     border-collapse: collapse;
@@ -1674,34 +1715,13 @@ html[lang="zh-CN"] .device-label {
 }
 
 .pricing-table th:first-child {
-    width: 200px;
-    min-width: 200px;
+    width: 140px;
+    min-width: 140px;
 }
 
 .pricing-table th.free-col,
 .pricing-table th.pro-col {
     width: auto;
-}
-
-.pricing-table th.pro-col {
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-html[lang="zh-CN"] .pricing-table th.pro-col {
-    flex-direction: row;
-    gap: 0.15rem;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-}
-
-html[lang="zh-CN"] .pricing-table th.pro-col .pro-col-subtitle {
-    font-size: 1em;
-    font-weight: inherit;
-    letter-spacing: inherit;
-    color: inherit;
 }
 
 .pricing-table tbody tr {
@@ -1752,6 +1772,11 @@ html[lang="zh-CN"] .pricing-table th.pro-col .pro-col-subtitle {
     background: rgba(37, 99, 235, 0.03);
 }
 
+.pricing-table td.pro-lifetime-col,
+.pricing-table th.pro-lifetime-col {
+    border-left: 1px solid rgba(37, 99, 235, 0.12);
+}
+
 .price-row td {
     border-top: 1.5px solid var(--text-primary);
     font-weight: 600;
@@ -1760,6 +1785,16 @@ html[lang="zh-CN"] .pricing-table th.pro-col .pro-col-subtitle {
 .price-value {
     font-size: 16px;
     color: var(--text-primary);
+}
+
+.price-row td.pro-monthly-col.price-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.price-row td.pro-lifetime-col.price-value {
+    vertical-align: middle;
 }
 
 .price-note {
@@ -1775,7 +1810,7 @@ html[lang="zh-CN"] .pricing-table th.pro-col .pro-col-subtitle {
 }
 
 .universal-footer {
-    max-width: 900px;
+    max-width: 1040px;
     margin: 1rem auto 0 auto;
     padding: 12px;
     background-color: #f9f9f8;
@@ -2336,7 +2371,7 @@ footer a:hover {
         min-width: 76px !important;
     }
     .pricing-table {
-        min-width: 480px;
+        min-width: 620px;
     }
     
     .pricing-table th {
@@ -2368,16 +2403,15 @@ footer a:hover {
     }
     
     .pricing-table th.pro-col {
-        flex-direction: row;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .pricing-table-footer {
         display: grid;
-        grid-template-columns: 76px 1fr 1fr;
+        grid-template-columns: 76px 1fr 1fr 1fr;
         gap: 0.5rem;
         padding: 1.25rem 1rem;
-        min-width: 480px;
+        min-width: 620px;
     }
     
     .pricing-footer-label {

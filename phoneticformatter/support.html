@@ -131,7 +131,7 @@
                 <p>Phonetic Formatter converts English text into rule-based IPA transcription. All processing is performed locally on your device.</p>
                 <h3 class="subsection">Basic Workflow</h3>
                 <ol>
-                    <li>Enter or paste English text into the input field.</li>
+                    <li>Enter or paste English text into the input field, <em>or</em> tap the camera button to scan a document or choose a photo for on-device OCR import (English only).</li>
                     <li>Select the display format:
                         <ul>
                             <li>Sentence-level transcription</li>
@@ -147,11 +147,13 @@
                 <ul>
                     <li>Sentence-level transcription only</li>
                     <li>Up to 400 words per conversion</li>
-                    <li>One generation per day</li>
+                    <li>One generation per day (includes manual input and OCR)</li>
+                    <li>No export</li>
                 </ul>
-                <p><strong>Pro Version (One-Time Purchase)</strong></p>
+                <p><strong>Pro (Monthly Subscription or Lifetime Purchase)</strong></p>
                 <ul>
                     <li>Sentence-level and word-aligned transcription</li>
+                    <li>Document scanning and text extraction (OCR)</li>
                     <li>Up to 6,000 words per conversion</li>
                     <li>Unlimited generations</li>
                     <li>Export support (TXT, DOCX, PDF)</li>
@@ -168,10 +170,11 @@
                     <li>Support for signed numbers and percentage forms</li>
                     <li>Unicode-aware text normalization</li>
                     <li>Fully offline processing</li>
+                    <li>On-device document scanning and OCR text extraction (Apple Vision framework, English only)</li>
                     <li>Powered by the CMU Pronouncing Dictionary (Carnegie Mellon University)</li>
                     <li>Output rendered using the International Phonetic Alphabet (IPA)</li>
                 </ul>
-                <p>All transcription results are generated locally. No text is uploaded or transmitted.</p>
+                <p>All transcription and OCR results are generated locally. No text is uploaded or transmitted.</p>
             </section>
 
             <section id="exporting" class="section">
@@ -195,24 +198,30 @@
 
             <section id="faq" class="section">
                 <h2>Frequently Asked Questions</h2>
+                <h3 onclick="toggleFAQ(this)">What does a blue word mean?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Words shown in <strong>blue</strong> have multiple pronunciations. Tap a blue word to view and select alternative pronunciations.</div>
+                <h3 onclick="toggleFAQ(this)">What happens if a word is not found in the dictionary?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">In sentence mode (available to all users), words not found in the CMU dictionary are displayed as-is.<br/>In word-aligned mode (Pro only), missing words appear as placeholder symbols.</div>
                 <h3 onclick="toggleFAQ(this)">What is the difference between Free and Pro?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">The Free version provides sentence-level transcription with usage limits. The Pro version removes daily limits, enables word-aligned transcription, and allows exporting results in multiple document formats.</div>
-                <h3 onclick="toggleFAQ(this)">How do I upgrade to Pro?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">Upgrade is available within the app. Navigate to Settings and select <strong>Upgrade to Pro</strong> to complete the one-time purchase.</div>
+                <div class="faq-answer">Free:<br/>• 1 transcription per day (copying results does not use this quota)<br/>• Up to 400 words per transcription<br/>• Sentence-level transcription<br/>• No export<br/><br/>Pro:<br/>• Unlimited transcriptions<br/>• Up to 6,000 words per transcription<br/>• Word-aligned & sentence-level transcription<br/>• Scan & import text (OCR)<br/>• Export TXT / DOCX / PDF</div>
+                <h3 onclick="toggleFAQ(this)">How do I unlock Pro?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Open Settings → Unlock Pro. Choose a monthly subscription (auto-renews, cancel anytime in Apple subscription settings) or a one-time lifetime purchase. Pro stays active until a subscription expires or is refunded.</div>
                 <h3 onclick="toggleFAQ(this)">Can I restore my Pro purchase on another device?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">Yes. Use the <strong>Restore Purchase</strong> option in Settings. Ensure you are signed in with the same Apple ID used for the original purchase.</div>
+                <div class="faq-answer">Yes. Use Restore Purchase where available after a purchase flow, or manage through your Apple ID. Ensure you are signed in with the same Apple ID used for the original purchase.</div>
                 <h3 onclick="toggleFAQ(this)">Does the app require an internet connection?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">No. All transcription processing is performed locally on the device. No internet connection is required.</div>
+                <div class="faq-answer">No. All transcription runs entirely on-device. No text is sent to our servers.</div>
                 <h3 onclick="toggleFAQ(this)">Is any user data collected?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">No. The application does not collect, store, or transmit user text. All processing remains entirely on-device. See the <a href="privacy.html">Privacy Policy</a> for details.</div>
+                <div class="faq-answer">The app does not collect or transmit your input text. Processing stays offline on your device. See the <a href="privacy.html">Privacy Policy</a> for details.</div>
                 <h3 onclick="toggleFAQ(this)">What dictionary does the app use?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">The app is powered by the <strong>CMU Pronouncing Dictionary</strong>, developed by Carnegie Mellon University. The dictionary is bundled locally to ensure offline availability and consistent transcription behavior.</div>
+                <div class="faq-answer">The app uses the CMU Pronouncing Dictionary, a standard reference for North American English. We add custom logic for sentence flow and stress marking.</div>
                 <h3 onclick="toggleFAQ(this)">Does the app support British pronunciation?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">The current version reflects the pronunciation conventions of the CMU Pronouncing Dictionary, which primarily represents American English phonology. Variant switching is not currently supported.</div>
-                <h3 onclick="toggleFAQ(this)">What is Word-Aligned Transcription (Pro)?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">Word-aligned transcription presents each lexical item alongside its IPA representation within sentence groupings. This format is suitable for linguistic analysis, annotation, and instructional material preparation.</div>
-                <h3 onclick="toggleFAQ(this)">What are the L and R fields?<span class="toggle-icon">▼</span></h3>
-                <div class="faq-answer">The L (left) and R (right) fields allow optional wrapping of IPA output (e.g., <code>/həˈloʊ/</code>). Each field accepts up to two characters. Leave both empty to display IPA without wrapping symbols.</div>
+                <div class="faq-answer">The current version supports American English only. British variants are not supported yet.</div>
+                <h3 onclick="toggleFAQ(this)">What is Word-Aligned Transcription?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Word-aligned mode lists each word with its IPA under sentence groupings—useful for teaching, annotation, and study materials. Pro only.</div>
+                <h3 onclick="toggleFAQ(this)">What are the L and R fields for?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">L (left) and R (right) optionally delimit the IPA output (e.g., using / / or [ ]). Each field accepts up to two characters. Leave both empty for plain IPA without delimiters.</div>
+                <h3 onclick="toggleFAQ(this)">How does scan / OCR import work?<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">Tap the camera button to scan a document or choose a photo. Text is recognized on your device (English only) and inserted into the input field. You can edit it before transcribing. No text is sent to our servers.</div>
             </section>
 
             <section id="troubleshooting" class="section">
@@ -226,6 +235,14 @@
                         <li>Restart the application if necessary.</li>
                     </ul>
                 </div>
+                <h3 onclick="toggleFAQ(this)">Scan / OCR does not insert text<span class="toggle-icon">▼</span></h3>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Grant camera or photo library permissions when prompted.</li>
+                        <li>OCR supports English text only; try a clearer photo or rescan.</li>
+                        <li>Edit recognized text in the input field before generating transcription.</li>
+                    </ul>
+                </div>
                 <h3 onclick="toggleFAQ(this)">Export is unavailable<span class="toggle-icon">▼</span></h3>
                 <div class="faq-answer">
                     <ul>
@@ -234,12 +251,14 @@
                         <li>Ensure sufficient device storage is available.</li>
                     </ul>
                 </div>
-                <h3 onclick="toggleFAQ(this)">Purchase issues<span class="toggle-icon">▼</span></h3>
+                <h3 onclick="toggleFAQ(this)">Purchase or subscription issues<span class="toggle-icon">▼</span></h3>
                 <div class="faq-answer">
                     <ul>
-                        <li>Use <strong>Restore Purchase</strong> if the upgrade is not recognized.</li>
+                        <li>Open Settings → Unlock Pro to choose a monthly subscription or lifetime purchase.</li>
+                        <li>Monthly subscriptions renew automatically unless canceled at least 24 hours before the billing period ends (manage in Apple ID subscription settings).</li>
+                        <li>Use <strong>Restore Purchase</strong> if Pro is not recognized.</li>
                         <li>Confirm you are signed in with the correct Apple ID.</li>
-                        <li>For billing or refund requests, contact Apple Support directly.</li>
+                        <li>Refunds and subscription changes are handled by Apple Support.</li>
                     </ul>
                 </div>
                 <h3 onclick="toggleFAQ(this)">App crashes or performance issues<span class="toggle-icon">▼</span></h3>
