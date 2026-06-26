@@ -735,7 +735,7 @@ function homeT(key, fallback) {
     function setSoundArt(img, artBase) {
         img.src = artBase + '-96w.webp';
         img.srcset = artBase + '-96w.webp 96w, ' + artBase + '-210w.webp 210w';
-        img.sizes = '(max-width: 860px) 13vw, 210px';
+        img.sizes = '(max-width: 860px) 40vw, 210px';
         img.width = 210;
         img.height = 210;
     }
@@ -957,6 +957,14 @@ function homeT(key, fallback) {
         '</div>';
     }
 
+    function daxiCatImgHtml(className, base) {
+        return '<img class="timer-demo-cat ' + className + '" ' +
+            'src="' + base + '-160w.webp" ' +
+            'srcset="' + base + '-160w.webp 160w, ' + base + '-320w.webp 320w" ' +
+            'sizes="(max-width: 860px) 34cqi, 160px" ' +
+            'alt="" width="160" height="160" decoding="async">';
+    }
+
     function buildTimerScreen(includeStatusBar) {
         return '' +
             (includeStatusBar ? buildPhoneStatusBar() : '') +
@@ -981,8 +989,8 @@ function homeT(key, fallback) {
                             '<img class="timer-demo-backdrop-img" src="marketing/theme-snow-cinnabar-preview-320w.webp" srcset="marketing/theme-snow-cinnabar-preview-160w.webp 160w, marketing/theme-snow-cinnabar-preview-320w.webp 320w" sizes="(max-width: 860px) 50vw, 320px" alt="" width="320" height="320" decoding="async">' +
                         '</div>' +
                         '<div class="timer-demo-cat-wrap">' +
-                            '<img class="timer-demo-cat timer-demo-cat--work" src="marketing/daxi-work.webp" alt="" width="320" height="320" decoding="async">' +
-                            '<img class="timer-demo-cat timer-demo-cat--idle" src="marketing/daxi-idle.webp" alt="" width="320" height="320" decoding="async">' +
+                            daxiCatImgHtml('timer-demo-cat--work', 'marketing/daxi-work') +
+                            daxiCatImgHtml('timer-demo-cat--idle', 'marketing/daxi-idle') +
                         '</div>' +
                     '</div>' +
                     '<div class="timer-demo-digits-wrap">' +
