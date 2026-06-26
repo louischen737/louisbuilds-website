@@ -681,8 +681,14 @@ html[lang="zh-CN"] .draft-trust-pill {
 }
 .story-item.reverse .story-media { order: 2; }
 .story-item.reverse .story-copy { order: 1; }
+.story-media,
+.story-copy {
+    min-width: 0;
+}
 .story-panel {
     overflow: hidden;
+    min-width: 0;
+    max-width: 100%;
 }
 .story-panel:has(.timer-demo),
 .story-panel:has(.live-demo),
@@ -879,6 +885,14 @@ html[lang="zh-CN"] .draft-trust-pill {
         opacity: 1;
         filter: saturate(1);
         transition: none;
+    }
+}
+@media (max-width: 860px) {
+    .badge-reel {
+        aspect-ratio: auto;
+        min-height: clamp(280px, 68vw, 360px);
+        --badge-cell-size: clamp(52px, calc((100cqw - var(--badge-gap) * 2) / 4), 88px);
+        padding-inline: clamp(8px, 2vw, 12px);
     }
 }
 
@@ -1433,6 +1447,33 @@ html[lang="zh-CN"] .draft-trust-pill {
         transition: none !important;
     }
 }
+@media (max-width: 860px) {
+    .story-panel:has(.sounds-showcase),
+    .story-panel--sounds {
+        overflow: hidden;
+    }
+    .sounds-showcase {
+        overflow: hidden;
+        aspect-ratio: auto;
+        min-height: clamp(280px, 72vw, 360px);
+        --sounds-side-size: clamp(52px, 13vw, 72px);
+        --sounds-center-size: clamp(112px, 30vw, 156px);
+        --sounds-slot-prev: 22%;
+        --sounds-slot-main: 50%;
+        --sounds-slot-next: 78%;
+        --sounds-slot-incoming: 96%;
+        --sounds-slot-slide-prev-exit: 6%;
+        --sounds-slot-slide-main-to-side: 22%;
+        --sounds-slot-slide-incoming: 78%;
+    }
+    .sounds-showcase-rail {
+        overflow: hidden;
+    }
+    .sounds-showcase-stage {
+        max-width: 100%;
+        padding-inline: clamp(10px, 2.5vw, 16px);
+    }
+}
 
 /* Timer demo — Track Time, Stay Focused (iPhone → iPad) */
 .timer-demo {
@@ -1469,6 +1510,31 @@ html[lang="zh-CN"] .draft-trust-pill {
 .timer-demo-scene.is-active {
     opacity: 1;
     visibility: visible;
+}
+@media (max-width: 860px) {
+    .story-panel:has(.timer-demo) {
+        overflow: hidden;
+    }
+    .timer-demo {
+        --timer-phone-width: min(100%, clamp(220px, 76vw, 260px));
+        --timer-tablet-width: min(100%, clamp(236px, 82vw, 280px));
+        min-height: 0;
+        overflow: hidden;
+        padding-inline: clamp(12px, 3vw, 20px);
+    }
+    .timer-demo-stage {
+        min-height: 0;
+        height: auto;
+    }
+    .timer-demo-scene {
+        position: absolute;
+        inset: 0;
+    }
+    .timer-demo-scene.is-active {
+        position: relative;
+        inset: auto;
+        width: 100%;
+    }
 }
 .timer-demo-phone {
     position: relative;
@@ -2670,9 +2736,24 @@ html[lang="zh-CN"] .story-copy .story-headline {
     .story-item,
     .story-item.reverse {
         grid-template-columns: 1fr;
+        align-items: stretch;
+        gap: 24px;
+        margin-bottom: 56px;
     }
     .story-item.reverse .story-media,
     .story-item.reverse .story-copy { order: unset; }
+    .story-media,
+    .story-copy,
+    .story-panel {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .story-copy .story-headline {
+        margin-bottom: 20px;
+    }
+    .story-section .container {
+        overflow-x: clip;
+    }
 }
 
 /* Privacy First showcase — four animated pillar cards */
