@@ -1478,6 +1478,14 @@ html[lang="zh-CN"] .draft-trust-pill {
         max-width: 100%;
         padding-inline: 6px;
     }
+    .sounds-vinyl-disc {
+        box-shadow:
+            inset 0 0 0 2px rgba(0, 0, 0, 0.45),
+            inset 0 0 18px rgba(0, 0, 0, 0.35);
+    }
+    .sounds-vinyl-grooves::before {
+        box-shadow: none;
+    }
 }
 
 /* Timer demo — Track Time, Stay Focused (iPhone → iPad) */
@@ -3757,23 +3765,31 @@ body.draft-page.has-sticky-download .footer {
         padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px));
     }
     .sticky-download-inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         max-width: none;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 4px 8px;
+        min-height: 36px;
+        padding-right: 28px;
+        box-sizing: border-box;
     }
     .sticky-download-center {
-        grid-column: 1;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px 10px;
         min-width: 0;
+        max-width: 100%;
     }
     .sticky-close {
-        grid-column: 2;
-        grid-row: 1;
-        align-self: start;
-        padding-top: 2px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 4px;
     }
     .sticky-download-line {
         white-space: normal;
@@ -3782,7 +3798,7 @@ body.draft-page.has-sticky-download .footer {
         text-overflow: unset;
         font-size: clamp(0.78rem, 3.2vw, 0.88rem);
         line-height: 1.3;
-        text-align: left;
+        text-align: center;
     }
     .sticky-download .app-store-badge img,
     .sticky-download-badge img {
