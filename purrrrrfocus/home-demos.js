@@ -5,6 +5,61 @@ function homeT(key, fallback) {
 }
 
 (function () {
+    var warmed = Object.create(null);
+
+    function daxiVariant(base, size) {
+        return 'marketing/' + base + '-' + size + 'w.webp';
+    }
+
+    function isMobileStoryViewport() {
+        return window.matchMedia('(max-width: 860px)').matches;
+    }
+
+    function prefetchImage(url) {
+        if (warmed[url]) return;
+        warmed[url] = true;
+        var link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.as = 'image';
+        link.href = url;
+        link.type = 'image/webp';
+        document.head.appendChild(link);
+    }
+
+    function warmStoryCatAssets(stage) {
+        var mobile = isMobileStoryViewport();
+        if (stage === 'timer-work') {
+            prefetchImage(daxiVariant('daxi-work', mobile ? 160 : 320));
+            return;
+        }
+        if (stage === 'story-near') {
+            prefetchImage(daxiVariant('daxi-idle', mobile ? 160 : 320));
+            prefetchImage(daxiVariant('daxi-celebrate', mobile ? 200 : 400));
+        }
+    }
+
+    function bootStoryCatWarmup() {
+        warmStoryCatAssets('timer-work');
+        var features = document.getElementById('features');
+        if (!features || !('IntersectionObserver' in window)) return;
+        var nearIO = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                warmStoryCatAssets('story-near');
+                nearIO.disconnect();
+            });
+        }, { rootMargin: '520px 0px 0px 0px', threshold: 0 });
+        nearIO.observe(features);
+    }
+
+    if (document.readyState === 'complete') {
+        bootStoryCatWarmup();
+    } else {
+        window.addEventListener('load', bootStoryCatWarmup, { once: true });
+    }
+})();
+
+(function () {
     var brandLink = document.getElementById('header-brand-link');
     if (brandLink) {
         brandLink.addEventListener('click', function (e) {
@@ -134,7 +189,7 @@ function homeT(key, fallback) {
                     io.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        }, { threshold: 0.08, rootMargin: '160px 0px 0px 0px' });
         storyItems.forEach(function (el, i) {
             el.style.transitionDelay = (i * 0.05) + 's';
             io.observe(el);
@@ -733,11 +788,36 @@ function homeT(key, fallback) {
     ];
 
     function setSoundArt(img, artBase) {
+        if (img.dataset.artBase === artBase) return;
+        img.dataset.artBase = artBase;
         img.src = artBase + '-96w.webp';
         img.srcset = artBase + '-96w.webp 96w, ' + artBase + '-210w.webp 210w';
         img.sizes = '(max-width: 860px) 40vw, 210px';
         img.width = 210;
         img.height = 210;
+    }
+
+    function copySoundArt(from, to) {
+        if (from.dataset.artBase === to.dataset.artBase && from.src === to.src) return;
+        to.dataset.artBase = from.dataset.artBase || '';
+        to.src = from.src;
+        to.srcset = from.srcset || '';
+        to.sizes = from.sizes || '';
+        to.alt = from.alt;
+    }
+
+    function promoteNextToMain(mainImg, nextImg) {
+        copySoundArt(nextImg, mainImg);
+        var mainDisc = mainImg.closest('.sounds-vinyl-disc');
+        var nextDisc = nextImg.closest('.sounds-vinyl-disc');
+        if (mainDisc) mainDisc.classList.add('is-spinning');
+        if (nextDisc) nextDisc.classList.remove('is-spinning');
+    }
+
+    function ensureCenterDiscSpin(container) {
+        if (reduceMotion) return;
+        var disc = container.querySelector('[data-sounds-main-cell] .sounds-vinyl-disc');
+        if (disc) disc.classList.add('is-spinning');
     }
 
     function soundName(sound) {
@@ -757,12 +837,7 @@ function homeT(key, fallback) {
     }
 
     function restartCenterDiscSpin(container) {
-        if (reduceMotion) return;
-        var disc = container.querySelector('[data-sounds-main-cell] .sounds-vinyl-disc');
-        if (!disc) return;
-        disc.classList.remove('is-spinning');
-        void disc.offsetHeight;
-        disc.classList.add('is-spinning');
+        ensureCenterDiscSpin(container);
     }
 
     function buildShell(container) {
@@ -827,17 +902,16 @@ function homeT(key, fallback) {
     function settleSlide(container, target) {
         var rail = container.querySelector('[data-sounds-rail]');
         var label = container.querySelector('[data-sounds-label]');
+        var mainImg = container.querySelector('[data-sounds-main]');
+        var nextImg = container.querySelector('[data-sounds-next]');
 
         rail.classList.add('is-settling');
+        promoteNextToMain(mainImg, nextImg);
         rail.classList.remove('is-sliding-next');
-        void rail.offsetHeight;
         applyContent(container, target);
-        void rail.offsetHeight;
         rail.classList.remove('is-settling');
 
-        requestAnimationFrame(function () {
-            restartCenterDiscSpin(container);
-        });
+        ensureCenterDiscSpin(container);
         label.classList.remove('is-sliding');
         container.dataset.activeIndex = String(target);
         container.dataset.soundsAnimating = 'false';
@@ -875,7 +949,10 @@ function homeT(key, fallback) {
         void rail.offsetHeight;
         rail.classList.add('is-sliding-next');
 
+        var finished = false;
         function finish() {
+            if (finished) return;
+            finished = true;
             mainCell.removeEventListener('transitionend', onEnd);
             window.clearTimeout(fallbackTimer);
             settleSlide(container, target);
@@ -883,7 +960,7 @@ function homeT(key, fallback) {
 
         function onEnd(e) {
             if (e.target !== mainCell) return;
-            if (e.propertyName !== 'left' && e.propertyName !== 'transform') return;
+            if (e.propertyName !== 'left') return;
             finish();
         }
 
@@ -957,12 +1034,34 @@ function homeT(key, fallback) {
         '</div>';
     }
 
-    function daxiCatImgHtml(className, base) {
+    function daxiCatArt(base) {
+        return {
+            src: base + '-160w.webp',
+            srcset: base + '-160w.webp 160w, ' + base + '-320w.webp 320w',
+            sizes: '(max-width: 860px) 34cqi, 160px'
+        };
+    }
+
+    function loadDaxiCatImg(img) {
+        var base = img.getAttribute('data-daxi-base');
+        if (!base || img.dataset.daxiLoaded === 'true') return;
+        var art = daxiCatArt(base);
+        img.dataset.daxiLoaded = 'true';
+        img.src = art.src;
+        img.srcset = art.srcset;
+        img.sizes = art.sizes;
+    }
+
+    function daxiCatImgHtml(className, base, defer) {
+        if (defer) {
+            return '<img class="timer-demo-cat ' + className + '" data-daxi-base="' + base + '" alt="" width="160" height="160" decoding="async">';
+        }
+        var art = daxiCatArt(base);
         return '<img class="timer-demo-cat ' + className + '" ' +
-            'src="' + base + '-160w.webp" ' +
-            'srcset="' + base + '-160w.webp 160w, ' + base + '-320w.webp 320w" ' +
-            'sizes="(max-width: 860px) 34cqi, 160px" ' +
-            'alt="" width="160" height="160" decoding="async">';
+            'src="' + art.src + '" ' +
+            'srcset="' + art.srcset + '" ' +
+            'sizes="' + art.sizes + '" ' +
+            'alt="" width="160" height="160" decoding="async" fetchpriority="low">';
     }
 
     function buildTimerScreen(includeStatusBar) {
@@ -989,8 +1088,8 @@ function homeT(key, fallback) {
                             '<img class="timer-demo-backdrop-img" src="marketing/theme-snow-cinnabar-preview-320w.webp" srcset="marketing/theme-snow-cinnabar-preview-160w.webp 160w, marketing/theme-snow-cinnabar-preview-320w.webp 320w" sizes="(max-width: 860px) 50vw, 320px" alt="" width="320" height="320" decoding="async">' +
                         '</div>' +
                         '<div class="timer-demo-cat-wrap">' +
-                            daxiCatImgHtml('timer-demo-cat--work', 'marketing/daxi-work') +
-                            daxiCatImgHtml('timer-demo-cat--idle', 'marketing/daxi-idle') +
+                            daxiCatImgHtml('timer-demo-cat--work', 'marketing/daxi-work', false) +
+                            daxiCatImgHtml('timer-demo-cat--idle', 'marketing/daxi-idle', true) +
                         '</div>' +
                     '</div>' +
                     '<div class="timer-demo-digits-wrap">' +
@@ -1065,6 +1164,9 @@ function homeT(key, fallback) {
         function setPhase(phase) {
             container.classList.toggle('is-work-phase', phase === 'work');
             container.classList.toggle('is-pause-phase', phase === 'pause');
+            if (phase === 'pause') {
+                container.querySelectorAll('.timer-demo-cat--idle[data-daxi-base]').forEach(loadDaxiCatImg);
+            }
         }
 
         function wait(ms) {
