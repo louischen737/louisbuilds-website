@@ -740,6 +740,11 @@ html[lang="zh-CN"] .draft-trust-pill {
     object-fit: cover;
     border-radius: inherit;
 }
+.companion-cell picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 .companion-cell-mystery {
     width: 88%;
     margin: auto;

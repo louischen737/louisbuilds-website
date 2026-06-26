@@ -223,6 +223,10 @@ function homeT(key, fallback) {
     ];
     var MARQUEE_SPEED = 22;
 
+    function badgeArtSrc(name, width) {
+        return 'marketing/badges/' + name + '-' + width + 'w.webp';
+    }
+
     function buildBadgeReel(reel) {
         BADGE_ROWS.forEach(function (names, rowIndex) {
             var row = document.createElement('div');
@@ -242,10 +246,12 @@ function homeT(key, fallback) {
                     cell.style.setProperty('--stagger-tier', String(rowIndex * 8 + idx));
 
                     var img = document.createElement('img');
-                    img.src = 'marketing/badges/' + name + '.png';
+                    img.src = badgeArtSrc(name, 120);
+                    img.srcset = badgeArtSrc(name, 120) + ' 120w, ' + badgeArtSrc(name, 240) + ' 240w';
+                    img.sizes = '(max-width: 860px) 52px, 118px';
                     img.alt = '';
-                    img.width = 512;
-                    img.height = 512;
+                    img.width = 120;
+                    img.height = 120;
                     img.loading = 'lazy';
                     img.decoding = 'async';
                     cell.appendChild(img);
@@ -715,16 +721,24 @@ function homeT(key, fallback) {
     var ROTATE_MS = 3200;
     var SLIDE_MS = 560;
     var SOUNDS = [
-        { nameKey: 'demo.sounds.summer_night', fallback: 'Summer Night', img: 'marketing/sounds/music_summer_night_preview.jpg' },
-        { nameKey: 'demo.sounds.birds_singing', fallback: 'Birds Singing', img: 'marketing/sounds/music_birds_singing_preview.jpg' },
-        { nameKey: 'demo.sounds.ripple', fallback: 'Ripple', img: 'marketing/sounds/music_piano_full_ripple_preview.jpg' },
-        { nameKey: 'demo.sounds.quiet_night', fallback: 'Quiet Night', img: 'marketing/sounds/music_piano_quiet_night_preview.jpg' },
-        { nameKey: 'demo.sounds.koto', fallback: 'Koto', img: 'marketing/sounds/music_the_koto_preview.jpg' },
-        { nameKey: 'demo.sounds.hidden_temple', fallback: 'Hidden Temple', img: 'marketing/sounds/music_hidden_temple_preview.jpg' },
-        { nameKey: 'demo.sounds.waves', fallback: 'Waves', img: 'marketing/sounds/music_beach_waves_preview.jpg' },
-        { nameKey: 'demo.sounds.campfire', fallback: 'Campfire', img: 'marketing/sounds/music_campfire_preview.jpg' },
-        { nameKey: 'demo.sounds.purring_cat', fallback: 'Cat Purr', img: 'marketing/sounds/music_purring_happy_cat_preview.jpg' }
+        { nameKey: 'demo.sounds.summer_night', fallback: 'Summer Night', art: 'marketing/sounds/music_summer_night_preview' },
+        { nameKey: 'demo.sounds.birds_singing', fallback: 'Birds Singing', art: 'marketing/sounds/music_birds_singing_preview' },
+        { nameKey: 'demo.sounds.ripple', fallback: 'Ripple', art: 'marketing/sounds/music_piano_full_ripple_preview' },
+        { nameKey: 'demo.sounds.quiet_night', fallback: 'Quiet Night', art: 'marketing/sounds/music_piano_quiet_night_preview' },
+        { nameKey: 'demo.sounds.koto', fallback: 'Koto', art: 'marketing/sounds/music_the_koto_preview' },
+        { nameKey: 'demo.sounds.hidden_temple', fallback: 'Hidden Temple', art: 'marketing/sounds/music_hidden_temple_preview' },
+        { nameKey: 'demo.sounds.waves', fallback: 'Waves', art: 'marketing/sounds/music_beach_waves_preview' },
+        { nameKey: 'demo.sounds.campfire', fallback: 'Campfire', art: 'marketing/sounds/music_campfire_preview' },
+        { nameKey: 'demo.sounds.purring_cat', fallback: 'Cat Purr', art: 'marketing/sounds/music_purring_happy_cat_preview' }
     ];
+
+    function setSoundArt(img, artBase) {
+        img.src = artBase + '-96w.webp';
+        img.srcset = artBase + '-96w.webp 96w, ' + artBase + '-210w.webp 210w';
+        img.sizes = '(max-width: 860px) 13vw, 210px';
+        img.width = 210;
+        img.height = 210;
+    }
 
     function soundName(sound) {
         return homeT(sound.nameKey, sound.fallback);
@@ -734,7 +748,7 @@ function homeT(key, fallback) {
         return (
             '<div class="sounds-vinyl ' + sizeClass + '">' +
                 '<div class="sounds-vinyl-disc">' +
-                    '<img class="sounds-vinyl-art" ' + imgAttr + '="" alt="" width="512" height="512" loading="lazy" decoding="async">' +
+                    '<img class="sounds-vinyl-art" ' + imgAttr + '="" alt="" width="210" height="210" loading="lazy" decoding="async">' +
                     '<span class="sounds-vinyl-grooves" aria-hidden="true"></span>' +
                     '<span class="sounds-vinyl-label" aria-hidden="true"></span>' +
                 '</div>' +
@@ -788,14 +802,14 @@ function homeT(key, fallback) {
         var incomingImg = container.querySelector('[data-sounds-incoming]');
         var label = container.querySelector('[data-sounds-label]');
 
-        mainImg.src = curr.img;
+        setSoundArt(mainImg, curr.art);
         mainImg.alt = soundName(curr);
-        prevImg.src = prev.img;
+        setSoundArt(prevImg, prev.art);
         prevImg.alt = soundName(prev);
-        nextImg.src = next.img;
+        setSoundArt(nextImg, next.art);
         nextImg.alt = soundName(next);
         if (!options.skipIncoming) {
-            incomingImg.src = incoming.img;
+            setSoundArt(incomingImg, incoming.art);
             incomingImg.alt = soundName(incoming);
         }
         label.textContent = soundName(curr);
@@ -806,7 +820,7 @@ function homeT(key, fallback) {
         var len = SOUNDS.length;
         var incoming = SOUNDS[(currentIndex + 2) % len];
         var incomingImg = container.querySelector('[data-sounds-incoming]');
-        incomingImg.src = incoming.img;
+        setSoundArt(incomingImg, incoming.art);
         incomingImg.alt = soundName(incoming);
     }
 
@@ -956,7 +970,7 @@ function homeT(key, fallback) {
                     '</svg>' +
                     '<span>' + homeT('demo.timer.task', 'Focus') + '</span>' +
                 '</span>' +
-                '<img class="timer-demo-music" src="marketing/music-on.png" alt="" width="28" height="28" decoding="async">' +
+                '<img class="timer-demo-music" src="marketing/music-on-56w.webp" srcset="marketing/music-on-28w.webp 28w, marketing/music-on-56w.webp 56w" sizes="28px" alt="" width="28" height="28" decoding="async">' +
             '</div>' +
             '<div class="timer-demo-main">' +
                 '<div class="timer-demo-stage-inner">' +
@@ -964,7 +978,7 @@ function homeT(key, fallback) {
                         '<div class="timer-demo-backdrop-chrome" aria-hidden="true">' +
                             '<div class="timer-demo-backdrop-halo"></div>' +
                             '<div class="timer-demo-backdrop-ring"></div>' +
-                            '<img class="timer-demo-backdrop-img" src="marketing/theme-snow-cinnabar-preview.jpg" alt="" width="320" height="320" decoding="async">' +
+                            '<img class="timer-demo-backdrop-img" src="marketing/theme-snow-cinnabar-preview-320w.webp" srcset="marketing/theme-snow-cinnabar-preview-160w.webp 160w, marketing/theme-snow-cinnabar-preview-320w.webp 320w" sizes="(max-width: 860px) 50vw, 320px" alt="" width="320" height="320" decoding="async">' +
                         '</div>' +
                         '<div class="timer-demo-cat-wrap">' +
                             '<img class="timer-demo-cat timer-demo-cat--work" src="marketing/daxi-work.webp" alt="" width="320" height="320" decoding="async">' +
@@ -1391,7 +1405,7 @@ function homeT(key, fallback) {
                             homeApps +
                         '</div>' +
                         '<div class="live-demo-di live-demo-di--compact" aria-hidden="true">' +
-                            '<img class="live-demo-di-icon" src="marketing/app-icon-live-activity.png" alt="" decoding="async">' +
+                            '<img class="live-demo-di-icon" src="marketing/app-icon-live-activity-64w.webp" srcset="marketing/app-icon-live-activity-32w.webp 32w, marketing/app-icon-live-activity-64w.webp 64w" sizes="16px" alt="" decoding="async">' +
                             '<span class="live-demo-di-time" data-live-digits>24:55</span>' +
                         '</div>' +
                     '</div>' +
@@ -1408,7 +1422,7 @@ function homeT(key, fallback) {
                         '</div>' +
                         '<div class="live-demo-la-card">' +
                             '<div class="live-demo-la-row">' +
-                                '<img class="live-demo-la-icon" src="marketing/app-icon-live-activity.png" alt="" decoding="async">' +
+                                '<img class="live-demo-la-icon" src="marketing/app-icon-live-activity-64w.webp" srcset="marketing/app-icon-live-activity-32w.webp 32w, marketing/app-icon-live-activity-64w.webp 64w" sizes="16px" alt="" decoding="async">' +
                                 '<span class="live-demo-la-title">' + homeT('demo.live.task', 'Focus') + '</span>' +
                                 '<span class="live-demo-la-time" data-live-digits>24:55</span>' +
                             '</div>' +
