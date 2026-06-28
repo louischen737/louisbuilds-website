@@ -64,7 +64,6 @@
       "operatingSystem": "iOS",
       "applicationCategory": "HealthApplication",
       "applicationSubCategory": "Meditation",
-      "softwareVersion": "1.0",
       "url": "https://louisbuilds.me/lonelyisle/",
       "description": "LonelyIsle is a spatial ambient soundscape app. Explore fictional islands where movement changes what you hear—quiet, private, and built to fade into the background.",
       "offers": {
@@ -82,7 +81,6 @@
       "operatingSystem": "iOS",
       "applicationCategory": "HealthApplication",
       "applicationSubCategory": "Productivity",
-      "softwareVersion": "1.0",
       "url": "https://louisbuilds.me/step1st/",
       "description": "Step1st helps you reduce screen time and build walking habits with simple daily step goals before you unlock chosen apps.",
       "offers": {
@@ -99,7 +97,6 @@
       "name": "Phonetic Formatter",
       "operatingSystem": "iOS",
       "applicationCategory": "UtilitiesApplication",
-      "softwareVersion": "1.2",
       "url": "https://louisbuilds.me/phoneticformatter/",
       "description": "Phonetic Formatter converts English text into accurate IPA transcription, with sentence-level and word-aligned output, fully on device.",
       "offers": {
@@ -117,7 +114,6 @@
       "operatingSystem": "iOS",
       "applicationCategory": "ProductivityApplication",
       "applicationSubCategory": "Utilities",
-      "softwareVersion": "2.5",
       "url": "https://louisbuilds.me/purrrrrfocus/",
       "description": "PurrrrrFocus is a focus timer app with gentle cat animations to reduce distraction and boost productivity.",
       "offers": {
@@ -139,7 +135,6 @@
       "name": "TapPause",
       "operatingSystem": "iOS",
       "applicationCategory": "HealthApplication",
-      "softwareVersion": "1.1",
       "url": "https://louisbuilds.me/tappause/",
       "description": "TapPause is a minimal pause timer for intentional breaks—stop, pause, and rest without clutter.",
       "offers": {
@@ -157,7 +152,6 @@
       "operatingSystem": "macOS",
       "applicationCategory": "DesignApplication",
       "applicationSubCategory": "Productivity",
-      "softwareVersion": "2.0",
       "url": "https://louisbuilds.me/transmov/",
       "description": "TransMov is a native macOS app for transparent GIF, APNG, and WebP with local AI background removal and maximum privacy.",
       "offers": {
@@ -792,6 +786,29 @@ body {
     line-height: 1.6;
     color: var(--text-muted);
     text-wrap: balance;
+}
+
+/* Pre-footer CTA */
+.site-cta {
+    padding: clamp(100px, 14vw, 160px) 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-color);
+}
+
+.site-cta-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.site-cta-title {
+    font-size: clamp(56px, 10vw, 88px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #fff;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 /* Footer */
@@ -1660,7 +1677,7 @@ footer p {
 <div class="products-apps-v4">
 
 <header class="products-section-head">
-    <h2 id="products-heading" class="site-section-title">Apps for<br>deep work</h2>
+    <h2 id="products-heading" class="site-section-title">Apps for<br>deep work.</h2>
 </header>
 
 <div class="apps-showcase">
@@ -1671,6 +1688,13 @@ footer p {
             <span class="apps-nav-title">LonelyIsle</span>
         </div>
         <p class="apps-nav-tagline">A spatial ambient soundscape app—explore fictional islands where movement changes what you hear, quietly and on your device.</p>
+    </div>
+    <div class="apps-nav-item" data-app="purrrrrfocus">
+        <div class="apps-nav-head">
+            <img src="purrrrrfocus/icon.png" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
+            <span class="apps-nav-title">PurrrrrFocus</span>
+        </div>
+        <p class="apps-nav-tagline">A minimalist iOS Pomodoro timer with classical Chinese aesthetics and a cat companion—for deep work and ADHD-friendly focus.</p>
     </div>
     <div class="apps-nav-item" data-app="step1st">
         <div class="apps-nav-head">
@@ -1685,13 +1709,6 @@ footer p {
             <span class="apps-nav-title">TapPause</span>
         </div>
         <p class="apps-nav-tagline">A minimalist breath and pause timer for seekers of digital peace—a gentle space to reset awareness amidst daily noise.</p>
-    </div>
-    <div class="apps-nav-item" data-app="purrrrrfocus">
-        <div class="apps-nav-head">
-            <img src="purrrrrfocus/icon.png" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
-            <span class="apps-nav-title">PurrrrrFocus</span>
-        </div>
-        <p class="apps-nav-tagline">A minimalist iOS Pomodoro timer with classical Chinese aesthetics and a cat companion—for deep work and ADHD-friendly focus.</p>
     </div>
     <div class="apps-nav-item" data-app="transmov">
         <div class="apps-nav-head">
@@ -1714,7 +1731,7 @@ footer p {
 <div class="product app-section apps-stage" data-app="lonelyisle" id="app-lonelyisle">
 <div class="app-head">
 <h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="lonelyisle/icon.webp" /><img src="lonelyisle/icon.png" class="app-icon" alt="LonelyIsle app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> LonelyIsle</h2>
-<div class="tags">iOS · Health &amp; Fitness · v1.0</div>
+<div class="tags">iOS · Health &amp; Fitness</div>
 <p class="app-what">A spatial ambient soundscape app—explore fictional islands where movement changes what you hear, quietly and on your device.</p>
 </div>
 <div class="app-actions buttons product-links">
@@ -1750,11 +1767,62 @@ Documentation available in:
 </div>
 </div>
 
+<!-- PurrrrrFocus -->
+<div class="product app-section apps-stage" data-app="purrrrrfocus" id="app-purrrrrfocus">
+<div class="app-head">
+<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="purrrrrfocus/icon.webp" /><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> PurrrrrFocus</h2>
+<div class="tags">iOS · iPhone &amp; iPad · Productivity · Utilities</div>
+<p class="app-what">A minimalist iOS Pomodoro timer with classical Chinese aesthetics and a cat companion—for deep work and ADHD-friendly focus.</p>
+</div>
+<div class="app-actions buttons product-links">
+<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
+<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40" loading="lazy" decoding="async">
+</a>
+<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
+</div>
+<div class="app-gallery ios" role="region" aria-label="PurrrrrFocus screenshots">
+<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
+<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
+</div>
+<div class="app-body">
+<div class="app-body-split">
+<div class="app-description">
+<p class="app-tagline">Focus enhancement, wrapped in calmness.</p>
+<p class="app-marketing">PurrrrrFocus pairs a minimalist Pomodoro and count-up timer with classical Chinese aesthetics and a cat companion system for students, ADHD users, and anyone chasing calm focus. Choose Relaxed, Challenged, or Whitelist focus modes to match how strict you want to be—from penalty-free switching to Screen Time app blocking. With home screen widgets, Live Activity, and fully offline privacy, it’s more than a timer; it’s a quiet sanctuary where your virtual companion grows alongside your habits.</p>
+<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+See how PurrrrrFocus is used in real study routines:
+</p>
+<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
+<a href="purrrrrfocus/landing/best-pomodoro-app-for-students.html" class="btn-tertiary" aria-label="Best Pomodoro app for students — PurrrrrFocus">For Students →</a>
+</div>
+</div>
+<ul class="product-features">
+<li><span>Pomodoro &amp; Count-Up Timer:</span> Classic Pomodoro intervals for structured sprints, or open-ended count-up sessions for deep work and flexible routines—pick the rhythm that fits the task.</li>
+<li><span>Classical Feline Companion:</span> Features an adorable cat companion system and 6 classical themes inspired by traditional Chinese aesthetics.</li>
+<li><span>ADHD-Friendly Design:</span> Built with simplicity and tranquility in mind, focusing on reducing distraction and building consistent work habits without pressure.</li>
+<li><span>Native Performance:</span> A lightweight iOS/iPadOS experience with statistics, achievements, and beautiful widgets—100% focused on privacy.</li>
+</ul>
+</div>
+</div>
+<div class="app-doc-footer">
+<div class="tags doc-lang-links">
+Documentation available in:
+<a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
+<a href="purrrrrfocus/index-en.html" style="color: inherit; text-decoration: underline;">English</a> ·
+<a href="purrrrrfocus/index-da.html" style="color: inherit; text-decoration: underline;">Dansk</a> ·
+<a href="purrrrrfocus/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
+<a href="purrrrrfocus/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
+</div>
+</div>
+</div>
+
 <!-- Step1st -->
 <div class="product app-section apps-stage" data-app="step1st" id="app-step1st">
 <div class="app-head">
 <h2 class="product-title"><img src="step1st/step1st-icon-120w.webp" srcset="step1st/step1st-icon-60w.webp 60w, step1st/step1st-icon-120w.webp 120w, step1st/step1st-icon-180w.webp 180w" sizes="60px" class="app-icon" alt="Step1st app icon" width="60" height="60" loading="lazy" decoding="async"> Step1st</h2>
-<div class="tags">iOS · Health &amp; Fitness · Productivity · v1.0</div>
+<div class="tags">iOS · Health &amp; Fitness · Productivity</div>
 <p class="app-what">A movement-driven iOS app blocker that links screen time to physical activity—using step goals before you scroll.</p>
 </div>
 <div class="app-actions buttons product-links">
@@ -1795,7 +1863,7 @@ Documentation available in:
 <div class="product app-section apps-stage" data-app="tappause" id="app-tappause">
 <div class="app-head">
 <h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="tappause/icon.webp" /><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TapPause</h2>
-<div class="tags">iOS · Health &amp; Fitness · v1.1</div>
+<div class="tags">iOS · Health &amp; Fitness</div>
 <p class="app-what">A minimalist breath and pause timer for seekers of digital peace—a gentle space to reset awareness amidst daily noise.</p>
 </div>
 <div class="app-actions buttons product-links">
@@ -1843,57 +1911,6 @@ Documentation available in:
 </div>
 </div>
 
-<!-- PurrrrrFocus -->
-<div class="product app-section apps-stage" data-app="purrrrrfocus" id="app-purrrrrfocus">
-<div class="app-head">
-<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="purrrrrfocus/icon.webp" /><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> PurrrrrFocus</h2>
-<div class="tags">iOS · iPhone &amp; iPad · Productivity · Utilities · v2.5</div>
-<p class="app-what">A minimalist iOS Pomodoro timer with classical Chinese aesthetics and a cat companion—for deep work and ADHD-friendly focus.</p>
-</div>
-<div class="app-actions buttons product-links">
-<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40" loading="lazy" decoding="async">
-</a>
-<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
-</div>
-<div class="app-gallery ios" role="region" aria-label="PurrrrrFocus screenshots">
-<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
-</div>
-<div class="app-body">
-<div class="app-body-split">
-<div class="app-description">
-<p class="app-tagline">Focus enhancement, wrapped in calmness.</p>
-<p class="app-marketing">PurrrrrFocus pairs a <strong>minimalist iOS Pomodoro timer</strong> with classical Chinese aesthetics and a <strong>cat companion system</strong> for ADHD users, students, and anyone chasing flow. Beyond the standard Pomodoro technique, it offers <strong>Elite Focus</strong> and <strong>Count-Up</strong> modes designed to reduce overwhelm—making it a perfect companion for deep work or ADHD support. It’s more than a utility; it’s a calm, user-friendly courtyard where your virtual cat grows alongside your focus habits.</p>
-<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-See how PurrrrrFocus is used in real study routines:
-</p>
-<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
-<a href="purrrrrfocus/landing/best-pomodoro-app-for-students.html" class="btn-tertiary" aria-label="Best Pomodoro app for students — PurrrrrFocus">For Students →</a>
-</div>
-</div>
-<ul class="product-features">
-<li><span>Diverse Timer System:</span> Includes Pomodoro, Count-Up, and Elite Focus modes to adapt to different task types and cognitive needs.</li>
-<li><span>Classical Feline Companion:</span> Features an adorable cat companion system and 6 classical themes inspired by traditional Chinese aesthetics.</li>
-<li><span>ADHD-Friendly Design:</span> Built with simplicity and tranquility in mind, focusing on reducing distraction and building consistent work habits without pressure.</li>
-<li><span>Native Performance:</span> A lightweight iOS/iPadOS experience with statistics, achievements, and beautiful widgets—100% focused on privacy.</li>
-</ul>
-</div>
-</div>
-<div class="app-doc-footer">
-<div class="tags doc-lang-links">
-Documentation available in:
-<a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
-<a href="purrrrrfocus/index-en.html" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="purrrrrfocus/index-da.html" style="color: inherit; text-decoration: underline;">Dansk</a> ·
-<a href="purrrrrfocus/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
-<a href="purrrrrfocus/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
-</div>
-</div>
-</div>
-
 <!-- TransMov -->
 <div class="product app-section apps-stage" data-app="transmov" id="app-transmov">
 
@@ -1906,7 +1923,7 @@ Documentation available in:
     TransMov
     </h2>
     
-    <div class="tags">macOS · Graphics &amp; Design · Productivity · v2.0</div>
+    <div class="tags">macOS · Graphics &amp; Design · Productivity</div>
     
     <p class="app-what">
     A local-first macOS utility that extracts transparent animated assets from video—for UI designers and web developers.
@@ -1982,7 +1999,7 @@ Documentation available in:
 <div class="product app-section apps-stage" data-app="phoneticformatter" id="app-phoneticformatter">
 <div class="app-head">
 <h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="phoneticformatter/icon.webp" /><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> Phonetic Formatter</h2>
-<div class="tags">iOS · Tools · English · IPA · Linguistics · v1.2</div>
+<div class="tags">iOS · Tools · English · IPA · Linguistics</div>
 <p class="app-what">An offline IPA transcription tool that turns English passages into structured, printable phonetic worksheets—100% on-device.</p>
 </div>
 <div class="app-actions buttons product-links">
@@ -2202,6 +2219,12 @@ Documentation available in:
 </section>
 
 </main>
+
+<section class="site-cta" aria-labelledby="site-cta-heading">
+    <div class="site-cta-inner">
+        <h2 id="site-cta-heading" class="site-cta-title">Less distractions.<br>More deep work.</h2>
+    </div>
+</section>
 
 <footer>
 <div>
