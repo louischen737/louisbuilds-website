@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>I Lost My Job, But I Regained My Focus | Louis Builds</title>
+<meta name="description" content="From SaaS notification chaos to independent development: how losing my job led me to build PurrrrrFocus—a quiet Pomodoro sanctuary for reclaiming deep focus." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://louisbuilds.me/blog/from-saas-to-indie-my-story.html" />
+<link rel="icon" type="image/png" href="../favicon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://louisbuilds.me/blog/from-saas-to-indie-my-story.html" />
+<meta property="og:title" content="I Lost My Job, But I Regained My Focus | Louis Builds" />
+<meta property="og:description" content="From SaaS notification chaos to building a focus lifeboat—the founder story behind PurrrrrFocus." />
+<meta property="og:image" content="https://louisbuilds.me/purrrrrfocus/blog/digitaldetox.jpg" />
+<meta property="article:published_time" content="2026-04-11T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="I Lost My Job, But I Regained My Focus | Louis Builds" />
+<meta name="twitter:description" content="From SaaS notification chaos to a quiet timer—why I traded the notification storm for PurrrrrFocus." />
+<meta name="twitter:image" content="https://louisbuilds.me/purrrrrfocus/blog/digitaldetox.jpg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "I Lost My Job, But I Regained My Focus: The PurrrrrFocus Founder Story",
+  "description": "From SaaS notification chaos to independent development: the founder story behind PurrrrrFocus.",
+  "datePublished": "2026-04-11",
+  "author": { "@id": "https://louisbuilds.me/#person" },
+  "publisher": { "@id": "https://louisbuilds.me/#organization" },
+  "image": "https://louisbuilds.me/purrrrrfocus/blog/digitaldetox.jpg",
+  "mainEntityOfPage": "https://louisbuilds.me/blog/from-saas-to-indie-my-story.html",
+  "keywords": ["Founder Story", "Indie Dev", "Deep Work", "PurrrrrFocus", "SaaS"]
+}
+</script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function loadGtag() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN';
+    document.head.appendChild(s);
+    s.onload = function() {
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+    };
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(loadGtag, 0);
+  } else {
+    window.addEventListener('load', function() { setTimeout(loadGtag, 0); });
+  }
+</script>
+
+<style>
+:root {
+    --bg: #000;
+    --text: #fff;
+    --muted: #a1a1a6;
+    --faint: #6e6e73;
+    --accent: #5aa8ff;
+    --line: rgba(255,255,255,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.05rem;
+}
+a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+a:hover { opacity: 0.85; text-decoration: underline; text-underline-offset: 0.2em; }
+.inline-link {
+    color: #7fb2ff;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.5px;
+    font-weight: 500;
+}
+.inline-link:hover { color: #a9cbff; }
+.site-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+}
+.site-header a { color: var(--muted); font-size: 0.9rem; }
+.site-header a:hover { color: #fff; }
+article {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+}
+article h1 {
+    font-size: clamp(1.75rem, 4vw, 2.3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--faint);
+    margin-bottom: 2.2rem;
+}
+article h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 2.3rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+article p {
+    margin-bottom: 1.1rem;
+    color: var(--muted);
+}
+article em { color: #d1d1d6; font-style: italic; }
+article strong { color: #fff; font-weight: 600; }
+article ul {
+    margin: 0 0 1.25rem 1.25rem;
+    color: var(--muted);
+}
+article li { margin-bottom: 0.45rem; }
+article li::marker { color: var(--faint); }
+.lede {
+    font-size: 1.05rem;
+    color: #d1d1d6;
+    margin-bottom: 1.8rem;
+}
+.figure-block {
+    margin: 2rem 0 2.5rem;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.02);
+}
+.figure-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.figure-caption {
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+    color: var(--faint);
+    border-top: 1px solid var(--line);
+}
+.related-reading {
+    margin: 2rem 0;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+}
+.related-reading h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    margin-bottom: 0.75rem;
+}
+.related-reading ul {
+    margin: 0 0 0 1rem;
+}
+.related-reading li { margin-bottom: 0.35rem; }
+.closing {
+    margin-top: 2.3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    color: #fff;
+}
+.related-products {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+}
+.related-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+    margin-bottom: 1.5rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+@media (max-width: 640px) {
+    .product-grid { grid-template-columns: 1fr; }
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.product-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.product-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #1c1c1e;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.product-card h4 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+.product-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 0 !important;
+}
+.related-products .product-bullets {
+    margin: 0 0 1.25rem 1.1rem !important;
+    font-size: 0.8rem;
+    color: var(--faint);
+    flex-grow: 1;
+}
+.related-products .product-bullets li { margin-bottom: 0.2rem; }
+.product-cta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none !important;
+}
+.product-cta:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+}
+footer {
+    padding: 2rem 1.5rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    color: var(--faint);
+    font-size: 0.85rem;
+}
+footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="../">← Louis Builds</a>
+</header>
+
+<article>
+    <h1>I Lost My Job, But I Regained My Focus</h1>
+    <p class="article-meta">April 2026 · Founder Story / Indie Dev</p>
+
+    <p class="lede">From SaaS chaos to a quiet timer: why I traded the notification storm for a small app—and a calmer mind.</p>
+
+    <figure class="figure-block">
+        <img src="../purrrrrfocus/blog/digitaldetox.jpg" alt="Stepping back from notification overload toward calm, focused work." width="1200" height="835" loading="eager" decoding="async">
+        <figcaption class="figure-caption">Leaving the SaaS echo chamber was the first step toward building something quieter.</figcaption>
+    </figure>
+
+    <h2 id="saas-echo">The &quot;99+&quot; Reality: My Life in the SaaS Echo Chamber</h2>
+    <p>Before I became an independent developer, I worked in the SaaS industry. On the surface, it was an environment defined by &quot;efficiency&quot; and &quot;cutting-edge collaboration.&quot; In reality, it was a world of digital fragmentation.</p>
+    <p>As a Customer Success Manager, I was the bridge between my company and multiple large clients. My communication tools—enterprise platforms like Lark (similar to Slack or Teams)—never stopped screaming for attention. I wasn&apos;t a strategist; I was a 24/7 human router for notifications.</p>
+    <ul>
+        <li><strong>The information courier:</strong> My day was spent moving information from Group A to Group B, ensuring everyone was &quot;on the same page&quot; while I had no time to read the page myself.</li>
+        <li><strong>Hunted by algorithms:</strong> It wasn&apos;t just humans; it was the bots. AI-driven reminders tracked my every move: <em>&quot;Have you updated the CRM?&quot; &quot;Weekly report due in 2 hours.&quot; &quot;Follow-up record missing.&quot;</em></li>
+    </ul>
+    <p>I was a high-speed gear in a massive machine, spinning faster and faster but going nowhere. My ability to think deeply was eroding. Work had become a series of knee-jerk reactions to red notification dots.</p>
+
+    <h2 id="leaving-saas">Leaving SaaS: How I Found a Better Way to Focus</h2>
+    <p>Then, I experienced an unplanned exit—I was laid off.</p>
+    <p>When my corporate accounts were deactivated and those pulsating group chats vanished instantly, I felt something I didn&apos;t expect. Alongside the uncertainty of being unemployed, I felt an overwhelming sense of <strong>relief</strong>.</p>
+    <p>For the first time in a long while, the suffocating noise of &quot;instant collaboration&quot; stopped. In that silence, I had a realization: Why, in an environment equipped with the world&apos;s best productivity tools, was I less productive than ever? Why had focusing for even 25 minutes become a luxury I couldn&apos;t afford?</p>
+
+    <h2 id="building-purrrrrfocus">Building PurrrrrFocus: A Sanctuary for Deep Work</h2>
+    <p>I decided to channel that exhaustion into my first independent project.</p>
+    <p>The birth of <a class="inline-link" href="../purrrrrfocus/index-en.html"><strong>PurrrrrFocus</strong></a> wasn&apos;t just about building another app; it was an act of self-recovery. I had felt myself drowning in a sea of notifications, so I wanted to build a lifeboat—not just for me, but for anyone still stuck in that storm.</p>
+    <ul>
+        <li><strong>More than a timer, it&apos;s a ritual:</strong> There is no shortage of Pomodoro timers, but most miss the point. What&apos;s missing is a &quot;sanctuary.&quot; When you start a session in PurrrrrFocus, the cat is a signal to the world: <em>&quot;For the next 25 minutes, I do not belong to my inbox, my clients, or my boss. I belong to my work.&quot;</em></li>
+        <li><strong>Healing over pressure:</strong> In the corporate world, we are chased by cold progress bars and demanding bots. I wanted to replace that pressure with the soothing presence of a companion—a gentle way to reclaim your headspace.</li>
+        <li><strong>Quiet by design:</strong> Relaxed, Challenged, and Whitelist focus modes, widgets, Live Activity, and fully offline privacy—built so the app respects your attention instead of competing for it.</li>
+    </ul>
+
+    <h2 id="final-thoughts">Final Thoughts: Taking Back Control</h2>
+    <p>Leaving the SaaS world wasn&apos;t my choice, but it became my greatest opportunity. It taught me one hard truth: <strong>In the modern age, your attention is your most valuable asset—and everyone is trying to steal it.</strong></p>
+    <p>I didn&apos;t build this app to make you a more efficient machine. I built it to help you reclaim your sovereignty from the trivial. Even if it&apos;s just two high-quality focus sessions a day, those are moments where you are finally back in control.</p>
+    <p class="closing">This is the story behind PurrrrrFocus. A longer version with practical follow-up guides lives on the <a class="inline-link" href="../purrrrrfocus/blog/en/my-story-saas-to-indie.html">PurrrrrFocus blog</a>.</p>
+
+    <div class="related-reading">
+        <h3>Continue reading</h3>
+        <ul>
+            <li><a href="../purrrrrfocus/blog/en/how-to-build-focus-habit.html">How to Build a Focus Habit (That Actually Lasts)</a></li>
+            <li><a href="../blog/500mb-crisis-ink-wash-cats-transmov.html">The 500MB Crisis: From Ink-Wash Cats to TransMov</a></li>
+            <li><a href="../blog/building-offline-first-apps.html">Building Offline-First Apps</a></li>
+        </ul>
+    </div>
+
+    <div class="related-products">
+        <h3 class="related-title">Featured in this story</h3>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-info">
+                    <img src="../purrrrrfocus/icon.webp" alt="PurrrrrFocus app icon" width="48" height="48" class="product-icon" loading="lazy" decoding="async">
+                    <div>
+                        <h4>PurrrrrFocus</h4>
+                        <p class="product-desc">A Zen Pomodoro timer with cat companions—built for calm focus, not notification anxiety.</p>
+                    </div>
+                </div>
+                <ul class="product-bullets">
+                    <li>Relaxed, Challenged &amp; Whitelist focus modes</li>
+                    <li>Widgets, Live Activity &amp; offline privacy</li>
+                    <li>Guochao-inspired calm for deep work</li>
+                </ul>
+                <a href="../purrrrrfocus/index-en.html" class="product-cta">View Product →</a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-info">
+                    <img src="../tappause/icon.webp" alt="TapPause app icon" width="48" height="48" class="product-icon" loading="lazy" decoding="async">
+                    <div>
+                        <h4>TapPause</h4>
+                        <p class="product-desc">A single-tap pause ritual between focus blocks—rest without streaks or pressure.</p>
+                    </div>
+                </div>
+                <ul class="product-bullets">
+                    <li>Friction-free breaks</li>
+                    <li>100% offline</li>
+                    <li>Pairs well with Pomodoro rhythms</li>
+                </ul>
+                <a href="../tappause/" class="product-cta">View Product →</a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<footer>
+    <p><a href="../">Home</a> · <a href="../#journal">Journal</a></p>
+</footer>
+
+</body>
+</html>
