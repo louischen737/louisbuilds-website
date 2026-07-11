@@ -1,0 +1,372 @@
+/* iPhone home + lock screen — Dynamic Island vs Live Activity (never both) */
+
+.live-activity-showcase {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.live-activity-demo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.live-activity-stage {
+    --phone-width: clamp(178px, 52%, 228px);
+    --inner-radius: calc(var(--phone-width) * 40 / 393);
+    --frame-radius: calc(var(--inner-radius) + 3px);
+    position: relative;
+    width: var(--phone-width);
+    aspect-ratio: 393 / 852;
+    flex-shrink: 0;
+}
+
+.live-activity-scene {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.55s ease, visibility 0.55s ease;
+}
+
+.live-activity-scene.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.live-activity-phone {
+    width: 100%;
+    height: 100%;
+    container-type: inline-size;
+    border-radius: var(--frame-radius);
+    border: 3px solid rgba(46, 52, 62, 0.96);
+    background: #090b0f;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        0 18px 48px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    isolation: isolate;
+    box-sizing: border-box;
+}
+
+.live-activity-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--inner-radius);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+}
+
+.live-activity-wallpaper {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--inner-radius);
+    pointer-events: none;
+}
+
+.live-activity-wallpaper--home {
+    background:
+        radial-gradient(ellipse 120% 80% at 50% 10%, rgba(196, 206, 218, 0.55) 0%, transparent 58%),
+        radial-gradient(ellipse 90% 60% at 80% 90%, rgba(148, 162, 178, 0.35) 0%, transparent 55%),
+        linear-gradient(165deg, #9aa8b6 0%, #7f8f9f 38%, #6d7d8d 72%, #5c6a78 100%);
+    filter: saturate(0.38) brightness(0.94);
+}
+
+.live-activity-wallpaper--lock {
+    background:
+        radial-gradient(ellipse 90% 55% at 50% 18%, rgba(72, 84, 102, 0.42) 0%, transparent 62%),
+        linear-gradient(180deg, #2a3340 0%, #171c24 46%, #0e1118 100%);
+    filter: saturate(0.32) brightness(0.88);
+}
+
+.live-activity-statusbar {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.8cqi 5.6cqi 0;
+    font-size: 3.6cqi;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.live-activity-scene--home .live-activity-statusbar {
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 0.5px 2px rgba(0, 0, 0, 0.18);
+}
+
+.live-activity-scene--lock .live-activity-statusbar {
+    color: rgba(245, 248, 252, 0.9);
+}
+
+.live-activity-statusbar__icons {
+    display: flex;
+    align-items: center;
+    gap: 1.15cqi;
+    color: inherit;
+}
+
+.live-activity-statusbar__icon {
+    display: block;
+    flex-shrink: 0;
+}
+
+.live-activity-statusbar__icon--signal {
+    width: 4.6cqi;
+    height: 3cqi;
+}
+
+.live-activity-statusbar__icon--wifi {
+    width: 4.4cqi;
+    height: 3.2cqi;
+}
+
+.live-activity-statusbar__icon--battery {
+    width: 6.9cqi;
+    height: 3.2cqi;
+}
+
+.live-activity-di {
+    position: absolute;
+    top: 2.8cqi;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2cqi;
+    width: 50.4cqi;
+    max-width: 198px;
+    height: 8.7cqi;
+    max-height: 34px;
+    padding: 0 2.6cqi;
+    border-radius: 999px;
+    background: #000;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.live-activity-di__thumb {
+    width: 4.6cqi;
+    max-width: 18px;
+    height: 4.6cqi;
+    max-height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
+    flex-shrink: 0;
+}
+
+.live-activity-di__label {
+    flex: 1;
+    min-width: 0;
+    font-size: 3.1cqi;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+.live-activity-lock-clock-wrap {
+    position: absolute;
+    top: 33.33%;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    text-align: center;
+    pointer-events: none;
+}
+
+.live-activity-lock-clock {
+    margin: 0;
+    font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-size: 20.9cqi;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: rgba(248, 250, 252, 0.96);
+    line-height: 1;
+}
+
+.live-activity-lock-date {
+    margin: 1cqi 0 0;
+    font-size: 4.1cqi;
+    font-weight: 500;
+    color: rgba(248, 250, 252, 0.62);
+}
+
+.live-activity-la-card {
+    position: absolute;
+    top: 66.67%;
+    left: 4.1cqi;
+    right: 4.1cqi;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 3.6cqi;
+    padding: 3.6cqi 4.1cqi;
+    border-radius: 5.6cqi;
+    background: rgba(28, 32, 40, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 0 0 0.5px rgba(255, 255, 255, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.live-activity-la-card__thumb {
+    width: 11.2cqi;
+    max-width: 44px;
+    height: 11.2cqi;
+    max-height: 44px;
+    border-radius: 3cqi;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
+}
+
+.live-activity-la-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5cqi;
+    min-width: 0;
+}
+
+.live-activity-la-card__title {
+    font-size: 4.1cqi;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.96);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.live-activity-la-card__subtitle {
+    font-size: 3.4cqi;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.58);
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: opacity 0.45s ease;
+}
+
+.live-activity-la-card__subtitle.is-fading {
+    opacity: 0;
+}
+
+.live-activity-homescreen {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    filter: saturate(0.4) brightness(0.93);
+    pointer-events: none;
+}
+
+.live-activity-apps {
+    position: absolute;
+    top: 22cqi;
+    left: 4.1cqi;
+    right: 4.1cqi;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.8cqi 2.3cqi;
+}
+
+.live-activity-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2cqi;
+}
+
+.live-activity-app__icon {
+    width: 15cqi;
+    height: 15cqi;
+    border-radius: 3.4cqi;
+    box-shadow: 0 0.55cqi 1.65cqi rgba(0, 0, 0, 0.16);
+}
+
+.live-activity-app__icon--calendar { background: linear-gradient(180deg, #e8eaed, #c8ccd2); }
+.live-activity-app__icon--photos { background: linear-gradient(135deg, #c4b8ae, #a89e96 45%, #8f9aa6); }
+.live-activity-app__icon--mail { background: linear-gradient(180deg, #a8b8c8, #7f92a4); }
+.live-activity-app__icon--maps { background: linear-gradient(180deg, #a8c4b0, #7a9a86); }
+.live-activity-app__icon--notes { background: linear-gradient(180deg, #e0dcc8, #c4bea8); }
+.live-activity-app__icon--weather { background: linear-gradient(180deg, #b0c0d0, #8098ae); }
+.live-activity-app__icon--music { background: linear-gradient(180deg, #c0a8b0, #9a8088); }
+.live-activity-app__icon--settings { background: linear-gradient(180deg, #c0c4c8, #989ea6); }
+
+.live-activity-app__name {
+    font-size: 2.55cqi;
+    color: rgba(255, 255, 255, 0.82);
+    text-shadow: 0 0.5px 2px rgba(0, 0, 0, 0.2);
+    line-height: 1.1;
+}
+
+.live-activity-dock {
+    position: absolute;
+    left: 3.1cqi;
+    right: 3.1cqi;
+    bottom: 7.5cqi;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.6cqi;
+    padding: 2.3cqi 4.1cqi;
+    border-radius: 6.6cqi;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    filter: saturate(0.38) brightness(0.95);
+}
+
+.live-activity-dock__icon {
+    width: 14cqi;
+    height: 14cqi;
+    border-radius: 3.2cqi;
+    box-shadow: 0 0.55cqi 1.65cqi rgba(0, 0, 0, 0.14);
+}
+
+.live-activity-dock__icon--phone { background: linear-gradient(180deg, #b8c8b0, #8aa088); }
+.live-activity-dock__icon--safari { background: linear-gradient(180deg, #a8b8d0, #7888a8); }
+.live-activity-dock__icon--messages { background: linear-gradient(180deg, #b0c0b0, #88a090); }
+.live-activity-dock__icon--lonelyisle {
+    background: url("icon.png") center / cover no-repeat;
+    filter: saturate(0.55);
+}
+
+.live-activity-home-bar {
+    position: absolute;
+    bottom: 1.4cqi;
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%);
+    width: 36cqi;
+    max-width: 140px;
+    height: 1.3cqi;
+    max-height: 5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.live-activity-scene--lock .live-activity-home-bar {
+    background: rgba(255, 255, 255, 0.72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .live-activity-scene,
+    .live-activity-la-card__subtitle {
+        transition: none;
+    }
+}

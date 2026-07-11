@@ -1,0 +1,515 @@
+/* Lighthouse Radio — coded preview module (matches in-app IslandRadioView) */
+
+.lighthouse-radio-section {
+    padding: 100px 0 120px;
+}
+
+.lighthouse-radio-intro {
+    max-width: 640px;
+    margin-bottom: 40px;
+}
+
+.lighthouse-radio-intro p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.72;
+}
+
+.lighthouse-radio-module {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.radio-device {
+    display: flex;
+    justify-content: center;
+}
+
+.radio-canvas {
+    --radio-bg-top: #070913;
+    --radio-bg-bottom: #0f1224;
+    --lh-color: #111524;
+    --lh-accent: #1a2036;
+    --lh-core: #fff5dc;
+    --lh-core-alpha: 0.95;
+    --lh-glow-stop: rgb(140, 165, 255);
+    --lh-ambient-grad-center: 0.1275;
+    --lh-core-grad-inner: 0.9025;
+    --lh-core-grad-mid: 0.2375;
+    --lh-beam: rgba(255, 230, 171, 1);
+    --radio-subtitle-opacity: 0.5;
+
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+    aspect-ratio: 1000 / 420;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--radio-bg-top) 0%, var(--radio-bg-bottom) 100%);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 24px 80px rgba(0, 0, 0, 0.45);
+    transition: background 2s ease;
+}
+
+.radio-canvas.is-autoplay {
+    transition: none;
+}
+
+.radio-canvas__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 28px 0 20px;
+}
+
+.radio-header {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 0 40px;
+    z-index: 2;
+}
+
+.radio-header__title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.radio-header__subtitle-wrap {
+    display: grid;
+    place-items: center;
+    min-height: 2.6em;
+    margin-top: 22px;
+    text-align: center;
+}
+
+.radio-header__subtitle {
+    grid-area: 1 / 1;
+    width: 100%;
+    margin: 0;
+    padding: 0 48px;
+    box-sizing: border-box;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    line-height: 1.45;
+    text-align: center;
+    color: rgba(255, 255, 255, var(--radio-subtitle-opacity));
+    opacity: 0;
+    transition: opacity 2s ease;
+    pointer-events: none;
+}
+
+.radio-header__subtitle.is-active {
+    opacity: 1;
+}
+
+.lh-stage-wrap {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    min-height: 0;
+    padding: 0;
+}
+
+.lh-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lh-scene-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Beams: rotation via SVG animateTransform (no CSS transform on SVG groups) */
+
+.lh-beam-polygon {
+    opacity: 0.05;
+}
+
+/* Ambient glow — scale/opacity only, no positional drift */
+.lh-ambient-wrap {
+    pointer-events: none;
+}
+
+.lh-ambient-circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: lh-ambient-breathe 6s ease-in-out infinite;
+}
+
+@keyframes lh-ambient-breathe {
+    0%, 100% { transform: scale(0.96); opacity: 0.38; }
+    50% { transform: scale(1.04); opacity: 0.55; }
+}
+
+.lh-water-horizon {
+    fill: rgba(255, 255, 255, 0.18);
+}
+
+.lh-water-line {
+    fill: rgba(255, 255, 255, 0.55);
+}
+
+/* Lamp core — pulse in place at fixed origin */
+.lh-core-halo-wrap {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: lh-core-halo 2s ease-in-out infinite;
+}
+
+.lh-core-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: var(--lh-core-alpha, 0.95);
+    animation: lh-core-dot 2s ease-in-out infinite;
+}
+
+.lh-core-dot.is-flash {
+    animation: lh-core-flash 0.1s ease-out forwards;
+}
+
+@keyframes lh-core-halo {
+    0%, 100% { transform: scale(0.92); opacity: 0.55; }
+    50% { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes lh-core-dot {
+    0%, 100% { transform: scale(0.95); opacity: calc(var(--lh-core-alpha, 0.95) * 0.85); }
+    50% { transform: scale(1.1); opacity: var(--lh-core-alpha, 0.95); }
+}
+
+@keyframes lh-core-flash {
+    to { transform: scale(2); opacity: 1; }
+}
+
+/* Tap ripples expand from lamp */
+.lh-ripple-ring {
+    fill: none;
+    stroke: rgba(255, 248, 210, 0.35);
+    stroke-width: 1;
+    opacity: 0;
+    animation: lh-ripple-expand 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes lh-ripple-expand {
+    0% {
+        r: 0;
+        opacity: 0.9;
+    }
+    100% {
+        r: 480;
+        opacity: 0;
+    }
+}
+
+.lh-hint {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 12px 40px 0;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.45);
+    z-index: 2;
+}
+
+/* 24h timeline — dot rail */
+
+.radio-timeline {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    --timeline-progress: 0;
+    --timeline-playhead: #fff5dc;
+    --timeline-glow: rgba(140, 165, 255, 0.45);
+}
+
+.radio-timeline__rail {
+    position: relative;
+    width: 100%;
+    padding: 2px 0 0;
+    box-sizing: border-box;
+}
+
+.radio-timeline__track {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: 14px;
+    height: 1px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.radio-timeline__track::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 0%,
+        rgba(255, 255, 255, 0.14) 50%,
+        rgba(255, 255, 255, 0.04) 100%
+    );
+}
+
+.radio-timeline__track-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(100% * var(--timeline-progress, 0));
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        color-mix(in srgb, var(--timeline-playhead) 55%, transparent) 100%
+    );
+    border-radius: 1px;
+}
+
+.radio-timeline__playhead {
+    position: absolute;
+    left: calc(14px + (100% - 28px) * var(--timeline-progress, 0));
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--timeline-playhead);
+    box-shadow:
+        0 0 0 2px rgba(8, 10, 18, 0.55),
+        0 0 0 3px rgba(255, 255, 255, 0.12),
+        0 0 16px var(--timeline-glow);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.radio-timeline__segments {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+    z-index: 1;
+}
+
+.radio-timeline__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 52px;
+    padding: 0 2px 2px;
+    border: none;
+    background: none;
+    cursor: default;
+    font-family: inherit;
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+}
+
+.radio-timeline__marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+.radio-timeline__time {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    white-space: nowrap;
+    color: rgba(232, 238, 247, 0.36);
+    transition: color 0.25s ease;
+}
+
+.radio-timeline__sounds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 24px;
+}
+
+.radio-timeline__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.72);
+    opacity: 1;
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.radio-timeline__icon-wrap.is-soft {
+    color: rgba(255, 255, 255, 0.42);
+}
+
+.radio-timeline__icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.radio-timeline__btn.is-active .radio-timeline__icon-wrap {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.radio-timeline__btn.is-active .radio-timeline__icon-wrap.is-soft {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.radio-timeline__btn.is-past .radio-timeline__icon-wrap {
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.radio-timeline__btn.is-past .radio-timeline__icon-wrap.is-soft {
+    color: rgba(255, 255, 255, 0.18);
+}
+
+.radio-timeline__btn.is-active .radio-timeline__time {
+    color: rgba(232, 238, 247, 0.82);
+}
+
+.radio-timeline__dot {
+    display: block;
+    width: 1px;
+    height: 9px;
+    border-radius: 1px;
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: none;
+    transition: background 0.25s ease, height 0.25s ease, width 0.25s ease;
+}
+
+.radio-timeline__btn.is-past .radio-timeline__dot {
+    height: 7px;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.radio-timeline__btn.is-past .radio-timeline__time {
+    color: rgba(232, 238, 247, 0.28);
+}
+
+.radio-timeline__btn.is-active .radio-timeline__dot {
+    width: 2px;
+    height: 11px;
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: none;
+    transform: none;
+}
+
+/* Mobile: compact card frame (not phone aspect) + horizontal timeline scroll */
+@media (max-width: 768px) {
+    .lighthouse-radio-section {
+        padding: 80px 0 96px;
+    }
+
+    .radio-canvas {
+        width: min(100%, 390px);
+        aspect-ratio: 390 / 520;
+        border-radius: 22px;
+    }
+
+    .radio-timeline {
+        width: min(100%, 390px);
+        --timeline-mobile-min: 560px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        touch-action: pan-y;
+        overscroll-behavior-x: none;
+        scrollbar-width: none;
+    }
+
+    .radio-timeline::-webkit-scrollbar {
+        display: none;
+    }
+
+    .radio-timeline__rail {
+        min-width: max(100%, var(--timeline-mobile-min));
+    }
+
+    .radio-timeline__btn {
+        min-width: 52px;
+    }
+
+    .radio-canvas__inner {
+        padding: 24px 0 18px;
+    }
+
+    .radio-header {
+        padding: 0 24px;
+    }
+
+    .radio-header__title {
+        font-size: 13px;
+        letter-spacing: 0.3em;
+    }
+
+    .radio-header__subtitle-wrap {
+        margin-top: 18px;
+        min-height: 2.8em;
+    }
+
+    .radio-header__subtitle {
+        font-size: 11px;
+        padding: 0 28px;
+    }
+
+    .lh-hint {
+        font-size: 11px;
+        padding: 10px 24px 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .radio-timeline__time {
+        font-size: 9px;
+    }
+
+    .radio-timeline__icon {
+        width: 19px;
+        height: 19px;
+    }
+
+    .radio-timeline__btn {
+        min-width: 46px;
+    }
+
+    .radio-timeline__playhead {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lh-ambient-circle,
+    .lh-core-halo-wrap,
+    .lh-core-dot {
+        animation: none;
+    }
+
+    .radio-canvas,
+    .radio-header__subtitle {
+        transition: none;
+    }
+
+    .radio-timeline {
+        scroll-behavior: auto;
+    }
+}
