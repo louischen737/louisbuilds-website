@@ -59,6 +59,7 @@
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow-x: clip;
     }
 
     .container {
@@ -106,6 +107,10 @@
         max-width: 100%;
         text-wrap: balance;
         overflow-wrap: break-word;
+    }
+
+    .hero-br--mobile {
+        display: none;
     }
 
     .hero-map-col {
@@ -590,14 +595,76 @@
 
         .hero {
             justify-content: flex-start;
-            padding-top: calc(var(--site-header-height) + 48px);
+            padding-top: calc(var(--site-header-height) + 80px);
             padding-bottom: 64px;
+            overflow-x: clip;
+        }
+
+        .hero .container {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
+        .hero-layout {
+            gap: 40px;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .hero-title {
+            font-size: 30px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            text-wrap: pretty;
+            overflow-wrap: anywhere;
+            hyphens: auto;
+        }
+
+        .hero-br--mobile {
+            display: block;
+        }
+
+        .tagline {
+            font-size: 16px;
+            line-height: 1.55;
+            max-width: 100%;
+            padding: 0 2px;
+            text-wrap: pretty;
+            overflow-wrap: anywhere;
+            hyphens: auto;
         }
 
         .tagline br {
             display: none;
         }
 
+    }
+
+    @media (max-width: 390px) {
+        .hero {
+            padding-top: calc(var(--site-header-height) + 88px);
+        }
+
+        .hero-title {
+            font-size: 27px;
+            letter-spacing: -0.35px;
+            line-height: 1.22;
+        }
+
+        .tagline {
+            font-size: 15px;
+            line-height: 1.5;
+        }
     }
 
     @media (max-width: 480px) {
@@ -635,7 +702,7 @@
 <div class="hero">
     <div class="container hero-layout">
         <div class="hero-content">
-            <h1 class="hero-title">Interactive spatial audio for an overactive mind.</h1>
+            <h1 class="hero-title">Interactive spatial audio<br class="hero-br hero-br--mobile" aria-hidden="true"> for an overactive mind.</h1>
             <div class="tagline">
                 A quiet sanctuary for your mind beyond the horizon.<br>
                 Tune into 24H Lighthouse Radio, or explore fictional islands where sounds shift as you wander.
