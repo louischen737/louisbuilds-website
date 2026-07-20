@@ -682,6 +682,7 @@
 <link rel="stylesheet" href="live-activity-demo.css">
 <link rel="stylesheet" href="ipad-canvas-demo.css">
 <link rel="stylesheet" href="story-section.css">
+<link rel="stylesheet" href="sound-art-lab-home.css">
 </head>
 
 <body>
@@ -1005,6 +1006,70 @@
     </div>
 </section>
 
+<!-- SOUND ART LAB (static gallery) -->
+<section class="sound-art-lab-section" id="sound-art-lab" aria-labelledby="sound-art-lab-heading">
+    <div class="container">
+        <div class="sound-art-lab-intro">
+            <h2 class="story-title" id="sound-art-lab-heading">Sound, made visible.</h2>
+            <p>Playful, quiet Frequency experiments from LonelyIsle—visual glimpses of scenes that live fully in the app.</p>
+        </div>
+
+        <div class="sound-lab-grid" role="list" aria-label="Sound Art Lab scenes">
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="bath"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Floating Sound Bath</h3>
+                        <span class="sound-lab-card__badge">Relax</span>
+                    </div>
+                    <p class="sound-lab-card__desc">Watch a cozy koala snooze deeply on open water, accompanied by the grounding resonance of Tibetan singing bowls.</p>
+                </div>
+            </article>
+
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="piano"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Piano Sea</h3>
+                        <span class="sound-lab-card__badge">Focus</span>
+                    </div>
+                    <p class="sound-lab-card__desc">A dreamy piano melody where each note visually triggers a glowing jellyfish to float up from the deep sea.</p>
+                </div>
+            </article>
+
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="bubble"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Bubble Pop</h3>
+                        <span class="sound-lab-card__badge">Chill</span>
+                    </div>
+                    <p class="sound-lab-card__desc">Refreshing bubbles rise from a striped straw, creating a crisp, highly satisfying ASMR crackle.</p>
+                </div>
+            </article>
+
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="cloud"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Cloud Slumber</h3>
+                        <span class="sound-lab-card__badge">Warmth</span>
+                    </div>
+                    <p class="sound-lab-card__desc">A resting cat drifts on a soft cloud in daylight, wrapped in a deep, soothing purr.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
 <!-- STORY: RESIDENT ID -->
 <section class="story-section story-section--alt">
     <div class="container">
@@ -1277,5 +1342,6 @@
 <script src="hero-island-map.js" defer></script>
 <script src="islands-picker.js" defer></script>
 <script src="live-activity-demo.js" defer></script>
+<script src="sound-lab-previews.js" defer></script>
 </body>
 </html>

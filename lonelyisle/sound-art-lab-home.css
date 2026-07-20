@@ -1,0 +1,130 @@
+/* Homepage Sound Art Lab module — static cards (no scene links) */
+
+.sound-art-lab-section {
+    --sal-border: rgba(255, 255, 255, 0.08);
+    --sal-glass: rgba(255, 255, 255, 0.035);
+    --sal-muted: rgba(232, 238, 247, 0.52);
+    padding: 100px 0 120px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    background:
+        radial-gradient(ellipse 70% 50% at 80% 0%, rgba(70, 110, 150, 0.08) 0%, transparent 55%),
+        transparent;
+}
+
+.sound-art-lab-intro {
+    text-align: left;
+    max-width: 36rem;
+    margin: 0 0 40px;
+}
+
+.sound-art-lab-intro .story-title {
+    margin-bottom: 14px;
+}
+
+.sound-art-lab-intro p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: rgba(232, 238, 247, 0.62);
+}
+
+.sound-art-lab-section .sound-lab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.sound-art-lab-section .sound-lab-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    padding: 0;
+    border: 1px solid var(--sal-border);
+    border-radius: 18px;
+    overflow: hidden;
+    color: inherit;
+    background: var(--sal-glass);
+    isolation: isolate;
+    cursor: default;
+}
+
+.sound-art-lab-section .sound-lab-card__stage {
+    position: relative;
+    flex: 1;
+    min-height: 168px;
+    overflow: hidden;
+    background: #0a0e14;
+}
+
+.sound-art-lab-section .sound-lab-card__canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 168px;
+    pointer-events: none;
+}
+
+.sound-art-lab-section .sound-lab-card__body {
+    position: relative;
+    z-index: 1;
+    padding: 20px 22px 22px;
+    background: rgba(7, 10, 15, 0.92);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sound-art-lab-section .sound-lab-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.sound-art-lab-section .sound-lab-card__title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 560;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.sound-art-lab-section .sound-lab-card__badge {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(160, 220, 200, 0.9);
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(160, 220, 200, 0.25);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sound-art-lab-section .sound-lab-card__desc {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--sal-muted);
+}
+
+@media (max-width: 768px) {
+    .sound-art-lab-section {
+        padding: 72px 0 88px;
+    }
+
+    .sound-art-lab-section .sound-lab-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .sound-art-lab-section .sound-lab-card {
+        min-height: 240px;
+    }
+
+    .sound-art-lab-section .sound-lab-card__stage,
+    .sound-art-lab-section .sound-lab-card__canvas {
+        min-height: 140px;
+    }
+}
