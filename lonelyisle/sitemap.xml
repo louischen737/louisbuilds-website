@@ -6,6 +6,36 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://louisbuilds.me/lonelyisle/sound-lab.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/sound-lab/floating-sound-bath.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/sound-lab/piano-sea.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/sound-lab/bubble-pop.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/sound-lab/cloud-slumber.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/partners.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://louisbuilds.me/lonelyisle/support.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
