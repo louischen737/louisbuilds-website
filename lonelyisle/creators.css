@@ -1,0 +1,45 @@
+/* LonelyIsle creators page — overrides on top of partners.css */
+
+.creators-page .partners-hero__desc {
+    max-width: 520px;
+}
+
+.creators-page .partners-heading {
+    letter-spacing: -0.03em;
+}
+
+.creators-page .partners-pilot__inner {
+    max-width: 720px;
+}
+
+.creators-page .partners-pilot__inner p {
+    max-width: 560px;
+}
+
+.creators-page .partners-moment {
+    min-height: 260px;
+}
+
+.creators-page .partners-experience__tag {
+    line-height: 1.5;
+}
+
+.creators-page .partners-who-item {
+    align-items: flex-start;
+}
+
+/* Creator application CTA */
+.creators-page .partners-pilot .partners-btn--primary {
+    margin-top: 24px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .creators-page .partners-heading {
+        font-size: 42px;
+    }
+
+    .creators-page .partners-moment {
+        min-height: auto;
+    }
+}
