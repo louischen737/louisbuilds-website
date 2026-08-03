@@ -586,6 +586,41 @@
     gap: 12px;
 }
 
+/* Mobile: prev/next sit on the More title row, right-aligned */
+@media (max-width: 768px) {
+    .ss-listen__more {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        grid-template-areas:
+            "label prev next"
+            "viewport viewport viewport";
+        align-items: center;
+        column-gap: 8px;
+        row-gap: 14px;
+    }
+
+    .ss-listen__more > .ss-listen__label {
+        grid-area: label;
+        margin-bottom: 0;
+    }
+
+    .ss-listen__more-row {
+        display: contents;
+    }
+
+    .ss-listen__more-row > .ss-listen__more-btn:first-child {
+        grid-area: prev;
+    }
+
+    .ss-listen__more-row > .ss-listen__more-btn:last-child {
+        grid-area: next;
+    }
+
+    .ss-listen__more-viewport {
+        grid-area: viewport;
+    }
+}
+
 .ss-listen__more-btn {
     width: 36px;
     height: 36px;
@@ -773,12 +808,27 @@
 @media (max-width: 720px) {
     .soundscape-footer__row {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .soundscape-footer__left {
+        text-align: center;
+        width: 100%;
+    }
+
+    .soundscape-footer__links {
+        justify-content: center;
+    }
+
+    .soundscape-footer__meta {
+        text-align: center;
     }
 
     .soundscape-footer__attribution {
-        text-align: left;
+        text-align: center;
         margin-left: 0;
         max-width: none;
+        width: 100%;
     }
 
     .soundscape-footer__attribution p {
