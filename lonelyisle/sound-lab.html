@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="canonical" href="https://louisbuilds.me/lonelyisle/sound-lab.html">
+    <title>Sound Art Lab – LonelyIsle</title>
+    <meta name="description" content="Explore LonelyIsle Frequency sound visualizations in the browser — Floating Sound Bath, Piano Sea, Bubble Pop, Cloud Slumber, and experiments in progress.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/lonelyisle/sound-lab.html">
+    <meta property="og:title" content="Sound Art Lab – LonelyIsle">
+    <meta property="og:description" content="Interactive sound visualization experiments from LonelyIsle Frequency — listen muted by default, unmute when you're ready.">
+    <meta property="og:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LonelyIsle Sound Art Lab — Frequency sound visualization experiments">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sound Art Lab – LonelyIsle">
+    <meta name="twitter:description" content="Interactive sound visualization experiments from LonelyIsle Frequency.">
+    <meta name="twitter:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+    </script>
+    
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="site-header.css">
+    <link rel="stylesheet" href="story-section.css">
+    <link rel="stylesheet" href="sound-lab.css?v=20260720d">
+</head>
+<body class="sound-lab-page">
+
+<header class="site-header" id="site-header">
+    <div class="site-header__inner">
+        <a class="site-header__brand nav-brand product-title" href="index.html">
+            <picture>
+                <source type="image/webp" srcset="icon.webp">
+                <img src="icon.png" class="nav-brand-icon" alt="" width="36" height="36" decoding="async">
+            </picture>
+            <span>LonelyIsle</span>
+        </a>
+        <nav class="site-header__nav" aria-label="Primary">
+            <a href="soundscape/" class="site-header__link">Soundscapes</a>
+            <a href="partners.html" class="site-header__link">For partners</a>
+            <a href="creators.html" class="site-header__link">For creators</a>
+        </nav>
+    </div>
+</header>
+
+<section class="sound-lab-hero">
+    <div class="container">
+        <h1 class="sound-lab-hero__title">Sound, made visible.</h1>
+        <p class="sound-lab-hero__lead">
+            Playful, quiet experiments in sound from LonelyIsle. A digital retreat designed to silence an overactive mind. Enter a scene to drift; touch to listen.
+        </p>
+    </div>
+</section>
+
+<main class="sound-lab-main">
+    <div class="container">
+        
+        <div class="sound-lab-grid" role="list" aria-label="Active sound experiments">
+            
+            <a class="sound-lab-card sound-lab-card--bath" href="sound-lab/floating-sound-bath.html" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="bath"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h2 class="sound-lab-card__title">Floating Sound Bath</h2>
+                        <span class="sound-lab-card__badge sound-lab-card__badge--active">Relax</span>
+                    </div>
+                    <p class="sound-lab-card__desc">Watch a cozy koala snooze deeply on open water, accompanied by the grounding resonance of Tibetan singing bowls.</p>
+                </div>
+            </a>
+
+            <a class="sound-lab-card sound-lab-card--piano" href="sound-lab/piano-sea.html" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="piano"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h2 class="sound-lab-card__title">Piano Sea</h2>
+                        <span class="sound-lab-card__badge sound-lab-card__badge--active">Focus</span>
+                    </div>
+                    <p class="sound-lab-card__desc">A dreamy piano melody where each note visually triggers a glowing jellyfish to float up from the deep sea.</p>
+                </div>
+            </a>
+
+            <a class="sound-lab-card sound-lab-card--bubble" href="sound-lab/bubble-pop.html" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="bubble"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h2 class="sound-lab-card__title">Bubble Pop</h2>
+                        <span class="sound-lab-card__badge sound-lab-card__badge--active">Chill</span>
+                    </div>
+                    <p class="sound-lab-card__desc">Refreshing bubbles rise from a striped straw, creating a crisp, highly satisfying ASMR crackle.</p>
+                </div>
+            </a>
+
+            <a class="sound-lab-card sound-lab-card--cloud" href="sound-lab/cloud-slumber.html" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="cloud"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h2 class="sound-lab-card__title">Cloud Slumber</h2>
+                        <span class="sound-lab-card__badge sound-lab-card__badge--active">Warmth</span>
+                    </div>
+                    <p class="sound-lab-card__desc">A resting cat drifts on a soft cloud in daylight, wrapped in a deep, soothing purr.</p>
+                </div>
+            </a>
+            
+        </div>
+
+        <div class="sound-lab-cta">
+            <p class="sound-lab-cta__text">
+                The web gallery is just a glance. Unlock the complete audio universe and spatial islands beyond the screen—on iOS &amp; iPadOS.
+            </p>
+            <a class="sound-lab-cta__link" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                Download LonelyIsle on the App Store
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <nav class="footer-links" aria-label="Legal and support">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="terms-of-service.html">Terms</a>
+                <a href="support.html">Support</a>
+                <a href="partners.html">Partners</a>
+                <a href="creators.html">Creators</a>
+            </nav>
+            <p class="footer-meta">&copy; 2026 LonelyIsle</p>
+            <p class="footer-meta">A product by Louis &middot; <a class="footer-home-link" href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="site-header.js?v=20260720" defer></script>
+<script src="sound-lab-previews.js?v=20260720" defer></script>
+</body>
+</html>

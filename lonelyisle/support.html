@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="description" content="LonelyIsle support and help. Get answers about spatial ambient soundscapes, islands, background playback, and purchases.">
+    <link rel="canonical" href="https://louisbuilds.me/lonelyisle/support.html">
+    <title>Support – LonelyIsle</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/lonelyisle/support.html">
+    <meta property="og:title" content="Support – LonelyIsle">
+    <meta property="og:description" content="LonelyIsle support and help. Get answers about spatial ambient soundscapes, islands, background playback, and purchases.">
+    <meta property="og:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LonelyIsle — spatial ambient soundscape app for quiet, offline-first listening">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Support – LonelyIsle">
+    <meta name="twitter:description" content="LonelyIsle support and help. Get answers about spatial ambient soundscapes, islands, background playback, and purchases.">
+    <meta name="twitter:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #070A0F;
+            --text-primary: #E8EEF7;
+            --text-secondary: rgba(232, 238, 247, 0.85);
+            --text-muted: rgba(232, 238, 247, 0.55);
+            --glass: rgba(7, 10, 15, 0.88);
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 0.5px solid var(--border);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+
+        .legal-main {
+            padding: 56px 0 72px;
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        .intro {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-meta {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .footer-home-link {
+            color: rgba(232, 238, 247, 0.75);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-list {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 16px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item.active {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            text-align: left;
+            transition: opacity 0.3s ease, color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .faq-question:focus,
+        .faq-question:focus-visible {
+            outline: none;
+        }
+
+        .faq-question:hover {
+            opacity: 0.85;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--text-primary);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            font-size: 20px;
+            opacity: 0.6;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            opacity: 1;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-4px);
+            transition: max-height 0.45s ease, opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .faq-answer p,
+        .faq-answer ul,
+        .faq-answer ol {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .faq-answer ul,
+        .faq-answer ol {
+            padding-left: 24px;
+        }
+
+        .faq-answer p:last-child,
+        .faq-answer ul:last-child,
+        .faq-answer ol:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer .faq-answer-inner {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 900px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .legal-main {
+                padding: 40px 0 56px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+                padding: 16px 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-brand product-title" aria-label="LonelyIsle Home">
+                <picture><source type="image/webp" srcset="icon.webp"><img src="icon.png" class="nav-brand-icon" alt="" width="36" height="36" decoding="async"></picture>
+                LonelyIsle
+            </a>
+        </div>
+    </nav>
+    <main class="legal-main">
+    <div class="container">
+    <div class="legal-container">
+    <h1>Support</h1>
+    <div class="intro">
+        <p><strong>Need help with LonelyIsle?</strong><br>We're here to help you get the most out of your island journeys.</p>
+        <p>If you can't find the answer below, feel free to contact us.</p>
+    </div>
+
+    <h2>Contact Support</h2>
+    <p>If you have questions, feedback, or run into an issue while using LonelyIsle, you can contact us directly.</p>
+    <p><strong>Email:</strong> <a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></p>
+    <p>We usually respond within <strong>24–48 hours</strong>.</p>
+    <p>When contacting support, it helps to include:</p>
+    <ul>
+        <li>your device model</li>
+        <li>iOS version</li>
+        <li>which island you were exploring</li>
+        <li>a short description of the issue</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-1" id="faq-q1">
+                <span>What is LonelyIsle?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-q1">
+                <div class="faq-answer-inner">
+                    <p>LonelyIsle is an app where you explore islands and listen to spatial ambient sound that changes as you move through each environment.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-2" id="faq-q2">
+                <span>How do I explore?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-q2">
+                <div class="faq-answer-inner">
+                    <p>You can explore in two different ways:</p>
+                    <p>In <strong>Free mode</strong>, you move through the island at your own pace.<br>
+                    In <strong>Auto mode</strong>, the island gently carries you along a continuous path.</p>
+                    <p>Your movement shapes how the sound unfolds.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-3" id="faq-q3">
+                <span>Can I change the view of the island?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-q3">
+                <div class="faq-answer-inner">
+                    <p>Yes. You can switch between two views:</p>
+                    <p>A bird&rsquo;s-eye view &mdash; wider, more atmospheric sound.<br>
+                    A zoomed-in view &mdash; closer detail, with clearer local sounds.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-4" id="faq-q4">
+                <span>How do I pause or resume the experience?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-q4">
+                <div class="faq-answer-inner">
+                    <p>Tap anywhere on the map to pause.<br>
+                    Tap again to continue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-5" id="faq-q5">
+                <span>Can I listen in the background?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-q5">
+                <div class="faq-answer-inner">
+                    <p>Yes &mdash; Background Playback is enabled by default.</p>
+                    <p>When enabled, audio continues when you leave the app or lock your device.<br>
+                    In Auto mode, exploration also continues.</p>
+                    <p>When disabled, everything pauses when the app is no longer in the foreground.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-6" id="faq-q6">
+                <span>How do purchases work?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-6" role="region" aria-labelledby="faq-q6">
+                <div class="faq-answer-inner">
+                    <p>Some islands or experiences require a one-time purchase or subscription.<br>
+                    All payments are processed securely through Apple&rsquo;s App Store.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-7" id="faq-q7">
+                <span>Can I restore my purchases?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-7" role="region" aria-labelledby="faq-q7">
+                <div class="faq-answer-inner">
+                    <p>Yes. You can restore your purchases at any time using the Apple ID you originally used.</p>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-8" id="faq-q8">
+                <span>How is my data handled?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-8" role="region" aria-labelledby="faq-q8">
+                <div class="faq-answer-inner">
+                    <p>LonelyIsle does not collect personal data.</p>
+                    <p>Most information stays on your device and is used only to support app functionality. Nothing is shared with us or third parties.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Feedback</h2>
+    <p>We're always looking to improve LonelyIsle.</p>
+    <p>If you have suggestions for new islands or features, we'd love to hear from you.</p>
+    <p>Send feedback to: <strong><a href="mailto:support@louisbuilds.me">support@louisbuilds.me</a></strong></p>
+
+    <h2>Privacy &amp; Terms</h2>
+    <p>You can read more about how LonelyIsle handles data:</p>
+    <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    <p><a href="terms-of-service.html">Terms of Use</a></p>
+
+    </div>
+    </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="terms-of-service.html">Terms</a>
+                <a href="partners.html">Partners</a>
+                <a href="creators.html">Creators</a>
+            </div>
+            <p class="footer-meta">&copy; 2026 LonelyIsle</p>
+            <p class="footer-meta">A product by Louis &middot; <a class="footer-home-link" href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var item = button.parentElement;
+                var isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(function(i) {
+                    i.classList.remove('active');
+                    var btn = i.querySelector('.faq-question');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="canonical" href="https://louisbuilds.me/lonelyisle/">
+<title>LonelyIsle — A Quiet Sanctuary for Your Mind</title>
+<meta name="description" content="LonelyIsle is a spatial ambient soundscape app. Explore fictional islands where movement changes what you hear — no feeds, no noise, just quiet presence.">
+<meta property="og:title" content="LonelyIsle — A Quiet Sanctuary for Your Mind">
+<meta property="og:description" content="Explore fictional islands through spatial ambient soundscapes. A place you enter, not a music player.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://louisbuilds.me/lonelyisle/">
+<meta property="og:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LonelyIsle — spatial ambient soundscape app for quiet, offline-first listening">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LonelyIsle — A Quiet Sanctuary for Your Mind">
+<meta name="twitter:description" content="Explore fictional islands through spatial ambient soundscapes.">
+<meta name="twitter:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "LonelyIsle",
+  "operatingSystem": "iOS",
+  "applicationCategory": "HealthApplication",
+  "applicationSubCategory": "Meditation",
+  "description": "A quiet sanctuary for your mind beyond the horizon. Explore fictional islands through spatial ambient soundscapes.",
+  "url": "https://louisbuilds.me/lonelyisle/",
+  "downloadUrl": "https://apps.apple.com/app/id6779457751",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://apps.apple.com/app/id6779457751",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+        background: #070A0F;
+        color: #E8EEF7;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: clip;
+    }
+
+    .container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    /* HERO */
+    .hero {
+        box-sizing: border-box;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        padding: var(--site-header-height, 60px) 0 64px;
+    }
+
+    .hero-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 48px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-content {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .hero-title {
+        font-size: 34px;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: -0.8px;
+        line-height: 1.1;
+        margin: 0 0 24px;
+        max-width: 100%;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+    }
+
+    .hero-br--mobile {
+        display: none;
+    }
+
+    .hero-map-col {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .tagline {
+        font-size: 18px;
+        opacity: 0.8;
+        max-width: min(520px, 100%);
+        margin: 0 auto 16px;
+        text-wrap: balance;
+        overflow-wrap: break-word;
+    }
+
+    .hero-content .cta {
+        margin-bottom: 0;
+    }
+
+    .cta {
+        display: inline-block;
+        padding: 12px 22px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+        text-decoration: none;
+        color: white;
+        transition: 0.2s;
+    }
+
+    .cta:hover {
+        background: rgba(255,255,255,0.08);
+    }
+
+    .cta.cta--app-store {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        line-height: 0;
+    }
+
+    .cta.cta--app-store:hover {
+        background: transparent;
+    }
+
+    .cta.cta--app-store img {
+        display: block;
+        height: 44px;
+        width: auto;
+        transition: opacity 0.2s;
+    }
+
+    .cta.cta--app-store:hover img {
+        opacity: 0.85;
+    }
+
+    .cta.cta--bottom {
+        padding: 14px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        background: #E8EEF7;
+        color: #070A0F;
+        border: none;
+        box-shadow: 0 4px 24px rgba(232, 238, 247, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cta.cta--bottom:hover {
+        background: #F4F7FB;
+        box-shadow: 0 6px 28px rgba(232, 238, 247, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+    }
+
+    .cta__label--long {
+        display: none;
+    }
+
+    @media (min-width: 769px) {
+        .cta.cta--bottom {
+            padding: 14px 32px;
+        }
+
+        .cta__label--short {
+            display: none;
+        }
+
+        .cta__label--long {
+            display: inline;
+        }
+    }
+
+    .hero-trust-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+        margin-top: 48px;
+        font-size: 12px;
+        color: rgba(232, 238, 247, 0.55);
+        letter-spacing: 0.5px;
+    }
+
+    .hero-trust-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .hero-trust-check {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+    }
+
+    .hero-trust-check path {
+        fill: none;
+        stroke: #34c759;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    @media (min-width: 900px) {
+        .hero {
+            padding: var(--site-header-height, 60px) 0 72px;
+        }
+
+        .hero .container {
+            max-width: 1160px;
+            padding: 0 48px;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .hero-content {
+            min-width: 0;
+            text-align: left;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            letter-spacing: -1px;
+            margin-bottom: 28px;
+        }
+
+        .tagline {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .hero-content .cta {
+            margin-bottom: 0;
+        }
+
+        .hero .hero-trust-row {
+            justify-content: flex-start;
+            margin-top: 56px;
+        }
+
+        .hero-map-col {
+            width: auto;
+            min-width: 0;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .hero .container {
+            max-width: 1200px;
+            padding: 0 56px;
+        }
+
+        .hero-layout {
+            gap: 36px;
+        }
+    }
+
+    .concept-section .container {
+        text-align: center;
+    }
+
+    .concept-section p {
+        margin: 0 auto;
+    }
+
+    section {
+        padding: 120px 0;
+    }
+
+    h2:not(.story-title) {
+        font-size: 28px;
+        margin-bottom: 24px;
+        font-weight: 500;
+    }
+
+    p {
+        opacity: 0.85;
+        max-width: 720px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .card {
+        padding: 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        background: rgba(255,255,255,0.02);
+    }
+
+    .feature-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feature-icon-wrap {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .feature-icon {
+        width: 22px;
+        height: 22px;
+        color: rgba(232, 238, 247, 0.88);
+    }
+
+    .feature-icon path,
+    .feature-icon rect,
+    .feature-icon circle,
+    .feature-icon line {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
+    }
+
+    .island-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button.card {
+        font: inherit;
+        color: inherit;
+        margin: 0;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .islands-section {
+        padding-top: 88px;
+    }
+
+    .section-lead {
+        opacity: 0.75;
+        max-width: 720px;
+        margin: -8px 0 0;
+        text-wrap: balance;
+    }
+
+    .islands-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .island-thumb {
+        width: 72px;
+        height: 72px;
+        border-radius: 12px;
+        object-fit: cover;
+        margin-bottom: 16px;
+        flex-shrink: 0;
+    }
+
+    .island-card--coming-soon .island-thumb {
+        opacity: 0.45;
+    }
+
+    .island {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .muted {
+        opacity: 0.6;
+        font-size: 14px;
+    }
+
+    .cta-section .container {
+        text-align: center;
+    }
+
+    .cta-lead {
+        margin: 0 auto 24px;
+        max-width: 600px;
+        font-size: 16px;
+        line-height: 1.7;
+        opacity: 0.6;
+        text-wrap: balance;
+    }
+
+    footer {
+        padding: 64px 0 80px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .footer-links {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: rgba(232, 238, 247, 0.6);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+        color: #E8EEF7;
+    }
+
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        margin: 0;
+    }
+
+    .footer-social__label {
+        margin: 0;
+        max-width: none;
+        opacity: 1;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(232, 238, 247, 0.45);
+        font-weight: 500;
+    }
+
+    .footer-social__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .footer-social__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: #E8EEF7;
+        text-decoration: none;
+        border-radius: 999px;
+        transition: color 0.2s, background 0.2s, opacity 0.2s;
+    }
+
+    .footer-social__link:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-social__icon {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .footer-meta {
+        margin: 0;
+        opacity: 0.6;
+        font-size: 13px;
+        line-height: 1.7;
+        max-width: none;
+        text-align: center;
+    }
+
+    .footer-home-link {
+        color: rgba(232, 238, 247, 0.75);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    .footer-home-link:hover {
+        color: #E8EEF7;
+    }
+
+    @media (min-width: 769px) {
+        .footer-top {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+        }
+
+        .footer-top__divider {
+            display: block;
+            width: 1px;
+            height: 20px;
+            margin: 0 32px;
+            background: rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        .footer-social {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-social__label {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-top__divider {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .hero {
+            justify-content: flex-start;
+            padding-top: calc(var(--site-header-height) + 80px);
+            padding-bottom: 64px;
+            overflow-x: clip;
+        }
+
+        .hero .container {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
+        .hero-layout {
+            gap: 40px;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            padding: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .hero-title {
+            font-size: 30px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            text-wrap: pretty;
+            overflow-wrap: anywhere;
+            hyphens: auto;
+        }
+
+        .hero-br--mobile {
+            display: block;
+        }
+
+        .tagline {
+            font-size: 16px;
+            line-height: 1.55;
+            max-width: 100%;
+            padding: 0 2px;
+            text-wrap: pretty;
+            overflow-wrap: anywhere;
+            hyphens: auto;
+        }
+
+        .tagline br {
+            display: none;
+        }
+
+    }
+
+    @media (max-width: 390px) {
+        .hero {
+            padding-top: calc(var(--site-header-height) + 88px);
+        }
+
+        .hero-title {
+            font-size: 27px;
+            letter-spacing: -0.35px;
+            line-height: 1.22;
+        }
+
+        .tagline {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cta.cta--bottom {
+            padding: 10px 20px;
+        }
+    }
+</style>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site-header.css">
+<link rel="stylesheet" href="lighthouse-radio.css">
+<link rel="stylesheet" href="hero-island-map.css">
+<link rel="stylesheet" href="islands-picker.css">
+<link rel="stylesheet" href="resident-id-card.css">
+<link rel="stylesheet" href="live-activity-demo.css">
+<link rel="stylesheet" href="ipad-canvas-demo.css">
+<link rel="stylesheet" href="story-section.css">
+<link rel="stylesheet" href="sound-art-lab-home.css">
+</head>
+
+<body>
+
+<header class="site-header" id="site-header">
+    <div class="site-header__inner">
+        <a class="site-header__brand nav-brand product-title" href="#">
+            <picture>
+                <source type="image/webp" srcset="icon.webp">
+                <img src="icon.png" class="nav-brand-icon" alt="" width="36" height="36" decoding="async">
+            </picture>
+            <span>LonelyIsle</span>
+        </a>
+        <nav class="site-header__nav" aria-label="Primary">
+            <a class="site-header__link" href="soundscape/">Soundscapes</a>
+            <a class="site-header__link" href="partners.html">For partners</a>
+            <a class="site-header__link" href="creators.html">For creators</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="container hero-layout">
+        <div class="hero-content">
+            <h1 class="hero-title">Interactive spatial audio<br class="hero-br hero-br--mobile" aria-hidden="true"> for an overactive mind.</h1>
+            <div class="tagline">
+                A quiet sanctuary for your mind beyond the horizon.<br>
+                Tune into 24H Lighthouse Radio, or explore fictional islands where sounds shift as you wander.
+            </div>
+            <a class="cta cta--app-store" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                <img src="images/app-store-badge.svg" alt="Download on the App Store" width="120" height="40" decoding="async">
+            </a>
+            <div class="hero-trust-row">
+                <span class="hero-trust-item">
+                    <svg class="hero-trust-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                    Free Download
+                </span>
+                <span class="hero-trust-item">
+                    <svg class="hero-trust-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                    No Accounts Required
+                </span>
+                <span class="hero-trust-item">
+                    <svg class="hero-trust-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                    Pure Offline Privacy
+                </span>
+            </div>
+        </div>
+        <div class="hero-map-col" aria-hidden="true">
+            <div class="hero-island-map" data-hero-island-map>
+                <div class="hero-island-map__viewport">
+                    <div class="hero-island-map__world">
+                        <img class="hero-island-map__base" src="images/onboarding-map.png" alt="" width="4096" height="4096" decoding="async">
+                        <div class="hero-island-map__spot" data-spot="puffin" style="left:2833.18px;top:1695.38px">
+                            <img src="images/spots/puffin.png" alt="" width="200" height="200" decoding="async">
+                        </div>
+                        <div class="hero-island-map__spot" data-spot="lodge" style="left:1741.25px;top:1519.72px">
+                            <img src="images/spots/lodge.png" alt="" width="200" height="200" decoding="async">
+                        </div>
+                        <div class="hero-island-map__spot" data-spot="cliff" style="left:1500.45px;top:2706.26px">
+                            <img src="images/spots/cliff.png" alt="" width="200" height="200" decoding="async">
+                        </div>
+                        <div class="hero-island-map__avatar" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONCEPT -->
+<section class="concept-section">
+    <div class="container">
+        <h2 class="story-title">Not a music player, but a living auditory world.</h2>
+        <p>
+            Designed to help you unplug, focus, or drift off to sleep, LonelyIsle offers a low-stimulation, lyrics-free escape from daily noise. Every sound naturally grows, fades, and blends based on exactly where you stand. When you aren't exploring, Lighthouse Radio aligns an uninterrupted, live white noise frequency with your local rhythm.
+        </p>
+    </div>
+</section>
+
+<!-- ISLANDS -->
+<section class="islands-section" id="islands">
+    <div class="container">
+        <h2 class="story-title">Islands to Explore</h2>
+        <p class="section-lead">Chart your own path with an intuitive virtual joystick, or let the island guide you along a preset coastal route. Switch instantly between a macro overview and intimate ASMR textures.</p>
+
+        <div class="islands-picker" data-islands-picker data-initial-island="ellidaey">
+            <div class="grid islands-grid" role="tablist" aria-label="Islands">
+                <button type="button" class="card island-card is-active" role="tab" data-island="ellidaey" aria-selected="true" id="island-tab-ellidaey" aria-controls="island-preview-panel">
+                    <img class="island-thumb" src="images/island-ellidaey.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                    <div class="island">Elliðaey</div>
+                    <div class="muted">Immerse yourself in cold polar winds, majestic cliffs, and the rhythmic crash of North Atlantic waves.</div>
+                </button>
+
+                <button type="button" class="card island-card" role="tab" data-island="twilight" aria-selected="false" id="island-tab-twilight" aria-controls="island-preview-panel">
+                    <img class="island-thumb" src="images/island-blue-hour.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                    <div class="island">Blue Hour</div>
+                    <div class="muted">A deep blue night featuring rain on glass, dim harbor lights, and the faint echo of distant foghorns.</div>
+                </button>
+
+                <button type="button" class="card island-card" role="tab" data-island="naoshima" aria-selected="false" id="island-tab-naoshima" aria-controls="island-preview-panel">
+                    <img class="island-thumb" src="images/island-naoshima.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                    <div class="island">Naoshima</div>
+                    <div class="muted">Wander sunlit shores filled with delicate wind chimes and the distant echo of summer fireworks.</div>
+                </button>
+
+                <button type="button" class="card island-card island-card--coming-soon" role="tab" data-island="heartreef" aria-selected="false" id="island-tab-heartreef">
+                    <img class="island-thumb" src="images/island-heart-reef.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+                    <div class="island">Heart Reef</div>
+                    <span class="island-card__badge">Coming soon</span>
+                    <div class="muted">A hidden heart of coral, waiting beneath the tide.</div>
+                </button>
+            </div>
+
+            <div class="islands-carousel" role="region" aria-label="Island bird's-eye maps">
+                <div class="islands-carousel__viewport">
+                    <div class="islands-carousel__track">
+                        <div class="islands-carousel__set">
+                            <div class="islands-carousel__card">
+                                <picture>
+                                    <source type="image/webp" srcset="images/islands/ellidaey-birdseye-1200w.webp">
+                                    <img src="images/islands/ellidaey-birdseye-1200w.png" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="islands-carousel__card">
+                                <picture>
+                                    <source type="image/webp" srcset="images/islands/twilight-birdseye-1200w.webp">
+                                    <img src="images/islands/twilight-birdseye-1200w.png" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="islands-carousel__card">
+                                <picture>
+                                    <source type="image/webp" srcset="images/islands/naoshima-birdseye-1200w.webp">
+                                    <img src="images/islands/naoshima-birdseye-1200w.png" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="islands-carousel__set" aria-hidden="true">
+                            <div class="islands-carousel__card">
+                                <picture>
+                                    <source type="image/webp" srcset="images/islands/ellidaey-birdseye-1200w.webp">
+                                    <img src="images/islands/ellidaey-birdseye-1200w.png" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="islands-carousel__card">
+                                <picture>
+                                    <source type="image/webp" srcset="images/islands/twilight-birdseye-1200w.webp">
+                                    <img src="images/islands/twilight-birdseye-1200w.png" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="islands-carousel__card">
+                                <picture>
+                                    <source type="image/webp" srcset="images/islands/naoshima-birdseye-1200w.webp">
+                                    <img src="images/islands/naoshima-birdseye-1200w.png" alt="" width="1200" height="900" loading="lazy" decoding="async">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="islands-preview" id="island-preview-panel" role="tabpanel" aria-labelledby="island-tab-ellidaey" tabindex="0">
+                <picture>
+                    <source class="islands-preview__source" type="image/webp" srcset="images/islands/ellidaey-birdseye-1200w.webp">
+                    <img class="islands-preview__media" src="images/islands/ellidaey-birdseye-1200w.png" alt="Elliðaey bird's-eye map with lodge, puffin, and cliff spots" width="1200" height="900" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LIGHTHOUSE RADIO -->
+<section class="lighthouse-radio-section" id="lighthouse-radio" aria-labelledby="lighthouse-radio-heading">
+    <div class="container">
+        <div class="lighthouse-radio-intro">
+            <h2 class="story-title" id="lighthouse-radio-heading">24H Lighthouse Radio</h2>
+            <p>A live, continuous ambient frequency aligned with your local day and night rhythm.</p>
+        </div>
+
+        <div class="lighthouse-radio-module">
+            <div class="radio-device">
+                <div class="radio-canvas" id="radio-canvas" data-segment="deepNight">
+                    <div class="radio-canvas__inner">
+                        <header class="radio-header">
+                            <h3 class="radio-header__title">Lighthouse Radio</h3>
+                            <div class="radio-header__subtitle-wrap" aria-live="polite">
+                                <p class="radio-header__subtitle is-active" data-subtitle="Polar winds tracing the sleeping dark.">Polar winds tracing the sleeping dark.</p>
+                                <p class="radio-header__subtitle" data-subtitle="First light breaking through the silver mist.">First light breaking through the silver mist.</p>
+                                <p class="radio-header__subtitle" data-subtitle="Inland hush—the day unfolding silently.">Inland hush—the day unfolding silently.</p>
+                                <p class="radio-header__subtitle" data-subtitle="Shifting tides under a suspended noon.">Shifting tides under a suspended noon.</p>
+                                <p class="radio-header__subtitle" data-subtitle="White noise fading into a sun-drenched shore.">White noise fading into a sun-drenched shore.</p>
+                                <p class="radio-header__subtitle" data-subtitle="Evening rain writing secrets on the glass.">Evening rain writing secrets on the glass.</p>
+                                <p class="radio-header__subtitle" data-subtitle="The day recedes, leaving only the horizon.">The day recedes, leaving only the horizon.</p>
+                                <p class="radio-header__subtitle" data-subtitle="The world is asleep. Let the hearth burn.">The world is asleep. Let the hearth burn.</p>
+                            </div>
+                        </header>
+
+                        <div class="lh-stage-wrap">
+                            <div class="lh-scene" id="lh-stage" role="button" tabindex="0" aria-label="Touch the lighthouse to send a ring of light">
+                                <svg class="lh-scene-svg" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <defs>
+                                        <linearGradient id="lh-shaft-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="var(--lh-color)"/>
+                                            <stop offset="100%" stop-color="var(--lh-accent)"/>
+                                        </linearGradient>
+                                        <linearGradient id="lh-base-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="var(--lh-color)"/>
+                                            <stop offset="100%" stop-color="var(--lh-accent)"/>
+                                        </linearGradient>
+                                        <radialGradient id="lh-ambient-grad" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="var(--lh-glow-stop)" stop-opacity="var(--lh-ambient-grad-center, 0.13)"/>
+                                            <stop offset="100%" stop-color="var(--lh-glow-stop)" stop-opacity="0"/>
+                                        </radialGradient>
+                                        <radialGradient id="lh-core-grad" cx="50%" cy="50%" r="50%">
+                                            <stop offset="0%" stop-color="var(--lh-core)" stop-opacity="var(--lh-core-grad-inner, 0.9)"/>
+                                            <stop offset="55%" stop-color="var(--lh-core)" stop-opacity="var(--lh-core-grad-mid, 0.24)"/>
+                                            <stop offset="100%" stop-color="var(--lh-core)" stop-opacity="0"/>
+                                        </radialGradient>
+                                        <linearGradient id="lh-beam-grad-l" x1="100%" y1="50%" x2="0%" y2="50%">
+                                            <stop offset="0%" stop-color="var(--lh-beam)" stop-opacity="1"/>
+                                            <stop offset="58%" stop-color="var(--lh-beam)" stop-opacity="0.38"/>
+                                            <stop offset="100%" stop-color="var(--lh-beam)" stop-opacity="0"/>
+                                        </linearGradient>
+                                        <linearGradient id="lh-beam-grad-r" x1="0%" y1="50%" x2="100%" y2="50%">
+                                            <stop offset="0%" stop-color="var(--lh-beam)" stop-opacity="1"/>
+                                            <stop offset="58%" stop-color="var(--lh-beam)" stop-opacity="0.38"/>
+                                            <stop offset="100%" stop-color="var(--lh-beam)" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <!-- Beams: SVG animateTransform rotates around lamp origin only -->
+                                    <g transform="translate(500 169)">
+                                        <g>
+                                            <animateTransform attributeName="transform" type="rotate" values="-10;10;-10" keyTimes="0;0.5;1" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+                                            <polygon class="lh-beam-polygon" points="-10,-7.36 -10,7.36 -500,46 -500,-46" fill="url(#lh-beam-grad-l)"/>
+                                            <polygon class="lh-beam-polygon" points="10,-7.36 10,7.36 500,46 500,-46" fill="url(#lh-beam-grad-r)"/>
+                                        </g>
+                                    </g>
+
+                                    <!-- Ambient glow at lamp -->
+                                    <g class="lh-ambient-wrap" transform="translate(500 169)">
+                                        <circle class="lh-ambient-circle" cx="0" cy="0" r="160" fill="url(#lh-ambient-grad)"/>
+                                    </g>
+
+                                    <!-- Water surface at base -->
+                                    <g class="lh-water-group" transform="translate(500 302)">
+                                        <rect class="lh-water-horizon" x="-120" y="0" width="240" height="1.5" rx="0.75"/>
+                                        <rect class="lh-water-line" x="-67" y="10" width="134" height="1" opacity="0.16"/>
+                                        <rect class="lh-water-line" x="-59" y="22" width="118" height="1" opacity="0.13"/>
+                                        <rect class="lh-water-line" x="-50" y="36" width="101" height="1" opacity="0.10"/>
+                                        <rect class="lh-water-line" x="-42" y="50" width="84" height="1" opacity="0.08"/>
+                                        <rect class="lh-water-line" x="-34" y="66" width="67" height="1" opacity="0.06"/>
+                                    </g>
+
+                                    <!-- Lighthouse tower -->
+                                    <g class="lh-tower-group" transform="translate(440 152)">
+                                        <rect x="52" y="0" width="16" height="8" rx="4" fill="var(--lh-color)"/>
+                                        <rect x="54" y="8" width="12" height="18" fill="rgba(255,255,255,0.03)" stroke="var(--lh-color)" stroke-width="2"/>
+                                        <rect x="48" y="26" width="24" height="4" rx="1" fill="var(--lh-color)"/>
+                                        <path d="M54 30 L66 30 L72 140 L48 140 Z" fill="url(#lh-shaft-grad)"/>
+                                        <line x1="48" y1="60" x2="72" y2="60" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+                                        <path d="M42 140 L78 140 L84 150 L36 150 Z" fill="url(#lh-base-grad)"/>
+                                    </g>
+
+                                    <!-- Lamp core (fixed origin, scale-only pulse) -->
+                                    <g class="lh-core-wrap" transform="translate(500 169)">
+                                        <g class="lh-core-halo-wrap">
+                                            <circle cx="0" cy="0" r="14" fill="url(#lh-core-grad)"/>
+                                        </g>
+                                        <circle class="lh-core-dot" cx="0" cy="0" r="3" fill="var(--lh-core)"/>
+                                    </g>
+
+                                    <g id="lh-ripples" transform="translate(500 169)"></g>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <p class="lh-hint">Touch the light for an echo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="radio-timeline" id="radio-timeline">
+                <div class="radio-timeline__rail" id="radio-timeline-rail" role="progressbar" aria-label="24-hour radio playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="radio-timeline__track" aria-hidden="true">
+                        <div class="radio-timeline__track-fill"></div>
+                    </div>
+                    <span class="radio-timeline__playhead" aria-hidden="true"></span>
+                    <div class="radio-timeline__segments" role="list" aria-label="24-hour radio schedule">
+                        <div class="radio-timeline__btn" role="listitem" data-segment="deepNight" aria-label="Deep Night, 1:45 AM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">1:45</span>
+                        </div>
+                        <div class="radio-timeline__btn" role="listitem" data-segment="preDawn" aria-label="Pre-Dawn, 4:30 AM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">4:30</span>
+                        </div>
+                        <div class="radio-timeline__btn" role="listitem" data-segment="morning" aria-label="Morning, 7:30 AM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">7:30</span>
+                        </div>
+                        <div class="radio-timeline__btn" role="listitem" data-segment="midday" aria-label="Midday, 11:00 AM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">11:00</span>
+                        </div>
+                        <div class="radio-timeline__btn" role="listitem" data-segment="afternoon" aria-label="Afternoon, 2:00 PM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">2:00 PM</span>
+                        </div>
+                        <div class="radio-timeline__btn" role="listitem" data-segment="eveningRain" aria-label="Evening Rain, 5:00 PM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">5:00 PM</span>
+                        </div>
+                        <div class="radio-timeline__btn" role="listitem" data-segment="dusk" aria-label="Dusk, 7:15 PM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">7:15 PM</span>
+                        </div>
+                        <div class="radio-timeline__btn" role="listitem" data-segment="hearth" aria-label="Hearth, 11:00 PM" aria-current="false">
+                            <span class="radio-timeline__marker" aria-hidden="true"><span class="radio-timeline__dot"></span></span>
+                            <span class="radio-timeline__time">11:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOUND ART LAB (static gallery) -->
+<section class="sound-art-lab-section" id="sound-art-lab" aria-labelledby="sound-art-lab-heading">
+    <div class="container">
+        <div class="sound-art-lab-intro">
+            <h2 class="story-title" id="sound-art-lab-heading">Sound, made visible.</h2>
+            <p>Playful, quiet Frequency experiments from LonelyIsle—visual glimpses of scenes that live fully in the app.</p>
+        </div>
+
+        <div class="sound-lab-grid" role="list" aria-label="Sound Art Lab scenes">
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="bath"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Floating Sound Bath</h3>
+                        <span class="sound-lab-card__badge">Relax</span>
+                    </div>
+                    <p class="sound-lab-card__desc">Watch a cozy koala snooze deeply on open water, accompanied by the grounding resonance of Tibetan singing bowls.</p>
+                </div>
+            </article>
+
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="piano"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Piano Sea</h3>
+                        <span class="sound-lab-card__badge">Focus</span>
+                    </div>
+                    <p class="sound-lab-card__desc">A dreamy piano melody where each note visually triggers a glowing jellyfish to float up from the deep sea.</p>
+                </div>
+            </article>
+
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="bubble"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Bubble Pop</h3>
+                        <span class="sound-lab-card__badge">Chill</span>
+                    </div>
+                    <p class="sound-lab-card__desc">Refreshing bubbles rise from a striped straw, creating a crisp, highly satisfying ASMR crackle.</p>
+                </div>
+            </article>
+
+            <article class="sound-lab-card" role="listitem">
+                <div class="sound-lab-card__stage" aria-hidden="true">
+                    <canvas class="sound-lab-card__canvas" data-sound-lab-preview="cloud"></canvas>
+                </div>
+                <div class="sound-lab-card__body">
+                    <div class="sound-lab-card__meta">
+                        <h3 class="sound-lab-card__title">Cloud Slumber</h3>
+                        <span class="sound-lab-card__badge">Warmth</span>
+                    </div>
+                    <p class="sound-lab-card__desc">A resting cat drifts on a soft cloud in daylight, wrapped in a deep, soothing purr.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- STORY: RESIDENT ID -->
+<section class="story-section story-section--alt">
+    <div class="container">
+        <div class="story-row">
+            <div class="story-content">
+                <div class="story-label">Permanent Belonging</div>
+                <h2 class="story-title">Claim Your Resident ID</h2>
+                <p class="story-p">
+                    Become a certified part of the archipelago. Mint your permanent identity card with a curated set of vintage avatars or upload your own custom photo. Complete with a unique registered timestamp, it serves as your digital anchor to this quiet world.
+                </p>
+            </div>
+            <div class="story-visual" aria-hidden="true">
+                <div class="resident-id-showcase">
+                    <article class="resident-id-card">
+                        <header class="resident-id-card__header">
+                            <h3 class="resident-id-card__title">LonelyIsle Resident</h3>
+                            <img class="resident-id-card__app-icon" src="icon.png" alt="" width="16" height="16" decoding="async">
+                        </header>
+                        <div class="resident-id-card__body">
+                            <div class="resident-id-card__portrait">
+                                <picture>
+                                    <source type="image/webp" srcset="images/islander-portrait-1-168w.webp">
+                                    <img src="images/islander-portrait-1.png" alt="" width="168" height="252" decoding="async">
+                                </picture>
+                            </div>
+                            <div class="resident-id-card__fields">
+                                <div class="resident-id-card__field">
+                                    <span class="resident-id-card__label">Identity</span>
+                                    <span class="resident-id-card__value">Islander.071126</span>
+                                </div>
+                                <div class="resident-id-card__field">
+                                    <span class="resident-id-card__label">Origin Gate</span>
+                                    <span class="resident-id-card__value">Space.Station</span>
+                                </div>
+                                <div class="resident-id-card__field">
+                                    <span class="resident-id-card__label">Status</span>
+                                    <span class="resident-id-card__value">Free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="resident-id-card__footer">
+                            <div class="resident-id-card__barcode" aria-hidden="true">
+                                <span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:4"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:4"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:4"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:2"></span>
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STORY: CONTINUITY -->
+<section class="story-section">
+    <div class="container">
+        <div class="story-row story-row--reverse">
+            <div class="story-content">
+                <div class="story-label">Seamless Flow</div>
+                <h2 class="story-title">Uninterrupted Continuity</h2>
+                <p class="story-p">
+                    Your immersion shouldn't break when you leave the app. Whether your device is locked or you are multi-tasking across other tools, full background playback keeps your island experience entirely alive. View your real-time exploration status or Lighthouse Radio frequencies at a glance via Live Activities and the Dynamic Island—maintaining a continuous, responsive shield against daily noise.
+                </p>
+            </div>
+            <div class="story-visual" aria-hidden="true">
+                <div class="live-activity-showcase">
+                    <div class="live-activity-demo" data-live-activity-demo role="img" aria-label="iPhone alternating home screen Dynamic Island and lock screen Live Activity">
+                        <div class="live-activity-stage">
+                            <div class="live-activity-scene live-activity-scene--home is-active" data-live-scene="home">
+                                <div class="live-activity-phone">
+                                    <div class="live-activity-screen">
+                                        <div class="live-activity-wallpaper live-activity-wallpaper--home" aria-hidden="true"></div>
+
+                                        <div class="live-activity-statusbar">
+                                            <span class="live-activity-time">9:41</span>
+                                            <div class="live-activity-statusbar__icons" aria-hidden="true">
+                                                <svg class="live-activity-statusbar__icon live-activity-statusbar__icon--signal" viewBox="0 0 19 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="0.9" fill="currentColor"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="0.9" fill="currentColor"/><rect x="9" y="3" width="3" height="9" rx="0.9" fill="currentColor"/><rect x="13.5" y="0" width="3" height="12" rx="0.9" fill="currentColor"/></svg>
+                                                <svg class="live-activity-statusbar__icon live-activity-statusbar__icon--wifi" viewBox="0 0 17 12" aria-hidden="true"><path d="M8.5 10.6c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2Z" fill="currentColor"/><path d="M4.2 7.4a5.8 5.8 0 018.6 0" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/><path d="M1.4 4.7a9.4 9.4 0 0114.2 0" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/><path d="M8.5 8.8a2.6 2.6 0 013.7 0" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/></svg>
+                                                <svg class="live-activity-statusbar__icon live-activity-statusbar__icon--battery" viewBox="0 0 27 13" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="11.5" rx="3.1" fill="none" stroke="currentColor" stroke-width="1.15"/><rect x="24.1" y="4.1" width="2.15" height="4.8" rx="0.9" fill="currentColor" opacity="0.42"/><rect x="2.2" y="2.2" width="17.2" height="8.6" rx="2" fill="currentColor"/></svg>
+                                            </div>
+                                        </div>
+
+                                        <div class="live-activity-di" aria-hidden="true">
+                                            <img class="live-activity-di__thumb" data-la-thumb src="images/island-ellidaey.png" alt="" width="18" height="18" decoding="async">
+                                            <span class="live-activity-di__label" data-la-compact>Ellidaey</span>
+                                        </div>
+
+                                        <div class="live-activity-homescreen" aria-hidden="true">
+                                            <div class="live-activity-apps">
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--calendar"></span><span class="live-activity-app__name">Calendar</span></div>
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--photos"></span><span class="live-activity-app__name">Photos</span></div>
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--mail"></span><span class="live-activity-app__name">Mail</span></div>
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--maps"></span><span class="live-activity-app__name">Maps</span></div>
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--notes"></span><span class="live-activity-app__name">Notes</span></div>
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--weather"></span><span class="live-activity-app__name">Weather</span></div>
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--music"></span><span class="live-activity-app__name">Music</span></div>
+                                                <div class="live-activity-app"><span class="live-activity-app__icon live-activity-app__icon--settings"></span><span class="live-activity-app__name">Settings</span></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="live-activity-dock" aria-hidden="true">
+                                            <span class="live-activity-dock__icon live-activity-dock__icon--phone"></span>
+                                            <span class="live-activity-dock__icon live-activity-dock__icon--safari"></span>
+                                            <span class="live-activity-dock__icon live-activity-dock__icon--messages"></span>
+                                            <span class="live-activity-dock__icon live-activity-dock__icon--lonelyisle"></span>
+                                        </div>
+
+                                        <div class="live-activity-home-bar" aria-hidden="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="live-activity-scene live-activity-scene--lock" data-live-scene="lock">
+                                <div class="live-activity-phone">
+                                    <div class="live-activity-screen">
+                                        <div class="live-activity-wallpaper live-activity-wallpaper--lock" aria-hidden="true"></div>
+
+                                        <div class="live-activity-statusbar">
+                                            <span class="live-activity-time">9:41</span>
+                                            <div class="live-activity-statusbar__icons" aria-hidden="true">
+                                                <svg class="live-activity-statusbar__icon live-activity-statusbar__icon--signal" viewBox="0 0 19 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx="0.9" fill="currentColor"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="0.9" fill="currentColor"/><rect x="9" y="3" width="3" height="9" rx="0.9" fill="currentColor"/><rect x="13.5" y="0" width="3" height="12" rx="0.9" fill="currentColor"/></svg>
+                                                <svg class="live-activity-statusbar__icon live-activity-statusbar__icon--wifi" viewBox="0 0 17 12" aria-hidden="true"><path d="M8.5 10.6c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2.5 1.2 1.2 1.2Z" fill="currentColor"/><path d="M4.2 7.4a5.8 5.8 0 018.6 0" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/><path d="M1.4 4.7a9.4 9.4 0 0114.2 0" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/><path d="M8.5 8.8a2.6 2.6 0 013.7 0" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round"/></svg>
+                                                <svg class="live-activity-statusbar__icon live-activity-statusbar__icon--battery" viewBox="0 0 27 13" aria-hidden="true"><rect x="0.75" y="0.75" width="22.5" height="11.5" rx="3.1" fill="none" stroke="currentColor" stroke-width="1.15"/><rect x="24.1" y="4.1" width="2.15" height="4.8" rx="0.9" fill="currentColor" opacity="0.42"/><rect x="2.2" y="2.2" width="17.2" height="8.6" rx="2" fill="currentColor"/></svg>
+                                            </div>
+                                        </div>
+
+                                        <div class="live-activity-lock-clock-wrap" aria-hidden="true">
+                                            <p class="live-activity-lock-clock">9:41</p>
+                                            <p class="live-activity-lock-date">Friday, July 10</p>
+                                        </div>
+
+                                        <div class="live-activity-la-card">
+                                            <img class="live-activity-la-card__thumb" data-la-thumb src="images/island-ellidaey.png" alt="" width="44" height="44" decoding="async">
+                                            <div class="live-activity-la-card__text">
+                                                <span class="live-activity-la-card__title" data-la-title>Ellidaey</span>
+                                                <span class="live-activity-la-card__subtitle" data-la-subtitle>Listening to the island</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="live-activity-home-bar" aria-hidden="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IPAD / MINIMAL CANVAS -->
+<section class="ipad-canvas-section">
+    <div class="container">
+        <div class="ipad-canvas-row">
+            <div class="ipad-canvas-copy">
+                <div class="story-label">Ambient Canvas</div>
+                <h2 class="story-title">Designed to disappear</h2>
+                <p>
+                    Fully optimized for both portrait and landscape modes on iPad, LonelyIsle serves as a beautiful, minimalist canvas for your desktop setup. Running silently beside your workspace or fading into the background of your day, it provides a low-stimulation, lyrics-free acoustic space to help you stay in your zone longer.
+                </p>
+            </div>
+            <div class="ipad-canvas-showcase" aria-hidden="true">
+                <div class="ipad-canvas-stack">
+                    <div class="ipad-device ipad-device--portrait ipad-device--back">
+                        <div class="ipad-device__screen">
+                            <picture>
+                                <source type="image/webp" srcset="images/islands/twilight-birdseye-1200w.webp">
+                                <img src="images/islands/twilight-birdseye-1200w.png" alt="" width="1200" height="900" decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="ipad-device ipad-device--landscape ipad-device--front">
+                        <div class="ipad-device__screen">
+                            <picture>
+                                <source type="image/webp" srcset="images/islands/ellidaey-birdseye-1200w.webp">
+                                <img src="images/islands/ellidaey-birdseye-ipad.png" alt="" width="1366" height="1024" decoding="async">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STORY: PRIVACY -->
+<section class="story-section story-section--alt story-section--privacy">
+    <div class="container">
+        <div class="story-content">
+            <h2 class="story-title">Zero Noise. Pure Privacy.</h2>
+            <p class="story-p">
+                LonelyIsle is built entirely offline-first to protect your headspace. No tracking scripts, no analytics, and no accounts required. Free from intrusive ads, pop-ups, and gamified dopamine loops, your sanctuary remains entirely yours—safe, quiet, and stored strictly on your device.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 120px 0 160px; text-align: center; position: relative; border-top: 1px solid rgba(255,255,255,0.02); background: radial-gradient(circle at bottom, rgba(232, 238, 247, 0.015) 0%, rgba(7, 10, 15, 0) 60%);">
+    <div class="container" style="max-width: 640px;">
+        
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 4px 12px; border-radius: 999px; margin-bottom: 28px;">
+            <span style="width: 5px; height: 5px; background: #4CD964; border-radius: 50%; box-shadow: 0 0 6px #4CD964; display: inline-block;"></span>
+            <span style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.6; font-weight: 500;">Terminal: Ready for Check-in</span>
+        </div>
+
+        <h2 style="font-size: 38px; font-weight: 500; margin: 0 0 18px; color: #FFF; letter-spacing: -1px;">Step Inside the Sanctuary</h2>
+        
+        <p style="margin: 0 auto 36px; line-height: 1.7; font-size: 16px; opacity: 0.7;" class="muted">
+            Whether to shield your morning deep focus from office noise, or to guide an overactive mind into a deep, uninterrupted sleep. Your digital anchor beyond the horizon is waiting.
+        </p>
+        
+        <a class="cta cta--bottom" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer" aria-label="Claim Your Passport to LonelyIsle">
+            <span class="cta__label cta__label--short" aria-hidden="true">Get LonelyIsle</span>
+            <span class="cta__label cta__label--long" aria-hidden="true">Claim Your Passport to LonelyIsle</span>
+        </a>
+        
+        <div class="hero-trust-row">
+            <span class="hero-trust-item">
+                <svg class="hero-trust-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                Free Download
+            </span>
+            <span class="hero-trust-item">
+                <svg class="hero-trust-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                No Accounts Required
+            </span>
+            <span class="hero-trust-item">
+                <svg class="hero-trust-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                Pure Offline Privacy
+            </span>
+        </div>
+        
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <nav class="footer-links" aria-label="Legal and support">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms-of-service.html">Terms</a>
+                    <a href="support.html">Support</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="creators.html">Creators</a>
+                    <a href="soundscape/">Soundscapes</a>
+                </nav>
+                <span class="footer-top__divider" aria-hidden="true"></span>
+                <div class="footer-social">
+                    <span class="footer-social__label">Follow Us</span>
+                    <div class="footer-social__links">
+                        <a class="footer-social__link" href="https://www.youtube.com/@LonelyIsleAmbientSounds" target="_blank" rel="noopener noreferrer" aria-label="YouTube — @LonelyIsleAmbientSounds">
+                            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a class="footer-social__link" href="https://www.tiktok.com/@louisbuildsstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok — @louisbuildsstudio">
+                            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        </a>
+                        <a class="footer-social__link" href="https://www.instagram.com/lonelyisleambientsounds/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — @lonelyisleambientsounds">
+                            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-meta">&copy; 2026 LonelyIsle</p>
+                <p class="footer-meta">A product by Louis &middot; <a class="footer-home-link" href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="site-header.js" defer></script>
+<script src="lighthouse-radio.js" defer></script>
+<script src="hero-island-map.js" defer></script>
+<script src="islands-picker.js" defer></script>
+<script src="live-activity-demo.js" defer></script>
+<script src="sound-lab-previews.js" defer></script>
+</body>
+</html>

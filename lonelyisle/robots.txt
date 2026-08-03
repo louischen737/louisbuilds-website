@@ -1,0 +1,13 @@
+# robots.txt for LonelyIsle — https://louisbuilds.me/lonelyisle/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://louisbuilds.me/lonelyisle/sitemap.xml
+
+# Optional non-page resources
+Disallow: /*.md
+Disallow: /*.sh
+Disallow: /partner-demo.html
+Disallow: /videos/partner-demo/
