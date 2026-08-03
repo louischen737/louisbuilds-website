@@ -1,6 +1,6 @@
 /* LonelyIsle partners page — aligned with site shell (#070A0F) */
 
-.partners-page {
+:is(.partners-page, .creators-page) {
     --partners-bg: #070A0F;
     --partners-bg-soft: rgba(255, 255, 255, 0.015);
     --partners-card: rgba(255, 255, 255, 0.03);
@@ -15,7 +15,7 @@
     --partners-max: 1100px;
 }
 
-.partners-page {
+:is(.partners-page, .creators-page) {
     margin: 0;
     background: var(--partners-bg);
     color: var(--partners-text);
@@ -24,12 +24,12 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.partners-page a {
+:is(.partners-page, .creators-page) a {
     color: inherit;
     text-decoration: none;
 }
 
-.partners-page img {
+:is(.partners-page, .creators-page) img {
     display: block;
     max-width: 100%;
 }
@@ -39,12 +39,12 @@
     margin: 0 auto;
 }
 
-.partners-page .site-header__nav {
+:is(.partners-page, .creators-page) .site-header__nav {
     display: none;
 }
 
 @media (min-width: 769px) {
-    .partners-page .site-header__nav {
+    :is(.partners-page, .creators-page) .site-header__nav {
         display: flex;
     }
 }
@@ -180,7 +180,7 @@
     color: var(--partners-cta-ink);
 }
 
-.partners-page a.partners-btn--primary {
+:is(.partners-page, .creators-page) a.partners-btn--primary {
     color: var(--partners-cta-ink);
 }
 
@@ -188,7 +188,7 @@
     background: #F4F7FB;
 }
 
-.partners-page a.partners-btn--primary:hover {
+:is(.partners-page, .creators-page) a.partners-btn--primary:hover {
     color: var(--partners-cta-ink);
 }
 
@@ -624,30 +624,30 @@
     text-decoration-color: rgba(232, 238, 247, 0.35);
 }
 
-.partners-page a.partners-footer-contact__mail {
+:is(.partners-page, .creators-page) a.partners-footer-contact__mail {
     color: var(--partners-secondary);
 }
 
 .partners-footer-contact__mail:hover,
-.partners-page a.partners-footer-contact__mail:hover {
+:is(.partners-page, .creators-page) a.partners-footer-contact__mail:hover {
     color: var(--partners-text);
     text-decoration-color: rgba(232, 238, 247, 0.7);
 }
 
 /* Shared footer (match index) */
 
-.partners-page footer {
+:is(.partners-page, .creators-page) footer {
     padding: 40px 0 48px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.partners-page .footer-inner {
+:is(.partners-page, .creators-page) .footer-inner {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.partners-page .footer-top {
+:is(.partners-page, .creators-page) .footer-top {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -656,58 +656,58 @@
     width: 100%;
 }
 
-.partners-page .footer-links {
+:is(.partners-page, .creators-page) .footer-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px 20px;
 }
 
-.partners-page .footer-links a {
+:is(.partners-page, .creators-page) .footer-links a {
     color: rgba(232, 238, 247, 0.55);
     font-size: 13px;
     transition: color 0.2s ease;
 }
 
-.partners-page .footer-links a:hover {
+:is(.partners-page, .creators-page) .footer-links a:hover {
     color: #E8EEF7;
 }
 
-.partners-page .footer-top__divider {
+:is(.partners-page, .creators-page) .footer-top__divider {
     width: 1px;
     height: 14px;
     background: rgba(255, 255, 255, 0.12);
 }
 
-.partners-page .footer-social {
+:is(.partners-page, .creators-page) .footer-social {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-left: auto;
 }
 
-.partners-page .footer-social__label {
+:is(.partners-page, .creators-page) .footer-social__label {
     font-size: 12px;
     color: rgba(232, 238, 247, 0.4);
 }
 
-.partners-page .footer-social__links {
+:is(.partners-page, .creators-page) .footer-social__links {
     display: flex;
     gap: 10px;
 }
 
-.partners-page .footer-social__icon {
+:is(.partners-page, .creators-page) .footer-social__icon {
     width: 18px;
     height: 18px;
     fill: rgba(232, 238, 247, 0.55);
     transition: fill 0.2s ease;
 }
 
-.partners-page .footer-social__link:hover .footer-social__icon {
+:is(.partners-page, .creators-page) .footer-social__link:hover .footer-social__icon {
     fill: #E8EEF7;
 }
 
-.partners-page .footer-bottom {
+:is(.partners-page, .creators-page) .footer-bottom {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 20px 48px;
@@ -715,7 +715,7 @@
     width: 100%;
 }
 
-.partners-page .footer-bottom__col {
+:is(.partners-page, .creators-page) .footer-bottom__col {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -723,33 +723,33 @@
     min-width: 0;
 }
 
-.partners-page .footer-bottom__col--end {
+:is(.partners-page, .creators-page) .footer-bottom__col--end {
     align-items: flex-end;
     text-align: right;
 }
 
-.partners-page .footer-meta {
+:is(.partners-page, .creators-page) .footer-meta {
     margin: 0;
     font-size: 12px;
     line-height: 1.55;
     color: rgba(232, 238, 247, 0.4);
 }
 
-.partners-page .footer-meta--tagline {
+:is(.partners-page, .creators-page) .footer-meta--tagline {
     max-width: 22rem;
     font-size: 13px;
     color: var(--partners-muted);
 }
 
-.partners-page .footer-meta--contact-label {
+:is(.partners-page, .creators-page) .footer-meta--contact-label {
     color: rgba(232, 238, 247, 0.48);
 }
 
-.partners-page .footer-home-link {
+:is(.partners-page, .creators-page) .footer-home-link {
     color: rgba(232, 238, 247, 0.55);
 }
 
-.partners-page .footer-home-link:hover {
+:is(.partners-page, .creators-page) .footer-home-link:hover {
     color: #E8EEF7;
 }
 
@@ -850,26 +850,26 @@
         margin-bottom: 28px;
     }
 
-    .partners-page .footer-top {
+    :is(.partners-page, .creators-page) .footer-top {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .partners-page .footer-social {
+    :is(.partners-page, .creators-page) .footer-social {
         margin-left: 0;
     }
 
-    .partners-page .footer-bottom {
+    :is(.partners-page, .creators-page) .footer-bottom {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .partners-page .footer-bottom__col--end {
+    :is(.partners-page, .creators-page) .footer-bottom__col--end {
         align-items: flex-start;
         text-align: left;
     }
 
-    .partners-page .footer-top__divider {
+    :is(.partners-page, .creators-page) .footer-top__divider {
         display: none;
     }
 }
