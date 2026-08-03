@@ -1,5 +1,8 @@
 .islands-picker {
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .island-card {
@@ -46,88 +49,38 @@
     text-transform: uppercase;
 }
 
-.islands-picker.islands-picker--preview-hidden .islands-preview {
-    display: none;
-}
-
 .islands-preview {
-    margin-top: 24px;
+    display: block;
+    position: relative;
+    margin: 4px auto 0;
+    width: min(100%, 800px);
+    aspect-ratio: 4 / 3;
+    min-height: 220px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.02);
-    aspect-ratio: 1366 / 1024;
-    max-width: 100%;
 }
 
-.islands-preview__media {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.islands-carousel {
+.islands-picker.islands-picker--preview-hidden .islands-preview,
+.islands-preview[hidden] {
     display: none;
 }
 
-.islands-carousel__viewport {
-    container-type: inline-size;
-    width: 100%;
-    overflow: hidden;
-}
-
-.islands-carousel__track {
-    display: flex;
-    width: max-content;
-    animation: islands-carousel-scroll 48s linear infinite;
-}
-
-.islands-carousel__set {
-    display: flex;
-    flex-shrink: 0;
-    gap: 4px;
-}
-
-.islands-carousel__card {
-    flex: 0 0 clamp(480px, 68cqw, 720px);
-    width: clamp(480px, 68cqw, 720px);
-    border: none;
-    border-radius: 12px;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-}
-
-.islands-carousel__card picture {
+.islands-preview picture,
+.islands-preview__media {
+    position: absolute;
+    inset: 0;
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.islands-carousel__card img {
-    display: block;
-    width: 100%;
-    height: 100%;
+.islands-preview__media {
     object-fit: cover;
 }
 
-@keyframes islands-carousel-scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
 @media (min-width: 769px) {
-    .islands-picker {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
     .islands-picker .islands-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -154,21 +107,10 @@
         font-size: 13px;
         line-height: 1.4;
     }
-
-    .islands-preview {
-        display: none;
-    }
-
-    .islands-carousel {
-        display: block;
-        margin-top: 4px;
-    }
 }
 
 @media (max-width: 768px) {
     .islands-picker {
-        display: flex;
-        flex-direction: column;
         gap: 16px;
     }
 
@@ -186,47 +128,10 @@
     .islands-picker .island-card {
         flex: 0 0 min(72vw, 260px);
         scroll-snap-align: start;
-        cursor: default;
-    }
-
-    .islands-picker .island-card:hover {
-        border-color: rgba(255, 255, 255, 0.08);
-        background: rgba(255, 255, 255, 0.02);
-    }
-
-    .islands-picker .island-card.is-active {
-        border-color: rgba(255, 255, 255, 0.08);
-        background: rgba(255, 255, 255, 0.02);
-        box-shadow: none;
     }
 
     .islands-preview {
-        display: none;
-    }
-
-    .islands-carousel {
-        display: block;
-        margin-top: 0;
-    }
-
-    .islands-carousel__card {
-        flex: 0 0 clamp(240px, 72vw, 320px);
-        width: clamp(240px, 72vw, 320px);
-        border-radius: 10px;
-    }
-
-    .islands-carousel__track {
-        animation-duration: 36s;
-    }
-
-    .islands-picker.islands-picker--preview-hidden .islands-grid {
-        display: flex;
-        overflow-x: auto;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .islands-carousel__track {
-        animation: none;
+        width: 100%;
+        border-radius: 12px;
     }
 }

@@ -1,12 +1,6 @@
 (function () {
     'use strict';
 
-    var MOBILE_MQ = window.matchMedia('(max-width: 768px)');
-
-    function isMobileView() {
-        return MOBILE_MQ.matches;
-    }
-
     var ISLANDS = {
         ellidaey: {
             label: 'Elliðaey bird\u2019s-eye map with lodge, puffin, and cliff spots',
@@ -29,6 +23,30 @@
         }
     };
 
+    function showPreview(root, preview) {
+        root.classList.remove('islands-picker--preview-hidden');
+        preview.hidden = false;
+        preview.removeAttribute('aria-hidden');
+    }
+
+    function hidePreview(root, preview) {
+        root.classList.add('islands-picker--preview-hidden');
+        preview.hidden = true;
+        preview.setAttribute('aria-hidden', 'true');
+    }
+
+    function updateMedia(preview, data) {
+        var picture = preview.querySelector('picture');
+        if (!picture) {
+            return;
+        }
+
+        picture.innerHTML =
+            '<source class="islands-preview__source" type="image/webp" srcset="' + data.webp + '">' +
+            '<img class="islands-preview__media" src="' + data.png + '" alt="' + data.label.replace(/"/g, '&quot;') +
+            '" width="1200" height="900" decoding="async">';
+    }
+
     function setActive(root, cards, preview, islandId) {
         var data = ISLANDS[islandId];
         if (!data) {
@@ -42,41 +60,14 @@
         });
 
         if (data.comingSoon) {
-            root.classList.add('islands-picker--preview-hidden');
-            preview.setAttribute('aria-hidden', 'true');
-            preview.setAttribute('hidden', 'hidden');
+            hidePreview(root, preview);
             return;
         }
 
-        root.classList.remove('islands-picker--preview-hidden');
-        preview.removeAttribute('aria-hidden');
-        preview.removeAttribute('hidden');
+        showPreview(root, preview);
         preview.setAttribute('aria-labelledby', 'island-tab-' + islandId);
-
-        var img = preview.querySelector('.islands-preview__media');
-        var source = preview.querySelector('.islands-preview__source');
-
-        if (source) {
-            source.srcset = data.webp;
-        }
-        if (img) {
-            img.src = data.png;
-            img.alt = data.label;
-        }
         preview.setAttribute('aria-label', data.label);
-    }
-
-    function hidePreview(root, preview) {
-        root.classList.add('islands-picker--preview-hidden');
-        preview.setAttribute('aria-hidden', 'true');
-        preview.setAttribute('hidden', 'hidden');
-    }
-
-    function clearCardSelection(cards) {
-        cards.forEach(function (card) {
-            card.classList.remove('is-active');
-            card.setAttribute('aria-selected', 'false');
-        });
+        updateMedia(preview, data);
     }
 
     function initIslandsPicker(root) {
@@ -86,39 +77,15 @@
             return;
         }
 
-        var currentIsland = root.getAttribute('data-initial-island') || 'ellidaey';
-
-        function select(islandId) {
-            currentIsland = islandId;
-            setActive(root, cards, preview, islandId);
-        }
-
-        function applyLayout() {
-            if (isMobileView()) {
-                hidePreview(root, preview);
-                clearCardSelection(cards);
-                return;
-            }
-
-            select(currentIsland);
-        }
+        var initial = root.getAttribute('data-initial-island') || 'ellidaey';
 
         cards.forEach(function (card) {
             card.addEventListener('click', function () {
-                if (isMobileView()) {
-                    return;
-                }
-                select(card.getAttribute('data-island'));
+                setActive(root, cards, preview, card.getAttribute('data-island'));
             });
         });
 
-        if (typeof MOBILE_MQ.addEventListener === 'function') {
-            MOBILE_MQ.addEventListener('change', applyLayout);
-        } else if (typeof MOBILE_MQ.addListener === 'function') {
-            MOBILE_MQ.addListener(applyLayout);
-        }
-
-        applyLayout();
+        setActive(root, cards, preview, initial);
     }
 
     function boot() {
