@@ -2,3 +2,9 @@
 *.log
 node_modules/
 .env
+
+# LonelyIsle full-length soundscape masters (site serves 30s previews)
+lonelyisle/soundscape/audio/_full/
+
+# Large partner-demo master (kept locally; not used by site pages)
+lonelyisle/videos/partner-demo/naoshima-commercial.mp4

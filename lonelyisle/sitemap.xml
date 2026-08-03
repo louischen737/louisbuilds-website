@@ -41,6 +41,11 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://louisbuilds.me/lonelyisle/support.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -54,5 +59,100 @@
         <loc>https://louisbuilds.me/lonelyisle/terms-of-service.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/birds.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/bubble-pop.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/cloud-slumber.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/countryside.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/dusk.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/fireplace.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/fireworks.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/floating-sound-bath.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/foghorn.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/footsteps.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/fountain.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/harbor.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/japanese-fight.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/ocean-waves.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/piano-sea.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/polar-wind.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/soft-rain.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/water-echo.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/lonelyisle/soundscape/wind-chime.html</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
     </url>
 </urlset>
