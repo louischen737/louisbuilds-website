@@ -1,0 +1,899 @@
+/* LonelyIsle Our Plans — journey-first, not a pricing table */
+
+.plans-page {
+    --plans-bg: #070A0F;
+    --plans-text: #E8EEF7;
+    --plans-secondary: rgba(232, 238, 247, 0.72);
+    --plans-muted: rgba(232, 238, 247, 0.48);
+    --plans-faint: rgba(232, 238, 247, 0.28);
+    --plans-line: rgba(255, 255, 255, 0.08);
+    --plans-cta: #E8EEF7;
+    --plans-cta-ink: #070A0F;
+    --plans-max: 1080px;
+    --plans-check: #4CD964;
+    margin: 0;
+    background: var(--plans-bg);
+    color: var(--plans-text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+.plans-page a:not(.plans-btn) {
+    color: inherit;
+    text-decoration: none;
+}
+
+.plans-wrap {
+    width: min(calc(100% - 48px), var(--plans-max));
+    margin: 0 auto;
+}
+
+.plans-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+a.plans-btn--primary,
+a.plans-btn--primary:link,
+a.plans-btn--primary:visited {
+    background: var(--plans-cta);
+    color: var(--plans-cta-ink);
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+a.plans-btn--primary:hover {
+    background: #fff;
+    color: var(--plans-cta-ink);
+    text-decoration: none;
+}
+
+a.plans-btn--ghost,
+a.plans-btn--ghost:link,
+a.plans-btn--ghost:visited {
+    background: transparent;
+    color: var(--plans-text);
+    border: 1px solid rgba(232, 238, 247, 0.22);
+    text-decoration: none;
+}
+
+a.plans-btn--ghost:hover {
+    border-color: rgba(232, 238, 247, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--plans-text);
+    text-decoration: none;
+}
+
+/* —— Hero: full-width sea + right lighthouse composition —— */
+
+.plans-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: var(--site-header-height, 60px) 0 0;
+    overflow: hidden;
+    background: #05070C;
+}
+
+.plans-hero__scene {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.plans-hero__sky {
+    position: absolute;
+    inset: 0;
+    /* Smooth sky — avoid a mid-page band that reads as a second sea */
+    background:
+        radial-gradient(ellipse 38% 30% at 74% 52%, rgba(160, 176, 196, 0.09) 0%, transparent 66%),
+        linear-gradient(180deg, #020407 0%, #071018 70%, #091420 88%, #070A0F 100%);
+}
+
+.plans-hero__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.plans-hero__star {
+    opacity: 0.35;
+    animation: plans-twinkle 3.6s ease-in-out infinite;
+}
+
+.plans-hero__star--2 { animation-delay: -0.8s; animation-duration: 4.2s; }
+.plans-hero__star--3 { animation-delay: -1.6s; animation-duration: 3.1s; }
+.plans-hero__star--4 { animation-delay: -2.4s; animation-duration: 4.8s; }
+.plans-hero__star--5 { animation-delay: -1.1s; animation-duration: 3.9s; }
+
+.plans-hero__ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: plans-ripple 4.8s cubic-bezier(0.22, 0.55, 0.3, 1) infinite;
+    will-change: transform, opacity;
+}
+
+.plans-hero__ring--2 {
+    animation-delay: -1.6s;
+}
+
+.plans-hero__ring--3 {
+    animation-delay: -3.2s;
+}
+
+.plans-hero__motif {
+    animation: plans-isle-drift 24s ease-in-out infinite;
+}
+
+.plans-hero__art {
+    transform-box: view-box;
+    transform-origin: 0 0;
+}
+
+.plans-hero__horizon {
+    animation: plans-horizon-pulse 10s ease-in-out infinite;
+}
+
+.plans-hero__fade {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(5, 7, 12, 0.38) 0%, transparent 20%),
+        linear-gradient(90deg, rgba(5, 7, 12, 0.9) 0%, rgba(5, 7, 12, 0.58) 34%, rgba(5, 7, 12, 0.12) 54%, transparent 70%),
+        linear-gradient(180deg, transparent 84%, rgba(7, 10, 15, 0.45) 94%, var(--plans-bg) 100%);
+}
+
+.plans-hero__grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+.plans-hero__content {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: min(calc(100% - 48px), var(--plans-max));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    min-height: calc(100dvh - var(--site-header-height, 60px));
+    /* Vertically center copy in the hero (below header); light bottom bias keeps CTA above the sea */
+    padding: clamp(16px, 2.5vh, 28px) 0 clamp(14vh, 18vh, 24vh);
+}
+
+.plans-hero__eyebrow {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.45);
+}
+
+.plans-hero__copy {
+    max-width: 38rem;
+    width: min(100%, 40rem);
+}
+
+.plans-hero h1 {
+    margin: 0 0 20px;
+    font-size: clamp(2.35rem, 4.8vw, 3.45rem);
+    font-weight: 600;
+    letter-spacing: -1.1px;
+    line-height: 1.12;
+    text-wrap: balance;
+}
+
+.plans-hero__sub {
+    margin: 0 0 36px;
+    max-width: 32em;
+    font-size: clamp(1.06rem, 1.7vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--plans-secondary);
+    text-wrap: pretty;
+}
+
+@keyframes plans-isle-drift {
+    /* Horizontal only — vertical motion opens a gap at the waterline */
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(3px, 0, 0); }
+}
+
+@keyframes plans-horizon-pulse {
+    0%, 100% { opacity: 0.75; }
+    50% { opacity: 1; }
+}
+
+@keyframes plans-ripple {
+    0% {
+        transform: scale(0.18);
+        opacity: 0.55;
+    }
+    65% {
+        opacity: 0.18;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes plans-twinkle {
+    0%, 100% { opacity: 0.22; }
+    40% { opacity: 0.8; }
+    70% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .plans-hero__motif,
+    .plans-hero__horizon,
+    .plans-hero__ring,
+    .plans-hero__star {
+        animation: none;
+    }
+
+    .plans-hero__ring {
+        opacity: 0.35;
+        transform: scale(0.72);
+    }
+
+    .plans-hero__star {
+        opacity: 0.45;
+    }
+}
+
+/* —— Sections —— */
+
+.plans-section {
+    padding: 96px 0;
+}
+
+.plans-section--soft {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+    border-top: 1px solid var(--plans-line);
+    border-bottom: 1px solid var(--plans-line);
+}
+
+.plans-section__title {
+    margin: 0 0 16px;
+    font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+.plans-section__lead {
+    margin: 0 0 48px;
+    max-width: 38em;
+    font-size: 1.05rem;
+    color: var(--plans-secondary);
+    line-height: 1.65;
+    text-wrap: pretty;
+}
+
+.plans-section--center .plans-section__title,
+.plans-section--center .plans-section__lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* —— Journey comparison —— */
+
+.plans-journeys {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px 32px;
+}
+
+@media (min-width: 800px) {
+    .plans-journeys {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .plans-journey {
+        padding: 0 28px;
+        border-left: 1px solid var(--plans-line);
+    }
+
+    .plans-journey:first-child {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .plans-journey:last-child {
+        padding-right: 0;
+    }
+}
+
+.plans-journey__name {
+    margin: 0 0 10px;
+    font-size: clamp(1.28rem, 1.8vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+    color: var(--plans-text);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.plans-journey__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(232, 238, 247, 0.92);
+    background: rgba(232, 238, 247, 0.08);
+    border: 1px solid rgba(232, 238, 247, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.plans-journey__tagline {
+    margin: 0 0 10px;
+    font-size: 1.02rem;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    line-height: 1.35;
+    color: var(--plans-muted);
+}
+
+.plans-journey__desc {
+    margin: 0 0 28px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(232, 238, 247, 0.88);
+    line-height: 1.55;
+}
+
+.plans-journey__includes {
+    margin: 0 0 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.38);
+}
+
+.plans-journey__list {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.plans-journey__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: rgba(232, 238, 247, 0.78);
+    line-height: 1.4;
+}
+
+.plans-journey__check {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    margin-top: 3px;
+}
+
+.plans-journey__check path {
+    fill: none;
+    stroke: var(--plans-check);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.plans-journey .plans-btn {
+    width: 100%;
+    max-width: 220px;
+}
+
+@media (max-width: 799px) {
+    .plans-journey + .plans-journey {
+        padding-top: 36px;
+        border-top: 1px solid var(--plans-line);
+    }
+}
+
+/* —— Why Plus —— */
+
+.plans-why {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.plans-why p {
+    margin: 0;
+    font-size: 1.08rem;
+    color: var(--plans-secondary);
+    line-height: 1.7;
+}
+
+.plans-why p + p {
+    margin-top: 18px;
+}
+
+/* —— Islands —— */
+
+.plans-islands {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 640px) {
+    .plans-islands {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 960px) {
+    .plans-islands {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px 20px;
+    }
+}
+
+.plans-island__media {
+    aspect-ratio: 1;
+    margin: 0 0 16px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.plans-island__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.plans-island__media--soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 40% 35%, rgba(180, 200, 220, 0.12) 0%, transparent 55%),
+        rgba(255, 255, 255, 0.03);
+    color: var(--plans-faint);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.plans-island__name {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+.plans-island__desc {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--plans-muted);
+    line-height: 1.5;
+}
+
+/* —— FAQ —— */
+
+.plans-faq {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.plans-faq__item {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--plans-line);
+}
+
+.plans-faq__item:first-child {
+    border-top: 1px solid var(--plans-line);
+}
+
+.plans-faq__q {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+.plans-faq__a {
+    margin: 0;
+    font-size: 0.98rem;
+    color: var(--plans-secondary);
+    line-height: 1.65;
+}
+
+.plans-faq__a + .plans-faq__a {
+    margin-top: 12px;
+}
+
+/* —— Final CTA —— */
+
+.plans-final {
+    padding: 112px 0 120px;
+    text-align: center;
+    background:
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(140, 160, 180, 0.1) 0%, transparent 60%);
+}
+
+.plans-final h2 {
+    margin: 0 0 14px;
+    font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.7px;
+}
+
+.plans-final p {
+    margin: 0 auto 32px;
+    max-width: 28em;
+    color: var(--plans-secondary);
+    font-size: 1.05rem;
+}
+
+/* —— Footer (match homepage) —— */
+
+.plans-page .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.plans-page footer {
+    padding: 48px 0 56px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.plans-page .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+}
+
+.plans-page .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    width: 100%;
+}
+
+.plans-page .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 10px;
+    width: 100%;
+    justify-items: center;
+    text-align: center;
+}
+
+.plans-page .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    min-width: 0;
+}
+
+.plans-page .footer-col__label {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.45);
+    font-weight: 500;
+}
+
+.plans-page .footer-col a {
+    color: rgba(232, 238, 247, 0.6);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+    transition: color 0.2s;
+}
+
+.plans-page .footer-col a:hover,
+.plans-page .footer-col a[aria-current="page"] {
+    color: #E8EEF7;
+}
+
+.plans-page .footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    text-align: center;
+}
+
+.plans-page .footer-social__head {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.plans-page .footer-social__label {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.45);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.plans-page .footer-social__links {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.plans-page .footer-social__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #E8EEF7;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: color 0.2s, background 0.2s, opacity 0.2s;
+}
+
+.plans-page .footer-social__link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.plans-page .footer-social__icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.plans-page .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.plans-page .footer-meta {
+    margin: 0;
+    color: rgba(232, 238, 247, 0.42);
+    font-size: 12px;
+    line-height: 1.45;
+    max-width: none;
+}
+
+.plans-page .footer-home-link {
+    color: rgba(232, 238, 247, 0.55);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.plans-page .footer-home-link:hover {
+    color: #E8EEF7;
+}
+
+@media (min-width: 640px) {
+    .plans-page footer {
+        padding: 56px 0 64px;
+    }
+
+    .plans-page .footer-top {
+        gap: 24px;
+    }
+
+    .plans-page .footer-columns {
+        gap: 24px 40px;
+    }
+
+    .plans-page .footer-col {
+        gap: 10px;
+    }
+
+    .plans-page .footer-col a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 900px) {
+    .plans-page .container {
+        padding: 0 48px;
+        max-width: 1080px;
+    }
+
+    .plans-page footer {
+        padding: 64px 0 80px;
+    }
+
+    .plans-page .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 48px;
+    }
+
+    .plans-page .footer-columns {
+        flex: 1;
+        max-width: none;
+        justify-items: start;
+        text-align: left;
+    }
+
+    .plans-page .footer-col {
+        align-items: flex-start;
+    }
+
+    .plans-page .footer-social {
+        align-items: flex-end;
+        flex-shrink: 0;
+        width: auto;
+        min-width: 0;
+        padding-top: 2px;
+        border-top: none;
+        gap: 12px;
+        text-align: right;
+    }
+
+    .plans-page .footer-social__head {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .plans-page .footer-social__label {
+        text-align: right;
+    }
+
+    .plans-page .footer-inner {
+        gap: 36px;
+    }
+}
+
+@media (max-width: 900px) {
+    .plans-hero__content {
+        align-items: flex-start;
+        padding-top: clamp(48px, 8vh, 72px);
+        padding-bottom: clamp(32vh, 38vh, 44vh);
+    }
+
+    /* Island sits at ~x=1200 in a 1440 viewBox — shift toward horizontal center */
+    .plans-hero__art {
+        transform: translateX(-28%);
+    }
+
+    .plans-hero__fade {
+        background:
+            linear-gradient(180deg, rgba(5, 7, 12, 0.2) 0%, transparent 14%),
+            linear-gradient(180deg, rgba(5, 7, 12, 0.72) 0%, rgba(5, 7, 12, 0.35) 28%, transparent 48%),
+            linear-gradient(180deg, transparent 62%, rgba(7, 10, 15, 0.45) 88%, var(--plans-bg) 100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .plans-hero {
+        padding-top: var(--site-header-height, 52px);
+    }
+
+    .plans-hero__art {
+        /* Center on midline, nudge down so art sits under copy */
+        transform: translate(-33.333%, 8%);
+    }
+
+    .plans-hero__content {
+        align-items: flex-start;
+        justify-content: center;
+        width: min(calc(100% - 40px), var(--plans-max));
+        min-height: calc(100dvh - var(--site-header-height, 52px));
+        /* More air under header so copy sits among the stars, still above sound rings */
+        padding-top: clamp(52px, 9vh, 80px);
+        padding-bottom: clamp(36vh, 42vh, 48vh);
+    }
+
+    .plans-hero__copy {
+        max-width: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .plans-hero__sub {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .plans-hero__copy .plans-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .plans-hero h1 {
+        font-size: clamp(1.85rem, 7vw, 2.4rem);
+    }
+
+    .plans-hero__eyebrow {
+        margin-bottom: 8px;
+    }
+
+    .plans-section {
+        padding: 72px 0;
+    }
+
+    .plans-final {
+        padding: 80px 0 96px;
+    }
+
+    .plans-wrap {
+        width: min(calc(100% - 40px), var(--plans-max));
+    }
+}
+
+@media (max-width: 480px) {
+    .plans-hero__art {
+        transform: translate(-33.333%, 10%);
+    }
+
+    .plans-hero__content {
+        padding-top: 56px;
+        padding-bottom: 44vh;
+    }
+}

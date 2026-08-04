@@ -1,0 +1,297 @@
+/* Shared LonelyIsle site footer — Product / Collaborate / Help + Follow Us */
+
+.site-footer,
+footer.site-footer {
+    padding: 48px 0 56px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer .container,
+.site-footer .soundscape-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.site-footer .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+}
+
+.site-footer .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    width: 100%;
+}
+
+.site-footer .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 10px;
+    width: 100%;
+    justify-items: center;
+    text-align: center;
+}
+
+.site-footer .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    min-width: 0;
+}
+
+.site-footer .footer-col__label {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.45);
+    font-weight: 500;
+}
+
+.site-footer .footer-col a {
+    color: rgba(232, 238, 247, 0.6);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+    transition: color 0.2s;
+}
+
+.site-footer .footer-col a:hover,
+.site-footer .footer-col a[aria-current="page"] {
+    color: #E8EEF7;
+}
+
+.site-footer .footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    text-align: center;
+}
+
+.site-footer .footer-social__head {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-footer .footer-social__label {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.45);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.site-footer .footer-social__links {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.site-footer .footer-social__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #E8EEF7;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: color 0.2s, background 0.2s, opacity 0.2s;
+}
+
+.site-footer .footer-social__link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.site-footer .footer-social__icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Email / Attribution under Follow Us */
+.site-footer .footer-social__extra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    max-width: 18rem;
+}
+
+.site-footer .footer-social__extra-label {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.45);
+    font-weight: 500;
+}
+
+.site-footer .footer-social__extra-link {
+    color: rgba(232, 238, 247, 0.72);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+    word-break: break-word;
+    transition: color 0.2s;
+}
+
+.site-footer .footer-social__extra-link:hover {
+    color: #E8EEF7;
+}
+
+.site-footer .footer-social__extra-text {
+    margin: 0;
+    color: rgba(232, 238, 247, 0.48);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.site-footer .footer-social__extra-text a {
+    color: rgba(232, 238, 247, 0.65);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.site-footer .footer-social__extra-text a:hover {
+    color: #E8EEF7;
+}
+
+.site-footer .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.site-footer .footer-meta {
+    margin: 0;
+    color: rgba(232, 238, 247, 0.42);
+    font-size: 12px;
+    line-height: 1.45;
+    max-width: none;
+}
+
+.site-footer .footer-home-link {
+    color: rgba(232, 238, 247, 0.55);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.site-footer .footer-home-link:hover {
+    color: #E8EEF7;
+}
+
+@media (min-width: 640px) {
+    .site-footer,
+    footer.site-footer {
+        padding: 56px 0 64px;
+    }
+
+    .site-footer .footer-top {
+        gap: 24px;
+    }
+
+    .site-footer .footer-columns {
+        gap: 24px 40px;
+    }
+
+    .site-footer .footer-col {
+        gap: 10px;
+    }
+
+    .site-footer .footer-col a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 900px) {
+    .site-footer .container,
+    .site-footer .soundscape-wrap {
+        padding: 0 48px;
+    }
+
+    .site-footer,
+    footer.site-footer {
+        padding: 64px 0 80px;
+    }
+
+    .site-footer .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 48px;
+    }
+
+    .site-footer .footer-columns {
+        flex: 1;
+        max-width: none;
+        justify-items: start;
+        text-align: left;
+    }
+
+    .site-footer .footer-col {
+        align-items: flex-start;
+    }
+
+    .site-footer .footer-social {
+        align-items: flex-end;
+        flex-shrink: 0;
+        width: auto;
+        min-width: 0;
+        max-width: 16rem;
+        padding-top: 2px;
+        border-top: none;
+        gap: 14px;
+        text-align: right;
+    }
+
+    .site-footer .footer-social__head {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+    }
+
+    .site-footer .footer-social__label {
+        text-align: right;
+    }
+
+    .site-footer .footer-social__extra {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .site-footer .footer-inner {
+        gap: 36px;
+    }
+
+    .site-footer .footer-bottom {
+        align-items: center;
+        text-align: center;
+    }
+}

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta
+        name="description"
+        content="Choose your way to explore LonelyIsle. Begin free on Elliðaey, or unlock Plus and Lifetime Access to discover the full archipelago."
+    >
+    <link rel="canonical" href="https://louisbuilds.me/lonelyisle/plans.html">
+    <title>Our Plans — LonelyIsle</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/lonelyisle/plans.html">
+    <meta property="og:title" content="Our Plans — LonelyIsle">
+    <meta
+        property="og:description"
+        content="Choose your way to explore LonelyIsle. Begin free on Elliðaey, or unlock Plus and Lifetime Access to discover the full archipelago."
+    >
+    <meta property="og:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LonelyIsle — spatial ambient soundscape app for quiet, offline-first listening">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Plans — LonelyIsle">
+    <meta
+        name="twitter:description"
+        content="Choose your way to explore LonelyIsle. Begin free on Elliðaey, or unlock Plus and Lifetime Access to discover the full archipelago."
+    >
+    <meta name="twitter:image" content="https://louisbuilds.me/lonelyisle/og-image.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+    </script>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="site-header.css?v=20260804cta3">
+    <link rel="stylesheet" href="plans.css?v=20260805f">
+</head>
+<body class="plans-page">
+
+<header class="site-header" id="site-header">
+    <div class="site-header__inner">
+        <a class="site-header__brand nav-brand product-title" href="index.html" aria-label="LonelyIsle Home">
+            <picture>
+                <source type="image/webp" srcset="icon.webp">
+                <img src="icon.png" class="nav-brand-icon" alt="" width="36" height="36" decoding="async">
+            </picture>
+            <span>LonelyIsle</span>
+        </a>
+        <nav class="site-header__nav" aria-label="Primary">
+            <a class="site-header__link" href="soundscape/">Soundscapes</a>
+            <a class="site-header__link" href="plans.html" aria-current="page">Our Plans</a>
+            <a class="site-header__link" href="partners.html">For partners</a>
+            <a class="site-header__link" href="creators.html">For creators</a>
+            <a class="site-header__cta" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">Explore for Free</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="plans-hero">
+        <div class="plans-hero__scene" aria-hidden="true">
+            <div class="plans-hero__sky"></div>
+            <svg class="plans-hero__canvas" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <defs>
+                    <linearGradient id="plans-sea" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#8FA3B8" stop-opacity="0.2"/>
+                        <stop offset="55%" stop-color="#4A5A6C" stop-opacity="0.07"/>
+                        <stop offset="100%" stop-color="#070A0F" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="plans-rock" x1="0.3" y1="0" x2="0.7" y2="1">
+                        <stop offset="0%" stop-color="#C8CED8"/>
+                        <stop offset="48%" stop-color="#8A93A1"/>
+                        <stop offset="100%" stop-color="#3E4654"/>
+                    </linearGradient>
+                    <linearGradient id="plans-far-rock" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#4A5564"/>
+                        <stop offset="100%" stop-color="#232A34"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Short sea (full-bleed; stays put on mobile) -->
+                <rect x="0" y="760" width="1440" height="140" fill="url(#plans-sea)"/>
+                <line class="plans-hero__horizon" x1="0" y1="760" x2="1440" y2="760" stroke="rgba(232,238,247,0.2)" stroke-width="1.1"/>
+
+                <!-- Twinkling stars + island motif (grouped so mobile can re-center) -->
+                <g class="plans-hero__art">
+                    <g fill="rgba(232,238,247,0.7)">
+                        <circle class="plans-hero__star" cx="1088" cy="402" r="1.2"/>
+                        <circle class="plans-hero__star plans-hero__star--2" cx="1198" cy="318" r="0.95"/>
+                        <circle class="plans-hero__star plans-hero__star--3" cx="1310" cy="368" r="1.1"/>
+                        <circle class="plans-hero__star plans-hero__star--4" cx="1368" cy="452" r="0.8"/>
+                        <circle class="plans-hero__star plans-hero__star--5" cx="1126" cy="478" r="0.7"/>
+                    </g>
+
+                    <!-- Compact composition (desktop: right; mobile: centered via CSS) -->
+                    <g class="plans-hero__motif">
+                        <!-- Water lines tight under island (cx 1200) -->
+                        <g class="plans-hero__waterlines" stroke="rgba(232,238,247,0.26)" stroke-linecap="round" fill="none">
+                            <line x1="1088" y1="772" x2="1312" y2="772" stroke-width="1.1"/>
+                            <line x1="1112" y1="784" x2="1288" y2="784" stroke-width="0.95"/>
+                            <line x1="1136" y1="796" x2="1264" y2="796" stroke-width="0.85"/>
+                        </g>
+
+                        <g class="plans-hero__isle plans-hero__isle--far">
+                            <path fill="url(#plans-far-rock)" d="M1332 761
+                                C1340 752 1350 748 1362 748
+                                C1374 748 1382 752 1388 761 Z"/>
+                        </g>
+
+                        <!-- Compact island; base overlaps horizon slightly to kill any gap -->
+                        <g class="plans-hero__isle plans-hero__isle--main">
+                            <!-- Expanding ripples from lantern tip (1200, 572) -->
+                            <g class="plans-hero__rings" fill="none" stroke="rgba(232,238,247,0.55)">
+                                <circle class="plans-hero__ring" cx="1200" cy="572" r="110" stroke-width="1.15"/>
+                                <circle class="plans-hero__ring plans-hero__ring--2" cx="1200" cy="572" r="110" stroke-width="1.05"/>
+                                <circle class="plans-hero__ring plans-hero__ring--3" cx="1200" cy="572" r="110" stroke-width="0.95"/>
+                            </g>
+
+                            <path fill="url(#plans-rock)" d="M1070 761
+                                C1110 724 1152 698 1200 692
+                                C1248 698 1290 724 1330 761 Z"/>
+                            <path fill="rgba(232,238,247,0.11)" d="M1128 761
+                                C1154 730 1178 710 1200 706
+                                C1222 710 1246 730 1272 761 Z"/>
+
+                            <g class="plans-hero__lighthouse">
+                                <path d="M1194.5 698 L1197.5 582 L1202.5 582 L1205.5 698 Z" fill="rgba(244,246,250,0.94)"/>
+                                <rect x="1196" y="575" width="8" height="8" rx="1" fill="rgba(244,246,250,0.96)"/>
+                                <rect x="1197.2" y="577" width="5.6" height="4.2" rx="0.45" fill="rgba(20,24,32,0.5)"/>
+                                <rect x="1198" y="570" width="4" height="6" rx="0.7" fill="rgba(244,246,250,0.95)"/>
+                                <circle cx="1200" cy="572" r="1.9" fill="rgba(255,248,230,0.98)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <div class="plans-hero__fade"></div>
+            <div class="plans-hero__grain"></div>
+        </div>
+
+        <div class="plans-hero__content">
+            <div class="plans-hero__copy">
+                <p class="plans-hero__eyebrow">Our Plans</p>
+                <h1>Choose your way to explore LonelyIsle</h1>
+                <p class="plans-hero__sub">
+                    Every journey begins with a single shore. Discover more islands as your journey continues.
+                </p>
+                <a class="plans-btn plans-btn--primary" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                    Explore LonelyIsle
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans-section" id="journeys" aria-labelledby="journeys-heading">
+        <div class="plans-wrap">
+            <h2 class="plans-section__title" id="journeys-heading">Find your place in LonelyIsle</h2>
+            <p class="plans-section__lead">
+                LonelyIsle is free to begin. Plus unlocks the full archipelago — not extra features, ads, or locked Frequency&nbsp;experiences.
+            </p>
+
+            <div class="plans-journeys">
+                <article class="plans-journey">
+                    <h3 class="plans-journey__name">Free</h3>
+                    <p class="plans-journey__tagline">Begin on Elliðaey</p>
+                    <p class="plans-journey__desc">
+                        Your first island is open. Explore its atmosphere, discover spatial soundscapes, and experience the quiet rhythm of&nbsp;LonelyIsle.
+                    </p>
+                    <p class="plans-journey__includes">Includes</p>
+                    <ul class="plans-journey__list">
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Full access to Elliðaey Island
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            All Frequency experiences
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Spatial ambient exploration
+                        </li>
+                    </ul>
+                    <a class="plans-btn plans-btn--ghost" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                        Start Free
+                    </a>
+                </article>
+
+                <article class="plans-journey">
+                    <h3 class="plans-journey__name">Monthly</h3>
+                    <p class="plans-journey__tagline">Explore beyond your first shore</p>
+                    <p class="plans-journey__desc">
+                        Unlock the full island journey with access to Blue Hour, Naoshima, and every island still to&nbsp;come.
+                    </p>
+                    <p class="plans-journey__includes">Includes</p>
+                    <ul class="plans-journey__list">
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Blue Hour Island
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Naoshima Island
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Future island releases
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Everything in Free
+                        </li>
+                    </ul>
+                    <a class="plans-btn plans-btn--ghost" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                        Unlock Plus
+                    </a>
+                </article>
+
+                <article class="plans-journey">
+                    <h3 class="plans-journey__name">
+                        Lifetime
+                        <span class="plans-journey__badge">Best Value</span>
+                    </h3>
+                    <p class="plans-journey__tagline">Keep your sanctuary forever</p>
+                    <p class="plans-journey__desc">
+                        Enjoy the complete LonelyIsle experience with a one-time purchase. Return to every island whenever you need a quiet&nbsp;moment.
+                    </p>
+                    <p class="plans-journey__includes">Includes</p>
+                    <ul class="plans-journey__list">
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Full access to every island
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            One-time purchase
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            No recurring payments
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Family Sharing included
+                        </li>
+                        <li>
+                            <svg class="plans-journey__check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
+                            Future island releases
+                        </li>
+                    </ul>
+                    <a class="plans-btn plans-btn--primary" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                        Get Lifetime Access
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans-section plans-section--soft" id="why-plus" aria-labelledby="why-plus-heading">
+        <div class="plans-wrap">
+            <div class="plans-why">
+                <h2 class="plans-section__title" id="why-plus-heading">More than sounds. A place to return to.</h2>
+                <p>
+                    LonelyIsle is a collection of quiet places — each with its own atmosphere, sounds, and stories. Frequency scenes stay open to everyone.
+                </p>
+                <p>
+                    Plus is simply how you continue the journey: from Elliðaey’s open Atlantic to Blue Hour’s twilight sea, Naoshima’s calm shores, and islands still waiting beyond the&nbsp;horizon.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans-section plans-section--center" id="shores" aria-labelledby="shores-heading">
+        <div class="plans-wrap">
+            <h2 class="plans-section__title" id="shores-heading">Discover new shores</h2>
+            <p class="plans-section__lead">
+                Quiet places, each waiting with its own light and weather.
+            </p>
+            <ul class="plans-islands">
+                <li class="plans-island">
+                    <div class="plans-island__media">
+                        <img src="images/island-ellidaey.png" alt="" width="320" height="320" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="plans-island__name">Elliðaey</h3>
+                    <p class="plans-island__desc">A quiet beginning surrounded by ocean air.</p>
+                </li>
+                <li class="plans-island">
+                    <div class="plans-island__media">
+                        <img src="images/island-blue-hour.png" alt="" width="320" height="320" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="plans-island__name">Blue Hour</h3>
+                    <p class="plans-island__desc">A place where twilight settles over the sea.</p>
+                </li>
+                <li class="plans-island">
+                    <div class="plans-island__media">
+                        <img src="images/island-naoshima.png" alt="" width="320" height="320" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="plans-island__name">Naoshima</h3>
+                    <p class="plans-island__desc">An island inspired by art, calm, and slow moments.</p>
+                </li>
+                <li class="plans-island">
+                    <div class="plans-island__media plans-island__media--soon" aria-hidden="true">Coming soon</div>
+                    <h3 class="plans-island__name">Coming Soon</h3>
+                    <p class="plans-island__desc">New places are waiting beyond the horizon.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="plans-section plans-section--center" id="faq" aria-labelledby="faq-heading">
+        <div class="plans-wrap">
+            <h2 class="plans-section__title" id="faq-heading">Questions from travelers</h2>
+            <div class="plans-faq">
+                <div class="plans-faq__item">
+                    <h3 class="plans-faq__q">Is LonelyIsle free?</h3>
+                    <p class="plans-faq__a">
+                        Yes. Elliðaey and all Frequency experiences are free to explore. You can enjoy your first island without unlocking anything&nbsp;else.
+                    </p>
+                </div>
+                <div class="plans-faq__item">
+                    <h3 class="plans-faq__q">What does LonelyIsle Plus unlock?</h3>
+                    <p class="plans-faq__a">
+                        LonelyIsle Plus opens the islands beyond your first shore — including Blue Hour, Naoshima, and future island&nbsp;releases.
+                    </p>
+                </div>
+                <div class="plans-faq__item">
+                    <h3 class="plans-faq__q">How can I unlock LonelyIsle Plus?</h3>
+                    <p class="plans-faq__a">
+                        Choose the access that fits your journey — a monthly subscription or Lifetime&nbsp;Access.
+                    </p>
+                    <p class="plans-faq__a">
+                        Both options unlock the complete LonelyIsle&nbsp;experience.
+                    </p>
+                </div>
+                <div class="plans-faq__item">
+                    <h3 class="plans-faq__q">Can I experience an island before unlocking it?</h3>
+                    <p class="plans-faq__a">
+                        Yes. Locked islands include a preview so you can discover their atmosphere before deciding to continue your&nbsp;journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plans-final" aria-labelledby="final-heading">
+        <div class="plans-wrap">
+            <h2 id="final-heading">Your island is waiting.</h2>
+            <p>Find a quiet moment beyond the noise.</p>
+            <a class="plans-btn plans-btn--primary" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                Enter LonelyIsle
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-columns">
+                    <nav class="footer-col" aria-label="Product">
+                        <span class="footer-col__label">Product</span>
+                        <a href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">LonelyIsle for iPhone</a>
+                        <a href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">LonelyIsle for iPad</a>
+                        <a href="soundscape/">Soundscapes</a>
+                        <a href="plans.html" aria-current="page">Our Plans</a>
+                    </nav>
+                    <nav class="footer-col" aria-label="Collaborate">
+                        <span class="footer-col__label">Collaborate</span>
+                        <a href="partners.html">Partners</a>
+                        <a href="creators.html">Creators</a>
+                    </nav>
+                    <nav class="footer-col" aria-label="Help">
+                        <span class="footer-col__label">Help</span>
+                        <a href="support.html">Support</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms-of-service.html">Terms</a>
+                    </nav>
+                </div>
+                <div class="footer-social">
+                    <div class="footer-social__head">
+                        <span class="footer-social__label">Follow Us</span>
+                        <div class="footer-social__links">
+                            <a class="footer-social__link" href="https://www.youtube.com/@LonelyIsleAmbientSounds" target="_blank" rel="noopener noreferrer" aria-label="YouTube — @LonelyIsleAmbientSounds">
+                                <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                            <a class="footer-social__link" href="https://www.tiktok.com/@louisbuildsstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok — @louisbuildsstudio">
+                                <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            </a>
+                            <a class="footer-social__link" href="https://www.instagram.com/lonelyisleambientsounds/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — @lonelyisleambientsounds">
+                                <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-meta">&copy; 2026 LonelyIsle</p>
+                <p class="footer-meta">A product by Louis &middot; <a class="footer-home-link" href="https://louisbuilds.me" target="_blank" rel="noopener noreferrer">louisbuilds.me</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="site-header.js" defer></script>
+</body>
+</html>
