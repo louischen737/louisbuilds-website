@@ -67,9 +67,116 @@
     will-change: left, top;
 }
 
+/* Premium bar waveform — pearl glass bars over island core */
+.hero-island-map__waves {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: min(46%, 196px);
+    height: 38px;
+    margin: -19px 0 0 calc(min(46%, 196px) / -2);
+    padding: 0 10px;
+    box-sizing: border-box;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+}
+
+.hero-island-map__waves::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 72%;
+    height: 70%;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(232, 220, 190, 0.16) 0%,
+        rgba(180, 200, 220, 0.08) 42%,
+        transparent 72%
+    );
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.hero-island-map__waves span {
+    display: block;
+    flex: 1 1 0;
+    max-width: 3.5px;
+    min-width: 2.5px;
+    height: 100%;
+    border-radius: 999px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 252, 245, 0.95) 0%,
+            rgba(220, 210, 185, 0.72) 42%,
+            rgba(150, 175, 195, 0.38) 100%
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        0 0 8px rgba(232, 220, 190, 0.22);
+    transform-origin: center center;
+    animation-name: hero-island-wave;
+    animation-timing-function: cubic-bezier(0.4, 0.05, 0.35, 1);
+    animation-iteration-count: infinite;
+    will-change: transform, opacity;
+}
+
+.hero-island-map__waves span:nth-child(1)  { animation-duration: 1.85s; animation-delay: -0.4s;  --wave-min: 0.2;  --wave-mid: 0.46; --wave-max: 0.66; }
+.hero-island-map__waves span:nth-child(2)  { animation-duration: 1.4s;  animation-delay: -1.15s; --wave-min: 0.3;  --wave-mid: 0.72; --wave-max: 0.92; }
+.hero-island-map__waves span:nth-child(3)  { animation-duration: 2.05s; animation-delay: -0.25s; --wave-min: 0.24; --wave-mid: 0.58; --wave-max: 0.8; }
+.hero-island-map__waves span:nth-child(4)  { animation-duration: 1.25s; animation-delay: -0.8s;  --wave-min: 0.36; --wave-mid: 0.9;  --wave-max: 1; }
+.hero-island-map__waves span:nth-child(5)  { animation-duration: 1.65s; animation-delay: -1.45s; --wave-min: 0.22; --wave-mid: 0.5;  --wave-max: 0.74; }
+.hero-island-map__waves span:nth-child(6)  { animation-duration: 1.15s; animation-delay: -0.1s;  --wave-min: 0.42; --wave-mid: 0.96; --wave-max: 1; }
+.hero-island-map__waves span:nth-child(7)  { animation-duration: 1.9s;  animation-delay: -1s;    --wave-min: 0.28; --wave-mid: 0.64; --wave-max: 0.88; }
+.hero-island-map__waves span:nth-child(8)  { animation-duration: 1.35s; animation-delay: -0.55s; --wave-min: 0.34; --wave-mid: 0.84; --wave-max: 0.98; }
+.hero-island-map__waves span:nth-child(9)  { animation-duration: 2.15s; animation-delay: -1.3s;  --wave-min: 0.18; --wave-mid: 0.42; --wave-max: 0.6; }
+.hero-island-map__waves span:nth-child(10) { animation-duration: 1.3s;  animation-delay: -0.2s;  --wave-min: 0.38; --wave-mid: 0.92; --wave-max: 1; }
+.hero-island-map__waves span:nth-child(11) { animation-duration: 1.7s;  animation-delay: -0.9s;  --wave-min: 0.26; --wave-mid: 0.68; --wave-max: 0.9; }
+.hero-island-map__waves span:nth-child(12) { animation-duration: 1.2s;  animation-delay: -1.6s;  --wave-min: 0.32; --wave-mid: 0.8;  --wave-max: 0.96; }
+.hero-island-map__waves span:nth-child(13) { animation-duration: 1.95s; animation-delay: -0.7s;  --wave-min: 0.2;  --wave-mid: 0.44; --wave-max: 0.64; }
+
+@keyframes hero-island-wave {
+    0% {
+        transform: scaleY(var(--wave-min));
+        opacity: 0.42;
+    }
+    30% {
+        transform: scaleY(var(--wave-max));
+        opacity: 0.96;
+    }
+    55% {
+        transform: scaleY(var(--wave-mid));
+        opacity: 0.68;
+    }
+    78% {
+        transform: scaleY(calc(var(--wave-max) * 0.9));
+        opacity: 0.88;
+    }
+    100% {
+        transform: scaleY(var(--wave-min));
+        opacity: 0.42;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-island-map {
         --him-size: min(84vw, 360px);
+    }
+
+    .hero-island-map__waves {
+        width: min(52%, 156px);
+        height: 30px;
+        margin: -15px 0 0 calc(min(52%, 156px) / -2);
+        gap: 4px;
     }
 }
 
@@ -79,10 +186,23 @@
         margin: 0;
         margin-left: auto;
     }
+
+    .hero-island-map__waves {
+        width: min(42%, 220px);
+        height: 42px;
+        margin: -21px 0 0 calc(min(42%, 220px) / -2);
+        gap: 5.5px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .hero-island-map__spot {
         transition: none;
+    }
+
+    .hero-island-map__waves span {
+        animation: none;
+        transform: scaleY(0.62);
+        opacity: 0.72;
     }
 }

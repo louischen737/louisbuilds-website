@@ -78,6 +78,7 @@
         justify-content: center;
         align-items: stretch;
         padding: var(--site-header-height, 60px) 0 64px;
+        background: #010101;
     }
 
     .hero-layout {
@@ -90,6 +91,9 @@
     }
 
     .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         width: 100%;
         max-width: 100%;
@@ -98,7 +102,7 @@
     }
 
     .hero-title {
-        font-size: 34px;
+        font-size: 38px;
         font-weight: 600;
         color: #fff;
         letter-spacing: -0.8px;
@@ -127,6 +131,14 @@
         margin: 0 auto 16px;
         text-wrap: balance;
         overflow-wrap: break-word;
+    }
+
+    .hero-cta-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
     }
 
     .hero-content .cta {
@@ -168,6 +180,146 @@
 
     .cta.cta--app-store:hover img {
         opacity: 0.85;
+    }
+
+    .hero-qr-trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+        color: rgba(232, 238, 247, 0.72);
+        cursor: pointer;
+        transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    .hero-qr-trigger:hover {
+        color: #E8EEF7;
+        transform: scale(1.05);
+    }
+
+    .hero-qr-trigger:focus-visible {
+        outline: 2px solid rgba(232, 238, 247, 0.7);
+        outline-offset: 3px;
+    }
+
+    .hero-qr-trigger__icon {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* App Store QR modal (Tide-like) */
+    .app-qr-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px 40px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.28s ease, visibility 0.28s ease;
+    }
+
+    .app-qr-modal.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .app-qr-modal__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(4, 8, 14, 0.72);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .app-qr-modal__stack {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        transform: translateY(10px) scale(0.97);
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .app-qr-modal.is-open .app-qr-modal__stack {
+        transform: translateY(0) scale(1);
+    }
+
+    .app-qr-modal__panel {
+        width: min(320px, calc(100vw - 48px));
+        padding: 28px 24px 22px;
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+        text-align: center;
+    }
+
+    .app-qr-modal__code {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .app-qr-modal__hint {
+        margin: 16px 0 0;
+        font-size: 14px;
+        line-height: 1.45;
+        letter-spacing: 0.01em;
+        color: #3a4454;
+        opacity: 1;
+        max-width: none;
+    }
+
+    .app-qr-modal__close {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        background: rgba(255, 255, 255, 0.14);
+        color: rgba(255, 255, 255, 0.92);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .app-qr-modal__close:hover {
+        background: rgba(255, 255, 255, 0.24);
+        border-color: rgba(255, 255, 255, 0.42);
+        transform: scale(1.05);
+    }
+
+    .app-qr-modal__close:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.7);
+        outline-offset: 3px;
+    }
+
+    .app-qr-modal__close svg {
+        width: 16px;
+        height: 16px;
+        display: block;
+    }
+
+    body.app-qr-modal-open {
+        overflow: hidden;
     }
 
     .cta.cta--bottom {
@@ -255,12 +407,13 @@
 
         .hero-content {
             min-width: 0;
+            align-items: flex-start;
             text-align: left;
         }
 
         .hero-title {
-            font-size: 48px;
-            letter-spacing: -1px;
+            font-size: 60px;
+            letter-spacing: -1.2px;
             margin-bottom: 28px;
         }
 
@@ -268,6 +421,10 @@
             margin-left: 0;
             margin-right: 0;
             margin-bottom: 20px;
+        }
+
+        .hero-cta-row {
+            justify-content: flex-start;
         }
 
         .hero-content .cta {
@@ -436,57 +593,52 @@
     }
 
     footer {
-        padding: 64px 0 80px;
+        padding: 48px 0 56px;
         border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .footer-inner {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 28px;
-        text-align: center;
     }
 
     .footer-top {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 24px;
+        align-items: stretch;
+        gap: 22px;
         width: 100%;
     }
 
-    .footer-links {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
+    .footer-columns {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px 10px;
+        width: 100%;
+        justify-items: center;
+        text-align: center;
     }
 
-    .footer-links a {
-        color: rgba(232, 238, 247, 0.6);
-        text-decoration: none;
-        font-size: 14px;
-        transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-        color: #E8EEF7;
-    }
-
-    .footer-social {
+    .footer-col {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 14px;
+        gap: 8px;
         margin: 0;
+        min-width: 0;
     }
 
-    .footer-social__label {
+    .footer-col nav {
+        display: flex;
+        flex-direction: column;
+        align-items: inherit;
+        gap: 8px;
+    }
+
+    .footer-col__label {
         margin: 0;
-        max-width: none;
-        opacity: 1;
         font-size: 11px;
         letter-spacing: 1.5px;
         text-transform: uppercase;
@@ -494,19 +646,62 @@
         font-weight: 500;
     }
 
+    .footer-col a {
+        color: rgba(232, 238, 247, 0.6);
+        text-decoration: none;
+        font-size: 13px;
+        line-height: 1.4;
+        transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+        color: #E8EEF7;
+    }
+
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-social__head {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-social__label {
+        margin: 0;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(232, 238, 247, 0.45);
+        font-weight: 500;
+        line-height: 1;
+    }
+
     .footer-social__links {
         display: flex;
-        justify-content: center;
+        width: max-content;
         align-items: center;
-        gap: 16px;
+        justify-content: center;
+        gap: 8px;
     }
 
     .footer-social__link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         color: #E8EEF7;
         text-decoration: none;
         border-radius: 999px;
@@ -519,8 +714,9 @@
     }
 
     .footer-social__icon {
-        width: 22px;
-        height: 22px;
+        display: block;
+        width: 18px;
+        height: 18px;
         fill: currentColor;
     }
 
@@ -528,20 +724,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
+        gap: 2px;
+        width: 100%;
+        text-align: center;
+        padding-top: 4px;
     }
 
     .footer-meta {
         margin: 0;
-        opacity: 0.6;
-        font-size: 13px;
-        line-height: 1.7;
+        color: rgba(232, 238, 247, 0.42);
+        font-size: 12px;
+        line-height: 1.45;
         max-width: none;
-        text-align: center;
     }
 
     .footer-home-link {
-        color: rgba(232, 238, 247, 0.75);
+        color: rgba(232, 238, 247, 0.55);
         text-decoration: underline;
         text-underline-offset: 2px;
     }
@@ -550,37 +748,80 @@
         color: #E8EEF7;
     }
 
-    @media (min-width: 769px) {
+    @media (min-width: 640px) {
+        footer {
+            padding: 56px 0 64px;
+        }
+
         .footer-top {
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 0;
+            gap: 24px;
         }
 
-        .footer-top__divider {
-            display: block;
-            width: 1px;
-            height: 20px;
-            margin: 0 32px;
-            background: rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
+        .footer-columns {
+            gap: 24px 40px;
         }
 
-        .footer-social {
-            flex-direction: row;
-            align-items: center;
-            gap: 16px;
+        .footer-col,
+        .footer-col nav {
+            gap: 10px;
         }
 
-        .footer-social__label {
-            margin: 0;
+        .footer-col a {
+            font-size: 14px;
         }
     }
 
-    @media (max-width: 768px) {
-        .footer-top__divider {
-            display: none;
+    @media (min-width: 900px) {
+        footer {
+            padding: 64px 0 80px;
+        }
+
+        .footer-top {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 48px;
+        }
+
+        .footer-columns {
+            flex: 1;
+            max-width: none;
+            justify-items: start;
+            text-align: left;
+        }
+
+        .footer-col {
+            align-items: flex-start;
+        }
+
+        .footer-social {
+            align-items: flex-end;
+            flex-shrink: 0;
+            width: auto;
+            min-width: 0;
+            padding-top: 2px;
+            border-top: none;
+            gap: 12px;
+            text-align: right;
+        }
+
+        .footer-social__head {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .footer-social__label {
+            text-align: right;
+        }
+
+        .footer-inner {
+            gap: 36px;
+        }
+
+        .footer-bottom {
+            align-items: center;
+            text-align: center;
         }
     }
 
@@ -622,7 +863,7 @@
         }
 
         .hero-title {
-            font-size: 30px;
+            font-size: 34px;
             letter-spacing: -0.5px;
             line-height: 1.2;
             text-wrap: pretty;
@@ -656,7 +897,7 @@
         }
 
         .hero-title {
-            font-size: 27px;
+            font-size: 30px;
             letter-spacing: -0.35px;
             line-height: 1.22;
         }
@@ -674,11 +915,11 @@
     }
 </style>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="site-header.css">
+<link rel="stylesheet" href="site-header.css?v=20260804cta2">
 <link rel="stylesheet" href="lighthouse-radio.css">
-<link rel="stylesheet" href="hero-island-map.css">
-<link rel="stylesheet" href="islands-picker.css?v=20260803a">
-<link rel="stylesheet" href="resident-id-card.css">
+<link rel="stylesheet" href="hero-island-map.css?v=20260804i">
+<link rel="stylesheet" href="islands-picker.css?v=20260804b">
+<link rel="stylesheet" href="resident-id-card.css?v=20260804e">
 <link rel="stylesheet" href="live-activity-demo.css">
 <link rel="stylesheet" href="ipad-canvas-demo.css">
 <link rel="stylesheet" href="story-section.css">
@@ -700,6 +941,7 @@
             <a class="site-header__link" href="soundscape/">Soundscapes</a>
             <a class="site-header__link" href="partners.html">For partners</a>
             <a class="site-header__link" href="creators.html">For creators</a>
+            <a class="site-header__cta" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">Explore for Free</a>
         </nav>
     </div>
 </header>
@@ -708,13 +950,39 @@
 <div class="hero">
     <div class="container hero-layout">
         <div class="hero-content">
-            <h1 class="hero-title">Soundscapes for a quieter mind.</h1>
-            <div class="tagline">
-                Explore immersive islands and interactive sound worlds beyond everyday noise.
+            <h1 class="hero-title">Visible Soundscapes.<br class="hero-br" aria-hidden="true"> Playful Experiences.</h1>
+            <p class="tagline">
+                Explore fictional islands and living soundscapes for deep focus, restful sleep, and quiet moments away from everyday noise.
+            </p>
+            <div class="hero-cta-row">
+                <a class="cta cta--app-store" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
+                    <img src="images/app-store-badge.svg" alt="Download on the App Store" width="120" height="40" decoding="async">
+                </a>
+                <button class="hero-qr-trigger" type="button" aria-haspopup="dialog" aria-controls="app-qr-modal" aria-label="Show App Store QR code">
+                    <svg class="hero-qr-trigger__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                        <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <g transform="translate(24 24) scale(0.72) translate(-24 -24)">
+                            <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+                                <rect x="13" y="13" width="8" height="8" rx="1.2"/>
+                                <rect x="15.2" y="15.2" width="3.6" height="3.6" rx="0.4" fill="currentColor" stroke="none"/>
+                                <rect x="27" y="13" width="8" height="8" rx="1.2"/>
+                                <rect x="29.2" y="15.2" width="3.6" height="3.6" rx="0.4" fill="currentColor" stroke="none"/>
+                                <rect x="13" y="27" width="8" height="8" rx="1.2"/>
+                                <rect x="15.2" y="29.2" width="3.6" height="3.6" rx="0.4" fill="currentColor" stroke="none"/>
+                            </g>
+                            <g fill="currentColor">
+                                <rect x="27" y="27" width="2.4" height="2.4" rx="0.3"/>
+                                <rect x="30.4" y="27" width="2.4" height="2.4" rx="0.3"/>
+                                <rect x="33.8" y="27" width="1.2" height="2.4" rx="0.3"/>
+                                <rect x="27" y="30.4" width="2.4" height="1.2" rx="0.3"/>
+                                <rect x="30.4" y="30.4" width="4.6" height="2.4" rx="0.3"/>
+                                <rect x="27" y="33.2" width="2.4" height="1.8" rx="0.3"/>
+                                <rect x="32.6" y="33.2" width="2.4" height="1.8" rx="0.3"/>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
             </div>
-            <a class="cta cta--app-store" href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">
-                <img src="images/app-store-badge.svg" alt="Download on the App Store" width="120" height="40" decoding="async">
-            </a>
             <div class="hero-trust-row">
                 <span class="hero-trust-item">
                     <svg class="hero-trust-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6l3 3 5-5"/></svg>
@@ -745,6 +1013,11 @@
                             <img src="images/spots/cliff.png" alt="" width="200" height="200" decoding="async">
                         </div>
                         <div class="hero-island-map__avatar" aria-hidden="true"></div>
+                    </div>
+                    <div class="hero-island-map__waves" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
                     </div>
                 </div>
             </div>
@@ -1049,7 +1322,7 @@
                             <div class="resident-id-card__portrait">
                                 <picture>
                                     <source type="image/webp" srcset="images/islander-portrait-1-168w.webp">
-                                    <img src="images/islander-portrait-1.png" alt="" width="168" height="252" decoding="async">
+                                    <img src="images/islander-portrait-1.png" alt="" width="84" height="108" decoding="async">
                                 </picture>
                             </div>
                             <div class="resident-id-card__fields">
@@ -1069,7 +1342,12 @@
                         </div>
                         <footer class="resident-id-card__footer">
                             <div class="resident-id-card__barcode" aria-hidden="true">
-                                <span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:4"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:4"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:4"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:3"></span><span style="flex:1"></span><span style="flex:2"></span><span style="flex:1"></span><span style="flex:3"></span><span style="flex:2"></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
                             </div>
                         </footer>
                     </article>
@@ -1265,27 +1543,39 @@
     <div class="container">
         <div class="footer-inner">
             <div class="footer-top">
-                <nav class="footer-links" aria-label="Legal and support">
-                    <a href="privacy-policy.html">Privacy</a>
-                    <a href="terms-of-service.html">Terms</a>
-                    <a href="support.html">Support</a>
-                    <a href="partners.html">Partners</a>
-                    <a href="creators.html">Creators</a>
-                    <a href="soundscape/">Soundscapes</a>
-                </nav>
-                <span class="footer-top__divider" aria-hidden="true"></span>
+                <div class="footer-columns">
+                    <nav class="footer-col" aria-label="Product">
+                        <span class="footer-col__label">Product</span>
+                        <a href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">LonelyIsle for iPhone</a>
+                        <a href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer">LonelyIsle for iPad</a>
+                        <a href="soundscape/">Soundscapes</a>
+                    </nav>
+                    <nav class="footer-col" aria-label="Collaborate">
+                        <span class="footer-col__label">Collaborate</span>
+                        <a href="partners.html">Partners</a>
+                        <a href="creators.html">Creators</a>
+                    </nav>
+                    <nav class="footer-col" aria-label="Help">
+                        <span class="footer-col__label">Help</span>
+                        <a href="support.html">Support</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="terms-of-service.html">Terms</a>
+                    </nav>
+                </div>
                 <div class="footer-social">
-                    <span class="footer-social__label">Follow Us</span>
-                    <div class="footer-social__links">
-                        <a class="footer-social__link" href="https://www.youtube.com/@LonelyIsleAmbientSounds" target="_blank" rel="noopener noreferrer" aria-label="YouTube — @LonelyIsleAmbientSounds">
-                            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        </a>
-                        <a class="footer-social__link" href="https://www.tiktok.com/@louisbuildsstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok — @louisbuildsstudio">
-                            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-                        </a>
-                        <a class="footer-social__link" href="https://www.instagram.com/lonelyisleambientsounds/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — @lonelyisleambientsounds">
-                            <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
-                        </a>
+                    <div class="footer-social__head">
+                        <span class="footer-social__label">Follow Us</span>
+                        <div class="footer-social__links">
+                            <a class="footer-social__link" href="https://www.youtube.com/@LonelyIsleAmbientSounds" target="_blank" rel="noopener noreferrer" aria-label="YouTube — @LonelyIsleAmbientSounds">
+                                <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            </a>
+                            <a class="footer-social__link" href="https://www.tiktok.com/@louisbuildsstudio" target="_blank" rel="noopener noreferrer" aria-label="TikTok — @louisbuildsstudio">
+                                <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                            </a>
+                            <a class="footer-social__link" href="https://www.instagram.com/lonelyisleambientsounds/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — @lonelyisleambientsounds">
+                                <svg class="footer-social__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1297,11 +1587,27 @@
     </div>
 </footer>
 
+<div class="app-qr-modal" id="app-qr-modal" hidden aria-hidden="true">
+    <div class="app-qr-modal__backdrop" data-app-qr-close tabindex="-1"></div>
+    <div class="app-qr-modal__stack">
+        <div class="app-qr-modal__panel" role="dialog" aria-modal="true" aria-labelledby="app-qr-modal-title">
+            <img class="app-qr-modal__code" src="images/app-store-qr.png" alt="QR code linking to LonelyIsle on the App Store" width="574" height="574" decoding="async">
+            <p class="app-qr-modal__hint" id="app-qr-modal-title">Scan to download on the App Store</p>
+        </div>
+        <button class="app-qr-modal__close" type="button" data-app-qr-close aria-label="Close">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
 <script src="site-header.js" defer></script>
 <script src="lighthouse-radio.js" defer></script>
 <script src="hero-island-map.js" defer></script>
 <script src="islands-picker.js?v=20260803a" defer></script>
 <script src="live-activity-demo.js" defer></script>
 <script src="sound-lab-previews.js" defer></script>
+<script src="app-store-qr.js" defer></script>
 </body>
 </html>
