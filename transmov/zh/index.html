@@ -203,7 +203,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="../style.css?v=20260606a" as="style">
+    <link rel="preload" href="../style.css?v=20260807i" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -970,7 +970,7 @@
             margin-bottom: 1.1rem;
         }
     </style>
-    <link rel="stylesheet" href="../style.css?v=20260606a">
+    <link rel="stylesheet" href="../style.css?v=20260807i">
 </head>
 <body>
     <header class="top-bar">
@@ -1698,13 +1698,42 @@
         </div>
         
         <div class="footer">
-            <p>
-                <a href="../privacy-policy.html?lang=zh">隐私政策</a> ｜
-                <a href="../support.html?lang=zh">技术支持</a> ｜
-                <a href="../terms-of-service.html?lang=zh">用户协议</a>
-            </p>
-            <p style="margin-top: 10px;">© 2026 TransMov</p>
-            <p>A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
+            <div class="footer-inner">
+                <div class="footer-columns">
+                    <nav class="footer-tools" aria-label="产品">
+                        <span class="footer-tools-label">产品</span>
+                        <div class="footer-tools-links">
+                            <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_footer_zh&mt=8" target="_blank" rel="noopener">TransMov for Mac</a>
+                            <a href="../gif-viewer/">Free Online GIF Viewer</a>
+                            <a href="../apng-viewer/">Free Online APNG Viewer</a>
+                            <a href="../webp-viewer/">Free Online WebP Viewer</a>
+                        </div>
+                    </nav>
+                    <nav class="footer-legal" aria-label="支持">
+                        <span class="footer-legal-label">支持</span>
+                        <div class="footer-legal-links">
+                            <a href="../privacy-policy.html?lang=zh">隐私政策</a>
+                            <a href="../terms-of-service.html?lang=zh">用户协议</a>
+                            <a href="../support.html?lang=zh">技术支持</a>
+                            <a href="mailto:support@louisbuilds.me">联系我们</a>
+                        </div>
+                    </nav>
+                    <nav class="footer-social" aria-label="关注我们">
+                        <span class="footer-social-label">关注我们</span>
+                        <div class="footer-social-links">
+                            <a class="footer-social-link" href="https://www.youtube.com/@transmovanimationlab" target="_blank" rel="noopener" aria-label="TransMov YouTube 频道">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor" d="M23.5 6.2a3.05 3.05 0 0 0-2.15-2.16C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.35.54A3.05 3.05 0 0 0 .5 6.2 31.9 31.9 0 0 0 0 12a31.9 31.9 0 0 0 .5 5.8 3.05 3.05 0 0 0 2.15 2.16C4.5 20.5 12 20.5 12 20.5s7.5 0 9.35-.54a3.05 3.05 0 0 0 2.15-2.16A31.9 31.9 0 0 0 24 12a31.9 31.9 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer-meta">
+                    <p class="footer-copy">© 2026 TransMov</p>
+                    <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
+                </div>
+            </div>
         </div>
     </main>
 
