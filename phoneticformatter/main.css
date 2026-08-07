@@ -1772,6 +1772,19 @@ html[lang="zh-CN"] .pricing-table th.pro-col .pro-col-subtitle {
     background: rgba(37, 99, 235, 0.03);
 }
 
+.pricing-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    line-height: 0;
+    vertical-align: middle;
+}
+
+.pricing-table td.free-col .pricing-check {
+    color: #4b5563;
+}
+
 .pricing-table td.pro-lifetime-col,
 .pricing-table th.pro-lifetime-col {
     border-left: 1px solid rgba(37, 99, 235, 0.12);
