@@ -202,7 +202,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="style.css?v=20260606a" as="style">
+    <link rel="preload" href="style.css?v=20260807i" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -969,7 +969,7 @@
             margin-bottom: 1.1rem;
         }
     </style>
-    <link rel="stylesheet" href="style.css?v=20260606a">
+    <link rel="stylesheet" href="style.css?v=20260807i">
 </head>
 <body>
     <header class="top-bar">
@@ -983,6 +983,7 @@
                 <li><a href="#use-cases">Use Cases</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="online/">Demo</a></li>
+                <li><a href="gif-viewer/">Online Tools</a></li>
                 <li><a href="#guides">Guides</a></li>
                 <li><a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" class="top-bar-nav-cta" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'top_nav'});">Download</a></li>
             </ul>
@@ -1015,6 +1016,7 @@
                 <li><a href="#use-cases">Use Cases</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="online/">Demo</a></li>
+                <li><a href="gif-viewer/">Online Tools</a></li>
                 <li><a href="#guides">Guides</a></li>
                 <li><a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home&mt=8" class="top-bar-mobile-nav-download" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'top_nav_mobile'});">Download</a></li>
             </ul>
@@ -1544,7 +1546,8 @@
             </div>
             <section id="guides" class="section guides-section" aria-labelledby="guides-heading">
                 <h2 id="guides-heading" class="guides-title">Resources &amp; Guides</h2>
-                <h3 class="guides-subtitle">Core Workflow</h3>
+
+                <h3 class="guides-subtitle">Start with TransMov</h3>
                 <p class="guides-subtitle-desc">
                     Understand how TransMov fits into real production pipelines from AI generation to final assets.
                 </p>
@@ -1552,7 +1555,7 @@
                 <div class="guides-grid guides-grid--two-fixed">
                     <a href="blog/ai-to-production-workflow.html" class="guide-card guide-card--featured-case">
                         <span class="guide-card-tag guide-card-tag--case-study">Core Pipeline</span>
-                        <h3>The AI-to-Asset Pipeline</h3>
+                        <h3>AI-to-Asset Pipeline</h3>
                         <p class="cta-description">
                             AI-generated video is too heavy for production use. This workflow shows how TransMov converts it into lightweight, usable assets.
                         </p>
@@ -1581,9 +1584,77 @@
                     </a>
                 </div>
 
+                <h3 class="guides-subtitle" style="margin-top: 2.5rem;">Online Tools</h3>
+                <p class="guides-subtitle-desc">
+                    Preview animated images in your browser — Files stay on your device.
+                </p>
+
+                <div class="guides-grid">
+                    <a href="gif-viewer/" class="guide-card">
+                        <span class="guide-card-tag">Tool</span>
+                        <h3>GIF Viewer</h3>
+                        <p>
+                            Drop a GIF to preview animation, size, and dimensions in your browser.
+                        </p>
+                        <div class="guide-card-more">Open Viewer →</div>
+                    </a>
+
+                    <a href="apng-viewer/" class="guide-card">
+                        <span class="guide-card-tag">Tool</span>
+                        <h3>APNG Viewer</h3>
+                        <p>
+                            Preview animated PNG (APNG) with alpha transparency — no upload required.
+                        </p>
+                        <div class="guide-card-more">Open Viewer →</div>
+                    </a>
+
+                    <a href="webp-viewer/" class="guide-card">
+                        <span class="guide-card-tag">Tool</span>
+                        <h3>WebP Viewer</h3>
+                        <p>
+                            Open animated or static WebP files instantly in your browser.
+                        </p>
+                        <div class="guide-card-more">Open Viewer →</div>
+                    </a>
+                </div>
+
+                <h3 class="guides-subtitle" style="margin-top: 2.5rem;">Format &amp; Platform Guides</h3>
+                <p class="guides-subtitle-desc">
+                    Compare animation formats and learn how to ship transparent assets across platforms.
+                </p>
+
+                <div class="guides-grid">
+                    <a href="gif-vs-apng-vs-webp-guide.html" class="guide-card">
+                        <span class="guide-card-tag">Format Guide</span>
+                        <h3>GIF vs APNG vs WebP</h3>
+                        <p>
+                            Compare formats by transparency, file size, and compatibility to pick the right output.
+                        </p>
+                        <div class="guide-card-more">Learn Format →</div>
+                    </a>
+
+                    <a href="convert-video-to-transparent-apng-mac.html" class="guide-card">
+                        <span class="guide-card-tag">Format Guide</span>
+                        <h3>Convert Video to Transparent APNG on Mac</h3>
+                        <p>
+                            Turn MP4 or MOV into high-fidelity transparent APNG locally — 100% offline, perfect for iOS Safari compatibility.
+                        </p>
+                        <div class="guide-card-more">Read Tutorial →</div>
+                    </a>
+
+                    <a href="framer-webflow-transparent-animation.html" class="guide-card">
+                        <span class="guide-card-tag">Web Design</span>
+                        <h3>Framer &amp; Webflow Transparent Animation Guide</h3>
+                        <p>
+                            Fix iOS Safari black-box bugs and ship lightweight transparent APNG and WebP assets for modern web stacks.
+                        </p>
+                        <div class="guide-card-more">Read Guide →</div>
+                    </a>
+                </div>
+
                 <h3 class="guides-subtitle" style="margin-top: 2.5rem;">Decision Guides</h3>
                 <p class="guides-subtitle-desc">
-                    Compare tools and formats to choose the right approach for your workflow.
+                    Compare tools and approaches to choose the right workflow for your project.
                 </p>
 
                 <div class="guides-grid">
@@ -1623,40 +1694,6 @@
                         <div class="guide-card-more">See Alternative →</div>
                     </a>
 
-                    <a href="framer-webflow-transparent-animation.html" class="guide-card">
-                        <span class="guide-card-tag">Web Design</span>
-                        <h3>Framer &amp; Webflow Transparent Animation Guide</h3>
-                        <p>
-                            Fix iOS Safari black-box bugs and ship lightweight transparent APNG and WebP assets for modern web stacks.
-                        </p>
-                        <div class="guide-card-more">Read Guide →</div>
-                    </a>
-
-                    <a href="convert-video-to-transparent-apng-mac.html" class="guide-card">
-                        <span class="guide-card-tag">Format Guide</span>
-                        <h3>Convert Video to Transparent APNG on Mac</h3>
-                        <p>
-                            Turn MP4 or MOV into high-fidelity transparent APNG locally — 100% offline, perfect for iOS Safari compatibility.
-                        </p>
-                        <div class="guide-card-more">Read Tutorial →</div>
-                    </a>
-
-                    <a href="gif-vs-apng-vs-webp-guide.html" class="guide-card">
-                        <span class="guide-card-tag">Format Guide</span>
-                        <h3>GIF vs APNG vs WebP</h3>
-                        <p>
-                            Compare formats by transparency, file size, and compatibility to pick the right output.
-                        </p>
-                        <div class="guide-card-more">Learn Format →</div>
-                    </a>
-                </div>
-
-                <h3 class="guides-subtitle" style="margin-top: 2.5rem;">Foundations</h3>
-                <p class="guides-subtitle-desc">
-                    Core concepts behind local AI processing, privacy, and modern animation workflows.
-                </p>
-
-                <div class="guides-grid guides-grid--fixed-card">
                     <a href="blog/why-local-ai-matters-for-video-privacy.html" class="guide-card">
                         <span class="guide-card-tag guide-card-tag--privacy">Privacy</span>
                         <h3>Why Local AI Matters</h3>
@@ -1721,13 +1758,42 @@
         </div>
         
         <div class="footer">
-            <p>
-                <a href="privacy-policy.html?lang=en">Privacy Policy</a> |
-                <a href="support.html?lang=en">Support</a> |
-                <a href="terms-of-service.html?lang=en">Terms of Service</a>
-            </p>
-            <p style="margin-top: 10px;">© 2026 TransMov</p>
-            <p>A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
+            <div class="footer-inner">
+                <div class="footer-columns">
+                    <nav class="footer-tools" aria-label="Product">
+                        <span class="footer-tools-label">Product</span>
+                        <div class="footer-tools-links">
+                            <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_footer&mt=8" target="_blank" rel="noopener">TransMov for Mac</a>
+                            <a href="gif-viewer/">Free Online GIF Viewer</a>
+                            <a href="apng-viewer/">Free Online APNG Viewer</a>
+                            <a href="webp-viewer/">Free Online WebP Viewer</a>
+                        </div>
+                    </nav>
+                    <nav class="footer-legal" aria-label="Support">
+                        <span class="footer-legal-label">Support</span>
+                        <div class="footer-legal-links">
+                            <a href="privacy-policy.html?lang=en">Privacy Policy</a>
+                            <a href="terms-of-service.html?lang=en">Terms of Service</a>
+                            <a href="support.html?lang=en">Support</a>
+                            <a href="mailto:support@louisbuilds.me">Contact Us</a>
+                        </div>
+                    </nav>
+                    <nav class="footer-social" aria-label="Follow Us">
+                        <span class="footer-social-label">Follow Us</span>
+                        <div class="footer-social-links">
+                            <a class="footer-social-link" href="https://www.youtube.com/@transmovanimationlab" target="_blank" rel="noopener" aria-label="TransMov on YouTube">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor" d="M23.5 6.2a3.05 3.05 0 0 0-2.15-2.16C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.35.54A3.05 3.05 0 0 0 .5 6.2 31.9 31.9 0 0 0 0 12a31.9 31.9 0 0 0 .5 5.8 3.05 3.05 0 0 0 2.15 2.16C4.5 20.5 12 20.5 12 20.5s7.5 0 9.35-.54a3.05 3.05 0 0 0 2.15-2.16A31.9 31.9 0 0 0 24 12a31.9 31.9 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer-meta">
+                    <p class="footer-copy">© 2026 TransMov</p>
+                    <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
+                </div>
+            </div>
         </div>
     </main>
 

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online APNG Viewer — Preview Animated APNGs in Your Browser | TransMov</title>
+    <meta name="description" content="Free online APNG viewer. Drop an animated APNG to preview it in your browser — no upload, no account. Check size, dimensions, and transparency.">
+    <meta name="keywords" content="APNG viewer, online APNG viewer, animated APNG preview, view APNG online, free APNG viewer">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://louisbuilds.me/transmov/apng-viewer/">
+    <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/apng-viewer/">
+    <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/apng-viewer/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://louisbuilds.me/transmov/apng-viewer/">
+    <meta property="og:title" content="Free Online APNG Viewer — TransMov">
+    <meta property="og:description" content="Preview animated APNGs in your browser. Files stay on your device — never uploaded.">
+    <meta property="og:image" content="https://louisbuilds.me/transmov/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online APNG Viewer — TransMov">
+    <meta name="twitter:description" content="Preview animated APNGs in your browser. No upload, no account.">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+    </script>
+    <script defer src="../js/gtag-delayed.js"></script>
+    <link rel="stylesheet" href="../style.css?v=20260807i">
+    <link rel="stylesheet" href="../viewer/viewer.css?v=20260807k">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "TransMov APNG Viewer",
+      "url": "https://louisbuilds.me/transmov/apng-viewer/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free online APNG viewer that previews animated APNGs in your browser without uploading files."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my APNG uploaded to a server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Your APNG stays on your device. TransMov APNG Viewer processes files directly in your browser, so your animations are never uploaded or stored on a server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information can I see about my APNG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can preview the animation and check details including file name, file size, dimensions, frame count, and duration. You can also switch between checkerboard, black, and white backgrounds to inspect transparency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I edit or convert APNG files here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This page is designed for previewing APNG files. For editing, conversion, and advanced animation workflows, use TransMov for Mac — a native macOS app for GIF, APNG, and WebP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can APNGs support transparency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. APNG supports full alpha transparency, which usually looks smoother than GIF's basic transparency. Compare formats in the TransMov GIF vs APNG vs WebP guide."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="viewer-top-bar">
+        <a href="../" class="viewer-top-bar-brand">
+            <img src="../images/app-icon.png" alt="" class="viewer-top-bar-icon" width="32" height="32">
+            <span class="viewer-top-bar-name">TransMov</span>
+        </a>
+        <nav aria-label="Format viewers">
+            <ul class="viewer-format-nav">
+                <li><a href="../gif-viewer/">GIF Viewer</a></li>
+                <li><a href="../apng-viewer/" class="is-active" aria-current="page">APNG Viewer</a></li>
+                <li><a href="../webp-viewer/">WebP Viewer</a></li>
+            </ul>
+        </nav>
+        <a class="viewer-top-bar-cta"
+           href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_apng_viewer&mt=8"
+           target="_blank" rel="noopener"
+           data-viewer-download="top_nav">Get TransMov for Mac</a>
+    </header>
+
+    <main class="viewer-main">
+        <section class="viewer-hero" aria-labelledby="viewer-heading">
+            <h1 id="viewer-heading">Free Online APNG Viewer</h1>
+            <p class="viewer-hero-lead">Open and preview animated APNGs online in your browser. Files stay on your device.</p>
+
+            <div class="viewer-panel">
+                <input type="file" id="viewer-file-input" class="viewer-file-input" accept="image/png,.png,.apng">
+
+                <div id="viewer-dropzone" class="viewer-dropzone" role="button" tabindex="0" aria-label="Open an APNG file">
+                    <p class="viewer-dropzone-title">Drop an APNG file here</p>
+                    <p class="viewer-dropzone-hint">or click to browse</p>
+                    <button type="button" class="viewer-dropzone-btn" data-no-picker id="viewer-pick-btn">Choose APNG</button>
+                    <div class="viewer-sample-row" data-no-picker>
+                        <button type="button" class="viewer-sample-chip" id="viewer-sample-btn" data-no-picker>View sample APNG</button>
+                    </div>
+                </div>
+
+                <div id="viewer-active" class="viewer-active">
+                    <div id="viewer-stage-wrap" class="viewer-stage-wrap bg-checker">
+                        <img id="viewer-preview-img" class="viewer-preview-img zoom-fit" alt="APNG preview" decoding="async">
+                        <canvas id="viewer-preview-canvas" class="viewer-preview-canvas is-hidden" aria-hidden="true"></canvas>
+                    </div>
+                    <div class="viewer-toolbar">
+                        <div class="viewer-toolbar-group" role="group" aria-label="Playback and zoom">
+                            <button type="button" class="viewer-tool-btn" id="viewer-btn-play">Pause</button>
+                            <button type="button" class="viewer-tool-btn is-active" id="viewer-btn-fit">Fit</button>
+                            <button type="button" class="viewer-tool-btn" id="viewer-btn-actual">100%</button>
+                            <button type="button" class="viewer-tool-btn viewer-tool-btn--reset" id="viewer-btn-clear">Reset</button>
+                        </div>
+                        <div class="viewer-toolbar-group" role="group" aria-label="Preview background">
+                            <button type="button" class="viewer-bg-dot viewer-bg-dot--checker is-active" data-viewer-bg="checker" aria-pressed="true" title="Checkerboard" aria-label="Checkerboard background"></button>
+                            <button type="button" class="viewer-bg-dot viewer-bg-dot--black" data-viewer-bg="black" aria-pressed="false" title="Black" aria-label="Black background"></button>
+                            <button type="button" class="viewer-bg-dot viewer-bg-dot--white" data-viewer-bg="white" aria-pressed="false" title="White" aria-label="White background"></button>
+                        </div>
+                    </div>
+                    <div class="viewer-meta" id="viewer-meta">
+                        <div class="viewer-meta-item">
+                            <span class="viewer-meta-label">File</span>
+                            <span class="viewer-meta-value" id="viewer-meta-name">—</span>
+                        </div>
+                        <div class="viewer-meta-item">
+                            <span class="viewer-meta-label">Dimensions</span>
+                            <span class="viewer-meta-value" id="viewer-meta-dims">—</span>
+                        </div>
+                        <div class="viewer-meta-item">
+                            <span class="viewer-meta-label">Frames</span>
+                            <span class="viewer-meta-value" id="viewer-meta-frames">—</span>
+                        </div>
+                        <div class="viewer-meta-item">
+                            <span class="viewer-meta-label">Duration</span>
+                            <span class="viewer-meta-value" id="viewer-meta-duration">—</span>
+                        </div>
+                        <div class="viewer-meta-item">
+                            <span class="viewer-meta-label">Size</span>
+                            <span class="viewer-meta-value" id="viewer-meta-size">—</span>
+                        </div>
+                    </div>
+                    <div id="viewer-cross-format" class="viewer-cross-format is-hidden" role="status"></div>
+                </div>
+                <div id="viewer-error" class="viewer-error is-hidden" role="alert"></div>
+            </div>
+        </section>
+
+        <section class="viewer-bridge" aria-labelledby="bridge-heading">
+            <h2 id="bridge-heading">Need more than viewing APNGs?</h2>
+            <p>Turn videos into APNG animations, convert formats, and export optimized motion assets with TransMov for Mac — all with local processing.</p>
+            <a class="viewer-bridge-btn"
+               href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_apng_viewer&mt=8"
+               target="_blank" rel="noopener"
+               data-viewer-download="bridge">
+                <img src="../images/app-icon.png" alt="" width="22" height="22">
+                Get TransMov for Mac
+            </a>
+        </section>
+
+        <section class="viewer-seo" aria-labelledby="howto-heading">
+            <h2 id="howto-heading">How to preview an APNG online</h2>
+            <ol>
+                <li>
+                    Drop your <strong>.apng</strong> or animated <strong>.png</strong> file into the viewer, or click <strong>Choose APNG</strong> to select a file from your device.
+                </li>
+                <li>
+                    Watch the animation instantly in your browser. Use zoom controls and different backgrounds to inspect the APNG appearance and see how transparent areas appear.
+                </li>
+                <li>
+                    Review important details including file size, dimensions, frame count, and animation duration.
+                </li>
+            </ol>
+            <p>
+                TransMov APNG Viewer runs entirely in your browser. Your files are processed locally and never uploaded to a server.
+            </p>
+
+            <h2>Why use TransMov beyond this viewer?</h2>
+            <p>
+                Need more control over your animations? TransMov for Mac helps you convert between GIF, APNG, and WebP, optimize animated assets, manage transparency, remove backgrounds, and export production-ready files locally.
+            </p>
+
+            <h2>FAQ</h2>
+            <details>
+                <summary>Is my APNG uploaded to a server?</summary>
+                <p>No. Your APNG stays on your device. TransMov APNG Viewer processes files directly in your browser, so your animations are never uploaded or stored on a server.</p>
+            </details>
+            <details>
+                <summary>What information can I see about my APNG?</summary>
+                <p>You can preview the animation and check details including file name, file size, dimensions, frame count, and duration. You can also switch between checkerboard, black, and white backgrounds to inspect transparency.</p>
+            </details>
+            <details>
+                <summary>Can I edit or convert APNG files here?</summary>
+                <p>This page is designed for previewing APNG files. For editing, conversion, and advanced animation workflows, use <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_apng_viewer&mt=8" target="_blank" rel="noopener" data-viewer-download="faq">TransMov for Mac</a> — a native macOS app for GIF, APNG, and WebP.</p>
+            </details>
+            <details>
+                <summary>Can APNGs support transparency?</summary>
+                <p>Yes. APNG supports full alpha transparency, which usually looks smoother than GIF&rsquo;s basic transparency. Compare formats in our <a href="../gif-vs-apng-vs-webp-guide.html">GIF vs APNG vs WebP guide</a>.</p>
+            </details>
+
+            <h2>Related</h2>
+            <div class="viewer-related">
+                <a href="../gif-viewer/">Online GIF Viewer</a>
+                <a href="../webp-viewer/">Online WebP Viewer</a>
+                <a href="../online/">TransMov interactive demo</a>
+                <a href="../gif-vs-apng-vs-webp-guide.html">GIF vs APNG vs WebP guide</a>
+                <a href="../blog/what-is-apng.html">What is APNG?</a>
+            </div>
+        </section>
+
+        <section class="viewer-cta" aria-labelledby="cta-heading">
+            <h2 id="cta-heading">Bring your animation workflow to Mac</h2>
+            <p>TransMov is a native macOS app for GIF, APNG, and WebP workflows. Convert formats, optimize animations, remove backgrounds, and export transparent assets — all locally on your Mac.</p>
+            <a class="viewer-bridge-btn"
+               href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_apng_viewer&mt=8"
+               target="_blank" rel="noopener"
+               data-viewer-download="bottom_cta">
+                <img src="../images/app-icon.png" alt="" width="22" height="22">
+                Download TransMov for Mac
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-columns">
+                <nav class="footer-tools" aria-label="Product">
+                    <span class="footer-tools-label">Product</span>
+                    <div class="footer-tools-links">
+                        <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_footer_apng_viewer&mt=8" target="_blank" rel="noopener">TransMov for Mac</a>
+                        <a href="../gif-viewer/">Free Online GIF Viewer</a>
+                        <a href="../apng-viewer/">Free Online APNG Viewer</a>
+                        <a href="../webp-viewer/">Free Online WebP Viewer</a>
+                    </div>
+                </nav>
+                <nav class="footer-legal" aria-label="Support">
+                    <span class="footer-legal-label">Support</span>
+                    <div class="footer-legal-links">
+                        <a href="../privacy-policy.html?lang=en">Privacy Policy</a>
+                        <a href="../terms-of-service.html?lang=en">Terms of Service</a>
+                        <a href="../support.html?lang=en">Support</a>
+                        <a href="mailto:support@louisbuilds.me">Contact Us</a>
+                    </div>
+                </nav>
+                <nav class="footer-social" aria-label="Follow Us">
+                    <span class="footer-social-label">Follow Us</span>
+                    <div class="footer-social-links">
+                        <a class="footer-social-link" href="https://www.youtube.com/@transmovanimationlab" target="_blank" rel="noopener" aria-label="TransMov on YouTube">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path fill="currentColor" d="M23.5 6.2a3.05 3.05 0 0 0-2.15-2.16C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.35.54A3.05 3.05 0 0 0 .5 6.2 31.9 31.9 0 0 0 0 12a31.9 31.9 0 0 0 .5 5.8 3.05 3.05 0 0 0 2.15 2.16C4.5 20.5 12 20.5 12 20.5s7.5 0 9.35-.54a3.05 3.05 0 0 0 2.15-2.16A31.9 31.9 0 0 0 24 12a31.9 31.9 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer-meta">
+                <p class="footer-copy">© 2026 TransMov</p>
+                <p class="footer-byline">A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../viewer/viewer.js?v=20260807h"></script>
+    <script>
+      TransMovViewer.mount({
+        format: "apng",
+        accept: "image/png,.png,.apng",
+        sampleUrl: "../viewer/demo/sample.apng?v=20260807b",
+        campaign: "transmov_apng_viewer",
+        pageVersion: "apng_viewer"
+      });
+      (function () {
+        var pick = document.getElementById("viewer-pick-btn");
+        var input = document.getElementById("viewer-file-input");
+        var zone = document.getElementById("viewer-dropzone");
+        if (pick && input) {
+          pick.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            input.click();
+          });
+        }
+        if (zone) {
+          zone.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              if (input) input.click();
+            }
+          });
+        }
+      })();
+    </script>
+</body>
+</html>
