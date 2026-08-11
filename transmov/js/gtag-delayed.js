@@ -1,9 +1,10 @@
 /**
- * GA4: defer gtag.js fetch/parse to reduce main-thread contention (INP).
+ * GA4 + Google Ads: defer gtag.js fetch/parse to reduce main-thread contention (INP).
  * Requires inline stub: dataLayer + gtag() queue in HTML before this script.
  */
 (function () {
   var MEASUREMENT_ID = 'G-2TMXET2TJN';
+  var ADS_ID = 'AW-18381116529';
   var DELAY_MS = 2500;
 
   function boot() {
@@ -15,6 +16,7 @@
     s.onload = function () {
       gtag('js', new Date());
       gtag('config', MEASUREMENT_ID);
+      gtag('config', ADS_ID);
     };
     document.head.appendChild(s);
   }
