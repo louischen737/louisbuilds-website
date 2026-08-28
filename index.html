@@ -422,6 +422,20 @@ body {
     object-position: center;
     pointer-events: none;
     filter: brightness(1.12) saturate(1.15) contrast(1.04);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-enclosure,
+.hero-video::-webkit-media-controls-panel,
+.hero-video::-webkit-media-controls-start-playback-button,
+.hero-video::-webkit-media-controls-overlay-play-button,
+.hero-video::-webkit-media-controls-play-button {
+    display: none !important;
+    -webkit-appearance: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 @media (max-width: 767px) {
@@ -1931,7 +1945,7 @@ main > section:not(.hero) .community-intro strong {
 <main>
 <section class="hero" aria-label="Introduction">
     <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none">
             <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4" type="video/mp4">
         </video>
         <div class="hero-video-scrim"></div>
@@ -1976,7 +1990,7 @@ main > section:not(.hero) .community-intro strong {
 <div class="device-mockup">
 <div class="device-frame device-frame--iphone">
 <div class="device-screen">
-<img src="downloads/lonelyisle-1.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="LonelyIsle: Island Soundscapes — explore fictional islands and ambient soundscapes" width="1170" height="2532" loading="lazy" decoding="async">
+<img src="downloads/lonelyisle-1-800w.webp" srcset="downloads/lonelyisle-1-400w.webp 400w, downloads/lonelyisle-1-800w.webp 800w, downloads/lonelyisle-1-1200w.webp 1200w" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="LonelyIsle: Island Soundscapes — explore fictional islands and ambient soundscapes" width="1170" height="2532" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
@@ -2007,7 +2021,7 @@ main > section:not(.hero) .community-intro strong {
 <div class="device-mockup">
 <div class="device-frame device-frame--iphone">
 <div class="device-screen">
-<img src="downloads/purrrrrfocus-1.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="PurrrrrFocus: Pomodoro Timer — focus timer with cat companion" width="1170" height="2532" loading="lazy" decoding="async">
+<img src="downloads/purrrrrfocus-1-800w.webp" srcset="downloads/purrrrrfocus-1-400w.webp 400w, downloads/purrrrrfocus-1-800w.webp 800w, downloads/purrrrrfocus-1-1200w.webp 1200w" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="PurrrrrFocus: Pomodoro Timer — focus timer with cat companion" width="1170" height="2532" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
@@ -2035,7 +2049,7 @@ main > section:not(.hero) .community-intro strong {
 <div class="device-mockup">
 <div class="device-frame device-frame--iphone">
 <div class="device-screen">
-<img src="downloads/截屏%202026-08-28%2018.22.41.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="Step1st: Screen Time Limit — step goals before unlocking apps" width="1170" height="2532" loading="lazy" decoding="async">
+<img src="downloads/step1st-1-800w.webp" srcset="downloads/step1st-1-400w.webp 400w, downloads/step1st-1-800w.webp 800w, downloads/step1st-1-1200w.webp 1200w" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="Step1st: Screen Time Limit — step goals before unlocking apps" width="1170" height="2532" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
@@ -2063,7 +2077,7 @@ main > section:not(.hero) .community-intro strong {
 <div class="device-mockup">
 <div class="device-frame device-frame--iphone">
 <div class="device-screen">
-<img src="downloads/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-05-26%20at%2016.07.53.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="TapPause: Quick Mental Break — minimal pause timer for mindful breaks" width="1206" height="2622" loading="lazy" decoding="async">
+<img src="downloads/tappause-1-800w.webp" srcset="downloads/tappause-1-400w.webp 400w, downloads/tappause-1-800w.webp 800w, downloads/tappause-1-1200w.webp 1200w" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="TapPause: Quick Mental Break — minimal pause timer for mindful breaks" width="1206" height="2622" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
@@ -2091,7 +2105,7 @@ main > section:not(.hero) .community-intro strong {
 <div class="device-mockup">
 <div class="device-frame device-frame--iphone">
 <div class="device-screen">
-<img src="downloads/phonetic-1.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="Phonetic Formatter: English — convert English text to structured IPA transcription" width="1170" height="2532" loading="lazy" decoding="async">
+<img src="downloads/phonetic-1-800w.webp" srcset="downloads/phonetic-1-400w.webp 400w, downloads/phonetic-1-800w.webp 800w, downloads/phonetic-1-1200w.webp 1200w" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="Phonetic Formatter: English — convert English text to structured IPA transcription" width="1170" height="2532" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
@@ -2119,7 +2133,7 @@ main > section:not(.hero) .community-intro strong {
 <div class="device-mockup">
 <div class="device-frame device-frame--laptop">
 <div class="device-screen">
-<img src="downloads/iShot_2026-05-23_14.25.44.png" sizes="(max-width: 768px) min(320px, 92vw), min(520px, 48vw)" alt="TransMov: Make GIF From Video — GIF, APNG, and WebP animation studio for Mac with local AI background removal" width="2952" height="1872" loading="lazy" decoding="async">
+<img src="downloads/transmov-1-1040w.webp" srcset="downloads/transmov-1-520w.webp 520w, downloads/transmov-1-1040w.webp 1040w, downloads/transmov-1-1600w.webp 1600w" sizes="(max-width: 768px) min(320px, 92vw), min(520px, 48vw)" alt="TransMov: Make GIF From Video — GIF, APNG, and WebP animation studio for Mac with local AI background removal" width="2952" height="1872" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
@@ -2335,11 +2349,12 @@ main > section:not(.hero) .community-intro strong {
 <p>Independent apps & digital tools, thoughtfully built. © 2026 Louis Builds.</p>
 </footer>
 
+<script src="assets/vendor/motion/motion.js"></script>
+<script src="assets/hero-video.js"></script>
+<script src="assets/hero-motion.js"></script>
 <script src="assets/vendor/gsap/gsap.min.js"></script>
 <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script>
-<script src="assets/vendor/motion/motion.js"></script>
-<script src="assets/hero-motion.js"></script>
 <script src="assets/cta-motion.js"></script>
 <script src="assets/home-motion.js"></script>
 <script src="assets/apps-chapters.js"></script>
