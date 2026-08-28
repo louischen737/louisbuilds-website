@@ -13,7 +13,8 @@
 
     if (!hero || !titleEl || !staggerLines.length || !ledeEl || !btn) return;
 
-    const CHAR_STAGGER = 0.07;
+    const CHAR_STAGGER = window.matchMedia("(max-width: 767px)").matches ? 0.035 : 0.07;
+    const CHAR_DURATION = window.matchMedia("(max-width: 767px)").matches ? 0.4 : 0.55;
 
     function splitChars(el) {
         const text = el.textContent;
@@ -47,7 +48,7 @@
 
     function staggeredFade(chars) {
         return animate(chars, { opacity: [0, 1] }, {
-            duration: 0.55,
+            duration: CHAR_DURATION,
             ease: "easeOut",
             delay: stagger(CHAR_STAGGER, { startDelay: 0.05 })
         }).finished;
@@ -93,7 +94,7 @@
         });
     }
 
-    if (document.fonts && document.fonts.ready) {
+    if (document.fonts && document.fonts.ready && !window.matchMedia("(max-width: 767px)").matches) {
         document.fonts.ready.then(playHero);
     } else {
         playHero();
