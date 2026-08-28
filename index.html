@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add("js");</script>
 <meta name="description" content="Independent, offline-first apps for digital wellness and creative efficiency. Discover minimal, no-account tools like Step1st, PurrrrrFocus, and TransMov." />
 <link rel="canonical" href="https://louisbuilds.me/" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://db.onlinewebfonts.com/c/2bf40ab72ea4897a3fd9b6e48b233a19?family=Garamond" rel="stylesheet" />
 <title>Louis Builds — Independent Apps for Focus & Mindfulness</title>
 
 <!-- Open Graph / 社交分享 -->
@@ -60,7 +65,7 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "LonelyIsle",
+      "name": "LonelyIsle: Island Soundscapes",
       "operatingSystem": "iOS",
       "applicationCategory": "HealthApplication",
       "applicationSubCategory": "Meditation",
@@ -77,7 +82,7 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "Step1st",
+      "name": "Step1st: Screen Time Limit",
       "operatingSystem": "iOS",
       "applicationCategory": "HealthApplication",
       "applicationSubCategory": "Productivity",
@@ -94,7 +99,7 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "Phonetic Formatter",
+      "name": "Phonetic Formatter: English",
       "operatingSystem": "iOS",
       "applicationCategory": "UtilitiesApplication",
       "url": "https://louisbuilds.me/phoneticformatter/",
@@ -110,7 +115,7 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "PurrrrrFocus",
+      "name": "PurrrrrFocus: Pomodoro Timer",
       "operatingSystem": "iOS",
       "applicationCategory": "ProductivityApplication",
       "applicationSubCategory": "Utilities",
@@ -132,7 +137,7 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "TapPause",
+      "name": "TapPause: Quick Mental Break",
       "operatingSystem": "iOS",
       "applicationCategory": "HealthApplication",
       "url": "https://louisbuilds.me/tappause/",
@@ -148,7 +153,7 @@
     },
     {
       "@type": "SoftwareApplication",
-      "name": "TransMov",
+      "name": "TransMov: Make GIF From Video",
       "operatingSystem": "macOS",
       "applicationCategory": "DesignApplication",
       "applicationSubCategory": "Productivity",
@@ -196,6 +201,8 @@
     --text-primary: #fff;
     --text-secondary: #a1a1a6;
     --text-muted: #6e6e73;
+    --font-serif: 'Garamond', 'Times New Roman', serif;
+    --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
     /* Lighter sky accent — reads softer on black than system #007aff */
     --accent: #82c8ff;
     --accent-rgb: 130, 200, 255;
@@ -205,6 +212,10 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 72px;
+}
+
+html.js {
+    scroll-behavior: auto;
 }
 
 body {
@@ -222,9 +233,13 @@ body {
     top: 0;
     left: 0;
     height: 2px;
-    width: 0%;
+    width: 100%;
     background: var(--accent);
     z-index: 9999;
+    transform: scaleX(0);
+    transform-origin: left center;
+    pointer-events: none;
+    will-change: transform;
 }
 
 /* Site header */
@@ -337,93 +352,272 @@ body {
     color: var(--accent);
 }
 
-/* Hero */
+.font-garamond {
+    font-family: var(--font-serif);
+}
+
+.liquid-glass {
+    background: rgba(255, 255, 255, 0.01);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: none;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.15) 20%,
+        rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%,
+        rgba(255, 255, 255, 0.15) 80%, rgba(255, 255, 255, 0.45) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.liquid-glass:hover {
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.liquid-glass:active {
+    transform: scale(0.98);
+}
+
+/* Hero — cinematic full-screen */
 .hero {
+    position: relative;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    overflow: hidden;
+    background: #010101;
+    color: #fff;
+}
+
+.hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    filter: brightness(1.12) saturate(1.15) contrast(1.04);
+}
+
+@media (max-width: 767px) {
+    .hero {
+        justify-content: center;
+    }
+
+    .hero-content {
+        min-height: 100dvh;
+        justify-content: center;
+        padding: 1.25rem;
+        padding-top: max(1.25rem, env(safe-area-inset-top, 0px));
+        padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+        box-sizing: border-box;
+    }
+
+    .hero-headline-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-video {
+        inset: auto;
+        top: auto;
+        bottom: 0;
+        left: 50%;
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        min-height: 0;
+        object-fit: contain;
+        object-position: center bottom;
+        transform: translateX(-50%);
+    }
+
+    .hero-video-scrim {
+        background: linear-gradient(
+            to bottom,
+            rgba(1, 1, 1, 0.42) 0%,
+            rgba(1, 1, 1, 0.22) 28%,
+            rgba(1, 1, 1, 0.06) 52%,
+            rgba(1, 1, 1, 0.18) 100%
+        );
+    }
+}
+
+.hero-video-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(1, 1, 1, 0) 0%,
+        rgba(1, 1, 1, 0.06) 55%,
+        rgba(1, 1, 1, 0.22) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 24px;
-    position: relative;
-    background: var(--bg-color);
+    width: 100%;
+    padding: 3rem 1.25rem 2rem;
+    padding-top: max(4.5rem, calc(3rem + env(safe-area-inset-top, 0px)));
+}
+
+@media (min-width: 640px) {
+    .hero-content {
+        padding: 4rem 2rem 2.5rem;
+        padding-top: max(5.5rem, calc(4rem + env(safe-area-inset-top, 0px)));
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        padding-top: max(6rem, calc(5rem + env(safe-area-inset-top, 0px)));
+    }
 }
 
 .hero-headline-group {
-    display: block;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 2rem;
 }
 
-.hero h1 {
-    font-size: clamp(56px, 10vw, 88px);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    width: fit-content;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 28px;
+@media (min-width: 640px) {
+    .hero-headline-group {
+        margin-bottom: 2.5rem;
+    }
+}
+
+.hero h1,
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4.8vw, 4.25rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.12;
     color: #fff;
-    animation: fadeUp 1s var(--ease);
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.55);
 }
 
-.hero-headline-group p {
-    font-size: clamp(18px, 3.2vw, 22px);
-    color: var(--text-secondary);
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    margin-bottom: 0;
-    animation: fadeUp 1.2s var(--ease);
+html.js .hero-title {
+    opacity: 0;
 }
 
-.hero .explore-btn {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 14px 36px;
-    border-radius: 999px;
-    text-decoration: none;
-    color: #000;
-    background: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.4s var(--ease);
-    animation: fadeUp 1.4s var(--ease);
+html.js .hero-title.is-split {
+    opacity: 1;
 }
 
-.hero .explore-btn:hover {
-    background: #e8e8ed;
-    color: #000;
+@media (min-width: 640px) {
+    .hero h1,
+    .hero-title {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.hero-stagger-line {
+    display: block;
+}
+
+.hero-stagger-line.is-waiting {
+    visibility: hidden;
+}
+
+.hero-char {
+    display: inline-block;
+    will-change: opacity, transform;
+}
+
+html.js .hero-char {
+    opacity: 0;
+}
+
+.hero-headline-group p,
+.hero-lede {
+    font-family: var(--font-sans);
+    font-size: clamp(0.875rem, 2.2vw, 1.125rem);
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 22rem;
+    margin: 0 auto 2rem;
+    text-wrap: pretty;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+}
+
+@media (min-width: 640px) {
+    .hero-headline-group p,
+    .hero-lede {
+        max-width: 36rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-lede-line {
+        display: block;
+    }
+}
+
+.hero-lede-line {
+    display: inline;
 }
 
 .hero-actions {
     display: flex;
-    gap: 16px;
+    justify-content: center;
 }
 
-.hero-btn-secondary {
-    font-size: 16px;
-    padding: 14px 28px;
-    border-radius: 999px;
+.hero .explore-btn {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     text-decoration: none;
-    color: var(--text-secondary);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: all 0.3s var(--ease);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.875rem 1.75rem;
+    border-radius: 999px;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
 }
 
-.hero-btn-secondary:hover {
-    color: #fff;
-    border-color: rgba(255,255,255,0.5);
+@media (min-width: 640px) {
+    .hero .explore-btn {
+        letter-spacing: 0.2em;
+        padding: 1rem 2.5rem;
+    }
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+html.js .hero-lede,
+html.js .hero .explore-btn {
+    opacity: 0;
 }
 
 /* Shared section chrome (Products, Community, Journal) */
@@ -478,264 +672,378 @@ body {
     padding: clamp(100px, 12vw, 160px) 24px clamp(160px, 18vw, 240px);
 }
 
-.product.app-section,
-.product {
-    max-width: 960px;
-    margin: 0 auto clamp(140px, 16vw, 210px);
-    padding: 0;
-    opacity: 0;
-    transform: translateY(40px);
-    filter: blur(6px);
-    transition: opacity 0.85s var(--ease), transform 0.85s var(--ease), filter 0.85s var(--ease);
+.apps-scroll {
+    position: relative;
 }
 
-.product.visible {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+.apps-progress {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right, 0px));
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.products .product:last-child {
-    margin-bottom: 0;
+.apps-progress-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: color 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
 }
 
-/* Top band: name → tags → what → [status] → CTA — uneven spacing = rhythm */
-.app-head {
-    text-align: center;
-    margin-bottom: 0;
+.apps-progress-btn:hover,
+.apps-progress-btn.is-active {
+    color: #fff;
+    border-color: rgba(var(--accent-rgb), 0.45);
+    background: rgba(var(--accent-rgb), 0.12);
 }
 
-.app-head h2,
-.app-head .product-title {
-    font-size: clamp(1.85rem, 4.2vw, 2.65rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0;
+.app-chapter {
+    min-height: min(88vh, 920px);
+    display: flex;
+    align-items: center;
+    scroll-margin-top: 96px;
+    padding: clamp(2.5rem, 6vh, 4rem) 0;
+}
+
+.app-chapter:not(:last-child) {
+    margin-bottom: clamp(2rem, 6vh, 4rem);
+}
+
+.app-chapter-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    width: 100%;
+}
+
+.app-chapter--reverse .app-chapter-inner {
+    direction: rtl;
+}
+
+.app-chapter--reverse .app-chapter-inner > * {
+    direction: ltr;
+}
+
+.app-chapter-visual {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
+    will-change: transform;
 }
 
-.app-head .product-title .icon-picture {
-    display: contents;
+.device-mockup {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-/* Breathing room between icon+name row and metadata line */
-.app-head .tags {
-    margin: clamp(0.75rem, 1.8vw, 1.15rem) auto 0;
-    max-width: min(42rem, 92vw);
+.device-frame--iphone {
+    width: min(100%, 300px);
+    padding: 12px;
+    border-radius: 44px;
+    background: linear-gradient(145deg, #2a2a2e 0%, #0a0a0c 55%, #1c1c20 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.48);
+}
+
+.device-frame--laptop {
+    width: min(100%, 560px);
+    padding: 14px 14px 28px;
+    border-radius: 18px 18px 12px 12px;
+    background: linear-gradient(180deg, #2b2b30 0%, #121214 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.48);
+    position: relative;
+}
+
+.device-frame--laptop::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 18%;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.device-screen {
+    overflow: hidden;
+    border-radius: 32px;
+    background: #000;
+}
+
+.device-frame--laptop .device-screen {
+    border-radius: 8px;
+}
+
+.device-frame--laptop .device-screen img {
+    object-fit: contain;
+}
+
+.device-screen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.app-chapter-copy {
+    max-width: 34rem;
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.app-chapter-head {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    column-gap: 14px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.app-chapter-head picture {
+    display: block;
+    line-height: 0;
+}
+
+.app-chapter-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    display: block;
+    object-fit: cover;
+}
+
+.app-chapter-heading {
+    min-width: 0;
+}
+
+.app-chapter-title {
+    font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
     text-wrap: balance;
 }
 
-/* Clear step down: “what it is” — same voice as .site-section-lede (Community intro) */
-.app-head .app-what {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    max-width: 40rem;
-    margin: clamp(1.05rem, 2.3vw, 1.65rem) auto 0;
-}
-
-/* Emotional hook: lives under screenshots as first line of .app-description (see .app-description .app-tagline) */
-
-/* Largest inhale before actions (read → decide → click) */
-.apps-stage > .app-actions,
-.app-head .app-actions {
-    margin-top: clamp(1.65rem, 3.2vw, 2.35rem);
-    margin-bottom: clamp(2.35rem, 5.2vw, 3.65rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px 20px;
-}
-
-.app-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-/* Gallery — equal tiles (no hero), visual centerpiece */
-.app-gallery {
-    display: grid;
-    gap: clamp(14px, 2vw, 20px);
-    margin-bottom: clamp(2.75rem, 6vw, 4rem);
-    width: 100%;
-}
-
-.app-gallery.ios {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.app-gallery.macos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.app-gallery img {
-    width: 100%;
-    min-width: 0;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    border-radius: 18px;
-    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.48);
-    transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
-    cursor: pointer;
-}
-
-.app-gallery img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 32px 72px rgba(0, 0, 0, 0.58);
-}
-
-/* Lower band: split scan (left narrative, right bullets) + full-width meta */
-.app-body {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.app-body-split {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: clamp(1.75rem, 4vw, 3rem);
-    align-items: start;
-}
-
-.app-description {
-    min-width: 0;
-}
-
-/* Lead line after gallery: bridge from visuals → long copy (stronger than former muted head placement) */
-.app-description .app-tagline {
-    font-size: clamp(1.05rem, 2.1vw, 1.2rem);
-    font-weight: 500;
-    color: var(--text-primary);
-    line-height: 1.45;
-    margin: 0 0 1rem;
-    letter-spacing: -0.015em;
-    max-width: min(40rem, 100%);
-    padding: 0.15rem 0 0.15rem 1rem;
-    border-left: 3px solid var(--accent);
-    border-radius: 2px 0 0 2px;
-    box-shadow: -1px 0 12px rgba(var(--accent-rgb), 0.22);
-}
-
-.app-description .app-marketing {
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: var(--text-secondary);
-    margin: 0;
-    text-align: left;
-    opacity: 0.92;
-}
-
-.app-description .app-marketing strong {
-    color: var(--text-primary);
-    font-weight: 600;
-    opacity: 1;
-}
-
-.app-body .product-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.app-body .product-features li {
-    font-size: 0.875rem;
-    line-height: 1.55;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
-    padding-left: 0.65rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.08);
-    opacity: 0.9;
-}
-
-.app-body .product-features li:last-child {
-    margin-bottom: 0;
-}
-
-.app-body .product-features li span {
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-right: 0.35rem;
-}
-
-/* Documentation — last row of each app, centered */
-.app-doc-footer {
-    margin-top: clamp(1.5rem, 3.5vw, 2rem);
-    padding-top: 0;
-    text-align: center;
-}
-
-.app-doc-footer .tags {
-    margin-bottom: 0;
-}
-
-.app-doc-footer .tags.doc-lang-links {
-    margin: 0 auto;
-    max-width: min(52rem, 94vw);
-    line-height: 1.7;
-    text-transform: none;
-    letter-spacing: 0.04em;
-    display: inline-block;
-    text-align: center;
-}
-
-.tags {
+.app-chapter-meta {
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 32px;
+    margin: 0;
 }
 
-.doc-lang-links a {
-    white-space: nowrap;
+.app-chapter-lede {
+    font-size: clamp(0.98rem, 1.8vw, 1.08rem);
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem);
+    text-wrap: pretty;
+    width: 100%;
 }
 
-@media (max-width: 520px) {
-    .app-doc-footer .doc-lang-links a {
-        white-space: normal;
-    }
-}
-
-.buttons {
+.app-chapter-actions {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 14px 20px;
 }
 
-.app-store-badge {
-    height: 40px;
-    transition: transform 0.4s var(--ease);
+html.js .app-chapter-visual,
+html.js .app-chapter-copy {
+    opacity: 0;
 }
 
-.app-store-badge:hover {
-    transform: scale(1.05);
+.app-store-badge,
+.btn-app-store {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45em;
+    min-height: 44px;
+    padding: 0 1.25rem;
+    background: #fff;
+    color: #0a0a0a;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-decoration: none;
+    border-radius: 0;
+    transition: opacity 0.25s var(--ease);
+}
+
+.app-store-badge:hover,
+.btn-app-store:hover {
+    opacity: 0.72;
+}
+
+.app-store-badge-arrow,
+.btn-app-store-arrow {
+    display: inline-block;
+    transition: transform 0.25s var(--ease);
+}
+
+.app-store-badge:hover .app-store-badge-arrow,
+.btn-app-store:hover .btn-app-store-arrow {
+    transform: translateX(4px);
 }
 
 .btn-learn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
     font-size: 15px;
     color: var(--text-primary);
     text-decoration: none;
     opacity: 0.8;
-    transition: all 0.3s var(--ease);
+    transition: opacity 0.25s var(--ease);
+}
+
+.btn-learn-line {
+    display: inline-block;
+    width: 1.15em;
+    height: 1px;
+    background: currentColor;
+    flex-shrink: 0;
+    opacity: 0.75;
+    transform-origin: left center;
+    transition: width 0.3s var(--ease), opacity 0.25s var(--ease);
 }
 
 .btn-learn:hover {
-    opacity: 1;
-    transform: translateX(4px);
+    opacity: 0.65;
 }
 
-/* Tertiary: decision / compare / “understand before download” — stays visually quiet vs primary CTAs */
+.btn-learn:hover .btn-learn-line {
+    width: 2.1em;
+    opacity: 1;
+}
+
+.app-store-badge:focus-visible,
+.btn-app-store:focus-visible,
+.btn-learn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-store-badge-arrow,
+    .btn-app-store-arrow,
+    .btn-learn-line {
+        transition: none;
+    }
+
+    .app-store-badge:hover .app-store-badge-arrow,
+    .btn-app-store:hover .btn-app-store-arrow {
+        transform: none;
+    }
+
+    .btn-learn:hover .btn-learn-line {
+        width: 1.15em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-apps-v4 {
+        max-width: min(1180px, 94vw);
+    }
+
+    .apps-progress {
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+    }
+
+    .apps-progress.is-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 1023px) {
+    .app-chapter {
+        min-height: auto;
+    }
+
+    .app-chapter-inner {
+        grid-template-columns: 1fr;
+        gap: clamp(1.75rem, 5vw, 2.5rem);
+    }
+
+    .app-chapter--reverse .app-chapter-inner {
+        direction: ltr;
+    }
+
+    .app-chapter-copy {
+        max-width: none;
+        align-items: center;
+    }
+
+    .app-chapter-head,
+    .app-chapter-lede,
+    .app-chapter-actions {
+        width: min(100%, 28rem);
+        text-align: left;
+    }
+
+    .app-chapter-head {
+        align-items: start;
+    }
+
+    .app-chapter-actions {
+        justify-content: flex-start;
+    }
+
+    .device-frame--iphone {
+        width: min(280px, 78vw);
+    }
+
+    .device-frame--laptop {
+        width: min(100%, 92vw);
+        padding: 7px 7px 15px;
+        border-radius: 12px 12px 8px 8px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .device-frame--laptop::after {
+        bottom: 5px;
+        width: 15%;
+        height: 3px;
+    }
+
+    .device-frame--laptop .device-screen {
+        border-radius: 5px;
+    }
+}
+
 .btn-tertiary {
     position: relative;
     font-size: 14px;
@@ -788,29 +1096,6 @@ body {
     text-wrap: balance;
 }
 
-/* Pre-footer CTA */
-.site-cta {
-    padding: clamp(100px, 14vw, 160px) 24px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    background: var(--bg-color);
-}
-
-.site-cta-inner {
-    max-width: 980px;
-    margin: 0 auto;
-}
-
-.site-cta-title {
-    font-size: clamp(56px, 10vw, 88px);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    color: #fff;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
 /* Footer */
 footer {
     padding: clamp(64px, 10vw, 96px) 24px 60px;
@@ -834,18 +1119,22 @@ footer p {
 }
 
 /* Community — full-width band, separate from product cards */
+/* Community — full-width band */
 .site-section--community {
     padding: clamp(100px, 15vw, 168px) 24px clamp(100px, 15vw, 168px);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bg-color);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
 
-.site-section--community.visible {
-    opacity: 1;
-    transform: translateY(0);
+html.js .community-intro,
+html.js .community-tile,
+html.js .community-actions,
+html.js .community-tagline {
+    opacity: 0;
+}
+
+html.js .community-tile {
+    transform: translateY(20px);
 }
 
 .site-section--community .site-section-inner {
@@ -856,24 +1145,29 @@ footer p {
 .community-intro {
     max-width: 44rem;
     margin-bottom: clamp(2rem, 4vw, 2.75rem);
-    text-align: left;
 }
 
-.community-module-title {
+.community-section-head {
+    max-width: 44rem;
+    text-align: left;
+    margin: 0 0 clamp(1.35rem, 2.8vw, 1.85rem);
+}
+
+.community-section-head .site-section-title {
     font-size: clamp(1.85rem, 4.5vw, 2.65rem);
     font-weight: 500;
     line-height: 1.2;
-    margin: 0 0 clamp(4.5rem, 10vw, 7rem);
-}
-
-.community-intro .community-lab-heading {
-    margin-bottom: 0.75rem;
+    margin: 0;
 }
 
 .community-lab-heading {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    font-size: clamp(1.2rem, 2.6vw, 1.45rem);
+    font-weight: 500;
+    line-height: 1.25;
+    margin: 0 0 1rem;
 }
 
 .community-lab-logo {
@@ -1016,9 +1310,18 @@ footer p {
 .journal-section {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bg-color);
+}
+
+html.js .journal-section-head,
+html.js .journal-featured,
+html.js .journal-item,
+html.js .journal-follow-cta {
     opacity: 0;
+}
+
+html.js .journal-featured,
+html.js .journal-item {
     transform: translateY(20px);
-    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
 
 .journal-section-inner {
@@ -1027,29 +1330,45 @@ footer p {
     padding: clamp(112px, 15vw, 188px) 24px clamp(136px, 18vw, 232px);
 }
 
-.journal-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .journal-section .journal-section-head {
     max-width: 44rem;
     text-align: left;
     margin-bottom: clamp(2rem, 4vw, 2.75rem);
 }
 
-.journal-module-title {
+.journal-section .journal-section-head .site-section-title {
     font-size: clamp(1.85rem, 4.5vw, 2.65rem);
     font-weight: 500;
     line-height: 1.2;
     margin: 0;
 }
 
+.journal-section .section-header {
+    margin-bottom: 0;
+    padding-bottom: clamp(1.25rem, 3vw, 1.75rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.journal-section .section-header h2 {
+    font-size: clamp(1.65rem, 4vw, 2rem);
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.journal-section .subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 36rem;
+}
+
 .journal-body {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-top: clamp(1.85rem, 3.6vw, 2.5rem);
+    gap: clamp(1.25rem, 3vw, 1.85rem);
+    margin-top: clamp(1.35rem, 2.8vw, 1.85rem);
 }
 
 /* Featured — stronger visual weight */
@@ -1062,7 +1381,8 @@ footer p {
     align-items: flex-start;
     justify-content: space-between;
     gap: 14px;
-    padding: clamp(20px, 2.8vw, 26px) 0;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     text-decoration: none;
     color: inherit;
     transition: color 0.25s var(--ease);
@@ -1134,7 +1454,7 @@ footer p {
     font-size: 1.18rem;
     font-weight: 450;
     line-height: 1.4;
-    margin: clamp(0.35rem, 1vw, 0.55rem) 0 0;
+    margin: 6px 0 0;
     color: var(--text-primary);
     transition: color 0.2s var(--ease);
 }
@@ -1144,12 +1464,12 @@ footer p {
 }
 
 .journal-featured-link:hover .journal-featured-media img {
-    transform: scale(1.02);
+    transform: scale(1.03);
     opacity: 1;
 }
 
 .journal-featured-excerpt {
-    margin: clamp(0.65rem, 1.9vw, 1rem) 0 0;
+    margin: 6px 0 0;
     font-size: 14px;
     line-height: 1.5;
     color: var(--text-secondary);
@@ -1157,7 +1477,7 @@ footer p {
 
 .journal-featured-arrow {
     display: inline-block;
-    margin-top: clamp(0.45rem, 1.25vw, 0.7rem);
+    margin-top: 8px;
     font-size: 14px;
     color: var(--accent);
     opacity: 0.88;
@@ -1172,7 +1492,7 @@ footer p {
 /* List — lighter rows */
 .journal-list {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: clamp(10px, 1.8vw, 16px);
+    padding-top: 2px;
 }
 
 .journal-item {
@@ -1184,7 +1504,7 @@ footer p {
     align-items: flex-start;
     justify-content: space-between;
     gap: 14px;
-    padding: clamp(20px, 2.8vw, 26px) 0;
+    padding: 18px 0;
     text-decoration: none;
     color: var(--text-primary);
     transition: color 0.25s var(--ease);
@@ -1222,7 +1542,7 @@ footer p {
     gap: 8px;
     font-size: 0.8rem;
     color: var(--text-muted);
-    margin-bottom: clamp(0.3rem, 0.85vw, 0.45rem);
+    margin-bottom: 6px;
 }
 
 .journal-date {
@@ -1251,7 +1571,7 @@ footer p {
 .journal-excerpt {
     font-size: 0.9rem;
     color: #888;
-    margin-top: clamp(0.5rem, 1.45vw, 0.8rem);
+    margin-top: 4px;
     line-height: 1.45;
 }
 
@@ -1284,7 +1604,7 @@ footer p {
 
 /* CTA — soft footer to section */
 .journal-follow-cta {
-    margin-top: clamp(28px, 4.5vw, 44px);
+    margin-top: 20px;
     text-align: center;
     opacity: 0.85;
     max-width: 32rem;
@@ -1368,21 +1688,79 @@ footer p {
     }
 }
 
+html.js .products-section-head {
+    opacity: 0;
+}
+
+/* Pre-footer CTA */
+.site-cta {
+    padding: clamp(100px, 14vw, 160px) 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-color);
+}
+
+.site-cta-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+html.js .site-cta-title {
+    opacity: 0;
+}
+
+html.js .site-cta-title.is-split {
+    opacity: 1;
+}
+
+.cta-stagger-line {
+    display: block;
+}
+
+.cta-stagger-line.is-waiting {
+    visibility: hidden;
+}
+
+.cta-char {
+    display: inline-block;
+    will-change: opacity;
+}
+
+html.js .cta-char {
+    opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .site-section--community {
+    html.js .hero-char,
+    html.js .hero-lede,
+    html.js .hero .explore-btn,
+    html.js .products-section-head,
+    html.js .app-chapter-visual,
+    html.js .app-chapter-copy,
+    html.js .community-intro,
+    html.js .community-tile,
+    html.js .community-actions,
+    html.js .community-tagline,
+    html.js .journal-section-head,
+    html.js .journal-featured,
+    html.js .journal-item,
+    html.js .journal-follow-cta,
+    html.js .cta-char {
         opacity: 1;
         transform: none;
-        transition: none;
+    }
+
+    html.js .site-cta-title,
+    html.js .site-cta-title.is-split {
+        opacity: 1;
+    }
+
+    .cta-stagger-line.is-waiting {
+        visibility: visible;
     }
 
     .community-tile:hover {
         transform: none;
-    }
-
-    .journal-section {
-        opacity: 1;
-        transform: none;
-        transition: none;
     }
 
     .journal-arrow {
@@ -1399,155 +1777,79 @@ footer p {
         transform: none;
     }
 
-    .product,
-    .product.visible {
-        opacity: 1;
-        transform: none;
-        filter: none;
-        transition: none;
-    }
-
-    .app-gallery img:hover {
-        transform: none;
-    }
-
     .btn-tertiary::after {
         transition: none;
     }
-}
 
-/* Apps showcase — PC scroll-spy layout (≥1024px) */
-@media (min-width: 1024px) {
-    .products-apps-v4 {
-        max-width: min(1180px, 94vw);
-    }
-
-    .apps-showcase {
-        display: grid;
-        grid-template-columns: minmax(220px, 272px) minmax(0, 1fr);
-        gap: clamp(2rem, 4vw, 3.5rem);
-        align-items: start;
-    }
-
-    .apps-nav {
-        position: sticky;
-        top: 72px;
-        align-self: start;
-        padding-top: 0.25rem;
-    }
-
-    .apps-nav-item {
-        padding: 1.1rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .apps-nav-item:first-child {
-        padding-top: 0;
-    }
-
-    .apps-nav-item:last-child {
-        border-bottom: none;
-    }
-
-    .apps-nav-head {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .apps-nav-icon {
-        width: 36px;
-        height: 36px;
-        border-radius: 9px;
-        flex-shrink: 0;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-    }
-
-    .apps-nav-title {
-        font-size: 15px;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        color: rgba(255, 255, 255, 0.5);
-        transition: color 0.3s var(--ease);
-    }
-
-    .apps-nav-item.is-active .apps-nav-title {
-        color: #fff;
-    }
-
-    .apps-nav-tagline {
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        margin: 0;
-        font-size: 0.875rem;
-        line-height: 1.55;
-        color: var(--text-secondary);
-        transition: max-height 0.4s var(--ease), opacity 0.3s var(--ease), margin-top 0.3s var(--ease);
-    }
-
-    .apps-nav-item.is-active .apps-nav-tagline {
-        max-height: 8rem;
-        opacity: 1;
-        margin-top: 0.65rem;
-    }
-
-    .apps-content .product.app-section,
-    .apps-content .apps-stage {
-        max-width: none;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .apps-stage {
-        display: flex;
-        flex-direction: column;
-        min-height: min(85vh, 900px);
-        scroll-margin-top: 88px;
-    }
-
-    .apps-stage .app-head {
-        order: 0;
-        display: none;
-    }
-
-    .apps-stage .app-gallery {
-        order: 1;
-        margin-bottom: clamp(1.5rem, 3vw, 2rem);
-    }
-
-    .apps-stage .app-body {
-        order: 2;
-        max-width: none;
-    }
-
-    .apps-stage .app-actions {
-        order: 3;
-        justify-content: center;
-        margin-top: clamp(2rem, 4vw, 2.75rem);
-        margin-bottom: 0.5rem;
-    }
-
-    .apps-stage .app-doc-footer {
-        order: 4;
-        margin-top: 0.5rem;
-    }
-
-    .apps-stage:not(:last-child) {
-        margin-bottom: clamp(5rem, 12vh, 8rem);
-    }
-}
-
-@media (max-width: 1023px) {
-    .apps-nav {
-        display: none;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .apps-nav-tagline {
+    .apps-progress-btn {
         transition: none;
     }
+}
+
+/* Homepage below-hero — typography aligned with Hero (index only) */
+main > section:not(.hero) {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.65;
+}
+
+main > section:not(.hero) .site-section-title,
+main > section:not(.hero) .products-section-head .site-section-title,
+main > section:not(.hero) .community-section-head .site-section-title,
+main > section:not(.hero) .journal-section-head .site-section-title,
+main > section:not(.hero) .community-lab-heading,
+main > section:not(.hero) .app-chapter-title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.12;
+}
+
+main > section:not(.hero) .site-section-lede,
+main > section:not(.hero) .app-chapter-lede,
+main > section:not(.hero) .community-tile-desc,
+main > section:not(.hero) .journal-featured-excerpt,
+main > section:not(.hero) .journal-excerpt,
+main > section:not(.hero) .tags,
+main > section:not(.hero) .community-actions-primary,
+main > section:not(.hero) .community-actions-lang,
+main > section:not(.hero) .community-tagline,
+main > section:not(.hero) .journal-meta,
+main > section:not(.hero) .journal-date,
+main > section:not(.hero) .journal-tag,
+main > section:not(.hero) .journal-featured-tag,
+main > section:not(.hero) .journal-follow-cta,
+main > section:not(.hero) .journal-follow-cta p,
+main > section:not(.hero) .journal-follow-cta a,
+main > section:not(.hero) .btn-tertiary,
+main > section:not(.hero) .btn-learn,
+main > section:not(.hero) .app-chapter-meta,
+main > section:not(.hero) .app-chapter-actions {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.65;
+}
+
+main > section:not(.hero) .journal-featured-title,
+main > section:not(.hero) .journal-title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+main > section:not(.hero) .community-tile-title,
+main > section:not(.hero) .community-intro strong {
+    font-family: var(--font-sans);
+    font-weight: 400;
+}
+
+.site-cta .site-cta-title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.12;
+    font-size: clamp(2rem, 5.5vw, 3.75rem);
+    text-transform: uppercase;
 }
 
 /* Responsive */
@@ -1560,18 +1862,18 @@ footer p {
         display: none;
         position: absolute;
         top: calc(100% + 10px);
-        right: 0;
-        min-width: 200px;
+        left: 1rem;
+        right: 1rem;
         flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 8px;
-        border-radius: 14px;
-        background: rgba(10, 10, 12, 0.96);
-        border: 0.5px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+        align-items: center;
+        gap: 1.25rem;
+        padding: 2rem 1.5rem;
+        border-radius: 1rem;
+        background: rgba(10, 10, 10, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
     .site-header-nav.is-open {
@@ -1590,42 +1892,6 @@ footer p {
     .products-apps-v4 {
         padding-left: max(20px, env(safe-area-inset-left, 0px));
         padding-right: max(20px, env(safe-area-inset-right, 0px));
-    }
-
-    .app-body-split {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .app-gallery {
-        display: flex;
-        overflow-x: auto;
-        gap: 16px;
-        padding-bottom: 12px;
-        margin-left: calc(-1 * max(0px, env(safe-area-inset-left, 0px)));
-        margin-right: calc(-1 * max(0px, env(safe-area-inset-right, 0px)));
-        padding-left: max(20px, env(safe-area-inset-left, 0px));
-        padding-right: max(20px, env(safe-area-inset-right, 0px));
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .app-gallery.ios img {
-        flex: 0 0 min(240px, 78vw);
-        width: min(240px, 78vw);
-        scroll-snap-align: start;
-    }
-
-    /* Landscape macOS shots: slightly wider cards when horizontal-scrolling */
-    .app-gallery.macos img {
-        flex: 0 0 min(88vw, 400px);
-        width: min(88vw, 400px);
-        scroll-snap-align: start;
-    }
-
-    .app-head .app-actions {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .btn-tertiary {
@@ -1664,12 +1930,26 @@ footer p {
 
 <main>
 <section class="hero" aria-label="Introduction">
-    <div class="hero-headline-group">
-        <h1>Minimal Design.<br>Powerful Apps.</h1>
-        <p>Lightweight, offline-first utilities crafted with absolute minimalism for your daily life and technical workflows.</p>
+    <div class="hero-media" aria-hidden="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260619_191346_9d19d66e-86a4-47f7-8dc6-712c1788c3b2.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-scrim"></div>
     </div>
-    <div class="hero-actions">
-        <a href="#products" class="explore-btn">Explore Apps</a>
+    <div class="hero-content">
+        <div class="hero-headline-group">
+            <h1 class="hero-title font-garamond">
+                <span class="hero-stagger-line" data-hero-stagger>Minimal Design</span>
+                <span class="hero-stagger-line" data-hero-stagger>Powerful Apps</span>
+            </h1>
+            <p class="hero-lede">
+                <span class="hero-lede-line">Lightweight, offline-first utilities crafted with absolute minimalism,</span>
+                <span class="hero-lede-line">for your daily life and technical workflows.</span>
+            </p>
+        </div>
+        <div class="hero-actions">
+            <a href="#products" class="explore-btn liquid-glass">Begin the Experience</a>
+        </div>
     </div>
 </section>
 
@@ -1680,371 +1960,187 @@ footer p {
     <h2 id="products-heading" class="site-section-title">Apps for<br>deep work.</h2>
 </header>
 
-<div class="apps-showcase">
-<aside class="apps-nav" aria-label="Apps">
-    <div class="apps-nav-item is-active" data-app="lonelyisle">
-        <div class="apps-nav-head">
-            <img src="lonelyisle/icon.png" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
-            <span class="apps-nav-title">LonelyIsle</span>
-        </div>
-        <p class="apps-nav-tagline">A spatial ambient soundscape app—explore fictional islands where movement changes what you hear, quietly and on your device.</p>
-    </div>
-    <div class="apps-nav-item" data-app="purrrrrfocus">
-        <div class="apps-nav-head">
-            <img src="purrrrrfocus/icon.png" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
-            <span class="apps-nav-title">PurrrrrFocus</span>
-        </div>
-        <p class="apps-nav-tagline">A minimalist iOS Pomodoro timer with classical Chinese aesthetics and a cat companion—for deep work and ADHD-friendly focus.</p>
-    </div>
-    <div class="apps-nav-item" data-app="step1st">
-        <div class="apps-nav-head">
-            <img src="step1st/step1st-icon-120w.webp" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
-            <span class="apps-nav-title">Step1st</span>
-        </div>
-        <p class="apps-nav-tagline">A movement-driven iOS app blocker that links screen time to physical activity—using step goals before you scroll.</p>
-    </div>
-    <div class="apps-nav-item" data-app="tappause">
-        <div class="apps-nav-head">
-            <img src="tappause/icon.png" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
-            <span class="apps-nav-title">TapPause</span>
-        </div>
-        <p class="apps-nav-tagline">A minimalist breath and pause timer for seekers of digital peace—a gentle space to reset awareness amidst daily noise.</p>
-    </div>
-    <div class="apps-nav-item" data-app="transmov">
-        <div class="apps-nav-head">
-            <img src="transmov/icon.png" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
-            <span class="apps-nav-title">TransMov</span>
-        </div>
-        <p class="apps-nav-tagline">A local-first macOS utility that extracts transparent animated assets from video—for UI designers and web developers.</p>
-    </div>
-    <div class="apps-nav-item" data-app="phoneticformatter">
-        <div class="apps-nav-head">
-            <img src="phoneticformatter/icon.png" class="apps-nav-icon" alt="" width="36" height="36" loading="lazy" decoding="async">
-            <span class="apps-nav-title">Phonetic Formatter</span>
-        </div>
-        <p class="apps-nav-tagline">An offline IPA transcription tool that turns English passages into structured, printable phonetic worksheets—100% on-device.</p>
-    </div>
-</aside>
-<div class="apps-content">
+<div class="apps-scroll">
+<nav class="apps-progress" aria-label="Apps" aria-hidden="true">
+    <button type="button" class="apps-progress-btn is-active" data-chapter-index="0" aria-current="true" aria-label="LonelyIsle: Island Soundscapes">01</button>
+    <button type="button" class="apps-progress-btn" data-chapter-index="1" aria-label="PurrrrrFocus: Pomodoro Timer">02</button>
+    <button type="button" class="apps-progress-btn" data-chapter-index="2" aria-label="Step1st: Screen Time Limit">03</button>
+    <button type="button" class="apps-progress-btn" data-chapter-index="3" aria-label="TapPause: Quick Mental Break">04</button>
+    <button type="button" class="apps-progress-btn" data-chapter-index="4" aria-label="Phonetic Formatter: English">05</button>
+    <button type="button" class="apps-progress-btn" data-chapter-index="5" aria-label="TransMov: Make GIF From Video">06</button>
+</nav>
 
-<!-- LonelyIsle -->
-<div class="product app-section apps-stage" data-app="lonelyisle" id="app-lonelyisle">
-<div class="app-head">
-<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="lonelyisle/icon.webp" /><img src="lonelyisle/icon.png" class="app-icon" alt="LonelyIsle app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> LonelyIsle</h2>
-<div class="tags">iOS · Health &amp; Fitness</div>
-<p class="app-what">A spatial ambient soundscape app—explore fictional islands where movement changes what you hear, quietly and on your device.</p>
-</div>
-<div class="app-actions buttons product-links">
-<a href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download LonelyIsle on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download LonelyIsle on the App Store" width="120" height="40" loading="lazy" decoding="async">
-</a>
-<a href="lonelyisle/" class="btn-learn">Learn More →</a>
-</div>
-<div class="app-gallery ios" role="region" aria-label="LonelyIsle screenshots">
-<img src="lonelyisle/screenshot1.webp" srcset="lonelyisle/screenshot1-400w.webp 400w, lonelyisle/screenshot1-800w.webp 800w, lonelyisle/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="LonelyIsle app screenshot - explore Elliðaey island in Free mode" width="1242" height="2688" loading="lazy">
-<img src="lonelyisle/screenshot2.webp" srcset="lonelyisle/screenshot2-400w.webp 400w, lonelyisle/screenshot2-800w.webp 800w, lonelyisle/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="LonelyIsle app screenshot - drift along in Auto mode on Tide &amp; Timber" width="1242" height="2688" loading="lazy">
-<img src="lonelyisle/screenshot3.webp" srcset="lonelyisle/screenshot3-400w.webp 400w, lonelyisle/screenshot3-800w.webp 800w, lonelyisle/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="LonelyIsle app screenshot - listen near or far with spatial audio" width="1242" height="2688" loading="lazy">
-<img src="lonelyisle/screenshot4.webp" srcset="lonelyisle/screenshot4-400w.webp 400w, lonelyisle/screenshot4-800w.webp 800w, lonelyisle/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="LonelyIsle app screenshot - every place on the island sounds different" width="1242" height="2688" loading="lazy">
-</div>
-<div class="app-body">
-<div class="app-body-split">
-<div class="app-description">
-<p class="app-tagline">A quiet sanctuary for your mind beyond the horizon.</p>
-<p class="app-marketing">LonelyIsle is not a music player—it is a place you enter. Each island is a self-contained world of ambient sound where you roam freely or let the island guide you, with your journey continuing in the background and on the Lock Screen.</p>
-</div>
-<ul class="product-features">
-<li><span>Islands, not tracks:</span> Self-contained sound worlds you explore by moving through them.</li>
-<li><span>Spatial presence:</span> Sound shifts as you draw closer to or farther from each place.</li>
-<li><span>Private by default:</span> No account required; your experience stays on your device.</li>
-</ul>
-</div>
-</div>
-<div class="app-doc-footer">
-<div class="tags doc-lang-links">
-Documentation available in:
-<a href="lonelyisle/" style="color: inherit; text-decoration: underline;">English</a>
+<article class="app-chapter" id="app-lonelyisle" data-app="lonelyisle">
+<div class="app-chapter-inner">
+<div class="app-chapter-visual">
+<div class="device-mockup">
+<div class="device-frame device-frame--iphone">
+<div class="device-screen">
+<img src="downloads/lonelyisle-1.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="LonelyIsle: Island Soundscapes — explore fictional islands and ambient soundscapes" width="1170" height="2532" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
+</div>
+<div class="app-chapter-copy">
+<div class="app-chapter-head">
+<picture>
+<source type="image/webp" srcset="lonelyisle/icon.webp">
+<img class="app-chapter-icon" src="lonelyisle/icon.png" alt="" width="52" height="52" loading="lazy" decoding="async">
+</picture>
+<div class="app-chapter-heading">
+<h3 class="app-chapter-title">LonelyIsle: Island Soundscapes</h3>
+<p class="app-chapter-meta">iOS · Health &amp; Fitness</p>
+</div>
+</div>
+<p class="app-chapter-lede">Explore fictional islands and living soundscapes for deep focus, restful sleep, and quiet moments away from everyday noise.</p>
+<div class="app-chapter-actions">
+<a href="https://apps.apple.com/app/id6779457751" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download LonelyIsle: Island Soundscapes on the App Store"><span>App Store</span><span class="app-store-badge-arrow" aria-hidden="true">→</span></a>
+<a href="lonelyisle/" class="btn-learn"><span>Learn More</span><span class="btn-learn-line" aria-hidden="true"></span></a>
+</div>
+</div>
+</div>
+</article>
 
-<!-- PurrrrrFocus -->
-<div class="product app-section apps-stage" data-app="purrrrrfocus" id="app-purrrrrfocus">
-<div class="app-head">
-<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="purrrrrfocus/icon.webp" /><img src="purrrrrfocus/icon.png" class="app-icon" alt="PurrrrrFocus app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> PurrrrrFocus</h2>
-<div class="tags">iOS · iPhone &amp; iPad · Productivity · Utilities</div>
-<p class="app-what">A minimalist iOS Pomodoro timer with classical Chinese aesthetics and a cat companion—for deep work and ADHD-friendly focus.</p>
-</div>
-<div class="app-actions buttons product-links">
-<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download PurrrrrFocus on the App Store" width="120" height="40" loading="lazy" decoding="async">
-</a>
-<a href="purrrrrfocus/" class="btn-learn">Learn More →</a>
-</div>
-<div class="app-gallery ios" role="region" aria-label="PurrrrrFocus screenshots">
-<img src="purrrrrfocus/screenshot1.webp" srcset="purrrrrfocus/screenshot1-400w.webp 400w, purrrrrfocus/screenshot1-800w.webp 800w, purrrrrfocus/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Pomodoro timer" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot2.webp" srcset="purrrrrfocus/screenshot2-400w.webp 400w, purrrrrfocus/screenshot2-800w.webp 800w, purrrrrfocus/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Deep Focus Mode" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot3.webp" srcset="purrrrrfocus/screenshot3-400w.webp 400w, purrrrrfocus/screenshot3-800w.webp 800w, purrrrrfocus/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Statistics and progress tracking" width="1242" height="2688" loading="lazy">
-<img src="purrrrrfocus/screenshot4.webp" srcset="purrrrrfocus/screenshot4-400w.webp 400w, purrrrrfocus/screenshot4-800w.webp 800w, purrrrrfocus/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="PurrrrrFocus app screenshot - Cat Companions" width="1242" height="2688" loading="lazy">
-</div>
-<div class="app-body">
-<div class="app-body-split">
-<div class="app-description">
-<p class="app-tagline">Focus enhancement, wrapped in calmness.</p>
-<p class="app-marketing">PurrrrrFocus pairs a minimalist Pomodoro and count-up timer with classical Chinese aesthetics and a cat companion system for students, ADHD users, and anyone chasing calm focus. Choose Relaxed, Challenged, or Whitelist focus modes to match how strict you want to be—from penalty-free switching to Screen Time app blocking. With home screen widgets, Live Activity, and fully offline privacy, it’s more than a timer; it’s a quiet sanctuary where your virtual companion grows alongside your habits.</p>
-<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-See how PurrrrrFocus is used in real study routines:
-</p>
-<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
-<a href="purrrrrfocus/landing/best-pomodoro-app-for-students.html" class="btn-tertiary" aria-label="Best Pomodoro app for students — PurrrrrFocus">For Students →</a>
-</div>
-</div>
-<ul class="product-features">
-<li><span>Pomodoro &amp; Count-Up Timer:</span> Classic Pomodoro intervals for structured sprints, or open-ended count-up sessions for deep work and flexible routines—pick the rhythm that fits the task.</li>
-<li><span>Classical Feline Companion:</span> Features an adorable cat companion system and 6 classical themes inspired by traditional Chinese aesthetics.</li>
-<li><span>ADHD-Friendly Design:</span> Built with simplicity and tranquility in mind, focusing on reducing distraction and building consistent work habits without pressure.</li>
-<li><span>Native Performance:</span> A lightweight iOS/iPadOS experience with statistics, achievements, and beautiful widgets—100% focused on privacy.</li>
-</ul>
-</div>
-</div>
-<div class="app-doc-footer">
-<div class="tags doc-lang-links">
-Documentation available in:
-<a href="purrrrrfocus/" style="color: inherit; text-decoration: underline;">中文</a> ·
-<a href="purrrrrfocus/index-en.html" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="purrrrrfocus/index-da.html" style="color: inherit; text-decoration: underline;">Dansk</a> ·
-<a href="purrrrrfocus/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
-<a href="purrrrrfocus/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
+<article class="app-chapter app-chapter--reverse" id="app-purrrrrfocus" data-app="purrrrrfocus">
+<div class="app-chapter-inner">
+<div class="app-chapter-visual">
+<div class="device-mockup">
+<div class="device-frame device-frame--iphone">
+<div class="device-screen">
+<img src="downloads/purrrrrfocus-1.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="PurrrrrFocus: Pomodoro Timer — focus timer with cat companion" width="1170" height="2532" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
+</div>
+<div class="app-chapter-copy">
+<div class="app-chapter-head">
+<img class="app-chapter-icon" src="purrrrrfocus/icon.webp" alt="" width="52" height="52" loading="lazy" decoding="async">
+<div class="app-chapter-heading">
+<h3 class="app-chapter-title">PurrrrrFocus: Pomodoro Timer</h3>
+<p class="app-chapter-meta">iOS · Productivity</p>
+</div>
+</div>
+<p class="app-chapter-lede">PurrrrrFocus is a Pomodoro and focus timer in a Zen-inspired space—with a gentle partner that keeps you company while you study, work, or unwind.</p>
+<div class="app-chapter-actions">
+<a href="https://apps.apple.com/us/app/purrrrrfocus-deep-focus-timer/id6753966008" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download PurrrrrFocus: Pomodoro Timer on the App Store"><span>App Store</span><span class="app-store-badge-arrow" aria-hidden="true">→</span></a>
+<a href="purrrrrfocus/index-en.html" class="btn-learn"><span>Learn More</span><span class="btn-learn-line" aria-hidden="true"></span></a>
+</div>
+</div>
+</div>
+</article>
 
-<!-- Step1st -->
-<div class="product app-section apps-stage" data-app="step1st" id="app-step1st">
-<div class="app-head">
-<h2 class="product-title"><img src="step1st/step1st-icon-120w.webp" srcset="step1st/step1st-icon-60w.webp 60w, step1st/step1st-icon-120w.webp 120w, step1st/step1st-icon-180w.webp 180w" sizes="60px" class="app-icon" alt="Step1st app icon" width="60" height="60" loading="lazy" decoding="async"> Step1st</h2>
-<div class="tags">iOS · Health &amp; Fitness · Productivity</div>
-<p class="app-what">A movement-driven iOS app blocker that links screen time to physical activity—using step goals before you scroll.</p>
-</div>
-<div class="app-actions buttons product-links">
-<a href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Step1st on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download Step1st on the App Store" width="120" height="40" loading="lazy" decoding="async">
-</a>
-<a href="step1st/" class="btn-learn">Learn More →</a>
-</div>
-<div class="app-gallery ios" role="region" aria-label="Step1st screenshots">
-<img src="step1st/screenshot1.webp" srcset="step1st/screenshot1-400w.webp 400w, step1st/screenshot1-800w.webp 800w, step1st/screenshot1.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - step goal and app unlocking dashboard" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot2.webp" srcset="step1st/screenshot2-400w.webp 400w, step1st/screenshot2-800w.webp 800w, step1st/screenshot2.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - personalized step target setup" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot3.webp" srcset="step1st/screenshot3-400w.webp 400w, step1st/screenshot3-800w.webp 800w, step1st/screenshot3.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - progress tracking and focus habit insights" width="1260" height="2736" loading="lazy">
-<img src="step1st/screenshot4.webp" srcset="step1st/screenshot4-400w.webp 400w, step1st/screenshot4-800w.webp 800w, step1st/screenshot4.webp 1260w" sizes="(max-width: 768px) 240px, 230px" alt="Step1st app screenshot - streak and activity visualization" width="1260" height="2736" loading="lazy">
-</div>
-<div class="app-body">
-<div class="app-body-split">
-<div class="app-description">
-<p class="app-tagline">Unlock your apps, one step at a time.</p>
-<p class="app-marketing">Designed for <strong>desk-bound professionals and chronic doom-scrollers</strong>, Step1st uses physical step goals to break sedentary loops and enforce a &quot;Move-to-Unlock&quot; daily ritual. Step1st solves the modern dilemma of digital addiction coupled with physical inactivity. By linking screen time to movement, it ensures you hit your activity targets before surrendering to distractions. It’s not just an app locker; it’s a self-discipline engine for those who want to reclaim their health by making movement the prerequisite for entertainment.</p>
-</div>
-<ul class="product-features">
-<li><span>Integrity-Based Locking:</span> Uses Apple’s Screen Time API to keep distracting apps inaccessible until your steps are logged—eliminating the &quot;Ignore Limit&quot; loophole common in basic timers.</li>
-<li><span>Frictionless Tracking:</span> Leverages native motion co-processors for high-precision step counting with zero location tracking, protecting your privacy and your battery.</li>
-<li><span>HealthKit Empowerment:</span> Seamlessly syncs with Apple Health to provide a &quot;Read-Only&quot; experience, keeping your data local and under your total control.</li>
-<li><span>Native Efficiency:</span> Designed with a &quot;Zero-Impact&quot; philosophy—running ultra-lightweight in the background to ensure your iPhone stays fast and responsive.</li>
-</ul>
-</div>
-</div>
-<div class="app-doc-footer">
-<div class="tags doc-lang-links">
-Documentation available in:
-<a href="step1st/" style="color: inherit; text-decoration: underline;">English</a>
+<article class="app-chapter" id="app-step1st" data-app="step1st">
+<div class="app-chapter-inner">
+<div class="app-chapter-visual">
+<div class="device-mockup">
+<div class="device-frame device-frame--iphone">
+<div class="device-screen">
+<img src="downloads/截屏%202026-08-28%2018.22.41.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="Step1st: Screen Time Limit — step goals before unlocking apps" width="1170" height="2532" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
+</div>
+<div class="app-chapter-copy">
+<div class="app-chapter-head">
+<img class="app-chapter-icon" src="step1st/step1st-icon-120w.webp" srcset="step1st/step1st-icon-60w.webp 60w, step1st/step1st-icon-120w.webp 120w, step1st/step1st-icon-180w.webp 180w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async">
+<div class="app-chapter-heading">
+<h3 class="app-chapter-title">Step1st: Screen Time Limit</h3>
+<p class="app-chapter-meta">iOS · Health &amp; Fitness · Productivity</p>
+</div>
+</div>
+<p class="app-chapter-lede">Unlock your apps with step goals. Reduce screen time and stay active.</p>
+<div class="app-chapter-actions">
+<a href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Step1st: Screen Time Limit on the App Store"><span>App Store</span><span class="app-store-badge-arrow" aria-hidden="true">→</span></a>
+<a href="step1st/" class="btn-learn"><span>Learn More</span><span class="btn-learn-line" aria-hidden="true"></span></a>
+</div>
+</div>
+</div>
+</article>
 
-<!-- TapPause -->
-<div class="product app-section apps-stage" data-app="tappause" id="app-tappause">
-<div class="app-head">
-<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="tappause/icon.webp" /><img src="tappause/icon.png" class="app-icon" alt="TapPause app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> TapPause</h2>
-<div class="tags">iOS · Health &amp; Fitness</div>
-<p class="app-what">A minimalist breath and pause timer for seekers of digital peace—a gentle space to reset awareness amidst daily noise.</p>
-</div>
-<div class="app-actions buttons product-links">
-<a href="https://apps.apple.com/us/app/tappause-pause-timer/id6758304453" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download TapPause on the App Store" width="120" height="40">
-</a>
-<a href="tappause/" class="btn-learn">Learn More →</a>
-</div>
-<div class="app-gallery ios" role="region" aria-label="TapPause screenshots">
-<img src="tappause/screenshot1.webp" srcset="tappause/screenshot1-400w.webp 400w, tappause/screenshot1-800w.webp 800w, tappause/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - duration selection" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot2.webp" srcset="tappause/screenshot2-400w.webp 400w, tappause/screenshot2-800w.webp 800w, tappause/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - pause timer" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot3.webp" srcset="tappause/screenshot3-400w.webp 400w, tappause/screenshot3-800w.webp 800w, tappause/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - settings" width="1242" height="2688" loading="lazy">
-<img src="tappause/screenshot4.webp" srcset="tappause/screenshot4-400w.webp 400w, tappause/screenshot4-800w.webp 800w, tappause/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 420px" alt="TapPause app screenshot - splash screen" width="1242" height="2688" loading="lazy">
-</div>
-<div class="app-body">
-<div class="app-body-split">
-<div class="app-description">
-<p class="app-tagline">The most productive thing you can do is just be.</p>
-<p class="app-marketing">TapPause is an intentional ritual of non-doing—a quiet invitation to step out of the frantic stream of tasks and return to the present moment, fully offline.</p>
-<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-See how to take a real break from your phone in a packed day:
-</p>
-<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
-<a href="tappause/how-to-take-a-break-from-your-phone.html" class="btn-tertiary" aria-label="How to take a break from your phone — TapPause">Take a Break →</a>
-</div>
-</div>
-<ul class="product-features">
-<li><span>Gentle ritual:</span> One-tap to start; zero cognitive load.</li>
-<li><span>Radical simplicity:</span> No streaks, no rewards—rest is the goal.</li>
-<li><span>Pure presence:</span> 100% offline; your peace is yours alone.</li>
-</ul>
-</div>
-</div>
-<div class="app-doc-footer">
-<div class="tags doc-lang-links">
-Documentation available in:
-<a href="tappause/" style="color: inherit; text-decoration: underline;">English</a> ·
-<a href="tappause/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
-<a href="tappause/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a> ·
-<a href="tappause/index-es.html" style="color: inherit; text-decoration: underline;">Español</a> ·
-<a href="tappause/index-ja.html" style="color: inherit; text-decoration: underline;">日本語</a> ·
-<a href="tappause/index-ko.html" style="color: inherit; text-decoration: underline;">한국어</a> ·
-<a href="tappause/index-tr.html" style="color: inherit; text-decoration: underline;">Türkçe</a>
+<article class="app-chapter app-chapter--reverse" id="app-tappause" data-app="tappause">
+<div class="app-chapter-inner">
+<div class="app-chapter-visual">
+<div class="device-mockup">
+<div class="device-frame device-frame--iphone">
+<div class="device-screen">
+<img src="downloads/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-05-26%20at%2016.07.53.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="TapPause: Quick Mental Break — minimal pause timer for mindful breaks" width="1206" height="2622" loading="lazy" decoding="async">
 </div>
 </div>
 </div>
+</div>
+<div class="app-chapter-copy">
+<div class="app-chapter-head">
+<img class="app-chapter-icon" src="tappause/icon.webp" alt="" width="52" height="52" loading="lazy" decoding="async">
+<div class="app-chapter-heading">
+<h3 class="app-chapter-title">TapPause: Quick Mental Break</h3>
+<p class="app-chapter-meta">iOS · Health &amp; Fitness</p>
+</div>
+</div>
+<p class="app-chapter-lede">A minimal pause timer for iPhone to take mindful breaks without distraction.</p>
+<div class="app-chapter-actions">
+<a href="https://apps.apple.com/us/app/tappause-pause-timer/id6758304453" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TapPause: Quick Mental Break on the App Store"><span>App Store</span><span class="app-store-badge-arrow" aria-hidden="true">→</span></a>
+<a href="tappause/" class="btn-learn"><span>Learn More</span><span class="btn-learn-line" aria-hidden="true"></span></a>
+</div>
+</div>
+</div>
+</article>
 
-<!-- TransMov -->
-<div class="product app-section apps-stage" data-app="transmov" id="app-transmov">
+<article class="app-chapter" id="app-phoneticformatter" data-app="phoneticformatter">
+<div class="app-chapter-inner">
+<div class="app-chapter-visual">
+<div class="device-mockup">
+<div class="device-frame device-frame--iphone">
+<div class="device-screen">
+<img src="downloads/phonetic-1.png" sizes="(max-width: 768px) min(260px, 72vw), min(320px, 42vw)" alt="Phonetic Formatter: English — convert English text to structured IPA transcription" width="1170" height="2532" loading="lazy" decoding="async">
+</div>
+</div>
+</div>
+</div>
+<div class="app-chapter-copy">
+<div class="app-chapter-head">
+<img class="app-chapter-icon" src="phoneticformatter/icon.webp" alt="" width="52" height="52" loading="lazy" decoding="async">
+<div class="app-chapter-heading">
+<h3 class="app-chapter-title">Phonetic Formatter: English</h3>
+<p class="app-chapter-meta">iOS · Utilities · Linguistics</p>
+</div>
+</div>
+<p class="app-chapter-lede">Convert English text into clear, structured IPA phonetic transcription. Designed for teachers, linguistics students, and serious learners.</p>
+<div class="app-chapter-actions">
+<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Phonetic Formatter: English on the App Store"><span>App Store</span><span class="app-store-badge-arrow" aria-hidden="true">→</span></a>
+<a href="phoneticformatter/" class="btn-learn"><span>Learn More</span><span class="btn-learn-line" aria-hidden="true"></span></a>
+</div>
+</div>
+</div>
+</article>
 
-    <div class="app-head">
-    <h2 class="product-title">
-    <picture class="icon-picture">
-    <source type="image/webp" srcset="transmov/icon.webp" />
-    <img src="transmov/icon.png" class="app-icon" alt="TransMov app icon" width="60" height="60" loading="lazy" decoding="async" />
-    </picture>
-    TransMov
-    </h2>
-    
-    <div class="tags">macOS · Graphics &amp; Design · Productivity</div>
-    
-    <p class="app-what">
-    A local-first macOS utility that extracts transparent animated assets from video—for UI designers and web developers.
-    </p>
-    </div>
-    <div class="app-actions buttons product-links">
-    <a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12"
-    target="_blank" rel="noopener noreferrer"
-    class="app-store-badge"
-    aria-label="Download TransMov on the Mac App Store">
-    <img src="assets/app-store-badge.svg"
-    alt="Download TransMov on the Mac App Store"
-    width="120" height="40" loading="lazy" decoding="async">
-    </a>
-    
-    <a href="transmov/" class="btn-learn">Learn More →</a>
-    </div>
-    <div class="app-gallery macos" role="region" aria-label="TransMov screenshots">
-    <img src="transmov/screenshot1.webp" srcset="transmov/screenshot1-400w.webp 400w, transmov/screenshot1-800w.webp 800w, transmov/screenshot1.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - AI-powered video background remover, before and after with transparent GIF APNG WebP" width="1280" height="800" loading="lazy">
-    
-    <img src="transmov/screenshot2.webp" srcset="transmov/screenshot2-400w.webp 400w, transmov/screenshot2-800w.webp 800w, transmov/screenshot2.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - One-click AI video cutout, auto-detect subjects and remove background" width="1280" height="800" loading="lazy">
-    
-    <img src="transmov/screenshot3.webp" srcset="transmov/screenshot3-400w.webp 400w, transmov/screenshot3-800w.webp 800w, transmov/screenshot3.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - Professional edge refinement, feather smooth and enhance details" width="1280" height="800" loading="lazy">
-    
-    <img src="transmov/screenshot4.webp" srcset="transmov/screenshot4-400w.webp 400w, transmov/screenshot4-800w.webp 800w, transmov/screenshot4.webp 1280w" sizes="(max-width: 768px) min(88vw, 400px), min(480px, 47vw)" alt="TransMov app screenshot - All-in-one animated image tool, convert preview and export APNG GIF WebP" width="1280" height="800" loading="lazy">
-    </div>
-    
-    <div class="app-body">
-    <div class="app-body-split">
-    
-    <div class="app-description">
-    <p class="app-tagline">A specialized layer for UI asset extraction.</p>
-    
-    <p class="app-marketing">
-    TransMov is a <strong>local-first macOS utility</strong> for <strong>UI designers and web developers</strong> who need transparent animated assets from video—without cloud uploads. It sits between your source footage and production code, converting clips into <strong>transparent APNG or WebP</strong> locally on your Mac so sensitive brand assets stay on-device.
-    </p>
-    
-    <!-- ✅ 新增：context 引导（关键） -->
-    <p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-    Understand different use cases and tradeoffs:
-    </p>
-    
-    <!-- ✅ contextual links 移到这里 -->
-    <div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
-    <a href="transmov/transmov-vs-cloud-video-background-removal.html" class="btn-tertiary">
-    Local vs Cloud →
-    </a>
-    </div>
-    
-    </div>
-    
-    <ul class="product-features">
-    <li><span>UI-Ready Transparency:</span> Specialized in generating 8-bit alpha-blended assets to prevent the jagged edges common in traditional GIFs.</li>
-    <li><span>Local-Only Processing:</span> Uses on-device AI via Apple Vision. Your source video stays 100% private, processed entirely on your machine.</li>
-    <li><span>Focused on Web Formats:</span> Prioritizes modern web-native formats like APNG and WebP over cinematic video containers.</li>
-    <li><span>Fit for UI Workflows:</span> Ideal for onboarding animations and product demos where privacy and web compatibility matter more than cinematic precision.</li>
-    </ul>
-    
-    </div>
-    </div>
-    
-    <div class="app-doc-footer">
-    <div class="tags doc-lang-links">
-    Documentation available in:
-    <a href="transmov/" style="color: inherit; text-decoration: underline;">English</a> ·
-    <a href="transmov/zh/" style="color: inherit; text-decoration: underline;">中文</a>
-    </div>
-    </div>
-    
-    </div>
+<article class="app-chapter app-chapter--reverse" id="app-transmov" data-app="transmov">
+<div class="app-chapter-inner">
+<div class="app-chapter-visual">
+<div class="device-mockup">
+<div class="device-frame device-frame--laptop">
+<div class="device-screen">
+<img src="downloads/iShot_2026-05-23_14.25.44.png" sizes="(max-width: 768px) min(320px, 92vw), min(520px, 48vw)" alt="TransMov: Make GIF From Video — GIF, APNG, and WebP animation studio for Mac with local AI background removal" width="2952" height="1872" loading="lazy" decoding="async">
+</div>
+</div>
+</div>
+</div>
+<div class="app-chapter-copy">
+<div class="app-chapter-head">
+<img class="app-chapter-icon" src="transmov/icon.webp" alt="" width="52" height="52" loading="lazy" decoding="async">
+<div class="app-chapter-heading">
+<h3 class="app-chapter-title">TransMov: Make GIF From Video</h3>
+<p class="app-chapter-meta">macOS · Graphics &amp; Design · Productivity</p>
+</div>
+</div>
+<p class="app-chapter-lede">Preview, convert, and create high-quality GIF, APNG, and WebP animations. Remove video backgrounds instantly with local AI — no cloud uploads.</p>
+<div class="app-chapter-actions">
+<a href="https://apps.apple.com/us/app/transmov/id6756703030?mt=12" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download TransMov: Make GIF From Video on the Mac App Store"><span>Mac App Store</span><span class="app-store-badge-arrow" aria-hidden="true">→</span></a>
+<a href="transmov/" class="btn-learn"><span>Learn More</span><span class="btn-learn-line" aria-hidden="true"></span></a>
+</div>
+</div>
+</div>
+</article>
 
-<!-- Phonetic Formatter -->
-<div class="product app-section apps-stage" data-app="phoneticformatter" id="app-phoneticformatter">
-<div class="app-head">
-<h2 class="product-title"><picture class="icon-picture"><source type="image/webp" srcset="phoneticformatter/icon.webp" /><img src="phoneticformatter/icon.png" class="app-icon" alt="Phonetic Formatter app icon" width="60" height="60" loading="lazy" decoding="async" /></picture> Phonetic Formatter</h2>
-<div class="tags">iOS · Tools · English · IPA · Linguistics</div>
-<p class="app-what">An offline IPA transcription tool that turns English passages into structured, printable phonetic worksheets—100% on-device.</p>
-</div>
-<div class="app-actions buttons product-links">
-<a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187" target="_blank" rel="noopener noreferrer" class="app-store-badge" aria-label="Download Phonetic Formatter on the App Store">
-<img src="assets/app-store-badge.svg" alt="Download Phonetic Formatter on the App Store" width="120" height="40" loading="lazy" decoding="async">
-</a>
-<a href="phoneticformatter/" class="btn-learn">Learn More →</a>
-</div>
-<div class="app-gallery ios" role="region" aria-label="Phonetic Formatter screenshots">
-<img src="phoneticformatter/screenshot1.webp" srcset="phoneticformatter/screenshot1-400w.webp 400w, phoneticformatter/screenshot1-800w.webp 800w, phoneticformatter/screenshot1.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - process full English texts, input and generate" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot2.webp" srcset="phoneticformatter/screenshot2-400w.webp 400w, phoneticformatter/screenshot2-800w.webp 800w, phoneticformatter/screenshot2.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - sentence-level alignment, original text with IPA transcription" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot3.webp" srcset="phoneticformatter/screenshot3-400w.webp 400w, phoneticformatter/screenshot3-800w.webp 800w, phoneticformatter/screenshot3.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - word-aligned transcription, each word with IPA form" width="1242" height="2688" loading="lazy">
-<img src="phoneticformatter/screenshot4.webp" srcset="phoneticformatter/screenshot4-400w.webp 400w, phoneticformatter/screenshot4-800w.webp 800w, phoneticformatter/screenshot4.webp 1242w" sizes="(max-width: 768px) 240px, 230px" alt="Phonetic Formatter app screenshot - copy or export to TXT DOCX PDF" width="1242" height="2688" loading="lazy">
-</div>
-<div class="app-body">
-<div class="app-body-split">
-<div class="app-description">
-<p class="app-tagline">Stop fighting with flaky online converters and broken formatting.</p>
-<p class="app-marketing">Built for <strong>teachers, linguistics students, and serious learners</strong>, Phonetic Formatter turns full English passages into structured, printable phonetic worksheets. Paste a passage, generate word-aligned IPA in seconds, and export to PDF or Word—all 100% on-device. It’s the gold-standard CMU dictionary reimagined for educators who need to ship materials, not just look up single words.</p>
-<p class="app-context-hint" style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-See how teachers use offline IPA for classroom-ready handouts:
-</p>
-<div class="app-context-links" style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 0.75rem;">
-<a href="phoneticformatter/blog/best-offline-ipa-app-for-teachers-ios.html" class="btn-tertiary" aria-label="Offline IPA app for teachers on iOS — Phonetic Formatter">For Teachers →</a>
-</div>
-</div>
-<ul class="product-features">
-<li><span>Built for Educators:</span> Optimized for full-text processing and structured handouts.</li>
-<li><span>Production Ready:</span> Export to PDF, Word (DOCX), and TXT for immediate teaching use.</li>
-<li><span>Local &amp; Reliable:</span> 100% on-device processing; no internet or account required.</li>
-</ul>
-</div>
-</div>
-<div class="app-doc-footer">
-<div class="tags doc-lang-links">
-Documentation available in:
-<a href="phoneticformatter/index-zh.html" style="color: inherit; text-decoration: underline;">中文</a> ·
-<a href="phoneticformatter/index-de.html" style="color: inherit; text-decoration: underline;">Deutsch</a> ·
-<a href="phoneticformatter/index-es.html" style="color: inherit; text-decoration: underline;">Español</a> ·
-<a href="phoneticformatter/index-fr.html" style="color: inherit; text-decoration: underline;">Français</a>
-</div>
-</div>
-</div>
-
-</div>
 </div>
 </div>
 </section>
@@ -2052,7 +2148,9 @@ Documentation available in:
 <section class="site-section--community" id="community" aria-labelledby="community-heading">
     <div class="site-section-inner">
         <div class="community-intro">
-            <h2 id="community-heading" class="site-section-title community-module-title">A curated archive<br>for practice.</h2>
+            <header class="community-section-head">
+                <h2 id="community-heading" class="site-section-title">A curated archive<br>for practice.</h2>
+            </header>
             <h3 class="site-section-title community-lab-heading">
                 <span class="community-lab-logo" aria-hidden="true">
                     <img src="borntospeak/assets/logo-64.webp" srcset="borntospeak/assets/logo-64.webp 64w, borntospeak/assets/logo-128.webp 128w" sizes="40px" alt="Born To Speak logo" width="64" height="64" decoding="async" />
@@ -2104,7 +2202,7 @@ Documentation available in:
 <div class="journal-section-inner">
 
     <header class="journal-section-head">
-        <h2 id="journal-heading" class="site-section-title journal-module-title">Notes on craft<br>and focus.</h2>
+        <h2 id="journal-heading" class="site-section-title">Notes on craft<br>and focus.</h2>
     </header>
 
     <div class="journal-body">
@@ -2222,7 +2320,10 @@ Documentation available in:
 
 <section class="site-cta" aria-labelledby="site-cta-heading">
     <div class="site-cta-inner">
-        <h2 id="site-cta-heading" class="site-cta-title">Less distractions.<br>More deep work.</h2>
+        <h2 id="site-cta-heading" class="site-cta-title">
+            <span class="cta-stagger-line" data-cta-stagger>Less distractions.</span>
+            <span class="cta-stagger-line" data-cta-stagger>More deep work.</span>
+        </h2>
     </div>
 </section>
 
@@ -2234,101 +2335,15 @@ Documentation available in:
 <p>Independent apps & digital tools, thoughtfully built. © 2026 Louis Builds.</p>
 </footer>
 
+<script src="assets/vendor/gsap/gsap.min.js"></script>
+<script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script>
+<script src="assets/vendor/motion/motion.js"></script>
+<script src="assets/hero-motion.js"></script>
+<script src="assets/cta-motion.js"></script>
+<script src="assets/home-motion.js"></script>
+<script src="assets/apps-chapters.js"></script>
 <script>
-function syncHeroHeadlineWidth() {
-    const group = document.querySelector('.hero-headline-group');
-    const h1 = group?.querySelector('h1');
-    const hero = document.querySelector('.hero');
-    if (!group || !h1 || !hero) return;
-
-    const h1Width = h1.getBoundingClientRect().width;
-    const heroWidth = hero.getBoundingClientRect().width;
-    group.style.width = `${Math.min(Math.ceil(h1Width), Math.floor(heroWidth))}px`;
-}
-
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-}
-});
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.product, .site-section--community, .journal-section').forEach(el => observer.observe(el));
-
-let appsNavSpyObserver = null;
-
-function initAppsNavSpy() {
-    if (appsNavSpyObserver) {
-        appsNavSpyObserver.disconnect();
-        appsNavSpyObserver = null;
-    }
-
-    const stages = document.querySelectorAll('.apps-stage');
-    const navItems = document.querySelectorAll('.apps-nav-item');
-    if (!stages.length || !navItems.length) return;
-
-    if (!window.matchMedia('(min-width: 1024px)').matches) {
-        navItems.forEach((item, index) => {
-            item.classList.toggle('is-active', index === 0);
-        });
-        return;
-    }
-
-    let activeId = stages[0].dataset.app;
-    const ratios = new Map();
-
-    const setActive = (id) => {
-        if (!id || id === activeId) return;
-        activeId = id;
-        navItems.forEach((item) => {
-            item.classList.toggle('is-active', item.dataset.app === id);
-        });
-    };
-
-    appsNavSpyObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            ratios.set(entry.target.dataset.app, entry.isIntersecting ? entry.intersectionRatio : 0);
-        });
-
-        let bestId = activeId;
-        let bestRatio = 0;
-        ratios.forEach((ratio, id) => {
-            if (ratio > bestRatio) {
-                bestRatio = ratio;
-                bestId = id;
-            }
-        });
-
-        if (bestRatio > 0) setActive(bestId);
-    }, {
-        root: null,
-        rootMargin: '-42% 0px -42% 0px',
-        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
-    });
-
-    stages.forEach((stage) => appsNavSpyObserver.observe(stage));
-    navItems.forEach((item) => {
-        item.classList.toggle('is-active', item.dataset.app === activeId);
-    });
-}
-
-initAppsNavSpy();
-window.addEventListener('resize', initAppsNavSpy);
-
-window.addEventListener('load', syncHeroHeadlineWidth);
-window.addEventListener('resize', syncHeroHeadlineWidth);
-if (document.fonts?.ready) {
-    document.fonts.ready.then(syncHeroHeadlineWidth);
-} else {
-    syncHeroHeadlineWidth();
-}
-
-const heroHeadline = document.querySelector('.hero-headline-group h1');
-if (heroHeadline && typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(syncHeroHeadlineWidth).observe(heroHeadline);
-}
-
 const menuToggle = document.querySelector('.site-header-menu-toggle');
 const headerNav = document.getElementById('site-header-nav');
 
@@ -2353,13 +2368,6 @@ document.addEventListener('keydown', (event) => {
 
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768) setHeaderMenuOpen(false);
-});
-
-window.addEventListener('scroll', () => {
-const scrollTop = window.scrollY;
-const docHeight = document.body.scrollHeight - window.innerHeight;
-const progress = (scrollTop / docHeight) * 100;
-document.getElementById('progressBar').style.width = progress + '%';
 });
 </script>
 
