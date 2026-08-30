@@ -23,6 +23,11 @@
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
     <meta property="og:site_name" content="TransMov">
     
     <!-- Twitter / X (name= is what Twitter’s docs specify; property= kept for parsers that expect OG-style tags) -->
@@ -46,6 +51,11 @@
     <!-- Alternate Languages -->
     <link rel="alternate" hreflang="en" href="https://louisbuilds.me/transmov/">
     <link rel="alternate" hreflang="zh" href="https://louisbuilds.me/transmov/zh/">
+    <link rel="alternate" hreflang="de" href="https://louisbuilds.me/transmov/de/">
+    <link rel="alternate" hreflang="fr" href="https://louisbuilds.me/transmov/fr/">
+    <link rel="alternate" hreflang="es" href="https://louisbuilds.me/transmov/es/">
+    <link rel="alternate" hreflang="ja" href="https://louisbuilds.me/transmov/ja/">
+    <link rel="alternate" hreflang="ko" href="https://louisbuilds.me/transmov/ko/">
     <link rel="alternate" hreflang="x-default" href="https://louisbuilds.me/transmov/">
     
     <!-- Google tag (gtag.js): queue early; load library after delay for INP -->
@@ -70,16 +80,16 @@
         "applicationCategory": "DesignApplication",
         "applicationSubCategory": "Productivity",
         "operatingSystem": "macOS",
-        "fileSize": "3.3MB",
+        "fileSize": "约 3MB",
         "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD",
             "description": "可免费下载，提供高级订阅与终身买断方案。"
         },
-        "description": "macOS 原生动图软件，体积仅 3.3MB。本地 AI 一键去除视频背景，支持帧级精细编辑，轻松预览、转换、制作高质量 GIF/APNG/WebP 动图。",
+        "description": "macOS 原生动图软件，体积约 3MB。本地 AI 一键去除视频背景，支持帧级精细编辑，轻松预览、转换、制作高质量 GIF/APNG/WebP 动图。",
         "screenshot": "https://louisbuilds.me/transmov/og-image.png",
-        "softwareVersion": "2.2",
+        "softwareVersion": "2.3",
         "releaseNotes": "优化 AI 视频抠图引擎与原生 Swift 性能表现。",
         "downloadUrl": "https://apps.apple.com/us/app/transmov/id6756703030?mt=12",
         "inLanguage": "zh-CN",
@@ -203,7 +213,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="../style.css?v=20260807i" as="style">
+    <link rel="preload" href="../style.css?v=20260830a" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -969,8 +979,11 @@
             display: block;
             margin-bottom: 1.1rem;
         }
+        .pricing-store-note {
+            padding-top: 2.25rem;
+        }
     </style>
-    <link rel="stylesheet" href="../style.css?v=20260807i">
+    <link rel="stylesheet" href="../style.css?v=20260830a">
 </head>
 <body>
     <header class="top-bar">
@@ -1007,6 +1020,11 @@
                 <ul class="language-menu" role="menu" aria-label="语言选项">
                     <li role="none"><a role="menuitem" href="../" lang="en">English</a></li>
                     <li role="none"><a role="menuitem" href="./" class="active" lang="zh-CN">简体中文</a></li>
+                    <li role="none"><a role="menuitem" href="../de/" lang="de">Deutsch</a></li>
+                    <li role="none"><a role="menuitem" href="../fr/" lang="fr">Français</a></li>
+                    <li role="none"><a role="menuitem" href="../es/" lang="es">Español</a></li>
+                    <li role="none"><a role="menuitem" href="../ja/" lang="ja">日本語</a></li>
+                    <li role="none"><a role="menuitem" href="../ko/" lang="ko">한국어</a></li>
                 </ul>
             </div>
         </div>
@@ -1031,10 +1049,10 @@
                         <p class="hero-subheadline">预览、转换与创建高质量GIF、APNG和WebP动图。依托端侧AI一键去除视频背景 — 无云端上传。</p>
                         <div class="hero-cta badges-container">
                             <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home_zh&mt=8" target="_blank" rel="noopener" class="badge-link" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'hero'});">
-                                <img src="../images/app-store-badge.svg" alt="在 Mac App Store 下载 TransMov" width="120" height="40" onerror="this.src='../images/app-store-badge.png'; this.onerror=null;">
+                                <img src="../images/app-store-badge-zh.svg" alt="在 Mac App Store 下载 TransMov" width="109" height="40">
                             </a>
                         </div>
-                        <p class="hero-note">仅 3.3MB・全程在 Mac 运行・无需联网</p>
+                        <p class="hero-note">仅约 3MB・全程在 Mac 运行・无需联网</p>
                     </div>
                     <div class="hero-media">
                         <div class="comparison-reveal" data-comparison-reveal>
@@ -1446,6 +1464,7 @@
                         <p>完全掌握隐私控制权，不受云服务绑定。</p>
                     </div>
                 </div>
+                <p class="pricing-store-note">* 具体价格以 App Store 显示为准，可能因地区而异。</p>
             </div>
             <section class="section comparison-section pricing-comparison-section">
                 <h3 class="comparison-title">功能对比</h3>
@@ -1503,6 +1522,16 @@
                                 <td class="icon-cell"><span class="status-chip status-chip--yes" aria-label="可用">✓</span></td>
                             </tr>
                             <tr>
+                                <td>帧编辑橡皮擦</td>
+                                <td class="icon-cell"><span class="status-chip status-chip--no" aria-label="不可用">×</span></td>
+                                <td class="icon-text-cell">
+                                    <span class="icon-text-wrap">
+                                        <span class="status-chip status-chip--yes" aria-label="可用">✓</span>
+                                        <span class="highlight-pro">逐帧擦除残留背景</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>抠图模式</td>
                                 <td>AI、色度阈值</td>
                                 <td>AI、色度阈值</td>
@@ -1510,7 +1539,7 @@
                             <tr>
                                 <td>背景替换</td>
                                 <td>20 种纯色</td>
-                                <td><span class="highlight-pro">20 种纯色、自定义图片</span></td>
+                                <td><span class="highlight-pro">20 种纯色、渐变预设、自定义图片</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1691,7 +1720,7 @@
                             onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'cta'});">
                             <span class="btn-text">在 Mac App Store 下载</span>
                         </a>
-                        <p class="cta-note">版本 2.2，需 macOS 14 及以上</p>
+                        <p class="cta-note">版本 2.3，需 macOS 14 及以上</p>
                     </div>
                 </div>
             </section>

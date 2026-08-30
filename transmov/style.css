@@ -1261,6 +1261,16 @@ p {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+.pricing-store-note {
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.4);
+    max-width: 36rem;
+    margin: 0 auto;
+    padding-top: 2.25rem;
+    text-wrap: pretty;
+}
 .pricing-card {
     text-align: center;
 }

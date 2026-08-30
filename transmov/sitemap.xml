@@ -11,6 +11,31 @@
         <priority>0.95</priority>
     </url>
     <url>
+        <loc>https://louisbuilds.me/transmov/de/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/fr/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/es/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/ja/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
+        <loc>https://louisbuilds.me/transmov/ko/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+    </url>
+    <url>
         <loc>https://louisbuilds.me/transmov/online/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.92</priority>
