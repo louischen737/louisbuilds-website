@@ -1,0 +1,10 @@
+# robots.txt for Scancana — https://louisbuilds.me/scancana/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://louisbuilds.me/scancana/sitemap.xml
+
+# Optional non-page resources
+Disallow: /*.md

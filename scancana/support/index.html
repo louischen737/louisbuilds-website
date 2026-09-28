@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="canonical" href="https://louisbuilds.me/scancana/support">
+<title>Support – Scancana</title>
+<meta name="description" content="Scancana support: contact, Pro purchases, Restore, scanning, collection, iCloud, and CSV export.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://louisbuilds.me/scancana/support">
+<meta property="og:title" content="Support – Scancana">
+<meta property="og:description" content="Scancana support: contact, Pro purchases, Restore, scanning, collection, iCloud, and CSV export.">
+<meta property="og:image" content="https://louisbuilds.me/scancana/assets/app_mark.png">
+<meta name="twitter:card" content="summary">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMXET2TJN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
+</script>
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0E0C0A;
+            --surface: #1A1714;
+            --text-primary: #F4EFE6;
+            --text-secondary: #A89F93;
+            --text-muted: #6F675E;
+            --accent: #F5C842;
+            --border: rgba(244, 239, 230, 0.12);
+            --glass: rgba(14, 12, 10, 0.92);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .site-nav {
+            position: sticky; top: 0; z-index: 1000; padding: 14px 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 0.5px solid var(--border);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+        .nav-brand {
+            display: inline-flex; align-items: center; gap: 10px;
+            text-decoration: none; color: var(--text-primary);
+            font-size: 17px; font-weight: 600; letter-spacing: -0.3px;
+        }
+        .nav-brand img { width: 32px; height: 32px; border-radius: 8px; }
+        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500;
+        }
+        .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text-primary); }
+        .legal-main { padding: 56px 0 72px; }
+        .legal-container { max-width: 720px; margin: 0 auto; }
+        h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 24px; }
+        .support-contact {
+            margin: 0 0 40px;
+            padding: 20px 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+        .support-contact h2,
+        .support-section > h2 {
+            margin: 0 0 10px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        .support-contact p { margin: 0; }
+        .support-mail {
+            display: inline-block;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .support-section { margin-top: 40px; }
+        p { margin-bottom: 16px; color: var(--text-secondary); font-size: 16px; }
+        ul { margin-bottom: 16px; padding-left: 24px; color: var(--text-secondary); font-size: 16px; }
+        li { margin-bottom: 6px; }
+        a { color: var(--accent); }
+        a:hover { opacity: 0.85; }
+        .faq { margin-top: 8px; border-top: 1px solid var(--border); }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question {
+            width: 100%; padding: 20px 0; background: none; border: none;
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            font-size: 17px; font-weight: 600; color: var(--text-secondary);
+            cursor: pointer; text-align: left; font-family: inherit;
+        }
+        .faq-question:hover { color: var(--text-primary); }
+        .faq-item.active .faq-question { color: var(--text-primary); }
+        .faq-icon { flex-shrink: 0; opacity: 0.6; transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); opacity: 1; }
+        .faq-answer { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 800px; opacity: 1; }
+        .faq-answer-inner { padding-bottom: 20px; }
+        .faq-answer p { margin-bottom: 12px; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        footer {
+            padding: 48px 0; text-align: center;
+            border-top: 1px solid var(--border); color: var(--text-secondary);
+        }
+        .footer-links { margin: 0 0 20px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-meta { margin: 0; color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+        @media (max-width: 768px) {
+            .legal-main { padding: 40px 0 56px; }
+            h1 { font-size: 28px; }
+        }
+</style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="../"><img src="../assets/icon-64.png" alt="" width="32" height="32">Scancana</a>
+    <div class="nav-links">
+      <a href="./" aria-current="page">Support</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+    </div>
+  </div>
+</nav>
+<main class="legal-main">
+  <div class="container">
+    <div class="legal-container">
+      <h1>Support</h1>
+
+      <section class="support-contact" aria-labelledby="support-contact-title">
+        <h2 id="support-contact-title">Contact</h2>
+        <a class="support-mail" href="mailto:support@louisbuilds.me">support@louisbuilds.me</a>
+        <p>Include your app version and iOS version.</p>
+      </section>
+
+      <section class="support-section" aria-labelledby="support-purchases-title">
+        <h2 id="support-purchases-title">Purchases</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is Pro a subscription?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>No. Pro is a one-time purchase for Lifetime Access. There is nothing to cancel.</p>
+                <p>Free includes Scan, Search, your collection, live prices, share progress images, and adding photos. Pro adds Burst Scan, Price Tracking (trends and alerts), iCloud Sync, and CSV Export.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>I paid but Pro isn’t unlocked.</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Open Settings → Restore Purchase, signed into the same Apple ID you used to buy. If it still doesn’t unlock, email us.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>I bought Pro on another device.</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Restore Purchase on the new device with the same Apple ID. Your collection stays on each device unless you also turn on iCloud Sync (Pro).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="support-section" aria-labelledby="support-using-title">
+        <h2 id="support-using-title">Using the app</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I add cards?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Three ways on the Add tab:</p>
+                <ul>
+                  <li>Scan — one card at a time (free)</li>
+                  <li>Burst — keep scanning a stack, then review (Pro)</li>
+                  <li>Search — look up by English name, set, or number (free)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Why didn’t my scan work?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Line up one card, hold still, and watch for glare. If a few cards look alike, Scancana shows up to three matches—pick one or try again.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Camera is off</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Go to iOS Settings → Scancana → Camera, turn access on, then return to the Add tab and Scan.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What’s Normal vs Foil?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>That’s the card’s printing. You choose it when you add the card. After that it’s locked; if it’s wrong, remove the card and add it again.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Where do prices come from?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Ballpark figures from TCGPlayer. Tap the yellow price to switch Market, Listed Median, or Market Low. They need a network connection. Some printings simply don’t have a price yet. Market trends and price alerts are part of Pro.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Why didn’t I get a price alert?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Alerts only send when a tracked Market price moves that day—and only if notifications are on. They fire at most once per card per day, and only if the move matches your alert rules.</p>
+                <p>Turn notifications on in Settings → Notifications, or tap the banner on Price Tracking. If you denied permission, open iOS Settings → Scancana. Tracking and trends still work without alerts.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Do my cards leave this device?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>By default, no—everything stays on this iPhone or iPad. Turn on iCloud Sync (Pro) if you want the same boxes and card photos on this Apple ID across your devices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can I export my collection?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Yes, with Pro—CSV for the whole collection or one set. Finish any leftover cards (Normal or Foil) before exporting.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I share my progress?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Open a set box, share progress, and pick up to six cards for a share image. That’s free.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is Scancana official?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>No. It’s an unofficial fan-made app, not affiliated with Disney or Ravensburger.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="../">Home</a>
+      <a href="./" aria-current="page">Support</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+    </div>
+    <p class="footer-meta">© 2026 Scancana<br>A product by Louis · <a href="https://louisbuilds.me/">louisbuilds.me</a></p>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('.faq-question').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach((el) => {
+        el.classList.remove('active');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!open) {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+</body>
+</html>
