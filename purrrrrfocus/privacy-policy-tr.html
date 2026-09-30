@@ -394,7 +394,9 @@
                 <ol>
                     <li><strong>Yerel Veriler</strong>: Oluşturduğunuz görevler, odaklanma kayıtları, ayar tercihleriniz vb. yalnızca cihazınızda yerel olarak saklanır.</li>
                     <li><strong>Bilgi Toplama Yok</strong>: Uygulama, kullanım istatistikleri veya analitik verilerini toplamamaktadır.</li>
-                    <li><strong>İnternet Aktarımı Yok</strong>: Tüm veriler cihazınızda kalır ve hiçbir sunucuya veya üçüncü kişilere yüklenmez.</li>
+                    <li><strong>Odak verileri varsayılan olarak yerelde kalır</strong>: Oturumlar, istatistikler ve notlar cihazınızda kalır ve reklam için kullanılmaz.</li>
+                    <li><strong>İsteğe bağlı ağ (Arkadaş davet)</strong>: Treat kazanmak için Arkadaş davet kullanırsanız; davetleri eşleştirmek, ödül sağlamak ve mükerrer ya da kötüye kullanımlı talepleri önlemek amacıyla anonim bir App Store işlem kimliği, davet kodları ve ödül bilgilerini işleriz. Rehberinizi, adınızı, e-posta adresinizi veya telefon numaranızı toplamayız. Bu bilgiler reklam veya izleme için kullanılmaz. Yerel verileri sıfırlamak cihazdaki treat’leri temizler (Arkadaş davet ile tanımlananlar dahil); Arkadaş davet ile daha önce aldığınız ödüller tekrar alınamaz.</li>
+                    <!-- REFERRAL_LEGAL_V1 -->
                     <li><strong>Uygulama İçinden Satın Alma</strong>: Uygulama, Plus sürümü için uygulama içinden satın alma işlevselliği sunmaktadır. Ödeme işleme Apple App Store tarafından yapılır ve biz, ödeme bilgilerinizi toplamayacağız veya saklamayacağız.</li>
                     <li><strong>Ekran Süresi Erişimi (İsteğe Bağlı)</strong>: Odak oturumları sırasında Beyaz Liste Modu’nu etkinleştirirseniz, PurrrrrFocus odaklanırken dikkat dağıtıcı uygulamaları sınırlamaya yardımcı olmak için iOS tarafından sağlanan Ekran Süresi iznini isteyebilir. Bu özellik tamamen cihaz üzerinde Apple’ın Ekran Süresi API’leri aracılığıyla çalışır. Ekran Süresi etkinliğinizi veya uygulama kullanım verilerinizi toplamaz, yüklemez, analiz etmez ya da paylaşmayız.</li>
                 </ol>
@@ -410,7 +412,7 @@
                     <li>iOS Ekran Süresi erişimi aracılığıyla Beyaz Liste Modunu desteklemek</li>
                     <li>Yasal Sorumlulukları Sağlama: İlgili yasal düzenlemeleri takip etme</li>
                 </ul>
-                <p><strong>Not</strong>: Tüm veri işleme cihazınızda gerçekleşir ve hiçbir sunucuya yüklenmez.</p>
+                <p><strong>Not</strong>: Odak verileri varsayılan olarak cihazınızda işlenir. Arkadaş davet kullanırsanız, ödül vermek için davetle ilgili veriler sunucumuzda da işlenir (bkz. Bilgi Toplama).</p>
             </div>
             
             <div class="section">
@@ -418,7 +420,8 @@
                 <ul>
                     <li><strong>Yerel Veritabanı</strong>: Fokus kayıtlarınız, görev verileriniz vb. için iOS CoreData çerçevesini kullanır.</li>
                     <li><strong>Sistem Ayarları</strong>: Uygulama ayarları ve tercihleriniz için iOS UserDefaults kullanır.</li>
-                    <li><strong>Cihaz Yerel</strong>: Tüm veriler yalnızca cihazınızda saklanır.</li>
+                    <li><strong>Cihaz yerel</strong>: Odak kayıtlarınız, görev verileriniz, ayarlar ve diğer genel uygulama verileri yalnızca cihazınızda saklanır.</li>
+                    <li><strong>Arkadaş davet</strong>: Arkadaş davet özelliğini sunmak için gereken bilgiler sunucumuzda güvenli şekilde işlenir.</li>
                     <li><strong>Bulut Senkronizasyonu Yok</strong>: Veriler iCloud veya diğer bulut hizmetlerine senkronize edilmez.</li>
                     <li><strong>Veri İhracatı</strong>: Plus sürümü, verileri CSV/Excel formatında ihraç etmeyi destekler, dosyalar cihazın yerel geçici dizinine kaydedilir.</li>
                     <li><strong>Veri Silme</strong>: Herhangi bir zaman, uygulama içi ayarlar aracılığıyla yerel verileri silebilirsiniz.</li>
@@ -438,20 +441,21 @@
                 <ul>
                     <li><strong>Veri İhracat İşlevi</strong>: Plus sürümü, odaklanma verilerinizi CSV/Excel formatında ihraç etmeyi destekler. İhrac edilen dosyalar cihazın yerel geçici dizinine kaydedilir ve dosyaları sistem paylaşım işlevselliği aracılığıyla diğer uygulamalara paylaşma seçeneği bulunur.</li>
                     <li><strong>Uygulama Paylaşım İşlevi</strong>: Uygulama önerilerini diğer kullanıcılara paylaşabilirsiniz. Paylaşılan içerik App Store bağlantıları içerir ve kişisel veri içermez.</li>
-                    <li><strong>Başarı Kartı Paylaşımı</strong>: Başarı kilidini açma bilgilerini sosyal medya platformlarına paylaşabilirsiniz. Paylaşılan içerik başarı adları ve açıklamaları içerir, ancak kişisel istatistikler içermez.</li>
-                    <li><strong>Başarı Kartı Kaydetme</strong>: Başarı kartlarını cihaz fotoğraf albümüne kaydedebilirsiniz. Resimler başarı adları ve açıklamaları içerir, ancak kişisel istatistikler içermez.</li>
+                    <li><strong>Arkadaş davet</strong>: Sistem paylaşım özelliğiyle diğer kullanıcılara davet gönderebilirsiniz</li>
+                    <li><strong>Odak ve başarı kartları</strong>: Odak özeti, odak hikâyesi veya başarı kartlarını paylaşabilirsiniz; başarı kartları fotoğraf albümüne de kaydedilebilir. Kartlar, paylaşmayı seçtiğiniz oturum veya dönem odak özetini ya da başarı adları ve açıklamalarını içerebilir. Paylaşım sistem paylaşım özelliğiyle yapılır</li>
                 </ul>
                 <p><strong>Not</strong>: Yukarıdaki kullanıcı içinde başlatılan paylaşım davranışları hariç, veri paylaşmıyoruz. Paylaşım sonrası verinin kullanımı size ve alıcılar tarafından kontrol edilir ve biz bunun içinde bulunmuyoruz.</p>
             </div>
-            
+
             <div class="section">
                 <h2>Veri Güvenliği</h2>
                 <p>Kişisel bilgilerinizi korumak için uygun teknik önlemler alıyoruz:</p>
                 <ul>
-                    <li><strong>Yerel Depolama</strong>: Tüm veriler yalnızca cihazınızda saklanır ve hiçbir sunucuya yüklenmez.</li>
+                    <li><strong>Önce yerel</strong>: Odak kayıtları ve ayarlar varsayılan olarak cihazınızda saklanır.</li>
+                    <li><strong>Güvenli iletim</strong>: Arkadaş davet için kullanılan bilgiler güvenli bağlantılar üzerinden iletilir</li>
                     <li><strong>Sistem Korunması</strong>: Veriler iOS sistem güvenlik mekanizmaları tarafından korunur.</li>
                     <li><strong>Veri İzolemesi</strong>: Uygulama verisi diğer uygulamalar verisinden tamamen izole edilmiştir.</li>
-                    <li><strong>İnternet Aktarımı Yok</strong>: Tüm veriler hiçbir zaman internet üzerinden aktarılmaz.</li>
+                    
                 </ul>
             </div>
             
@@ -459,13 +463,13 @@
                 <h2>Haklarınız</h2>
                 <p>Bu uygulama tamamen yerel depolama kullandığı için verilerinizle tamamen kontrolünüz vardır:</p>
                 <ul>
-                    <li><strong>Veri Erişimi</strong>: Tüm veriler cihazınızda saklanır ve her zaman görünebilirsiniz.</li>
-                    <li><strong>Veri Değiştirme</strong>: Herhangi bir zaman herhangi bir veriyi değiştirebilir veya silebilirsiniz.</li>
+                    <li><strong>Veri Erişimi</strong>: Yerel olarak saklanan uygulama verilerinizi istediğiniz zaman görüntüleyebilirsiniz.</li>
+                    <li><strong>Veri Değiştirme</strong>: Yerel olarak saklanan uygulama verilerinizi istediğiniz zaman değiştirabilir veya silebilirsiniz.</li>
                     <li><strong>Veri İhracatı</strong>: Plus sürümü, odaklanma istatistik verilerini CSV/Excel formatında ihraç etmeyi destekler.</li>
-                    <li><strong>Veri Sıfırlama</strong>: Herhangi bir zaman tüm uygulama verilerini sıfırlayabilirsiniz.</li>
-                    <li><strong>Veri Silme</strong>: Uygulamayı silmek tüm verileri tamamen kaldırır.</li>
+                    <li><strong>Veri Sıfırlama</strong>: Yerel olarak saklanan uygulama verilerinizi istediğiniz zaman sıfırlayabilirsiniz.</li>
+                    <li><strong>Veri Silme</strong>: Uygulamayı silmek, cihazınızda yerel olarak saklanan verileri kaldırır.</li>
                 </ul>
-                <p>Bu uygulama, sunucu tarafında hiçbir hesap olmadığı için hesap silme işlevselliğine gerek yoktur.</p>
+                <p>Bu uygulama geleneksel e-posta hesapları kullanmaz; ayrı bir hesap silme akışı yoktur.</p>
             </div>
             
             <div class="section">

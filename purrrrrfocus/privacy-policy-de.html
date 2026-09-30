@@ -410,11 +410,13 @@
             
             <div class="section">
                 <h2>Informationserhebung</h2>
-                <p>Diese App ist für vollständige lokale Speicherung ausgelegt und erhebt keine personenbezogenen Daten:</p>
+                <p>Diese App speichert Daten vorwiegend lokal und erhebt keine personenbezogenen Daten wie Name, E-Mail oder Telefonnummer:</p>
                 <ol>
                     <li><strong>Lokale Daten</strong>: Von dir erstellte Aufgaben, Fokusaufzeichnungen, Einstellungspräferenzen usw. werden nur lokal auf deinem Gerät gespeichert.</li>
                     <li><strong>Keine Datenerhebung</strong>: Die App erhebt keine Nutzungsstatistiken oder Analysedaten.</li>
-                    <li><strong>Keine Netzwerkübertragung</strong>: Alle Daten bleiben auf deinem Gerät und werden nie auf Server oder an Dritte hochgeladen.</li>
+                    <li><strong>Fokusdaten bleiben standardmäßig lokal</strong>: Sitzungen, Statistiken und Notizen bleiben auf deinem Gerät und werden nicht für Werbung genutzt.</li>
+                    <li><strong>Optionales Netzwerk (Freunde einladen)</strong>: Wenn du Freunde einladen nutzt, um Treats zu erhalten, verarbeiten wir eine anonyme App-Store-Transaktionskennung, Einladungscodes und Belohnungsinformationen, um Einladungen zuzuordnen, Belohnungen bereitzustellen und doppelte oder missbräuchliche Ansprüche zu verhindern. Wir erheben keine Kontakte, keinen Namen, keine E-Mail-Adresse und keine Telefonnummer. Diese Informationen werden nicht für Werbung oder Tracking verwendet. Das Zurücksetzen lokaler Daten löscht die Treats auf dem Gerät (einschließlich über Freunde einladen gutgeschriebener Treats); bereits abgeholte Einladungsbelohnungen können nicht erneut abgeholt werden.</li>
+                    <!-- REFERRAL_LEGAL_V1 -->
                     <li><strong>In-App-Käufe</strong>: Die App bietet In-App-Käufe für die Plus-Version. Die Zahlungsabwicklung erfolgt über den Apple App Store; wir erheben oder speichern deine Zahlungsdaten nicht.</li>
                     <li><strong>Bildschirmzeit-Zugriff (optional)</strong>: Wenn du während Fokussitzungen den Modus „Erlaubte Apps“ aktivierst, kann PurrrrrFocus die von iOS bereitgestellte Bildschirmzeit-Berechtigung anfordern, um ablenkende Apps während des Fokus zu begrenzen. Diese Funktion arbeitet vollständig auf dem Gerät über Apples Bildschirmzeit-APIs. Wir erheben, laden, analysieren oder teilen deine Bildschirmzeit-Aktivität oder App-Nutzungsdaten nicht.</li>
                 </ol>
@@ -422,7 +424,7 @@
             
             <div class="section">
                 <h2>Datennutzung</h2>
-                <p>Da die App vollständig lokal speichert, erheben wir keine Informationen. Die Funktionen der App basieren vollständig auf lokalen Daten auf deinem Gerät:</p>
+                <p>Die App-Funktionen basieren vorwiegend auf lokalen Daten auf deinem Gerät. Wir nutzen deine Fokusaufzeichnungen nicht für Werbung oder Profiling:</p>
                 <ul>
                     <li>App-Funktionen bereitstellen: basierend auf lokalen Daten auf deinem Gerät</li>
                     <li>Kundensupport bereitstellen: über die In-App-Feedback-Funktion</li>
@@ -430,7 +432,7 @@
                     <li>Modus „Erlaubte Apps“ über iOS-Bildschirmzeit-Zugriff unterstützen</li>
                     <li>Rechtliche Verpflichtungen erfüllen: einschlägige Gesetze und Vorschriften einhalten</li>
                 </ul>
-                <p><strong>Hinweis</strong>: Die gesamte Datenverarbeitung erfolgt auf deinem Gerät und wird nie auf Server hochgeladen.</p>
+                <p><strong>Hinweis</strong>: Fokusbezogene Daten werden standardmäßig auf deinem Gerät verarbeitet. Wenn du Freunde einladen nutzt, werden einladungsbezogene Daten auch auf unserem Server verarbeitet, um Belohnungen auszuzahlen (siehe Informationserhebung).</p>
             </div>
             
             <div class="section">
@@ -438,7 +440,8 @@
                 <ul>
                     <li><strong>Lokale Datenbank</strong>: Nutzt das iOS-CoreData-Framework, um deine Fokusaufzeichnungen, Aufgabendaten usw. zu speichern.</li>
                     <li><strong>Systemeinstellungen</strong>: Nutzt iOS UserDefaults, um App-Einstellungen und Präferenzen zu speichern</li>
-                    <li><strong>Gerät lokal</strong>: Alle Daten werden nur auf deinem Gerät gespeichert</li>
+                    <li><strong>Gerät lokal</strong>: Deine Fokusaufzeichnungen, Aufgabendaten, Einstellungen und sonstigen allgemeinen App-Daten werden nur auf deinem Gerät gespeichert</li>
+                    <li><strong>Freunde einladen</strong>: Für Freunde einladen benötigte Informationen werden sicher auf unserem Server verarbeitet</li>
                     <li><strong>Keine Cloud-Synchronisierung</strong>: Daten werden nicht mit iCloud oder anderen Cloud-Diensten synchronisiert</li>
                     <li><strong>Datenexport</strong>: Die Plus-Version unterstützt den Export von Daten im CSV/Excel-Format; Dateien werden im lokalen temporären Verzeichnis des Geräts gespeichert</li>
                     <li><strong>Datenlöschung</strong>: Du kannst lokale Daten jederzeit über die In-App-Einstellungen löschen</li>
@@ -447,7 +450,7 @@
             
             <div class="section">
                 <h2>Datenweitergabe</h2>
-                <p>Wir verkaufen, handeln oder übertragen deine personenbezogenen Daten nicht an Dritte. Da die App vollständig lokal speichert, teilen wir Informationen nur unter folgenden Umständen:</p>
+                <p>Wir verkaufen, handeln oder übertragen deine personenbezogenen Daten nicht an Dritte. Außer bei gesetzlichen Anforderungen oder wenn du selbst teilst, teilen wir Informationen nur unter folgenden Umständen:</p>
                 <ul>
                     <li>Mit deiner ausdrücklichen Zustimmung</li>
                     <li>Zur Erfüllung gesetzlicher Anforderungen oder Gerichtsbeschlüsse</li>
@@ -458,34 +461,35 @@
                 <ul>
                     <li><strong>Datenexport-Funktion</strong>: Die Plus-Version unterstützt den Export deiner Fokusdaten im CSV/Excel-Format. Exportierte Dateien werden im lokalen temporären Verzeichnis des Geräts gespeichert, und du kannst die Daten über die Systemfreigabe an andere Apps weitergeben</li>
                     <li><strong>App-Teilen-Funktion</strong>: Du kannst App-Empfehlungen mit anderen Nutzern teilen. Geteilte Inhalte umfassen App-Store-Links und enthalten keine personenbezogenen Daten</li>
-                    <li><strong>Teilen von Erfolgs-Karten</strong>: Du kannst Freischaltungsinformationen zu Erfolgen in sozialen Netzwerken teilen. Geteilte Inhalte umfassen Erfolgsnamen und -beschreibungen, aber keine persönlichen Statistiken</li>
-                    <li><strong>Speichern von Erfolgsbildern</strong>: Du kannst Erfolgs-Karten im Fotoalbum des Geräts speichern. Bilder enthalten Erfolgsnamen und -beschreibungen, aber keine persönlichen Statistiken</li>
+                    <li><strong>Freunde einladen</strong>: Du kannst eine Einladung über die System-Freigabefunktion mit anderen teilen</li>
+                    <li><strong>Fokus- &amp; Erfolgskarten</strong>: Du kannst Fokus-Zusammenfassung, Fokus-Geschichte oder Erfolgskarten teilen; Erfolgskarten können auch im Fotoalbum gespeichert werden. Karten können von dir gewählte Sitzungs- oder Perioden-Highlights oder Erfolgsnamen und -beschreibungen enthalten. Das Teilen erfolgt über die Systemfreigabe</li>
                 </ul>
                 <p><strong>Hinweis</strong>: Abgesehen von den oben genannten, vom Nutzer initiierten Freigaben teilen wir deine Daten nicht automatisch. Die Nutzung der Daten nach dem Teilen liegt bei dir und den Empfängern; wir sind daran nicht beteiligt.</p>
             </div>
-            
+
             <div class="section">
                 <h2>Datensicherheit</h2>
                 <p>Wir ergreifen geeignete technische Maßnahmen zum Schutz deiner personenbezogenen Daten:</p>
                 <ul>
-                    <li><strong>Lokale Speicherung</strong>: Alle Daten werden nur auf deinem Gerät gespeichert und nie auf einen Server hochgeladen</li>
+                    <li><strong>Lokal zuerst</strong>: Fokusaufzeichnungen und Einstellungen bleiben standardmäßig auf deinem Gerät</li>
+                    <li><strong>Sichere Übertragung</strong>: Informationen für Freunde einladen werden über sichere Verbindungen übertragen</li>
                     <li><strong>Systemschutz</strong>: Daten werden durch iOS-Systemsicherheitsmechanismen geschützt</li>
                     <li><strong>Datenisolation</strong>: App-Daten sind vollständig von Daten anderer Apps isoliert</li>
-                    <li><strong>Keine Netzwerkübertragung</strong>: Daten werden nie über das Netzwerk übertragen</li>
+                    
                 </ul>
             </div>
             
             <div class="section">
                 <h2>Deine Rechte</h2>
-                <p>Da diese App vollständig lokal speichert, hast du die volle Kontrolle über deine Daten:</p>
+                <p>Du hast die volle Kontrolle über deine Daten auf dem Gerät:</p>
                 <ul>
-                    <li><strong>Datenzugriff</strong>: Alle Daten sind auf deinem Gerät gespeichert und du kannst sie jederzeit einsehen</li>
-                    <li><strong>Datenänderung</strong>: Du kannst Daten jederzeit ändern oder löschen</li>
+                    <li><strong>Datenzugriff</strong>: Du kannst deine lokal gespeicherten App-Daten jederzeit einsehen</li>
+                    <li><strong>Datenänderung</strong>: Du kannst deine lokal gespeicherten App-Daten jederzeit ändern oder löschen</li>
                     <li><strong>Datenexport</strong>: Die Plus-Version unterstützt den Export von Fokusstatistikdaten im CSV/Excel-Format</li>
-                    <li><strong>Datenzurücksetzung</strong>: Du kannst alle App-Daten jederzeit zurücksetzen</li>
-                    <li><strong>Datenlöschung</strong>: Das Löschen der App entfernt alle Daten vollständig</li>
+                    <li><strong>Datenzurücksetzung</strong>: Du kannst deine lokal gespeicherten App-Daten jederzeit zurücksetzen</li>
+                    <li><strong>Datenlöschung</strong>: Das Löschen der App entfernt lokal auf deinem Gerät gespeicherte Daten</li>
                 </ul>
-                <p>Diese App benötigt keine Kontolöschungsfunktion, da es keine serverseitigen Konten gibt.</p>
+                <p>Diese App verwendet keine klassischen E-Mail-Konten; es gibt daher keinen separaten Kontolöschprozess.</p>
             </div>
             
             <div class="section">

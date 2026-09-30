@@ -394,7 +394,9 @@
                 <ol>
                     <li><strong>Données Locales</strong> : Les tâches que vous créez, les enregistrements de concentration, les préférences de paramètres, etc., sont stockés uniquement localement sur votre appareil.</li>
                     <li><strong>Aucune Collecte de Données</strong> : L'application ne collecte aucune statistique d'utilisation ou données d'analyse.</li>
-                    <li><strong>Aucune Transmission Réseau</strong> : Toutes les données restent sur votre appareil et ne sont jamais téléversées sur aucun serveur ou tiers.</li>
+                    <li><strong>Données de concentration locales par défaut</strong> : Sessions, statistiques et notes restent sur votre appareil et ne sont pas utilisées pour la publicité.</li>
+                    <li><strong>Réseau optionnel (Inviter des amis)</strong> : Si vous utilisez Inviter des amis pour gagner des treats, nous traitons un identifiant anonyme de transaction App Store, des codes d’invitation et des informations de récompense afin d’associer les invitations, fournir les récompenses et prévenir les demandes en double ou abusives. Nous ne collectons pas vos contacts, nom, adresse e-mail ni numéro de téléphone. Ces informations ne sont pas utilisées pour la publicité ou le suivi. La réinitialisation des données locales efface les treats sur l’appareil (y compris ceux crédités via Inviter des amis) ; les récompenses d’invitation déjà obtenues ne peuvent pas être réclamées à nouveau.</li>
+                    <!-- REFERRAL_LEGAL_V1 -->
                     <li><strong>Achat Intégrés</strong> : L'application propose une fonctionnalité d'achat intégré de la version Plus. Le traitement des paiements est effectué par Apple App Store, et nous ne collectons ni ne stockons vos informations de paiement.</li>
                     <li><strong>Accès au Temps d’écran (Optionnel)</strong> : Si vous activez le Mode Liste Blanche pendant les sessions de concentration, PurrrrrFocus peut demander l’autorisation Temps d’écran fournie par iOS afin de limiter les applications distrayantes pendant que vous vous concentrez. Cette fonctionnalité fonctionne entièrement sur votre appareil via les API Temps d’écran d’Apple. Nous ne collectons, ne téléchargeons, n’analysons ni ne partageons vos données d’activité Temps d’écran ou d’utilisation des applications.</li>
                 </ol>
@@ -410,7 +412,7 @@
                     <li>Prendre en charge le Mode Liste Blanche via l’accès Temps d’écran d’iOS</li>
                     <li>Respecter les obligations légales : Suivre les lois et réglementations pertinentes</li>
                 </ul>
-                <p><strong>Note</strong> : Tous les traitements de données se font sur votre appareil et ne sont jamais téléversés sur aucun serveur.</p>
+                <p><strong>Note</strong> : Les données de concentration sont traitées sur votre appareil par défaut. Si vous utilisez Inviter des amis, les données liées à l’invitation sont aussi traitées sur notre serveur pour distribuer les récompenses (voir Collecte d’informations).</p>
             </div>
             
             <div class="section">
@@ -418,7 +420,8 @@
                 <ul>
                     <li><strong>Base de Données Locale</strong> : Utilise le framework iOS CoreData pour stocker vos enregistrements de concentration, vos données de tâches, etc.</li>
                     <li><strong>Paramètres Système</strong> : Utilise iOS UserDefaults pour stocker les paramètres et préférences de l'application</li>
-                    <li><strong>Local de l'appareil</strong> : Toutes les données sont stockées uniquement sur votre appareil</li>
+                    <li><strong>Local de l'appareil</strong> : Vos enregistrements de concentration, données de tâches, réglages et autres données générales de l’app sont stockés uniquement sur votre appareil</li>
+                    <li><strong>Inviter des amis</strong> : Les informations nécessaires à Inviter des amis sont traitées de façon sécurisée sur notre serveur</li>
                     <li><strong>Aucune Synchronisation Cloud</strong> : Les données ne sont pas synchronisées avec iCloud ou d'autres services cloud</li>
                     <li><strong>Export des Données</strong> : La version Plus permet d'exporter les données au format CSV/Excel, les fichiers sont stockés dans le répertoire temporaire local de l'appareil</li>
                     <li><strong>Suppression des Données</strong> : Vous pouvez supprimer les données locales à tout moment via les paramètres de l'application</li>
@@ -438,20 +441,21 @@
                 <ul>
                     <li><strong>Fonction d'Export des Données</strong> : La version Plus permet d'exporter vos données de concentration au format CSV/Excel. Les fichiers exportés sont stockés dans le répertoire temporaire local de l'appareil, et vous pouvez choisir de partager les données avec d'autres applications via la fonctionnalité de partage système</li>
                     <li><strong>Fonction de Partage de l'Application</strong> : Vous pouvez partager des recommandations d'application à d'autres utilisateurs. Le contenu partagé inclut les liens App Store et ne contient pas de données personnelles</li>
-                    <li><strong>Partage de Cartes de Succès</strong> : Vous pouvez partager l'information de débloquement de succès sur les plateformes sociales. Le contenu partagé inclut les noms et descriptions des succès, mais ne contient pas de statistiques personnelles</li>
-                    <li><strong>Enregistrement d'Images de Succès</strong> : Vous pouvez enregistrer les cartes de succès dans l'album photo de l'appareil. Les images contiennent les noms et descriptions des succès, mais ne contiennent pas de statistiques personnelles</li>
+                    <li><strong>Inviter des amis</strong> : Vous pouvez partager une invitation avec d’autres utilisateurs via la fonctionnalité de partage du système</li>
+                    <li><strong>Cartes de concentration et de succès</strong> : Vous pouvez partager le résumé de concentration, l’histoire de concentration ou des cartes de succès ; les cartes de succès peuvent aussi être enregistrées dans l’album photo. Les cartes peuvent inclure les points forts de séance ou de période que vous choisissez de partager, ou les noms et descriptions de succès. Le partage passe par la fonctionnalité système</li>
                 </ul>
                 <p><strong>Note</strong> : Outre les comportements de partage initiés par l'utilisateur ci-dessus, nous ne partageons pas automatiquement vos données. L'utilisation des données après le partage est contrôlée par vous et les destinataires, et nous n'y participons pas.</p>
             </div>
-            
+
             <div class="section">
                 <h2>Sécurité des Données</h2>
                 <p>Nous prenons des mesures techniques appropriées pour protéger vos informations personnelles :</p>
                 <ul>
-                    <li><strong>Stockage Local</strong> : Toutes les données sont stockées uniquement sur votre appareil et ne sont jamais téléversées sur aucun serveur</li>
+                    <li><strong>Priorité au local</strong> : Les enregistrements de concentration et réglages restent sur votre appareil par défaut</li>
+                    <li><strong>Transmission sécurisée</strong> : Les informations utilisées pour Inviter des amis sont transmises via des connexions sécurisées</li>
                     <li><strong>Protection Système</strong> : Les données sont protégées par les mécanismes de sécurité du système iOS</li>
                     <li><strong>Isolation des Données</strong> : Les données de l'application sont complètement isolées des données d'autres applications</li>
-                    <li><strong>Aucune Transmission Réseau</strong> : Toutes les données ne sont jamais transmises via le réseau</li>
+                    
                 </ul>
             </div>
             
@@ -459,13 +463,13 @@
                 <h2>Vos Droits</h2>
                 <p>Puisque cette application utilise un stockage complet local, vous disposez d'un contrôle total sur vos données :</p>
                 <ul>
-                    <li><strong>Accès aux Données</strong> : Toutes les données sont stockées sur votre appareil et vous pouvez les consulter à tout moment</li>
-                    <li><strong>Modification des Données</strong> : Vous pouvez modifier ou supprimer n'importe quelle donnée à tout moment</li>
+                    <li><strong>Accès aux Données</strong> : Vous pouvez consulter à tout moment les données de l’app stockées localement</li>
+                    <li><strong>Modification des Données</strong> : Vous pouvez modifier ou supprimer à tout moment les données de l’app stockées localement</li>
                     <li><strong>Export des Données</strong> : La version Plus permet d'exporter les données de statistiques de concentration au format CSV/Excel</li>
-                    <li><strong>Réinitialisation des Données</strong> : Vous pouvez réinitialiser toutes les données de l'application à tout moment</li>
-                    <li><strong>Suppression des Données</strong> : La suppression de l'application supprime complètement toutes les données</li>
+                    <li><strong>Réinitialisation des Données</strong> : Vous pouvez réinitialiser à tout moment les données de l’app stockées localement</li>
+                    <li><strong>Suppression des données</strong> : La suppression de l’application efface les données stockées localement sur votre appareil</li>
                 </ul>
-                <p>Cette application ne requiert pas de fonctionnalité de suppression de compte car il n'y a pas de comptes côté serveur.</p>
+                <p>Cette application n’utilise pas de comptes e-mail classiques ; il n’y a donc pas de procédure distincte de suppression de compte.</p>
             </div>
             
             <div class="section">

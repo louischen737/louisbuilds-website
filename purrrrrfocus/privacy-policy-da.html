@@ -394,7 +394,9 @@
                 <ol>
                     <li><strong>Lokale data</strong>: Opgaver, du laver, fokusregistre, indstillingspræferencer osv. gemmes udelukkende lokalt på dit enhed.</li>
                     <li><strong>Ingen dataundersøgelse</strong>: Appen samler ingen brugsstatistik eller analyse-data.</li>
-                    <li><strong>Ingen netværkstransmission</strong>: Alle data forbliver på dit enhed og uploades aldrig til nogen server eller tredjepart.</li>
+                    <li><strong>Fokusdata forbliver lokale som udgangspunkt</strong>: Sessioner, statistik og noter bliver på din enhed og bruges ikke til reklame.</li>
+                    <li><strong>Valgfrit netværk (Inviter venner)</strong>: Hvis du bruger Inviter venner for at optjene treats, behandler vi en anonym App Store-transaktionsidentifikator, invitationskoder og belønningsoplysninger for at matche invitationer, levere belønninger og forhindre dobbelte eller misbrugende krav. Vi indsamler ikke dine kontakter, navn, e-mailadresse eller telefonnummer. Oplysningerne bruges ikke til reklame eller tracking. Nulstilling af lokale data sletter treats på enheden (herunder treats krediteret via Inviter venner); belønninger, du allerede har hentet via Inviter venner, kan ikke hentes igen.</li>
+                    <!-- REFERRAL_LEGAL_V1 -->
                     <li><strong>Inde-app-køb</strong>: Appen tilbyder en indkøbsfunktion for Plus-versionen. Betalingsbehandling sker via Apple App Store, og vi samler eller lagrer ikke dine betalingsoplysninger.</li>
                     <li><strong>Skærmtidsadgang (Valgfrit)</strong>: Hvis du aktiverer Whitelist-tilstand under fokussessioner, kan PurrrrrFocus anmode om Skærmtidstilladelse fra iOS for at hjælpe med at begrænse distraherende apps, mens du fokuserer. Denne funktion fungerer fuldstændigt lokalt på din enhed via Apples Skærmtids-API’er. Vi indsamler, uploader, analyserer eller deler ikke dine Skærmtidsaktiviteter eller appbrugsdata.</li>
                 </ol>
@@ -410,7 +412,7 @@
                     <li>Understøtte Whitelist-tilstand gennem iOS Skærmtidsadgang</li>
                     <li>Overhold lovlige pligtelser: Følg de relevante lover og regulationer</li>
                 </ul>
-                <p><strong>Bemærk</strong>: Alle databehandlinger foregår på dit enhed og uploades aldrig til nogen server.</p>
+                <p><strong>Bemærk</strong>: Fokusrelaterede data behandles som udgangspunkt på din enhed. Hvis du bruger Inviter venner, behandles invitationsrelaterede data også på vores server for at udbetale belønninger (se Indsamling af oplysninger).</p>
             </div>
             
             <div class="section">
@@ -418,7 +420,8 @@
                 <ul>
                     <li><strong>Lokale database</strong>: Bruger iOS CoreData-rammeværket til at gemme dine fokusregistre, opgaver osv.</li>
                     <li><strong>Systemindstillinger</strong>: Bruger iOS UserDefaults til at gemme appens indstillinger og præferencer</li>
-                    <li><strong>Enheds lokalt</strong>: Alle data gemmes udelukkende på dit enhed</li>
+                    <li><strong>Enheds lokalt</strong>: Dine fokusregistre, opgavedata, indstillinger og øvrige generelle appdata gemmes kun på din enhed</li>
+                    <li><strong>Inviter venner</strong>: Oplysninger, der kræves for at levere Inviter venner, behandles sikkert på vores server</li>
                     <li><strong>Ingen cloud-synkronisering</strong>: Data synkroniseres ikke med iCloud eller andre cloud-tjenester</li>
                     <li><strong>Dataeksport</strong>: Plus-versionen understøtter eksport af data i CSV/Excel-format, filerne gemmes i enhedens lokale midlertidige mappe</li>
                     <li><strong>Datatøring</strong>: Du kan slette lokale data anytime via appens indstillinger</li>
@@ -438,20 +441,21 @@
                 <ul>
                     <li><strong>Dataeksportfunktion</strong>: Plus-versionen understøtter eksport af dine fokusdata i CSV/Excel-format. Eksportede filer gemmes i enhedens lokale midlertidige mappe, og du kan vælge at dele data med andre apps via systemets delingsfunktion</li>
                     <li><strong>Appdelingsfunktion</strong>: Du kan dele app-rekommendationer med andre brugere. Delingsindholdet inkluderer App Store-links og indeholder ikke personlige data</li>
-                    <li><strong>Sukceskortdeling</strong>: Du kan dele information om at fremskreds i sukces med sociale medierplatforme. Delingsindholdet inkluderer sukcesnavne og beskrivelser, men ikke personlige statistikker</li>
-                    <li><strong>Sukcesbilledeopslag</strong>: Du kan gemme sukceskort i enhedens billedalbum. Billederne inkluderer sukcesnavne og beskrivelser, men ikke personlige statistikker</li>
+                    <li><strong>Inviter venner</strong>: Du kan dele en invitation med andre brugere via systemets delingsfunktion</li>
+                    <li><strong>Fokus- og præstationskort</strong>: Du kan dele fokusopsummering, fokushistorie eller præstationskort; præstationskort kan også gemmes i billedalbummet. Kort kan indeholde sessions- eller periodehighlights, du vælger at dele, eller præstationsnavne og -beskrivelser. Deling sker via systemets delingsfunktion</li>
                 </ul>
                 <p><strong>Bemærk</strong>: Udover ovenstående bruger-initierede delingsbrug behaviorer, deler vi ikke automatisk dine data. Brugen af data efter deling kontrolleres af dig og modtagerne, og vi deler ikke med i det.</p>
             </div>
-            
+
             <div class="section">
                 <h2>Dataskabering</h2>
                 <p>Vi tager rimelige tekniske målinger for at beskytte dine personlige oplysninger:</p>
                 <ul>
-                    <li><strong>Lokalt lagring</strong>: Alle data gemmes udelukkende på dit enhed og uploades aldrig til nogen server</li>
+                    <li><strong>Lokalt først</strong>: Fokusregistre og indstillinger gemmes som udgangspunkt på din enhed</li>
+                    <li><strong>Sikker transmission</strong>: Oplysninger til Inviter venner sendes via sikre forbindelser</li>
                     <li><strong>Systembeskyttelse</strong>: Data er beskyttet af iOS-systemets sikkerhedsmekanismer</li>
                     <li><strong>Dataisoleret</strong>: Appens data er fuldstændigt isoleret fra andre apps data</li>
-                    <li><strong>Ingen netværkstransmission</strong>: Alle data sendes aldrig over netværket</li>
+                    
                 </ul>
             </div>
             
@@ -459,13 +463,13 @@
                 <h2>Din Ret</h2>
                 <p>Siden denne app bruger fuldstændig lokalt lagring, har du fuld kontrol over dine data:</p>
                 <ul>
-                    <li><strong>Adgang til data</strong>: Alle data gemmes på dit enhed og du kan se dem anytime</li>
-                    <li><strong>Redigering af data</strong>: Du kan ændre eller slette enhver data anytime</li>
+                    <li><strong>Adgang til data</strong>: Du kan til enhver tid se dine lokalt gemte appdata</li>
+                    <li><strong>Redigering af data</strong>: Du kan til enhver tid ændre eller slette dine lokalt gemte appdata</li>
                     <li><strong>Dataeksport</strong>: Plus-versionen understøtter eksport af fokusstatistik-data i CSV/Excel-format</li>
-                    <li><strong>Datareset</strong>: Du kan nulstille alle app-data anytime</li>
-                    <li><strong>Datatøring</strong>: At slette appen fjerner alle data helt</li>
+                    <li><strong>Datareset</strong>: Du kan til enhver tid nulstille dine lokalt gemte appdata</li>
+                    <li><strong>Datatøring</strong>: At slette appen fjerner data, der er gemt lokalt på din enhed</li>
                 </ul>
-                <p>Denne app kræver ikke en funktion til at slette konto, da der ikke er nogen konti på server-siden.</p>
+                <p>Denne app bruger ikke traditionelle e-mailkonti, så der er ingen separat kontosletningsproces.</p>
             </div>
             
             <div class="section">

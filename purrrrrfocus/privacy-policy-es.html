@@ -414,7 +414,9 @@
                 <ol>
                     <li><strong>Datos locales</strong>: Las tareas que creas, los registros de concentración, las preferencias de ajustes, etc., se almacenan solo localmente en tu dispositivo.</li>
                     <li><strong>Sin recopilación de datos</strong>: La app no recopila estadísticas de uso ni datos analíticos.</li>
-                    <li><strong>Sin transmisión por red</strong>: Todos los datos permanecen en tu dispositivo y nunca se suben a servidores ni a terceros.</li>
+                    <li><strong>Los datos de concentración permanecen locales por defecto</strong>: Sesiones, estadísticas y notas se quedan en tu dispositivo y no se usan para publicidad.</li>
+                    <li><strong>Red opcional (Invitar amigos)</strong>: Si usas Invitar amigos para ganar treats, procesamos un identificador anónimo de transacción de App Store, códigos de invitación e información de recompensas para emparejar invitaciones, entregar recompensas y evitar reclamaciones duplicadas o abusivas. No recogemos tus contactos, nombre, correo ni teléfono. Esta información no se usa para publicidad ni seguimiento. Restablecer los datos locales borra los treats del dispositivo (incluidos los acreditados mediante Invitar amigos); las recompensas de invitación ya obtenidas no pueden reclamarse de nuevo.</li>
+                    <!-- REFERRAL_LEGAL_V1 -->
                     <li><strong>Compras dentro de la app</strong>: La app ofrece compras dentro de la app para la versión Plus. El procesamiento del pago lo gestiona el App Store de Apple, y nosotros no recopilamos ni almacenamos tu información de pago.</li>
                     <li><strong>Acceso a Tiempo de uso (opcional)</strong>: Si activas el modo Apps permitidas durante las sesiones de concentración, PurrrrrFocus puede solicitar el permiso de Tiempo de uso de iOS para limitar las apps que distraen mientras te concentras. Esta función funciona íntegramente en el dispositivo mediante las APIs de Tiempo de uso de Apple. No recopilamos, subimos, analizamos ni compartimos tu actividad de Tiempo de uso ni el uso de apps.</li>
                 </ol>
@@ -430,7 +432,7 @@
                     <li>Admitir el modo Apps permitidas mediante el acceso a Tiempo de uso de iOS</li>
                     <li>Cumplir obligaciones legales: respetar las leyes y normativas aplicables</li>
                 </ul>
-                <p><strong>Nota</strong>: Todo el procesamiento de datos ocurre en tu dispositivo y nunca se sube a ningún servidor.</p>
+                <p><strong>Nota</strong>: Los datos de concentración se procesan en tu dispositivo por defecto. Si usas Invitar amigos, los datos relacionados con la invitación también se procesan en nuestro servidor para entregar recompensas (véase Recopilación de información).</p>
             </div>
             
             <div class="section">
@@ -438,7 +440,8 @@
                 <ul>
                     <li><strong>Base de datos local</strong>: Usa el framework CoreData de iOS para almacenar tus registros de concentración, datos de tareas, etc.</li>
                     <li><strong>Ajustes del sistema</strong>: Usa UserDefaults de iOS para almacenar ajustes y preferencias de la app</li>
-                    <li><strong>Local en el dispositivo</strong>: Todos los datos se almacenan solo en tu dispositivo</li>
+                    <li><strong>Local en el dispositivo</strong>: Tus registros de concentración, datos de tareas, ajustes y demás datos generales de la app se almacenan solo en tu dispositivo</li>
+                    <li><strong>Invitar amigos</strong>: La información necesaria para prestar Invitar amigos se procesa de forma segura en nuestro servidor</li>
                     <li><strong>Sin sincronización en la nube</strong>: Los datos no se sincronizan con iCloud ni con otros servicios en la nube</li>
                     <li><strong>Exportación de datos</strong>: La versión Plus admite exportar datos en formato CSV/Excel; los archivos se guardan en el directorio temporal local del dispositivo</li>
                     <li><strong>Eliminación de datos</strong>: Puedes eliminar los datos locales en cualquier momento desde los ajustes de la app</li>
@@ -458,20 +461,21 @@
                 <ul>
                     <li><strong>Función de exportación de datos</strong>: La versión Plus admite exportar tus datos de concentración en formato CSV/Excel. Los archivos exportados se guardan en el directorio temporal local del dispositivo, y puedes elegir compartirlos con otras apps mediante la función de compartir del sistema</li>
                     <li><strong>Función de compartir la app</strong>: Puedes compartir recomendaciones de la app con otros usuarios. El contenido compartido incluye enlaces del App Store y no contiene datos personales</li>
-                    <li><strong>Compartir tarjetas de logros</strong>: Puedes compartir información de desbloqueo de logros en redes sociales. El contenido compartido incluye nombres y descripciones de logros, pero no estadísticas personales</li>
-                    <li><strong>Guardar imágenes de logros</strong>: Puedes guardar tarjetas de logros en el álbum de fotos del dispositivo. Las imágenes contienen nombres y descripciones de logros, pero no estadísticas personales</li>
+                    <li><strong>Invitar amigos</strong>: Puedes compartir una invitación con otros usuarios mediante la función de compartir del sistema</li>
+                    <li><strong>Tarjetas de concentración y logros</strong>: Puedes compartir el resumen de concentración, la historia de concentración o tarjetas de logros; las tarjetas de logros también se pueden guardar en el álbum de fotos. Las tarjetas pueden incluir resúmenes de la sesión o del periodo que elijas compartir, o nombres y descripciones de logros. El compartir se realiza mediante la función de compartir del sistema</li>
                 </ul>
                 <p><strong>Nota</strong>: Aparte de los comportamientos de compartición iniciados por el usuario anteriores, no compartimos tus datos de forma automática. El uso de los datos tras compartirlos lo controláis tú y los destinatarios, y nosotros no participamos en ello.</p>
             </div>
-            
+
             <div class="section">
                 <h2>Seguridad de los datos</h2>
                 <p>Adoptamos medidas técnicas adecuadas para proteger tu información personal:</p>
                 <ul>
-                    <li><strong>Almacenamiento local</strong>: Todos los datos se almacenan solo en tu dispositivo y nunca se suben a ningún servidor</li>
+                    <li><strong>Prioridad a lo local</strong>: Los registros de concentración y ajustes se guardan en tu dispositivo por defecto</li>
+                    <li><strong>Transmisión segura</strong>: La información usada para Invitar amigos se transmite mediante conexiones seguras</li>
                     <li><strong>Protección del sistema</strong>: Los datos están protegidos por los mecanismos de seguridad del sistema iOS</li>
                     <li><strong>Aislamiento de datos</strong>: Los datos de la app están completamente aislados de los de otras apps</li>
-                    <li><strong>Sin transmisión por red</strong>: Los datos nunca se transmiten por la red</li>
+                    
                 </ul>
             </div>
             
@@ -479,13 +483,13 @@
                 <h2>Tus derechos</h2>
                 <p>Como esta app usa almacenamiento local completo, tienes control total sobre tus datos:</p>
                 <ul>
-                    <li><strong>Acceso a los datos</strong>: Todos los datos se almacenan en tu dispositivo y puedes verlos en cualquier momento</li>
-                    <li><strong>Modificación de datos</strong>: Puedes modificar o eliminar cualquier dato en cualquier momento</li>
+                    <li><strong>Acceso a los datos</strong>: Puedes ver los datos de la app almacenados localmente en cualquier momento</li>
+                    <li><strong>Modificación de datos</strong>: Puedes modificar o eliminar los datos de la app almacenados localmente en cualquier momento</li>
                     <li><strong>Exportación de datos</strong>: La versión Plus admite exportar estadísticas de concentración en formato CSV/Excel</li>
-                    <li><strong>Restablecimiento de datos</strong>: Puedes restablecer todos los datos de la app en cualquier momento</li>
-                    <li><strong>Eliminación de datos</strong>: Al eliminar la app se borran por completo todos los datos</li>
+                    <li><strong>Restablecimiento de datos</strong>: Puedes restablecer los datos de la app almacenados localmente en cualquier momento</li>
+                    <li><strong>Eliminación de datos</strong>: Al eliminar la app se borran los datos almacenados localmente en tu dispositivo</li>
                 </ul>
-                <p>Esta app no necesita una función de eliminación de cuenta porque no hay cuentas en el servidor.</p>
+                <p>Esta app no usa cuentas de correo tradicionales, por lo que no hay un flujo aparte de eliminación de cuenta.</p>
             </div>
             
             <div class="section">
