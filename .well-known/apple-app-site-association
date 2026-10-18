@@ -16,6 +16,17 @@
             "comment": "Open One Breath Ritual in PurrrrrFocus"
           }
         ]
+      },
+      {
+        "appIDs": [
+          "QYGR5P66D8.me.louisbuilds.Step1st"
+        ],
+        "components": [
+          {
+            "/": "/step1st/ghost-hunt/*",
+            "comment": "Ghost Hunt invite landing → Step1st"
+          }
+        ]
       }
     ]
   }
