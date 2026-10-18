@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+  />
+  <title>Friends Ghost Hunt 👻 | Step1st</title>
+  <meta name="description" content="Walk, share candy, and unlock your locked apps together before Nov 14!" />
+
+  <!-- Open Graph (TBD-05 / TBD-21 · PRD §10.7) -->
+  <meta property="og:title" content="Join my Ghost Hunt party on Step1st! 👻" />
+  <meta property="og:description" content="Walk, share candy, and unlock your locked apps together before Nov 14!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://louisbuilds.me/step1st/ghost-hunt/" />
+  <meta property="og:image" content="https://louisbuilds.me/step1st/ghost-hunt/assets/ghost-party-og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Join my Ghost Hunt party on Step1st! 👻" />
+  <meta name="twitter:description" content="Walk, share candy, and unlock your locked apps together before Nov 14!" />
+  <meta name="twitter:image" content="https://louisbuilds.me/step1st/ghost-hunt/assets/ghost-party-og-cover.png" />
+
+  <link rel="icon" href="assets/app-icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.14) 0%, transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+    }
+    .hero-mascot {
+      filter: drop-shadow(0 10px 20px rgba(168, 85, 247, 0.28));
+      animation: floatGhost 3s ease-in-out infinite;
+    }
+    @keyframes floatGhost {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-6 text-gray-100 font-sans">
+  <header class="w-full max-w-md shrink-0">
+    <div class="flex items-center justify-start gap-2 pt-2">
+      <img
+        src="assets/app-icon.png"
+        width="28"
+        height="28"
+        alt=""
+        class="rounded-lg shadow-[0_2px_8px_rgba(249,115,22,0.35)]"
+      />
+      <span class="text-sm font-extrabold tracking-tight text-white">Step1st</span>
+    </div>
+    <div class="text-center pt-8 pb-2">
+      <span class="text-xs uppercase tracking-widest text-purple-400 font-semibold">Step1st Halloween Event</span>
+      <h1 class="text-3xl font-extrabold mt-2 tracking-tight">👻 Friends Ghost Hunt</h1>
+    </div>
+  </header>
+
+  <!-- Main card -->
+  <div
+    class="w-full max-w-md bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-2xl text-center my-auto"
+  >
+    <img
+      class="hero-mascot mx-auto mb-3 h-[72px] w-auto"
+      src="assets/hero-mascot.png"
+      width="72"
+      height="72"
+      alt=""
+      aria-hidden="true"
+    />
+    <h2 id="party-title" class="text-xl font-bold mb-2">You're invited to a Ghost Party!</h2>
+    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+      Team up with friends, hit your step goals, and help each other unlock apps.
+    </p>
+
+    <p id="invalid-link-hint" class="text-amber-400/90 text-xs mb-4 hidden" role="alert">
+      This invite link looks incomplete. Ask your friend to share the full link again.
+    </p>
+
+    <button
+      type="button"
+      id="cta-button"
+      disabled
+      class="w-full bg-purple-600 hover:bg-purple-500 disabled:opacity-40 disabled:pointer-events-none text-white font-bold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg shadow-purple-900/30"
+    >
+      Open in Step1st
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <div class="w-full max-w-md text-center pb-4 text-xs text-gray-500 leading-relaxed">
+    <p>
+      Don't have Step1st yet?
+      <a href="https://apps.apple.com/app/id6760578956" id="appstore-link" class="text-purple-400 underline"
+        >Download on the App Store</a
+      >
+    </p>
+    <p class="mt-2">Event ends November 14, 2026.</p>
+  </div>
+
+  <script>
+    const APP_STORE_URL = "https://apps.apple.com/app/id6760578956";
+    const OPEN_APP_FALLBACK_MS = 2000;
+    /** PRD §10.14 */
+    const INVITE_CODE_RE = /^[23456789ABCDEFGHJKLMNPQRSTUVWXYZ]{6}$/;
+
+    /** Display-only; never echo arbitrary URL junk (accidental paste, dev notes, etc.). */
+    function sanitizePartyName(raw) {
+      if (!raw) return null;
+      let s = raw.trim().replace(/\s+/g, " ");
+      if (!s) return null;
+      if (/需刷新|127\.0\.0\.1|localhost|python3|http:\/\//i.test(s)) {
+        s = s.split(/[（(]/)[0].trim();
+      }
+      if (s.length > 64) s = s.slice(0, 64).trim();
+      return s || null;
+    }
+
+    function readInviteFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const raw = (params.get("code") || "").trim().toUpperCase();
+      const party = sanitizePartyName(params.get("party") || "");
+      const code = raw && INVITE_CODE_RE.test(raw) ? raw : null;
+      return { code, partyName: party };
+    }
+
+    async function writeClipboard(text) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch {
+        /* fallback */
+      }
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    const invite = readInviteFromUrl();
+    const partyTitleEl = document.getElementById("party-title");
+    const ctaButton = document.getElementById("cta-button");
+
+    if (invite.partyName) {
+      partyTitleEl.textContent = `You're invited to ${invite.partyName}!`;
+    }
+
+    if (invite.code) {
+      ctaButton.disabled = false;
+
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl && window.location.href) {
+        ogUrl.setAttribute("content", window.location.href.split("#")[0]);
+      }
+    } else {
+      document.getElementById("invalid-link-hint").classList.remove("hidden");
+    }
+
+    async function handleJoin() {
+      if (!invite.code) return;
+
+      // TBD-05 / TBD-20: link carries code; copy silently for post-install Join pre-fill (never shown on page).
+      await writeClipboard(invite.code);
+
+      const customScheme = `step1st://ghost-hunt?code=${encodeURIComponent(invite.code)}`;
+      const started = Date.now();
+      window.location.href = customScheme;
+
+      window.setTimeout(() => {
+        if (Date.now() - started < OPEN_APP_FALLBACK_MS + 400) {
+          window.location.href = APP_STORE_URL;
+        }
+      }, OPEN_APP_FALLBACK_MS);
+    }
+
+    ctaButton.addEventListener("click", handleJoin);
+  </script>
+</body>
+</html>
