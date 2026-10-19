@@ -120,7 +120,7 @@
           "name": "Is my data private?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolutely. Your movement data and app rules are processed locally. While we analyze general usage patterns to improve the experience, this data is completely anonymized and is never linked to your personal identity. Your health records remain read-only and under your total control. Read our Privacy Policy to learn how we protect your privacy."
+            "text": "Yes—privacy is our default. Most movement data and app-lock rules stay on your device for core features. If you optionally join Friends Ghost Hunt, limited pseudonymous party and step metrics sync to our servers as described in our Privacy Policy; restricted app names, Screen Time usage, and HealthKit history are not uploaded. Apple Health, if enabled, is read-only on your device and is not uploaded. We use privacy-friendly analytics that does not include Ghost Hunt step counts. Read our Privacy Policy to learn more."
           }
         }
       ]
@@ -1728,7 +1728,7 @@
                         <ul class="benefit-list" style="margin-top: 0;">
                             <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-sliders"></i></span><span class="item-copy"><span class="label">Tactile Experience</span><span class="desc">Setting your goal feels as satisfying as achieving it. A new way to interact with your habits.</span></span></li>
                             <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></span><span class="item-copy"><span class="label">Olo's Logic</span><span class="desc">Get smart suggestions (3.5k, 6k, 8.5k) based on your real-world activity levels.</span></span></li>
-                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span><span class="item-copy"><span class="label">Privacy-First</span><span class="desc">Native Screen Time integration ensures your data never leaves your device.</span></span></li>
+                            <li><span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span><span class="item-copy"><span class="label">Privacy-First</span><span class="desc">Screen Time rules and restricted app names stay on your device. Optional Friends Ghost Hunt syncs limited pseudonymous party data—see our Privacy Policy.</span></span></li>
                         </ul>
                         <a href="https://apps.apple.com/app/step1st-walk-to-unlock-apps/id6760578956" class="btn-primary" style="margin-top: 20px;" aria-label="Download Step1st: set your step goal and lock chosen apps until you move">Find your sweet spot—free</a>
                     </div>
@@ -1862,7 +1862,10 @@
                     <details class="faq-item">
                         <summary>Is my data private?</summary>
                         <div class="faq-answer">
-                            Absolutely. Your movement data and app rules are processed locally. While we analyze general usage patterns to improve the experience, this data is completely anonymized and is never linked to your personal identity. Your health records remain read-only and under your total control.
+                            <p>Yes—privacy is our default. Most movement data and your app-lock rules are processed <strong>locally on your device</strong> and are not transmitted to our servers for core features.</p>
+                            <p>If you <strong>optionally</strong> use seasonal features such as <strong>Friends Ghost Hunt</strong>, the App syncs <strong>limited, pseudonymous</strong> party data to our servers (for example, today's step count, step goal, display handle, leaderboard-related fields, and unlock status labels). We do <strong>not</strong> sell personal data, and we do <strong>not</strong> upload restricted app names, Screen Time usage data, or HealthKit history.</p>
+                            <p>If you connect Apple Health, Step1st only <strong>reads</strong> step count on your device; Health data is not uploaded to our servers.</p>
+                            <p>We use privacy-friendly analytics (such as PostHog) for general app usage; that analytics does not include your Ghost Hunt step counts.</p>
                             <a href="privacy-policy.html" class="faq-inline-link">Learn how we protect your privacy<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>.
                         </div>
                     </details>
@@ -1924,7 +1927,7 @@
                                 <span class="icon sf-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
                                 <h3>Anonymous Movement</h3>
                             </div>
-                            <p>Your steps are processed locally on your device via motion sensors. We track activity trends to help you improve, but we never link this data to your real-world identity or location.</p>
+                            <p>For everyday unlocking, your steps are counted on your device via motion sensors—we do not use GPS. If you optionally join <strong>Friends Ghost Hunt</strong>, limited pseudonymous metrics (such as today's step total, display handle, and leaderboard-related status) sync to our servers so your party can work, without uploading restricted app names, HealthKit history, or precise location. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
                         </div>
 
                         <div class="trust-card">

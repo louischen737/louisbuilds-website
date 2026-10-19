@@ -219,7 +219,7 @@
     <div class="container">
     <div class="legal-container">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: March 2026</p>
+    <p class="last-updated">Last updated: October 2026</p>
 
     <p>Step1st ("we", "our", or "us") respects your privacy. This Privacy Policy explains how the Step1st mobile application ("the App") accesses, uses, and protects information when you use it.</p>
     <p>Step1st is designed with privacy in mind. The app does not require user accounts and stores most data locally on your device.</p>
@@ -235,6 +235,7 @@
         <li>We do not require user accounts</li>
     </ul>
     <p>Most data used by Step1st is processed locally on your device and is not transmitted to external servers.</p>
+    <p>Optional seasonal social features may sync pseudonymous activity metrics with our servers when you choose to use them (see "Seasonal Social Features" in Section 2 below).</p>
 
     <h2>2. Information the App May Access</h2>
     <p>Step1st may request access to certain system permissions to provide its features.</p>
@@ -247,7 +248,7 @@
         <li>determine when your step goal has been reached</li>
         <li>unlock restricted apps once the goal is met</li>
     </ul>
-    <p>Motion data is processed locally on your device and is not transmitted to external servers.</p>
+    <p>Motion data is processed locally on your device for core features and is not transmitted to external servers, except for today's total step count and step goal when you optionally participate in Seasonal Social Features (described below).</p>
 
     <h3>Apple Health (HealthKit)</h3>
     <p>Step1st may optionally request permission to read step count data from the Apple Health app.</p>
@@ -279,6 +280,25 @@
     </ul>
     <p>Step1st does not collect or transmit Screen Time usage data outside your device.</p>
 
+    <h3>Seasonal Social Features ("Friends Ghost Hunt")</h3>
+    <p>When you optionally participate in seasonal social features such as "Friends Ghost Hunt", the App communicates with our secure API infrastructure hosted on Cloudflare (<a href="https://louisbuilds.me/step1st/api/v1">https://louisbuilds.me/step1st/api/v1</a>) to synchronize party state and live feeds.</p>
+    <p>Data transmitted to our servers includes:</p>
+    <ul>
+        <li>A pseudonymous device identifier (UUID stored in your iOS Keychain) to maintain your session without requiring a personal account.</li>
+        <li>Your chosen display handle (e.g., @SpookyGhost) and avatar emoji.</li>
+        <li>Derived party details (e.g., "@SpookyGhost's Ghost Party 👻").</li>
+        <li>Today's total step count, daily step goal, the numeric count of restricted apps you selected (not app names or Screen Time tokens), derived leaderboard step totals (including Treat bonuses), derived unlock status, and party-day bonus state from Treat/Trick interactions.</li>
+        <li>Your local calendar date and time zone identifier for fair daily resets and interaction limits.</li>
+        <li>Party membership, invite codes, and system-generated interaction events (such as Treats, Ghost Locks, joins, or milestones).</li>
+    </ul>
+    <p><strong>Visibility to Party Members</strong></p>
+    <p>To power party leaderboards and live feeds, your display handle, avatar emoji, party name, leaderboard step total, unlock status labels, and system-generated interaction events are visible to other members of your private party (up to 8 members). Teammates never see the names of your restricted apps, a numeric restricted-app count (only labels such as whether apps are still locked or all freed), Screen Time settings, HealthKit history, or precise location.</p>
+    <p>The in-party live feed shows system-generated events only. There is no free-form chat or other user-generated message content.</p>
+    <p><strong>Short-Term Security Processing</strong></p>
+    <p>Connecting IP addresses may be processed briefly by Cloudflare KV (with a 60-second TTL) solely for rate limiting and server defense. IP addresses are never stored long-term, nor used for tracking or profiling.</p>
+    <p>All core Screen Time rules, application names, and detailed HealthKit histories remain strictly local on your device.</p>
+    <p>After a seasonal event ends (for example, November 14, 2026, Pacific Time), the Ghost Hunt experience may be removed from the App. Related server data is handled as described in Section 4 below.</p>
+
     <h2>3. Information We Do NOT Collect</h2>
     <p>Step1st does not collect or store the following information:</p>
     <ul>
@@ -286,7 +306,7 @@
         <li>precise or approximate location data</li>
         <li>contacts</li>
         <li>photos, videos, or files</li>
-        <li>messages or communications</li>
+        <li>free-form messages or private chat communications (party interaction events are strictly limited to system-generated status updates and pre-defined game actions)</li>
         <li>browsing history</li>
         <li>health data other than step count (if HealthKit is enabled)</li>
     </ul>
@@ -302,6 +322,9 @@
         <li>app settings and preferences</li>
     </ul>
     <p>If you delete the app, this locally stored data is removed from your device.</p>
+    <p>If you delete and reinstall the app, iOS may retain identifiers stored in the Keychain (such as the pseudonymous UUID used for seasonal features) according to Apple's Keychain rules.</p>
+    <h3>Server Storage (Seasonal Features)</h3>
+    <p>Pseudonymous party data and interaction logs associated with seasonal features are stored on secure servers operated by us (including Cloudflare). Leaving a party removes your active participation but retains historical anonymous event logs for team leaderboard consistency. Following the conclusion of a seasonal event, active party data is archived.</p>
 
     <h2>5. Analytics</h2>
     <p>Step1st may use privacy-friendly analytics tools to understand general app usage and improve the product.</p>
@@ -330,6 +353,7 @@
         <li>no personal data or usage data is included in the shared content</li>
     </ul>
     <p>Step1st does not access or store information about who the user shares the app with.</p>
+    <p>If you use Friends Ghost Hunt, you may share an invite link that contains a party code. Recipients need the link or code to join. Invite links do not include your email, real name, blocked app list, or HealthKit data.</p>
 
     <h2>7. In-App Purchases</h2>
     <p>Step1st offers optional Pro subscriptions through Apple's App Store.</p>
