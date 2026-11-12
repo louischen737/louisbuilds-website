@@ -15,6 +15,36 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/online-ipa-converter/index-ja.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/online-ipa-converter/index-vi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/online-ipa-converter/index-id.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/online-ipa-converter/index-it.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/online-ipa-converter/index-ar.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/online-ipa-converter/index-ro.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://louisbuilds.me/phoneticformatter/online-ipa-converter/index-fr.html</loc>
     <changefreq>weekly</changefreq>
@@ -47,6 +77,36 @@
   </url>
   <url>
     <loc>https://louisbuilds.me/phoneticformatter/index-zh.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-ja.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-vi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-id.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-it.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-ar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/index-ro.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -145,6 +205,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
   </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-ja.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-vi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-id.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-it.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-ar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/support-ro.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
   <url>
     <loc>https://louisbuilds.me/phoneticformatter/privacy.html</loc>
     <changefreq>yearly</changefreq>
@@ -170,6 +260,36 @@
     <changefreq>yearly</changefreq>
     <priority>0.35</priority>
   </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-ja.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-vi.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-id.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-it.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-ar.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/privacy-ro.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
   <url>
     <loc>https://louisbuilds.me/phoneticformatter/terms.html</loc>
     <changefreq>yearly</changefreq>
@@ -192,6 +312,36 @@
   </url>
   <url>
     <loc>https://louisbuilds.me/phoneticformatter/terms-zh.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-ja.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-vi.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-id.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-it.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-ar.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+<url>
+    <loc>https://louisbuilds.me/phoneticformatter/terms-ro.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.35</priority>
   </url>

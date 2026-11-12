@@ -1,0 +1,14 @@
+# Golden samples for online IPA converter (by-sentence)
+# Compare informally with Phonetic Formatter iOS App (default CMU reading, /wrap/).
+
+Please focus on the distinction between sheep and ship.
+=> Please focus on the distinction between sheep and ship.
+=> /ˈpliz/ /ˈfoʊkəs/ /ˈɑn/ /ðə/ /dɪˈstɪŋkʃən/ /bɪˈtwin/ /ˈʃip/ /ənd/ /ˈʃɪp/.
+
+Hello, world!
+=> Hello, world!
+=> /həˈloʊ/, /ˈwɝld/!
+
+Dr. Smith arrived at 9:00 with a 10% discount.
+=> Dr. Smith arrived at 9:00 with a 10% discount.
+=> /ˈdɑktɚ/ /ˈsmɪθ/ /ɚˈaɪvd/ /ˈæt/ 9:00 /ˈwɪð/ /ə/ 10% /dɪˈskaʊnt/.
