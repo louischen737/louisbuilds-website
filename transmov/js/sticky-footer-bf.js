@@ -13,8 +13,8 @@
 
   var COPY = {
     en: {
-      comingLabel: "Black Friday · Lifetime Pro starts soon",
-      activeLabel: "Black Friday · Lifetime Pro on sale",
+      comingLabel: "Black Friday · Lifetime Pro ~50% off starts soon",
+      activeLabel: "Black Friday · Lifetime Pro ~50% off — limited time",
       comingCta: "Get the App →",
       activeCta: "Claim Offer →",
       comingPrefix: "Starts in",
@@ -27,8 +27,8 @@
       ctActive: "transmov_home_bf_active"
     },
     zh: {
-      comingLabel: "黑色星期五 · 终身 Pro 即将开售",
-      activeLabel: "黑色星期五 · 终身 Pro 限时特惠",
+      comingLabel: "黑色星期五 · 终身 Pro 约 5 折即将开售",
+      activeLabel: "黑色星期五 · 终身 Pro 约 5 折限时优惠",
       comingCta: "前往下载 →",
       activeCta: "立即查看 →",
       comingPrefix: "开售倒计时",
@@ -41,8 +41,8 @@
       ctActive: "transmov_home_zh_bf_active"
     },
     de: {
-      comingLabel: "Black Friday · Lifetime Pro startet bald",
-      activeLabel: "Black Friday · Lifetime Pro im Angebot",
+      comingLabel: "Black Friday · Lifetime Pro bald ca. 50 % Rabatt",
+      activeLabel: "Black Friday · Lifetime Pro jetzt ca. 50 % — begrenzt",
       comingCta: "App laden →",
       activeCta: "Angebot sichern →",
       comingPrefix: "Startet in",
@@ -55,8 +55,8 @@
       ctActive: "transmov_home_de_bf_active"
     },
     fr: {
-      comingLabel: "Black Friday · Pro à vie bientôt",
-      activeLabel: "Black Friday · Pro à vie en offre",
+      comingLabel: "Black Friday · Pro à vie bientôt −50 %",
+      activeLabel: "Black Friday · Pro à vie −50 % — offre limitée",
       comingCta: "Télécharger →",
       activeCta: "Voir l'offre →",
       comingPrefix: "Début dans",
@@ -69,8 +69,8 @@
       ctActive: "transmov_home_fr_bf_active"
     },
     es: {
-      comingLabel: "Black Friday · Pro de por vida pronto",
-      activeLabel: "Black Friday · Pro de por vida en oferta",
+      comingLabel: "Black Friday · Pro de por vida pronto −50 %",
+      activeLabel: "Black Friday · Pro de por vida −50 % por tiempo limitado",
       comingCta: "Descargar →",
       activeCta: "Ver oferta →",
       comingPrefix: "Empieza en",
@@ -83,8 +83,8 @@
       ctActive: "transmov_home_es_bf_active"
     },
     ja: {
-      comingLabel: "ブラックフライデー · 買い切りProまもなく",
-      activeLabel: "ブラックフライデー · 買い切りPro特価",
+      comingLabel: "ブラックフライデー · 買い切りPro約50%OFFまもなく",
+      activeLabel: "ブラックフライデー · 買い切りPro約50%OFF・期間限定",
       comingCta: "アプリへ →",
       activeCta: "特典を見る →",
       comingPrefix: "開始まで",
@@ -97,8 +97,8 @@
       ctActive: "transmov_home_ja_bf_active"
     },
     ko: {
-      comingLabel: "블랙 프라이데이 · 평생 Pro 곧 시작",
-      activeLabel: "블랙 프라이데이 · 평생 Pro 특가",
+      comingLabel: "블랙 프라이데이 · 평생 Pro 약 50% 할인 곧 시작",
+      activeLabel: "블랙 프라이데이 · 평생 Pro 약 50% 한정 특가",
       comingCta: "앱 받기 →",
       activeCta: "특가 보기 →",
       comingPrefix: "시작까지",
