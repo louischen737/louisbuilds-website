@@ -1154,12 +1154,13 @@
         <p>A product by Louis · <a href="https://louisbuilds.me" class="footer-accent">louisbuilds.me</a></p>
     </div>
 
-    <div class="sticky-footer is-hidden" data-sticky-footer>
+    <div class="sticky-footer is-hidden" data-sticky-footer data-locale="zh">
         <div class="footer-content">
             <div class="footer-text">
                 <img src="../../images/app-icon.png" alt="TransMov — AI video background removal for macOS" class="footer-icon" width="32" height="32">
-                <span><strong>TransMov</strong> — 适用于 macOS 的 AI 视频抠背景工具</span>
-                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_online&mt=8" class="footer-inline-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'online', 'position': 'sticky_footer'});">免费试用 →</a>
+                <span data-sticky-label><strong>TransMov</strong> — 适用于 macOS 的 AI 视频抠背景工具</span>
+                <span class="bf-countdown" data-sticky-countdown hidden></span>
+                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_online&mt=8" class="footer-inline-link" data-sticky-cta target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'online', 'position': 'sticky_footer'});">免费试用 →</a>
             </div>
             <button class="footer-close" type="button" aria-label="关闭下载栏" data-sticky-footer-close>×</button>
         </div>
@@ -1699,30 +1700,7 @@
                 };
             })();
 
-            (function initStickyFooter() {
-                var bar = document.querySelector("[data-sticky-footer]");
-                if (!bar) return;
-                var closeBtn = bar.querySelector("[data-sticky-footer-close]");
-                var isClosed = false;
-                var revealThreshold = 120;
-                function updateVisibility() {
-                    if (isClosed) {
-                        bar.classList.add("is-hidden");
-                        return;
-                    }
-                    var y = window.scrollY || window.pageYOffset || 0;
-                    bar.classList.toggle("is-hidden", y < revealThreshold);
-                }
-                if (closeBtn) {
-                    closeBtn.addEventListener("click", function () {
-                        isClosed = true;
-                        bar.classList.add("is-hidden");
-                    });
-                }
-                window.addEventListener("scroll", updateVisibility, { passive: true });
-                window.addEventListener("resize", updateVisibility, { passive: true });
-                updateVisibility();
-        })();
     </script>
+    <script defer src="../../js/sticky-footer-bf.js?v=20261120bf4"></script>
 </body>
 </html>

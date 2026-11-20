@@ -213,7 +213,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="../style.css?v=20260830a" as="style">
+    <link rel="preload" href="../style.css?v=20261120bf12" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -983,7 +983,7 @@
             padding-top: 2.25rem;
         }
     </style>
-    <link rel="stylesheet" href="../style.css?v=20260830a">
+    <link rel="stylesheet" href="../style.css?v=20261120bf12">
 </head>
 <body>
     <header class="top-bar">
@@ -1456,10 +1456,10 @@
                         <div class="pricing-price">$19.99<span>／年</span></div>
                         <p>长期使用更划算。</p>
                     </div>
-                    <div class="faq-card pricing-card pricing-card--featured">
-                        <span class="pricing-badge">最具性价比</span>
+                    <div class="faq-card pricing-card pricing-card--featured" data-bf-lifetime>
+                        <span class="pricing-badge" data-bf-badge>最具性价比</span>
                         <h3 class="pricing-title">终身版</h3>
-                        <div class="pricing-price">$29.99<span>／次</span></div>
+                        <div class="pricing-price" data-bf-price data-regular="$29.99" data-sale="$14.99">$29.99<span>／次</span></div>
                         <p class="pricing-lifetime-line">一次购买，长期本地使用。</p>
                         <p>完全掌握隐私控制权，不受云服务绑定。</p>
                     </div>
@@ -1766,12 +1766,13 @@
         </div>
     </main>
 
-    <div class="sticky-footer is-hidden" data-sticky-footer>
+    <div class="sticky-footer is-hidden" data-sticky-footer data-locale="zh">
         <div class="footer-content">
             <div class="footer-text">
                 <img src="../images/app-icon.png" alt="TransMov — Mac 原生动图创作平台" class="footer-icon" width="32" height="32">
-                <span><strong>TransMov</strong> — Mac 原生动图创作平台</span>
-                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home_zh&mt=8" class="footer-inline-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'sticky_footer'});">免费试用 →</a>
+                <span data-sticky-label><strong>TransMov</strong> — Mac 原生动图创作平台</span>
+                <span class="bf-countdown" data-sticky-countdown hidden></span>
+                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home_zh&mt=8" class="footer-inline-link" data-sticky-cta target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'sticky_footer'});">免费试用 →</a>
             </div>
             <button class="footer-close" type="button" aria-label="关闭下载条" data-sticky-footer-close>×</button>
         </div>
@@ -1933,35 +1934,7 @@
             });
         }
         window.addEventListener('load', initLanguageSwitcher);
-
-        function initStickyFooter() {
-            var bar = document.querySelector('[data-sticky-footer]');
-            if (!bar) return;
-            var closeBtn = bar.querySelector('[data-sticky-footer-close]');
-            var isClosed = false;
-            var revealThreshold = 120;
-
-            function updateVisibility() {
-                if (isClosed) {
-                    bar.classList.add('is-hidden');
-                    return;
-                }
-                var y = window.scrollY || window.pageYOffset || 0;
-                bar.classList.toggle('is-hidden', y < revealThreshold);
-            }
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    isClosed = true;
-                    bar.classList.add('is-hidden');
-                });
-            }
-
-            window.addEventListener('scroll', updateVisibility, { passive: true });
-            window.addEventListener('resize', updateVisibility, { passive: true });
-            updateVisibility();
-        }
-        window.addEventListener('load', initStickyFooter);
     </script>
+    <script defer src="../js/sticky-footer-bf.js?v=20261120bf12"></script>
 </body>
 </html>

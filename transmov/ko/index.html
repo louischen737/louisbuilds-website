@@ -212,7 +212,7 @@
     <!-- dns-prefetch: early DNS for App Store links (nav / hero CTA); no extra TCP/TLS until used -->
     <link rel="dns-prefetch" href="https://apps.apple.com">
     
-    <link rel="preload" href="../style.css?v=20260830a" as="style">
+    <link rel="preload" href="../style.css?v=20261120bf12" as="style">
     <style>
         /* TransMov landing — shared by index.html & zh/index.html */
         :root {
@@ -979,7 +979,7 @@
             padding-top: 2.25rem;
         }
     </style>
-    <link rel="stylesheet" href="../style.css?v=20260830a">
+    <link rel="stylesheet" href="../style.css?v=20261120bf12">
 </head>
 <body>
     <header class="top-bar">
@@ -1449,10 +1449,10 @@
                         <div class="pricing-price">$19.99 <span>/년</span></div>
                         <p>꾸준히 쓰면 월 실효 비용이 더 낮습니다.</p>
                     </div>
-                    <div class="faq-card pricing-card pricing-card--featured">
-                        <span class="pricing-badge">최고 가성비</span>
+                    <div class="faq-card pricing-card pricing-card--featured" data-bf-lifetime>
+                        <span class="pricing-badge" data-bf-badge>최고 가성비</span>
                         <h3 class="pricing-title">평생 이용</h3>
-                        <div class="pricing-price">$29.99 <span>/1회</span></div>
+                        <div class="pricing-price" data-bf-price data-regular="$29.99" data-sale="$14.99">$29.99 <span>/1회</span></div>
                         <p class="pricing-lifetime-line">도구를 소유하고, 프라이버시도 지키세요. 영원히.</p>
                         <p>한 번 결제하면 평생 로컬 이용.</p>
                     </div>
@@ -1823,12 +1823,13 @@
         </div>
     </main>
 
-    <div class="sticky-footer is-hidden" data-sticky-footer>
+    <div class="sticky-footer is-hidden" data-sticky-footer data-locale="ko">
         <div class="footer-content">
             <div class="footer-text">
                 <img src="../images/app-icon.png" alt="TransMov — Mac에서 완결되는 애니메이션 이미지 도구" class="footer-icon" width="32" height="32">
-                <span><strong>TransMov</strong> — Mac에서 완결되는 애니메이션 이미지 도구</span>
-                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home_ko&mt=8" class="footer-inline-link" target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'sticky_footer'});">무료로 써보기 →</a>
+                <span data-sticky-label><strong>TransMov</strong> — Mac에서 완결되는 애니메이션 이미지 도구</span>
+                <span class="bf-countdown" data-sticky-countdown hidden></span>
+                <a href="https://apps.apple.com/app/apple-store/id6756703030?pt=128214084&ct=transmov_home_ko&mt=8" class="footer-inline-link" data-sticky-cta target="_blank" rel="noopener" onclick="gtag('event', 'download_click', {'page_version': 'home', 'position': 'sticky_footer'});">무료로 써보기 →</a>
             </div>
             <button class="footer-close" type="button" aria-label="다운로드 바 닫기" data-sticky-footer-close>×</button>
         </div>
@@ -1990,35 +1991,7 @@
             });
         }
         window.addEventListener('load', initLanguageSwitcher);
-
-        function initStickyFooter() {
-            var bar = document.querySelector('[data-sticky-footer]');
-            if (!bar) return;
-            var closeBtn = bar.querySelector('[data-sticky-footer-close]');
-            var isClosed = false;
-            var revealThreshold = 120;
-
-            function updateVisibility() {
-                if (isClosed) {
-                    bar.classList.add('is-hidden');
-                    return;
-                }
-                var y = window.scrollY || window.pageYOffset || 0;
-                bar.classList.toggle('is-hidden', y < revealThreshold);
-            }
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    isClosed = true;
-                    bar.classList.add('is-hidden');
-                });
-            }
-
-            window.addEventListener('scroll', updateVisibility, { passive: true });
-            window.addEventListener('resize', updateVisibility, { passive: true });
-            updateVisibility();
-        }
-        window.addEventListener('load', initStickyFooter);
     </script>
+    <script defer src="../js/sticky-footer-bf.js?v=20261120bf12"></script>
 </body>
 </html>
