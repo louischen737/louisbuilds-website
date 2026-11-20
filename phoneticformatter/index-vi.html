@@ -173,7 +173,7 @@
         ]
     }
     </script>
-    <link rel="stylesheet" href="main.css?v=14">
+    <link rel="stylesheet" href="main.css?v=20">
 </head>
 <body class="site-home">
     <header>
@@ -782,8 +782,8 @@
                             <td class="value free-col price-value">Miễn phí</td>
                             <td class="value pro-col pro-monthly-col price-value">$2.99/tháng</td>
                             <td class="value pro-col pro-lifetime-col price-value">
-                                <div class="pricing-footer-price pro-price">
-                                    <span class="pricing-footer-price-value">$19.99</span>
+                                <div class="pricing-footer-price pro-price" data-bf-lifetime>
+                                    <span class="pricing-footer-price-value" data-bf-price data-regular="$19.99" data-sale="$9.99">$19.99</span>
                                     <span class="pricing-footer-price-note">Mua trọn đời</span>
                                 </div>
                             </td>
@@ -1118,5 +1118,18 @@
             }
         })();
     </script>
+    <div class="sticky-footer is-hidden" data-sticky-footer data-locale="vi" role="region">
+        <div class="footer-content">
+            <div class="footer-text">
+                <img src="icon.png" alt="" class="footer-icon" width="32" height="32">
+                <span data-sticky-label></span>
+                <span class="bf-countdown" data-sticky-countdown hidden></span>
+                <a href="https://apps.apple.com/us/app/phonetic-formatter/id6757941187?pt=128214084&mt=8" class="footer-inline-link" data-sticky-cta target="_blank" rel="noopener"></a>
+            </div>
+            <button class="footer-close" type="button" aria-label="Đóng thanh ưu đãi" data-sticky-footer-close>×</button>
+        </div>
+    </div>
+    <script defer src="js/sticky-footer-bf.js?v=20261120f"></script>
+
 </body>
 </html>
