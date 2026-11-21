@@ -73,7 +73,7 @@
       "downloadUrl": "https://apps.apple.com/app/purrrrrfocus/id6753966008",
       "screenshot": "https://louisbuilds.me/purrrrrfocus/screenshots/zh/01.webp",
       "applicationSubCategory": "Utilities",
-      "softwareVersion": "3.1",
+      "softwareVersion": "3.6",
       "author": {
         "@type": "Organization",
         "name": "喵时计团队",
@@ -160,7 +160,7 @@
       gtag('config', 'G-2TMXET2TJN', { 'anonymize_ip': true });
     </script>
 
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css?v=20261121g">
 </head>
 <body class="draft-page">
 
@@ -882,12 +882,14 @@
     </div>
 </footer>
 
-<div class="sticky-download" id="sticky-download" hidden>
+<div class="sticky-download" id="sticky-download" data-locale="zh" hidden>
     <div class="sticky-download-inner">
         <div class="sticky-download-center">
-            <p class="sticky-download-line">静心专注——免费下载</p>
+            <p class="sticky-download-line" data-sticky-label">静心专注——免费下载</p>
+            <span class="tg-countdown" data-sticky-countdown="" hidden></span>
             <a href="https://apps.apple.com/app/purrrrrfocus/id6753966008"
                target="_blank" rel="noopener noreferrer"
+               data-sticky-cta=""
                class="sticky-download-badge app-store-badge">
                 <img src="app-store-badge-zh.svg" alt="在 App Store 下载" width="109" height="40">
             </a>
@@ -961,4 +963,5 @@ window.HOME_I18N = {
   "demo.sounds_aria_prefix": "治愈音效 — "
 };
 </script>
+<script src="js/sticky-thanksgiving.js?v=20261121e" defer></script>
 <script src="home-demos.js" defer></script>

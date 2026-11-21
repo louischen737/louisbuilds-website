@@ -3787,8 +3787,8 @@ body.draft-page.has-sticky-download .footer {
     .sticky-close {
         position: absolute;
         right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
+        transform: none;
         padding: 4px;
     }
     .sticky-download-line {
@@ -3803,6 +3803,128 @@ body.draft-page.has-sticky-download .footer {
     .sticky-download .app-store-badge img,
     .sticky-download-badge img {
         height: 32px;
+    }
+}
+
+.sticky-download.is-tg {
+    background:
+        linear-gradient(180deg, rgba(122, 36, 42, 0.55) 0%, rgba(59, 36, 29, 0.98) 42%);
+    border-top-color: rgba(228, 180, 174, 0.7);
+}
+.sticky-download.is-tg .sticky-download-line {
+    color: #fff6ee;
+}
+.sticky-download .tg-off {
+    color: #ffd0c2;
+}
+.sticky-download .tg-countdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    white-space: nowrap;
+    color: #ffd7c8;
+}
+.sticky-download .tg-countdown[hidden] {
+    display: none !important;
+}
+.sticky-download .tg-countdown-prefix {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #ffd0c2;
+}
+.sticky-download .tg-countdown-calendar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.sticky-download .tg-unit {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+}
+.sticky-download .tg-unit-value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    min-height: 26px;
+    padding: 0 7px;
+    border: 1.5px solid rgba(228, 180, 174, 0.95);
+    border-radius: 6px;
+    background:
+        linear-gradient(180deg, rgba(255, 220, 210, 0.28) 0%, rgba(196, 90, 90, 0.08) 48%, rgba(40, 16, 16, 0.55) 49%, rgba(28, 12, 12, 0.72) 100%);
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: #fff6ee;
+    letter-spacing: 0.03em;
+}
+.sticky-download .tg-unit-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffd0c2;
+    letter-spacing: 0.02em;
+}
+body.draft-page.has-sticky-download:has(.sticky-download.is-tg) {
+    --sticky-download-height: 72px;
+}
+@media (max-width: 900px) {
+    .sticky-download.is-tg .sticky-download-inner {
+        position: relative;
+        display: block;
+        padding-right: 22px;
+        min-height: 0;
+        height: auto;
+    }
+    .sticky-download.is-tg .sticky-download-center {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "label badge"
+            "countdown badge";
+        justify-content: stretch;
+        align-items: center;
+        column-gap: 10px;
+        row-gap: 6px;
+        width: 100%;
+        height: auto;
+    }
+    .sticky-download.is-tg .sticky-download-line {
+        grid-area: label;
+        min-width: 0;
+        text-align: start;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        line-height: 1.35;
+    }
+    .sticky-download.is-tg .tg-countdown {
+        grid-area: countdown;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        min-width: 0;
+        max-width: none;
+        overflow: visible;
+    }
+    .sticky-download.is-tg .sticky-download-badge {
+        grid-area: badge;
+        grid-row: 1 / span 2;
+        align-self: center;
+        justify-self: end;
+    }
+    .sticky-download.is-tg .sticky-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: none;
     }
 }
 
