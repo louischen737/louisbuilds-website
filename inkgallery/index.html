@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>字游空间</title>
+    
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  <body>
+    <div id="stage">
+      <div id="view"></div>
+      <header>
+        <p class="museum-row"><span class="dot"></span><img id="museum" alt="墨白 · 见白" /></p>
+        <div class="chrome-bar">
+          <p class="sub" id="subtitle"></p>
+          <button id="home" type="button" hidden></button>
+        </div>
+      </header>
+      <p id="hint" hidden></p>
+      <button id="leave" type="button" hidden></button>
+      <button id="peek" type="button" hidden></button>
+      <aside id="card" hidden>
+        <p class="script" id="card-script"></p>
+        <h2 id="card-title"></h2>
+        <p class="note" id="card-note"></p>
+        <button id="card-close" type="button"></button>
+      </aside>
+      <div id="font-warmup">墨白万象始一行到水穷处坐看云起时</div>
+      <div id="splash">
+        <div class="cover-arches" id="cover-arches" aria-hidden="true">
+          <span class="cover-arch cover-arch-tall"></span>
+          <span class="cover-arch cover-arch-low"></span>
+        </div>
+        <section id="cover">
+          <img id="cover-title" alt="" />
+          <p class="cover-lead" id="cover-lead"></p>
+          <button id="cover-next" type="button"></button>
+        </section>
+        <section id="prep" hidden>
+          <h1 id="prep-title"></h1>
+          <div class="splash-card">
+            <div id="splash-looks" class="splash-looks"></div>
+          </div>
+          <button id="splash-enter" type="button" disabled></button>
+        </section>
+      </div>
+    </div>
+      <script src="./assets/main.js"></script>
+  </body>
+</html>
