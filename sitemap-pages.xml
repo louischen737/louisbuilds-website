@@ -40,6 +40,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://louisbuilds.me/inkgallery/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <!-- Homepage secondary CTAs: decision / consideration URLs -->
   <url>
     <loc>https://louisbuilds.me/tappause/how-to-take-a-break-from-your-phone.html</loc>

@@ -10,7 +10,7 @@
 
     const chapters = gsap.utils.toArray(".app-chapter");
     const progressNav = document.querySelector(".apps-progress");
-    const productsSection = document.querySelector("#products");
+    const productsSection = document.querySelector("#apps");
     const progressButtons = progressNav
         ? gsap.utils.toArray(".apps-progress-btn", progressNav)
         : [];

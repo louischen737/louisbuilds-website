@@ -352,6 +352,68 @@ body {
     color: var(--accent);
 }
 
+.site-header-nav-item {
+    position: relative;
+}
+
+.site-header-nav-trigger {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.72);
+    cursor: pointer;
+    transition: color 0.25s var(--ease);
+}
+
+.site-header-nav-trigger:hover,
+.site-header-nav-item.is-open > .site-header-nav-trigger,
+.site-header-nav-item:focus-within > .site-header-nav-trigger {
+    color: var(--accent);
+}
+
+.site-header-submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 11.5rem;
+    padding: 0.55rem;
+    border-radius: 12px;
+    background: rgba(14, 14, 14, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    flex-direction: column;
+    gap: 0.15rem;
+    z-index: 60;
+}
+
+.site-header-nav-item:hover > .site-header-submenu,
+.site-header-nav-item:focus-within > .site-header-submenu,
+.site-header-nav-item.is-open > .site-header-submenu {
+    display: flex;
+}
+
+.site-header-submenu a {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.site-header-submenu a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
 .font-garamond {
     font-family: var(--font-serif);
 }
@@ -634,7 +696,7 @@ html.js .hero .explore-btn {
     opacity: 0;
 }
 
-/* Shared section chrome (Products, Community, Journal) */
+/* Shared section chrome (Apps, Web Experiences, Mini Tools, Journal) */
 .site-section-eyebrow {
     font-size: 11px;
     font-weight: 600;
@@ -674,7 +736,7 @@ html.js .hero .explore-btn {
     margin: 0;
 }
 
-/* Full-bleed band under Hero — same language as .site-section--community */
+/* Full-bleed band under Hero — same language as web & mini bands */
 .products.products--band {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bg-color);
@@ -1132,28 +1194,252 @@ footer p {
     font-size: 12px;
 }
 
-/* Community — full-width band, separate from product cards */
-/* Community — full-width band */
-.site-section--community {
+/* Web Experiences / Mini Tools — full-width bands */
+.site-section--web,
+.site-section--mini {
     padding: clamp(100px, 15vw, 168px) 24px clamp(100px, 15vw, 168px);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bg-color);
 }
 
-html.js .community-intro,
 html.js .community-tile,
 html.js .community-actions,
-html.js .community-tagline {
+html.js .community-tagline,
+html.js .web-piece,
+html.js .mini-section-head,
+html.js .mini-section-lede {
     opacity: 0;
 }
 
-html.js .community-tile {
+html.js .community-tile,
+html.js .web-piece {
     transform: translateY(20px);
 }
 
-.site-section--community .site-section-inner {
+.site-section--web .site-section-inner,
+.site-section--mini .site-section-inner {
     max-width: 1100px;
     margin: 0 auto;
+}
+
+.web-section-head,
+.mini-section-head {
+    max-width: 44rem;
+    text-align: left;
+    margin: 0 0 clamp(2rem, 4vw, 2.75rem);
+}
+
+.web-section-head .site-section-title,
+.mini-section-head .site-section-title {
+    font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.web-piece {
+    max-width: 44rem;
+    margin: 0 0 clamp(3rem, 6vw, 4.25rem);
+    padding-bottom: clamp(2rem, 4vw, 2.75rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.web-piece:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.web-piece-meta {
+    margin: 0 0 0.65rem;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.web-piece > .site-section-lede + .community-actions,
+.web-piece-copy .site-section-lede + .community-actions {
+    margin-top: 1.35rem;
+}
+
+.web-piece--featured {
+    max-width: none;
+}
+
+.web-piece-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+    align-items: center;
+}
+
+.web-piece-copy {
+    max-width: 28rem;
+}
+
+.web-piece-media {
+    display: block;
+    margin: 0;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #e7c4be;
+    aspect-ratio: 16 / 9;
+    text-decoration: none;
+    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.web-piece-media:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+}
+
+.web-piece-media:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.web-piece-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 820px) {
+    .web-piece-layout {
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
+    }
+
+    .web-piece-copy {
+        max-width: 44rem;
+    }
+
+    .web-piece-media {
+        aspect-ratio: 16 / 9;
+        border-radius: 24px;
+        order: -1;
+    }
+}
+
+.mini-section-lede {
+    margin: 0 0 clamp(2rem, 4vw, 2.75rem);
+    max-width: 40rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.mini-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3.5vw, 2rem) clamp(1.25rem, 3vw, 1.75rem);
+}
+
+@media (max-width: 720px) {
+    .mini-tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mini-tool {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0;
+    margin: 0;
+}
+
+.mini-tool-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.mini-tool-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.mini-tool-meta {
+    margin: 0 0 0.4rem;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.mini-tool-title {
+    margin: 0 0 0.55rem;
+    font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text-primary);
+}
+
+.mini-tool-lede {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 34rem;
+}
+
+.mini-tool-note {
+    margin: 0.55rem 0 0;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text-muted);
+}
+
+.mini-tool-stat {
+    margin: 0 0 0.65rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.mini-tool-stat em {
+    font-style: normal;
+    color: var(--accent);
+}
+
+.mini-tool-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem 1.15rem;
+    margin-top: 1rem;
+}
+
+.mini-tool-link {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.mini-tool-link:hover {
+    color: var(--accent);
+    border-bottom-color: rgba(var(--accent-rgb), 0.45);
+}
+
+html.js .mini-tool {
+    opacity: 0;
+    transform: translateY(16px);
 }
 
 .community-intro {
@@ -1320,7 +1606,7 @@ html.js .community-tile {
     color: var(--text-muted);
 }
 
-/* Journal — full-bleed band (same treatment as products / community) */
+/* Journal — full-bleed band (same treatment as apps / web / mini) */
 .journal-section {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bg-color);
@@ -1809,9 +2095,12 @@ main > section:not(.hero) {
 
 main > section:not(.hero) .site-section-title,
 main > section:not(.hero) .products-section-head .site-section-title,
-main > section:not(.hero) .community-section-head .site-section-title,
+main > section:not(.hero) .web-section-head .site-section-title,
+main > section:not(.hero) .mini-section-head .site-section-title,
 main > section:not(.hero) .journal-section-head .site-section-title,
 main > section:not(.hero) .community-lab-heading,
+main > section:not(.hero) .web-piece-title,
+main > section:not(.hero) .mini-tool-title,
 main > section:not(.hero) .app-chapter-title {
     font-family: var(--font-serif);
     font-weight: 400;
@@ -1912,6 +2201,39 @@ main > section:not(.hero) .community-intro strong {
         background: rgba(255, 255, 255, 0.06);
     }
 
+    .site-header-nav-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.55rem;
+    }
+
+    .site-header-nav-trigger {
+        padding: 12px 14px;
+        border-radius: 8px;
+    }
+
+    .site-header-submenu {
+        position: static;
+        transform: none;
+        left: auto;
+        top: auto;
+        width: 100%;
+        min-width: 0;
+        display: none;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .site-header-nav-item.is-open > .site-header-submenu {
+        display: flex;
+    }
+
+    .site-header-submenu a {
+        text-align: center;
+    }
+
     .products-apps-v4 {
         padding-left: max(20px, env(safe-area-inset-left, 0px));
         padding-right: max(20px, env(safe-area-inset-right, 0px));
@@ -1942,8 +2264,14 @@ main > section:not(.hero) .community-intro strong {
                 </svg>
             </button>
             <nav class="site-header-nav" id="site-header-nav" aria-label="On this page">
-                <a href="#products">Products</a>
-                <a href="#community">Community</a>
+                <div class="site-header-nav-item" data-nav-submenu>
+                    <button type="button" class="site-header-nav-trigger" aria-expanded="false" aria-controls="products-submenu">Products</button>
+                    <div class="site-header-submenu" id="products-submenu" role="group" aria-label="Products">
+                        <a href="#apps">Apps</a>
+                        <a href="#web-experiences">Web Experiences</a>
+                        <a href="#mini-tools">Mini Tools</a>
+                    </div>
+                </div>
                 <a href="#journal">Journal</a>
                 <a href="mailto:support@louisbuilds.me">Contact</a>
             </nav>
@@ -1971,16 +2299,16 @@ main > section:not(.hero) .community-intro strong {
             </p>
         </div>
         <div class="hero-actions">
-            <a href="#products" class="explore-btn liquid-glass">Begin the Experience</a>
+            <a href="#apps" class="explore-btn liquid-glass">Begin the Experience</a>
         </div>
     </div>
 </section>
 
-<section class="products products--band" id="products" aria-labelledby="products-heading">
+<section class="products products--band" id="apps" aria-labelledby="apps-heading">
 <div class="products-apps-v4">
 
 <header class="products-section-head">
-    <h2 id="products-heading" class="site-section-title">Apps for<br>deep work.</h2>
+    <h2 id="apps-heading" class="site-section-title">Apps for<br>deep work.</h2>
 </header>
 
 <div class="apps-scroll">
@@ -2168,55 +2496,172 @@ main > section:not(.hero) .community-intro strong {
 </div>
 </section>
 
-<section class="site-section--community" id="community" aria-labelledby="community-heading">
+<section class="site-section--web" id="web-experiences" aria-labelledby="web-experiences-heading">
     <div class="site-section-inner">
-        <div class="community-intro">
-            <header class="community-section-head">
-                <h2 id="community-heading" class="site-section-title">A curated archive<br>for practice.</h2>
-            </header>
-            <h3 class="site-section-title community-lab-heading">
-                <span class="community-lab-logo" aria-hidden="true">
-                    <img src="borntospeak/assets/logo-64.webp" srcset="borntospeak/assets/logo-64.webp 64w, borntospeak/assets/logo-128.webp 128w" sizes="40px" alt="Born To Speak logo" width="64" height="64" decoding="async" />
-                </span>
-                <span>Born To Speak English Lab</span>
-            </h3>
-            <p class="site-section-lede">
-                <strong>Where software meets practice.</strong> I built the Born To Speak Lab as a content companion to my apps — a space for role-play scripts, board-game prompts, and real-world practice to help you move from "learning" to "speaking" with confidence.
-            </p>
-            <p class="site-section-lede">
-                Integrated with <strong>Phonetic Formatter</strong> to bridge the gap between accurate IPA symbols and natural spoken English. It's a complete loop: from clear tools to fluent conversations.
-            </p>
-        </div>
+        <header class="web-section-head">
+            <h2 id="web-experiences-heading" class="site-section-title">Interactive worlds<br>and digital experiments.</h2>
+        </header>
 
-        <div class="community-grid" role="navigation" aria-label="English Lab areas">
-            <a class="community-tile" href="borntospeak/work.html">
-                <span class="community-tile-icon" aria-hidden="true">💼</span>
-                <span class="community-tile-title">Workplace Scripts</span>
-                <span class="community-tile-desc">Curated business scripts for meetings, alignment, and professional storytelling.</span>
-            </a>
-            <a class="community-tile" href="borntospeak/board-games.html">
-                <span class="community-tile-icon" aria-hidden="true">🎲</span>
-                <span class="community-tile-title">Games</span>
-                <span class="community-tile-desc">Low-pressure table talk and board-game prompts to spark natural reactions.</span>
-            </a>
-            <a class="community-tile" href="borntospeak/topics.html">
-                <span class="community-tile-icon" aria-hidden="true">💬</span>
-                <span class="community-tile-title">Topics</span>
-                <span class="community-tile-desc">A growing archive of bilingual prompts for deep thinking and cultural exchange.</span>
-            </a>
-            <a class="community-tile" href="borntospeak/tools.html">
-                <span class="community-tile-icon" aria-hidden="true">🔊</span>
-                <span class="community-tile-title">Tools</span>
-                <span class="community-tile-desc">Quick access to IPA transcription, focus timers, and linguistic utilities.</span>
-            </a>
-        </div>
+        <article class="web-piece web-piece--featured" id="inkgallery">
+            <div class="web-piece-layout">
+                <div class="web-piece-copy">
+                    <p class="web-piece-meta">Web · Interactive art</p>
+                    <h3 class="site-section-title community-lab-heading web-piece-title">
+                        <span class="community-lab-logo" aria-hidden="true">
+                            <img src="downloads/%E5%AD%97%E6%B8%B8%E7%A9%BA%E9%97%B4%20(1).png" alt="" width="40" height="40" loading="lazy" decoding="async" />
+                        </span>
+                        <span>Ink Gallery · 字游空间</span>
+                    </h3>
+                    <p class="site-section-lede">
+                        A walkable online hall for calligraphy and light installations — ink on quiet walls, shifting dome light, and pieces you can approach and stay with.
+                    </p>
+                    <div class="community-actions">
+                        <a class="community-actions-primary" href="inkgallery/">Enter Ink Gallery</a>
+                    </div>
+                </div>
+                <a class="web-piece-media" href="inkgallery/" aria-label="Enter Ink Gallery">
+                    <img
+                        src="downloads/inkgallery-cover-1080w.webp"
+                        srcset="downloads/inkgallery-cover-720w.webp 720w, downloads/inkgallery-cover-1080w.webp 1080w, downloads/inkgallery-cover-1440w.webp 1440w"
+                        sizes="(max-width: 820px) 92vw, min(560px, 48vw)"
+                        alt="字游空间 login cover — calligraphy title and enter button"
+                        width="1200"
+                        height="900"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </a>
+            </div>
+        </article>
 
-        <div class="community-actions">
-            <a class="community-actions-primary" href="borntospeak/">Enter English Lab</a>
-            <a class="community-actions-lang" href="borntospeak/index-zh.html" hreflang="zh-Hans" lang="zh-Hans">查看中文版资源 →</a>
-        </div>
+        <article class="web-piece" id="english-lab">
+            <div class="community-intro">
+                <p class="web-piece-meta">Web · Practice archive</p>
+                <h3 class="site-section-title community-lab-heading web-piece-title">
+                    <span class="community-lab-logo" aria-hidden="true">
+                        <img src="borntospeak/assets/logo-64.webp" srcset="borntospeak/assets/logo-64.webp 64w, borntospeak/assets/logo-128.webp 128w" sizes="40px" alt="" width="64" height="64" decoding="async" />
+                    </span>
+                    <span>Born To Speak English Lab</span>
+                </h3>
+                <p class="site-section-lede">
+                    <strong>Where software meets practice.</strong> I built the Born To Speak Lab as a content companion to my apps — a space for role-play scripts, board-game prompts, and real-world practice to help you move from "learning" to "speaking" with confidence.
+                </p>
+                <p class="site-section-lede">
+                    Integrated with <strong>Phonetic Formatter</strong> to bridge the gap between accurate IPA symbols and natural spoken English. It's a complete loop: from clear tools to fluent conversations.
+                </p>
+            </div>
 
-        <p class="community-tagline">A content initiative by Louis Builds · Bridging tools and fluency · Since 2024</p>
+            <div class="community-grid" role="navigation" aria-label="English Lab areas">
+                <a class="community-tile" href="borntospeak/work.html">
+                    <span class="community-tile-icon" aria-hidden="true">💼</span>
+                    <span class="community-tile-title">Workplace Scripts</span>
+                    <span class="community-tile-desc">Curated business scripts for meetings, alignment, and professional storytelling.</span>
+                </a>
+                <a class="community-tile" href="borntospeak/board-games.html">
+                    <span class="community-tile-icon" aria-hidden="true">🎲</span>
+                    <span class="community-tile-title">Games</span>
+                    <span class="community-tile-desc">Low-pressure table talk and board-game prompts to spark natural reactions.</span>
+                </a>
+                <a class="community-tile" href="borntospeak/topics.html">
+                    <span class="community-tile-icon" aria-hidden="true">💬</span>
+                    <span class="community-tile-title">Topics</span>
+                    <span class="community-tile-desc">A growing archive of bilingual prompts for deep thinking and cultural exchange.</span>
+                </a>
+                <a class="community-tile" href="borntospeak/tools.html">
+                    <span class="community-tile-icon" aria-hidden="true">🔊</span>
+                    <span class="community-tile-title">Tools</span>
+                    <span class="community-tile-desc">Quick access to IPA transcription, focus timers, and linguistic utilities.</span>
+                </a>
+            </div>
+
+            <div class="community-actions">
+                <a class="community-actions-primary" href="borntospeak/">Enter English Lab</a>
+                <a class="community-actions-lang" href="borntospeak/index-zh.html" hreflang="zh-Hans" lang="zh-Hans">查看中文版资源 →</a>
+            </div>
+
+            <p class="community-tagline">A content initiative by Louis Builds · Bridging tools and fluency · Since 2024</p>
+        </article>
+    </div>
+</section>
+
+<section class="site-section--mini" id="mini-tools" aria-labelledby="mini-tools-heading">
+    <div class="site-section-inner">
+        <header class="mini-section-head">
+            <h2 id="mini-tools-heading" class="site-section-title">Small frames for<br>light utility and delight.</h2>
+        </header>
+        <p class="mini-section-lede">
+            Graphic creation and playful pieces — published as Xiaohongshu mini tools.
+        </p>
+
+        <div class="mini-tools-grid">
+            <article class="mini-tool" id="rain-sketch">
+                <div class="mini-tool-icon" aria-hidden="true">
+                    <img
+                        src="downloads/rain-sketch-icon-128w.webp"
+                        srcset="downloads/rain-sketch-icon-64w.webp 64w, downloads/rain-sketch-icon-128w.webp 128w, downloads/rain-sketch-icon-256w.webp 256w"
+                        sizes="72px"
+                        alt=""
+                        width="128"
+                        height="128"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="mini-tool-copy">
+                    <p class="mini-tool-meta">Xiaohongshu · Mini tool</p>
+                    <h3 class="mini-tool-title">Rain Sketch · 雨窗绘梦</h3>
+                    <p class="mini-tool-stat"><em>120,000+</em> players</p>
+                    <p class="mini-tool-lede">Doodle on a foggy windowpane while listening to gentle rain. Wipe away the mist, leave quiet notes, or arrange fallen leaf stickers into seasonal collages.</p>
+                    <div class="mini-tool-actions">
+                        <a class="mini-tool-link" href="https://www.xiaohongshu.com/discovery/item/6a844fff00000000060040f2" target="_blank" rel="noopener noreferrer">Read the note on Xiaohongshu →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mini-tool" id="grid-doodle">
+                <div class="mini-tool-icon" aria-hidden="true">
+                    <img
+                        src="downloads/grid-doodle-icon-128w.webp"
+                        srcset="downloads/grid-doodle-icon-64w.webp 64w, downloads/grid-doodle-icon-128w.webp 128w, downloads/grid-doodle-icon-256w.webp 256w"
+                        sizes="72px"
+                        alt=""
+                        width="128"
+                        height="128"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="mini-tool-copy">
+                    <p class="mini-tool-meta">Xiaohongshu · Mini tool</p>
+                    <h3 class="mini-tool-title">Grid Doodle · 点点守护</h3>
+                    <p class="mini-tool-lede">Paint stained-glass patterns on a dotted window grid to guide migrating birds safely home around obstacles.</p>
+                    <div class="mini-tool-actions">
+                        <a class="mini-tool-link" href="https://www.xiaohongshu.com/discovery/item/6a8e6950000000002102e24f" target="_blank" rel="noopener noreferrer">Read the note on Xiaohongshu →</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mini-tool" id="ink-gallery-mini">
+                <div class="mini-tool-icon" aria-hidden="true">
+                    <img
+                        src="downloads/%E5%AD%97%E6%B8%B8%E7%A9%BA%E9%97%B4%20(1).png"
+                        alt=""
+                        width="72"
+                        height="72"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
+                <div class="mini-tool-copy">
+                    <p class="mini-tool-meta">Xiaohongshu · Mini tool</p>
+                    <h3 class="mini-tool-title">Ink Gallery · 字游空间</h3>
+                    <p class="mini-tool-lede">A pocket calligraphy hall of ink, light, and quiet rooms — the Xiaohongshu mini-tool edition you can open and wander through in a small frame.</p>
+                    <div class="mini-tool-actions">
+                        <a class="mini-tool-link" href="https://www.xiaohongshu.com/discovery/item/6b097e2a000000002b03e6c3" target="_blank" rel="noopener noreferrer">Read the note on Xiaohongshu →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
     </div>
 </section>
 
@@ -2365,21 +2810,45 @@ main > section:not(.hero) .community-intro strong {
 <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script>
 <script src="assets/cta-motion.js"></script>
-<script src="assets/home-motion.js"></script>
+<script src="assets/home-motion.js?v=20261127b"></script>
 <script src="assets/apps-chapters.js"></script>
 <script>
 const menuToggle = document.querySelector('.site-header-menu-toggle');
 const headerNav = document.getElementById('site-header-nav');
+const navSubmenus = headerNav ? headerNav.querySelectorAll('[data-nav-submenu]') : [];
 
 function setHeaderMenuOpen(open) {
     if (!menuToggle || !headerNav) return;
     menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     headerNav.classList.toggle('is-open', open);
+    if (!open) {
+        navSubmenus.forEach((item) => {
+            item.classList.remove('is-open');
+            const trigger = item.querySelector('.site-header-nav-trigger');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        });
+    }
 }
 
 menuToggle?.addEventListener('click', () => {
     setHeaderMenuOpen(!headerNav.classList.contains('is-open'));
+});
+
+navSubmenus.forEach((item) => {
+    const trigger = item.querySelector('.site-header-nav-trigger');
+    trigger?.addEventListener('click', (event) => {
+        event.preventDefault();
+        const willOpen = !item.classList.contains('is-open');
+        navSubmenus.forEach((other) => {
+            if (other === item) return;
+            other.classList.remove('is-open');
+            const otherTrigger = other.querySelector('.site-header-nav-trigger');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+        });
+        item.classList.toggle('is-open', willOpen);
+        trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
 });
 
 headerNav?.querySelectorAll('a').forEach((link) => {

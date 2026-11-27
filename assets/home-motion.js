@@ -66,10 +66,15 @@
             ".products-section-head",
             ".app-chapter-visual",
             ".app-chapter-copy",
+            ".web-section-head",
+            ".web-piece",
             ".community-intro",
             ".community-tile",
             ".community-actions",
             ".community-tagline",
+            ".mini-section-head",
+            ".mini-section-lede",
+            ".mini-tool",
             ".journal-section-head",
             ".journal-featured",
             ".journal-item",
@@ -85,20 +90,35 @@
             autoAlpha: 1,
             duration: 0.85,
             scrollTrigger: {
-                trigger: "#products",
+                trigger: "#apps",
                 start: "top 82%",
                 once: true
             }
         });
 
-        gsap.fromTo(".community-intro", { y: 24, autoAlpha: 0 }, {
+        gsap.fromTo(".web-section-head", { y: 24, autoAlpha: 0 }, {
             y: 0,
             autoAlpha: 1,
             duration: 0.85,
             scrollTrigger: {
-                trigger: "#community",
+                trigger: "#web-experiences",
                 start: "top 80%",
                 once: true
+            }
+        });
+
+        ScrollTrigger.batch(".web-piece", {
+            start: "top 86%",
+            once: true,
+            interval: 0.1,
+            onEnter: (elements) => {
+                gsap.fromTo(elements, { autoAlpha: 0, y: 20 }, {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 0.75,
+                    stagger: 0.1,
+                    overwrite: true
+                });
             }
         });
 
@@ -123,8 +143,32 @@
             duration: 0.7,
             stagger: 0.08,
             scrollTrigger: {
-                trigger: ".community-actions",
+                trigger: "#english-lab .community-actions",
                 start: "top 92%",
+                once: true
+            }
+        });
+
+        gsap.fromTo(".mini-section-head, .mini-section-lede", { y: 20, autoAlpha: 0 }, {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.8,
+            stagger: 0.08,
+            scrollTrigger: {
+                trigger: "#mini-tools",
+                start: "top 82%",
+                once: true
+            }
+        });
+
+        gsap.fromTo(".mini-tool", { y: 16, autoAlpha: 0 }, {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.7,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: "#mini-tools",
+                start: "top 72%",
                 once: true
             }
         });
